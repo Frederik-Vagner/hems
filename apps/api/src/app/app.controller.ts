@@ -1,15 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
-
-import { IMessage } from '@hems/interfaces';
-
-import { AppService } from './app.service';
+import { Controller } from '@nestjs/common';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
-
-  @Get('hello')
-  getData(): IMessage {
-    return this.appService.getData();
-  }
-}
+export class AppController {}

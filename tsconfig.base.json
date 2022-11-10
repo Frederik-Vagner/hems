@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hems/interfaces": ["libs/interfaces/src/index.ts"]
+      "@hems/interfaces": ["libs/interfaces/src/index.ts"],
+      "@hems/models": ["libs/models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
