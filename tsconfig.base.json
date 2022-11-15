@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@hems/interfaces": ["libs/interfaces/src/index.ts"],
+      "@hems/local-storage": ["libs/local-storage/src/index.ts"],
       "@hems/models": ["libs/models/src/index.ts"]
     }
   },
