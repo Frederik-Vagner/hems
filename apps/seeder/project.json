@@ -1,0 +1,60 @@
+{
+  "name": "seeder",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/seeder/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/seeder",
+        "main": "apps/seeder/src/main.ts",
+        "tsConfig": "apps/seeder/tsconfig.app.json",
+        "assets": ["apps/seeder/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/seeder/src/environments/environment.ts",
+              "with": "apps/seeder/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "seeder:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "seeder:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/seeder/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/seeder/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
