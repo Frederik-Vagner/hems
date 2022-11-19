@@ -12,11 +12,11 @@ export class Car extends CompletedAt implements ICar {
     carId!: string;
 
     @ApiModelProperty ({ example: '2345'})
-    @Column ({ length: 254 })
+    @Column ()
     tagNr!: string;
 
     @ApiModelProperty ({ example: '211'})
-    @Column ({ length: 254 })
+    @Column ()
     room!: string;
 
     @ApiModelProperty ({ example: '04/06/2022'})
@@ -28,11 +28,11 @@ export class Car extends CompletedAt implements ICar {
     departureDate!: Date;
 
     @ApiModelProperty ({ example: 'madsen'})
-    @Column ({ length: 254 })
+    @Column ()
     name!: string;
 
     @ApiModelProperty ({ example: 'AB60789'})
-    @Column ({ length: 254 })
+    @Column ()
     licensePlate!: string;
 
     @ApiModelProperty ({ example: '01/04/2022 - 16:40'})
@@ -48,11 +48,11 @@ export class Car extends CompletedAt implements ICar {
     deliveryTime?: Date;
 
     @ApiModelProperty ({ example: 'fv'})
-    @Column ({ length: 254, nullable: true })
+    @Column ({ nullable: true })
     bbDown?: string;
 
     @ApiModelProperty ({ example: 'fv'})
-    @Column ({ length: 254, nullable: true })
+    @Column ({ nullable: true })
     bbUp?: string;
 
     @ApiModelProperty ({ example: Location.FH_FRONT_HOTEL})
@@ -60,11 +60,11 @@ export class Car extends CompletedAt implements ICar {
     location!: Location;
 
     @ApiModelProperty ({ example: 'c102'})
-    @Column ({ length: 254, nullable: true})
+    @Column ({ nullable: true})
     parkingLot?: string;
 
     @ApiModelProperty ({ example: 'luxurious car'})
-    @Column ({ length: 254 })
+    @Column ()
     comments!: string;
 
     @ApiModelProperty ({ example: 'yes/no'})

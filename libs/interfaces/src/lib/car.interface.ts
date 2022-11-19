@@ -5,7 +5,7 @@ export interface ICar extends ICompletedAt {
     carId: string;
     tagNr: string;
     room: string;
-    arrivialDate: Date;
+    arrivalDate: Date;
     departureDate: Date;
     name: string;
     licensePlate: string;
