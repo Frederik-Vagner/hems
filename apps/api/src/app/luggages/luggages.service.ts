@@ -1,4 +1,4 @@
-import { LuggageType } from '@hems/interfaces';
+import { CreateRequest, LuggageType } from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -27,5 +27,9 @@ export class LuggagesService {
               ),
             },
     });
+  }
+
+  async createLuggage(luggageData: CreateRequest) {
+    return this.luggageRepo.save(luggageData);
   }
 }
