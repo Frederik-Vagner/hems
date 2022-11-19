@@ -13,7 +13,7 @@ export abstract class Base implements IBase {
   updatedAt?: Date;
 }
 
-export abstract class CompletedAt implements ICompletedAt {
+export abstract class CompletedAt extends Base implements ICompletedAt {
   @ApiModelProperty()
   @Column()
   completedAt?: Date;
