@@ -25,3 +25,8 @@ export interface IJwtInfo {
   role: Role;
   email: string;
 }
+
+export interface IAuthUser {
+  accessToken: string;
+  roles: string[];
+}
