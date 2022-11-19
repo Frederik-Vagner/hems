@@ -14,6 +14,7 @@ export const luggages: ILuggage[] = [
     bbLr: 'CD',
     bbOut: 'GB',
     description: 'Corvus brachyrhynchos',
+    createdAt: new Date(Date.parse('2022-08-28 05:27:56.076')),
   },
   {
     luggageId: 'e3a67552-1a6e-4a31-ac06-df626ab408f9',
@@ -28,6 +29,7 @@ export const luggages: ILuggage[] = [
     bbLr: 'NO',
     bbOut: 'GT',
     description: 'Gyps bengalensis',
+    createdAt: new Date(Date.parse('2022-08-28 14:27:56.076')),
   },
   {
     luggageId: 'd7b146a4-0091-4d76-89ef-69a9fbb1e62a',
@@ -42,6 +44,7 @@ export const luggages: ILuggage[] = [
     bbLr: 'PL',
     bbOut: 'CN',
     description: 'Ctenophorus ornatus',
+    createdAt: new Date(Date.parse('2022-08-28 23:59:000')),
   },
   {
     luggageId: '4a76d3a6-1ddc-47da-b96a-7ea9d8187be8',
@@ -56,6 +59,7 @@ export const luggages: ILuggage[] = [
     bbLr: 'ID',
     bbOut: 'TH',
     description: 'Nasua narica',
+    createdAt: new Date(Date.parse('2022-08-27 23:59:000')),
   },
   {
     luggageId: 'c3ee63c5-30fa-4564-91a7-796210345bfa',
@@ -70,6 +74,7 @@ export const luggages: ILuggage[] = [
     bbLr: 'CY',
     bbOut: 'CN',
     description: 'Nyctea scandiaca',
+    createdAt: new Date(Date.parse('2022-08-29 03:00:000')),
   },
   {
     luggageId: '8bfee9fb-63f0-42ae-9d6b-493005225411',
@@ -84,10 +89,11 @@ export const luggages: ILuggage[] = [
     bbLr: 'WS',
     bbOut: 'RU',
     description: 'Eubalaena australis',
+    createdAt: new Date(Date.parse('2022-08-28 05:27:56.076')),
   },
   {
     luggageId: '6f53d1b3-2b1d-4b39-ae16-56cddf22c63b',
-    luggageType: LuggageType.CHECKIN,
+    luggageType: LuggageType.CHECKOUT,
     roomReady: false,
     room: '38',
     name: 'Kit Emm',
@@ -98,10 +104,11 @@ export const luggages: ILuggage[] = [
     bbLr: 'ID',
     bbOut: 'FR',
     description: 'Cervus elaphus',
+    createdAt: new Date(Date.parse('2022-08-28 23:59:000')),
   },
   {
     luggageId: '491ffd73-ffc6-405f-91b3-c7c9f8df5e94',
-    luggageType: LuggageType.CHECKIN,
+    luggageType: LuggageType.LONG_TERM,
     roomReady: false,
     room: '9',
     name: 'Hayward Quilkin',
@@ -112,6 +119,7 @@ export const luggages: ILuggage[] = [
     bbLr: 'BW',
     bbOut: 'CN',
     description: 'Hippotragus equinus',
+    createdAt: new Date(Date.parse('2022-08-28 23:59:000')),
   },
   {
     luggageId: '4178fd4a-4968-4014-83c7-cc8e0ce48ac0',
