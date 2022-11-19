@@ -10,6 +10,7 @@ import { materialModules } from './material.constant';
 import { CarsComponent } from './pages/cars/cars.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { TasksComponent } from './pages/tasks/tasks.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     DashboardComponent,
     PageNotFoundComponent,
     CarsComponent,
+    TasksComponent,
   ],
   imports: [
     BrowserModule,

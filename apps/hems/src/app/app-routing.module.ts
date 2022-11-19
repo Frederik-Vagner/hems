@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CarsComponent } from './pages/cars/cars.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { TasksComponent } from './pages/tasks/tasks.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'car-list',
     component: CarsComponent,
+  },
+  {
+    path: 'daily-tasks',
+    component: TasksComponent,
   },
   { path: '404', component: PageNotFoundComponent }, // PageNotFound for all other page requests
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' }, // Redirect to dashboard page
