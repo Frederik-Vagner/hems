@@ -1,13 +1,20 @@
-import { LuggageType } from '@hems/interfaces';
+import { CreateRequest, LuggageType } from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import {
+  Body,
   Controller,
   Get,
   HttpCode,
   Param,
+  Post,
   Query,
 } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import {
+  ApiCreatedResponse,
+  ApiOkResponse,
+  ApiOperation,
+  ApiTags,
+} from '@nestjs/swagger';
 import { LuggagesService } from './luggages.service';
 
 @ApiTags('Luggages')
@@ -32,5 +39,15 @@ export class LuggagesController {
       luggageType,
       createdAtDate
     );
+  }
+
+  @Post()
+  @ApiOperation({
+    summary: 'Create a luggage entry.',
+  })
+  @ApiCreatedResponse({ type: Luggage })
+  @HttpCode(201)
+  async createLuggage(@Body() luggageData: CreateRequest) {
+    return this.luggagesService.createLuggage(luggageData);
   }
 }
