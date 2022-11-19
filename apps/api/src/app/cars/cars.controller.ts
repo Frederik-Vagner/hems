@@ -32,9 +32,6 @@ export class CarsController {
         const createdAtDate = new Date(Date.parse(createdAt));
         return this.carsService.findAllByCreatedAt(
             createdAtDate,
-            
         );
     }
-
-
 }
