@@ -2,7 +2,7 @@
 <mat-sidenav-container autosize class="body-container" data-cy="body-container">
   <!-- Sidebar -->
   <mat-sidenav
-    *ngIf="router.url !== '/login' && router.url !== '/404'"
+    *ngIf="router.url !== '/login'"
     mode="side"
     disableClose
     opened
@@ -111,7 +111,7 @@
             class="item-desc"
             [ngClass]="{ collapsible: sidebarCollapsed }"
             data-cy="item-desc"
-            >BB ASSignments</span
+            >BB Assignments</span
           >
         </button>
       </mat-action-list>
@@ -125,9 +125,36 @@
       {{ sidebarCollapsed ? '>' : '<' }}
     </button>
   </mat-sidenav>
+  <!-- Navbar -->
 
   <!-- Content -->
   <mat-sidenav-content class="content" data-cy="content">
-    <router-outlet></router-outlet>
+    <!-- Navbar -->
+    <div id="navbar">
+      <h1>{{ title }}</h1>
+      <div id="navbar-action-buttons-container">
+        <button
+          mat-flat-button
+          class="navbar-item"
+          routerLink="/logout"
+          data-cy="navbar-account-btn"
+          *ngIf="router.url !== '/login' && router.url !== '/404'"
+        >
+          Account
+        </button>
+        <button
+          mat-flat-button
+          class="navbar-item"
+          *ngIf="router.url !== '/login' && router.url !== '/404'"
+          (click)="logout()"
+          data-cy="navbar-logout-btn"
+        >
+          Log Out
+        </button>
+      </div>
+    </div>
+    <div id="router-container">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

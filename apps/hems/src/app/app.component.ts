@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'hems-root',
@@ -8,10 +8,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'admin-page';
+  title = 'HEMS';
   sidebarCollapsed = false;
 
-  constructor(public router: Router, private snackBar: MatSnackBar) {}
+  constructor(public router: Router, private snackBar: MatSnackBar) {
+    this.router.events.subscribe(async (val) => {
+      if (val instanceof NavigationEnd) {
+        switch (this.router.url) {
+          case '/dashboard':
+            this.title = 'Dashboard';
+            console.log('fee fee fu');
+            break;
+          case '/account':
+            this.title = 'Account';
+            break;
+          case '/luggage-list':
+            this.title = 'Luggage List';
+            break;
+          case '/car-list':
+            this.title = 'Car List';
+            break;
+          case '/checkin':
+            this.title = 'Check In / Out';
+            break;
+          case '/daily-tasks':
+            this.title = 'Daily Tasks';
+            break;
+          case '/assignments':
+            this.title = 'Assignments';
+            break;
+          default:
+            this.title = 'Page Not Found';
+            break;
+        }
+      }
+    });
+  }
 
   /**
    * Toggles the `sidebarCollapsed` boolean.
@@ -24,6 +56,8 @@ export class AppComponent {
    * Remove the logged in user information from local storage and API
    */
   logout() {
-    this.snackBar.open('You have logged out', 'Wauw', { duration: 5000 });
+    this.snackBar.open('You have logged out', `You're joking, right?`, {
+      duration: 5000,
+    });
   }
 }

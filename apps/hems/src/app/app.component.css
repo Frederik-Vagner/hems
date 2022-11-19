@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+mat-toolbar .spacer {
+  flex: 1 1 auto;
+}
+
 .sidebar {
   width: 225px;
   box-shadow: -7px 0px 24px 8px rgba(0, 0, 0, 0.15);
@@ -71,6 +75,26 @@ mat-divider {
 }
 
 .content {
-  padding: 25px;
   background-color: var(--extra-light-grey);
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.navbar-item {
+  color: #2f2fa2;
+  background-color: transparent;
+}
+.navbar-item:hover {
+  color: #5252fc;
+  background-color: transparent;
+}
+
+#router-container {
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
