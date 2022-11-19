@@ -14,7 +14,7 @@ export class Luggage extends CompletedAt implements ILuggage {
   luggageType!: LuggageType;
 
   @ApiModelProperty({ example: true })
-  @Column()
+  @Column({ nullable: true })
   roomReady?: boolean;
 
   @ApiModelProperty({ example: 'Room 420' })
@@ -26,20 +26,20 @@ export class Luggage extends CompletedAt implements ILuggage {
   name!: string;
 
   @ApiModelProperty({ example: Date.now() })
-  @Column()
+  @Column({ nullable: true })
   arrivalTime?: Date;
+
+  @ApiModelProperty({ example: '3+4' })
+  @Column()
+  bags!: string;
 
   @ApiModelProperty({ example: 'Children, Bikes, Ski Equipment' })
   @Column()
-  bags!: string;
+  description!: string;
 
   @ApiModelProperty({ example: '891239993' })
   @Column()
   tagNr!: string;
-
-  @ApiModelProperty({ example: Location.HVG_HOVEDVAGTSGADE })
-  @Column({ type: 'enum', enum: Location })
-  location!: Location;
 
   @ApiModelProperty({ example: 'Teodor Not So Jonas' })
   @Column()
@@ -50,6 +50,6 @@ export class Luggage extends CompletedAt implements ILuggage {
   bbLr!: string;
 
   @ApiModelProperty({ example: 'Mario' })
-  @Column()
+  @Column({ nullable: true })
   bbOut?: string;
 }

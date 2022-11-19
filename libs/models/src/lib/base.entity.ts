@@ -15,6 +15,6 @@ export abstract class Base implements IBase {
 
 export abstract class CompletedAt extends Base implements ICompletedAt {
   @ApiModelProperty()
-  @Column()
+  @Column({ nullable: true })
   completedAt?: Date;
 }
