@@ -8,3 +8,7 @@ export interface IBase {
 export interface ICreatedBy extends IBase {
   createdBy?: IUser;
 }
+
+export interface ICompletedAt extends IBase {
+  completedAt?: Date;
+}
