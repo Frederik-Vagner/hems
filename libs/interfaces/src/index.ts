@@ -7,6 +7,7 @@ export * from './lib/base.interface';
 export * from './lib/local-storage';
 export * from './lib/user.interface';
 export * from './lib/luggage.interface';
+export * from './lib/car.interface';
 
 // Enums
 export * from './lib/role.enum';

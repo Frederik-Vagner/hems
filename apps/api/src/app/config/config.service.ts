@@ -1,4 +1,4 @@
-import { User, Luggage } from '@hems/models';
+import { User, Luggage, Car } from '@hems/models';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -41,7 +41,7 @@ class ConfigService {
       password: this.getValue('POSTGRES_PASSWORD', false) || 'root',
       database: this.getValue('POSTGRES_DATABASE', false) || 'hems',
 
-      entities: [User, Luggage],
+      entities: [User, Luggage, Car],
     };
   }
 }
