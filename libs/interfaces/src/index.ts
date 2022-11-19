@@ -11,3 +11,4 @@ export * from './lib/luggage.interface';
 // Enums
 export * from './lib/role.enum';
 export * from './lib/luggageType.enum';
+export * from './lib/location.enum';
