@@ -10,6 +10,7 @@ export interface ILuggage extends ICompletedAt {
   name: string;
   arrivalTime?: Date;
   bags: string;
+  description: string;
   tagNr: string;
   location: Location;
   bbDown: string; // Who took the luggage from the guest.
