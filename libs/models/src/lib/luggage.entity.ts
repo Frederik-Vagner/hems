@@ -1,10 +1,10 @@
 import { ILuggage, LuggageType, Location } from '@hems/interfaces';
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { Base } from './base.entity';
+import { CompletedAt } from './base.entity';
 
 @Entity('luggages')
-export class Luggage extends Base implements ILuggage {
+export class Luggage extends CompletedAt implements ILuggage {
   @ApiModelProperty({ example: '80a0d2ac-ec67-482e-9017-909b72a74be7' })
   @PrimaryGeneratedColumn('uuid')
   luggageId!: string;
