@@ -1,4 +1,4 @@
-import { ILuggage, LuggageType, Location } from '@hems/interfaces';
+import { ILuggage, LuggageType } from '@hems/interfaces';
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { CompletedAt } from './base.entity';
