@@ -1,6 +1,6 @@
-import { IBase } from '@hems/interfaces';
+import { IBase, ICompletedAt } from '@hems/interfaces';
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
-import { CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 // base.entity.ts
 export abstract class Base implements IBase {
@@ -11,4 +11,10 @@ export abstract class Base implements IBase {
   @ApiModelProperty()
   @UpdateDateColumn()
   updatedAt?: Date;
+}
+
+export abstract class CompletedAt extends Base implements ICompletedAt {
+  @ApiModelProperty()
+  @Column()
+  completedAt?: Date;
 }
