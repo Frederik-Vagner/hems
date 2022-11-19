@@ -20,11 +20,11 @@ export class Car extends CompletedAt implements ICar {
     room!: string;
 
     @ApiModelProperty ({ example: '04/06/2022'})
-    @Column ({ length: 254 })
-    arrivialDate!: Date;
+    @Column ()
+    arrivalDate!: Date;
 
     @ApiModelProperty ({ example: '08/06/2022'})
-    @Column ({ length: 254 })
+    @Column ()
     departureDate!: Date;
 
     @ApiModelProperty ({ example: 'madsen'})
@@ -36,23 +36,23 @@ export class Car extends CompletedAt implements ICar {
     licensePlate!: string;
 
     @ApiModelProperty ({ example: '01/04/2022 - 16:40'})
-    @Column ({ length: 254 })
+    @Column ({ nullable: true })
     expirationDate?: Date;
 
     @ApiModelProperty ({ example: '9:00 / RN = Call Down'})
-    @Column ({ length: 254 })
+    @Column ({ nullable: true })
     pickupTime?: Date;
 
     @ApiModelProperty ({ example: '02/04/2022 - 9:15'})
-    @Column ({ length: 254 })
+    @Column ({ nullable: true})
     deliveryTime?: Date;
 
     @ApiModelProperty ({ example: 'fv'})
-    @Column ({ length: 254 })
+    @Column ({ length: 254, nullable: true })
     bbDown?: string;
 
     @ApiModelProperty ({ example: 'fv'})
-    @Column ({ length: 254 })
+    @Column ({ length: 254, nullable: true })
     bbUp?: string;
 
     @ApiModelProperty ({ example: Location.FH_FRONT_HOTEL})
@@ -60,7 +60,7 @@ export class Car extends CompletedAt implements ICar {
     location!: Location;
 
     @ApiModelProperty ({ example: 'c102'})
-    @Column ({ length: 254 })
+    @Column ({ length: 254, nullable: true})
     parkingLot?: string;
 
     @ApiModelProperty ({ example: 'luxurious car'})
@@ -68,14 +68,11 @@ export class Car extends CompletedAt implements ICar {
     comments!: string;
 
     @ApiModelProperty ({ example: 'yes/no'})
-    @Column ({ length: 254 })
+    @Column ()
     charged!: boolean;
 
     @ApiModelProperty ({ example: '02/04/2022 - 9:15'})
-    @Column ({ length: 254 })
+    @Column ({ nullable: true })
     completedAt?: Date;
 
-    @ApiModelProperty ({ example: '02/04/2022 - 9:15'})
-    @Column ({ length: 254 })
-    createdAt!: Date;
 }
