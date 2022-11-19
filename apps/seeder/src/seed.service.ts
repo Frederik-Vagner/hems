@@ -1,5 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Connection, DataSource } from 'typeorm';
+import { LuggagesSeederService } from './services/luggages.service';
 import { UsersSeederService } from './services/users.service';
 
 @Injectable()
@@ -8,6 +9,7 @@ export class SeedService {
     private readonly logger: Logger,
     private readonly connection: Connection,
     private readonly usersService: UsersSeederService,
+    private readonly luggagesService: LuggagesSeederService,
     private dataSource: DataSource
   ) {}
 
@@ -20,6 +22,7 @@ export class SeedService {
     // Seed the entities
     // has to be done in specific order for proper relationship data population
     await this.seedUsers();
+    await this.seedLuggages();
   }
 
   // ====================================
@@ -97,6 +100,17 @@ export class SeedService {
       return response;
     } catch (error) {
       this.logger.warn(`❌ Users failed to seed`);
+      this.logger.error(error);
+    }
+  }
+
+  async seedLuggages() {
+    try {
+      const response = await Promise.all(this.luggagesService.create());
+      this.logger.debug(`✅ Luggages created: ${response.length}`);
+      return response;
+    } catch (error) {
+      this.logger.warn(`❌ Luggages failed to seed`);
       this.logger.error(error);
     }
   }
