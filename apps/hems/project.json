@@ -15,7 +15,10 @@
         "polyfills": "apps/hems/src/polyfills.ts",
         "tsConfig": "apps/hems/tsconfig.app.json",
         "assets": ["apps/hems/src/favicon.ico", "apps/hems/src/assets"],
-        "styles": ["apps/hems/src/styles.css"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/hems/src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
