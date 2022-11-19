@@ -1,4 +1,4 @@
-import { ILuggage, LuggageType, Location } from '@hems/interfaces';
+import { ILuggage, LuggageType } from '@hems/interfaces';
 
 export const luggages: ILuggage[] = [
   {
