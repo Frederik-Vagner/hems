@@ -41,10 +41,6 @@ export class Luggage extends CompletedAt implements ILuggage {
   @Column()
   tagNr!: string;
 
-  @ApiModelProperty({ example: Location.HVG_HOVEDVAGTSGADE })
-  @Column({ type: 'enum', enum: Location })
-  location!: Location;
-
   @ApiModelProperty({ example: 'Teodor Not So Jonas' })
   @Column()
   bbDown!: string;
