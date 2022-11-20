@@ -15,15 +15,15 @@ export class CarsController {
 
   @Get()
   @ApiOperation({
-    summary: 'Get a list of cars for the given day.',
+    summary: 'Get a list of cars from the given day and before.',
   })
   @ApiOkResponse({ type: [Car] })
   @HttpCode(200)
-  async getCarsByCreatedAt(
+  async getCarsBeforeCreatedAt(
     @Query('createdAt')
     createdAt: string
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
-    return this.carsService.findAllByCreatedAt(createdAtDate);
+    return this.carsService.findAllBeforeCreatedAt(createdAtDate);
   }
 }

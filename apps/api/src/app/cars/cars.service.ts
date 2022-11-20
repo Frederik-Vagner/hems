@@ -10,7 +10,7 @@ export class CarsService {
     private readonly carRepo: Repository<Car>
   ) {}
 
-  async findAllByCreatedAt(createdAt: Date) {
+  async findAllBeforeCreatedAt(createdAt: Date) {
     return this.carRepo.find({
       where: {
         createdAt: LessThanOrEqual<Date>(
@@ -20,4 +20,6 @@ export class CarsService {
       order: { arrivalDate: 'DESC' },
     });
   }
+
+
 }
