@@ -98,3 +98,11 @@ mat-divider {
   margin-left: 25px;
   margin-right: 25px;
 }
+
+.mat-elevation-z8 {
+  box-shadow: none;
+}
+
+.content {
+  background-color: white;
+}

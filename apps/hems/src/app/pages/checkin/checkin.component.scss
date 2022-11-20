@@ -1,0 +1,24 @@
+.mat-row>.mat-cell {
+    border-right: 1px solid rgba(47, 47, 162, 0.4);
+    border-top: 1px solid rgba(47, 47, 162, 0.4);
+    min-width: 2vw;
+    max-width: 10vw;
+    padding: 0 5px;
+    text-align: center;
+}
+
+.mat-header-row>.mat-header-cell {
+    color: rgba(47, 47, 162, 1);
+    min-width: 2vw;
+    max-width: 10vw;
+    padding: 0 5px;
+    text-align: center;
+}
+
+.mat-row>.mat-cell:last-child {
+    border-right: none;
+}
+
+.mat-table {
+    box-shadow: none;
+}
