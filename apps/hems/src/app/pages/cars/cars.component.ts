@@ -1,8 +1,7 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { ICar, Location } from '@hems/interfaces';
-import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {MatSort, Sort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { Component } from '@angular/core';
+import { ICar } from '@hems/interfaces';
+import { CarService } from '../../services/car.service'
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -11,94 +10,74 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./cars.component.scss'],
 })
 export class CarsComponent {
-  displayedColumns: string[] = ['room', 'tagNr', 'arrivalDate', 'departureDate', 'name', 'licensePlate', 'expirationDateTime', 'pickupDateTime', 'bbDown', 'bbUp', 'location', 'parkingLot', 'deliveryDateTime', 'bbOut', 'comment', 'charged', 'actions'];
-  dataSource = ELEMENT_DATA;
+  carList: ICar[] = [];
 
-  carList: ICar[] = [
-    {
-      carId: "uuid test stuff",
-      tagNr: "string",
-      room: "string",
-      arrivalDate: new Date(),
-      departureDate:  new Date(),
-      name: "string",
-      licensePlate: "string",
-      expirationDate:  new Date(),
-      pickupTime:  new Date(),
-      deliveryTime:  new Date(),
-      bbDown: "string",
-      bbUp: "string",
-      location: Location.F_FRONT,
-      parkingLot: "string",
-      bbOut: "string",
-      comments: "string",
-      charged: false,
-    },
-    {
-      carId: "uuid test stuff",
-      tagNr: "string",
-      room: "string",
-      arrivalDate: new Date(),
-      departureDate:  new Date(),
-      name: "string",
-      licensePlate: "string",
-      expirationDate:  new Date(),
-      pickupTime:  new Date(),
-      deliveryTime:  new Date(),
-      bbDown: "string",
-      bbUp: "string",
-      location: Location.F_FRONT,
-      parkingLot: "string",
-      bbOut: "string",
-      comments: "string",
-      charged: false,
-    },
-    {
-      carId: "uuid test stuff",
-      tagNr: "string",
-      room: "string",
-      arrivalDate: new Date(),
-      departureDate:  new Date(),
-      name: "string",
-      licensePlate: "string",
-      expirationDate:  new Date(),
-      pickupTime:  new Date(),
-      deliveryTime:  new Date(),
-      bbDown: "string",
-      bbUp: "string",
-      location: Location.F_FRONT,
-      parkingLot: "string",
-      bbOut: "string",
-      comments: "string",
-      charged: false,
-    },
+  carColumns = [
+    'room',
+    'tagNr',
+    'arrivalDate',
+    'departureDate',
+    'name',
+    'licensePlate',
+    'expirationDateTime',
+    'pickupDateTime',
+    'bbDown',
+    'bbUp',
+    'location',
+    'parkingLot',
+    'deliveryDateTime',
+    'bbOut',
+    'comment',
+    'charged',
   ];
 
-  cars!: ICar[];
+  constructor(
+    private readonly carService: CarService,
+    private snackBar: MatSnackBar
+  ) {}
+
+  foods = [
+    {value: 'steak-0', viewValue: 'Room'},
+    {value: 'pizza-1', viewValue: 'Name'},
+    {value: 'tacos-2', viewValue: 'Pick Up Time'},
+  ];
+
+  ngOnInit(): void {
+    this.fetchCar();
+  }
+
+  formatDate(element: ICar): string{
+    const parsedDate = new Date(element.arrivalDate)
+    return parsedDate.toLocaleString(undefined, {
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      hour12: false,
+      minute: '2-digit'
+    })
+  }
+
+  fetchCar(): void {
+   this.carService.getCar(new Date()).subscribe({
+      next: (car) => {
+        this.carList = car;
+        console.log('checkout', car);
+      },
+      error: (error) => {
+        console.error(error);
+        this.snackBar.open(
+          'Check Out data have failed to load',
+          'Imma try again later',
+          {
+            duration: 10000,
+          }
+        );
+      },
+    });
+  }
+  
   editCarListEntry(id: string): void {
     alert(id);
     console.log(this.carList)
   }
 }
-
-export interface PeriodicElement {
-  room: string;
-  position: number;
-  tagNr: number;
-  arrivalDate: string;
-  departureDate: string;
-  name: string;
-  licensePlate: string;
-  expirationDateTime: string;
-  pickupDateTime: string;
-  bbDown: string;
-  bbUp: string;
-  location: string;
-  parkingLot: string;
-  deliveryDateTime: string;
-  bbOut: string;
-  comment: string;
-  charged: string;
-  actions: string;
-}
-
