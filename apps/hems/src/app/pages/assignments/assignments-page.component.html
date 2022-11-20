@@ -1,6 +1,40 @@
-<h1>Vroom Vroom</h1>
-<img
-  style="width: 100%"
-  src="https://www.thehousehotel.ie/wp-content/uploads/2020/09/jordan-graff-9TBgvuPAe0Y-unsplash-scaled-1366x768-fp_mm-fpoff_0_0.jpg"
-  alt=""
-/>
+<main>
+  <div class="table-actions">
+    <button class="action-button">+ Add assignment</button>
+  </div>
+  <hr>
+
+  <table mat-table [dataSource]="assignmentList">
+    <ng-container matColumnDef="room">
+      <th mat-header-cell *matHeaderCellDef>Room</th>
+      <td mat-cell *matCellDef="let item">{{ item.room }}</td>
+    </ng-container>
+    <ng-container matColumnDef="task">
+      <th mat-header-cell *matHeaderCellDef>Task</th>
+      <td mat-cell *matCellDef="let item">{{ item.task }}</td>
+    </ng-container>
+    <ng-container matColumnDef="comments">
+      <th mat-header-cell *matHeaderCellDef>Comments</th>
+      <td mat-cell *matCellDef="let item">{{ item.comments }}</td>
+    </ng-container>
+    <ng-container matColumnDef="receivedBy">
+      <th mat-header-cell *matHeaderCellDef>Received by</th>
+      <td mat-cell *matCellDef="let item">{{ item.receivedBy }}</td>
+    </ng-container>
+    <ng-container matColumnDef="receivedAt">
+      <th mat-header-cell *matHeaderCellDef>Received at</th>
+      <td mat-cell *matCellDef="let item">{{ dateDisplay(item.receivedAt) }}</td>
+    </ng-container>
+    <ng-container matColumnDef="performedBy">
+      <th mat-header-cell *matHeaderCellDef>Performed By</th>
+      <td mat-cell *matCellDef="let item">{{ item.performedBy }}</td>
+    </ng-container>
+    <ng-container matColumnDef="completedAt">
+      <th mat-header-cell *matHeaderCellDef>BB in LR</th>
+      <td mat-cell *matCellDef="let item">{{ dateDisplay(item.completedAt) }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="assignmentColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: assignmentColumns"></tr>
+  </table>
+</main>
