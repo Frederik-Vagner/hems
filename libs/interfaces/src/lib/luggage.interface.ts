@@ -16,7 +16,7 @@ export interface ILuggage extends ICompletedAt {
   bbOut?: string; // Who gave the luggage to the guest.
 }
 
-export interface ICreateRequest {
+export interface ICreateLuggageRequest {
   luggageType: LuggageType;
   roomReady?: boolean;
   room: string;
@@ -30,7 +30,7 @@ export interface ICreateRequest {
   bbOut?: string; // Who gave the luggage to the guest.
 }
 
-export interface IUpdateRequest {
+export interface IUpdateLuggageRequest {
   luggageId?: string;
   luggageType?: LuggageType;
   roomReady?: boolean;

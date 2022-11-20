@@ -1,4 +1,4 @@
-import { CreateRequest, LuggageType, UpdateRequest } from '@hems/interfaces';
+import { CreateLuggageRequest, LuggageType, UpdateLuggageRequest } from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import {
   Body,
@@ -49,7 +49,7 @@ export class LuggagesController {
   })
   @ApiCreatedResponse({ type: Luggage })
   @HttpCode(201)
-  async createLuggage(@Body() luggageData: CreateRequest) {
+  async createLuggage(@Body() luggageData: CreateLuggageRequest) {
     return this.luggagesService.createLuggage(luggageData);
   }
 
@@ -61,7 +61,7 @@ export class LuggagesController {
   @HttpCode(200)
   async updateLuggage(
     @Param('luggageId', ParseUUIDPipe) luggageId: string,
-    @Body() luggageData: UpdateRequest
+    @Body() luggageData: UpdateLuggageRequest
   ) {
     return this.luggagesService.updateLuggage(luggageId, luggageData);
   }
