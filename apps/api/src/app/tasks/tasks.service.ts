@@ -1,4 +1,8 @@
-import { CreateTaskRequest, UpdateTaskRequest } from '@hems/interfaces';
+import {
+  CreateTaskRequest,
+  GetTasksResponse,
+  UpdateTaskRequest,
+} from '@hems/interfaces';
 import { Task } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -11,8 +15,8 @@ export class TasksService {
     private readonly taskRepo: Repository<Task>
   ) {}
 
-  async findAllByCreatedAt(createdAt: Date) {
-    return await this.taskRepo.find({
+  async findAllByCreatedAt(createdAt: Date): Promise<GetTasksResponse> {
+    const tasks = await this.taskRepo.find({
       where: {
         createdAt: Between<Date>(
           new Date(createdAt.setUTCHours(0, 0, 0, 0)),
@@ -20,6 +24,13 @@ export class TasksService {
         ),
       },
     });
+    const listNames = await this.taskRepo
+      .createQueryBuilder('task')
+      .select('task.listName', 'listName')
+      .distinct(true)
+      .getRawMany();
+
+    return { tasks, listNames };
   }
 
   async createTask(taskData: CreateTaskRequest) {

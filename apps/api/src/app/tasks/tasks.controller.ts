@@ -1,4 +1,8 @@
-import { CreateTaskRequest, UpdateTaskRequest } from '@hems/interfaces';
+import {
+  CreateTaskRequest,
+  GetTasksResponse,
+  UpdateTaskRequest,
+} from '@hems/interfaces';
 import { Task } from '@hems/models';
 import {
   Body,
@@ -26,11 +30,9 @@ export class TasksController {
 
   @Get()
   @ApiOperation({ summary: 'Get a list of Tasks for the given day.' })
-  @ApiOkResponse({ type: [Task] })
+  @ApiOkResponse({ type: GetTasksResponse })
   @HttpCode(200)
-  async getTasksByCreatedAt(
-    @Query('createdAt') createdAt: string
-  ) {
+  async getTasksByCreatedAt(@Query('createdAt') createdAt: string) {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.tasksService.findAllByCreatedAt(createdAtDate);
   }
