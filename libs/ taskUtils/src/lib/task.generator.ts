@@ -31,7 +31,6 @@ export class TaskGenerator {
     date: Date
   ) {
     const shiftTasks: Task[] = [];
-    Logger.log(date.toLocaleDateString());
     for (const time of shiftTimes) {
       shiftTasks.push(
         this.tasksRepo.create({
@@ -87,7 +86,7 @@ export class TaskGenerator {
     const periodTasks: Task[] = [];
 
     for (const day = from; day <= to; day.setDate(day.getDate() + 1)) {
-      periodTasks.push(...this.getDailyTasks(day));
+      periodTasks.push(...this.getDailyTasks(new Date(day)));
     }
 
     return periodTasks;
