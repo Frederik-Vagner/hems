@@ -10,23 +10,23 @@ export class Assignment extends CompletedAt implements IAssignment {
   @PrimaryGeneratedColumn('uuid')
   assignmentId!: string;
 
-  @ApiModelProperty({ example: '' })
+  @ApiModelProperty({ example: '211' })
   @Column()
   room!: string;
 
-  @ApiModelProperty({example: 'Clear out trash'})
+  @ApiModelProperty({example: 'RA'})
   @Column()
   task!: string;
 
-  @ApiModelProperty({ example: '' })
+  @ApiModelProperty({ example: 'New keys and package delivery' })
   @Column()
   comments!: string;
 
-  @ApiModelProperty({})
+  @ApiModelProperty({example: 'Rec'})
   @Column()
   receivedBy!: string;
 
-  @ApiModelProperty({})
+  @ApiModelProperty({example: 'fv'})
   @Column()
   performedBy!: string;
 
