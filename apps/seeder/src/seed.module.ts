@@ -7,6 +7,7 @@ import { UsersSeederService } from './services/users.service';
 import { LuggagesSeederService } from './services/luggages.service';
 import { CarsSeederService } from './services/cars.service';
 import { TasksSeederService } from './services/tasks.service';
+import { TaskGenerator } from '@hems/taskUtils';
 
 @Module({})
 export class SeedModule {
@@ -23,7 +24,8 @@ export class SeedModule {
         UsersSeederService,
         LuggagesSeederService,
         CarsSeederService,
-        TasksSeederService
+        TasksSeederService,
+        TaskGenerator
       ],
       exports: [SeedService],
     };
