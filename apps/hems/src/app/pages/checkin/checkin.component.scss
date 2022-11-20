@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .mat-row>.mat-cell {
@@ -28,4 +29,26 @@
 .mat-table {
     box-shadow: none;
     width: 90%;
+}
+
+.table-header {
+    width: 90%;
+    color: rgba(47, 47, 162, 1);
+    border-bottom: 2px solid rgba(47, 47, 162, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.table-header>h2{
+    font-weight: bolder;
+}
+
+.action-button {
+    color: white;
+    border:none;
+    padding: 10px 15px;
+    background: linear-gradient(192.45deg, #F64C72 0%, #F64C72 0%, #FA7B34 100%);
+    border-radius: 5px;
 }

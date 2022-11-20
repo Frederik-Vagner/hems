@@ -18,6 +18,10 @@ mat-toolbar .spacer {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.title {
+  color: rgba(47, 47, 162, 0.5);
+}
+
 .sidebar .toggle-btn {
   width: 100%;
   position: absolute;
