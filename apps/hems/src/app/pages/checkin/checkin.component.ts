@@ -9,14 +9,42 @@ import { LuggageService } from '../../services/luggage.service';
   styleUrls: ['./checkin.component.scss'],
 })
 export class CheckinComponent implements OnInit {
-  checkinLuggage?: ILuggage[];
-  checkoutLuggage?: ILuggage[];
+  checkinLuggage: ILuggage[] = [];
+  checkoutLuggage: ILuggage[] = [];
   listNames?: string[];
   chosenListName = '';
   isLoadingCheckin = false;
   isLoadingCheckout = false;
 
-  displayedColumns = ['actions'];
+  checkinColumns = [
+    'room',
+    'roomStatus',
+    'name',
+    'arrivalTime',
+    'bags',
+    'tagNr',
+    'bbLr',
+    'location',
+    'completedAt',
+    'bbUp',
+    'comment',
+    'actions',
+  ];
+
+  checkoutColumns = [
+    'room',
+    'name',
+    'arrivalTime',
+    'bags',
+    'tagNr',
+    'bbDown',
+    'location',
+    'bbLr',
+    'completedAt',
+    'bbUp',
+    'comment',
+    'actions',
+  ];
 
   constructor(
     private readonly luggageService: LuggageService,
