@@ -6,5 +6,5 @@ export interface IAssignment extends ICompletedAt {
   task: string;
   comments: string;
   receivedBy: string;
-  performedBy: string;
+  performedBy?: string;
 }
