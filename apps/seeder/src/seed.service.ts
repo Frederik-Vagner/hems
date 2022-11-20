@@ -2,6 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { Connection, DataSource } from 'typeorm';
 import { CarsSeederService } from './services/cars.service';
 import { LuggagesSeederService } from './services/luggages.service';
+import { TasksSeederService } from './services/tasks.service';
 import { UsersSeederService } from './services/users.service';
 
 @Injectable()
@@ -12,6 +13,7 @@ export class SeedService {
     private readonly usersService: UsersSeederService,
     private readonly luggagesService: LuggagesSeederService,
     private readonly carsService: CarsSeederService,
+    private readonly tasksService: TasksSeederService,
     private dataSource: DataSource
   ) {}
 
@@ -26,6 +28,7 @@ export class SeedService {
     await this.seedUsers();
     await this.seedLuggages();
     await this.seedCars();
+    await this.seedTasks();
   }
 
   // ====================================
@@ -99,7 +102,7 @@ export class SeedService {
   async seedUsers() {
     try {
       const response = await Promise.all(this.usersService.create());
-      this.logger.debug(`✅ Users created: ${response.length}`);
+      this.logger.debug(`✅ Users created: ${response.length} 🧔`);
       return response;
     } catch (error) {
       this.logger.warn(`❌ Users failed to seed`);
@@ -110,7 +113,7 @@ export class SeedService {
   async seedLuggages() {
     try {
       const response = await Promise.all(this.luggagesService.create());
-      this.logger.debug(`✅ Luggages created: ${response.length}`);
+      this.logger.debug(`✅ Luggages created: ${response.length} 💼`);
       return response;
     } catch (error) {
       this.logger.warn(`❌ Luggages failed to seed`);
@@ -121,10 +124,21 @@ export class SeedService {
   async seedCars() {
     try {
       const response = await Promise.all(this.carsService.create());
-      this.logger.debug(`✅ Cars created: ${response.length}`);
+      this.logger.debug(`✅ Cars created: ${response.length} 🚕`);
       return response;
     } catch (error) {
       this.logger.warn(`❌ Cars failed to seed`);
+      this.logger.error(error);
+    }
+  }
+
+  async seedTasks() {
+    try {
+      const response = await Promise.all(this.tasksService.create());
+      this.logger.debug(`✅ Tasks created: ${response.length} 📄`);
+      return response;
+    } catch (error) {
+      this.logger.warn(`❌ Tasks failed to seed`);
       this.logger.error(error);
     }
   }

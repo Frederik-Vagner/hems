@@ -5,4 +5,5 @@ export interface ITask extends ICompletedAt {
   time: string;
   task: string;
   initials: string;
+  listName: string;
 }
