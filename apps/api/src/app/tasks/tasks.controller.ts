@@ -28,7 +28,7 @@ export class TasksController {
   @ApiOperation({ summary: 'Get a list of Tasks for the given day.' })
   @ApiOkResponse({ type: [Task] })
   @HttpCode(200)
-  async getLuggagesByLuggageTypeAndCreatedAt(
+  async getTasksByCreatedAt(
     @Query('createdAt') createdAt: string
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));

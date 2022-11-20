@@ -31,7 +31,7 @@ export class AssignmentsController {
   @ApiOperation({ summary: 'Get a list of Assignments for the given day.' })
   @ApiOkResponse({ type: [Assignment] })
   @HttpCode(200)
-  async getLuggagesByLuggageTypeAndCreatedAt(
+  async getAssignmentsByCreatedAt(
     @Query('createdAt') createdAt: string
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
