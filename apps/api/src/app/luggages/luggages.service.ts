@@ -1,4 +1,4 @@
-import { CreateRequest, LuggageType, UpdateRequest } from '@hems/interfaces';
+import { CreateLuggageRequest, LuggageType, UpdateLuggageRequest } from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -29,11 +29,11 @@ export class LuggagesService {
     });
   }
 
-  async createLuggage(luggageData: CreateRequest) {
+  async createLuggage(luggageData: CreateLuggageRequest) {
     return await this.luggageRepo.save(luggageData);
   }
 
-  async updateLuggage(luggageId: string, luggageData: UpdateRequest) {
+  async updateLuggage(luggageId: string, luggageData: UpdateLuggageRequest) {
     const luggage = await this.luggageRepo.findOneByOrFail({ luggageId });
 
     for (const key in luggageData) {
