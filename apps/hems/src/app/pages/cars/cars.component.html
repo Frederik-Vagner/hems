@@ -1,13 +1,7 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="carList" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="room">
@@ -45,16 +39,16 @@
     <td mat-cell *matCellDef="let element"> {{element.licensePlate}} </td>
   </ng-container>
 
-   <!-- test Column -->
-   <ng-container matColumnDef="expirationDateTime">
+  <!-- test Column -->
+  <ng-container matColumnDef="expirationDateTime">
     <th mat-header-cell *matHeaderCellDef> exp. </th>
-    <td mat-cell *matCellDef="let element"> {{element.expirationDateTime}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.expirationDate}} </td>
   </ng-container>
 
   <!-- test Column -->
   <ng-container matColumnDef="pickupDateTime">
     <th mat-header-cell *matHeaderCellDef> Pick Up Time </th>
-    <td mat-cell *matCellDef="let element"> {{element.pickupDateTime}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.pickupTime}} </td>
   </ng-container>
 
     <!-- test Column -->
@@ -84,7 +78,7 @@
      <!-- test Column -->
      <ng-container matColumnDef="deliveryDateTime">
       <th mat-header-cell *matHeaderCellDef> Del.</th>
-      <td mat-cell *matCellDef="let element"> {{element.deliveryDateTime}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.deliveryTime}} </td>
     </ng-container>
 
     <!-- test Column -->
@@ -96,7 +90,7 @@
     <!-- test Column -->
     <ng-container matColumnDef="comment">
       <th mat-header-cell *matHeaderCellDef> Comment</th>
-      <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.comments}} </td>
     </ng-container>
 
     <!-- test Column -->
@@ -108,7 +102,7 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Actions</th>
       <td mat-cell *matCellDef="let element">
-        <button mat-raised-button color="primary" (click)="editCarListEntry(element.id)">Edit</button>
+        <button mat-raised-button color="primary" (click)="editCarListEntry(element.carId)">Edit</button>
       </td>
     </ng-container>
 

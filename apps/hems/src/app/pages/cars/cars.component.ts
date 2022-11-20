@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ICar, Location } from '@hems/interfaces';
 
 @Component({
   selector: 'hems-cars',
@@ -6,11 +7,69 @@ import { Component } from '@angular/core';
   styleUrls: ['./cars.component.scss'],
 })
 export class CarsComponent {
-  displayedColumns: string[] = ['position', 'room', 'tagNr', 'arrivalDate', 'departureDate', 'name', 'licensePlate', 'expirationDateTime', 'pickupDateTime', 'bbDown', 'bbUp', 'location', 'parkingLot', 'deliveryDateTime', 'bbOut', 'comment', 'charged', 'actions'];
+  displayedColumns: string[] = ['room', 'tagNr', 'arrivalDate', 'departureDate', 'name', 'licensePlate', 'expirationDateTime', 'pickupDateTime', 'bbDown', 'bbUp', 'location', 'parkingLot', 'deliveryDateTime', 'bbOut', 'comment', 'charged', 'actions'];
   dataSource = ELEMENT_DATA;
+
+  carList: ICar[] = [
+    {
+      carId: "uuid test stuff",
+      tagNr: "string",
+      room: "string",
+      arrivalDate: new Date(),
+      departureDate:  new Date(),
+      name: "string",
+      licensePlate: "string",
+      expirationDate:  new Date(),
+      pickupTime:  new Date(),
+      deliveryTime:  new Date(),
+      bbDown: "string",
+      bbUp: "string",
+      location: Location.F_FRONT,
+      parkingLot: "string",
+      comments: "string",
+      charged: false,
+    },
+    {
+      carId: "uuid test stuff",
+      tagNr: "string",
+      room: "string",
+      arrivalDate: new Date(),
+      departureDate:  new Date(),
+      name: "string",
+      licensePlate: "string",
+      expirationDate:  new Date(),
+      pickupTime:  new Date(),
+      deliveryTime:  new Date(),
+      bbDown: "string",
+      bbUp: "string",
+      location: Location.F_FRONT,
+      parkingLot: "string",
+      comments: "string",
+      charged: false,
+    },
+    {
+      carId: "uuid test stuff",
+      tagNr: "string",
+      room: "string",
+      arrivalDate: new Date(),
+      departureDate:  new Date(),
+      name: "string",
+      licensePlate: "string",
+      expirationDate:  new Date(),
+      pickupTime:  new Date(),
+      deliveryTime:  new Date(),
+      bbDown: "string",
+      bbUp: "string",
+      location: Location.F_FRONT,
+      parkingLot: "string",
+      comments: "string",
+      charged: false,
+    },
+  ];
 
   editCarListEntry(id: string): void {
     alert(id);
+    console.log(this.carList)
   }
 }
 
