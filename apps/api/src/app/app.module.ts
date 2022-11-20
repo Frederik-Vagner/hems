@@ -8,6 +8,7 @@ import { configService } from './config/config.service';
 import { LuggagesModule } from './luggages/luggages.module';
 import { LoggerMiddleware } from './middleware/logging.middleware';
 import { UsersModule } from './users/users.module';
+import { AssignmentsModule } from './assignments/assignments.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     LuggagesModule,
     CarsModule,
+    AssignmentsModule
   ],
   controllers: [AppController],
   providers: [],
