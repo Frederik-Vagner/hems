@@ -18,7 +18,7 @@ export class CheckinComponent implements OnInit {
 
   checkinColumns = [
     'room',
-    'roomStatus',
+    'roomReady',
     'name',
     'arrivalTime',
     'bags',
@@ -27,7 +27,7 @@ export class CheckinComponent implements OnInit {
     'location',
     'completedAt',
     'bbUp',
-    'comment',
+    'description',
     'actions',
   ];
 
@@ -41,8 +41,7 @@ export class CheckinComponent implements OnInit {
     'location',
     'bbLr',
     'completedAt',
-    'bbUp',
-    'comment',
+    'description',
     'actions',
   ];
 
