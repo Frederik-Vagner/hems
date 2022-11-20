@@ -1,5 +1,5 @@
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
-import { IsNotEmpty, IsOptional } from 'class-validator';
+import { IsDateString, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import {
   ICreateAssignmentRequest,
   IUpdateAssignmentRequest,
@@ -25,6 +25,11 @@ export class CreateAssignmentRequest implements ICreateAssignmentRequest {
   @ApiModelProperty()
   @IsOptional()
   performedBy?: string;
+
+  @ApiModelProperty()
+  @IsNotEmpty() 
+  @IsDateString()
+  receivedAt!: Date;
 }
 
 export class UpdateAssignmentRequest implements IUpdateAssignmentRequest {
@@ -47,4 +52,9 @@ export class UpdateAssignmentRequest implements IUpdateAssignmentRequest {
   @ApiModelProperty()
   @IsOptional()
   performedBy?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  @IsDateString()
+  receivedAt?: Date;
 }
