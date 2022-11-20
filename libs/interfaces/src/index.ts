@@ -1,6 +1,7 @@
 // DTOs
 export * from './lib/auth.dto';
 export * from './lib/luggage.dto';
+export * from './lib/car.dto';
 
 // Interfaces
 export * from './lib/auth.interface';
