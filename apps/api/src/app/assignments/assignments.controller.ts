@@ -24,7 +24,7 @@ import { AssignmentsService } from './assignments.service';
 export class AssignmentsController {
   constructor(private assignmentsService: AssignmentsService) {}
 
-  @Get('')
+  @Get()
   @ApiOperation({ summary: 'Get a list of Assignments for the given day.'})
   @ApiOkResponse({ type: [Assignment] })
   @HttpCode(200)
