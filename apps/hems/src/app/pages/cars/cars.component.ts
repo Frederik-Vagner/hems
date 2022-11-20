@@ -6,26 +6,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./cars.component.scss'],
 })
 export class CarsComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'room', 'tagNr', 'arrivalDate', 'departureDate', 'name', 'licensePlate', 'expirationDateTime', 'pickupDateTime', 'bbDown', 'bbUp', 'location', 'parkingLot', 'deliveryDateTime', 'bbOut', 'comment', 'charged', 'actions'];
   dataSource = ELEMENT_DATA;
+
+  editCarListEntry(id: string): void {
+    alert(id);
+  }
 }
 
 export interface PeriodicElement {
-  name: string;
+  room: string;
   position: number;
-  weight: number;
-  symbol: string;
+  tagNr: number;
+  arrivalDate: string;
+  departureDate: string;
+  name: string;
+  licensePlate: string;
+  expirationDateTime: string;
+  pickupDateTime: string;
+  bbDown: string;
+  bbUp: string;
+  location: string;
+  parkingLot: string;
+  deliveryDateTime: string;
+  bbOut: string;
+  comment: string;
+  charged: string;
+  actions: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {position: 1, room: 'Hydrogen', tagNr: 1.0079, arrivalDate: 'H', departureDate: 'test1', name: 'hans', licensePlate: 'ab44534', expirationDateTime: '34', pickupDateTime: 'rt', bbDown: 'fv', bbUp: 'fv', location: 'hvg', parkingLot: 'awd', deliveryDateTime: '56', bbOut: 'fv', comment: 'LUX', charged: 'yes', actions: 'button'},
 ];
