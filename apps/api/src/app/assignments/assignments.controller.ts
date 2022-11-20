@@ -1,4 +1,4 @@
-// import { CreateAssignmentRequest, UpdateAssignmentRequest } from '@hems/interfaces';
+import { CreateAssignmentRequest, UpdateAssignmentRequest } from '@hems/interfaces';
 import { Assignment } from '@hems/models';
 import {
   Body,
@@ -33,26 +33,26 @@ export class AssignmentsController {
     return this.assignmentsService.findAllToday(createdAtDate);
   }
 
-//   @Post()
-//   @ApiOperation({
-//     summary: 'Create an assignment entry.',
-//   })
-//   @ApiCreatedResponse({ type: Assignment })
-//   @HttpCode(201)
-//   async createAssignment(@Body() assignmentData: CreateAssignmentRequest) {
-//     return this.assignmentsService.createAssignment(assignmentDataa);
-//   }
+  @Post()
+  @ApiOperation({
+    summary: 'Create an assignment entry.',
+  })
+  @ApiCreatedResponse({ type: Assignment })
+  @HttpCode(201)
+  async createAssignment(@Body() assignmentData: CreateAssignmentRequest) {
+    return this.assignmentsService.createAssignment(assignmentData);
+  }
 
-//   @Patch(':assignmentId')
-//   @ApiOperation({
-//     summary: 'Update an Assignment entry.',
-//   })
-//   @ApiCreatedResponse({ type: Assignment })
-//   @HttpCode(200)
-//   async updateLuggage(
-//     @Param('assignmentId', ParseUUIDPipe) assignmentId: string,
-//     @Body() assignmentData: UpdateAssignmentRequest
-//   ) {
-//     return this.assignmentsService.updateAssignment(assignmentId, assignmentData);
-//   }
+  @Patch(':assignmentId')
+  @ApiOperation({
+    summary: 'Update an Assignment entry.',
+  })
+  @ApiCreatedResponse({ type: Assignment })
+  @HttpCode(200)
+  async updateLuggage(
+    @Param('assignmentId', ParseUUIDPipe) assignmentId: string,
+    @Body() assignmentData: UpdateAssignmentRequest
+  ) {
+    return this.assignmentsService.updateAssignment(assignmentId, assignmentData);
+  }
 }

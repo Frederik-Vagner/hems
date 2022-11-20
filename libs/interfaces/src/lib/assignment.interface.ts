@@ -8,20 +8,18 @@ export interface IAssignment extends ICompletedAt {
   receivedBy: string;
   performedBy?: string;
 }
-// export interface ICreateAssignmentRequest {
-//     assignmentId: string;
-//     room: string;
-//     task: string;
-//     comments: string;
-//     receivedBy: string;
-//     performedBy?: string;
-//   }
+export interface ICreateAssignmentRequest {
+    room: string;
+    task: string;
+    comments: string;
+    receivedBy: string;
+    performedBy?: string;
+  }
   
-//   export interface IUpdateAssignmentRequest {
-//     assignmentId?: string;
-//     room?: string;
-//     task?: string;
-//     comments?: string;
-//     receivedBy?: string;
-//     performedBy?: string;
-//   }
+  export interface IUpdateAssignmentRequest {
+    room?: string;
+    task?: string;
+    comments?: string;
+    receivedBy?: string;
+    performedBy?: string;
+  }
