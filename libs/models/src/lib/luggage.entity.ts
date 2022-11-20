@@ -41,6 +41,10 @@ export class Luggage extends CompletedAt implements ILuggage {
   @Column()
   tagNr!: string;
 
+  @ApiModelProperty({ example: 'LB1' })
+  @Column()
+  location!: string;
+
   @ApiModelProperty({ example: 'Teodor Not So Jonas' })
   @Column()
   bbDown!: string;
