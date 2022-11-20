@@ -2,7 +2,7 @@ import { CreateAssignmentRequest, UpdateAssignmentRequest } from '@hems/interfac
 import { Assignment } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, Between } from 'typeorm';
+import { Between, Repository } from 'typeorm';
 
 @Injectable()
 export class AssignmentsService {
@@ -31,7 +31,7 @@ export class AssignmentsService {
 
     for (const key in assignmentData) {
       if (Object.prototype.hasOwnProperty.call(assignmentData, key)) {
-        Assignment[key] = assignmentData[key];
+        assignment[key] = assignmentData[key];
       }
     }
 
