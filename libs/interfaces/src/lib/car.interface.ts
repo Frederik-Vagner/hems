@@ -14,7 +14,7 @@ export interface ICar extends ICompletedAt {
   deliveryTime?: Date;
   bbDown?: string;
   bbUp?: string;
-  location: Location;
+  location?: Location;
   parkingLot?: string;
   comments: string;
   charged: boolean;
@@ -32,7 +32,7 @@ export interface ICreateCarRequest {
   deliveryTime?: Date;
   bbDown?: string;
   bbUp?: string;
-  location: Location;
+  location?: Location;
   parkingLot?: string;
   comments: string;
   charged: boolean;
