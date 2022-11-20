@@ -1,4 +1,4 @@
-import { CreateRequest, LuggageType } from '@hems/interfaces';
+import { CreateRequest, LuggageType, UpdateRequest } from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import {
   Body,
@@ -6,6 +6,8 @@ import {
   Get,
   HttpCode,
   Param,
+  ParseUUIDPipe,
+  Patch,
   Post,
   Query,
 } from '@nestjs/common';
@@ -49,5 +51,18 @@ export class LuggagesController {
   @HttpCode(201)
   async createLuggage(@Body() luggageData: CreateRequest) {
     return this.luggagesService.createLuggage(luggageData);
+  }
+
+  @Patch(':luggageId')
+  @ApiOperation({
+    summary: 'Update a luggage entry.',
+  })
+  @ApiCreatedResponse({ type: Luggage })
+  @HttpCode(200)
+  async updateLuggage(
+    @Param('luggageId', ParseUUIDPipe) luggageId: string,
+    @Body() luggageData: UpdateRequest
+  ) {
+    return this.luggagesService.updateLuggage(luggageId, luggageData);
   }
 }
