@@ -20,7 +20,7 @@ export interface ICar extends ICompletedAt {
   charged: boolean;
 }
 
-export interface ICreateRequest {
+export interface ICreateCarRequest {
   tagNr: string;
   room: string;
   arrivalDate: Date;
@@ -38,7 +38,7 @@ export interface ICreateRequest {
   charged: boolean;
 }
 
-export interface IUpdateRequest {
+export interface IUpdateCarRequest {
   tagNr?: string;
   room?: string;
   arrivalDate?: Date;
