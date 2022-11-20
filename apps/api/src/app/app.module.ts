@@ -10,6 +10,7 @@ import { LuggagesModule } from './luggages/luggages.module';
 import { LoggerMiddleware } from './middleware/logging.middleware';
 import { UsersModule } from './users/users.module';
 import { TasksModule } from './tasks/tasks.module';
+import { AssignmentsModule } from './assignments/assignments.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { TasksModule } from './tasks/tasks.module';
     LuggagesModule,
     CarsModule,
     TasksModule,
+    AssignmentsModule
   ],
   controllers: [AppController],
   providers: [],

@@ -17,7 +17,6 @@ export class AppComponent {
         switch (this.router.url) {
           case '/dashboard':
             this.title = 'Dashboard';
-            console.log('fee fee fu');
             break;
           case '/account':
             this.title = 'Account';

@@ -1,0 +1,127 @@
+<!-- Checkin section -->
+<section id="content-container">
+  <section class="table-header">
+    <h2>Check In</h2>
+
+    <button class="action-button">+ Add Check In</button>
+  </section>
+  <table mat-table [dataSource]="checkinLuggage" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+    <ng-container matColumnDef="room">
+      <th mat-header-cell *matHeaderCellDef>Room</th>
+      <td mat-cell *matCellDef="let item">{{ item.room }}</td>
+    </ng-container>
+    <ng-container matColumnDef="roomReady">
+      <th mat-header-cell *matHeaderCellDef>Room Status</th>
+      <td mat-cell *matCellDef="let item">{{ item.roomReady }}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let item">{{ item.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="arrivalTime">
+      <th mat-header-cell *matHeaderCellDef>Arrival</th>
+      <td mat-cell *matCellDef="let item">{{ item.arrivalTime }}</td>
+    </ng-container>
+    <ng-container matColumnDef="bags">
+      <th mat-header-cell *matHeaderCellDef>Nr. of Bags</th>
+      <td mat-cell *matCellDef="let item">{{ item.bags }}</td>
+    </ng-container>
+    <ng-container matColumnDef="tagNr">
+      <th mat-header-cell *matHeaderCellDef>Tag nr.</th>
+      <td mat-cell *matCellDef="let item">{{ item.tagNr }}</td>
+    </ng-container>
+    <ng-container matColumnDef="bbLr">
+      <th mat-header-cell *matHeaderCellDef>BB in LR</th>
+      <td mat-cell *matCellDef="let item">{{ item.bbLr }}</td>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef>Location</th>
+      <td mat-cell *matCellDef="let item">{{ item.location }}</td>
+    </ng-container>
+    <ng-container matColumnDef="completedAt">
+      <th mat-header-cell *matHeaderCellDef>In Room</th>
+      <td mat-cell *matCellDef="let item">{{ item.completedAt }}</td>
+    </ng-container>
+    <ng-container matColumnDef="bbUp">
+      <th mat-header-cell *matHeaderCellDef>BB Up</th>
+      <td mat-cell *matCellDef="let item">{{ item.bbUp }}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let item">{{ item.description }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let item">
+        <button mat-raised-button color="primary">Yeet</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="checkinColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: checkinColumns"></tr>
+  </table>
+
+  <br />
+  <br />
+
+  <!-- Checkout Section -->
+  <section class="table-header">
+    <h2>Check Out</h2>
+
+    <button class="action-button">+ Add Check Out</button>
+  </section>
+  <table mat-table [dataSource]="checkoutLuggage" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container matColumnDef="room">
+      <th mat-header-cell *matHeaderCellDef>Room</th>
+      <td mat-cell *matCellDef="let item">{{ item.room }}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let item">{{ item.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="arrivalTime">
+      <th mat-header-cell *matHeaderCellDef>Arrival</th>
+      <td mat-cell *matCellDef="let item">{{ item.arrivalTime }}</td>
+    </ng-container>
+    <ng-container matColumnDef="bags">
+      <th mat-header-cell *matHeaderCellDef>Nr. of Bags</th>
+      <td mat-cell *matCellDef="let item">{{ item.bags }}</td>
+    </ng-container>
+    <ng-container matColumnDef="tagNr">
+      <th mat-header-cell *matHeaderCellDef>Tag nr.</th>
+      <td mat-cell *matCellDef="let item">{{ item.tagNr }}</td>
+    </ng-container>
+    <ng-container matColumnDef="bbDown">
+      <th mat-header-cell *matHeaderCellDef>BB Down</th>
+      <td mat-cell *matCellDef="let item">{{ item.bbDown }}</td>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef>Location</th>
+      <td mat-cell *matCellDef="let item">{{ item.location }}</td>
+    </ng-container>
+    <ng-container matColumnDef="bbLr">
+      <th mat-header-cell *matHeaderCellDef>BB in LR</th>
+      <td mat-cell *matCellDef="let item">{{ item.bbLR }}</td>
+    </ng-container>
+    <ng-container matColumnDef="completedAt">
+      <th mat-header-cell *matHeaderCellDef>In Room</th>
+      <td mat-cell *matCellDef="let item">{{ item.completedAt }}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let item">{{ item.description }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let item">
+        <button mat-raised-button color="primary">Yeet</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="checkoutColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: checkoutColumns"></tr>
+  </table>
+</section>
