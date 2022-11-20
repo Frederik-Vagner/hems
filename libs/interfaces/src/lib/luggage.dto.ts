@@ -1,6 +1,9 @@
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
 import { IsDateString, IsEnum, IsNotEmpty, IsOptional } from 'class-validator';
-import { ICreateLuggageRequest, IUpdateLuggageRequest } from './luggage.interface';
+import {
+  ICreateLuggageRequest,
+  IUpdateLuggageRequest,
+} from './luggage.interface';
 import { LuggageType } from './luggageType.enum';
 
 export class CreateLuggageRequest implements ICreateLuggageRequest {
@@ -37,6 +40,10 @@ export class CreateLuggageRequest implements ICreateLuggageRequest {
   @ApiModelProperty()
   @IsNotEmpty()
   tagNr!: string;
+
+  @ApiModelProperty()
+  @IsNotEmpty()
+  location!: string;
 
   @ApiModelProperty()
   @IsNotEmpty()
@@ -85,6 +92,10 @@ export class UpdateLuggageRequest implements IUpdateLuggageRequest {
   @ApiModelProperty()
   @IsOptional()
   tagNr?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  location?: string;
 
   @ApiModelProperty()
   @IsOptional()
