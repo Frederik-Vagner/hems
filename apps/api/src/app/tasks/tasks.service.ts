@@ -24,11 +24,15 @@ export class TasksService {
         ),
       },
     });
-    const listNames = await this.taskRepo
-      .createQueryBuilder('task')
-      .select('task.listName', 'listName')
-      .distinct(true)
-      .getRawMany();
+    const listNames = (
+      await this.taskRepo
+        .createQueryBuilder('task')
+        .select('task.listName', 'listName')
+        .distinct(true)
+        .getRawMany()
+    ).map((listName) => {
+      return listName.listName;
+    });
 
     return { tasks, listNames };
   }
