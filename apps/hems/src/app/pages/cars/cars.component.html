@@ -18,13 +18,13 @@
   <!-- Symbol Column -->
   <ng-container matColumnDef="arrivalDate">
     <th mat-header-cell *matHeaderCellDef> arr </th>
-    <td mat-cell *matCellDef="let element"> {{element.arrivalDate}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.arrivalDate.toLocaleString(undefined, {month: '2-digit', day: '2-digit', hour: '2-digit', hour12: false, minute:'2-digit'})}} </td>
   </ng-container>
 
    <!-- test Column -->
    <ng-container matColumnDef="departureDate">
     <th mat-header-cell *matHeaderCellDef> dep </th>
-    <td mat-cell *matCellDef="let element"> {{element.departureDate}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.departureDate.toLocaleString(undefined, {month: '2-digit', day: '2-digit', hour: '2-digit', hour12: false, minute:'2-digit'})}} </td>
   </ng-container>
 
    <!-- test Column -->
@@ -42,13 +42,13 @@
   <!-- test Column -->
   <ng-container matColumnDef="expirationDateTime">
     <th mat-header-cell *matHeaderCellDef> exp. </th>
-    <td mat-cell *matCellDef="let element"> {{element.expirationDate}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.expirationDate.toLocaleString(undefined, {month: '2-digit', day: '2-digit', hour: '2-digit', hour12: false, minute:'2-digit'})}} </td>
   </ng-container>
 
   <!-- test Column -->
   <ng-container matColumnDef="pickupDateTime">
     <th mat-header-cell *matHeaderCellDef> Pick Up Time </th>
-    <td mat-cell *matCellDef="let element"> {{element.pickupTime}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.pickupTime.toLocaleString(undefined, {month: '2-digit', day: '2-digit', hour: '2-digit', hour12: false, minute:'2-digit'})}} </td>
   </ng-container>
 
     <!-- test Column -->
@@ -78,7 +78,7 @@
      <!-- test Column -->
      <ng-container matColumnDef="deliveryDateTime">
       <th mat-header-cell *matHeaderCellDef> Del.</th>
-      <td mat-cell *matCellDef="let element"> {{element.deliveryTime}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.deliveryTime.toLocaleString(undefined, {month: '2-digit', day: '2-digit', hour: '2-digit', hour12: false, minute:'2-digit'})}} </td>
     </ng-container>
 
     <!-- test Column -->

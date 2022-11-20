@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ICar, Location } from '@hems/interfaces';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+import {MatSort, Sort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
+
 
 @Component({
   selector: 'hems-cars',
@@ -26,6 +30,7 @@ export class CarsComponent {
       bbUp: "string",
       location: Location.F_FRONT,
       parkingLot: "string",
+      bbOut: "string",
       comments: "string",
       charged: false,
     },
@@ -44,6 +49,7 @@ export class CarsComponent {
       bbUp: "string",
       location: Location.F_FRONT,
       parkingLot: "string",
+      bbOut: "string",
       comments: "string",
       charged: false,
     },
@@ -62,11 +68,13 @@ export class CarsComponent {
       bbUp: "string",
       location: Location.F_FRONT,
       parkingLot: "string",
+      bbOut: "string",
       comments: "string",
       charged: false,
     },
   ];
 
+  cars!: ICar[];
   editCarListEntry(id: string): void {
     alert(id);
     console.log(this.carList)
@@ -94,6 +102,3 @@ export interface PeriodicElement {
   actions: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, room: 'Hydrogen', tagNr: 1.0079, arrivalDate: 'H', departureDate: 'test1', name: 'hans', licensePlate: 'ab44534', expirationDateTime: '34', pickupDateTime: 'rt', bbDown: 'fv', bbUp: 'fv', location: 'hvg', parkingLot: 'awd', deliveryDateTime: '56', bbOut: 'fv', comment: 'LUX', charged: 'yes', actions: 'button'},
-];
