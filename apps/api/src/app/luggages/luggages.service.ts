@@ -1,4 +1,4 @@
-import { CreateRequest, LuggageType } from '@hems/interfaces';
+import { CreateLuggageRequest, LuggageType, UpdateLuggageRequest } from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -15,7 +15,7 @@ export class LuggagesService {
     luggageType: LuggageType,
     createdAt: Date
   ) {
-    return this.luggageRepo.find({
+    return await this.luggageRepo.find({
       where:
         luggageType === LuggageType.LONG_TERM
           ? null
@@ -29,7 +29,19 @@ export class LuggagesService {
     });
   }
 
-  async createLuggage(luggageData: CreateRequest) {
-    return this.luggageRepo.save(luggageData);
+  async createLuggage(luggageData: CreateLuggageRequest) {
+    return await this.luggageRepo.save(luggageData);
+  }
+
+  async updateLuggage(luggageId: string, luggageData: UpdateLuggageRequest) {
+    const luggage = await this.luggageRepo.findOneByOrFail({ luggageId });
+
+    for (const key in luggageData) {
+      if (Object.prototype.hasOwnProperty.call(luggageData, key)) {
+        luggage[key] = luggageData[key];
+      }
+    }
+
+    return await this.luggageRepo.save(luggage);
   }
 }

@@ -1,9 +1,12 @@
-import { ApiModelProperty } from "@nestjs/swagger/dist/decorators/api-model-property.decorator";
-import { IsEnum, IsNotEmpty, IsOptional } from "class-validator";
-import { ICreateRequest } from "./luggage.interface";
-import { LuggageType } from "./luggageType.enum";
+import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
+import { IsDateString, IsEnum, IsNotEmpty, IsOptional } from 'class-validator';
+import {
+  ICreateLuggageRequest,
+  IUpdateLuggageRequest,
+} from './luggage.interface';
+import { LuggageType } from './luggageType.enum';
 
-export class CreateRequest implements ICreateRequest {
+export class CreateLuggageRequest implements ICreateLuggageRequest {
   @ApiModelProperty()
   @IsNotEmpty()
   @IsEnum(LuggageType)
@@ -23,6 +26,7 @@ export class CreateRequest implements ICreateRequest {
 
   @ApiModelProperty()
   @IsOptional()
+  @IsDateString()
   arrivalTime?: Date;
 
   @ApiModelProperty()
@@ -39,14 +43,69 @@ export class CreateRequest implements ICreateRequest {
 
   @ApiModelProperty()
   @IsNotEmpty()
-  bbDown!: string; 
-  
+  location!: string;
+
   @ApiModelProperty()
   @IsNotEmpty()
-  bbLr!: string; 
-  
+  bbDown!: string;
+
+  @ApiModelProperty()
+  @IsNotEmpty()
+  bbLr!: string;
+
   @ApiModelProperty()
   @IsOptional()
   bbOut?: string;
+}
 
+export class UpdateLuggageRequest implements IUpdateLuggageRequest {
+  @ApiModelProperty()
+  @IsOptional()
+  @IsEnum(LuggageType)
+  luggageType?: LuggageType;
+
+  @ApiModelProperty()
+  @IsOptional()
+  roomReady?: boolean;
+
+  @ApiModelProperty()
+  @IsOptional()
+  room?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  name?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  @IsDateString()
+  arrivalTime?: Date;
+
+  @ApiModelProperty()
+  @IsOptional()
+  bags?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  description?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  tagNr?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  location?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  bbDown?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  bbLr?: string;
+
+  @ApiModelProperty()
+  @IsOptional()
+  bbOut?: string;
 }
