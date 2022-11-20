@@ -3,10 +3,6 @@
   width: 100%;
 }
 
-mat-toolbar .spacer {
-  flex: 1 1 auto;
-}
-
 .sidebar {
   width: 225px;
   box-shadow: -7px 0px 24px 8px rgba(0, 0, 0, 0.15);
@@ -15,7 +11,7 @@ mat-toolbar .spacer {
 }
 
 .sidebar mat-icon {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 
 .title {
@@ -23,9 +19,11 @@ mat-toolbar .spacer {
 }
 
 .sidebar .toggle-btn {
-  width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: .5em;
+  right: 0;
+  color: white;
+  background-color: #2f2fa2;
 }
 
 mat-divider {
@@ -34,7 +32,7 @@ mat-divider {
 }
 
 .collapsed {
-  width: 70px;
+  width: 60px;
 }
 
 .collapsible {
@@ -98,9 +96,7 @@ mat-divider {
 }
 
 #router-container {
-  margin-top: 10px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin: 1em 2em;
 }
 
 .mat-elevation-z8 {

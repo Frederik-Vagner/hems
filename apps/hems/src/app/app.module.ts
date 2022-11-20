@@ -11,6 +11,7 @@ import { CarsComponent } from './pages/cars/cars.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     PageNotFoundComponent,
     CarsComponent,
     CheckinComponent,
+    AssignmentsPageComponent,
   ],
   imports: [
     BrowserModule,
