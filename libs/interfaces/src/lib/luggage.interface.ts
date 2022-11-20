@@ -11,6 +11,7 @@ export interface ILuggage extends ICompletedAt {
   bags: string;
   description: string;
   tagNr: string;
+  location: string;
   bbDown: string; // Who took the luggage from the guest.
   bbLr: string; // Who put the luggage in the storage room.
   bbOut?: string; // Who gave the luggage to the guest.
@@ -25,6 +26,7 @@ export interface ICreateLuggageRequest {
   bags: string;
   description: string;
   tagNr: string;
+  location: string;
   bbDown: string; // Who took the luggage from the guest.
   bbLr: string; // Who put the luggage in the storage room.
   bbOut?: string; // Who gave the luggage to the guest.
@@ -40,6 +42,7 @@ export interface IUpdateLuggageRequest {
   bags?: string;
   description?: string;
   tagNr?: string;
+  location?: string;
   bbDown?: string;
   bbLr?: string;
   bbOut?: string;
