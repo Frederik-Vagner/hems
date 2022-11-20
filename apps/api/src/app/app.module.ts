@@ -2,6 +2,7 @@ import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
+import { CarsModule } from './cars/cars.module';
 import { configService } from './config/config.service';
 import { LuggagesModule } from './luggages/luggages.module';
 import { LoggerMiddleware } from './middleware/logging.middleware';
@@ -12,6 +13,7 @@ import { UsersModule } from './users/users.module';
     TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
     UsersModule,
     LuggagesModule,
+    CarsModule,
   ],
   controllers: [AppController],
   providers: [],
