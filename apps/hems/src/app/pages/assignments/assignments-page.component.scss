@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+}
+
+hr {
+    border-top: 2px solid rgba(47, 47, 162, 1);
+}
+
+.table-actions {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 .5em;
+}

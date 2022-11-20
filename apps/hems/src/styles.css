@@ -18,3 +18,8 @@ body {
 * {
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+.action-button {
+  color: white;
+  background: linear-gradient(192.45deg, #F64C72 0%, #F64C72 0%, #FA7B34 100%);
+}
