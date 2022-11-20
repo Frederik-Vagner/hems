@@ -28,7 +28,7 @@ export class AssignmentsController {
   @ApiOperation({ summary: 'Get a list of Assignments for the given day.'})
   @ApiOkResponse({ type: [Assignment] })
   @HttpCode(200)
-  async getLuggagesByLuggageTypeAndCreatedAt(@Query('createdAt') createdAt: string) {
+  async getAssignmentsByDay(@Query('createdAt') createdAt: string) {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.assignmentsService.findAllToday(createdAtDate);
   }
@@ -49,7 +49,7 @@ export class AssignmentsController {
   })
   @ApiCreatedResponse({ type: Assignment })
   @HttpCode(200)
-  async updateLuggage(
+  async updateAssignment(
     @Param('assignmentId', ParseUUIDPipe) assignmentId: string,
     @Body() assignmentData: UpdateAssignmentRequest
   ) {
