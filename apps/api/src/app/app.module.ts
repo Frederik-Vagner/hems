@@ -21,7 +21,7 @@ import { AssignmentsModule } from './assignments/assignments.module';
     LuggagesModule,
     CarsModule,
     TasksModule,
-    AssignmentsModule
+    AssignmentsModule,
   ],
   controllers: [AppController],
   providers: [],
