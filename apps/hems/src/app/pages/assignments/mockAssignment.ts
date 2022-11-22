@@ -2,7 +2,7 @@ import { IAssignment } from "@hems/interfaces";
 
 export const assignments: IAssignment[] = [
     {
-      assignmentId: "string",
+      assignmentId: "1",
       room: "123",
       task: "RA",
       comments: "I DID STUF IM PRUD OF MYSELF YAY WOHOOO",
@@ -12,7 +12,7 @@ export const assignments: IAssignment[] = [
       completedAt: new Date(),
     },
     {
-      assignmentId: "string",
+      assignmentId: "2",
       room: "120",
       task: "RA",
       comments: "I DID STUF IM PRUD OF MYSELF YAY WOHOOO",
@@ -22,7 +22,7 @@ export const assignments: IAssignment[] = [
       completedAt: new Date(),
     },
     {
-      assignmentId: "string",
+      assignmentId: "3",
       room: "121",
       task: "RA",
       comments: "I DID STUF IM PRUD OF MYSELF YAY WOHOOO",

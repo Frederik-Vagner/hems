@@ -20,7 +20,11 @@ export class AssignmentsPageComponent {
     'completedAt'
   ]
   
-  dateDisplay(date: Date) {
+  dateDisplayTime(date: Date) {
     return date.toLocaleString(undefined, {hour: '2-digit', hour12: false, minute:'2-digit'})
+  }
+
+  editAssignment(assignmentId: string): void {
+    alert(assignmentId)
   }
 }
