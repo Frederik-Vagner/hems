@@ -12,10 +12,10 @@ async function bootstrap() {
 
   try {
     await seeder.seed();
-    logger.debug('Seeding complete!');
+    logger.debug('Seeding complete! ✨');
     appCtx.close();
   } catch (error) {
-    logger.error('Seeding failed');
+    logger.error('Seeding failed 🚑');
     throw error;
   }
 }

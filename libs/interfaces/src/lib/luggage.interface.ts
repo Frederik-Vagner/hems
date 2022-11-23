@@ -11,12 +11,13 @@ export interface ILuggage extends ICompletedAt {
   bags: string;
   description: string;
   tagNr: string;
+  location: string;
   bbDown: string; // Who took the luggage from the guest.
   bbLr: string; // Who put the luggage in the storage room.
   bbOut?: string; // Who gave the luggage to the guest.
 }
 
-export interface ICreateRequest {
+export interface ICreateLuggageRequest {
   luggageType: LuggageType;
   roomReady?: boolean;
   room: string;
@@ -25,7 +26,25 @@ export interface ICreateRequest {
   bags: string;
   description: string;
   tagNr: string;
+  location: string;
   bbDown: string; // Who took the luggage from the guest.
   bbLr: string; // Who put the luggage in the storage room.
   bbOut?: string; // Who gave the luggage to the guest.
+}
+
+export interface IUpdateLuggageRequest {
+  luggageId?: string;
+  luggageType?: LuggageType;
+  roomReady?: boolean;
+  room?: string;
+  name?: string;
+  arrivalTime?: Date;
+  bags?: string;
+  description?: string;
+  tagNr?: string;
+  location?: string;
+  bbDown?: string;
+  bbLr?: string;
+  bbOut?: string;
+  completedAt?: string;
 }

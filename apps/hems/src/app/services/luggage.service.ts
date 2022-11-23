@@ -10,12 +10,19 @@ import { environment as env } from '../../environments/environment';
 export class LuggageService {
   constructor(private http: HttpClient) {}
 
-  /**
-   * Fetch all tasks
-   *
-   * @returns an observable with the tasks for the given day.
-   */
-  public get(createdAt: Date): Observable<ILuggage[]> {
+  public getCheckin(createdAt: Date): Observable<ILuggage[]> {
+    return this.http.get<ILuggage[]>(
+      `${env.apiUrl}/luggages/checkin?createdAt=${createdAt.toISOString()}`
+    );
+  }
+
+  public getCheckout(createdAt: Date): Observable<ILuggage[]> {
+    return this.http.get<ILuggage[]>(
+      `${env.apiUrl}/luggages/checkout?createdAt=${createdAt.toISOString()}`
+    );
+  }
+
+  public getLongTerm(createdAt: Date): Observable<ILuggage[]> {
     return this.http.get<ILuggage[]>(
       `${env.apiUrl}/luggages/longTerm?createdAt=${createdAt.toISOString()}`
     );

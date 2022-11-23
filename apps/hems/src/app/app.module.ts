@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { materialModules } from './material.constant';
 import { CarsComponent } from './pages/cars/cars.component';
+import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LongtermComponent } from './pages/longterm/longterm.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
@@ -19,6 +20,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     PageNotFoundComponent,
     CarsComponent,
     LongtermComponent,
+    CheckinComponent,
   ],
   imports: [
     BrowserModule,

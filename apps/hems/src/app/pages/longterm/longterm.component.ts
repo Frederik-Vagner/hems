@@ -28,7 +28,7 @@ export class LongtermComponent implements OnInit {
 
   fetchLuggage(): void {
     this.isLoading = true;
-    this.luggageService.get(new Date()).subscribe({
+    this.luggageService.getLongTerm(new Date()).subscribe({
       next: (luggage) => {
         this.luggage = luggage;
         console.log(luggage);
