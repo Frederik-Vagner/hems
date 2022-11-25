@@ -15,7 +15,20 @@ export class LongtermComponent implements OnInit {
   chosenListName = '';
   isLoading = false;
 
-  displayedColumns = ['actions'];
+  displayedColumns = [
+    'dateIn',
+    'room',
+    'name',
+    'nrOfBags',
+    'description',
+    'tagNr',
+    'dateNeeded',
+    'bbInLr',
+    'location',
+    'bbOut',
+    'dateOut',
+    'actions'
+  ];
 
   constructor(
     private readonly luggageService: LuggageService,
