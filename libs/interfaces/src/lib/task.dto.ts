@@ -1,6 +1,6 @@
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
 import { IsDateString, IsNotEmpty, IsOptional } from 'class-validator';
-import { ICreateTask, IUpdateTask } from './task.interface';
+import { ICreateTask, IGetTasks, ITask, IUpdateTask } from './task.interface';
 
 export class CreateTaskRequest implements ICreateTask {
   @ApiModelProperty({ example: '09.30' })
@@ -41,4 +41,14 @@ export class UpdateTaskRequest implements IUpdateTask {
   @IsDateString()
   @IsOptional()
   completedAt?: Date;
+}
+
+export class GetTasksResponse implements IGetTasks {
+  @ApiModelProperty()
+  @IsNotEmpty()
+  listNames!: string[];
+
+  @ApiModelProperty()
+  @IsNotEmpty()
+  tasks!: ITask[];
 }

@@ -22,3 +22,8 @@ export interface IUpdateTask {
   listName?: string;
   completedAt?: Date;
 }
+
+export interface IGetTasks {
+  listNames: string[];
+  tasks: ITask[];
+}
