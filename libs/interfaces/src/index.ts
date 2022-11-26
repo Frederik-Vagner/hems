@@ -1,6 +1,6 @@
 // DTOs
 export * from './lib/auth.dto';
-export * from './lib/luggage.dto';
+export * from './lib/luggage/luggage.dto';
 export * from './lib/car.dto';
 export * from './lib/assignment.dto';
 export * from './lib/task.dto';
