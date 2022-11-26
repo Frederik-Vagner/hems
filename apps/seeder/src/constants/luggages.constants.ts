@@ -16,6 +16,7 @@ export const luggages: ILuggage[] = [
     bbOut: 'GB',
     description: 'Corvus brachyrhynchos',
     createdAt: new Date(Date.parse('2022-08-28 05:27:56.076')),
+    completedAt: new Date(Date.parse('2022-08-28 05:27:56.076')),
   },
   {
     luggageId: 'e3a67552-1a6e-4a31-ac06-df626ab408f9',
@@ -32,6 +33,7 @@ export const luggages: ILuggage[] = [
     bbOut: 'GT',
     description: 'Gyps bengalensis',
     createdAt: new Date(Date.parse('2022-08-28 14:27:56.076')),
+    completedAt: new Date(Date.parse('2022-08-28 14:27:56.076')),
   },
   {
     luggageId: 'd7b146a4-0091-4d76-89ef-69a9fbb1e62a',

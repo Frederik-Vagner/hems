@@ -1,4 +1,10 @@
-import { CreateLuggageRequest, LuggageType, UpdateLuggageRequest } from '@hems/interfaces';
+import {
+  CreateLuggageRequest,
+  LuggageSortOptions,
+  LuggageType,
+  SortOrder,
+  UpdateLuggageRequest,
+} from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import {
   Body,
@@ -34,12 +40,18 @@ export class LuggagesController {
     @Param('luggageType')
     luggageType: LuggageType,
     @Query('createdAt')
-    createdAt: string
+    createdAt: string,
+    @Query('sortBy')
+    sortBy: LuggageSortOptions,
+    @Query('sortOrder')
+    sortOrder: SortOrder
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.luggagesService.findAllByLuggageTypeAndCreatedAt(
       luggageType,
-      createdAtDate
+      createdAtDate,
+      sortBy,
+      sortOrder
     );
   }
 
