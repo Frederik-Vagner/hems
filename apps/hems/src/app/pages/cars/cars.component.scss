@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  box-shadow: none;
+}
+
+.action-buttons {
+  margin: 0 10px;
+}
+
+.page-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .search-options {
+    :first-child {
+      margin-right: 1em;
+    }
+
+    :last-child {
+      width: 300px;
+    }
+  }
+
+  .car-list-actions {
+    align-items: center;
+  }
+}

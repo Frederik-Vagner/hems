@@ -58,13 +58,16 @@ export class Car extends CompletedAt implements ICar {
     type: 'enum',
     enum: Location,
     default: Location.PARKING_LOT_A,
-    nullable: true,
   })
-  location?: Location;
+  location!: Location;
 
   @ApiModelProperty({ example: 'c102' })
   @Column({ nullable: true })
   parkingLot?: string;
+
+  @ApiModelProperty({ example: 'fv' })
+  @Column()
+  bbOut?: string;
 
   @ApiModelProperty({ example: 'luxurious car' })
   @Column()
