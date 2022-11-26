@@ -14,6 +14,7 @@ export class LongtermComponent implements OnInit {
   listNames?: string[];
   chosenListName = '';
   isLoading = false;
+  longTermList : ILuggage[] = [];
 
   displayedColumns = [
     'dateIn',
@@ -39,6 +40,17 @@ export class LongtermComponent implements OnInit {
     this.fetchLuggage();
   }
 
+  formatDate(date: Date): string{
+    const parsedDate = new Date(date)
+    return parsedDate.toLocaleString(undefined, {
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      hour12: false,
+      minute: '2-digit'
+    })
+  }
+
   fetchLuggage(): void {
     this.isLoading = true;
     this.luggageService.getLongTerm(new Date()).subscribe({
@@ -59,4 +71,11 @@ export class LongtermComponent implements OnInit {
       },
     });
   }
+
+  
+  editlongTermListEntry(id: string): void {
+    alert(id);
+    console.log(this.longTermList)
+  }
+
 }
