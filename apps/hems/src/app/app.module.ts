@@ -14,6 +14,7 @@ import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
+import { CreateAssignmentModalComponent } from './components/modals/createAssignmentModal/create-assignment-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AssignmentsPageComponent } from './pages/assignments/assignments-page.c
     AssignmentsPageComponent,
     CreateCarComponent,
     EditCarComponent,
+    CreateAssignmentModalComponent
   ],
   imports: [
     BrowserModule,
