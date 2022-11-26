@@ -21,7 +21,7 @@ export class Luggage extends CompletedAt implements ILuggage {
   @Column()
   room!: string;
 
-  @ApiModelProperty({ example: 'Teodor "still" Jonasson' })
+  @ApiModelProperty({ example: 'Teodor Jonasson' })
   @Column()
   name!: string;
 
@@ -33,11 +33,11 @@ export class Luggage extends CompletedAt implements ILuggage {
   @Column()
   bags!: string;
 
-  @ApiModelProperty({ example: 'Children, Bikes, Ski Equipment' })
+  @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
   @Column()
   description!: string;
 
-  @ApiModelProperty({ example: '891239993' })
+  @ApiModelProperty({ example: '8912' })
   @Column()
   tagNr!: string;
 
@@ -45,7 +45,7 @@ export class Luggage extends CompletedAt implements ILuggage {
   @Column()
   location!: string;
 
-  @ApiModelProperty({ example: 'Teodor Not So Jonas' })
+  @ApiModelProperty({ example: 'Teodor Jonas' })
   @Column()
   bbDown!: string;
 

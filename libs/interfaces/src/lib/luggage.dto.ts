@@ -7,105 +7,105 @@ import {
 import { LuggageType } from './luggageType.enum';
 
 export class CreateLuggageRequest implements ICreateLuggageRequest {
-  @ApiModelProperty()
+  @ApiModelProperty({ example: LuggageType.CHECKIN })
   @IsNotEmpty()
   @IsEnum(LuggageType)
   luggageType!: LuggageType;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: true })
   @IsOptional()
   roomReady?: boolean;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Room 420' })
   @IsNotEmpty()
   room!: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Teodor Jonasson' })
   @IsNotEmpty()
   name!: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: Date.now() })
   @IsOptional()
   @IsDateString()
   arrivalTime?: Date;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: '3+4' })
   @IsNotEmpty()
   bags!: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
   @IsNotEmpty()
   description!: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: '8912' })
   @IsNotEmpty()
   tagNr!: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'LB1' })
   @IsNotEmpty()
   location!: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Teodor Jonas' })
   @IsNotEmpty()
   bbDown!: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Teo Jon' })
   @IsNotEmpty()
   bbLr!: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Mario' })
   @IsOptional()
   bbOut?: string;
 }
 
 export class UpdateLuggageRequest implements IUpdateLuggageRequest {
-  @ApiModelProperty()
+  @ApiModelProperty({ example: LuggageType.CHECKIN })
   @IsOptional()
   @IsEnum(LuggageType)
   luggageType?: LuggageType;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: true })
   @IsOptional()
   roomReady?: boolean;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Room 420' })
   @IsOptional()
   room?: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Teodor Jonasson' })
   @IsOptional()
   name?: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: Date.now() })
   @IsOptional()
   @IsDateString()
   arrivalTime?: Date;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: '3+4' })
   @IsOptional()
   bags?: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
   @IsOptional()
   description?: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: '8912' })
   @IsOptional()
   tagNr?: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'LB1' })
   @IsOptional()
   location?: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Teodor Jonas' })
   @IsOptional()
   bbDown?: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Teo Jon' })
   @IsOptional()
   bbLr?: string;
 
-  @ApiModelProperty()
+  @ApiModelProperty({ example: 'Mario' })
   @IsOptional()
   bbOut?: string;
 }
