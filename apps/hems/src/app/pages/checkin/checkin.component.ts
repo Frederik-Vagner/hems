@@ -65,7 +65,6 @@ export class CheckinComponent implements OnInit {
     this.luggageService.getCheckin(new Date()).subscribe({
       next: (luggage) => {
         this.checkinLuggage = luggage;
-        console.log('checkin', luggage);
         this.reorderCheckinData();
       },
       error: (error) => {
@@ -84,7 +83,6 @@ export class CheckinComponent implements OnInit {
     this.luggageService.getCheckout(new Date()).subscribe({
       next: (luggage) => {
         this.checkoutLuggage = luggage;
-        console.log('checkout', luggage);
         this.reorderCheckoutData();
       },
       error: (error) => {
