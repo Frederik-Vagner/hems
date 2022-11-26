@@ -31,6 +31,8 @@ export class CarsComponent {
     'bbOut',
     'comment',
     'charged',
+    'actions',
+   
   ];
 
   foods = [
