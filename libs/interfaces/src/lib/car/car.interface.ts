@@ -1,4 +1,4 @@
-import { ICompletedAt } from './base.interface';
+import { ICompletedAt } from '../base.interface';
 import { Location } from './location.enum';
 
 export interface ICar extends ICompletedAt {
@@ -33,8 +33,9 @@ export interface ICreateCarRequest {
   deliveryTime?: Date;
   bbDown?: string;
   bbUp?: string;
-  location?: Location;
+  location: Location;
   parkingLot?: string;
+  bbOut?: string;
   comments: string;
   charged: boolean;
 }
@@ -53,6 +54,7 @@ export interface IUpdateCarRequest {
   bbUp?: string;
   location?: Location;
   parkingLot?: string;
+  bbOut?: string;
   comments?: string;
   charged?: boolean;
   completedAt?: Date;

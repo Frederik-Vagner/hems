@@ -1,4 +1,4 @@
-import { ICompletedAt } from './base.interface';
+import { ICompletedAt } from '../base.interface';
 import { LuggageType } from './luggageType.enum';
 
 export interface ILuggage extends ICompletedAt {
@@ -27,13 +27,12 @@ export interface ICreateLuggageRequest {
   description: string;
   tagNr: string;
   location: string;
-  bbDown: string; // Who took the luggage from the guest.
-  bbLr: string; // Who put the luggage in the storage room.
-  bbOut?: string; // Who gave the luggage to the guest.
+  bbDown: string; 
+  bbLr: string; 
+  bbOut?: string;
 }
 
 export interface IUpdateLuggageRequest {
-  luggageId?: string;
   luggageType?: LuggageType;
   roomReady?: boolean;
   room?: string;
@@ -46,5 +45,5 @@ export interface IUpdateLuggageRequest {
   bbDown?: string;
   bbLr?: string;
   bbOut?: string;
-  completedAt?: string;
+  completedAt?: Date;
 }

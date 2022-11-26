@@ -1,21 +1,21 @@
 // DTOs
 export * from './lib/auth.dto';
-export * from './lib/luggage.dto';
-export * from './lib/car.dto';
-export * from './lib/assignment.dto';
-export * from './lib/task.dto';
+export * from './lib/luggage/luggage.dto';
+export * from './lib/car/car.dto';
+export * from './lib/assignment/assignment.dto';
+export * from './lib/task/task.dto';
 
 // Interfaces
 export * from './lib/auth.interface';
 export * from './lib/base.interface';
 export * from './lib/local-storage';
 export * from './lib/user.interface';
-export * from './lib/luggage.interface';
-export * from './lib/task.interface';
-export * from './lib/car.interface';
-export * from './lib/assignment.interface';
+export * from './lib/luggage/luggage.interface';
+export * from './lib/task/task.interface';
+export * from './lib/car/car.interface';
+export * from './lib/assignment/assignment.interface';
 
 // Enums
 export * from './lib/role.enum';
-export * from './lib/luggageType.enum';
-export * from './lib/location.enum';
+export * from './lib/luggage/luggageType.enum';
+export * from './lib/car/location.enum';

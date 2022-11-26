@@ -1,6 +1,3 @@
-// TODO: get all carListEntries (getMethod)
-// TODO: find carListEntry by id (getMethod)
-
 import { CreateCarRequest, UpdateCarRequest } from '@hems/interfaces';
 import { Car } from '@hems/models';
 import {
