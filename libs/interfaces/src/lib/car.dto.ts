@@ -54,13 +54,17 @@ export class CreateCarRequest implements ICreateCarRequest {
   bbUp?: string;
 
   @ApiModelProperty({ example: Location.FH_FRONT_HOTEL })
-  @IsNotEmpty()
+  @IsOptional()
   @IsEnum(Location)
-  location!: Location;
+  location?: Location;
 
   @ApiModelProperty({ example: 'c102' })
   @IsOptional()
   parkingLot?: string;
+
+  @ApiModelProperty({ example: 'fv' })
+  @IsOptional()
+  bbOut?: string;
 
   @ApiModelProperty({ example: 'luxurious car' })
   @IsNotEmpty()
@@ -134,6 +138,10 @@ export class UpdateCarRequest implements IUpdateCarRequest {
   @ApiModelProperty({ example: 'c102' })
   @IsOptional()
   parkingLot?: string;
+
+  @ApiModelProperty({ example: 'fv' })
+  @IsOptional()
+  bbOut?: string;
 
   @ApiModelProperty({ example: 'luxurious car' })
   @IsOptional()

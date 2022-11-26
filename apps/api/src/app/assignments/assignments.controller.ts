@@ -1,4 +1,7 @@
-import { CreateAssignmentRequest, UpdateAssignmentRequest } from '@hems/interfaces';
+import {
+  CreateAssignmentRequest,
+  UpdateAssignmentRequest,
+} from '@hems/interfaces';
 import { Assignment } from '@hems/models';
 import {
   Body,
@@ -25,12 +28,14 @@ export class AssignmentsController {
   constructor(private assignmentsService: AssignmentsService) {}
 
   @Get()
-  @ApiOperation({ summary: 'Get a list of Assignments for the given day.'})
+  @ApiOperation({ summary: 'Get a list of Assignments for the given day.' })
   @ApiOkResponse({ type: [Assignment] })
   @HttpCode(200)
-  async getLuggagesByLuggageTypeAndCreatedAt(@Query('createdAt') createdAt: string) {
+  async getAssignmentsByCreatedAt(
+    @Query('createdAt') createdAt: string
+  ) {
     const createdAtDate = new Date(Date.parse(createdAt));
-    return this.assignmentsService.findAllToday(createdAtDate);
+    return this.assignmentsService.findAllByCreatedAt(createdAtDate);
   }
 
   @Post()
@@ -49,10 +54,13 @@ export class AssignmentsController {
   })
   @ApiCreatedResponse({ type: Assignment })
   @HttpCode(200)
-  async updateLuggage(
+  async updateAssignment(
     @Param('assignmentId', ParseUUIDPipe) assignmentId: string,
     @Body() assignmentData: UpdateAssignmentRequest
   ) {
-    return this.assignmentsService.updateAssignment(assignmentId, assignmentData);
+    return this.assignmentsService.updateAssignment(
+      assignmentId,
+      assignmentData
+    );
   }
 }
