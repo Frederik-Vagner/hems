@@ -1,8 +1,12 @@
-import { CreateLuggageRequest, LuggageType, UpdateLuggageRequest } from '@hems/interfaces';
+import {
+  CreateLuggageRequest,
+  LuggageType,
+  UpdateLuggageRequest,
+} from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, Between } from 'typeorm';
+import { Repository, Between, LessThan } from 'typeorm';
 
 @Injectable()
 export class LuggagesService {
@@ -15,18 +19,14 @@ export class LuggagesService {
     luggageType: LuggageType,
     createdAt: Date
   ) {
-    return await this.luggageRepo.find({
-      where:
-        luggageType === LuggageType.LONG_TERM
-          ? null
-          : {
-              luggageType,
-              createdAt: Between<Date>(
-                new Date(createdAt.setUTCHours(0, 0, 0, 0)),
-                new Date(createdAt.setUTCHours(23, 59, 59, 999))
-              ),
-            },
-    });
+    const luggageList =
+      luggageType === LuggageType.LONG_TERM
+        ? await this.getLongTermLuggage(createdAt)
+        : await this.getLuggageByLuggageTypeAndCreatedAt(
+            luggageType,
+            createdAt
+          );
+    return luggageList;
   }
 
   async createLuggage(luggageData: CreateLuggageRequest) {
@@ -43,5 +43,41 @@ export class LuggagesService {
     }
 
     return await this.luggageRepo.save(luggage);
+  }
+
+  private async getLuggageByLuggageTypeAndCreatedAt(
+    luggageType: LuggageType,
+    createdAt: Date
+  ) {
+    return await this.luggageRepo.find({
+      where: {
+        luggageType,
+        createdAt: Between<Date>(
+          new Date(createdAt.setUTCHours(0, 0, 0, 0)),
+          new Date(createdAt.setUTCHours(23, 59, 59, 999))
+        ),
+      },
+    });
+  }
+
+  private async getLongTermLuggage(createdAt: Date) {
+    const luggageList = await this.luggageRepo.find({
+      where: {
+        luggageType: LuggageType.LONG_TERM,
+      },
+    });
+
+    luggageList.push(
+      ...(await this.luggageRepo.find({
+        where: {
+          luggageType: LuggageType.CHECKIN || LuggageType.CHECKOUT,
+          createdAt: LessThan<Date>(
+            new Date(createdAt.setUTCHours(0, 0, 0, 0))
+          ),
+        },
+      }))
+    );
+
+    return luggageList;
   }
 }
