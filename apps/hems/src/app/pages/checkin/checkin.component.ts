@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
+
+
 
 @Component({
   selector: 'hems-checkin',
@@ -47,8 +50,10 @@ export class CheckinComponent implements OnInit {
 
   constructor(
     private readonly luggageService: LuggageService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
   ) {}
+
+
 
   ngOnInit(): void {
     this.fetchLuggage();

@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { ICar } from '@hems/interfaces';
 import { CarService } from '../../services/car.service'
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateCarComponent } from './modal/create/create.car.component';
+import { EditCarComponent } from './modal/edit/edit.car.component';
+
 
 
 @Component({
@@ -31,16 +35,28 @@ export class CarsComponent {
     'charged',
   ];
 
-  constructor(
-    private readonly carService: CarService,
-    private snackBar: MatSnackBar
-  ) {}
-
   foods = [
     {value: 'steak-0', viewValue: 'Room'},
     {value: 'pizza-1', viewValue: 'Name'},
     {value: 'tacos-2', viewValue: 'Pick Up Time'},
   ];
+
+  constructor(
+    private readonly carService: CarService,
+    private snackBar: MatSnackBar,
+    private dialogRef: MatDialog,
+    
+  ) {}
+
+  openDialogCreate(){
+    this.dialogRef.open(CreateCarComponent);
+    console.log('hello')
+  }
+
+  openDialogEdit(){
+    this.dialogRef.open(EditCarComponent);
+    console.log('hello')
+  }
 
   ngOnInit(): void {
     this.fetchCar();
@@ -75,9 +91,16 @@ export class CarsComponent {
       },
     });
   }
+
+
   
   editCarListEntry(id: string): void {
     alert(id);
     console.log(this.carList)
   }
+
+  
 }
+
+
+
