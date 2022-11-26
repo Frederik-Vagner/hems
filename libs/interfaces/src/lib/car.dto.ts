@@ -62,7 +62,7 @@ export class CreateCarRequest implements ICreateCarRequest {
   @IsOptional()
   parkingLot?: string;
 
-  @ApiModelProperty({example: 'fv'})
+  @ApiModelProperty({ example: 'fv' })
   @IsOptional()
   bbOut?: string;
 
@@ -139,7 +139,7 @@ export class UpdateCarRequest implements IUpdateCarRequest {
   @IsOptional()
   parkingLot?: string;
 
-  @ApiModelProperty({example: 'fv'})
+  @ApiModelProperty({ example: 'fv' })
   @IsOptional()
   bbOut?: string;
 

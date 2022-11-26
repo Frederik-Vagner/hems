@@ -46,8 +46,6 @@ export class AppComponent {
     });
   }
 
-  
-
   /**
    * Toggles the `sidebarCollapsed` boolean.
    */
@@ -63,5 +61,4 @@ export class AppComponent {
       duration: 5000,
     });
   }
-  
 }

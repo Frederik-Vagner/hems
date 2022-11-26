@@ -5,14 +5,14 @@ import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class CarService {
-    constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-    public getCar(createdAt: Date): Observable<ICar[]> {
-        return this.http.get<ICar[]>(
-        `${env.apiUrl}/cars?createdAt=${createdAt.toISOString()}`    
-        );
-    }
+  public getCar(createdAt: Date): Observable<ICar[]> {
+    return this.http.get<ICar[]>(
+      `${env.apiUrl}/cars?createdAt=${createdAt.toISOString()}`
+    );
+  }
 }
