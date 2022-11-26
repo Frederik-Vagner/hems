@@ -41,6 +41,8 @@ export class LuggagesController {
     luggageType: LuggageType,
     @Query('createdAt')
     createdAt: string,
+    @Query('search')
+    search: string,
     @Query('sortBy')
     sortBy: LuggageSortOptions,
     @Query('sortOrder')
@@ -50,6 +52,7 @@ export class LuggagesController {
     return this.luggagesService.findAllByLuggageTypeAndCreatedAt(
       luggageType,
       createdAtDate,
+      search,
       sortBy,
       sortOrder
     );
