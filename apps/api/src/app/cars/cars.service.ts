@@ -7,7 +7,7 @@ import {
 import { Car } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { IsNull, LessThanOrEqual, Like, Not, Repository, Raw } from 'typeorm';
+import { IsNull, LessThanOrEqual, Like, Not, Repository } from 'typeorm';
 
 @Injectable()
 export class CarsService {
