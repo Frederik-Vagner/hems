@@ -39,14 +39,6 @@ export class CreateCheckoutDialogComponent {
     });
   }
 
-  /**
-   * @param date
-   * @returns The date in a dateTime format
-   */
-  getDateTime(date: string): Date {
-    return new Date(date);
-  }
-
   create(): void {
     this.isLoading = true;
     this.service
@@ -54,7 +46,7 @@ export class CreateCheckoutDialogComponent {
         room: this.form.get('room')?.value,
         roomReady: this.form.get('roomReady')?.value,
         name: this.form.get('name')?.value,
-        arrivalTime: this.getDateTime(this.form.get('arrivalTime')?.value),
+        arrivalTime: new Date(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,

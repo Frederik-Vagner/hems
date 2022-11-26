@@ -48,14 +48,6 @@ export class EditCheckoutDialogComponent {
     });
   }
 
-  /**
-   * @param date
-   * @returns The date in a dateTime format
-   */
-  getDateTime(date: string): Date {
-    return new Date(date);
-  }
-
   update(): void {
     this.isLoading = true;
     this.service
