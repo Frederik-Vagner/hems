@@ -7,7 +7,7 @@
   width: 225px;
   box-shadow: -7px 0px 24px 8px rgba(0, 0, 0, 0.15);
   color: white;
-  background-color: #2f2fa2;
+  background-color: var(--main-blue);
 }
 
 .sidebar mat-icon {
@@ -35,7 +35,7 @@
   bottom: .5em;
   right: 0;
   color: white;
-  background-color: #2f2fa2;
+  background-color: var(--main-blue);
 }
 
 mat-divider {
@@ -99,12 +99,12 @@ mat-divider {
 }
 
 .navbar-item {
-  color: #2f2fa2;
+  color: var(--main-blue);
   background-color: transparent;
-}
-.navbar-item:hover {
-  color: #5252fc;
-  background-color: transparent;
+
+  :hover {
+    color: #5252fc;
+  }
 }
 
 #router-container {

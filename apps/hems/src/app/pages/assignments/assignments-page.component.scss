@@ -2,10 +2,6 @@ table {
     width: 100%;
 }
 
-hr {
-    border-top: 2px solid rgba(47, 47, 162, 1);
-}
-
 .table-actions {
     flex-grow: 1;
     display: flex;
@@ -26,7 +22,7 @@ th.mat-header-cell, td.mat-cell, th.mat-header-cell:last-of-type, td.mat-cell:la
 }
 
 th.mat-header-cell {
-    color: rgba(47, 47, 162, 1);
+    color: var(--main-blue);
     font-weight: 900;
     vertical-align: bottom;
     padding-bottom: 5px;
