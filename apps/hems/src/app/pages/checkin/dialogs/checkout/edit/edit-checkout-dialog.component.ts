@@ -1,43 +1,49 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LuggageType } from '@hems/interfaces';
+import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-create-checkin-dialog',
-  templateUrl: './create-checkin-dialog.component.html',
-  styleUrls: ['./create-checkin-dialog.component.css'],
+  selector: 'hems-edit-checkout-dialog',
+  templateUrl: './edit-checkout-dialog.component.html',
+  styleUrls: ['./edit-checkout-dialog.component.css'],
 })
-export class CreateCheckinDialogComponent {
+export class EditCheckoutDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
+  luggageId: string;
 
   constructor(
+    public dialogRef: MatDialogRef<EditCheckoutDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
     private snackbar: MatSnackBar,
     private dialog: MatDialog
   ) {
+    this.luggageId = data.luggageId;
     this.form = new UntypedFormGroup({
-      room: new UntypedFormControl('', [Validators.required]),
-      roomReady: new UntypedFormControl('false', [Validators.required]),
-      name: new UntypedFormControl('', [Validators.required]),
-      arrivalTime: new UntypedFormControl(new Date(), [Validators.required]),
-      bags: new UntypedFormControl('', [Validators.required]),
-      tagNr: new UntypedFormControl('', [Validators.required]),
-      bbLr: new UntypedFormControl('', [Validators.required]),
-      bbUp: new UntypedFormControl('', []),
-      location: new UntypedFormControl('', [Validators.required]),
-      description: new UntypedFormControl('', [Validators.required]),
-      guestApprovedGDPR: new UntypedFormControl(null, [
-        Validators.requiredTrue,
+      room: new UntypedFormControl(data.room, [Validators.required]),
+      name: new UntypedFormControl(data.name, [Validators.required]),
+      bags: new UntypedFormControl(data.bags, [Validators.required]),
+      tagNr: new UntypedFormControl(data.tagNr, [Validators.required]),
+      bbLr: new UntypedFormControl(data.bbLr, [Validators.required]),
+      bbUp: new UntypedFormControl(data.bbOut, []),
+      location: new UntypedFormControl(data.location, [Validators.required]),
+      completedAt: new UntypedFormControl(data.completedAt, []),
+      description: new UntypedFormControl(data.description, [
+        Validators.required,
       ]),
     });
   }
@@ -50,25 +56,24 @@ export class CreateCheckinDialogComponent {
     return new Date(date);
   }
 
-  create(): void {
+  update(): void {
     this.isLoading = true;
     this.service
-      .create({
+      .update(this.luggageId, {
         room: this.form.get('room')?.value,
-        roomReady: this.form.get('roomReady')?.value,
+        roomReady: undefined,
         name: this.form.get('name')?.value,
         arrivalTime: this.getDateTime(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
         location: this.form.get('location')?.value,
+        completedAt: this.form.get('completedAt')?.value,
         description: this.form.get('location')?.value,
-        luggageType: LuggageType.CHECKIN,
-        bbDown: ' ',
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Check In luggage item created!', 'Cool', {
+          this.snackbar.open('Luggage item updated!', 'Cool', {
             duration: 5000,
           });
           document.location.reload();
@@ -77,7 +82,7 @@ export class CreateCheckinDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create :(', 'Imma try again later', {
+          this.snackbar.open('Failed to update :(', 'Imma try again later', {
             duration: 15000,
           });
           this.isLoading = false;

@@ -5,6 +5,8 @@ import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
 import { CreateCheckinDialogComponent } from './dialogs/checkin/create/create-checkin-dialog.component';
 import { EditCheckinDialogComponent } from './dialogs/checkin/edit/edit-checkin-dialog.component';
+import { CreateCheckoutDialogComponent } from './dialogs/checkout/create/create-checkout-dialog.component';
+import { EditCheckoutDialogComponent } from './dialogs/checkout/edit/edit-checkout-dialog.component';
 
 @Component({
   selector: 'hems-checkin',
@@ -37,7 +39,6 @@ export class CheckinComponent implements OnInit {
   checkoutColumns = [
     'room',
     'name',
-    'arrivalTime',
     'bags',
     'tagNr',
     'bbDown',
@@ -139,11 +140,16 @@ export class CheckinComponent implements OnInit {
     });
   }
 
-  openCheckoutEditDialog(): void {
-    console.log('WIP');
+  openCheckoutEditDialog(luggage: ILuggage): void {
+    this.dialog.open(EditCheckoutDialogComponent, {
+      width: '500px',
+      data: luggage,
+    });
   }
 
   openCheckoutCreateDialog(): void {
-    console.log('WIP');
+    this.dialog.open(CreateCheckoutDialogComponent, {
+      width: '500px',
+    });
   }
 }

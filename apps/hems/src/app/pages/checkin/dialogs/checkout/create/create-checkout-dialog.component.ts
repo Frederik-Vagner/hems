@@ -11,11 +11,11 @@ import { LuggageType } from '@hems/interfaces';
 import { LuggageService } from '../../../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-create-checkin-dialog',
-  templateUrl: './create-checkin-dialog.component.html',
-  styleUrls: ['./create-checkin-dialog.component.css'],
+  selector: 'hems-create-checkout-dialog',
+  templateUrl: './create-checkout-dialog.component.html',
+  styleUrls: ['./create-checkout-dialog.component.css'],
 })
-export class CreateCheckinDialogComponent {
+export class CreateCheckoutDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
@@ -27,9 +27,7 @@ export class CreateCheckinDialogComponent {
   ) {
     this.form = new UntypedFormGroup({
       room: new UntypedFormControl('', [Validators.required]),
-      roomReady: new UntypedFormControl('false', [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
-      arrivalTime: new UntypedFormControl(new Date(), [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
       tagNr: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
@@ -63,7 +61,7 @@ export class CreateCheckinDialogComponent {
         bbLr: this.form.get('bbLr')?.value,
         location: this.form.get('location')?.value,
         description: this.form.get('location')?.value,
-        luggageType: LuggageType.CHECKIN,
+        luggageType: LuggageType.CHECKOUT,
         bbDown: ' ',
       })
       .subscribe({

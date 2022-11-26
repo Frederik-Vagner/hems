@@ -32,14 +32,14 @@ export class LuggageService {
     );
   }
 
-  public updateCheckin(
+  public update(
     id: string,
     params: IUpdateLuggageRequest
   ): Observable<ILuggage> {
     return this.http.patch<ILuggage>(`${env.apiUrl}/luggages/${id}`, params);
   }
 
-  public createCheckin(params: ICreateLuggageRequest): Observable<ILuggage> {
+  public create(params: ICreateLuggageRequest): Observable<ILuggage> {
     return this.http.post<ILuggage>(`${env.apiUrl}/luggages`, params);
   }
 }

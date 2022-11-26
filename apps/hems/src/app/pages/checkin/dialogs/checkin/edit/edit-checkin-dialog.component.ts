@@ -65,7 +65,7 @@ export class EditCheckinDialogComponent {
   update(): void {
     this.isLoading = true;
     this.service
-      .updateCheckin(this.luggageId, {
+      .update(this.luggageId, {
         room: this.form.get('room')?.value,
         roomReady: this.form.get('roomReady')?.value,
         name: this.form.get('name')?.value,
