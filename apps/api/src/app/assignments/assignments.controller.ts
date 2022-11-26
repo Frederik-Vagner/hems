@@ -22,7 +22,7 @@ import {
 } from '@nestjs/swagger';
 import { AssignmentsService } from './assignments.service';
 
-@ApiTags('assignments')
+@ApiTags('Assignments')
 @Controller('assignments')
 export class AssignmentsController {
   constructor(private assignmentsService: AssignmentsService) {}
