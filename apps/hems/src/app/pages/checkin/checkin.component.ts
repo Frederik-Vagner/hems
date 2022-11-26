@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
+import { EditCheckinDialogComponent } from './dialogs/edit-checkin-dialog.component';
 
 @Component({
   selector: 'hems-checkin',
@@ -48,7 +49,8 @@ export class CheckinComponent implements OnInit {
 
   constructor(
     private readonly luggageService: LuggageService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -122,4 +124,9 @@ export class CheckinComponent implements OnInit {
     );
     this.checkoutLuggage = uncompletedItems.concat(completedItems);
   }
+
+  openCheckinEditDialog(): void {
+    this.dialog.open(EditCheckinDialogComponent, { width: '500px' });
+  }
+  openCheckoutEditDialog(): void {}
 }
