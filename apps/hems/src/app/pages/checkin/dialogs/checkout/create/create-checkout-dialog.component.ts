@@ -31,8 +31,9 @@ export class CreateCheckoutDialogComponent {
       bags: new UntypedFormControl('', [Validators.required]),
       tagNr: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
+      bbDown: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
-      description: new UntypedFormControl('', [Validators.required]),
+      description: new UntypedFormControl('', []),
       guestApprovedGDPR: new UntypedFormControl(null, [
         Validators.requiredTrue,
       ]),
@@ -50,10 +51,10 @@ export class CreateCheckoutDialogComponent {
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
+        bbDown: this.form.get('bbDown')?.value,
         location: this.form.get('location')?.value,
         description: this.form.get('location')?.value,
         luggageType: LuggageType.CHECKOUT,
-        bbDown: ' ',
       })
       .subscribe({
         next: () => {

@@ -33,9 +33,8 @@ export class CreateCheckinDialogComponent {
       bags: new UntypedFormControl('', [Validators.required]),
       tagNr: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
-      bbUp: new UntypedFormControl('', []),
       location: new UntypedFormControl('', [Validators.required]),
-      description: new UntypedFormControl('', [Validators.required]),
+      description: new UntypedFormControl('', []),
       guestApprovedGDPR: new UntypedFormControl(null, [
         Validators.requiredTrue,
       ]),

@@ -45,6 +45,7 @@ export class CheckinComponent implements OnInit {
     'location',
     'bbLr',
     'completedAt',
+    'bbOut',
     'description',
     'actions',
   ];

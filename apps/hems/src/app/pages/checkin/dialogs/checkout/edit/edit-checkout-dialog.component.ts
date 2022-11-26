@@ -39,12 +39,11 @@ export class EditCheckoutDialogComponent {
       bags: new UntypedFormControl(data.bags, [Validators.required]),
       tagNr: new UntypedFormControl(data.tagNr, [Validators.required]),
       bbLr: new UntypedFormControl(data.bbLr, [Validators.required]),
-      bbDown: new UntypedFormControl(data.bbDown, []),
+      bbDown: new UntypedFormControl(data.bbDown, [Validators.required]),
+      bbOut: new UntypedFormControl(data.bbOut, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
       completedAt: new UntypedFormControl(data.completedAt, []),
-      description: new UntypedFormControl(data.description, [
-        Validators.required,
-      ]),
+      description: new UntypedFormControl(data.description, []),
     });
   }
 
@@ -58,6 +57,7 @@ export class EditCheckoutDialogComponent {
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
         bbDown: this.form.get('bbDown')?.value,
+        bbOut: this.form.get('bbOut')?.value,
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
         description: this.form.get('location')?.value,

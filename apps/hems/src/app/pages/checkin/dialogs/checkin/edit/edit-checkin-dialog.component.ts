@@ -48,9 +48,7 @@ export class EditCheckinDialogComponent {
       bbUp: new UntypedFormControl(data.bbOut, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
       completedAt: new UntypedFormControl(data.completedAt, []),
-      description: new UntypedFormControl(data.description, [
-        Validators.required,
-      ]),
+      description: new UntypedFormControl(data.description, []),
     });
   }
 

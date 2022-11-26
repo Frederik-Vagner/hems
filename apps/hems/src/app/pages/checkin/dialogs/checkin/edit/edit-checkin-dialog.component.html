@@ -1,6 +1,6 @@
 <form (ngSubmit)="update()" [formGroup]="form" data-cy="update-checkin-dialog">
   <div class="header">
-    <h2>Update Luggage</h2>
+    <h2>Update Check In Luggage</h2>
   </div>
   <hr />
 
@@ -52,12 +52,12 @@
       </mat-form-field>
     </div>
     <div class="row-container">
-      <!-- Arrival time + bb in lr -->
+      <!-- Arrival time + location -->
       <mat-form-field autocomplete="off">
         <input
           matInput
           [ngxMatDatetimePicker]="pickerArrival"
-          placeholder="Arrival Time"
+          placeholder="Time of Arrival"
           formControlName="arrivalTime"
         />
         <mat-datepicker-toggle
@@ -72,28 +72,7 @@
         >
         </ngx-mat-datetime-picker>
       </mat-form-field>
-
       <mat-form-field autocomplete="off" class="input" appearance="fill">
-        <mat-label class="input-label">BB in LR</mat-label>
-        <input
-          type="text"
-          data-cy="update-checkin-name"
-          formControlName="bbLr"
-          matInput
-          placeholder="JD"
-        />
-        <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
-          Required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="row-container">
-      <!-- location + tag nr + nr of bags-->
-      <mat-form-field
-        autocomplete="off"
-        class="input one-third"
-        appearance="fill"
-      >
         <mat-label class="input-label">Location</mat-label>
         <input
           type="text"
@@ -105,6 +84,26 @@
         <mat-error
           *ngIf="form.get('location')?.invalid && form.get('location')?.dirty"
         >
+          Required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row-container">
+      <!-- bb in lr + tag nr + nr of bags-->
+      <mat-form-field
+        autocomplete="off"
+        class="input one-third"
+        appearance="fill"
+      >
+        <mat-label class="input-label">BB in LR</mat-label>
+        <input
+          type="text"
+          data-cy="update-checkin-name"
+          formControlName="bbLr"
+          matInput
+          placeholder="JD"
+        />
+        <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
           Required
         </mat-error>
       </mat-form-field>
@@ -188,7 +187,7 @@
         class="input full-width"
         appearance="fill"
       >
-        <mat-label class="input-label">Description</mat-label>
+        <mat-label class="input-label">Comments</mat-label>
         <input
           type="text"
           data-cy="update-checkin-description"
@@ -196,9 +195,6 @@
           matInput
           placeholder=""
         />
-        <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
-          Required
-        </mat-error>
       </mat-form-field>
     </div>
   </div>
