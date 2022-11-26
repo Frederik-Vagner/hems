@@ -35,6 +35,7 @@ export interface ICreateCarRequest {
   bbUp?: string;
   location: Location;
   parkingLot?: string;
+  bbOut?: string;
   comments: string;
   charged: boolean;
 }
@@ -53,6 +54,7 @@ export interface IUpdateCarRequest {
   bbUp?: string;
   location?: Location;
   parkingLot?: string;
+  bbOut?: string;
   comments?: string;
   charged?: boolean;
   completedAt?: Date;
