@@ -79,7 +79,7 @@ mat-divider {
 }
 
 .content {
-  background-color: white;
+  background-color: var(--extra-light-grey);
 }
 
 #navbar {
@@ -107,6 +107,4 @@ mat-divider {
   box-shadow: none;
 }
 
-.content {
-  background-color: white;
-}
+
