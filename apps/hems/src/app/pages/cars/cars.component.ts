@@ -54,7 +54,7 @@ export class CarsComponent {
   }
 
   ngOnInit(): void {
-    this.fetchCar();
+    this.fetchCarList();
   }
 
   formatDate(element: ICar): string {
@@ -68,7 +68,7 @@ export class CarsComponent {
     });
   }
 
-  fetchCar(): void {
+  fetchCarList(): void {
     this.carService.getCar(new Date()).subscribe({
       next: (car) => {
         this.carList = car;

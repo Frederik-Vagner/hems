@@ -138,14 +138,14 @@
           class="navbar-item"
           routerLink="/logout"
           data-cy="navbar-account-btn"
-          *ngIf="router.url !== '/login' && router.url !== '/404'"
+          *ngIf="router.url !== '/login'"
         >
           Account
         </button>
         <button
           mat-flat-button
           class="navbar-item"
-          *ngIf="router.url !== '/login' && router.url !== '/404'"
+          *ngIf="router.url !== '/login'"
           (click)="logout()"
           data-cy="navbar-logout-btn"
         >
