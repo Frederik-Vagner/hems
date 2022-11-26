@@ -1,4 +1,9 @@
-import { CreateCarRequest, UpdateCarRequest } from '@hems/interfaces';
+import {
+  CarSortOptions,
+  CreateCarRequest,
+  SortOrder,
+  UpdateCarRequest,
+} from '@hems/interfaces';
 import { Car } from '@hems/models';
 import {
   Body,
@@ -18,6 +23,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { CarsService } from './cars.service';
+import { toBool } from '../utils/query-params.utils';
 
 @ApiTags('Cars')
 @Controller('cars')
@@ -32,10 +38,24 @@ export class CarsController {
   @HttpCode(200)
   async getCarsBeforeCreatedAt(
     @Query('createdAt')
-    createdAt: string
+    createdAt: string,
+    @Query('status')
+    status: string | undefined,
+    @Query('search')
+    search: string | undefined,
+    @Query('sortBy')
+    sortBy: CarSortOptions | undefined,
+    @Query('sortOrder')
+    sortOrder: SortOrder | undefined
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
-    return this.carsService.findAllBeforeCreatedAt(createdAtDate);
+    return this.carsService.findAllBeforeCreatedAt(
+      createdAtDate,
+      toBool(status),
+      search,
+      sortBy,
+      sortOrder
+    );
   }
 
   @Post()

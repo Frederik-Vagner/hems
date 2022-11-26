@@ -66,7 +66,7 @@ export class Car extends CompletedAt implements ICar {
   parkingLot?: string;
 
   @ApiModelProperty({ example: 'fv' })
-  @Column()
+  @Column({ nullable: true })
   bbOut?: string;
 
   @ApiModelProperty({ example: 'luxurious car' })

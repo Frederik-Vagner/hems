@@ -66,9 +66,9 @@ export const generalTasks = [
 export const sampleInitials = [
   'CV',
   'TV',
-  'LMAO',
-  'LOL',
-  'SKRRT',
+  'TJ',
+  'CPV',
+  'CBJ',
   'ATV',
-  'AK47',
+  'FV',
 ];
