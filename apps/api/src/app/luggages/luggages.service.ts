@@ -77,5 +77,7 @@ export class LuggagesService {
         },
       }))
     );
+
+    return luggageList;
   }
 }
