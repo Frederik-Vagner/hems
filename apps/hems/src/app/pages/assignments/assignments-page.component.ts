@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IAssignment } from '@hems/interfaces';
 import { AssignmentsService } from '../../services/assignments.service';
@@ -24,7 +25,8 @@ export class AssignmentsPageComponent implements OnInit {
 
   constructor(
     private assignmentsService: AssignmentsService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog,
   ) {}
 
   ngOnInit(): void {
@@ -51,6 +53,10 @@ export class AssignmentsPageComponent implements OnInit {
         this.isLoading = false;
       },
     });
+  }
+
+  createAssignment(): void {
+    // this.dialog.open();
   }
   
   dateDisplayTime(date: Date) {
