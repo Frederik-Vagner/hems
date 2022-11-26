@@ -16,11 +16,11 @@ export class CreateLuggageRequest implements ICreateLuggageRequest {
   @IsOptional()
   roomReady?: boolean;
 
-  @ApiModelProperty({ example: 'Room 420' })
+  @ApiModelProperty({ example: '420' })
   @IsNotEmpty()
   room!: string;
 
-  @ApiModelProperty({ example: 'Teodor Jonasson' })
+  @ApiModelProperty({ example: 'TJ' })
   @IsNotEmpty()
   name!: string;
 
@@ -45,15 +45,15 @@ export class CreateLuggageRequest implements ICreateLuggageRequest {
   @IsNotEmpty()
   location!: string;
 
-  @ApiModelProperty({ example: 'Teodor Jonas' })
+  @ApiModelProperty({ example: 'TJ' })
   @IsNotEmpty()
   bbDown!: string;
 
-  @ApiModelProperty({ example: 'Teo Jon' })
+  @ApiModelProperty({ example: 'TJ' })
   @IsNotEmpty()
   bbLr!: string;
 
-  @ApiModelProperty({ example: 'Mario' })
+  @ApiModelProperty({ example: 'ML' })
   @IsOptional()
   bbOut?: string;
 }
@@ -68,11 +68,11 @@ export class UpdateLuggageRequest implements IUpdateLuggageRequest {
   @IsOptional()
   roomReady?: boolean;
 
-  @ApiModelProperty({ example: 'Room 420' })
+  @ApiModelProperty({ example: '420' })
   @IsOptional()
   room?: string;
 
-  @ApiModelProperty({ example: 'Teodor Jonasson' })
+  @ApiModelProperty({ example: 'TJ' })
   @IsOptional()
   name?: string;
 
@@ -97,15 +97,15 @@ export class UpdateLuggageRequest implements IUpdateLuggageRequest {
   @IsOptional()
   location?: string;
 
-  @ApiModelProperty({ example: 'Teodor Jonas' })
+  @ApiModelProperty({ example: 'TJ' })
   @IsOptional()
   bbDown?: string;
 
-  @ApiModelProperty({ example: 'Teo Jon' })
+  @ApiModelProperty({ example: 'TJ' })
   @IsOptional()
   bbLr?: string;
 
-  @ApiModelProperty({ example: 'Mario' })
+  @ApiModelProperty({ example: 'ML' })
   @IsOptional()
   bbOut?: string;
 

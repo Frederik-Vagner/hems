@@ -3,7 +3,7 @@ import { IAssignment } from '@hems/interfaces';
 export const assignments: IAssignment[] = [
   {
     assignmentId: 'e043d0ad-d6b1-47c3-ab84-a4984ae617b5',
-    room: 'room 905',
+    room: '905',
     task: 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.',
     comments: 'Real Estate',
     receivedBy: 'RU',
@@ -14,7 +14,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '918d88e6-fb82-4e89-a7b4-f283399cb87c',
-    room: 'room 746',
+    room: '746',
     task: 'Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.',
     comments: 'Natural Gas Distribution',
     receivedBy: 'CN',
@@ -25,7 +25,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '9af130cc-ae2a-4747-a981-cf834a346c16',
-    room: 'room 638',
+    room: '638',
     task: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.',
     comments: 'Coal Mining',
     receivedBy: 'UA',
@@ -36,7 +36,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '9115f57e-5d53-4853-ab42-4509ba71a92d',
-    room: 'room 234',
+    room: '234',
     task: 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.',
     comments: 'Major Chemicals',
     receivedBy: 'ZW',
@@ -47,7 +47,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'abcfc1ae-f270-498f-aa42-4a1b323dfcd0',
-    room: 'room 079',
+    room: '079',
     task: 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.',
     comments: 'n/a',
     receivedBy: 'BR',
@@ -58,7 +58,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '4b965f56-0b8b-4bdb-b237-da6d8d854beb',
-    room: 'room 363',
+    room: '363',
     task: 'Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.',
     comments: 'Services-Misc. Amusement & Recreation',
     receivedBy: 'CO',
@@ -69,7 +69,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'e6f88ae6-4fc2-4466-a6a3-1439cc633854',
-    room: 'room 076',
+    room: '076',
     task: 'Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.',
     comments: 'Major Banks',
     receivedBy: 'PL',
@@ -80,7 +80,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '75167d15-7aed-44b4-b143-4953161d61c7',
-    room: 'room 157',
+    room: '157',
     task: 'Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.',
     comments: 'Other Consumer Services',
     receivedBy: 'ID',
@@ -91,7 +91,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '0c4c8af2-9f38-4e08-ba0d-647fd4c32f6a',
-    room: 'room 517',
+    room: '517',
     task: 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.',
     comments: 'n/a',
     receivedBy: 'TH',
@@ -102,7 +102,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'b2a68073-0de5-464c-86ea-3ac3dacf403b',
-    room: 'room 689',
+    room: '689',
     task: 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
     comments: 'Major Chemicals',
     receivedBy: 'PH',
@@ -113,7 +113,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'bc41f91a-8fc5-4cee-90d1-a8e5a159012e',
-    room: 'room 949',
+    room: '949',
     task: 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
     comments: 'Real Estate',
     receivedBy: 'ID',
@@ -124,7 +124,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '5c59ce3b-31c8-47a2-b979-9c56741ae79f',
-    room: 'room 034',
+    room: '034',
     task: 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.',
     comments: 'Biotechnology: Biological Products (No Diagnostic Substances)',
     receivedBy: 'BY',
@@ -135,7 +135,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '8550a91c-ee97-4eea-a148-ca03e3a23360',
-    room: 'room 301',
+    room: '301',
     task: 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.',
     comments: 'Broadcasting',
     receivedBy: 'SY',
@@ -146,7 +146,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '9f21ee3c-735c-442d-a711-98619d59710c',
-    room: 'room 607',
+    room: '607',
     task: 'Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',
     comments: 'n/a',
     receivedBy: 'ID',
@@ -157,7 +157,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '15f9649a-c282-4e56-8212-e010078e468e',
-    room: 'room 948',
+    room: '948',
     task: 'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
     comments: 'Medical Specialities',
     receivedBy: 'MX',
@@ -168,7 +168,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '79dc94bf-5efb-4cac-b27d-7d864f1ddeb7',
-    room: 'room 866',
+    room: '866',
     task: 'Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.',
     comments: 'Major Pharmaceuticals',
     receivedBy: 'RU',
@@ -179,7 +179,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '33aff9fa-af57-44b1-80db-9d290e942e04',
-    room: 'room 400',
+    room: '400',
     task: 'Nunc rhoncus dui vel sem.',
     comments: 'Oil & Gas Production',
     receivedBy: 'AR',
@@ -190,7 +190,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'd13c44a9-5db6-4985-a024-d949e7fe40fd',
-    room: 'room 888',
+    room: '888',
     task: 'Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.',
     comments: 'Natural Gas Distribution',
     receivedBy: 'CO',
@@ -201,7 +201,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '58f9b442-e41e-4714-9a87-e68eacb3f133',
-    room: 'room 395',
+    room: '395',
     task: 'Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
     comments: 'Computer Communications Equipment',
     receivedBy: 'PT',
@@ -212,7 +212,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'aaae51a1-821a-447b-8acc-b22a0feb3d10',
-    room: 'room 674',
+    room: '674',
     task: 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
     comments: 'Professional Services',
     receivedBy: 'PT',
@@ -223,7 +223,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '3f2ca236-87d8-4bb4-81b9-acda41434847',
-    room: 'room 639',
+    room: '639',
     task: 'Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero.',
     comments: 'Books',
     receivedBy: 'CO',
@@ -234,7 +234,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'c43bddee-7fda-44ab-89a4-9f56723cffe0',
-    room: 'room 329',
+    room: '329',
     task: 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.',
     comments: 'Packaged Foods',
     receivedBy: 'SE',
@@ -245,7 +245,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'e92b575e-76c2-4900-a679-2f2fc1b820da',
-    room: 'room 221',
+    room: '221',
     task: 'Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.',
     comments: 'Marine Transportation',
     receivedBy: 'CN',
@@ -256,7 +256,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'a70d7453-b604-4c9a-b681-6b09f42089ab',
-    room: 'room 999',
+    room: '999',
     task: 'Duis bibendum. Morbi non quam nec dui luctus rutrum.',
     comments: 'Semiconductors',
     receivedBy: 'CU',
@@ -267,7 +267,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '9ef1f085-f8c9-4e3d-88e0-d091a3a30d43',
-    room: 'room 853',
+    room: '853',
     task: 'In eleifend quam a odio.',
     comments: 'Restaurants',
     receivedBy: 'CN',
@@ -278,7 +278,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '59d1240b-f8bb-4423-b6a2-87ad9d501165',
-    room: 'room 858',
+    room: '858',
     task: 'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
     comments: 'Major Banks',
     receivedBy: 'CN',
@@ -289,7 +289,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '43c5992d-6add-450c-8465-2f94cbe2532a',
-    room: 'room 007',
+    room: '007',
     task: 'Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',
     comments: 'Commercial Banks',
     receivedBy: 'MU',
@@ -300,7 +300,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '499437a2-2896-4c46-8fef-94ce81d3a7f9',
-    room: 'room 349',
+    room: '349',
     task: 'Duis bibendum. Morbi non quam nec dui luctus rutrum.',
     comments: 'Major Chemicals',
     receivedBy: 'PT',
@@ -311,7 +311,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'b5312e00-f968-4b68-8e28-0b4f3afa9f9c',
-    room: 'room 258',
+    room: '258',
     task: 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
     comments: 'n/a',
     receivedBy: 'CN',
@@ -322,7 +322,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'e591e9b6-a52d-4702-adcf-7c93204fb182',
-    room: 'room 530',
+    room: '530',
     task: 'Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.',
     comments: 'n/a',
     receivedBy: 'RS',
@@ -333,7 +333,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '85602a9d-68d6-4114-98f1-0618c0beea86',
-    room: 'room 343',
+    room: '343',
     task: 'Nulla nisl. Nunc nisl.',
     comments: 'Restaurants',
     receivedBy: 'FI',
@@ -344,7 +344,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'b8dabfa1-2cb4-4d27-be4e-0b844e145d0a',
-    room: 'room 422',
+    room: '422',
     task: 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.',
     comments: 'n/a',
     receivedBy: 'CN',
@@ -355,7 +355,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'a1be80a1-7f52-431a-ab02-13b918c72ad6',
-    room: 'room 976',
+    room: '976',
     task: 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.',
     comments: 'n/a',
     receivedBy: 'ID',
@@ -366,7 +366,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'e0bcb29b-c1c8-4079-8208-281de5f77151',
-    room: 'room 044',
+    room: '044',
     task: 'In hac habitasse platea dictumst.',
     comments: 'n/a',
     receivedBy: 'YE',
@@ -377,7 +377,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'fa85cf22-d97c-4299-8b09-5f28c88ee803',
-    room: 'room 145',
+    room: '145',
     task: 'Pellentesque ultrices mattis odio.',
     comments: 'Business Services',
     receivedBy: 'PL',
@@ -388,7 +388,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'e7557a66-7d3f-4418-9617-a286f1a80a12',
-    room: 'room 832',
+    room: '832',
     task: 'Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.',
     comments: 'Marine Transportation',
     receivedBy: 'YE',
@@ -399,7 +399,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '002662fa-941b-4292-8dec-0ba5f4b7f0d2',
-    room: 'room 504',
+    room: '504',
     task: 'Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue.',
     comments: 'Property-Casualty Insurers',
     receivedBy: 'MX',
@@ -410,7 +410,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '757a05a2-f2ea-4e80-96b6-ea63eadc3069',
-    room: 'room 197',
+    room: '197',
     task: 'Mauris lacinia sapien quis libero.',
     comments: 'Industrial Machinery/Components',
     receivedBy: 'MD',
@@ -421,7 +421,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '53b6f8e8-a986-4421-b65d-bc9b0a84681f',
-    room: 'room 081',
+    room: '081',
     task: 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.',
     comments: 'Major Banks',
     receivedBy: 'CI',
@@ -432,7 +432,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '45f480e8-014c-412a-82eb-9dfc5de49513',
-    room: 'room 604',
+    room: '604',
     task: 'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.',
     comments: 'Miscellaneous manufacturing industries',
     receivedBy: 'CN',
@@ -443,7 +443,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'a3777bcf-9e1c-47cd-9524-d29435c4f686',
-    room: 'room 994',
+    room: '994',
     task: 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
     comments: 'Books',
     receivedBy: 'PA',
@@ -454,7 +454,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'eb4b018f-be3a-44ce-a9ed-20c40175aec2',
-    room: 'room 505',
+    room: '505',
     task: 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.',
     comments: 'Business Services',
     receivedBy: 'CN',
@@ -465,7 +465,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'abeeacc8-da3d-490a-9640-908f1f12124d',
-    room: 'room 875',
+    room: '875',
     task: 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
     comments: 'Electric Utilities: Central',
     receivedBy: 'RU',
@@ -476,7 +476,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '66f1d32f-9e89-4ace-a9f0-d0e8fbf1d49f',
-    room: 'room 890',
+    room: '890',
     task: 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo.',
     comments: 'Food Distributors',
     receivedBy: 'CN',
@@ -487,7 +487,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'b0172e22-c6b9-43fe-b9ec-ba3a292f913d',
-    room: 'room 765',
+    room: '765',
     task: 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.',
     comments: 'Commercial Banks',
     receivedBy: 'CO',
@@ -498,7 +498,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'fff353e8-e213-4c03-a6c3-905052b85ea7',
-    room: 'room 245',
+    room: '245',
     task: 'Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.',
     comments: 'Other Consumer Services',
     receivedBy: 'CN',
@@ -509,7 +509,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'fbfe4ac7-50ca-4852-bf95-b67640dccc79',
-    room: 'room 415',
+    room: '415',
     task: 'Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.',
     comments: 'Diversified Commercial Services',
     receivedBy: 'OM',
@@ -520,7 +520,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'c55833ad-e348-43c0-8bfe-5162520151dc',
-    room: 'room 563',
+    room: '563',
     task: 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.',
     comments: 'Major Banks',
     receivedBy: 'SL',
@@ -531,7 +531,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'c9802ea7-a9bb-4d1a-b119-11121579a08f',
-    room: 'room 013',
+    room: '013',
     task: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.',
     comments: 'Industrial Specialties',
     receivedBy: 'ID',
@@ -542,7 +542,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'ff79a2a3-3ce2-428b-be36-8f9f3c0a39f8',
-    room: 'room 939',
+    room: '939',
     task: 'Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.',
     comments: 'Marine Transportation',
     receivedBy: 'MA',
@@ -553,7 +553,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '1fec1689-d02d-4d4b-bac2-a23d5a26d1e9',
-    room: 'room 600',
+    room: '600',
     task: 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.',
     comments: 'Computer Software: Prepackaged Software',
     receivedBy: 'CA',
@@ -564,7 +564,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '691d3a00-fd76-406a-9e8c-f4f6db7eee95',
-    room: 'room 677',
+    room: '677',
     task: 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.',
     comments: 'Business Services',
     receivedBy: 'ID',
@@ -575,7 +575,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'd003e48a-8279-461c-8f16-9966fe5c1f5b',
-    room: 'room 971',
+    room: '971',
     task: 'Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.',
     comments: 'Electronics Distribution',
     receivedBy: 'ID',
@@ -586,7 +586,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'efc5b8bf-8a69-472a-a8f9-09f1e3f4a296',
-    room: 'room 792',
+    room: '792',
     task: 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis.',
     comments: 'Electric Utilities: Central',
     receivedBy: 'RU',
@@ -597,7 +597,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'a6d8c2e4-c848-47da-96af-7efcbc4e4116',
-    room: 'room 317',
+    room: '317',
     task: 'Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
     comments: 'n/a',
     receivedBy: 'SV',
@@ -608,7 +608,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '6928d454-236c-4be5-bd69-972e522e2328',
-    room: 'room 718',
+    room: '718',
     task: 'Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.',
     comments: 'Engineering & Construction',
     receivedBy: 'ES',
@@ -619,7 +619,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '8e7f5dcd-f226-46ab-abbf-d4c200b084fa',
-    room: 'room 434',
+    room: '434',
     task: 'Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh.',
     comments: 'Telecommunications Equipment',
     receivedBy: 'ID',
@@ -630,7 +630,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '3fecb31e-82f0-4d86-8438-95f275883f71',
-    room: 'room 592',
+    room: '592',
     task: 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.',
     comments: 'Military/Government/Technical',
     receivedBy: 'CN',
@@ -641,7 +641,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '9e746988-33a9-4986-8a15-a9043612adb1',
-    room: 'room 469',
+    room: '469',
     task: 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor.',
     comments: 'Telecommunications Equipment',
     receivedBy: 'US',
@@ -652,7 +652,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'd125c358-6377-458c-9bdc-f4c95dc6502a',
-    room: 'room 356',
+    room: '356',
     task: 'Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.',
     comments: 'Industrial Machinery/Components',
     receivedBy: 'PL',
@@ -663,7 +663,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '79ad0944-cab7-4280-920e-60236c5ab196',
-    room: 'room 538',
+    room: '538',
     task: 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.',
     comments: 'n/a',
     receivedBy: 'CN',
@@ -674,7 +674,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '26b27472-c1e3-4199-b705-06e2cb2dd386',
-    room: 'room 979',
+    room: '979',
     task: 'Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.',
     comments: 'Major Pharmaceuticals',
     receivedBy: 'SL',
@@ -685,7 +685,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '24f3d3c8-832c-4ebe-a86f-2e6c751c297b',
-    room: 'room 940',
+    room: '940',
     task: 'Duis mattis egestas metus. Aenean fermentum.',
     comments: 'Telecommunications Equipment',
     receivedBy: 'AF',
@@ -696,7 +696,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '89d88c2f-f894-4392-a552-ecba902bfaca',
-    room: 'room 442',
+    room: '442',
     task: 'Vivamus vel nulla eget eros elementum pellentesque.',
     comments: 'Integrated oil Companies',
     receivedBy: 'PH',
@@ -707,7 +707,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'b84a011c-b6a5-4437-bbb0-77a106948ffa',
-    room: 'room 161',
+    room: '161',
     task: 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.',
     comments: 'n/a',
     receivedBy: 'KM',
@@ -718,7 +718,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'cd5cb272-3451-4017-984f-dd1c9e2f7464',
-    room: 'room 343',
+    room: '343',
     task: 'Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.',
     comments: 'Oil & Gas Production',
     receivedBy: 'PL',
@@ -729,7 +729,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'd079ba6a-21f4-43ef-8207-022ca8fdb773',
-    room: 'room 536',
+    room: '536',
     task: 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
     comments: 'n/a',
     receivedBy: 'PS',
@@ -740,7 +740,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'a48bf24a-2092-484f-bab6-a23ad88e3f21',
-    room: 'room 233',
+    room: '233',
     task: 'Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis.',
     comments: 'Building Materials',
     receivedBy: 'DE',
@@ -751,7 +751,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '18db66b8-28c3-4999-9c18-73bf1171b13d',
-    room: 'room 813',
+    room: '813',
     task: 'Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
     comments: 'Real Estate Investment Trusts',
     receivedBy: 'UA',
@@ -762,7 +762,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '58c2d951-79bb-4f80-9c09-c5b431bcef7b',
-    room: 'room 977',
+    room: '977',
     task: 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat.',
     comments: 'Metal Fabrications',
     receivedBy: 'SE',
@@ -773,7 +773,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '7066c3be-81d2-44d2-b88f-081b4ec7a31d',
-    room: 'room 401',
+    room: '401',
     task: 'Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum.',
     comments: 'Major Chemicals',
     receivedBy: 'NG',
@@ -784,7 +784,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'dc8e7ac6-79f1-4c25-b4b6-1179db2f1185',
-    room: 'room 077',
+    room: '077',
     task: 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.',
     comments: 'Major Pharmaceuticals',
     receivedBy: 'ID',
@@ -795,7 +795,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'd43bf37a-865e-43d4-a5bf-1995d262028d',
-    room: 'room 365',
+    room: '365',
     task: 'Nullam molestie nibh in lectus. Pellentesque at nulla.',
     comments: 'Textiles',
     receivedBy: 'PE',
@@ -806,7 +806,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '07858c9e-8bc9-462a-8e43-3e470481c718',
-    room: 'room 052',
+    room: '052',
     task: 'Nunc purus. Phasellus in felis. Donec semper sapien a libero.',
     comments: 'Investment Bankers/Brokers/Service',
     receivedBy: 'ID',
@@ -817,7 +817,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'ba32f2d5-4e13-48a5-9d7d-a58ce5caa76c',
-    room: 'room 396',
+    room: '396',
     task: 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis.',
     comments: 'Major Banks',
     receivedBy: 'ID',
@@ -828,7 +828,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'd02d588d-d085-44c1-9682-f1f239e64991',
-    room: 'room 858',
+    room: '858',
     task: 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.',
     comments: 'Major Banks',
     receivedBy: 'ID',
@@ -839,7 +839,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'f6779da2-f10b-4d86-9387-cfea2b561b34',
-    room: 'room 520',
+    room: '520',
     task: 'Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',
     comments: 'n/a',
     receivedBy: 'BR',
@@ -850,7 +850,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '5694de52-28ec-4107-89b4-60620368b0d1',
-    room: 'room 265',
+    room: '265',
     task: 'Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.',
     comments: 'n/a',
     receivedBy: 'MX',
@@ -861,7 +861,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '1605a344-e39e-4449-b17c-c4a5f11403f4',
-    room: 'room 938',
+    room: '938',
     task: 'Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.',
     comments: 'Auto Parts:O.E.M.',
     receivedBy: 'SE',
@@ -872,7 +872,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'cb781fcb-0253-4ae9-8fc6-91e56cb2aba1',
-    room: 'room 174',
+    room: '174',
     task: 'Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.',
     comments: 'Business Services',
     receivedBy: 'PH',
@@ -883,7 +883,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'd7d0fc8d-944b-4c98-9f8b-9129b0832f94',
-    room: 'room 709',
+    room: '709',
     task: 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
     comments: 'Homebuilding',
     receivedBy: 'KM',
@@ -894,7 +894,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '417ec784-c6e5-423d-b3cf-6438e17abd91',
-    room: 'room 532',
+    room: '532',
     task: 'In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit.',
     comments: 'Services-Misc. Amusement & Recreation',
     receivedBy: 'BR',
@@ -905,7 +905,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '43cfbeb8-ede6-4a20-a8c8-740e9d9affbc',
-    room: 'room 188',
+    room: '188',
     task: 'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.',
     comments: 'Metal Fabrications',
     receivedBy: 'TV',
@@ -916,7 +916,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '3f43312a-3715-4f4c-97da-436313df45b7',
-    room: 'room 708',
+    room: '708',
     task: 'Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.',
     comments: 'Food Distributors',
     receivedBy: 'CD',
@@ -927,7 +927,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'e29669c7-7dc4-462d-a9e7-7e8a7f606392',
-    room: 'room 257',
+    room: '257',
     task: 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.',
     comments: 'n/a',
     receivedBy: 'US',
@@ -938,7 +938,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'ace2c694-26ce-4484-b304-c11107538643',
-    room: 'room 584',
+    room: '584',
     task: 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
     comments: 'Property-Casualty Insurers',
     receivedBy: 'CN',
@@ -949,7 +949,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'e8462a83-e0f1-46dc-8655-8f2dba8e8a65',
-    room: 'room 511',
+    room: '511',
     task: 'Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.',
     comments: 'Multi-Sector Companies',
     receivedBy: 'PE',
@@ -960,7 +960,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '7bd9a695-e7df-45e4-95f3-39cb43392e70',
-    room: 'room 565',
+    room: '565',
     task: 'Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy.',
     comments: 'EDP Services',
     receivedBy: 'PL',
@@ -971,7 +971,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '92d8c489-ee30-4a10-adf2-48cb882c5a0d',
-    room: 'room 177',
+    room: '177',
     task: 'Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.',
     comments: 'Property-Casualty Insurers',
     receivedBy: 'SI',
@@ -982,7 +982,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '9b71fbe7-c585-476a-bec7-d5e02c0e41bd',
-    room: 'room 623',
+    room: '623',
     task: 'Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.',
     comments: 'Broadcasting',
     receivedBy: 'MX',
@@ -993,7 +993,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'bbf8d97c-c49a-4e1c-bf10-796fab3851df',
-    room: 'room 470',
+    room: '470',
     task: 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.',
     comments: 'Advertising',
     receivedBy: 'CA',
@@ -1004,7 +1004,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'e74ca50f-44c0-44d1-b0b1-8a47b240f72d',
-    room: 'room 497',
+    room: '497',
     task: 'Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.',
     comments: 'Home Furnishings',
     receivedBy: 'MU',
@@ -1015,7 +1015,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'ae7fa2aa-df0d-4bec-ac6e-11ccf3aa0426',
-    room: 'room 056',
+    room: '056',
     task: 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.',
     comments: 'Major Pharmaceuticals',
     receivedBy: 'US',
@@ -1026,7 +1026,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '9fc8207a-03fb-42ff-a220-ca3ec85b6d62',
-    room: 'room 639',
+    room: '639',
     task: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
     comments: 'Restaurants',
     receivedBy: 'BR',
@@ -1037,7 +1037,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '50c95ae5-dc75-4398-aa9a-48e6971abdef',
-    room: 'room 567',
+    room: '567',
     task: 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem.',
     comments: 'Diversified Commercial Services',
     receivedBy: 'DE',
@@ -1048,7 +1048,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '3aba00e7-0fd9-406c-afab-63befa3dfd9b',
-    room: 'room 086',
+    room: '086',
     task: 'Morbi a ipsum.',
     comments: 'Oil & Gas Production',
     receivedBy: 'SE',
@@ -1059,7 +1059,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '0ad817d6-c993-4f5c-887d-47364da7467e',
-    room: 'room 850',
+    room: '850',
     task: 'Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',
     comments: 'n/a',
     receivedBy: 'SE',
@@ -1070,7 +1070,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'b3e30358-aa1e-47bc-9bde-e8d740473175',
-    room: 'room 092',
+    room: '092',
     task: 'Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.',
     comments: 'Beverages (Production/Distribution)',
     receivedBy: 'ID',
@@ -1081,7 +1081,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: '98ef38ab-b2ae-49d1-86dc-d2b024934832',
-    room: 'room 198',
+    room: '198',
     task: 'Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo.',
     comments: 'Major Banks',
     receivedBy: 'NL',
@@ -1092,7 +1092,7 @@ export const assignments: IAssignment[] = [
   },
   {
     assignmentId: 'c503443c-659f-4d4f-bf03-b5873868ec1d',
-    room: 'room 393',
+    room: '393',
     task: 'Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.',
     comments: 'Industrial Machinery/Components',
     receivedBy: 'HR',
