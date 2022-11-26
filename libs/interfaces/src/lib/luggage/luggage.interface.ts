@@ -1,4 +1,4 @@
-import { ICompletedAt } from './base.interface';
+import { ICompletedAt } from '../base.interface';
 import { LuggageType } from './luggageType.enum';
 
 export interface ILuggage extends ICompletedAt {
@@ -45,5 +45,5 @@ export interface IUpdateLuggageRequest {
   bbDown?: string;
   bbLr?: string;
   bbOut?: string;
-  completedAt?: string;
+  completedAt?: Date;
 }

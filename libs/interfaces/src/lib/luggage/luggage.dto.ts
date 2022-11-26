@@ -108,4 +108,9 @@ export class UpdateLuggageRequest implements IUpdateLuggageRequest {
   @ApiModelProperty({ example: 'Mario' })
   @IsOptional()
   bbOut?: string;
+
+  @ApiModelProperty({ example: Date.now() })
+  @IsOptional()
+  @IsDateString()
+  completedAt?: Date;
 }
