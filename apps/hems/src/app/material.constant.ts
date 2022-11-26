@@ -5,6 +5,7 @@ import {
 } from '@angular-material-components/datetime-picker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -49,6 +50,7 @@ export const materialModules = [
   MatSortModule,
   MatSlideToggleModule,
   MatExpansionModule,
+  MatCheckboxModule,
   NgxMatDatetimePickerModule,
   NgxMatTimepickerModule,
   NgxMatNativeDateModule,

@@ -3,7 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
-import { EditCheckinDialogComponent } from './dialogs/edit-checkin-dialog.component';
+import { CreateCheckinDialogComponent } from './dialogs/checkin/create/create-checkin-dialog.component';
+import { EditCheckinDialogComponent } from './dialogs/checkin/edit/edit-checkin-dialog.component';
 
 @Component({
   selector: 'hems-checkin',
@@ -125,8 +126,24 @@ export class CheckinComponent implements OnInit {
     this.checkoutLuggage = uncompletedItems.concat(completedItems);
   }
 
-  openCheckinEditDialog(): void {
-    this.dialog.open(EditCheckinDialogComponent, { width: '500px' });
+  openCheckinEditDialog(luggage: ILuggage): void {
+    this.dialog.open(EditCheckinDialogComponent, {
+      width: '500px',
+      data: luggage,
+    });
   }
-  openCheckoutEditDialog(): void {}
+
+  openCheckinCreateDialog(): void {
+    this.dialog.open(CreateCheckinDialogComponent, {
+      width: '500px',
+    });
+  }
+
+  openCheckoutEditDialog(): void {
+    console.log('WIP');
+  }
+
+  openCheckoutCreateDialog(): void {
+    console.log('WIP');
+  }
 }

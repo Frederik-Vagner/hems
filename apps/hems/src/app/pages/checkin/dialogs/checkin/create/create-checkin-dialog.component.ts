@@ -7,18 +7,18 @@ import {
 } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LuggageService } from '../../../services/luggage.service';
+import { LuggageType } from '@hems/interfaces';
+import { LuggageService } from '../../../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-edit-checkin-dialog',
-  templateUrl: './edit-checkin-dialog.component.html',
-  styleUrls: ['./edit-checkin-dialog.component.css'],
+  selector: 'hems-create-checkin-dialog',
+  templateUrl: './create-checkin-dialog.component.html',
+  styleUrls: ['./create-checkin-dialog.component.css'],
 })
-export class EditCheckinDialogComponent {
+export class CreateCheckinDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
-  roomReady = false;
 
   constructor(
     private service: LuggageService,
@@ -27,7 +27,7 @@ export class EditCheckinDialogComponent {
   ) {
     this.form = new UntypedFormGroup({
       room: new UntypedFormControl('', [Validators.required]),
-      roomReady: new UntypedFormControl(false, [Validators.required]),
+      roomReady: new UntypedFormControl('false', [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
       arrivalTime: new UntypedFormControl(new Date(), [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
@@ -35,9 +35,10 @@ export class EditCheckinDialogComponent {
       bbLr: new UntypedFormControl('', [Validators.required]),
       bbUp: new UntypedFormControl('', []),
       location: new UntypedFormControl('', [Validators.required]),
-      completedAt: new UntypedFormControl('', []),
       description: new UntypedFormControl('', [Validators.required]),
-      guestApprovedGDPR: new UntypedFormControl(false, [Validators.required]),
+      guestApprovedGDPR: new UntypedFormControl(null, [
+        Validators.requiredTrue,
+      ]),
     });
   }
 
@@ -49,50 +50,38 @@ export class EditCheckinDialogComponent {
     return new Date(date);
   }
 
-  update(): void {
+  create(): void {
     this.isLoading = true;
-    console.log({
-      room: this.form.get('room')?.value,
-      roomReady: this.roomReady,
-      name: this.form.get('name')?.value,
-      arrivalTime: this.getDateTime(this.form.get('arrivalTime')?.value),
-      bags: this.form.get('bags')?.value,
-      tagNr: this.form.get('tagNr')?.value,
-      bbLr: this.form.get('bbLr')?.value,
-      location: this.form.get('location')?.value,
-      completedAt: this.form.get('completedAt')?.value,
-      description: this.form.get('location')?.value,
-    });
-    return;
     this.service
-      .updateCheckin({
+      .createCheckin({
         room: this.form.get('room')?.value,
-        roomReady: this.roomReady,
+        roomReady: this.form.get('roomReady')?.value,
         name: this.form.get('name')?.value,
         arrivalTime: this.getDateTime(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
         location: this.form.get('location')?.value,
-        completedAt: this.form.get('completedAt')?.value,
         description: this.form.get('location')?.value,
+        luggageType: LuggageType.CHECKIN,
+        bbDown: ' ',
       })
-      .subscribe(
-        () => {
-          this.snackbar.open('Discount update!', 'Cool', {
+      .subscribe({
+        next: () => {
+          this.snackbar.open('Check In luggage item created!', 'Cool', {
             duration: 5000,
           });
           document.location.reload();
           this.dialog.closeAll();
           this.isLoading = false;
         },
-        (err: HttpErrorResponse) => {
+        error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update :(', 'Imma try again later', {
+          this.snackbar.open('Failed to create :(', 'Imma try again later', {
             duration: 15000,
           });
           this.isLoading = false;
-        }
-      );
+        },
+      });
   }
 }

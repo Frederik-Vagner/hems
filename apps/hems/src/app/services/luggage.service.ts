@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ILuggage, IUpdateLuggageRequest } from '@hems/interfaces';
+import {
+  ICreateLuggageRequest,
+  ILuggage,
+  IUpdateLuggageRequest,
+} from '@hems/interfaces';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
@@ -28,7 +32,14 @@ export class LuggageService {
     );
   }
 
-  public updateCheckin(params: IUpdateLuggageRequest): Observable<ILuggage> {
+  public updateCheckin(
+    id: string,
+    params: IUpdateLuggageRequest
+  ): Observable<ILuggage> {
+    return this.http.patch<ILuggage>(`${env.apiUrl}/luggages/${id}`, params);
+  }
+
+  public createCheckin(params: ICreateLuggageRequest): Observable<ILuggage> {
     return this.http.post<ILuggage>(`${env.apiUrl}/luggages`, params);
   }
 }
