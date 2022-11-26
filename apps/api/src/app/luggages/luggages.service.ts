@@ -1,12 +1,15 @@
 import {
   CreateLuggageRequest,
+  Location,
+  LuggageSortOptions,
   LuggageType,
+  SortOrder,
   UpdateLuggageRequest,
 } from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, Between, LessThan } from 'typeorm';
+import { Repository, Between, LessThan, Like, IsNull, Not } from 'typeorm';
 
 @Injectable()
 export class LuggagesService {
@@ -17,16 +20,60 @@ export class LuggagesService {
 
   async findAllByLuggageTypeAndCreatedAt(
     luggageType: LuggageType,
-    createdAt: Date
+    createdAt: Date,
+    status: boolean | undefined,
+    location: Location | undefined,
+    search: string | undefined,
+    sortBy: LuggageSortOptions | undefined,
+    sortOrder: SortOrder | undefined
   ) {
-    const luggageList =
-      luggageType === LuggageType.LONG_TERM
-        ? await this.getLongTermLuggage(createdAt)
-        : await this.getLuggageByLuggageTypeAndCreatedAt(
-            luggageType,
-            createdAt
-          );
-    return luggageList;
+    const baseConditions = {
+      luggageType,
+      createdAt: Between<Date>(
+        new Date(createdAt.setUTCHours(0, 0, 0, 0)),
+        new Date(createdAt.setUTCHours(23, 59, 59, 999))
+      ),
+      completedAt: this.filterStatus(status),
+    };
+    const baseConditionsLongTerm = {
+      luggageType: LuggageType.LONG_TERM,
+      location,
+    };
+    const baseConditionsLongTermExtra = {
+      luggageType: LuggageType.CHECKIN || LuggageType.CHECKOUT,
+      createdAt: LessThan<Date>(new Date(createdAt.setUTCHours(0, 0, 0, 0))),
+      location,
+    };
+
+    const searchCondition = search ? Like(`%${search}%`) : undefined;
+
+    return await this.luggageRepo.find({
+      where:
+        luggageType === LuggageType.LONG_TERM
+          ? // Long term Query
+            [
+              { ...baseConditionsLongTerm, bbDown: searchCondition },
+              { ...baseConditionsLongTerm, bbLr: searchCondition },
+              { ...baseConditionsLongTerm, bbOut: searchCondition },
+              { ...baseConditionsLongTerm, room: searchCondition },
+              { ...baseConditionsLongTerm, name: searchCondition },
+
+              { ...baseConditionsLongTermExtra, bbDown: searchCondition },
+              { ...baseConditionsLongTermExtra, bbLr: searchCondition },
+              { ...baseConditionsLongTermExtra, bbOut: searchCondition },
+              { ...baseConditionsLongTermExtra, room: searchCondition },
+              { ...baseConditionsLongTermExtra, name: searchCondition },
+            ]
+          : // Checkin or Checkout Query
+            [
+              { ...baseConditions, bbDown: searchCondition },
+              { ...baseConditions, bbLr: searchCondition },
+              { ...baseConditions, bbOut: searchCondition },
+              { ...baseConditions, room: searchCondition },
+              { ...baseConditions, name: searchCondition },
+            ],
+      order: this.getSortingConditions(sortBy, sortOrder),
+    });
   }
 
   async createLuggage(luggageData: CreateLuggageRequest) {
@@ -45,39 +92,26 @@ export class LuggagesService {
     return await this.luggageRepo.save(luggage);
   }
 
-  private async getLuggageByLuggageTypeAndCreatedAt(
-    luggageType: LuggageType,
-    createdAt: Date
-  ) {
-    return await this.luggageRepo.find({
-      where: {
-        luggageType,
-        createdAt: Between<Date>(
-          new Date(createdAt.setUTCHours(0, 0, 0, 0)),
-          new Date(createdAt.setUTCHours(23, 59, 59, 999))
-        ),
-      },
-    });
+  private filterStatus(status: boolean | undefined) {
+    if (status === undefined) {
+      return undefined;
+    } else if (status === true) {
+      return Not(IsNull());
+    }
+    return IsNull();
   }
 
-  private async getLongTermLuggage(createdAt: Date) {
-    const luggageList = await this.luggageRepo.find({
-      where: {
-        luggageType: LuggageType.LONG_TERM,
-      },
-    });
-
-    luggageList.push(
-      ...(await this.luggageRepo.find({
-        where: {
-          luggageType: LuggageType.CHECKIN || LuggageType.CHECKOUT,
-          createdAt: LessThan<Date>(
-            new Date(createdAt.setUTCHours(0, 0, 0, 0))
-          ),
-        },
-      }))
-    );
-
-    return luggageList;
+  private getSortingConditions(
+    sortBy: LuggageSortOptions | undefined,
+    sortOrder: SortOrder | undefined
+  ) {
+    switch (sortBy) {
+      case LuggageSortOptions.ARRIVAL_TIME:
+        return { arrivalTime: sortOrder };
+      case LuggageSortOptions.COMPLETED_AT:
+        return { completedAt: sortOrder };
+      default:
+        return undefined;
+    }
   }
 }

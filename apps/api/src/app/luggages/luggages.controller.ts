@@ -1,4 +1,11 @@
-import { CreateLuggageRequest, LuggageType, UpdateLuggageRequest } from '@hems/interfaces';
+import {
+  CreateLuggageRequest,
+  Location,
+  LuggageSortOptions,
+  LuggageType,
+  SortOrder,
+  UpdateLuggageRequest,
+} from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import {
   Body,
@@ -17,6 +24,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
+import { toBool } from '../utils/query-params.utils';
 import { LuggagesService } from './luggages.service';
 
 @ApiTags('Luggages')
@@ -34,12 +42,27 @@ export class LuggagesController {
     @Param('luggageType')
     luggageType: LuggageType,
     @Query('createdAt')
-    createdAt: string
+    createdAt: string,
+    @Query('status')
+    status: string,
+    @Query('location')
+    location: Location,
+    @Query('search')
+    search: string,
+    @Query('sortBy')
+    sortBy: LuggageSortOptions,
+    @Query('sortOrder')
+    sortOrder: SortOrder
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.luggagesService.findAllByLuggageTypeAndCreatedAt(
       luggageType,
-      createdAtDate
+      createdAtDate,
+      toBool(status),
+      location,
+      search,
+      sortBy,
+      sortOrder
     );
   }
 
