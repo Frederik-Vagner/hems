@@ -1,5 +1,6 @@
 import {
   CreateLuggageRequest,
+  Location,
   LuggageSortOptions,
   LuggageType,
   SortOrder,
@@ -8,7 +9,7 @@ import {
 import { Luggage } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, Between, LessThan, Like } from 'typeorm';
+import { Repository, Between, LessThan, Like, IsNull, Not } from 'typeorm';
 
 @Injectable()
 export class LuggagesService {
@@ -20,6 +21,8 @@ export class LuggagesService {
   async findAllByLuggageTypeAndCreatedAt(
     luggageType: LuggageType,
     createdAt: Date,
+    status: boolean | undefined,
+    location: Location | undefined,
     search: string | undefined,
     sortBy: LuggageSortOptions | undefined,
     sortOrder: SortOrder | undefined
@@ -30,11 +33,16 @@ export class LuggagesService {
         new Date(createdAt.setUTCHours(0, 0, 0, 0)),
         new Date(createdAt.setUTCHours(23, 59, 59, 999))
       ),
+      completedAt: this.filterStatus(status),
     };
-    const baseConditionsLongTerm = { luggageType: LuggageType.LONG_TERM };
+    const baseConditionsLongTerm = {
+      luggageType: LuggageType.LONG_TERM,
+      location,
+    };
     const baseConditionsLongTermExtra = {
       luggageType: LuggageType.CHECKIN || LuggageType.CHECKOUT,
       createdAt: LessThan<Date>(new Date(createdAt.setUTCHours(0, 0, 0, 0))),
+      location,
     };
 
     const searchCondition = search ? Like(`%${search}%`) : undefined;
@@ -82,6 +90,15 @@ export class LuggagesService {
     }
 
     return await this.luggageRepo.save(luggage);
+  }
+
+  private filterStatus(status: boolean | undefined) {
+    if (status === undefined) {
+      return undefined;
+    } else if (status === true) {
+      return Not(IsNull());
+    }
+    return IsNull();
   }
 
   private getSortingConditions(

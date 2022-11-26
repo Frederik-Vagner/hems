@@ -1,5 +1,6 @@
 import {
   CreateLuggageRequest,
+  Location,
   LuggageSortOptions,
   LuggageType,
   SortOrder,
@@ -23,6 +24,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
+import { toBool } from '../utils/query-params.utils';
 import { LuggagesService } from './luggages.service';
 
 @ApiTags('Luggages')
@@ -41,6 +43,10 @@ export class LuggagesController {
     luggageType: LuggageType,
     @Query('createdAt')
     createdAt: string,
+    @Query('status')
+    status: string,
+    @Query('location')
+    location: Location,
     @Query('search')
     search: string,
     @Query('sortBy')
@@ -52,6 +58,8 @@ export class LuggagesController {
     return this.luggagesService.findAllByLuggageTypeAndCreatedAt(
       luggageType,
       createdAtDate,
+      toBool(status),
+      location,
       search,
       sortBy,
       sortOrder
