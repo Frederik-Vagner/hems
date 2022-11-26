@@ -12,7 +12,7 @@ export const cars: ICar[] = [
     expirationDate: new Date('3/15/2022'),
     pickupTime: new Date('10/3/2022'),
     deliveryTime: new Date('3/2/2022'),
-    bbDown: 'PH',
+    bbDown: 'PØ',
     bbUp: 'ID',
     location: Location.HVG_HOVEDVAGTSGADE,
     parkingLot: '15',
@@ -20,6 +20,7 @@ export const cars: ICar[] = [
     comments: 'Homebuilding',
     charged: false,
     createdAt: new Date('3/9/2022'),
+    completedAt: new Date('3/9/2022')
   },
   {
     carId: '9501f972-c3b7-4c48-8564-666fa2e901f3',
@@ -33,13 +34,14 @@ export const cars: ICar[] = [
     pickupTime: new Date('11/17/2022'),
     deliveryTime: new Date('8/29/2022'),
     bbDown: 'CZ',
-    bbUp: 'SA',
+    bbUp: 'SØ',
     location: Location.HVG_HOVEDVAGTSGADE,
     parkingLot: '13',
     bbOut: 'fv',
     comments: 'Transportation Services',
     charged: true,
     createdAt: new Date('3/25/2022'),
+    completedAt: new Date('3/9/2022')
   },
   {
     carId: 'f382ca73-3abf-4829-b2dd-250ed4f283fd',
@@ -60,6 +62,7 @@ export const cars: ICar[] = [
     comments: 'Major Pharmaceuticals',
     charged: false,
     createdAt: new Date('11/18/2022'),
+    completedAt: new Date('3/9/2022')
   },
   {
     carId: '28d7d5d1-2990-4d1e-aca3-9a2800f415d2',
@@ -80,6 +83,7 @@ export const cars: ICar[] = [
     comments: 'Telecommunications Equipment',
     charged: false,
     createdAt: new Date('11/18/2022'),
+    completedAt: new Date('3/9/2022') 
   },
   {
     carId: '2fc3b0d4-92e0-4e5b-be9b-0148e59de7d9',
