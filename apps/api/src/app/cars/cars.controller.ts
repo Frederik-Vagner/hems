@@ -1,4 +1,9 @@
-import { CreateCarRequest, UpdateCarRequest } from '@hems/interfaces';
+import {
+  CarSortOptions,
+  CreateCarRequest,
+  SortOrder,
+  UpdateCarRequest,
+} from '@hems/interfaces';
 import { Car } from '@hems/models';
 import {
   Body,
@@ -35,10 +40,22 @@ export class CarsController {
     @Query('createdAt')
     createdAt: string,
     @Query('status')
-    status: string | undefined
+    status: string | undefined,
+    @Query('search')
+    search: string | undefined,
+    @Query('sortBy')
+    sortBy: CarSortOptions | undefined,
+    @Query('sortOrder')
+    sortOrder: SortOrder | undefined
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
-    return this.carsService.findAllBeforeCreatedAt(createdAtDate, toBool(status));
+    return this.carsService.findAllBeforeCreatedAt(
+      createdAtDate,
+      toBool(status),
+      search,
+      sortBy,
+      sortOrder
+    );
   }
 
   @Post()

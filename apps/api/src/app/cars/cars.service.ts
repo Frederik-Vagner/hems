@@ -1,8 +1,13 @@
-import { CreateCarRequest, UpdateCarRequest } from '@hems/interfaces';
+import {
+  CreateCarRequest,
+  UpdateCarRequest,
+  SortOrder,
+  CarSortOptions,
+} from '@hems/interfaces';
 import { Car } from '@hems/models';
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { IsNull, LessThanOrEqual, Not, Repository } from 'typeorm';
+import { IsNull, LessThanOrEqual, Like, Not, Repository, Raw } from 'typeorm';
 
 @Injectable()
 export class CarsService {
@@ -11,15 +16,35 @@ export class CarsService {
     private readonly carRepo: Repository<Car>
   ) {}
 
-  async findAllBeforeCreatedAt(createdAt: Date, status: boolean | undefined) {
-    Logger.log(status);
+  async findAllBeforeCreatedAt(
+    createdAt: Date,
+    status: boolean | undefined,
+    search: string | undefined,
+    sortBy: CarSortOptions | undefined,
+    sortOrder: SortOrder | undefined
+  ) {
+    const baseConditions = {
+      createdAt: LessThanOrEqual<Date>(
+        new Date(createdAt.setUTCHours(23, 59, 59, 999))
+      ),
+      completedAt: this.filterStatus(status),
+    };
+
+    const searchCondition = search ? Like(`%${search}%`) : undefined;
+
     return this.carRepo.find({
-      where: {
-        createdAt: LessThanOrEqual<Date>(
-          new Date(createdAt.setUTCHours(23, 59, 59, 999))
-        ),
-        completedAt: this.filterStatus(status),
-      },
+      where: [
+        { ...baseConditions, bbDown: searchCondition },
+        { ...baseConditions, bbUp: searchCondition },
+        { ...baseConditions, bbOut: searchCondition },
+        { ...baseConditions, name: searchCondition },
+        {
+          ...baseConditions,
+          licensePlate: searchCondition,
+        },
+        { ...baseConditions, room: searchCondition },
+      ],
+      order: this.getSortingConditions(sortBy, sortOrder),
     });
   }
 
@@ -46,5 +71,21 @@ export class CarsService {
       return Not(IsNull());
     }
     return IsNull();
+  }
+
+  private getSortingConditions(
+    sortBy: CarSortOptions | undefined,
+    sortOrder: SortOrder | undefined
+  ) {
+    switch (sortBy) {
+      case CarSortOptions.DELIVERY_TIME:
+        return { deliveryTime: sortOrder };
+      case CarSortOptions.EXPIRATION_DATE:
+        return { expirationDate: sortOrder };
+      case CarSortOptions.PICKUP_TIME:
+        return { pickupTime: sortOrder };
+      default:
+        return undefined;
+    }
   }
 }
