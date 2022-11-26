@@ -73,6 +73,7 @@ export class EditCheckinDialogComponent {
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
+        bbOut: this.form.get('bbUp')?.value,
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
         description: this.form.get('location')?.value,

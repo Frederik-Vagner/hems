@@ -41,3 +41,7 @@ hr {
 .full-width {
   width: 100%;
 }
+
+.one-third {
+  width: 33%;
+}

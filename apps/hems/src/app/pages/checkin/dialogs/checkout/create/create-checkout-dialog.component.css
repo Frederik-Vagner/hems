@@ -42,6 +42,10 @@ hr {
   width: 100%;
 }
 
+.one-third {
+  width: 33%;
+}
+
 #gdpr-checkbox {
   margin-bottom: 10px;
 }

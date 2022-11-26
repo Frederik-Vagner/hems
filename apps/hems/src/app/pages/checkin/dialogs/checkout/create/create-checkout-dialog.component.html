@@ -7,11 +7,11 @@
   <div class="input-container">
     <div class="row-container">
       <!-- Room + nr of bags-->
-      <mat-form-field class="input" appearance="fill">
+      <mat-form-field class="input one-third" appearance="fill">
         <mat-label class="input-label">Room</mat-label>
         <input
           type="text"
-          data-cy="create-checkout-room-input"
+          data-cy="update-checkout-room-input"
           formControlName="room"
           matInput
           placeholder="123"
@@ -20,11 +20,12 @@
           Required
         </mat-error>
       </mat-form-field>
-      <mat-form-field class="input" appearance="fill">
+
+      <mat-form-field class="input one-third" appearance="fill">
         <mat-label class="input-label">Nr of bags</mat-label>
         <input
           type="text"
-          data-cy="create-checkout-room-input"
+          data-cy="update-checkout-room-input"
           formControlName="bags"
           matInput
           placeholder="1+3"
@@ -33,27 +34,7 @@
           Required
         </mat-error>
       </mat-form-field>
-    </div>
-    <div class="row-container">
-      <!--  name -->
-      <mat-form-field class="input full-width" appearance="fill">
-        <mat-label class="input-label">Name</mat-label>
-        <input
-          type="text"
-          data-cy="create-checkout-name"
-          formControlName="name"
-          matInput
-          placeholder="John Doe"
-        />
-        <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
-          Required
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div class="row-container">
-      <!-- tag nr + bb in lr -->
-
-      <mat-form-field class="input" appearance="fill">
+      <mat-form-field class="input one-third" appearance="fill">
         <mat-label class="input-label">Tag nr</mat-label>
         <input
           type="text"
@@ -68,28 +49,30 @@
           Required
         </mat-error>
       </mat-form-field>
-
-      <mat-form-field class="input" appearance="fill">
-        <mat-label class="input-label">BB in LR</mat-label>
+    </div>
+    <div class="row-container">
+      <!--  name -->
+      <mat-form-field class="input full-width" appearance="fill">
+        <mat-label class="input-label">Name</mat-label>
         <input
           type="text"
-          data-cy="create-checkout-name"
-          formControlName="bbLr"
+          data-cy="update-checkout-name"
+          formControlName="name"
           matInput
-          placeholder="JD"
+          placeholder="John Doe"
         />
-        <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
+        <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
           Required
         </mat-error>
       </mat-form-field>
     </div>
     <div class="row-container">
-      <!-- location -->
-      <mat-form-field class="input full-width" appearance="fill">
+      <!-- Location + bb in lr -->
+      <mat-form-field class="input" appearance="fill">
         <mat-label class="input-label">Location</mat-label>
         <input
           type="text"
-          data-cy="create-checkout-location"
+          data-cy="update-checkout-location"
           formControlName="location"
           matInput
           placeholder="LR1"
@@ -100,6 +83,20 @@
           Required
         </mat-error>
       </mat-form-field>
+
+      <mat-form-field class="input" appearance="fill">
+        <mat-label class="input-label">BB in LR</mat-label>
+        <input
+          type="text"
+          data-cy="update-checkout-name"
+          formControlName="bbLr"
+          matInput
+          placeholder="JD"
+        />
+        <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
+          Required
+        </mat-error>
+      </mat-form-field>
     </div>
     <div class="row-container">
       <!-- description -->
@@ -107,7 +104,7 @@
         <mat-label class="input-label">Description</mat-label>
         <input
           type="text"
-          data-cy="create-checkout-description"
+          data-cy="update-checkout-description"
           formControlName="description"
           matInput
           placeholder=""

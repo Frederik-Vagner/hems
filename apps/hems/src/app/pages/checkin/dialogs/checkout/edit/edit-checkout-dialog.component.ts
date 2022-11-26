@@ -39,7 +39,7 @@ export class EditCheckoutDialogComponent {
       bags: new UntypedFormControl(data.bags, [Validators.required]),
       tagNr: new UntypedFormControl(data.tagNr, [Validators.required]),
       bbLr: new UntypedFormControl(data.bbLr, [Validators.required]),
-      bbUp: new UntypedFormControl(data.bbOut, []),
+      bbDown: new UntypedFormControl(data.bbDown, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
       completedAt: new UntypedFormControl(data.completedAt, []),
       description: new UntypedFormControl(data.description, [
@@ -61,12 +61,11 @@ export class EditCheckoutDialogComponent {
     this.service
       .update(this.luggageId, {
         room: this.form.get('room')?.value,
-        roomReady: undefined,
         name: this.form.get('name')?.value,
-        arrivalTime: this.getDateTime(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
+        bbDown: this.form.get('bbDown')?.value,
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
         description: this.form.get('location')?.value,
