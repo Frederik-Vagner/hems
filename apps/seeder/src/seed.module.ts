@@ -1,4 +1,4 @@
-import { Car, Luggage, User } from '@hems/models';
+import { Assignment, Car, Luggage, Task, User } from '@hems/models';
 import { DynamicModule, Logger, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { configService } from './config.service';
@@ -6,6 +6,9 @@ import { SeedService } from './seed.service';
 import { UsersSeederService } from './services/users.service';
 import { LuggagesSeederService } from './services/luggages.service';
 import { CarsSeederService } from './services/cars.service';
+import { TasksSeederService } from './services/tasks.service';
+import { TaskGenerator } from '@hems/taskUtils';
+import { AssignmentSeederService } from './services/assignments.service';
 
 @Module({})
 export class SeedModule {
@@ -14,14 +17,17 @@ export class SeedModule {
       module: SeedModule,
       imports: [
         TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
-        TypeOrmModule.forFeature([User, Luggage, Car]),
+        TypeOrmModule.forFeature([User, Luggage, Car, Task, Assignment]),
       ],
       providers: [
         Logger,
         SeedService,
         UsersSeederService,
         LuggagesSeederService,
-        CarsSeederService
+        CarsSeederService,
+        TasksSeederService,
+        AssignmentSeederService,
+        TaskGenerator
       ],
       exports: [SeedService],
     };
