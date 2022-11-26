@@ -49,14 +49,24 @@
     </div>
     <div class="row-container">
       <!-- Arrival time + nr of bags -->
-      <mat-form-field class="input" appearance="fill">
-        <mat-label class="input-label">Arrival</mat-label>
+      <mat-form-field>
         <input
-          type="date"
-          data-cy="update-checkin-arrival"
-          formControlName="arrivalTime"
           matInput
+          [ngxMatDatetimePicker]="pickerArrival"
+          placeholder="Arrival Time"
+          formControlName="arrivalTime"
         />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="$any(pickerArrival)"
+        ></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker
+          #pickerArrival
+          [showSpinners]="true"
+          [showSeconds]="false"
+          [touchUi]="true"
+        >
+        </ngx-mat-datetime-picker>
       </mat-form-field>
       <mat-form-field class="input" appearance="fill">
         <mat-label class="input-label">Nr of bags</mat-label>
@@ -122,14 +132,24 @@
           Required
         </mat-error>
       </mat-form-field>
-      <mat-form-field class="input" appearance="fill">
-        <mat-label class="input-label">In room</mat-label>
+      <mat-form-field>
         <input
-          type="date"
-          data-cy="update-checkin-in-room"
-          formControlName="completedAt"
           matInput
+          [ngxMatDatetimePicker]="pickerCompletedAt"
+          placeholder="In room Time"
+          formControlName="completedAt"
         />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="$any(pickerCompletedAt)"
+        ></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker
+          #pickerCompletedAt
+          [showSpinners]="true"
+          [showSeconds]="false"
+          [touchUi]="true"
+        >
+        </ngx-mat-datetime-picker>
       </mat-form-field>
     </div>
     <div class="row-container">
