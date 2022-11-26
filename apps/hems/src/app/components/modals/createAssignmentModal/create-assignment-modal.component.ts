@@ -1,5 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AssignmentsService } from '../../../services/assignments.service';
 
 @Component({
@@ -10,10 +13,11 @@ import { AssignmentsService } from '../../../services/assignments.service';
 export class CreateAssignmentModalComponent implements OnInit {
   createAssignmentForm: UntypedFormGroup;
   guestHasApproved = false;
+  isLoading = false;
 
-  constructor(private assignmentService: AssignmentsService){
+  constructor(private assignmentService: AssignmentsService, private snackBar: MatSnackBar, private dialog: MatDialog){
     this.createAssignmentForm = new UntypedFormGroup({
-      roomNumber: new UntypedFormControl('', [
+      room: new UntypedFormControl('', [
         Validators.maxLength(50),
         Validators.pattern('^[0-9]*$'),
       ]),
@@ -25,6 +29,35 @@ export class CreateAssignmentModalComponent implements OnInit {
       timePerformed: new UntypedFormControl('', [Validators.required]),
       guestHasApproved: new UntypedFormControl(this.guestHasApproved, [Validators.required]),
     });
+  }
+
+  createAssignment(): void {
+    if(!this.guestHasApproved) {
+      this.snackBar.open('Guest needs to approve storing their data.', 'Fam.', { duration: 5000 });
+      return;
+    }
+
+    this.isLoading = true;
+    this.assignmentService.createAssignment({
+      room: this.createAssignmentForm.get('room')?.value,
+      task: this.createAssignmentForm.get('task')?.value,
+      comments: this.createAssignmentForm.get('comments')?.value,
+      receivedBy: this.createAssignmentForm.get('receivedBy')?.value,
+      performedBy: this.createAssignmentForm.get('performedBy')?.value,
+      receivedAt: this.createAssignmentForm.get('receivedAt')?.value,
+    }).subscribe(
+      () => {
+        this.snackBar.open('Assignment added!', 'HOLY SH***', { duration: 2500 });
+        document.location.reload();
+        this.dialog.closeAll();
+        this.isLoading = false;
+      },
+      (err: HttpErrorResponse) => {
+        console.error(err);
+        this.snackBar.open('Failed to add assignment sadly :(((', 'SH*** HOLY', { duration: 5000 });
+        this.isLoading = false;
+      }
+    )
   }
 
   ngOnInit(): void {
