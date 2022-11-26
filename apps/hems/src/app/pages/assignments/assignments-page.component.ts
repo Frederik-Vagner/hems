@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IAssignment } from '@hems/interfaces';
 import { AssignmentsService } from '../../services/assignments.service';
-import { assignments } from './mockAssignment';
 
 @Component({
   selector: 'hems-assignments-page',
