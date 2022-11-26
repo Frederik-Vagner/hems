@@ -18,6 +18,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { CarsService } from './cars.service';
+import { toBool } from '../utils/query-params.utils';
 
 @ApiTags('Cars')
 @Controller('cars')
@@ -32,10 +33,12 @@ export class CarsController {
   @HttpCode(200)
   async getCarsBeforeCreatedAt(
     @Query('createdAt')
-    createdAt: string
+    createdAt: string,
+    @Query('status')
+    status: string | undefined
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
-    return this.carsService.findAllBeforeCreatedAt(createdAtDate);
+    return this.carsService.findAllBeforeCreatedAt(createdAtDate, toBool(status));
   }
 
   @Post()

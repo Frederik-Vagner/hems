@@ -20,6 +20,7 @@ export const cars: ICar[] = [
     comments: 'Homebuilding',
     charged: false,
     createdAt: new Date('3/9/2022'),
+    completedAt: new Date('3/9/2022')
   },
   {
     carId: '9501f972-c3b7-4c48-8564-666fa2e901f3',
@@ -40,6 +41,7 @@ export const cars: ICar[] = [
     comments: 'Transportation Services',
     charged: true,
     createdAt: new Date('3/25/2022'),
+    completedAt: new Date('3/9/2022')
   },
   {
     carId: 'f382ca73-3abf-4829-b2dd-250ed4f283fd',
@@ -60,6 +62,7 @@ export const cars: ICar[] = [
     comments: 'Major Pharmaceuticals',
     charged: false,
     createdAt: new Date('11/18/2022'),
+    completedAt: new Date('3/9/2022')
   },
   {
     carId: '28d7d5d1-2990-4d1e-aca3-9a2800f415d2',
@@ -80,6 +83,7 @@ export const cars: ICar[] = [
     comments: 'Telecommunications Equipment',
     charged: false,
     createdAt: new Date('11/18/2022'),
+    completedAt: new Date('3/9/2022') 
   },
   {
     carId: '2fc3b0d4-92e0-4e5b-be9b-0148e59de7d9',
