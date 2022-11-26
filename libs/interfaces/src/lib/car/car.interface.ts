@@ -16,6 +16,7 @@ export interface ICar extends ICompletedAt {
   bbUp?: string;
   location: Location;
   parkingLot?: string;
+  bbOut?: string;
   comments: string;
   charged: boolean;
 }
