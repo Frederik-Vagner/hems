@@ -17,15 +17,15 @@ export class Car extends CompletedAt implements ICar {
   @Column()
   room!: string;
 
-  @ApiModelProperty({ example: '04/06/2022' })
+  @ApiModelProperty({ example: Date.now() })
   @Column()
   arrivalDate!: Date;
 
-  @ApiModelProperty({ example: '08/06/2022' })
+  @ApiModelProperty({ example: Date.now() })
   @Column()
   departureDate!: Date;
 
-  @ApiModelProperty({ example: 'madsen' })
+  @ApiModelProperty({ example: 'Madsen' })
   @Column()
   name!: string;
 
@@ -33,15 +33,15 @@ export class Car extends CompletedAt implements ICar {
   @Column()
   licensePlate!: string;
 
-  @ApiModelProperty({ example: '01/04/2022 - 16:40' })
+  @ApiModelProperty({ example: Date.now() })
   @Column({ nullable: true })
   expirationDate?: Date;
 
-  @ApiModelProperty({ example: '9:00 / RN = Call Down' })
+  @ApiModelProperty({ example: Date.now() })
   @Column({ nullable: true })
   pickupTime?: Date;
 
-  @ApiModelProperty({ example: '02/04/2022 - 9:15' })
+  @ApiModelProperty({ example: Date.now() })
   @Column({ nullable: true })
   deliveryTime?: Date;
 
@@ -73,11 +73,7 @@ export class Car extends CompletedAt implements ICar {
   @Column()
   comments!: string;
 
-  @ApiModelProperty({ example: 'yes/no' })
+  @ApiModelProperty({ example: true })
   @Column()
   charged!: boolean;
-
-  @ApiModelProperty({ example: '02/04/2022 - 9:15' })
-  @Column({ nullable: true })
-  completedAt?: Date;
 }

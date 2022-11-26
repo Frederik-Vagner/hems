@@ -1,4 +1,4 @@
-import { ICompletedAt } from './base.interface';
+import { ICompletedAt } from '../base.interface';
 
 export interface ITask extends ICompletedAt {
   taskId: string;

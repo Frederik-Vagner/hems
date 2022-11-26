@@ -1,4 +1,4 @@
-import { ICompletedAt } from './base.interface';
+import { ICompletedAt } from '../base.interface';
 
 export interface IAssignment extends ICompletedAt {
   assignmentId: string;
@@ -7,6 +7,7 @@ export interface IAssignment extends ICompletedAt {
   comments: string;
   receivedBy: string;
   performedBy?: string;
+  receivedAt: Date;
 }
 
 export interface ICreateAssignmentRequest {
@@ -15,6 +16,7 @@ export interface ICreateAssignmentRequest {
   comments: string;
   receivedBy: string;
   performedBy?: string;
+  receivedAt: Date;
 }
 
 export interface IUpdateAssignmentRequest {
@@ -23,5 +25,6 @@ export interface IUpdateAssignmentRequest {
   comments?: string;
   receivedBy?: string;
   performedBy?: string;
+  receivedAt?: Date;
   completedAt?: Date;
 }
