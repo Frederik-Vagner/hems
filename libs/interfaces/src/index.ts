@@ -1,7 +1,7 @@
 // DTOs
 export * from './lib/auth.dto';
 export * from './lib/luggage/luggage.dto';
-export * from './lib/car.dto';
+export * from './lib/car/car.dto';
 export * from './lib/assignment.dto';
 export * from './lib/task.dto';
 
@@ -18,4 +18,4 @@ export * from './lib/assignment.interface';
 // Enums
 export * from './lib/role.enum';
 export * from './lib/luggageType.enum';
-export * from './lib/location.enum';
+export * from './lib/car/location.enum';
