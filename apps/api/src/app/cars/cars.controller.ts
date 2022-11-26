@@ -40,13 +40,13 @@ export class CarsController {
     @Query('createdAt')
     createdAt: string,
     @Query('status')
-    status: string | undefined,
+    status: string,
     @Query('search')
-    search: string | undefined,
+    search: string,
     @Query('sortBy')
-    sortBy: CarSortOptions | undefined,
+    sortBy: CarSortOptions,
     @Query('sortOrder')
-    sortOrder: SortOrder | undefined
+    sortOrder: SortOrder
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.carsService.findAllBeforeCreatedAt(
