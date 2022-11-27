@@ -22,6 +22,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
+import { toBool } from '../utils/query-params.utils';
 import { AssignmentsService } from './assignments.service';
 
 @ApiTags('Assignments')
@@ -36,6 +37,10 @@ export class AssignmentsController {
   async getAssignmentsByCreatedAt(
     @Query('createdAt')
     createdAt: string,
+    @Query('status')
+    status: string,
+    @Query('room')
+    room: string,
     @Query('sortBy')
     sortBy: AssignmentSortOptions,
     @Query('sortOrder')
@@ -44,6 +49,8 @@ export class AssignmentsController {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.assignmentsService.findAllByCreatedAt(
       createdAtDate,
+      toBool(status),
+      room,
       sortBy,
       sortOrder
     );

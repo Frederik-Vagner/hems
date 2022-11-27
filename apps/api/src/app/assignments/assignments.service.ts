@@ -8,6 +8,7 @@ import { Assignment } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Between, Repository } from 'typeorm';
+import { filterStatus } from '../utils/query-params.utils';
 
 @Injectable()
 export class AssignmentsService {
@@ -18,6 +19,8 @@ export class AssignmentsService {
 
   async findAllByCreatedAt(
     createdAt: Date,
+    status: boolean | undefined,
+    room: string | undefined,
     sortBy: AssignmentSortOptions | undefined,
     sortOrder: SortOrder | undefined
   ) {
@@ -27,6 +30,8 @@ export class AssignmentsService {
           new Date(createdAt.setUTCHours(0, 0, 0, 0)),
           new Date(createdAt.setUTCHours(23, 59, 59, 999))
         ),
+        completedAt: filterStatus(status),
+        room,
       },
       order: this.getSortingConditions(sortBy, sortOrder),
     });
