@@ -127,12 +127,12 @@
       </mat-error>
     </mat-form-field>
     
-    <div>
+    <label class="checkbox-container">
+      The guest has given consent to the processing of personal data
       <input type="checkbox" [checked]="guestHasApproved" (change)="guestHasApproved = !guestHasApproved"/>
-      <label
-        >The guest has given consent to the processing of personal data</label
-      >
-    </div>
+      <span class="checkmark" data-cy="checkbox-banner"></span>
+    </label>
+    
     <button class="secondary-btn" mat-raised-button>
       Cancel
     </button>
