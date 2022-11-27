@@ -43,7 +43,7 @@ services:
       context: .
       dockerfile: ./.deploy/hems/Dockerfile
     environment:
-      API_URL: ${API_URL:-hems.hotdeals.dev}
+      API_URL: ${API_URL:-https://hems.hotdeals.dev}
     networks:
       - hems-net
     ports:
