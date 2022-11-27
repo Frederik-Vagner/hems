@@ -17,26 +17,42 @@ export class CreateAssignmentModalComponent implements OnInit {
 
   constructor(private assignmentService: AssignmentsService, private snackBar: MatSnackBar, private dialog: MatDialog){
     this.createAssignmentForm = new UntypedFormGroup({
-      room: new UntypedFormControl('', [
-        Validators.maxLength(50),
-        Validators.pattern('^[0-9]*$'),
-      ]),
+      room: new UntypedFormControl(100, [Validators.maxLength(50), Validators.pattern('^[0-9]*$')]),
       task: new UntypedFormControl('', [Validators.required]),
       description: new UntypedFormControl('', [Validators.required]),
       receivedBy: new UntypedFormControl(''),
       performedBy: new UntypedFormControl('', [Validators.required]),
       timeReceived: new UntypedFormControl('', [Validators.required]),
       timePerformed: new UntypedFormControl('', [Validators.required]),
-      guestHasApproved: new UntypedFormControl(this.guestHasApproved, [Validators.required]),
     });
-  }
+  };
 
-  createAssignment(): void {
+  onSubmit(): void {
     if(!this.guestHasApproved) {
       this.snackBar.open('Guest needs to approve storing their data.', 'Fam.', { duration: 5000 });
       return;
-    }
+    };
 
+    if(!this.createAssignmentForm.valid) {
+      if(this.createAssignmentForm.get('room')?.invalid) {
+        console.log('1');
+      } else if (this.createAssignmentForm.get('task')?.invalid) {
+        console.log('2');
+      } else if (this.createAssignmentForm.get('comments')?.invalid) {
+        console.log('3');
+      } else if (this.createAssignmentForm.get('receivedBy')?.invalid) {
+        console.log('4');
+      } else if (this.createAssignmentForm.get('performedBy')?.invalid) {
+        console.log('5');
+      } else if (this.createAssignmentForm.get('receivedAt')?.invalid) {
+        console.log('6');
+      }
+    } else {
+      this.createAssignment();
+    }
+  }
+
+  createAssignment(): void {
     this.isLoading = true;
     this.assignmentService.createAssignment({
       room: this.createAssignmentForm.get('room')?.value,
@@ -57,10 +73,10 @@ export class CreateAssignmentModalComponent implements OnInit {
         this.snackBar.open('Failed to add assignment sadly :(((', 'SH*** HOLY', { duration: 5000 });
         this.isLoading = false;
       }
-    )
-  }
+    );
+  };
 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
-  }
+  };
 }

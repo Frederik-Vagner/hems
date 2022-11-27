@@ -1,53 +1,132 @@
-<main>
+<form [formGroup]="createAssignmentForm" (ngSubmit)="onSubmit()">
     <h1>Add assignment</h1>
     <hr />
     <mat-form-field appearance="fill">
       <mat-label>Room</mat-label>
-      <input matInput>
+      <input
+        type="text"
+        formControlName="room"
+        matInput
+        placeholder="Room nr"
+      />
+      <mat-error
+        *ngIf="
+          createAssignmentForm.get('room')?.invalid && createAssignmentForm.get('room')?.dirty
+        "
+      >
+        Invalid room - Must be a number from 100-999
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Task</mat-label>
-      <input matInput>
+      <input
+        type="text"
+        formControlName="task"
+        matInput
+        placeholder="Type of task"
+      />
+      <mat-error
+        *ngIf="
+          createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
+        "
+      >
+        Invalid task - Required
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Task description</mat-label>
-      <textarea matInput></textarea>
+      <mat-label>Task comments</mat-label>
+      <textarea matInput
+        type="text"
+        formControlName="comments"
+        maxlength="1000"
+      ></textarea>
+      <mat-error
+        *ngIf="
+          createAssignmentForm.get('comments')?.invalid && createAssignmentForm.get('comments')?.dirty
+        "
+      >
+        Invalid comments - Required
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Received by</mat-label>
-      <input matInput>
+      <input
+        type="text"
+        formControlName="receivedBy"
+        matInput
+        placeholder="Received by"
+      />
+      <mat-error
+        *ngIf="
+          createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
+        "
+      >
+        Invalid task - Required
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Performed by</mat-label>
-      <input matInput>
+      <input
+        type="text"
+        formControlName="performedBy"
+        matInput
+        placeholder="Performed by"
+      />
+      <mat-error
+        *ngIf="
+          createAssignmentForm.get('performedBy')?.invalid && createAssignmentForm.get('performedBy')?.dirty
+        "
+      >
+        Invalid performed by - Required
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Time received</mat-label>
-      <input matInput>
+      <input
+        type="text"
+        formControlName="receivedAt"
+        matInput
+      />
+      <mat-error
+        *ngIf="
+          createAssignmentForm.get('receivedAt')?.invalid && createAssignmentForm.get('receivedAt')?.dirty
+        "
+      >
+        Invalid time received at - Required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <!-- <mat-form-field appearance="fill">
       <mat-label>Time performed</mat-label>
-      <input matInput>
-    </mat-form-field>
+      <input
+        type="text"
+        formControlName=""
+        matInput
+      />
+      <mat-error
+        *ngIf="
+          createAssignmentForm.get('')?.invalid && createAssignmentForm.get('')?.dirty
+        "
+      >
+        Invalid time received at - Required
+      </mat-error>
+    </mat-form-field> -->
     
     <div>
-      <input type="checkbox" />
+      <input type="checkbox" [checked]="guestHasApproved" (change)="guestHasApproved = !guestHasApproved"/>
       <label
         >The guest has given consent to the processing of personal data</label
       >
     </div>
-    <div>
-      <button class="secondary-btn" mat-raised-button>
-        Cancel
-      </button>
-      <button class="action-btn" mat-raised-button>
-        + Add assignment
-      </button>
-    </div>
-  </main>
+    <button class="secondary-btn" mat-raised-button>
+      Cancel
+    </button>
+    <button class="action-btn" mat-raised-button>
+      + Add assignment
+    </button>
+  </form>
