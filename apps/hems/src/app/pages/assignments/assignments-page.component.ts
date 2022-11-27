@@ -61,7 +61,10 @@ export class AssignmentsPageComponent implements OnInit {
   }
   
   dateDisplayTime(date: Date) {
-    return date.toLocaleString(undefined, {hour: '2-digit', hour12: false, minute:'2-digit'})
+    console.log('running time format for: ', date);
+    console.log('returning: ', date.toLocaleString(undefined, {hour: '2-digit', hour12: false, minute:'2-digit'}));
+    
+    return 'skrt';
   }
 
   editAssignment(assignmentId: string): void {
