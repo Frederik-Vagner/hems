@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "cSpell.words": [
         "Longterm",
         "Checkin"
     ]
 }
+=======
+  "cSpell.words": ["Checkin", "Datetime"]
+}
+>>>>>>> main

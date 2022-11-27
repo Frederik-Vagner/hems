@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ILuggage } from '@hems/interfaces';
+import {
+  ICreateLuggageRequest,
+  ILuggage,
+  IUpdateLuggageRequest,
+} from '@hems/interfaces';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
@@ -26,5 +30,16 @@ export class LuggageService {
     return this.http.get<ILuggage[]>(
       `${env.apiUrl}/luggages/longTerm?createdAt=${createdAt.toISOString()}`
     );
+  }
+
+  public update(
+    id: string,
+    params: IUpdateLuggageRequest
+  ): Observable<ILuggage> {
+    return this.http.patch<ILuggage>(`${env.apiUrl}/luggages/${id}`, params);
+  }
+
+  public create(params: ICreateLuggageRequest): Observable<ILuggage> {
+    return this.http.post<ILuggage>(`${env.apiUrl}/luggages`, params);
   }
 }

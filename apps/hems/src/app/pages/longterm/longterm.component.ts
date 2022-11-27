@@ -9,12 +9,11 @@ import { LuggageService } from '../../services/luggage.service';
   styleUrls: ['./longterm.component.scss'],
 })
 export class LongtermComponent implements OnInit {
-  luggage?: ILuggage[];
+  luggage: ILuggage[]= [];
   currentLuggages?: ILuggage[];
   listNames?: string[];
   chosenListName = '';
   isLoading = false;
-  longTermList : ILuggage[] = [];
 
   displayedColumns = [
     'dateIn',
@@ -52,9 +51,9 @@ export class LongtermComponent implements OnInit {
   }
 
   fetchLuggage(): void {
-    this.isLoading = true;
+    this.isLoading = true;    
     this.luggageService.getLongTerm(new Date()).subscribe({
-      next: (luggage) => {
+      next: (luggage) => {        
         this.luggage = luggage;
         console.log(luggage);
       },
@@ -75,7 +74,7 @@ export class LongtermComponent implements OnInit {
   
   editlongTermListEntry(id: string): void {
     alert(id);
-    console.log(this.longTermList)
+    console.log(this.luggage)
   }
 
 }

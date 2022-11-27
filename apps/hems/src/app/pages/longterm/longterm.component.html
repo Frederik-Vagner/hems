@@ -11,7 +11,7 @@
   </div>
   <hr />
 
-  <table mat-table [dataSource]="longTermList" class="mat-elevation-z8" matSort>
+  <table mat-table [dataSource]="luggage" class="mat-elevation-z8" matSort>
     <ng-container matColumnDef="dateIn">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Date in</th>
       <td mat-cell *matCellDef="let luggage">{{ luggage.createdAt ? formatDate(luggage.createdAt) : "Not Specified" }}</td>
@@ -32,7 +32,7 @@
     <ng-container matColumnDef="nrOfBags">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>NR. of bags</th>
       <td mat-cell *matCellDef="let luggage">
-        {{ luggage.nrOfBags }}
+        {{ luggage.bags }}
       </td>
     </ng-container>
 
@@ -58,7 +58,7 @@
     <ng-container matColumnDef="bbInLr">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>BB in LR</th>
       <td mat-cell *matCellDef="let luggage">
-        {{ luggage.bb }}
+        {{ luggage.bbLr }}
       </td>
     </ng-container>
 
@@ -76,7 +76,7 @@
 
     <ng-container matColumnDef="dateOut">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Date out</th>
-      <td mat-cell *matCellDef="let luggage">{{ luggage.bbUp }}</td>
+      <td mat-cell *matCellDef="let luggage">{{ luggage.completedAt ? formatDate(luggage.completedAt) : "Not Specified" }}</td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
