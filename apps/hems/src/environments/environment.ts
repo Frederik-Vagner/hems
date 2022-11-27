@@ -8,7 +8,7 @@ export const environment: IEnvironment = {
   production: true,
   envName: 'production',
 
-  apiUrl: 'http://localhost:3333',
+  apiUrl: window['env'] ? window['env']['apiUrl'] : 'http://localhost:3333',
 };
 
 /*
