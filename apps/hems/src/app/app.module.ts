@@ -18,7 +18,8 @@ import { EditCheckoutDialogComponent } from './pages/checkin/dialogs/checkout/ed
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
-import { CreateAssignmentModalComponent } from './pages/assignments/createAssignmentModal/create-assignment-modal.component';
+import { CreateAssignmentDialogComponent } from './pages/assignments/createAssignmentDialog/create-assignment-dialog.component';
+import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CreateAssignmentModalComponent } from './pages/assignments/createAssign
     CreateCheckinDialogComponent,
     EditCheckoutDialogComponent,
     CreateCheckoutDialogComponent,
-    CreateAssignmentModalComponent
+    CreateAssignmentDialogComponent,
+    UpdateAssignmentDialogComponent,
   ],
   imports: [
     BrowserModule,

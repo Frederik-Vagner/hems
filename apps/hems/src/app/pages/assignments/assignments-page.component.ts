@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IAssignment } from '@hems/interfaces';
-import { CreateAssignmentModalComponent } from './createAssignmentModal/create-assignment-modal.component';
 import { AssignmentsService } from '../../services/assignments.service';
+import { CreateAssignmentDialogComponent } from './createAssignmentDialog/create-assignment-dialog.component';
+import { UpdateAssignmentDialogComponent } from './updateAssignmentDialog/update-assignment-dialog.component';
 
 @Component({
   selector: 'hems-assignments-page',
@@ -57,7 +58,7 @@ export class AssignmentsPageComponent implements OnInit {
   }
 
   createAssignment(): void {
-    this.dialog.open(CreateAssignmentModalComponent, { width: '500px' });
+    this.dialog.open(CreateAssignmentDialogComponent, { width: '500px' });
   }
   
   dateDisplayTime(date: Date) {
@@ -68,6 +69,9 @@ export class AssignmentsPageComponent implements OnInit {
   }
 
   editAssignment(assignmentId: string): void {
-    alert(assignmentId)
+    this.dialog.open(UpdateAssignmentDialogComponent, {
+      width: '500px',
+      data: this.assignmentList.find((assignment) => assignment.assignmentId === assignmentId),
+    });
   }
 }

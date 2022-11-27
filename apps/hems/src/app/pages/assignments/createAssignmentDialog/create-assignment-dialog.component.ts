@@ -6,15 +6,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { AssignmentsService } from '../../../services/assignments.service';
 
 @Component({
-  selector: 'hems-create-assignment-modal',
-  templateUrl: './create-assignment-modal.component.html',
+  selector: 'hems-create-assignment-dialog',
+  templateUrl: './create-assignment-dialog.component.html',
   styleUrls: [
-    './create-assignment-modal.component.scss', 
+    './create-assignment-dialog.component.scss', 
     '../../../../assets/checkbox.scss', 
     '../../../../assets/dialog.scss',
   ],
 })
-export class CreateAssignmentModalComponent implements OnInit {
+export class CreateAssignmentDialogComponent implements OnInit {
   createAssignmentForm = new UntypedFormGroup({});
   guestHasApproved = false;
   isLoading = false;
@@ -59,10 +59,6 @@ export class CreateAssignmentModalComponent implements OnInit {
         this.receivedByInput.nativeElement.focus();
       } else if (this.createAssignmentForm.get('performedBy')?.invalid) {
         this.performedByInput.nativeElement.focus();
-      } else if (this.createAssignmentForm.get('receivedAt')?.invalid) {
-        this.receivedAtInput.nativeElement.focus();
-      } else if (this.createAssignmentForm.get('completedAt')?.invalid) {
-        this.completedAtInput.nativeElement.focus();
       }
     } else {
       this.createAssignment();
