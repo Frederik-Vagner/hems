@@ -24,6 +24,7 @@ import {
 } from '@nestjs/swagger';
 import { CarsService } from './cars.service';
 import { toBool } from '../utils/query-params.utils';
+import { RequiredQuery } from '../decorators/required-query.decorator';
 
 @ApiTags('Cars')
 @Controller('cars')
@@ -37,7 +38,7 @@ export class CarsController {
   @ApiOkResponse({ type: [Car] })
   @HttpCode(200)
   async getCarsBeforeCreatedAt(
-    @Query('createdAt')
+    @RequiredQuery('createdAt')
     createdAt: string,
     @Query('status')
     status: string,

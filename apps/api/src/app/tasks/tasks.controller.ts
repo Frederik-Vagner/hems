@@ -21,6 +21,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
+import { RequiredQuery } from '../decorators/required-query.decorator';
 import { TasksService } from './tasks.service';
 
 @ApiTags('Tasks')
@@ -32,7 +33,7 @@ export class TasksController {
   @ApiOperation({ summary: 'Get a list of Tasks for the given day.' })
   @ApiOkResponse({ type: GetTasksResponse })
   @HttpCode(200)
-  async getTasksByCreatedAt(@Query('createdAt') createdAt: string) {
+  async getTasksByCreatedAt(@RequiredQuery('createdAt') createdAt: string) {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.tasksService.findAllByCreatedAt(createdAtDate);
   }

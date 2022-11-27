@@ -20,6 +20,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
+import { RequiredQuery } from '../decorators/required-query.decorator';
 import { AssignmentsService } from './assignments.service';
 
 @ApiTags('Assignments')
@@ -32,7 +33,7 @@ export class AssignmentsController {
   @ApiOkResponse({ type: [Assignment] })
   @HttpCode(200)
   async getAssignmentsByCreatedAt(
-    @Query('createdAt') createdAt: string
+    @RequiredQuery('createdAt') createdAt: string
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.assignmentsService.findAllByCreatedAt(createdAtDate);

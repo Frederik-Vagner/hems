@@ -24,6 +24,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
+import { RequiredQuery } from '../decorators/required-query.decorator';
 import { toBool } from '../utils/query-params.utils';
 import { LuggagesService } from './luggages.service';
 
@@ -41,7 +42,7 @@ export class LuggagesController {
   async getLuggagesByLuggageTypeAndCreatedAt(
     @Param('luggageType')
     luggageType: LuggageType,
-    @Query('createdAt')
+    @RequiredQuery('createdAt')
     createdAt: string,
     @Query('status')
     status: string,
