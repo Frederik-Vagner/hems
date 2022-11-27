@@ -23,3 +23,4 @@ export * from './lib/sort-order.enum';
 export * from './lib/luggage/luggage-sort-options.enum';
 export * from './lib/car/car-sort-options.enum';
 export * from './lib/task/task-sort-options.enum';
+export * from './lib/assignment/assignment-sort-options.enum';
