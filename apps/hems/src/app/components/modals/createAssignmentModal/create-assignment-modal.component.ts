@@ -21,11 +21,11 @@ export class CreateAssignmentModalComponent implements OnInit {
     this.createAssignmentForm = new UntypedFormGroup({
       room: new UntypedFormControl('', [Validators.maxLength(50), Validators.pattern('^[0-9]*$')]),
       task: new UntypedFormControl('', [Validators.required]),
-      description: new UntypedFormControl('', [Validators.required]),
+      comments: new UntypedFormControl('', [Validators.required]),
       receivedBy: new UntypedFormControl(''),
       performedBy: new UntypedFormControl('', [Validators.required]),
       timeReceived: new UntypedFormControl('', [Validators.required]),
-      timePerformed: new UntypedFormControl('', [Validators.required]),
+      receivedAt: new UntypedFormControl('', [Validators.required]),
     });
   };
 
