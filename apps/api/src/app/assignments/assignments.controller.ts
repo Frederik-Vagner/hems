@@ -1,5 +1,7 @@
 import {
+  AssignmentSortOptions,
   CreateAssignmentRequest,
+  SortOrder,
   UpdateAssignmentRequest,
 } from '@hems/interfaces';
 import { Assignment } from '@hems/models';
@@ -32,10 +34,19 @@ export class AssignmentsController {
   @ApiOkResponse({ type: [Assignment] })
   @HttpCode(200)
   async getAssignmentsByCreatedAt(
-    @Query('createdAt') createdAt: string
+    @Query('createdAt')
+    createdAt: string,
+    @Query('sortBy')
+    sortBy: AssignmentSortOptions,
+    @Query('sortOrder')
+    sortOrder: SortOrder
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
-    return this.assignmentsService.findAllByCreatedAt(createdAtDate);
+    return this.assignmentsService.findAllByCreatedAt(
+      createdAtDate,
+      sortBy,
+      sortOrder
+    );
   }
 
   @Post()
