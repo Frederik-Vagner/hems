@@ -23,7 +23,7 @@ import {
 } from '@nestjs/swagger';
 import { TasksService } from './tasks.service';
 
-@ApiTags('tasks')
+@ApiTags('Tasks')
 @Controller('tasks')
 export class TasksController {
   constructor(private tasksService: TasksService) {}

@@ -38,8 +38,8 @@ export class UpdateTaskRequest implements IUpdateTask {
   listName?: string;
 
   @ApiModelProperty({ example: Date.now() })
-  @IsDateString()
   @IsOptional()
+  @IsDateString()
   completedAt?: Date;
 }
 
