@@ -11,13 +11,15 @@ import { AssignmentsService } from '../../../services/assignments.service';
   styleUrls: ['./create-assignment-modal.component.scss'],
 })
 export class CreateAssignmentModalComponent implements OnInit {
-  createAssignmentForm: UntypedFormGroup;
+  createAssignmentForm = new UntypedFormGroup({});
   guestHasApproved = false;
   isLoading = false;
 
-  constructor(private assignmentService: AssignmentsService, private snackBar: MatSnackBar, private dialog: MatDialog){
+  constructor(private assignmentService: AssignmentsService, private snackBar: MatSnackBar, private dialog: MatDialog){};
+
+  ngOnInit(): void {
     this.createAssignmentForm = new UntypedFormGroup({
-      room: new UntypedFormControl(100, [Validators.maxLength(50), Validators.pattern('^[0-9]*$')]),
+      room: new UntypedFormControl('', [Validators.maxLength(50), Validators.pattern('^[0-9]*$')]),
       task: new UntypedFormControl('', [Validators.required]),
       description: new UntypedFormControl('', [Validators.required]),
       receivedBy: new UntypedFormControl(''),
@@ -74,9 +76,5 @@ export class CreateAssignmentModalComponent implements OnInit {
         this.isLoading = false;
       }
     );
-  };
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
   };
 }
