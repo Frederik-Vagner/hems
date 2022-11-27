@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ICar } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -11,7 +11,7 @@ import { EditCarComponent } from './modal/edit/edit.car.component';
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.scss'],
 })
-export class CarsComponent {
+export class CarsComponent implements OnInit {
   carList: ICar[] = [];
 
   carColumns = [

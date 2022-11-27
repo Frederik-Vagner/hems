@@ -27,10 +27,10 @@ export class CreateAssignmentModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.createAssignmentForm = new UntypedFormGroup({
-      room: new UntypedFormControl('', [Validators.maxLength(50), Validators.pattern('^[0-9]*$')]),
+      room: new UntypedFormControl('', [Validators.required, Validators.maxLength(50), Validators.pattern('^[0-9]*$')]),
       task: new UntypedFormControl('', [Validators.required]),
       comments: new UntypedFormControl('', [Validators.required]),
-      receivedBy: new UntypedFormControl(''),
+      receivedBy: new UntypedFormControl('', [Validators.required]),
       performedBy: new UntypedFormControl('', [Validators.required]),
       receivedAt: new UntypedFormControl('', [Validators.required]),
       completedAt: new UntypedFormControl('', [Validators.required]),
