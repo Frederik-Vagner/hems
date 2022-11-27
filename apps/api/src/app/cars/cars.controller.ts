@@ -22,9 +22,9 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
-import { CarsService } from './cars.service';
-import { toBool } from '../utils/query-params.utils';
 import { RequiredQuery } from '../decorators/required-query.decorator';
+import { toBool } from '../utils/query-params.utils';
+import { CarsService } from './cars.service';
 
 @ApiTags('Cars')
 @Controller('cars')

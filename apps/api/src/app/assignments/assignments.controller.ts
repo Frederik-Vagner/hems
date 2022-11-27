@@ -1,5 +1,7 @@
 import {
+  AssignmentSortOptions,
   CreateAssignmentRequest,
+  SortOrder,
   UpdateAssignmentRequest,
 } from '@hems/interfaces';
 import { Assignment } from '@hems/models';
@@ -21,6 +23,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { RequiredQuery } from '../decorators/required-query.decorator';
+import { toBool } from '../utils/query-params.utils';
 import { AssignmentsService } from './assignments.service';
 
 @ApiTags('Assignments')
@@ -33,10 +36,28 @@ export class AssignmentsController {
   @ApiOkResponse({ type: [Assignment] })
   @HttpCode(200)
   async getAssignmentsByCreatedAt(
-    @RequiredQuery('createdAt') createdAt: string
+    @RequiredQuery('createdAt')
+    createdAt: string,
+    @Query('status')
+    status: string,
+    @Query('room')
+    room: string,
+    @Query('search')
+    search: string,
+    @Query('sortBy')
+    sortBy: AssignmentSortOptions,
+    @Query('sortOrder')
+    sortOrder: SortOrder
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
-    return this.assignmentsService.findAllByCreatedAt(createdAtDate);
+    return this.assignmentsService.findAllByCreatedAt(
+      createdAtDate,
+      toBool(status),
+      room,
+      search,
+      sortBy,
+      sortOrder
+    );
   }
 
   @Post()
