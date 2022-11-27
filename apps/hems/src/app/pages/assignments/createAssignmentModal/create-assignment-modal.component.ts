@@ -8,7 +8,11 @@ import { AssignmentsService } from '../../../services/assignments.service';
 @Component({
   selector: 'hems-create-assignment-modal',
   templateUrl: './create-assignment-modal.component.html',
-  styleUrls: ['../../../../assets/checkbox.scss', '../../../../assets/dialog.scss'],
+  styleUrls: [
+    './create-assignment-modal.component.scss', 
+    '../../../../assets/checkbox.scss', 
+    '../../../../assets/dialog.scss',
+  ],
 })
 export class CreateAssignmentModalComponent implements OnInit {
   createAssignmentForm = new UntypedFormGroup({});
@@ -33,7 +37,7 @@ export class CreateAssignmentModalComponent implements OnInit {
       comments: new UntypedFormControl('', [Validators.maxLength(1000), Validators.required]),
       receivedBy: new UntypedFormControl('', [Validators.maxLength(20), Validators.required]),
       performedBy: new UntypedFormControl('', [Validators.maxLength(20)]),
-      receivedAt: new UntypedFormControl('', [Validators.required]),
+      receivedAt: new UntypedFormControl('', [Validators.required, Validators.maxLength(20), Validators.pattern('^[0-9]*$')]),
       completedAt: new UntypedFormControl(''),
     });
   };

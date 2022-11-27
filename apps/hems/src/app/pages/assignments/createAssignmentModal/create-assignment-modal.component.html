@@ -139,6 +139,13 @@
           [touchUi]="true"
         >
         </ngx-mat-datetime-picker>
+        <mat-error
+        *ngIf="
+          createAssignmentForm.get('completedAt')?.invalid && createAssignmentForm.get('completedAt')?.dirty
+        "
+      >
+        Invalid time
+      </mat-error>
       </mat-form-field>
     </div>
     
