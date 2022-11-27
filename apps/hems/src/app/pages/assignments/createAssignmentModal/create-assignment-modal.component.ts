@@ -8,7 +8,7 @@ import { AssignmentsService } from '../../../services/assignments.service';
 @Component({
   selector: 'hems-create-assignment-modal',
   templateUrl: './create-assignment-modal.component.html',
-  styleUrls: ['./create-assignment-modal.component.scss'],
+  styleUrls: ['./create-assignment-modal.component.scss', '../../../../assets/checkbox.scss'],
 })
 export class CreateAssignmentModalComponent implements OnInit {
   createAssignmentForm = new UntypedFormGroup({});
