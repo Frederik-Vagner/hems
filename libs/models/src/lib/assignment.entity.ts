@@ -10,12 +10,12 @@ export class Assignment extends CompletedAt implements IAssignment {
   assignmentId!: string;
 
   @ApiModelProperty({ example: '211' })
-  @Column()
-  room!: string;
+  @Column({ nullable: true })
+  room?: string;
 
   @ApiModelProperty({ example: 'RA' })
-  @Column()
-  task!: string;
+  @Column({ nullable: true })
+  task?: string;
 
   @ApiModelProperty({ example: 'New keys and package delivery' })
   @Column()
