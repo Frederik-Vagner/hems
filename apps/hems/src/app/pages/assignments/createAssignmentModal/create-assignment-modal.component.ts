@@ -14,6 +14,7 @@ export class CreateAssignmentModalComponent implements OnInit {
   createAssignmentForm = new UntypedFormGroup({});
   guestHasApproved = false;
   isLoading = false;
+  maxDatetime = new Date();
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('task') taskInput!: ElementRef;
