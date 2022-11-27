@@ -41,6 +41,8 @@ export class AssignmentsController {
     status: string,
     @Query('room')
     room: string,
+    @Query('search')
+    search: string,
     @Query('sortBy')
     sortBy: AssignmentSortOptions,
     @Query('sortOrder')
@@ -51,6 +53,7 @@ export class AssignmentsController {
       createdAtDate,
       toBool(status),
       room,
+      search,
       sortBy,
       sortOrder
     );

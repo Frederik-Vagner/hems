@@ -7,7 +7,7 @@ import {
 import { Assignment } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Between, Repository } from 'typeorm';
+import { Between, Like, Repository } from 'typeorm';
 import { filterStatus } from '../utils/query-params.utils';
 
 @Injectable()
@@ -21,18 +21,28 @@ export class AssignmentsService {
     createdAt: Date,
     status: boolean | undefined,
     room: string | undefined,
+    search: string | undefined,
     sortBy: AssignmentSortOptions | undefined,
     sortOrder: SortOrder | undefined
   ) {
+    const baseConditions = {
+      createdAt: Between<Date>(
+        new Date(createdAt.setUTCHours(0, 0, 0, 0)),
+        new Date(createdAt.setUTCHours(23, 59, 59, 999))
+      ),
+      completedAt: filterStatus(status),
+      room,
+    };
+
+    const searchCondition = search ? Like(`%${search}%`) : undefined;
+
     return await this.assignmentRepo.find({
-      where: {
-        createdAt: Between<Date>(
-          new Date(createdAt.setUTCHours(0, 0, 0, 0)),
-          new Date(createdAt.setUTCHours(23, 59, 59, 999))
-        ),
-        completedAt: filterStatus(status),
-        room,
-      },
+      where: [
+        { ...baseConditions, task: searchCondition },
+        { ...baseConditions, receivedBy: searchCondition },
+        { ...baseConditions, performedBy: searchCondition },
+        { ...baseConditions, comments: searchCondition },
+      ],
       order: this.getSortingConditions(sortBy, sortOrder),
     });
   }
