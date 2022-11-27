@@ -9,6 +9,7 @@ import { Task } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Between, Repository } from 'typeorm';
+import { filterStatus } from '../utils/query-params.utils';
 
 @Injectable()
 export class TasksService {
@@ -19,8 +20,10 @@ export class TasksService {
 
   async findAllByCreatedAt(
     createdAt: Date,
-    sortBy: TaskSortOptions,
-    sortOrder: SortOrder
+    status: boolean | undefined,
+    listName: string | undefined,
+    sortBy: TaskSortOptions | undefined,
+    sortOrder: SortOrder | undefined
   ): Promise<GetTasksResponse> {
     const tasks = await this.taskRepo.find({
       where: {
@@ -28,6 +31,8 @@ export class TasksService {
           new Date(createdAt.setUTCHours(0, 0, 0, 0)),
           new Date(createdAt.setUTCHours(23, 59, 59, 999))
         ),
+        completedAt: filterStatus(status),
+        listName,
       },
       order: this.getSortingConditions(sortBy, sortOrder),
     });

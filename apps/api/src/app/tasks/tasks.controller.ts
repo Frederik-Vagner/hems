@@ -23,6 +23,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
+import { toBool } from '../utils/query-params.utils';
 import { TasksService } from './tasks.service';
 
 @ApiTags('Tasks')
@@ -37,6 +38,10 @@ export class TasksController {
   async getTasksByCreatedAt(
     @Query('createdAt')
     createdAt: string,
+    @Query('status')
+    status: string,
+    @Query('listName')
+    listName: string,
     @Query('sortBy')
     sortBy: TaskSortOptions,
     @Query('sortOrder')
@@ -45,6 +50,8 @@ export class TasksController {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.tasksService.findAllByCreatedAt(
       createdAtDate,
+      toBool(status),
+      listName,
       sortBy,
       sortOrder
     );
