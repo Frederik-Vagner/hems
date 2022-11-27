@@ -13,7 +13,6 @@ import { AssignmentsService } from '../../../services/assignments.service';
 })
 export class UpdateAssignmentDialogComponent implements OnInit {
   updateAssignmentForm = new UntypedFormGroup({});
-  isLoading = false;
   maxDatetime = new Date();
 
   @ViewChild('room') roomInput!: ElementRef;
@@ -41,8 +40,6 @@ export class UpdateAssignmentDialogComponent implements OnInit {
       receivedAt: new UntypedFormControl(this.data.receivedAt, [Validators.required]),
       completedAt: new UntypedFormControl(this.data.completedAt ?? ''),
     });
-    console.log(this.data.assignmentId);
-    
   };
 
   onSubmit(): void {
@@ -64,7 +61,6 @@ export class UpdateAssignmentDialogComponent implements OnInit {
   }
 
   updateAssignment(): void {
-    this.isLoading = true;
     this.assignmentService.updateAssignment(this.data.assignmentId, 
     {
       room: this.updateAssignmentForm.get('room')?.value,
@@ -79,12 +75,10 @@ export class UpdateAssignmentDialogComponent implements OnInit {
         this.snackBar.open('Assignment updated!', 'HOLY SH***', { duration: 2500 });
         document.location.reload();
         this.dialog.closeAll();
-        this.isLoading = false;
       },
       (err: HttpErrorResponse) => {
         console.error(err);
         this.snackBar.open('Failed to update assignment sadly :(((', 'SH*** HOLY', { duration: 5000 });
-        this.isLoading = false;
       }
     );
   };

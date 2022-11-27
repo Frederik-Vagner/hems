@@ -1,4 +1,3 @@
-/* Custom checkbox */
 .checkbox-container {
     display: block;
     position: relative;
@@ -27,10 +26,10 @@
 
         &:checked ~ .checkmark {
             background-color: var(--main-blue);
-        }
 
-        &:checked ~ .checkmark:after {
-            display: block;
+            &:after {
+                display: block;
+            }
         }
     }
 }

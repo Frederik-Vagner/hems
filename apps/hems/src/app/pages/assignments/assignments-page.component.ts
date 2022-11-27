@@ -13,7 +13,6 @@ import { UpdateAssignmentDialogComponent } from './updateAssignmentDialog/update
 })
 export class AssignmentsPageComponent implements OnInit {
   assignmentList: IAssignment[] = [];
-  isLoading = true;
 
   assignmentColumns = [
     'room',
@@ -36,12 +35,10 @@ export class AssignmentsPageComponent implements OnInit {
   }
 
   fetchAssignments(): void {
-    this.isLoading = true;
     this.assignmentsService.getAssignments(new Date()).subscribe({
       next: (assignments) => {
         this.assignmentList = assignments;
         console.log('checkin', assignments);
-        this.isLoading = false;
       },
       error: (error) => {
         console.error(error);
@@ -52,20 +49,12 @@ export class AssignmentsPageComponent implements OnInit {
             duration: 10000,
           }
         );
-        this.isLoading = false;
       },
     });
   }
 
   createAssignment(): void {
     this.dialog.open(CreateAssignmentDialogComponent, { width: '500px' });
-  }
-  
-  dateDisplayTime(date: Date) {
-    console.log('running time format for: ', date);
-    console.log('returning: ', date.toLocaleString(undefined, {hour: '2-digit', hour12: false, minute:'2-digit'}));
-    
-    return 'skrt';
   }
 
   editAssignment(assignmentId: string): void {

@@ -70,6 +70,7 @@ export class CreateAssignmentDialogComponent implements OnInit {
       receivedBy: this.createAssignmentForm.get('receivedBy')?.value,
       performedBy: this.createAssignmentForm.get('performedBy')?.value,
       receivedAt: this.createAssignmentForm.get('receivedAt')?.value,
+      completedAt: this.createAssignmentForm.get('completedAt')?.value,
     }).subscribe(
       () => {
         this.snackBar.open('Assignment added!', 'HOLY SH***', { duration: 2500 });

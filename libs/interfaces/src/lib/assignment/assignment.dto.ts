@@ -30,6 +30,11 @@ export class CreateAssignmentRequest implements ICreateAssignmentRequest {
   @IsNotEmpty()
   @IsDateString()
   receivedAt!: Date;
+
+  @ApiModelProperty({ example: Date.now() })
+  @IsOptional()
+  @IsDateString()
+  completedAt?: Date;
 }
 
 export class UpdateAssignmentRequest implements IUpdateAssignmentRequest {
