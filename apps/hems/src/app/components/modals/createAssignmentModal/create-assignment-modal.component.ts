@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,6 +15,14 @@ export class CreateAssignmentModalComponent implements OnInit {
   guestHasApproved = false;
   isLoading = false;
 
+  @ViewChild('room') roomInput!: ElementRef;
+  @ViewChild('task') taskInput!: ElementRef;
+  @ViewChild('comments') commentsInput!: ElementRef;
+  @ViewChild('receivedBy') receivedByInput!: ElementRef;
+  @ViewChild('receivedAt') receivedAtInput!: ElementRef;
+  @ViewChild('performedBy') performedByInput!: ElementRef;
+  @ViewChild('completedAt') completedAtInput!: ElementRef;
+
   constructor(private assignmentService: AssignmentsService, private snackBar: MatSnackBar, private dialog: MatDialog){};
 
   ngOnInit(): void {
@@ -24,8 +32,8 @@ export class CreateAssignmentModalComponent implements OnInit {
       comments: new UntypedFormControl('', [Validators.required]),
       receivedBy: new UntypedFormControl(''),
       performedBy: new UntypedFormControl('', [Validators.required]),
-      timeReceived: new UntypedFormControl('', [Validators.required]),
       receivedAt: new UntypedFormControl('', [Validators.required]),
+      completedAt: new UntypedFormControl('', [Validators.required]),
     });
   };
 
@@ -37,17 +45,19 @@ export class CreateAssignmentModalComponent implements OnInit {
 
     if(!this.createAssignmentForm.valid) {
       if(this.createAssignmentForm.get('room')?.invalid) {
-        console.log('1');
+        this.roomInput.nativeElement.focus();
       } else if (this.createAssignmentForm.get('task')?.invalid) {
-        console.log('2');
+        this.taskInput.nativeElement.focus();
       } else if (this.createAssignmentForm.get('comments')?.invalid) {
-        console.log('3');
+        this.commentsInput.nativeElement.focus();
       } else if (this.createAssignmentForm.get('receivedBy')?.invalid) {
-        console.log('4');
+        this.receivedByInput.nativeElement.focus();
       } else if (this.createAssignmentForm.get('performedBy')?.invalid) {
-        console.log('5');
+        this.performedByInput.nativeElement.focus();
       } else if (this.createAssignmentForm.get('receivedAt')?.invalid) {
-        console.log('6');
+        this.receivedAtInput.nativeElement.focus();
+      } else if (this.createAssignmentForm.get('completedAt')?.invalid) {
+        this.completedAtInput.nativeElement.focus();
       }
     } else {
       this.createAssignment();

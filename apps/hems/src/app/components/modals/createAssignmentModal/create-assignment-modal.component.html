@@ -4,10 +4,10 @@
     <mat-form-field appearance="fill">
       <mat-label>Room</mat-label>
       <input
+        #room
         type="text"
         formControlName="room"
         name="room"
-        id="room"
         matInput
         placeholder="Room nr"
         maxlength="10"
@@ -25,10 +25,10 @@
     <mat-form-field appearance="fill">
       <mat-label>Task</mat-label>
       <input
+        #task
         type="text"
         formControlName="task"
         name="task"
-        id="task"
         matInput
         placeholder="Type of task"
         maxlength="100"
@@ -46,11 +46,11 @@
     <mat-form-field appearance="fill">
       <mat-label>Description</mat-label>
       <textarea 
+        #comments
         matInput
         type="text"
         formControlName="comments"
         name="comments"
-        id="comments"
         placeholder="Describe the task"
         maxlength="1000"
         required
@@ -67,10 +67,10 @@
     <mat-form-field appearance="fill">
       <mat-label>Received by</mat-label>
       <input
+        #receivedBy
         type="text"
         formControlName="receivedBy"
         name="receivedBy"
-        id="receivedBy"
         matInput
         placeholder="Received by"
         maxlength="100"
@@ -88,10 +88,10 @@
     <mat-form-field appearance="fill">
       <mat-label>Performed by</mat-label>
       <input
+        #performedBy
         type="text"
         formControlName="performedBy"
         name="performedBy"
-        id="performedBy"
         matInput
         placeholder="Performed by"
         maxlength="100"
@@ -109,10 +109,10 @@
     <mat-form-field appearance="fill">
       <mat-label>Time received</mat-label>
       <input
+        #receivedAt
         type="text"
         formControlName="receivedAt"
         name="receivedAt"
-        id="receivedAt"
         matInput
         required
       />
@@ -125,21 +125,22 @@
       </mat-error>
     </mat-form-field>
 
-    <!-- <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill">
       <mat-label>Time performed</mat-label>
       <input
+        #completedAt
         type="text"
-        formControlName=""
+        formControlName="completedAt"
         matInput
       />
       <mat-error
         *ngIf="
-          createAssignmentForm.get('')?.invalid && createAssignmentForm.get('')?.dirty
+          createAssignmentForm.get('completedAt')?.invalid && createAssignmentForm.get('completedAt')?.dirty
         "
       >
         Invalid time received at - Required
       </mat-error>
-    </mat-form-field> -->
+    </mat-form-field>
     
     <div>
       <input type="checkbox" [checked]="guestHasApproved" (change)="guestHasApproved = !guestHasApproved"/>
