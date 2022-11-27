@@ -57,7 +57,7 @@ export class AssignmentsPageComponent implements OnInit {
   }
 
   createAssignment(): void {
-    this.dialog.open(CreateAssignmentModalComponent);
+    this.dialog.open(CreateAssignmentModalComponent, { width: '500px' });
   }
   
   dateDisplayTime(date: Date) {

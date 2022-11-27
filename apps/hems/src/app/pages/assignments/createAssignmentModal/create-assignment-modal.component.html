@@ -1,44 +1,46 @@
 <form [formGroup]="createAssignmentForm" (ngSubmit)="onSubmit()">
     <h1>Add assignment</h1>
     <hr />
-    <mat-form-field appearance="fill">
-      <mat-label>Room</mat-label>
-      <input
-        #room
-        type="text"
-        formControlName="room"
-        matInput
-        placeholder="Room nr"
-        maxlength="10"
-      />
-      <mat-error
-        *ngIf="
-          createAssignmentForm.get('room')?.invalid && createAssignmentForm.get('room')?.dirty
-        "
-      >
-        Must be a number from 100-999
-      </mat-error>
-    </mat-form-field>
+    <div class="dialog-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Room</mat-label>
+        <input
+          #room
+          type="text"
+          formControlName="room"
+          matInput
+          placeholder="Room nr"
+          maxlength="10"
+        />
+        <mat-error
+          *ngIf="
+            createAssignmentForm.get('room')?.invalid && createAssignmentForm.get('room')?.dirty
+          "
+        >
+          Must be a number from 100-999
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Task</mat-label>
+        <input
+          #task
+          type="text"
+          formControlName="task"
+          matInput
+          placeholder="Type of task"
+        />
+        <mat-error
+          *ngIf="
+            createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
+          "
+        >
+          Can't be more than 20 characters
+        </mat-error>
+      </mat-form-field>
+    </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Task</mat-label>
-      <input
-        #task
-        type="text"
-        formControlName="task"
-        matInput
-        placeholder="Type of task"
-      />
-      <mat-error
-        *ngIf="
-          createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
-        "
-      >
-        Can't be more than 20 characters
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="full-width">
       <mat-label>Description</mat-label>
       <textarea 
         #comments
@@ -56,83 +58,87 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Received by</mat-label>
-      <input
-        #receivedBy
-        type="text"
-        formControlName="receivedBy"
-        matInput
-        placeholder="Received by"
-      />
-      <mat-error
-        *ngIf="
-          createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
-        "
-      >
-        Can't be more than 20 characters
-      </mat-error>
-    </mat-form-field>
+    <div class="dialog-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Received by</mat-label>
+        <input
+          #receivedBy
+          type="text"
+          formControlName="receivedBy"
+          matInput
+          placeholder="Received by"
+        />
+        <mat-error
+          *ngIf="
+            createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
+          "
+        >
+          Can't be more than 20 characters
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Performed by</mat-label>
-      <input
-        #performedBy
-        type="text"
-        formControlName="performedBy"
-        matInput
-        placeholder="Performed by"
-        maxlength="100"
-      />
-      <mat-error
-        *ngIf="
-          createAssignmentForm.get('performedBy')?.invalid && createAssignmentForm.get('performedBy')?.dirty
-        "
-      >
-        Can't be more than 20 characters
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Performed by</mat-label>
+        <input
+          #performedBy
+          type="text"
+          formControlName="performedBy"
+          matInput
+          placeholder="Performed by"
+          maxlength="100"
+        />
+        <mat-error
+          *ngIf="
+            createAssignmentForm.get('performedBy')?.invalid && createAssignmentForm.get('performedBy')?.dirty
+          "
+        >
+          Can't be more than 20 characters
+        </mat-error>
+      </mat-form-field>
+    </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Time received</mat-label>
-      <input
-        #receivedAt
-        type="text"
-        formControlName="receivedAt"
-        matInput
-      />
-      <mat-error
-        *ngIf="
-          createAssignmentForm.get('receivedAt')?.invalid && createAssignmentForm.get('receivedAt')?.dirty
-        "
-      >
-        Invalid - Required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Time performed</mat-label>
-      <input
-        #completedAt
-        type="text"
-        formControlName="completedAt"
-        matInput
-      />
-      <mat-error
-        *ngIf="
-          createAssignmentForm.get('completedAt')?.invalid && createAssignmentForm.get('completedAt')?.dirty
-        "
-      >
-        Invalid - Required
-      </mat-error>
-    </mat-form-field>
+    <div class="dialog-row">
+      <mat-form-field appearance="fill">
+        <mat-label>Time received</mat-label>
+        <input
+          #receivedAt
+          type="text"
+          formControlName="receivedAt"
+          matInput
+        />
+        <mat-error
+          *ngIf="
+            createAssignmentForm.get('receivedAt')?.invalid && createAssignmentForm.get('receivedAt')?.dirty
+          "
+        >
+          Invalid - Required
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Time performed</mat-label>
+        <input
+          #completedAt
+          type="text"
+          formControlName="completedAt"
+          matInput
+        />
+        <mat-error
+          *ngIf="
+            createAssignmentForm.get('completedAt')?.invalid && createAssignmentForm.get('completedAt')?.dirty
+          "
+        >
+          Invalid - Required
+        </mat-error>
+      </mat-form-field>
+    </div>
     
     <label class="checkbox-container">
       The guest has given consent to the processing of personal data
       <input type="checkbox" [checked]="guestHasApproved" (change)="guestHasApproved = !guestHasApproved"/>
       <span class="checkmark" data-cy="checkbox-banner"></span>
     </label>
-    
+
     <button class="secondary-btn" mat-raised-button>
       Cancel
     </button>

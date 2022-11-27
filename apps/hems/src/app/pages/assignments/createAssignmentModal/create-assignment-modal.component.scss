@@ -1,3 +1,28 @@
 h1 {
     color: var(--main-blue);
 }
+
+.full-width {
+    width: 100%;
+}
+
+textarea {
+    height: 100px;
+}
+
+.dialog-row {
+    display: flex;
+    justify-content: space-between;
+    
+    mat-form-field {
+        flex-grow: 1;
+
+        &:first-of-type {
+            margin-right: 1em;
+        }
+    }
+
+    &:first-of-type {
+        margin-top: 1em;
+    }
+}
