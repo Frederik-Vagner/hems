@@ -7,7 +7,6 @@
         #room
         type="text"
         formControlName="room"
-        name="room"
         matInput
         placeholder="Room nr"
         maxlength="10"
@@ -17,7 +16,7 @@
           createAssignmentForm.get('room')?.invalid && createAssignmentForm.get('room')?.dirty
         "
       >
-        Invalid - A number from 100-999
+        Must be a number from 100-999
       </mat-error>
     </mat-form-field>
 
@@ -27,17 +26,15 @@
         #task
         type="text"
         formControlName="task"
-        name="task"
         matInput
         placeholder="Type of task"
-        maxlength="100"
       />
       <mat-error
         *ngIf="
           createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
         "
       >
-        Invalid - Required
+        Can't be more than 20 characters
       </mat-error>
     </mat-form-field>
 
@@ -48,16 +45,14 @@
         matInput
         type="text"
         formControlName="comments"
-        name="comments"
         placeholder="Describe the task"
-        maxlength="1000"
       ></textarea>
       <mat-error
         *ngIf="
           createAssignmentForm.get('comments')?.invalid && createAssignmentForm.get('comments')?.dirty
         "
       >
-        Invalid - Required
+        Can't be more than 1000 characters
       </mat-error>
     </mat-form-field>
 
@@ -67,17 +62,15 @@
         #receivedBy
         type="text"
         formControlName="receivedBy"
-        name="receivedBy"
         matInput
         placeholder="Received by"
-        maxlength="100"
       />
       <mat-error
         *ngIf="
           createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
         "
       >
-        Invalid - Required
+        Can't be more than 20 characters
       </mat-error>
     </mat-form-field>
 
@@ -87,7 +80,6 @@
         #performedBy
         type="text"
         formControlName="performedBy"
-        name="performedBy"
         matInput
         placeholder="Performed by"
         maxlength="100"
@@ -97,7 +89,7 @@
           createAssignmentForm.get('performedBy')?.invalid && createAssignmentForm.get('performedBy')?.dirty
         "
       >
-        Invalid - Required
+        Can't be more than 20 characters
       </mat-error>
     </mat-form-field>
 
@@ -107,7 +99,6 @@
         #receivedAt
         type="text"
         formControlName="receivedAt"
-        name="receivedAt"
         matInput
       />
       <mat-error
@@ -132,7 +123,7 @@
           createAssignmentForm.get('completedAt')?.invalid && createAssignmentForm.get('completedAt')?.dirty
         "
       >
-        Invalid time received at - Required
+        Invalid - Required
       </mat-error>
     </mat-form-field>
     

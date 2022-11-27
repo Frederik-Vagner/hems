@@ -13,6 +13,10 @@ table {
     background-color: rgba(47, 47, 162, 0.1);
 }
 
+tr.mat-header-row {
+    height: 3em;
+}
+
 th.mat-header-cell:first-of-type, td.mat-cell:first-of-type {
     padding-left: 10px;
 }
