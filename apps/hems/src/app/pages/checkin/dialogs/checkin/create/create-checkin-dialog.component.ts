@@ -13,12 +13,17 @@ import { LuggageService } from '../../../../../services/luggage.service';
 @Component({
   selector: 'hems-create-checkin-dialog',
   templateUrl: './create-checkin-dialog.component.html',
-  styleUrls: ['./create-checkin-dialog.component.css'],
+  styleUrls: [
+    './create-checkin-dialog.component.css', 
+    '../../../../../../assets/checkbox.scss', 
+    '../../../../../../assets/dialog.scss'
+  ],
 })
 export class CreateCheckinDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
+  guestApprovedGDPR = false;
 
   constructor(
     private service: LuggageService,
@@ -34,10 +39,7 @@ export class CreateCheckinDialogComponent {
       tagNr: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
-      description: new UntypedFormControl('', []),
-      guestApprovedGDPR: new UntypedFormControl(null, [
-        Validators.requiredTrue,
-      ]),
+      description: new UntypedFormControl('', [Validators.maxLength(1000)]),
     });
   }
 
