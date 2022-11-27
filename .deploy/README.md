@@ -13,7 +13,7 @@ sudo cp .deploy/caddy/Caddyfile /var/lib/docker/volumes/caddy_config/_data/caddy
 and 
 
 ```sh
-docker exec -w /configs/caddy system-integration-caddy-1 caddy reload
+docker exec -w /etc/caddy caddy caddy reload
 ```
 
 to reload the config of Caddy, and fully enable HTTPS.
