@@ -15,7 +15,7 @@ export const RequiredQuery = createParamDecorator(
         return queryParameter;
       }
       throw new BadRequestException(
-        "There is a missing query parameter"
+        `The ${data} query parameter is required`
       );
     }
   }
