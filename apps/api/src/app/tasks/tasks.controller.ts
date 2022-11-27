@@ -42,6 +42,8 @@ export class TasksController {
     status: string,
     @Query('listName')
     listName: string,
+    @Query('search')
+    search: string,
     @Query('sortBy')
     sortBy: TaskSortOptions,
     @Query('sortOrder')
@@ -52,6 +54,7 @@ export class TasksController {
       createdAtDate,
       toBool(status),
       listName,
+      search,
       sortBy,
       sortOrder
     );

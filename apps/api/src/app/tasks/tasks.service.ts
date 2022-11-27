@@ -8,7 +8,7 @@ import {
 import { Task } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Between, Repository } from 'typeorm';
+import { Between, Like, Repository } from 'typeorm';
 import { filterStatus } from '../utils/query-params.utils';
 
 @Injectable()
@@ -22,18 +22,26 @@ export class TasksService {
     createdAt: Date,
     status: boolean | undefined,
     listName: string | undefined,
+    search: string | undefined,
     sortBy: TaskSortOptions | undefined,
     sortOrder: SortOrder | undefined
   ): Promise<GetTasksResponse> {
+    const baseConditions = {
+      createdAt: Between<Date>(
+        new Date(createdAt.setUTCHours(0, 0, 0, 0)),
+        new Date(createdAt.setUTCHours(23, 59, 59, 999))
+      ),
+      completedAt: filterStatus(status),
+      listName,
+    };
+    const searchCondition = search ? Like(`%${search}%`) : undefined;
+
     const tasks = await this.taskRepo.find({
-      where: {
-        createdAt: Between<Date>(
-          new Date(createdAt.setUTCHours(0, 0, 0, 0)),
-          new Date(createdAt.setUTCHours(23, 59, 59, 999))
-        ),
-        completedAt: filterStatus(status),
-        listName,
-      },
+      where: [
+        { ...baseConditions, time: searchCondition },
+        { ...baseConditions, task: searchCondition },
+        { ...baseConditions, initials: searchCondition },
+      ],
       order: this.getSortingConditions(sortBy, sortOrder),
     });
     const listNames = (
