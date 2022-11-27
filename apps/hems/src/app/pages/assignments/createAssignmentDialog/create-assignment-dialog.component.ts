@@ -37,7 +37,7 @@ export class CreateAssignmentDialogComponent implements OnInit {
       comments: new UntypedFormControl('', [Validators.maxLength(1000), Validators.required]),
       receivedBy: new UntypedFormControl('', [Validators.maxLength(20), Validators.required]),
       performedBy: new UntypedFormControl('', [Validators.maxLength(20)]),
-      receivedAt: new UntypedFormControl('', [Validators.required, Validators.maxLength(20), Validators.pattern('^[0-9]*$')]),
+      receivedAt: new UntypedFormControl('', [Validators.required, Validators.maxLength(20)]),
       completedAt: new UntypedFormControl(''),
     });
   };

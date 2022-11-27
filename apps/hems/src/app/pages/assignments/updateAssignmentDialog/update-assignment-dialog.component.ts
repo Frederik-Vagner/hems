@@ -17,7 +17,6 @@ import { AssignmentsService } from '../../../services/assignments.service';
 })
 export class UpdateAssignmentDialogComponent implements OnInit {
   updateAssignmentForm = new UntypedFormGroup({});
-  guestHasApproved = false;
   isLoading = false;
   maxDatetime = new Date();
 
@@ -43,17 +42,12 @@ export class UpdateAssignmentDialogComponent implements OnInit {
       comments: new UntypedFormControl(this.data.comments, [Validators.maxLength(1000), Validators.required]),
       receivedBy: new UntypedFormControl(this.data.receivedBy, [Validators.maxLength(20), Validators.required]),
       performedBy: new UntypedFormControl(this.data.performedBy ?? '', [Validators.maxLength(20)]),
-      receivedAt: new UntypedFormControl(this.data.receivedAt, [Validators.required, Validators.maxLength(20), Validators.pattern('^[0-9]*$')]),
+      receivedAt: new UntypedFormControl(this.data.receivedAt, [Validators.required, Validators.maxLength(20)]),
       completedAt: new UntypedFormControl(this.data.completedAt ?? ''),
     });
   };
 
   onSubmit(): void {
-    if(!this.guestHasApproved) {
-      this.snackBar.open('Guest needs to approve storing their data.', 'Fam.', { duration: 5000 });
-      return;
-    };
-
     if(!this.updateAssignmentForm.valid) {
       if(this.updateAssignmentForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
