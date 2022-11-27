@@ -7,7 +7,8 @@ import {
 import { Car } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { IsNull, LessThanOrEqual, Like, Not, Repository } from 'typeorm';
+import { LessThanOrEqual, Like, Repository } from 'typeorm';
+import { filterStatus } from '../utils/query-params.utils';
 
 @Injectable()
 export class CarsService {
@@ -27,7 +28,7 @@ export class CarsService {
       createdAt: LessThanOrEqual<Date>(
         new Date(createdAt.setUTCHours(23, 59, 59, 999))
       ),
-      completedAt: this.filterStatus(status),
+      completedAt: filterStatus(status),
     };
 
     const searchCondition = search ? Like(`%${search}%`) : undefined;
@@ -62,15 +63,6 @@ export class CarsService {
     }
 
     return await this.carRepo.save(car);
-  }
-
-  private filterStatus(status: boolean | undefined) {
-    if (status === undefined) {
-      return undefined;
-    } else if (status === true) {
-      return Not(IsNull());
-    }
-    return IsNull();
   }
 
   private getSortingConditions(
