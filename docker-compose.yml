@@ -1,0 +1,73 @@
+version: "3"
+# # INFO
+# All $VARIABLES are currently stored in a .env file on the same level as this
+# document, please remember to populate it.
+#
+# You can test to see if the variables are loading correctly with the command:
+# * `docker compose config`
+# If the variables still have a $ on them then the .env is not being loaded.
+
+# # USAGE
+# The reccomended commands when working with docker compose is to use:
+# * `docker compose up --build`
+# This will force any container with changes to rebuild
+#
+# The reccomended way to take down the containers is with:
+# * `docker compose down -v`
+# This will ensure that the volume is deleted too.
+
+# ---------------------------------
+# ------------ GATEWAY ------------
+services:
+  api:
+    container_name: api
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./.deploy/api/Dockerfile
+    environment:
+      POSTGRES_HOST: ${POSTGRES_HOST:-postgres}
+      POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+      POSTGRES_USER: ${POSTGRES_USER:-root}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-root}
+      POSTGRES_DATABASE: ${POSTGRES_DATABASE:-hems}
+    networks:
+      - hems-net
+    ports:
+      - 3333:3333
+
+  hems:
+    container_name: hems
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./.deploy/hems/Dockerfile
+    networks:
+      - hems-net
+    ports:
+      - 8080:80
+
+  postgres:
+    container_name: hems-postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-root}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-root}
+      POSTGRES_DB: ${POSTGRES_DATABASE:-hems}
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - hems-net
+    restart: unless-stopped
+
+# ---------------------------------
+# ------------ NETWORK ------------
+networks:
+  hems-net:
+    name: hems-net
+
+volumes:
+  postgres:
