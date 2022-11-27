@@ -1,6 +1,8 @@
 import {
   CreateTaskRequest,
   GetTasksResponse,
+  SortOrder,
+  TaskSortOptions,
   UpdateTaskRequest,
 } from '@hems/interfaces';
 import { Task } from '@hems/models';
@@ -15,7 +17,11 @@ export class TasksService {
     private readonly taskRepo: Repository<Task>
   ) {}
 
-  async findAllByCreatedAt(createdAt: Date): Promise<GetTasksResponse> {
+  async findAllByCreatedAt(
+    createdAt: Date,
+    sortBy: TaskSortOptions,
+    sortOrder: SortOrder
+  ): Promise<GetTasksResponse> {
     const tasks = await this.taskRepo.find({
       where: {
         createdAt: Between<Date>(
@@ -23,6 +29,7 @@ export class TasksService {
           new Date(createdAt.setUTCHours(23, 59, 59, 999))
         ),
       },
+      order: this.getSortingConditions(sortBy, sortOrder),
     });
     const listNames = (
       await this.taskRepo
@@ -51,5 +58,19 @@ export class TasksService {
     }
 
     return await this.taskRepo.save(task);
+  }
+
+  private getSortingConditions(
+    sortBy: TaskSortOptions | undefined,
+    sortOrder: SortOrder | undefined
+  ) {
+    switch (sortBy) {
+      case TaskSortOptions.TIME:
+        return { time: sortOrder };
+      case TaskSortOptions.COMPLETED_AT:
+        return { completedAt: sortOrder };
+      default:
+        return undefined;
+    }
   }
 }
