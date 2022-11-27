@@ -1,11 +1,11 @@
-# models
+# task-generator
 
 This library was generated with [Nx](https://nx.dev).
 
 ## Running unit tests
 
-Run `nx test models` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test task-generator` to execute the unit tests via [Jest](https://jestjs.io).
 
 ## Running lint
 
-Run `nx lint models` to execute the lint via [ESLint](https://eslint.org/).
+Run `nx lint task-generator` to execute the lint via [ESLint](https://eslint.org/).
