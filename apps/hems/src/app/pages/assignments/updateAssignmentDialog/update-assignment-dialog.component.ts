@@ -38,9 +38,11 @@ export class UpdateAssignmentDialogComponent implements OnInit {
       comments: new UntypedFormControl(this.data.comments, [Validators.maxLength(1000), Validators.required]),
       receivedBy: new UntypedFormControl(this.data.receivedBy, [Validators.maxLength(20), Validators.required]),
       performedBy: new UntypedFormControl(this.data.performedBy ?? '', [Validators.maxLength(20)]),
-      receivedAt: new UntypedFormControl(this.data.receivedAt, [Validators.required, Validators.maxLength(20)]),
+      receivedAt: new UntypedFormControl(this.data.receivedAt, [Validators.required]),
       completedAt: new UntypedFormControl(this.data.completedAt ?? ''),
     });
+    console.log(this.data.assignmentId);
+    
   };
 
   onSubmit(): void {
@@ -71,6 +73,7 @@ export class UpdateAssignmentDialogComponent implements OnInit {
       receivedBy: this.updateAssignmentForm.get('receivedBy')?.value,
       performedBy: this.updateAssignmentForm.get('performedBy')?.value,
       receivedAt: this.updateAssignmentForm.get('receivedAt')?.value,
+      completedAt: this.updateAssignmentForm.get('completedAt')?.value,
     }).subscribe(
       () => {
         this.snackBar.open('Assignment updated!', 'HOLY SH***', { duration: 2500 });

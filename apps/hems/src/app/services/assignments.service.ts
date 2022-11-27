@@ -39,7 +39,7 @@ export class AssignmentsService {
    * @returns an observable with updated assignment.
    */
   public updateAssignment(id: string, params: UpdateAssignmentRequest): Observable<IAssignment> {
-    return this.http.post<IAssignment>(`${env.apiUrl}/assignments/${id}`, params);
+    return this.http.patch<IAssignment>(`${env.apiUrl}/assignments/${id}`, params);
   }
 
   /**
