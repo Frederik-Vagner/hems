@@ -20,6 +20,7 @@ import {
   ApiCreatedResponse,
   ApiOkResponse,
   ApiOperation,
+  ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
 import { RequiredQuery } from '../decorators/required-query.decorator';
@@ -34,6 +35,22 @@ export class AssignmentsController {
   @Get()
   @ApiOperation({ summary: 'Get a list of Assignments for the given day.' })
   @ApiOkResponse({ type: [Assignment] })
+  @ApiQuery({ name: 'createdAt', required: true, example: new Date() })
+  @ApiQuery({ name: 'status', required: false, example: 'true' })
+  @ApiQuery({ name: 'room', required: false, example: '112' })
+  @ApiQuery({ name: 'search', required: false, example: 'text' })
+  @ApiQuery({
+    name: 'sortBy',
+    enum: AssignmentSortOptions,
+    required: false,
+    example: AssignmentSortOptions.COMPLETED_AT,
+  })
+  @ApiQuery({
+    name: 'sortOrder',
+    enum: SortOrder,
+    required: false,
+    example: SortOrder.ASCENDING,
+  })
   @HttpCode(200)
   async getAssignmentsByCreatedAt(
     @RequiredQuery('createdAt')
