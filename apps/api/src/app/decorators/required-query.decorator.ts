@@ -1,8 +1,7 @@
 import {
+  BadRequestException,
   createParamDecorator,
   ExecutionContext,
-  HttpException,
-  HttpStatus,
 } from '@nestjs/common';
 
 export const RequiredQuery = createParamDecorator(
@@ -15,7 +14,9 @@ export const RequiredQuery = createParamDecorator(
       if (queryParameter) {
         return queryParameter;
       }
-      throw new HttpException('Bad Request', HttpStatus.BAD_REQUEST);
+      throw new BadRequestException(
+        "There is a missing query parameter"
+      );
     }
   }
 );
