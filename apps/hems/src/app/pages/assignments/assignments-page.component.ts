@@ -21,13 +21,13 @@ export class AssignmentsPageComponent implements OnInit {
     'receivedBy',
     'receivedAt',
     'performedBy',
-    'completedAt'
-  ]
+    'completedAt',
+  ];
 
   constructor(
     private assignmentsService: AssignmentsService,
     private snackBar: MatSnackBar,
-    private dialog: MatDialog,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -37,13 +37,14 @@ export class AssignmentsPageComponent implements OnInit {
   fetchAssignments(): void {
     this.assignmentsService.getAssignments(new Date()).subscribe({
       next: (assignments) => {
+        console.log('assignments', assignments);
+
         this.assignmentList = assignments;
-        console.log('checkin', assignments);
       },
       error: (error) => {
         console.error(error);
         this.snackBar.open(
-          'Check In data have failed to load',
+          'Assignment data have failed to load',
           'Imma try again later',
           {
             duration: 10000,
@@ -57,10 +58,10 @@ export class AssignmentsPageComponent implements OnInit {
     this.dialog.open(CreateAssignmentDialogComponent, { width: '500px' });
   }
 
-  editAssignment(assignmentId: string): void {
+  editAssignment(assignment: IAssignment): void {
     this.dialog.open(UpdateAssignmentDialogComponent, {
       width: '500px',
-      data: this.assignmentList.find((assignment) => assignment.assignmentId === assignmentId),
+      data: assignment,
     });
   }
 }
