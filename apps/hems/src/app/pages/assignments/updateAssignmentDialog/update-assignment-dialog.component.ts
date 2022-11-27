@@ -9,11 +9,7 @@ import { AssignmentsService } from '../../../services/assignments.service';
 @Component({
   selector: 'hems-update-assignment-dialog',
   templateUrl: './update-assignment-dialog.component.html',
-  styleUrls: [
-    './update-assignment-dialog.component.scss', 
-    '../../../../assets/checkbox.scss', 
-    '../../../../assets/dialog.scss',
-  ],
+  styleUrls: ['../../../../assets/checkbox.scss', '../../../../assets/dialog.scss'],
 })
 export class UpdateAssignmentDialogComponent implements OnInit {
   updateAssignmentForm = new UntypedFormGroup({});
