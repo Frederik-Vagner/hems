@@ -1,166 +1,166 @@
 <form [formGroup]="createAssignmentForm" (ngSubmit)="onSubmit()">
-    <h1>Add assignment</h1>
-    <hr />
-    <div class="dialog-row">
-      <mat-form-field appearance="fill">
-        <mat-label>Room</mat-label>
-        <input
-          #room
-          type="text"
-          formControlName="room"
-          matInput
-          placeholder="Room nr"
-          maxlength="10"
-        />
-        <mat-error
-          *ngIf="
-            createAssignmentForm.get('room')?.invalid && createAssignmentForm.get('room')?.dirty
-          "
-        >
-          Must be a number from 100-999
-        </mat-error>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Task</mat-label>
-        <input
-          #task
-          type="text"
-          formControlName="task"
-          matInput
-          placeholder="Type of task"
-        />
-        <mat-error
-          *ngIf="
-            createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
-          "
-        >
-          Can't be more than 20 characters
-        </mat-error>
-      </mat-form-field>
-    </div>
-
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>Description</mat-label>
-      <textarea 
-        #comments
-        matInput
+  <h1>Add assignment</h1>
+  <hr />
+  <div class="dialog-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Room</mat-label>
+      <input
+        #room
         type="text"
-        formControlName="comments"
-        placeholder="Describe the task"
-      ></textarea>
+        formControlName="room"
+        matInput
+        placeholder="Room nr"
+        maxlength="10"
+      />
       <mat-error
         *ngIf="
-          createAssignmentForm.get('comments')?.invalid && createAssignmentForm.get('comments')?.dirty
+          createAssignmentForm.get('room')?.invalid && createAssignmentForm.get('room')?.dirty
         "
       >
-        Can't be more than 1000 characters
+        Must be a number from 100-999
       </mat-error>
     </mat-form-field>
 
-    <div class="dialog-row">
-      <mat-form-field appearance="fill">
-        <mat-label>Received by</mat-label>
-        <input
-          #receivedBy
-          type="text"
-          formControlName="receivedBy"
-          matInput
-          placeholder="Received by"
-        />
-        <mat-error
-          *ngIf="
-            createAssignmentForm.get('receivedBy')?.invalid && createAssignmentForm.get('receivedBy')?.dirty
-          "
-        >
-          Can't be more than 20 characters
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Performed by</mat-label>
-        <input
-          #performedBy
-          type="text"
-          formControlName="performedBy"
-          matInput
-          placeholder="Performed by"
-          maxlength="100"
-        />
-        <mat-error
-          *ngIf="
-            createAssignmentForm.get('performedBy')?.invalid && createAssignmentForm.get('performedBy')?.dirty
-          "
-        >
-          Can't be more than 20 characters
-        </mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="dialog-row">
-      <mat-form-field autocomplete="off" appearance="fill">
-        <mat-label>Time received</mat-label>
-        <input
-          matInput
-          [ngxMatDatetimePicker]="receivedAt"
-          placeholder="Received at"
-          formControlName="receivedAt"
-          [max]="maxDatetime"
-        />
-        <mat-datepicker-toggle
-          matSuffix
-          [for]="$any(receivedAt)"
-        ></mat-datepicker-toggle>
-        <ngx-mat-datetime-picker
-          #receivedAt
-          [showSpinners]="true"
-          [showSeconds]="false"
-          [touchUi]="true"
-        >
-        </ngx-mat-datetime-picker>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Time performed</mat-label>
-        <input
-          matInput
-          [ngxMatDatetimePicker]="completedAt"
-          placeholder="Received at"
-          formControlName="completedAt"
-        />
-        <mat-datepicker-toggle
-          matSuffix
-          [for]="$any(completedAt)"
-        ></mat-datepicker-toggle>
-        <ngx-mat-datetime-picker
-          #completedAt
-          [showSpinners]="true"
-          [showSeconds]="false"
-          [touchUi]="true"
-        >
-        </ngx-mat-datetime-picker>
-        <mat-error
+    <mat-form-field appearance="fill">
+      <mat-label>Task</mat-label>
+      <input
+        #task
+        type="text"
+        formControlName="task"
+        matInput
+        placeholder="Type of task"
+      />
+      <mat-error
         *ngIf="
-          createAssignmentForm.get('completedAt')?.invalid && createAssignmentForm.get('completedAt')?.dirty
+          createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
         "
       >
-        Invalid time
+        Can't be more than 20 characters
       </mat-error>
-      </mat-form-field>
-    </div>
-    
-    <label class="checkbox-container">
-      The guest has given consent to the processing of personal data
-      <input type="checkbox" [checked]="guestHasApproved" (change)="guestHasApproved = !guestHasApproved"/>
-      <span class="checkmark" data-cy="checkbox-banner"></span>
-    </label>
+    </mat-form-field>
+  </div>
 
-    <div class="dialog-row">
-      <button class="secondary-btn" mat-raised-button>
-        Cancel
-      </button>
-      <button class="action-btn" mat-raised-button>
-        + Add assignment
-      </button>
-    </div>
-  </form>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Description</mat-label>
+    <textarea 
+      #comments
+      matInput
+      type="text"
+      formControlName="comments"
+      placeholder="Describe the task"
+    ></textarea>
+    <mat-error
+      *ngIf="
+        createAssignmentForm.get('comments')?.invalid && createAssignmentForm.get('comments')?.dirty
+      "
+    >
+      Can't be more than 1000 characters
+    </mat-error>
+  </mat-form-field>
+
+  <div class="dialog-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Received by</mat-label>
+      <input
+        #receivedBy
+        type="text"
+        formControlName="receivedBy"
+        matInput
+        placeholder="Received by"
+      />
+      <mat-error
+        *ngIf="
+          createAssignmentForm.get('receivedBy')?.invalid && createAssignmentForm.get('receivedBy')?.dirty
+        "
+      >
+        Can't be more than 20 characters
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Performed by</mat-label>
+      <input
+        #performedBy
+        type="text"
+        formControlName="performedBy"
+        matInput
+        placeholder="Performed by"
+        maxlength="100"
+      />
+      <mat-error
+        *ngIf="
+          createAssignmentForm.get('performedBy')?.invalid && createAssignmentForm.get('performedBy')?.dirty
+        "
+      >
+        Can't be more than 20 characters
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Time received</mat-label>
+      <input
+        matInput
+        [ngxMatDatetimePicker]="receivedAt"
+        placeholder="Received at"
+        formControlName="receivedAt"
+        [max]="maxDatetime"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(receivedAt)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #receivedAt
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Time performed</mat-label>
+      <input
+        matInput
+        [ngxMatDatetimePicker]="completedAt"
+        placeholder="Received at"
+        formControlName="completedAt"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(completedAt)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #completedAt
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+      <mat-error
+      *ngIf="
+        createAssignmentForm.get('completedAt')?.invalid && createAssignmentForm.get('completedAt')?.dirty
+      "
+    >
+      Invalid time
+    </mat-error>
+    </mat-form-field>
+  </div>
+  
+  <label class="checkbox-container">
+    The guest has given consent to the processing of personal data
+    <input type="checkbox" [checked]="guestHasApproved" (change)="guestHasApproved = !guestHasApproved"/>
+    <span class="checkmark" data-cy="checkbox-banner"></span>
+  </label>
+
+  <div class="dialog-row">
+    <button class="secondary-btn" mat-raised-button mat-dialog-close>
+      Cancel
+    </button>
+    <button class="action-btn" mat-raised-button>
+      + Add assignment
+    </button>
+  </div>
+</form>
