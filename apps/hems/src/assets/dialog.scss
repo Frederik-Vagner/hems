@@ -30,3 +30,7 @@ textarea {
         margin-top: 1.25em;
     }
 }
+
+::ng-deep .mat-datepicker-content {
+    box-shadow: none !important;
+}
