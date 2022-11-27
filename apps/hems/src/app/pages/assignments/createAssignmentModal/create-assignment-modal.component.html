@@ -70,7 +70,7 @@
         />
         <mat-error
           *ngIf="
-            createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
+            createAssignmentForm.get('receivedBy')?.invalid && createAssignmentForm.get('receivedBy')?.dirty
           "
         >
           Can't be more than 20 characters
@@ -98,38 +98,46 @@
     </div>
 
     <div class="dialog-row">
-      <mat-form-field appearance="fill">
+      <mat-form-field autocomplete="off" appearance="fill">
         <mat-label>Time received</mat-label>
         <input
-          #receivedAt
-          type="text"
-          formControlName="receivedAt"
           matInput
+          [ngxMatDatetimePicker]="receivedAt"
+          placeholder="Received at"
+          formControlName="receivedAt"
         />
-        <mat-error
-          *ngIf="
-            createAssignmentForm.get('receivedAt')?.invalid && createAssignmentForm.get('receivedAt')?.dirty
-          "
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="$any(receivedAt)"
+        ></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker
+          #receivedAt
+          [showSpinners]="true"
+          [showSeconds]="false"
+          [touchUi]="true"
         >
-          Invalid - Required
-        </mat-error>
+        </ngx-mat-datetime-picker>
       </mat-form-field>
   
       <mat-form-field appearance="fill">
         <mat-label>Time performed</mat-label>
         <input
-          #completedAt
-          type="text"
-          formControlName="completedAt"
           matInput
+          [ngxMatDatetimePicker]="completedAt"
+          placeholder="Received at"
+          formControlName="completedAt"
         />
-        <mat-error
-          *ngIf="
-            createAssignmentForm.get('completedAt')?.invalid && createAssignmentForm.get('completedAt')?.dirty
-          "
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="$any(completedAt)"
+        ></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker
+          #completedAt
+          [showSpinners]="true"
+          [showSeconds]="false"
+          [touchUi]="true"
         >
-          Invalid - Required
-        </mat-error>
+        </ngx-mat-datetime-picker>
       </mat-form-field>
     </div>
     
@@ -139,10 +147,12 @@
       <span class="checkmark" data-cy="checkbox-banner"></span>
     </label>
 
-    <button class="secondary-btn" mat-raised-button>
-      Cancel
-    </button>
-    <button class="action-btn" mat-raised-button>
-      + Add assignment
-    </button>
+    <div class="dialog-row">
+      <button class="secondary-btn" mat-raised-button>
+        Cancel
+      </button>
+      <button class="action-btn" mat-raised-button>
+        + Add assignment
+      </button>
+    </div>
   </form>

@@ -1,9 +1,11 @@
 h1 {
     color: var(--main-blue);
+    margin-bottom: .25em;
 }
 
 .full-width {
     width: 100%;
+    margin-bottom: .5em;
 }
 
 textarea {
@@ -13,9 +15,11 @@ textarea {
 .dialog-row {
     display: flex;
     justify-content: space-between;
+    margin-bottom: .5em;
     
-    mat-form-field {
-        flex-grow: 1;
+    mat-form-field, button {
+        flex: 1 1 0px;
+        max-width: 48%;
 
         &:first-of-type {
             margin-right: 1em;
@@ -23,6 +27,6 @@ textarea {
     }
 
     &:first-of-type {
-        margin-top: 1em;
+        margin-top: 1.25em;
     }
 }
