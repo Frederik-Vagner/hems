@@ -20,6 +20,7 @@ import {
   ApiCreatedResponse,
   ApiOkResponse,
   ApiOperation,
+  ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
 import { RequiredQuery } from '../decorators/required-query.decorator';
@@ -36,6 +37,21 @@ export class CarsController {
     summary: 'Get a list of cars from the given day and before.',
   })
   @ApiOkResponse({ type: [Car] })
+  @ApiQuery({ name: 'createdAt', required: true, example: new Date() })
+  @ApiQuery({ name: 'status', required: false, example: 'true' })
+  @ApiQuery({ name: 'search', required: false, example: 'text' })
+  @ApiQuery({
+    name: 'sortBy',
+    enum: CarSortOptions,
+    required: false,
+    example: CarSortOptions.DELIVERY_TIME,
+  })
+  @ApiQuery({
+    name: 'sortOrder',
+    enum: SortOrder,
+    required: false,
+    example: SortOrder.ASCENDING,
+  })
   @HttpCode(200)
   async getCarsBeforeCreatedAt(
     @RequiredQuery('createdAt')
