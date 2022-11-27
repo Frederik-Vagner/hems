@@ -9,7 +9,8 @@ import {
 import { Luggage } from '@hems/models';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, Between, LessThan, Like, IsNull, Not } from 'typeorm';
+import { Repository, Between, LessThan, Like } from 'typeorm';
+import { filterStatus } from '../utils/query-params.utils';
 
 @Injectable()
 export class LuggagesService {
@@ -33,7 +34,7 @@ export class LuggagesService {
         new Date(createdAt.setUTCHours(0, 0, 0, 0)),
         new Date(createdAt.setUTCHours(23, 59, 59, 999))
       ),
-      completedAt: this.filterStatus(status),
+      completedAt: filterStatus(status),
     };
     const baseConditionsLongTerm = {
       luggageType: LuggageType.LONG_TERM,
@@ -90,15 +91,6 @@ export class LuggagesService {
     }
 
     return await this.luggageRepo.save(luggage);
-  }
-
-  private filterStatus(status: boolean | undefined) {
-    if (status === undefined) {
-      return undefined;
-    } else if (status === true) {
-      return Not(IsNull());
-    }
-    return IsNull();
   }
 
   private getSortingConditions(

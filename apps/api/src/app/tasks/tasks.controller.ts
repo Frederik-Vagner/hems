@@ -1,6 +1,8 @@
 import {
   CreateTaskRequest,
   GetTasksResponse,
+  SortOrder,
+  TaskSortOptions,
   UpdateTaskRequest,
 } from '@hems/interfaces';
 import { Task } from '@hems/models';
@@ -21,6 +23,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
+import { toBool } from '../utils/query-params.utils';
 import { TasksService } from './tasks.service';
 
 @ApiTags('Tasks')
@@ -32,9 +35,29 @@ export class TasksController {
   @ApiOperation({ summary: 'Get a list of Tasks for the given day.' })
   @ApiOkResponse({ type: GetTasksResponse })
   @HttpCode(200)
-  async getTasksByCreatedAt(@Query('createdAt') createdAt: string) {
+  async getTasksByCreatedAt(
+    @Query('createdAt')
+    createdAt: string,
+    @Query('status')
+    status: string,
+    @Query('listName')
+    listName: string,
+    @Query('search')
+    search: string,
+    @Query('sortBy')
+    sortBy: TaskSortOptions,
+    @Query('sortOrder')
+    sortOrder: SortOrder
+  ) {
     const createdAtDate = new Date(Date.parse(createdAt));
-    return this.tasksService.findAllByCreatedAt(createdAtDate);
+    return this.tasksService.findAllByCreatedAt(
+      createdAtDate,
+      toBool(status),
+      listName,
+      search,
+      sortBy,
+      sortOrder
+    );
   }
 
   @Post()
