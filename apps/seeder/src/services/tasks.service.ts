@@ -1,9 +1,9 @@
 import { ITask } from '@hems/interfaces';
 import { Task } from '@hems/models';
+import { TaskGenerator } from '@hems/task-generator';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { TaskGenerator } from '@hems/taskUtils';
 
 @Injectable()
 export class TasksSeederService {

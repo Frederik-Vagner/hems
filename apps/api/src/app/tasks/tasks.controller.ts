@@ -21,8 +21,10 @@ import {
   ApiCreatedResponse,
   ApiOkResponse,
   ApiOperation,
+  ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
+import { RequiredQuery } from '../decorators/required-query.decorator';
 import { toBool } from '../utils/query-params.utils';
 import { TasksService } from './tasks.service';
 
@@ -34,10 +36,24 @@ export class TasksController {
   @Get()
   @ApiOperation({ summary: 'Get a list of Tasks for the given day.' })
   @ApiOkResponse({ type: GetTasksResponse })
+  @ApiQuery({ name: 'createdAt', required: true, example: new Date() })
+  @ApiQuery({ name: 'status', required: false, example: 'true' })
+  @ApiQuery({ name: 'search', required: false, example: 'text' })
+  @ApiQuery({
+    name: 'sortBy',
+    enum: TaskSortOptions,
+    required: false,
+    example: TaskSortOptions.COMPLETED_AT,
+  })
+  @ApiQuery({
+    name: 'sortOrder',
+    enum: SortOrder,
+    required: false,
+    example: SortOrder.ASCENDING,
+  })
   @HttpCode(200)
   async getTasksByCreatedAt(
-    @Query('createdAt')
-    createdAt: string,
+    @RequiredQuery('createdAt') createdAt: string,
     @Query('status')
     status: string,
     @Query('listName')

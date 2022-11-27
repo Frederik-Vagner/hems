@@ -1,4 +1,4 @@
-import { IsNull, Not } from "typeorm";
+import { IsNull, Not } from 'typeorm';
 
 export const toBool = (param?: string): boolean | undefined => {
   if (param) {
