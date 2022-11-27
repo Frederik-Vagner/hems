@@ -17,6 +17,9 @@ import { CreateCheckoutDialogComponent } from './pages/checkin/dialogs/checkout/
 import { EditCheckoutDialogComponent } from './pages/checkin/dialogs/checkout/edit/edit-checkout-dialog.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
+import { CreateAssignmentDialogComponent } from './pages/assignments/createAssignmentDialog/create-assignment-dialog.component';
+import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,15 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     PageNotFoundComponent,
     CarsComponent,
     CheckinComponent,
+    AssignmentsPageComponent,
     CreateCarComponent,
     EditCarComponent,
     EditCheckinDialogComponent,
     CreateCheckinDialogComponent,
     EditCheckoutDialogComponent,
     CreateCheckoutDialogComponent,
+    CreateAssignmentDialogComponent,
+    UpdateAssignmentDialogComponent,
   ],
   imports: [
     BrowserModule,

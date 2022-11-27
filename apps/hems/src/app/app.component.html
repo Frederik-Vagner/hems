@@ -131,21 +131,33 @@
   <mat-sidenav-content class="content" data-cy="content">
     <!-- Navbar -->
     <div id="navbar">
-      <h1 class="title">{{ title }}</h1>
+      <div class="page-title">
+        <div [ngSwitch]="title">
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Dashboard'">dashboard</mat-icon>
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Account'">book</mat-icon>
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Luggage List'">receipt_long</mat-icon>
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Car List'">directions_car</mat-icon>
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Check In / Out'">book</mat-icon>
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Daily Tasks'">task</mat-icon>
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Assignments'">fact_check</mat-icon>
+        </div>
+        <h1 class="title">{{ title }}</h1>
+      </div>
+      
       <div id="navbar-action-buttons-container">
         <button
           mat-flat-button
           class="navbar-item"
           routerLink="/logout"
           data-cy="navbar-account-btn"
-          *ngIf="router.url !== '/login' && router.url !== '/404'"
+          *ngIf="router.url !== '/login'"
         >
           Account
         </button>
         <button
           mat-flat-button
           class="navbar-item"
-          *ngIf="router.url !== '/login' && router.url !== '/404'"
+          *ngIf="router.url !== '/login'"
           (click)="logout()"
           data-cy="navbar-logout-btn"
         >

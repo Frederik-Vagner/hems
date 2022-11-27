@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
 import { CarsComponent } from './pages/cars/cars.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'car-list',
     component: CarsComponent,
+  },
+  {
+    path: 'assignments',
+    component: AssignmentsPageComponent,
   },
   {
     path: 'checkin',
