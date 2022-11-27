@@ -18,7 +18,7 @@
       "@hems/interfaces": ["libs/interfaces/src/index.ts"],
       "@hems/local-storage": ["libs/local-storage/src/index.ts"],
       "@hems/models": ["libs/models/src/index.ts"],
-      "@hems/taskUtils": ["libs/ taskUtils/src/index.ts"]
+      "@hems/task-generator": ["libs/task-generator/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

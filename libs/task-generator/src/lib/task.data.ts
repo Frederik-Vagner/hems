@@ -63,12 +63,4 @@ export const generalTasks = [
   'Make the Valet log',
 ];
 
-export const sampleInitials = [
-  'CV',
-  'TV',
-  'TJ',
-  'CPV',
-  'CBJ',
-  'ATV',
-  'FV',
-];
+export const sampleInitials = ['CV', 'TV', 'TJ', 'CPV', 'CBJ', 'ATV', 'FV'];
