@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IAssignment } from '@hems/interfaces';
-import { CreateAssignmentModalComponent } from '../../components/modals/createAssignmentModal/create-assignment-modal.component';
+import { CreateAssignmentModalComponent } from './createAssignmentModal/create-assignment-modal.component';
 import { AssignmentsService } from '../../services/assignments.service';
 
 @Component({
