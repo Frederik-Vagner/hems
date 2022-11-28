@@ -1,4 +1,8 @@
-<form (ngSubmit)="create()" [formGroup]="form" data-cy="create-checkout-dialog">
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="form"
+  data-cy="create-checkout-dialog"
+>
   <div class="header">
     <h2>Create Check Out Luggage</h2>
   </div>
@@ -12,6 +16,7 @@
     >
       <mat-label class="input-label">Room</mat-label>
       <input
+        #room
         type="text"
         data-cy="update-checkout-room-input"
         formControlName="room"
@@ -30,6 +35,7 @@
     >
       <mat-label class="input-label">Nr of bags</mat-label>
       <input
+        #bags
         type="text"
         data-cy="update-checkout-room-input"
         formControlName="bags"
@@ -50,6 +56,7 @@
     >
       <mat-label class="input-label">Tag nr</mat-label>
       <input
+        #tagNr
         type="text"
         data-cy="create-checkout-tag-nr"
         formControlName="tagNr"
@@ -64,6 +71,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label class="input-label">Name</mat-label>
       <input
+        #name
         type="text"
         data-cy="update-checkout-name"
         formControlName="name"
@@ -84,6 +92,7 @@
     >
       <mat-label class="input-label">Location</mat-label>
       <input
+        #location
         type="text"
         data-cy="update-checkout-location"
         formControlName="location"
@@ -104,6 +113,7 @@
     >
       <mat-label class="input-label">BB in LR</mat-label>
       <input
+        #bbLr
         type="text"
         data-cy="update-checkout-bbLr"
         formControlName="bbLr"
@@ -124,6 +134,7 @@
     >
       <mat-label class="input-label">BB Down</mat-label>
       <input
+        #bbDown
         type="text"
         data-cy="update-checkout-bbDown"
         formControlName="bbDown"

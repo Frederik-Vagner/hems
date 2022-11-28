@@ -1,4 +1,8 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="form" data-cy="update-checkout-dialog">
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="form"
+  data-cy="update-checkout-dialog"
+>
   <h1>Update Check Out</h1>
   <hr />
 
@@ -6,7 +10,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Room</mat-label>
       <input
-      #room
+        #room
         type="text"
         data-cy="update-checkout-room-input"
         formControlName="room"
@@ -21,7 +25,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Nr of bags</mat-label>
       <input
-      #bags
+        #bags
         type="text"
         data-cy="update-checkout-room-input"
         formControlName="bags"
@@ -38,7 +42,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Tag nr</mat-label>
       <input
-      #tagNr
+        #tagNr
         type="text"
         data-cy="create-checkout-tag-nr"
         formControlName="tagNr"
@@ -53,7 +57,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Name</mat-label>
       <input
-      #name
+        #name
         type="text"
         data-cy="update-checkout-name"
         formControlName="name"
@@ -70,7 +74,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Location</mat-label>
       <input
-      #location
+        #location
         type="text"
         data-cy="update-checkout-location"
         formControlName="location"
@@ -87,7 +91,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB in LR</mat-label>
       <input
-      #bbLr
+        #bbLr
         type="text"
         data-cy="update-checkout-bbLr"
         formControlName="bbLr"
@@ -104,7 +108,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB Down</mat-label>
       <input
-      #bbDown
+        #bbDown
         type="text"
         data-cy="update-checkout-bbDown"
         formControlName="bbDown"
