@@ -3,7 +3,7 @@
   [formGroup]="form"
   data-cy="create-checkin-dialog"
 >
-  <h1>Create Check In Luggage</h1>
+  <h1>Create Check In</h1>
   <hr />
 
   <div class="dialog-row">
@@ -78,44 +78,6 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label class="input-label">Location</mat-label>
-      <input
-        #location
-        type="text"
-        data-cy="update-checkin-location"
-        formControlName="location"
-        matInput
-        placeholder="LR1"
-      />
-      <mat-error
-        *ngIf="form.get('location')?.invalid && form.get('location')?.dirty"
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field
-      autocomplete="off"
-      class="input one-third"
-      appearance="fill"
-    >
-      <mat-label class="input-label">BB in LR</mat-label>
-      <input
-        #bbLr
-        type="text"
-        data-cy="update-checkin-name"
-        formControlName="bbLr"
-        matInput
-        placeholder="JD"
-      />
-      <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
     <mat-form-field
       autocomplete="off"
       class="input one-third"
@@ -150,6 +112,44 @@
         placeholder="123"
       />
       <mat-error *ngIf="form.get('tagNr')?.invalid && form.get('tagNr')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field
+      autocomplete="off"
+      class="input one-third"
+      appearance="fill"
+    >
+      <mat-label class="input-label">BB in LR</mat-label>
+      <input
+        #bbLr
+        type="text"
+        data-cy="update-checkin-name"
+        formControlName="bbLr"
+        matInput
+        placeholder="JD"
+      />
+      <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field autocomplete="off" class="input" appearance="fill">
+      <mat-label class="input-label">Location</mat-label>
+      <input
+        #location
+        type="text"
+        data-cy="update-checkin-location"
+        formControlName="location"
+        matInput
+        placeholder="LR1"
+      />
+      <mat-error
+        *ngIf="form.get('location')?.invalid && form.get('location')?.dirty"
+      >
         Required
       </mat-error>
     </mat-form-field>
