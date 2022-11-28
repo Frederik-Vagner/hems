@@ -14,7 +14,8 @@
       />
       <mat-error
         *ngIf="
-          updateAssignmentForm.get('room')?.invalid && updateAssignmentForm.get('room')?.dirty
+          updateAssignmentForm.get('room')?.invalid &&
+          updateAssignmentForm.get('room')?.dirty
         "
       >
         Must be a number from 100-999
@@ -32,7 +33,8 @@
       />
       <mat-error
         *ngIf="
-          updateAssignmentForm.get('task')?.invalid && updateAssignmentForm.get('task')?.dirty
+          updateAssignmentForm.get('task')?.invalid &&
+          updateAssignmentForm.get('task')?.dirty
         "
       >
         Can't be more than 20 characters
@@ -42,7 +44,7 @@
 
   <mat-form-field appearance="fill" class="full-width">
     <mat-label>Description</mat-label>
-    <textarea 
+    <textarea
       #comments
       matInput
       type="text"
@@ -51,7 +53,8 @@
     ></textarea>
     <mat-error
       *ngIf="
-        updateAssignmentForm.get('comments')?.invalid && updateAssignmentForm.get('comments')?.dirty
+        updateAssignmentForm.get('comments')?.invalid &&
+        updateAssignmentForm.get('comments')?.dirty
       "
     >
       Can't be more than 1000 characters
@@ -70,7 +73,8 @@
       />
       <mat-error
         *ngIf="
-          updateAssignmentForm.get('receivedBy')?.invalid && updateAssignmentForm.get('receivedBy')?.dirty
+          updateAssignmentForm.get('receivedBy')?.invalid &&
+          updateAssignmentForm.get('receivedBy')?.dirty
         "
       >
         Can't be more than 20 characters
@@ -89,7 +93,8 @@
       />
       <mat-error
         *ngIf="
-          updateAssignmentForm.get('performedBy')?.invalid && updateAssignmentForm.get('performedBy')?.dirty
+          updateAssignmentForm.get('performedBy')?.invalid &&
+          updateAssignmentForm.get('performedBy')?.dirty
         "
       >
         Can't be more than 20 characters
@@ -141,21 +146,18 @@
       >
       </ngx-mat-datetime-picker>
       <mat-error
-      *ngIf="
-        updateAssignmentForm.get('completedAt')?.invalid && updateAssignmentForm.get('completedAt')?.dirty
-      "
-    >
-      Invalid time
-    </mat-error>
+        *ngIf="
+          updateAssignmentForm.get('completedAt')?.invalid &&
+          updateAssignmentForm.get('completedAt')?.dirty
+        "
+      >
+        Invalid time
+      </mat-error>
     </mat-form-field>
   </div>
 
   <div class="dialog-row">
-    <button class="basic-btn" mat-raised-button mat-dialog-close>
-      Cancel
-    </button>
-    <button class="secondary-btn" mat-raised-button>
-      Update assignment
-    </button>
+    <button class="basic-btn" mat-raised-button mat-dialog-close>Cancel</button>
+    <button class="secondary-btn" mat-raised-button>Update assignment</button>
   </div>
 </form>

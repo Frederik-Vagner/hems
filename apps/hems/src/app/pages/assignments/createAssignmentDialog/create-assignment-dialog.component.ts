@@ -1,6 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
+import {
+  UntypedFormGroup,
+  UntypedFormControl,
+  Validators,
+} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AssignmentsService } from '../../../services/assignments.service';
@@ -8,7 +12,10 @@ import { AssignmentsService } from '../../../services/assignments.service';
 @Component({
   selector: 'hems-create-assignment-dialog',
   templateUrl: './create-assignment-dialog.component.html',
-  styleUrls: ['../../../../assets/checkbox.scss', '../../../../assets/dialog.scss'],
+  styleUrls: [
+    '../../../../assets/checkbox.scss',
+    '../../../../assets/dialog.scss',
+  ],
 })
 export class CreateAssignmentDialogComponent implements OnInit {
   createAssignmentForm = new UntypedFormGroup({});
@@ -24,28 +31,46 @@ export class CreateAssignmentDialogComponent implements OnInit {
   @ViewChild('performedBy') performedByInput!: ElementRef;
   @ViewChild('completedAt') completedAtInput!: ElementRef;
 
-  constructor(private assignmentService: AssignmentsService, private snackBar: MatSnackBar, private dialog: MatDialog){};
+  constructor(
+    private assignmentService: AssignmentsService,
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.createAssignmentForm = new UntypedFormGroup({
-      room: new UntypedFormControl('', [Validators.maxLength(50), Validators.pattern('^[0-9]*$')]),
+      room: new UntypedFormControl('', [
+        Validators.maxLength(50),
+        Validators.pattern('^[0-9]*$'),
+      ]),
       task: new UntypedFormControl('', Validators.maxLength(20)),
-      comments: new UntypedFormControl('', [Validators.maxLength(1000), Validators.required]),
-      receivedBy: new UntypedFormControl('', [Validators.maxLength(20), Validators.required]),
+      comments: new UntypedFormControl('', [
+        Validators.maxLength(1000),
+        Validators.required,
+      ]),
+      receivedBy: new UntypedFormControl('', [
+        Validators.maxLength(20),
+        Validators.required,
+      ]),
       performedBy: new UntypedFormControl('', [Validators.maxLength(20)]),
-      receivedAt: new UntypedFormControl('', [Validators.required, Validators.maxLength(20)]),
+      receivedAt: new UntypedFormControl('', [
+        Validators.required,
+        Validators.maxLength(20),
+      ]),
       completedAt: new UntypedFormControl(''),
     });
-  };
+  }
 
   onSubmit(): void {
-    if(!this.guestHasApproved) {
-      this.snackBar.open('Guest needs to approve storing their data.', 'Okay', { duration: 10000 });
+    if (!this.guestHasApproved) {
+      this.snackBar.open('Guest needs to approve storing their data.', 'Okay', {
+        duration: 10000,
+      });
       return;
-    };
+    }
 
-    if(!this.createAssignmentForm.valid) {
-      if(this.createAssignmentForm.get('room')?.invalid) {
+    if (!this.createAssignmentForm.valid) {
+      if (this.createAssignmentForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
       } else if (this.createAssignmentForm.get('task')?.invalid) {
         this.taskInput.nativeElement.focus();
@@ -63,26 +88,32 @@ export class CreateAssignmentDialogComponent implements OnInit {
 
   createAssignment(): void {
     this.isLoading = true;
-    this.assignmentService.createAssignment({
-      room: this.createAssignmentForm.get('room')?.value,
-      task: this.createAssignmentForm.get('task')?.value,
-      comments: this.createAssignmentForm.get('comments')?.value,
-      receivedBy: this.createAssignmentForm.get('receivedBy')?.value,
-      performedBy: this.createAssignmentForm.get('performedBy')?.value,
-      receivedAt: this.createAssignmentForm.get('receivedAt')?.value,
-      completedAt: this.createAssignmentForm.get('completedAt')?.value,
-    }).subscribe(
-      () => {
-        this.snackBar.open('Assignment added!', 'Thanks', { duration: 5000 });
-        document.location.reload();
-        this.dialog.closeAll();
-        this.isLoading = false;
-      },
-      (err: HttpErrorResponse) => {
-        console.error(err);
-        this.snackBar.open('Failed to add assignment, please try again.', 'Okay', { duration: 10000 });
-        this.isLoading = false;
-      }
-    );
-  };
+    this.assignmentService
+      .createAssignment({
+        room: this.createAssignmentForm.get('room')?.value,
+        task: this.createAssignmentForm.get('task')?.value,
+        comments: this.createAssignmentForm.get('comments')?.value,
+        receivedBy: this.createAssignmentForm.get('receivedBy')?.value,
+        performedBy: this.createAssignmentForm.get('performedBy')?.value,
+        receivedAt: this.createAssignmentForm.get('receivedAt')?.value,
+        completedAt: this.createAssignmentForm.get('completedAt')?.value,
+      })
+      .subscribe(
+        () => {
+          this.snackBar.open('Assignment added!', 'Thanks', { duration: 5000 });
+          document.location.reload();
+          this.dialog.closeAll();
+          this.isLoading = false;
+        },
+        (err: HttpErrorResponse) => {
+          console.error(err);
+          this.snackBar.open(
+            'Failed to add assignment, please try again.',
+            'Okay',
+            { duration: 10000 }
+          );
+          this.isLoading = false;
+        }
+      );
+  }
 }

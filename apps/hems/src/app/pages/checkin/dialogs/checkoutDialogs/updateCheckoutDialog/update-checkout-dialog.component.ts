@@ -59,8 +59,8 @@ export class UpdateCheckoutDialogComponent {
   }
 
   onSubmit(): void {
-    if(!this.form.valid) {
-      if(this.form.get('room')?.invalid) {
+    if (!this.form.valid) {
+      if (this.form.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
       } else if (this.form.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
@@ -74,7 +74,7 @@ export class UpdateCheckoutDialogComponent {
         this.locationInput.nativeElement.focus();
       } else if (this.form.get('bbLr')?.invalid) {
         this.bbLrInput.nativeElement.focus();
-      } 
+      }
     } else {
       this.updateCheckout();
     }
@@ -93,7 +93,10 @@ export class UpdateCheckoutDialogComponent {
         bbOut: this.form.get('bbOut')?.value,
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
-        description: this.form.get('description')?.value.toString().length > 1 ? this.form.get('description')?.value : '-',
+        description:
+          this.form.get('description')?.value.toString().length > 1
+            ? this.form.get('description')?.value
+            : '-',
       })
       .subscribe({
         next: () => {

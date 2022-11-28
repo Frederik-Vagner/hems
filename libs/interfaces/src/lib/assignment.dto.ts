@@ -27,7 +27,7 @@ export class CreateAssignmentRequest implements ICreateAssignmentRequest {
   performedBy?: string;
 
   @ApiModelProperty()
-  @IsNotEmpty() 
+  @IsNotEmpty()
   @IsDateString()
   receivedAt!: Date;
 }

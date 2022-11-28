@@ -15,7 +15,7 @@
 }
 
 .page-title {
-  margin-left: .25em;
+  margin-left: 0.25em;
   display: flex;
   font-weight: 100;
   color: var(--main-blue);
@@ -26,13 +26,13 @@
   }
 
   mat-icon {
-    margin-right: .4em;
+    margin-right: 0.4em;
   }
 }
 
 .sidebar .toggle-btn {
   position: absolute;
-  bottom: .5em;
+  bottom: 0.5em;
   right: 0;
   color: white;
   background-color: var(--main-blue);

@@ -50,8 +50,8 @@ export class CreateCheckoutDialogComponent {
   }
 
   onSubmit(): void {
-    if(!this.form.valid) {
-      if(this.form.get('room')?.invalid) {
+    if (!this.form.valid) {
+      if (this.form.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
       } else if (this.form.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
@@ -65,7 +65,7 @@ export class CreateCheckoutDialogComponent {
         this.locationInput.nativeElement.focus();
       } else if (this.form.get('bbLr')?.invalid) {
         this.bbLrInput.nativeElement.focus();
-      } 
+      }
     } else {
       this.createCheckout();
     }
@@ -91,7 +91,10 @@ export class CreateCheckoutDialogComponent {
         bbLr: this.form.get('bbLr')?.value,
         bbDown: this.form.get('bbDown')?.value,
         location: this.form.get('location')?.value,
-        description: this.form.get('description')?.value.toString().length > 1 ? this.form.get('description')?.value : '-',
+        description:
+          this.form.get('description')?.value.toString().length > 1
+            ? this.form.get('description')?.value
+            : '-',
         luggageType: LuggageType.CHECKOUT,
       })
       .subscribe({
