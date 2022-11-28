@@ -7,6 +7,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { materialModules } from './material.constant';
+import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
+import { CreateAssignmentDialogComponent } from './pages/assignments/createAssignmentDialog/create-assignment-dialog.component';
+import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 import { CarsComponent } from './pages/cars/cars.component';
 import { CreateCarComponent } from './pages/cars/modal/create/create.car.component';
 import { EditCarComponent } from './pages/cars/modal/edit/edit.car.component';
@@ -16,10 +19,8 @@ import { UpdateCheckinDialogComponent } from './pages/checkin/dialogs/checkinDia
 import { CreateCheckoutDialogComponent } from './pages/checkin/dialogs/checkoutDialogs/createCheckoutDialog/create-checkout-dialog.component';
 import { UpdateCheckoutDialogComponent } from './pages/checkin/dialogs/checkoutDialogs/updateCheckoutDialog/update-checkout-dialog.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LongtermComponent } from './pages/longterm/longterm.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
-import { CreateAssignmentDialogComponent } from './pages/assignments/createAssignmentDialog/create-assignment-dialog.component';
-import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssig
     DashboardComponent,
     PageNotFoundComponent,
     CarsComponent,
+    LongtermComponent,
     CheckinComponent,
     AssignmentsPageComponent,
     CreateCarComponent,

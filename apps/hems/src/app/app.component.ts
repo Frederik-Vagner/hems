@@ -36,6 +36,9 @@ export class AppComponent {
           case '/assignments':
             this.title = 'Assignments';
             break;
+          case '/long-term':
+            this.title = 'Long Term';
+            break;
           default:
             this.title = 'Page Not Found';
             break;

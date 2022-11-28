@@ -4,6 +4,7 @@ import { AssignmentsPageComponent } from './pages/assignments/assignments-page.c
 import { CarsComponent } from './pages/cars/cars.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LongtermComponent } from './pages/longterm/longterm.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'car-list',
     component: CarsComponent,
+  },
+  {
+    path: 'long-term',
+    component: LongtermComponent,
   },
   {
     path: 'assignments',
