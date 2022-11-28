@@ -3,10 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
-import { CreateCheckinDialogComponent } from './dialogs/checkin/create/create-checkin-dialog.component';
-import { EditCheckinDialogComponent } from './dialogs/checkin/edit/edit-checkin-dialog.component';
-import { CreateCheckoutDialogComponent } from './dialogs/checkout/create/create-checkout-dialog.component';
-import { EditCheckoutDialogComponent } from './dialogs/checkout/edit/edit-checkout-dialog.component';
+import { CreateCheckinDialogComponent } from './dialogs/checkin/createCheckinDialog/create-checkin-dialog.component';
+import { UpdateCheckinDialogComponent } from './dialogs/checkin/updateCheckinDialog/update-checkin-dialog.component';
+import { CreateCheckoutDialogComponent } from './dialogs/checkout/createCheckoutDialog/create-checkout-dialog.component';
+import { UpdateCheckoutDialogComponent } from './dialogs/checkout/updateCheckoutDialog/update-checkout-dialog.component';
 
 @Component({
   selector: 'hems-checkin',
@@ -125,7 +125,7 @@ export class CheckinComponent implements OnInit {
   }
 
   openCheckinEditDialog(luggage: ILuggage): void {
-    this.dialog.open(EditCheckinDialogComponent, {
+    this.dialog.open(UpdateCheckinDialogComponent, {
       width: '500px',
       data: luggage,
     });
@@ -138,7 +138,7 @@ export class CheckinComponent implements OnInit {
   }
 
   openCheckoutEditDialog(luggage: ILuggage): void {
-    this.dialog.open(EditCheckoutDialogComponent, {
+    this.dialog.open(UpdateCheckoutDialogComponent, {
       width: '500px',
       data: luggage,
     });

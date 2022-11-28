@@ -15,21 +15,21 @@ import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-edit-checkout-dialog',
-  templateUrl: './edit-checkout-dialog.component.html',
+  selector: 'hems-update-checkout-dialog',
+  templateUrl: './update-checkout-dialog.component.html',
   styleUrls: [
     '../../../../../../assets/checkbox.scss',
     '../../../../../../assets/dialog.scss',
   ],
 })
-export class EditCheckoutDialogComponent {
+export class UpdateCheckoutDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
   luggageId: string;
 
   constructor(
-    public dialogRef: MatDialogRef<EditCheckoutDialogComponent>,
+    public dialogRef: MatDialogRef<UpdateCheckoutDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
     private snackbar: MatSnackBar,
