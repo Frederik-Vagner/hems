@@ -77,12 +77,12 @@
     <tr mat-header-row *matHeaderRowDef="checkinColumns"></tr>
     <tr
       mat-row
-      *matRowDef="let row; columns: checkinColumns"
       [ngClass]="row.completedAt ? 'completed' : ''"
+      *matRowDef="let row; columns: checkinColumns"
+      (click)="openCheckinEditDialog(row)"
     ></tr>
   </table>
 
-  <br />
   <br />
 
   <!-- Checkout Section -->
@@ -158,8 +158,9 @@
     <tr mat-header-row *matHeaderRowDef="checkoutColumns"></tr>
     <tr
       mat-row
-      *matRowDef="let row; columns: checkoutColumns"
       [ngClass]="row.completedAt ? 'completed' : ''"
+      *matRowDef="let row; columns: checkoutColumns"
+      (click)="openCheckoutEditDialog(row)"
     ></tr>
   </table>
 </section>

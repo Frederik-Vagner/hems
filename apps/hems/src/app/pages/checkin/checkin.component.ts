@@ -33,7 +33,6 @@ export class CheckinComponent implements OnInit {
     'completedAt',
     'bbUp',
     'description',
-    'actions',
   ];
 
   checkoutColumns = [
@@ -47,7 +46,6 @@ export class CheckinComponent implements OnInit {
     'completedAt',
     'bbOut',
     'description',
-    'actions',
   ];
 
   constructor(
