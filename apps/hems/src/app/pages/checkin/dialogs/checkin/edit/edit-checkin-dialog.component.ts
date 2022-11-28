@@ -73,7 +73,7 @@ export class EditCheckinDialogComponent {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Luggage item updated!', 'Cool', {
+          this.snackbar.open('Luggage item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -82,8 +82,8 @@ export class EditCheckinDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update :(', 'Imma try again later', {
-            duration: 15000,
+          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+            duration: 10000,
           });
           this.isLoading = false;
         },

@@ -72,13 +72,13 @@ export class UpdateAssignmentDialogComponent implements OnInit {
       completedAt: this.updateAssignmentForm.get('completedAt')?.value,
     }).subscribe(
       () => {
-        this.snackBar.open('Assignment updated!', 'HOLY SH***', { duration: 2500 });
+        this.snackBar.open('Assignment updated!', 'Thanks', { duration: 5000 });
         document.location.reload();
         this.dialog.closeAll();
       },
       (err: HttpErrorResponse) => {
         console.error(err);
-        this.snackBar.open('Failed to update assignment sadly :(((', 'SH*** HOLY', { duration: 5000 });
+        this.snackBar.open('Failed to update assignment, please try again.', 'Okay', { duration: 10000 });
       }
     );
   };

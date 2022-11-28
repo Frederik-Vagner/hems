@@ -158,7 +158,7 @@
     </mat-checkbox>
   </div>
 
-  <div class="action">
+  <div class="dialog-row">
     <button
       mat-raised-button
       class="secondary-btn"
@@ -172,12 +172,8 @@
       class="action-btn"
       data-cy="create-checkout-create-btn"
       type="submit"
-      [disabled]="form.invalid || isLoading"
     >
-      <span *ngIf="!isLoading">Create</span>
-      <mat-icon *ngIf="isLoading"
-        ><mat-spinner diameter="21" color="accent"></mat-spinner
-      ></mat-icon>
+      + Add checkout
     </button>
   </div>
 </form>

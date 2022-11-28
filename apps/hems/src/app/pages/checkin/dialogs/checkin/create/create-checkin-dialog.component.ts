@@ -60,7 +60,7 @@ export class CreateCheckinDialogComponent {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Check In luggage item created!', 'Cool', {
+          this.snackbar.open('Check In luggage item created!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -69,8 +69,8 @@ export class CreateCheckinDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create :(', 'Imma try again later', {
-            duration: 15000,
+          this.snackbar.open('Failed to create, please try again.', 'Okay', {
+            duration: 10000,
           });
           this.isLoading = false;
         },

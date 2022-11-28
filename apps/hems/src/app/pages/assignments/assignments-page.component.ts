@@ -37,15 +37,13 @@ export class AssignmentsPageComponent implements OnInit {
   fetchAssignments(): void {
     this.assignmentsService.getAssignments(new Date()).subscribe({
       next: (assignments) => {
-        console.log('assignments', assignments);
-
         this.assignmentList = assignments;
       },
       error: (error) => {
         console.error(error);
         this.snackBar.open(
-          'Assignment data have failed to load',
-          'Imma try again later',
+          'Assignment data have failed to load, please try reloading the page.',
+          'Okay',
           {
             duration: 10000,
           }

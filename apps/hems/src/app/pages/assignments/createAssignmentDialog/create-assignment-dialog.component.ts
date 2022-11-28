@@ -73,14 +73,14 @@ export class CreateAssignmentDialogComponent implements OnInit {
       completedAt: this.createAssignmentForm.get('completedAt')?.value,
     }).subscribe(
       () => {
-        this.snackBar.open('Assignment added!', 'HOLY SH***', { duration: 2500 });
+        this.snackBar.open('Assignment added!', 'Thanks', { duration: 5000 });
         document.location.reload();
         this.dialog.closeAll();
         this.isLoading = false;
       },
       (err: HttpErrorResponse) => {
         console.error(err);
-        this.snackBar.open('Failed to add assignment sadly :(((', 'SH*** HOLY', { duration: 5000 });
+        this.snackBar.open('Failed to add assignment, please try again.', 'Okay', { duration: 10000 });
         this.isLoading = false;
       }
     );
