@@ -10,8 +10,24 @@ import { TasksService } from '../../services/tasks.service';
 })
 export class TasksComponent implements OnInit {
   morningTasks: ITask[] = [];
-  eveningTasks1: ITask[] = [];
+  eveningTasks: ITask[] = [];
   isLoading = false;
+
+  morningColumns = [
+    'time', 
+    'task', 
+    'done', 
+    'initials',
+    'actions'
+  ];
+
+  eveningColumns = [
+    'time', 
+    'task', 
+    'done', 
+    'initials',
+    'actions'
+  ];
 
   constructor(
     private readonly tasksService: TasksService,
