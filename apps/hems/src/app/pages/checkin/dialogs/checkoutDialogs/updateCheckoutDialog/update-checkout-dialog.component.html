@@ -1,0 +1,192 @@
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="form"
+  data-cy="update-checkout-dialog"
+>
+  <h1>Update Check Out</h1>
+  <hr />
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Room</mat-label>
+      <input
+        #room
+        type="text"
+        data-cy="update-checkout-room-input"
+        formControlName="room"
+        matInput
+        placeholder="123"
+      />
+      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input
+        #name
+        type="text"
+        data-cy="update-checkout-name"
+        formControlName="name"
+        matInput
+        placeholder="John Doe"
+      />
+      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Nr of bags</mat-label>
+      <input
+        #bags
+        type="text"
+        data-cy="update-checkout-room-input"
+        formControlName="bags"
+        matInput
+        placeholder="1+3"
+      />
+      <mat-error *ngIf="form.get('bags')?.invalid && form.get('bags')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Tag nr</mat-label>
+      <input
+        #tagNr
+        type="text"
+        data-cy="create-checkout-tag-nr"
+        formControlName="tagNr"
+        matInput
+        placeholder="123"
+      />
+      <mat-error *ngIf="form.get('tagNr')?.invalid && form.get('tagNr')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>BB Down</mat-label>
+      <input
+        #bbDown
+        type="text"
+        data-cy="update-checkout-bbDown"
+        formControlName="bbDown"
+        matInput
+        placeholder="JD"
+      />
+      <mat-error
+        *ngIf="form.get('bbDown')?.invalid && form.get('bbDown')?.dirty"
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Location</mat-label>
+      <input
+        #location
+        type="text"
+        data-cy="update-checkout-location"
+        formControlName="location"
+        matInput
+        placeholder="LR1"
+      />
+      <mat-error
+        *ngIf="form.get('location')?.invalid && form.get('location')?.dirty"
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>BB in LR</mat-label>
+      <input
+        #bbLr
+        type="text"
+        data-cy="update-checkout-bbLr"
+        formControlName="bbLr"
+        matInput
+        placeholder="JD"
+      />
+      <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Out time</mat-label>
+      <input
+        matInput
+        [ngxMatDatetimePicker]="pickerCompletedAt"
+        placeholder="Out time"
+        formControlName="completedAt"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(pickerCompletedAt)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #pickerCompletedAt
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>BB Out</mat-label>
+      <input
+        type="text"
+        data-cy="update-checkout-bbOut"
+        formControlName="bbOut"
+        matInput
+        placeholder="JD"
+      />
+      <mat-error *ngIf="form.get('bbOut')?.invalid && form.get('bbOut')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
+    <textarea
+      type="text"
+      data-cy="update-checkin-description"
+      formControlName="description"
+      matInput
+      placeholder="Comments"
+    ></textarea>
+  </mat-form-field>
+
+  <div class="dialog-row">
+    <button
+      mat-raised-button
+      class="basic-btn"
+      data-cy="update-checkout-cancel-btn"
+      mat-dialog-close
+    >
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      class="secondary-btn"
+      data-cy="update-checkout-create-btn"
+      type="submit"
+    >
+      Update
+    </button>
+  </div>
+</form>

@@ -7,12 +7,12 @@ import {
 
 export class CreateAssignmentRequest implements ICreateAssignmentRequest {
   @ApiModelProperty({ example: '211' })
-  @IsNotEmpty()
-  room!: string;
+  @IsOptional()
+  room?: string;
 
   @ApiModelProperty({ example: 'RA' })
-  @IsNotEmpty()
-  task!: string;
+  @IsOptional()
+  task?: string;
 
   @ApiModelProperty({ example: 'New keys and package delivery' })
   @IsNotEmpty()
@@ -30,6 +30,11 @@ export class CreateAssignmentRequest implements ICreateAssignmentRequest {
   @IsNotEmpty()
   @IsDateString()
   receivedAt!: Date;
+
+  @ApiModelProperty({ example: Date.now() })
+  @IsOptional()
+  @IsDateString()
+  completedAt?: Date;
 }
 
 export class UpdateAssignmentRequest implements IUpdateAssignmentRequest {

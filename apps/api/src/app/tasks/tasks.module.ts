@@ -1,5 +1,5 @@
 import { Task } from '@hems/models';
-import { TaskGenerator } from '@hems/taskUtils';
+import { TaskGenerator } from '@hems/task-generator';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TasksController } from './tasks.controller';

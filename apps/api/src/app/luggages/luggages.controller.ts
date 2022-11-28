@@ -22,8 +22,10 @@ import {
   ApiCreatedResponse,
   ApiOkResponse,
   ApiOperation,
+  ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
+import { RequiredQuery } from '../decorators/required-query.decorator';
 import { toBool } from '../utils/query-params.utils';
 import { LuggagesService } from './luggages.service';
 
@@ -37,11 +39,32 @@ export class LuggagesController {
     summary: 'Get a list of checked in luggages for the given day.',
   })
   @ApiOkResponse({ type: [Luggage] })
+  @ApiQuery({ name: 'createdAt', required: true, example: new Date() })
+  @ApiQuery({ name: 'status', required: false, example: 'true' })
+  @ApiQuery({
+    name: 'location',
+    enum: Location,
+    required: false,
+    example: Location.FH_FRONT_HOTEL,
+  })
+  @ApiQuery({ name: 'search', required: false, example: 'text' })
+  @ApiQuery({
+    name: 'sortBy',
+    enum: LuggageSortOptions,
+    required: false,
+    example: LuggageSortOptions.ARRIVAL_TIME,
+  })
+  @ApiQuery({
+    name: 'sortOrder',
+    enum: SortOrder,
+    required: false,
+    example: SortOrder.ASCENDING,
+  })
   @HttpCode(200)
   async getLuggagesByLuggageTypeAndCreatedAt(
     @Param('luggageType')
     luggageType: LuggageType,
-    @Query('createdAt')
+    @RequiredQuery('createdAt')
     createdAt: string,
     @Query('status')
     status: string,

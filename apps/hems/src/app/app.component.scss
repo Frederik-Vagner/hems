@@ -1,0 +1,116 @@
+.body-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  width: 225px;
+  box-shadow: -7px 0px 24px 8px rgba(0, 0, 0, 0.15);
+  color: white;
+  background-color: var(--main-blue);
+}
+
+.sidebar mat-icon {
+  color: white;
+}
+
+.page-title {
+  margin-left: 0.25em;
+  display: flex;
+  font-weight: 100;
+  color: var(--main-blue);
+  align-items: center;
+
+  h1 {
+    margin: 0 0 2px 0;
+  }
+
+  mat-icon {
+    margin-right: 0.4em;
+  }
+}
+
+.sidebar .toggle-btn {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0;
+  color: white;
+  background-color: var(--main-blue);
+}
+
+mat-divider {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.collapsed {
+  width: 60px;
+}
+
+.collapsible {
+  display: none;
+}
+
+.sidebar-header {
+  padding: 16px 16px 0 16px;
+}
+
+.sidebar-header > h3 {
+  margin: 0;
+}
+
+.sidebar-header .role {
+  margin-bottom: 0;
+}
+
+.sidebar-header mat-icon {
+  font-size: 40px;
+}
+
+.collapsed .sidebar-header mat-icon {
+  font-size: 24px;
+}
+
+::ng-deep .collapsed .sidebar-header {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+::ng-deep .collapsed .sidebar-items .mat-list-item-content {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-items .item-desc {
+  margin-left: 20px;
+  color: white;
+}
+
+.content {
+  background-color: white;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.navbar-item {
+  color: var(--main-blue);
+  background-color: transparent;
+
+  :hover {
+    color: #5252fc;
+  }
+}
+
+#router-container {
+  margin: 1em 2em;
+}
+
+.mat-elevation-z8 {
+  box-shadow: none;
+}
