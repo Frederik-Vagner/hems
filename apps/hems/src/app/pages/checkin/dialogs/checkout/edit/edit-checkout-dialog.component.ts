@@ -17,7 +17,10 @@ import { LuggageService } from '../../../../../services/luggage.service';
 @Component({
   selector: 'hems-edit-checkout-dialog',
   templateUrl: './edit-checkout-dialog.component.html',
-  styleUrls: [],
+  styleUrls: [
+    '../../../../../../assets/checkbox.scss',
+    '../../../../../../assets/dialog.scss',
+  ],
 })
 export class EditCheckoutDialogComponent {
   form: UntypedFormGroup;
