@@ -68,13 +68,13 @@ export class UpdateCheckoutDialogComponent {
         this.bagsInput.nativeElement.focus();
       } else if (this.form.get('tagNr')?.invalid) {
         this.tagNrInput.nativeElement.focus();
-      } else if (this.form.get('bbLr')?.invalid) {
-        this.bbLrInput.nativeElement.focus();
       } else if (this.form.get('bbDown')?.invalid) {
         this.bbDownInput.nativeElement.focus();
       } else if (this.form.get('location')?.invalid) {
         this.locationInput.nativeElement.focus();
-      }
+      } else if (this.form.get('bbLr')?.invalid) {
+        this.bbLrInput.nativeElement.focus();
+      } 
     } else {
       this.updateCheckout();
     }
