@@ -42,7 +42,13 @@ export class TasksComponent implements OnInit {
     this.isLoading = true;
     this.tasksService.get(new Date()).subscribe({
       next: (tasks) => {
-        this.tasks = tasks;
+        tasks.forEach(task => {
+          if (task.listName === 'Morning') {
+            this.morningTasks.push(task)
+          } else if (task.listName === 'Evening') {
+            this.eveningTasks.push(task)
+          }
+        })
         console.log(tasks);
       },
       error: (error) => {
