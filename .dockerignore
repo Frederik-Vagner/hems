@@ -1,0 +1,9 @@
+node_modules
+dist
+tmp
+.vscode
+.angular
+.env
+.env.example
+README.md
+LICENSE

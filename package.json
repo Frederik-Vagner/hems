@@ -9,6 +9,8 @@
     "start:api": "nx serve api",
     "start:hems": "nx serve hems",
     "build": "nx build",
+    "build:api": "nx build api",
+    "build:hems": "nx build hems",
     "test": "nx test",
     "seed": "nx run seeder:build && node ./dist/apps/seeder/main"
   },
