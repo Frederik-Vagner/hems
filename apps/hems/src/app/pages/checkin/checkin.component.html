@@ -3,7 +3,11 @@
   <section class="table-header">
     <h2>Check In</h2>
 
-    <button class="action-button" (click)="openCheckinCreateDialog()">
+    <button
+      mat-raised-button
+      class="action-btn"
+      (click)="openCheckinCreateDialog()"
+    >
       + Add Check In
     </button>
   </section>
@@ -85,7 +89,11 @@
   <section class="table-header">
     <h2>Check Out</h2>
 
-    <button class="action-button" (click)="openCheckoutCreateDialog()">
+    <button
+      mat-raised-button
+      class="action-btn"
+      (click)="openCheckoutCreateDialog()"
+    >
       + Add Check Out
     </button>
   </section>

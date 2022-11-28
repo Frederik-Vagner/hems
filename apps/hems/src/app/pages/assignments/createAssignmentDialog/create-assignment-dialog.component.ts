@@ -40,7 +40,7 @@ export class CreateAssignmentDialogComponent implements OnInit {
 
   onSubmit(): void {
     if(!this.guestHasApproved) {
-      this.snackBar.open('Guest needs to approve storing their data.', 'Fam.', { duration: 5000 });
+      this.snackBar.open('Guest needs to approve storing their data.', 'Okay', { duration: 10000 });
       return;
     };
 

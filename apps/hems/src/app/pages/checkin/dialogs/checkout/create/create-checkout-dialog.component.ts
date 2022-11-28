@@ -22,6 +22,7 @@ export class CreateCheckoutDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
+  guestApprovedGDPR = false;
 
   constructor(
     private service: LuggageService,
@@ -37,13 +38,15 @@ export class CreateCheckoutDialogComponent {
       bbDown: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
       description: new UntypedFormControl('', []),
-      guestApprovedGDPR: new UntypedFormControl(null, [
-        Validators.requiredTrue,
-      ]),
     });
   }
 
   create(): void {
+    if(!this.guestApprovedGDPR) {
+      this.snackbar.open('Guest needs to approve storing their data.', 'Okay', { duration: 10000 });
+      return;
+    };
+    
     this.isLoading = true;
     this.service
       .create({
