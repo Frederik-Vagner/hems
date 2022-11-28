@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
 import { CarsComponent } from './pages/cars/cars.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LongtermComponent } from './pages/longterm/longterm.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 
@@ -16,8 +18,17 @@ const routes: Routes = [
     component: CarsComponent,
   },
   {
+<<<<<<< HEAD
     path: 'daily-tasks',
     component: TasksComponent,
+=======
+    path: 'long-term',
+    component: LongtermComponent,
+  },
+  {
+    path: 'assignments',
+    component: AssignmentsPageComponent,
+>>>>>>> main
   },
   {
     path: 'checkin',

@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
+import { CreateCheckinDialogComponent } from './dialogs/checkinDialogs/createCheckinDialog/create-checkin-dialog.component';
+import { UpdateCheckinDialogComponent } from './dialogs/checkinDialogs/updateCheckinDialog/update-checkin-dialog.component';
+import { CreateCheckoutDialogComponent } from './dialogs/checkoutDialogs/createCheckoutDialog/create-checkout-dialog.component';
+import { UpdateCheckoutDialogComponent } from './dialogs/checkoutDialogs/updateCheckoutDialog/update-checkout-dialog.component';
 
 @Component({
   selector: 'hems-checkin',
@@ -28,26 +33,25 @@ export class CheckinComponent implements OnInit {
     'completedAt',
     'bbUp',
     'description',
-    'actions',
   ];
 
   checkoutColumns = [
     'room',
     'name',
-    'arrivalTime',
     'bags',
     'tagNr',
     'bbDown',
     'location',
     'bbLr',
     'completedAt',
+    'bbOut',
     'description',
-    'actions',
   ];
 
   constructor(
     private readonly luggageService: LuggageService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -60,7 +64,7 @@ export class CheckinComponent implements OnInit {
     this.luggageService.getCheckin(new Date()).subscribe({
       next: (luggage) => {
         this.checkinLuggage = luggage;
-        console.log('checkin', luggage);
+        this.reorderCheckinData();
       },
       error: (error) => {
         this.isLoadingCheckin = false;
@@ -78,7 +82,7 @@ export class CheckinComponent implements OnInit {
     this.luggageService.getCheckout(new Date()).subscribe({
       next: (luggage) => {
         this.checkoutLuggage = luggage;
-        console.log('checkout', luggage);
+        this.reorderCheckoutData();
       },
       error: (error) => {
         this.isLoadingCheckout = false;
@@ -91,6 +95,72 @@ export class CheckinComponent implements OnInit {
           }
         );
       },
+    });
+  }
+
+  /**
+   * Makes it so completed tasks are at the bottom of the list
+   */
+  reorderCheckinData(): void {
+    const uncompletedItems = this.checkinLuggage.filter(
+      (item) => !item.completedAt
+    );
+    const completedItems = this.checkinLuggage.filter(
+      (item) => item.completedAt
+    );
+    this.checkinLuggage = uncompletedItems.concat(completedItems);
+  }
+
+  /**
+   * Makes it so completed tasks are at the bottom of the list
+   */
+  reorderCheckoutData(): void {
+    const uncompletedItems = this.checkoutLuggage.filter(
+      (item) => !item.completedAt
+    );
+    const completedItems = this.checkoutLuggage.filter(
+      (item) => item.completedAt
+    );
+    this.checkoutLuggage = uncompletedItems.concat(completedItems);
+  }
+
+  openCheckinEditDialog(luggage: ILuggage): void {
+    this.dialog.open(UpdateCheckinDialogComponent, {
+      width: '500px',
+      data: luggage,
+    });
+  }
+
+  openCheckinCreateDialog(): void {
+    this.dialog.open(CreateCheckinDialogComponent, {
+      width: '500px',
+    });
+  }
+
+  openCheckoutEditDialog(luggage: ILuggage): void {
+    this.dialog.open(UpdateCheckoutDialogComponent, {
+      width: '500px',
+      data: luggage,
+    });
+  }
+
+  openCheckoutCreateDialog(): void {
+    this.dialog.open(CreateCheckoutDialogComponent, {
+      width: '500px',
+    });
+  }
+
+  formatDate(date: string, timeOnly: boolean = false): string {
+    if (!date) {
+      return '';
+    }
+    const parsedDate = new Date(date);
+    return parsedDate.toLocaleString(undefined, {
+      month: timeOnly ? undefined : '2-digit',
+      day: timeOnly ? undefined : '2-digit',
+      hour: '2-digit',
+      hour12: false,
+      minute: '2-digit',
     });
   }
 }

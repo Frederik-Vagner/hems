@@ -1,6 +1,137 @@
-<h1>Vroom Vroom</h1>
-<img
-  style="width: 100%"
-  src="https://www.thehousehotel.ie/wp-content/uploads/2020/09/jordan-graff-9TBgvuPAe0Y-unsplash-scaled-1366x768-fp_mm-fpoff_0_0.jpg"
-  alt=""
-/>
+<main>
+  <button (click)="openDialogCreate()">Create Car</button>
+  <button (click)="openDialogEdit()">Update Car</button>
+  <div class="page-actions">
+    <div class="search-options">
+      <mat-form-field appearance="fill">
+        <mat-label>Search By</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{ food.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input type="text" aria-label="search" matInput />
+      </mat-form-field>
+    </div>
+
+    <div class="car-list-actions">
+      <button class="secondary-btn" mat-raised-button>Show All</button>
+      <button mat-raised-button class="action-btn">Add Car</button>
+    </div>
+  </div>
+  <hr />
+
+  <table mat-table [dataSource]="carList" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="room">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Room</th>
+      <td mat-cell *matCellDef="let element">{{ element.room }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="tagNr">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tag Nr.</th>
+      <td mat-cell *matCellDef="let element">{{ element.tagNr }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="arrivalDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>arr</th>
+      <td mat-cell *matCellDef="let element">
+        {{ formatDate(element) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="departureDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>dep</th>
+      <td mat-cell *matCellDef="let element">
+        {{ formatDate(element) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="licensePlate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Licens Plate</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.licensePlate }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="expirationDateTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Exp.</th>
+      <td mat-cell *matCellDef="let element">
+        {{ formatDate(element) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="pickupDateTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Pick Up Time</th>
+      <td mat-cell *matCellDef="let element">
+        {{ formatDate(element) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bbDown">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>BB Down</th>
+      <td mat-cell *matCellDef="let element">{{ element.bbDown }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bbUp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>BB Up</th>
+      <td mat-cell *matCellDef="let element">{{ element.bbUp }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Location</th>
+      <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="parkingLot">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Park.</th>
+      <td mat-cell *matCellDef="let element">{{ element.parkingLot }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="deliveryDateTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Del.</th>
+      <td mat-cell *matCellDef="let element">
+        {{ formatDate(element) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bbOut">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>BB Out</th>
+      <td mat-cell *matCellDef="let element">{{ element.bbOut }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="comment">
+      <th mat-header-cell *matHeaderCellDef>Comment</th>
+      <td mat-cell *matCellDef="let element">{{ element.comments }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="charged">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Charged</th>
+      <td mat-cell *matCellDef="let element">{{ element.charged }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="editCarListEntry(element.carId)"
+        >
+          Edit
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="carColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: carColumns"></tr>
+  </table>
+</main>

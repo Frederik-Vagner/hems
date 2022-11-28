@@ -20,4 +20,8 @@ export class Task extends CompletedAt implements ITask {
   @ApiModelProperty({ example: 'DS' })
   @Column()
   initials!: string;
+
+  @ApiModelProperty({ example: 'Midnight' })
+  @Column()
+  listName!: string;
 }

@@ -5,7 +5,7 @@ import { NavigationEnd, Router } from '@angular/router';
 @Component({
   selector: 'hems-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'HEMS';
@@ -35,6 +35,9 @@ export class AppComponent {
             break;
           case '/assignments':
             this.title = 'Assignments';
+            break;
+          case '/long-term':
+            this.title = 'Long Term';
             break;
           default:
             this.title = 'Page Not Found';
