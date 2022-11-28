@@ -14,7 +14,8 @@
       />
       <mat-error
         *ngIf="
-          createAssignmentForm.get('room')?.invalid && createAssignmentForm.get('room')?.dirty
+          createAssignmentForm.get('room')?.invalid &&
+          createAssignmentForm.get('room')?.dirty
         "
       >
         Must be a number from 100-999
@@ -32,7 +33,8 @@
       />
       <mat-error
         *ngIf="
-          createAssignmentForm.get('task')?.invalid && createAssignmentForm.get('task')?.dirty
+          createAssignmentForm.get('task')?.invalid &&
+          createAssignmentForm.get('task')?.dirty
         "
       >
         Can't be more than 20 characters
@@ -42,7 +44,7 @@
 
   <mat-form-field appearance="fill" class="full-width">
     <mat-label>Description</mat-label>
-    <textarea 
+    <textarea
       #comments
       matInput
       type="text"
@@ -51,7 +53,8 @@
     ></textarea>
     <mat-error
       *ngIf="
-        createAssignmentForm.get('comments')?.invalid && createAssignmentForm.get('comments')?.dirty
+        createAssignmentForm.get('comments')?.invalid &&
+        createAssignmentForm.get('comments')?.dirty
       "
     >
       Can't be more than 1000 characters
@@ -70,7 +73,8 @@
       />
       <mat-error
         *ngIf="
-          createAssignmentForm.get('receivedBy')?.invalid && createAssignmentForm.get('receivedBy')?.dirty
+          createAssignmentForm.get('receivedBy')?.invalid &&
+          createAssignmentForm.get('receivedBy')?.dirty
         "
       >
         Can't be more than 20 characters
@@ -89,7 +93,8 @@
       />
       <mat-error
         *ngIf="
-          createAssignmentForm.get('performedBy')?.invalid && createAssignmentForm.get('performedBy')?.dirty
+          createAssignmentForm.get('performedBy')?.invalid &&
+          createAssignmentForm.get('performedBy')?.dirty
         "
       >
         Can't be more than 20 characters
@@ -140,18 +145,23 @@
       >
       </ngx-mat-datetime-picker>
       <mat-error
-      *ngIf="
-        createAssignmentForm.get('completedAt')?.invalid && createAssignmentForm.get('completedAt')?.dirty
-      "
-    >
-      Invalid time
-    </mat-error>
+        *ngIf="
+          createAssignmentForm.get('completedAt')?.invalid &&
+          createAssignmentForm.get('completedAt')?.dirty
+        "
+      >
+        Invalid time
+      </mat-error>
     </mat-form-field>
   </div>
-  
+
   <label class="checkbox-container">
     The guest has given consent to the processing of personal data
-    <input type="checkbox" [checked]="guestHasApproved" (change)="guestHasApproved = !guestHasApproved"/>
+    <input
+      type="checkbox"
+      [checked]="guestHasApproved"
+      (change)="guestHasApproved = !guestHasApproved"
+    />
     <span class="checkmark" data-cy="checkbox-banner"></span>
   </label>
 
@@ -159,8 +169,6 @@
     <button class="secondary-btn" mat-raised-button mat-dialog-close>
       Cancel
     </button>
-    <button class="action-btn" mat-raised-button>
-      + Add assignment
-    </button>
+    <button class="action-btn" mat-raised-button>+ Add assignment</button>
   </div>
 </form>

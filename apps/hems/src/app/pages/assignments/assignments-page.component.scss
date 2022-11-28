@@ -1,33 +1,37 @@
 table {
-    width: 100%;
+  width: 100%;
 }
 
 .table-actions {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 .5em;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0.5em;
 }
 
 .mat-row:hover {
-    background-color: rgba(47, 47, 162, 0.1);
+  background-color: rgba(47, 47, 162, 0.1);
 }
 
 tr.mat-header-row {
-    height: 3em;
+  height: 3em;
 }
 
-th.mat-header-cell:first-of-type, td.mat-cell:first-of-type {
-    padding-left: 10px;
+th.mat-header-cell:first-of-type,
+td.mat-cell:first-of-type {
+  padding-left: 10px;
 }
 
-th.mat-header-cell, td.mat-cell, th.mat-header-cell:last-of-type, td.mat-cell:last-of-type {
-    padding-right: 10px;
+th.mat-header-cell,
+td.mat-cell,
+th.mat-header-cell:last-of-type,
+td.mat-cell:last-of-type {
+  padding-right: 10px;
 }
 
 th.mat-header-cell {
-    color: var(--main-blue);
-    font-weight: 900;
-    vertical-align: bottom;
-    padding-bottom: 5px;
+  color: var(--main-blue);
+  font-weight: 900;
+  vertical-align: bottom;
+  padding-bottom: 5px;
 }

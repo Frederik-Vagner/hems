@@ -11,10 +11,10 @@ import { CarsComponent } from './pages/cars/cars.component';
 import { CreateCarComponent } from './pages/cars/modal/create/create.car.component';
 import { EditCarComponent } from './pages/cars/modal/edit/edit.car.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
-import { CreateCheckinDialogComponent } from './pages/checkin/dialogs/checkin/create/create-checkin-dialog.component';
-import { EditCheckinDialogComponent } from './pages/checkin/dialogs/checkin/edit/edit-checkin-dialog.component';
-import { CreateCheckoutDialogComponent } from './pages/checkin/dialogs/checkout/create/create-checkout-dialog.component';
-import { EditCheckoutDialogComponent } from './pages/checkin/dialogs/checkout/edit/edit-checkout-dialog.component';
+import { CreateCheckinDialogComponent } from './pages/checkin/dialogs/checkinDialogs/createCheckinDialog/create-checkin-dialog.component';
+import { UpdateCheckinDialogComponent } from './pages/checkin/dialogs/checkinDialogs/updateCheckinDialog/update-checkin-dialog.component';
+import { CreateCheckoutDialogComponent } from './pages/checkin/dialogs/checkoutDialogs/createCheckoutDialog/create-checkout-dialog.component';
+import { UpdateCheckoutDialogComponent } from './pages/checkin/dialogs/checkoutDialogs/updateCheckoutDialog/update-checkout-dialog.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
@@ -31,9 +31,9 @@ import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssig
     AssignmentsPageComponent,
     CreateCarComponent,
     EditCarComponent,
-    EditCheckinDialogComponent,
+    UpdateCheckinDialogComponent,
     CreateCheckinDialogComponent,
-    EditCheckoutDialogComponent,
+    UpdateCheckoutDialogComponent,
     CreateCheckoutDialogComponent,
     CreateAssignmentDialogComponent,
     UpdateAssignmentDialogComponent,

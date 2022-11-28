@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Inject } from '@angular/core';
+import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
 import {
   UntypedFormControl,
   UntypedFormGroup,
@@ -15,18 +15,29 @@ import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-edit-checkout-dialog',
-  templateUrl: './edit-checkout-dialog.component.html',
-  styleUrls: ['./edit-checkout-dialog.component.css'],
+  selector: 'hems-update-checkout-dialog',
+  templateUrl: './update-checkout-dialog.component.html',
+  styleUrls: [
+    '../../../../../../assets/checkbox.scss',
+    '../../../../../../assets/dialog.scss',
+  ],
 })
-export class EditCheckoutDialogComponent {
+export class UpdateCheckoutDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
   luggageId: string;
 
+  @ViewChild('room') roomInput!: ElementRef;
+  @ViewChild('name') nameInput!: ElementRef;
+  @ViewChild('bags') bagsInput!: ElementRef;
+  @ViewChild('tagNr') tagNrInput!: ElementRef;
+  @ViewChild('bbLr') bbLrInput!: ElementRef;
+  @ViewChild('bbDown') bbDownInput!: ElementRef;
+  @ViewChild('location') locationInput!: ElementRef;
+
   constructor(
-    public dialogRef: MatDialogRef<EditCheckoutDialogComponent>,
+    public dialogRef: MatDialogRef<UpdateCheckoutDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
     private snackbar: MatSnackBar,
@@ -47,7 +58,29 @@ export class EditCheckoutDialogComponent {
     });
   }
 
-  update(): void {
+  onSubmit(): void {
+    if (!this.form.valid) {
+      if (this.form.get('room')?.invalid) {
+        this.roomInput.nativeElement.focus();
+      } else if (this.form.get('name')?.invalid) {
+        this.nameInput.nativeElement.focus();
+      } else if (this.form.get('bags')?.invalid) {
+        this.bagsInput.nativeElement.focus();
+      } else if (this.form.get('tagNr')?.invalid) {
+        this.tagNrInput.nativeElement.focus();
+      } else if (this.form.get('bbDown')?.invalid) {
+        this.bbDownInput.nativeElement.focus();
+      } else if (this.form.get('location')?.invalid) {
+        this.locationInput.nativeElement.focus();
+      } else if (this.form.get('bbLr')?.invalid) {
+        this.bbLrInput.nativeElement.focus();
+      }
+    } else {
+      this.updateCheckout();
+    }
+  }
+
+  updateCheckout(): void {
     this.isLoading = true;
     this.service
       .update(this.luggageId, {
@@ -60,11 +93,14 @@ export class EditCheckoutDialogComponent {
         bbOut: this.form.get('bbOut')?.value,
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
-        description: this.form.get('location')?.value,
+        description:
+          this.form.get('description')?.value.toString().length > 1
+            ? this.form.get('description')?.value
+            : '-',
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Luggage item updated!', 'Cool', {
+          this.snackbar.open('Luggage item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -73,8 +109,8 @@ export class EditCheckoutDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update :(', 'Imma try again later', {
-            duration: 15000,
+          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+            duration: 10000,
           });
           this.isLoading = false;
         },

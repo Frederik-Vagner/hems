@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Inject } from '@angular/core';
+import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
 import {
   UntypedFormControl,
   UntypedFormGroup,
@@ -15,18 +15,29 @@ import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-edit-checkin-dialog',
-  templateUrl: './edit-checkin-dialog.component.html',
-  styleUrls: ['./edit-checkin-dialog.component.css'],
+  selector: 'hems-update-checkin-dialog',
+  templateUrl: './update-checkin-dialog.component.html',
+  styleUrls: [
+    '../../../../../../assets/checkbox.scss',
+    '../../../../../../assets/dialog.scss',
+  ],
 })
-export class EditCheckinDialogComponent {
+export class UpdateCheckinDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
   luggageId: string;
 
+  @ViewChild('room') roomInput!: ElementRef;
+  @ViewChild('name') nameInput!: ElementRef;
+  @ViewChild('arrivalTime') arrivalTimeInput!: ElementRef;
+  @ViewChild('bags') bagsInput!: ElementRef;
+  @ViewChild('tagNr') tagNrInput!: ElementRef;
+  @ViewChild('bbLr') bbLrInput!: ElementRef;
+  @ViewChild('location') locationInput!: ElementRef;
+
   constructor(
-    public dialogRef: MatDialogRef<EditCheckinDialogComponent>,
+    public dialogRef: MatDialogRef<UpdateCheckinDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
     private snackbar: MatSnackBar,
@@ -52,7 +63,29 @@ export class EditCheckinDialogComponent {
     });
   }
 
-  update(): void {
+  onSubmit(): void {
+    if (!this.form.valid) {
+      if (this.form.get('room')?.invalid) {
+        this.roomInput.nativeElement.focus();
+      } else if (this.form.get('name')?.invalid) {
+        this.nameInput.nativeElement.focus();
+      } else if (this.form.get('arrivalTime')?.invalid) {
+        this.arrivalTimeInput.nativeElement.focus();
+      } else if (this.form.get('bags')?.invalid) {
+        this.bagsInput.nativeElement.focus();
+      } else if (this.form.get('tagNr')?.invalid) {
+        this.tagNrInput.nativeElement.focus();
+      } else if (this.form.get('bbLr')?.invalid) {
+        this.bbLrInput.nativeElement.focus();
+      } else if (this.form.get('location')?.invalid) {
+        this.locationInput.nativeElement.focus();
+      }
+    } else {
+      this.updateCheckin();
+    }
+  }
+
+  updateCheckin(): void {
     this.isLoading = true;
     this.service
       .update(this.luggageId, {
@@ -66,11 +99,14 @@ export class EditCheckinDialogComponent {
         bbOut: this.form.get('bbUp')?.value,
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
-        description: this.form.get('location')?.value,
+        description:
+          this.form.get('description')?.value.toString().length > 1
+            ? this.form.get('description')?.value
+            : '-',
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Luggage item updated!', 'Cool', {
+          this.snackbar.open('Luggage item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -79,8 +115,8 @@ export class EditCheckinDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update :(', 'Imma try again later', {
-            duration: 15000,
+          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+            duration: 10000,
           });
           this.isLoading = false;
         },
