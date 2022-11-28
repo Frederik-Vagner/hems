@@ -14,7 +14,7 @@ import { LuggageService } from '../../../../../services/luggage.service';
   selector: 'hems-create-checkin-dialog',
   templateUrl: './create-checkin-dialog.component.html',
   styleUrls: [
-    '../../../../../../assets/checkbox.scss', 
+    '../../../../../../assets/checkbox.scss',
     '../../../../../../assets/dialog.scss',
   ],
 })

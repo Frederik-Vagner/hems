@@ -3,10 +3,7 @@
   <hr />
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Room</mat-label>
       <input
         type="text"
@@ -20,10 +17,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Nr of bags</mat-label>
       <input
         type="text"
@@ -39,10 +33,7 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Tag nr</mat-label>
       <input
         type="text"
@@ -56,10 +47,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Name</mat-label>
       <input
         type="text"
@@ -75,10 +63,7 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Location</mat-label>
       <input
         type="text"
@@ -94,10 +79,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB in LR</mat-label>
       <input
         type="text"
@@ -113,10 +95,7 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB Down</mat-label>
       <input
         type="text"
@@ -148,7 +127,8 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field autocomplete="off">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Out time</mat-label>
       <input
         matInput
         [ngxMatDatetimePicker]="pickerCompletedAt"
@@ -169,15 +149,15 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field autocomplete="off" appearance="fill">
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
     <mat-label>Comments</mat-label>
-    <input
+    <textarea
       type="text"
-      data-cy="update-checkout-description"
+      data-cy="update-checkin-description"
       formControlName="description"
       matInput
-      placeholder=""
-    />
+      placeholder="Comments"
+    ></textarea>
   </mat-form-field>
 
   <div class="dialog-row">

@@ -3,10 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
-import { CreateCheckinDialogComponent } from './dialogs/checkin/createCheckinDialog/create-checkin-dialog.component';
-import { UpdateCheckinDialogComponent } from './dialogs/checkin/updateCheckinDialog/update-checkin-dialog.component';
-import { CreateCheckoutDialogComponent } from './dialogs/checkout/createCheckoutDialog/create-checkout-dialog.component';
-import { UpdateCheckoutDialogComponent } from './dialogs/checkout/updateCheckoutDialog/update-checkout-dialog.component';
+import { CreateCheckinDialogComponent } from './dialogs/checkinDialogs/createCheckinDialog/create-checkin-dialog.component';
+import { UpdateCheckinDialogComponent } from './dialogs/checkinDialogs/updateCheckinDialog/update-checkin-dialog.component';
+import { CreateCheckoutDialogComponent } from './dialogs/checkoutDialogs/createCheckoutDialog/create-checkout-dialog.component';
+import { UpdateCheckoutDialogComponent } from './dialogs/checkoutDialogs/updateCheckoutDialog/update-checkout-dialog.component';
 
 @Component({
   selector: 'hems-checkin',
