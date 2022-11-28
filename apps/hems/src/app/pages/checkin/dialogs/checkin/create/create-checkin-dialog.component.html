@@ -162,13 +162,17 @@
 
   <label class="checkbox-container">
     The guest has given consent to the processing of personal data
-    <input type="checkbox" [checked]="guestApprovedGDPR" (change)="guestApprovedGDPR = !guestApprovedGDPR"/>
+    <input
+      type="checkbox"
+      [checked]="guestApprovedGDPR"
+      (change)="guestApprovedGDPR = !guestApprovedGDPR"
+    />
     <span class="checkmark" data-cy="checkbox-banner"></span>
   </label>
 
   <div class="dialog-row">
     <button
-      mat-flat-button
+      mat-raised-button
       class="secondary-btn"
       data-cy="create-checkin-cancel-btn"
       mat-dialog-close
@@ -177,12 +181,12 @@
     </button>
 
     <button
-        mat-flat-button
-        class="action-btn"
-        data-cy="create-checkin-create-btn"
-        type="submit"
-      >
-      Create
+      mat-raised-button
+      class="action-btn"
+      data-cy="create-checkin-create-btn"
+      type="submit"
+    >
+      + Add checkout
     </button>
   </div>
 </form>

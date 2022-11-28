@@ -16,7 +16,7 @@ import { LuggageService } from '../../../../../services/luggage.service';
   styleUrls: [
     './create-checkin-dialog.component.css', 
     '../../../../../../assets/checkbox.scss', 
-    '../../../../../../assets/dialog.scss'
+    '../../../../../../assets/dialog.scss',
   ],
 })
 export class CreateCheckinDialogComponent {
