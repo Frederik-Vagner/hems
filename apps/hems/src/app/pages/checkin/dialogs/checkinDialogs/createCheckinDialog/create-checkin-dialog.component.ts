@@ -73,6 +73,13 @@ export class CreateCheckinDialogComponent {
   }
 
   createCheckin(): void {
+    if (!this.guestApprovedGDPR) {
+      this.snackbar.open('Guest needs to approve storing their data.', 'Okay', {
+        duration: 10000,
+      });
+      return;
+    }
+
     this.isLoading = true;
     this.service
       .create({
