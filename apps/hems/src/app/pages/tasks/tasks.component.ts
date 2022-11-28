@@ -9,7 +9,8 @@ import { TasksService } from '../../services/tasks.service';
   styleUrls: ['./tasks.component.scss'],
 })
 export class TasksComponent implements OnInit {
-  tasks?: ITask[];
+  morningTasks: ITask[] = [];
+  eveningTasks1: ITask[] = [];
   isLoading = false;
 
   constructor(
