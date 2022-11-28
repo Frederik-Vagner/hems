@@ -13,7 +13,7 @@ import { LuggageService } from '../../../../../services/luggage.service';
 @Component({
   selector: 'hems-create-checkout-dialog',
   templateUrl: './create-checkout-dialog.component.html',
-  styleUrls: ['./create-checkout-dialog.component.css'],
+  styleUrls: [],
 })
 export class CreateCheckoutDialogComponent {
   form: UntypedFormGroup;
