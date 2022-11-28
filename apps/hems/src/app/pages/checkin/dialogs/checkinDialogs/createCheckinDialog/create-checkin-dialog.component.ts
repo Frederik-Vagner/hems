@@ -84,7 +84,7 @@ export class CreateCheckinDialogComponent {
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
         location: this.form.get('location')?.value,
-        description: this.form.get('description')?.value,
+        description: this.form.get('description')?.value.toString().length > 1 ? this.form.get('description')?.value : '-',
         luggageType: LuggageType.CHECKIN,
         bbDown: ' ',
       })

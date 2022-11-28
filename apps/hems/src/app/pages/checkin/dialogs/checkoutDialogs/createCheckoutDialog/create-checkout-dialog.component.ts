@@ -91,7 +91,7 @@ export class CreateCheckoutDialogComponent {
         bbLr: this.form.get('bbLr')?.value,
         bbDown: this.form.get('bbDown')?.value,
         location: this.form.get('location')?.value,
-        description: this.form.get('description')?.value,
+        description: this.form.get('description')?.value.toString().length > 1 ? this.form.get('description')?.value : '-',
         luggageType: LuggageType.CHECKOUT,
       })
       .subscribe({

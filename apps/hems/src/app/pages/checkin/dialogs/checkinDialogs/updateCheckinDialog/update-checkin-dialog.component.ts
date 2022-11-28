@@ -99,7 +99,7 @@ export class UpdateCheckinDialogComponent {
         bbOut: this.form.get('bbUp')?.value,
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
-        description: this.form.get('location')?.value,
+        description: this.form.get('description')?.value.toString().length > 1 ? this.form.get('description')?.value : '-',
       })
       .subscribe({
         next: () => {
