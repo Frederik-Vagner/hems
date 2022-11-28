@@ -6,65 +6,60 @@ import {
 } from './assignment.interface';
 
 export class CreateAssignmentRequest implements ICreateAssignmentRequest {
-  @ApiModelProperty({ example: '211' })
-  @IsOptional()
-  room?: string;
+  @ApiModelProperty()
+  @IsNotEmpty()
+  room!: string;
 
-  @ApiModelProperty({ example: 'RA' })
-  @IsOptional()
-  task?: string;
+  @ApiModelProperty()
+  @IsNotEmpty()
+  task!: string;
 
-  @ApiModelProperty({ example: 'New keys and package delivery' })
+  @ApiModelProperty()
   @IsNotEmpty()
   comments!: string;
 
-  @ApiModelProperty({ example: 'Rec' })
+  @ApiModelProperty()
   @IsNotEmpty()
   receivedBy!: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty()
   @IsOptional()
   performedBy?: string;
 
-  @ApiModelProperty({ example: Date.now() })
-  @IsNotEmpty()
+  @ApiModelProperty()
+  @IsNotEmpty() 
   @IsDateString()
   receivedAt!: Date;
-
-  @ApiModelProperty({ example: Date.now() })
-  @IsOptional()
-  @IsDateString()
-  completedAt?: Date;
 }
 
 export class UpdateAssignmentRequest implements IUpdateAssignmentRequest {
-  @ApiModelProperty({ example: '211' })
+  @ApiModelProperty()
   @IsOptional()
   room?: string;
 
-  @ApiModelProperty({ example: 'RA' })
+  @ApiModelProperty()
   @IsOptional()
   task?: string;
 
-  @ApiModelProperty({ example: 'New keys and package delivery' })
+  @ApiModelProperty()
   @IsOptional()
   comments?: string;
 
-  @ApiModelProperty({ example: 'Rec' })
+  @ApiModelProperty()
   @IsOptional()
   receivedBy?: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty()
   @IsOptional()
   performedBy?: string;
 
   @ApiModelProperty({ example: Date.now() })
+  @IsDateString()
+  @IsOptional()
+  completedAt?: Date;
+
+  @ApiModelProperty()
   @IsOptional()
   @IsDateString()
   receivedAt?: Date;
-
-  @ApiModelProperty({ example: Date.now() })
-  @IsOptional()
-  @IsDateString()
-  completedAt?: Date;
 }

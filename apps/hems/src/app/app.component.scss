@@ -3,29 +3,39 @@
   width: 100%;
 }
 
-mat-toolbar .spacer {
-  flex: 1 1 auto;
-}
-
 .sidebar {
   width: 225px;
   box-shadow: -7px 0px 24px 8px rgba(0, 0, 0, 0.15);
   color: white;
-  background-color: #2f2fa2;
+  background-color: var(--main-blue);
 }
 
 .sidebar mat-icon {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 
-.title {
-  color: rgba(47, 47, 162, 0.5);
+.page-title {
+  margin-left: .25em;
+  display: flex;
+  font-weight: 100;
+  color: var(--main-blue);
+  align-items: center;
+
+  h1 {
+    margin: 0 0 2px 0;
+  }
+
+  mat-icon {
+    margin-right: .4em;
+  }
 }
 
 .sidebar .toggle-btn {
-  width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: .5em;
+  right: 0;
+  color: white;
+  background-color: var(--main-blue);
 }
 
 mat-divider {
@@ -34,7 +44,7 @@ mat-divider {
 }
 
 .collapsed {
-  width: 70px;
+  width: 60px;
 }
 
 .collapsible {
@@ -79,7 +89,7 @@ mat-divider {
 }
 
 .content {
-  background-color: var(--extra-light-grey);
+  background-color: white;
 }
 
 #navbar {
@@ -89,18 +99,16 @@ mat-divider {
 }
 
 .navbar-item {
-  color: #2f2fa2;
+  color: var(--main-blue);
   background-color: transparent;
-}
-.navbar-item:hover {
-  color: #5252fc;
-  background-color: transparent;
+
+  :hover {
+    color: #5252fc;
+  }
 }
 
 #router-container {
-  margin-top: 10px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin: 1em 2em;
 }
 
 .mat-elevation-z8 {
