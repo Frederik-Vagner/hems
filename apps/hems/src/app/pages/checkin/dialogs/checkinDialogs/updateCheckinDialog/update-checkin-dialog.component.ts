@@ -34,7 +34,6 @@ export class UpdateCheckinDialogComponent {
   @ViewChild('bags') bagsInput!: ElementRef;
   @ViewChild('tagNr') tagNrInput!: ElementRef;
   @ViewChild('bbLr') bbLrInput!: ElementRef;
-  @ViewChild('bbDown') bbDownInput!: ElementRef;
   @ViewChild('location') locationInput!: ElementRef;
 
   constructor(
@@ -78,8 +77,6 @@ export class UpdateCheckinDialogComponent {
         this.tagNrInput.nativeElement.focus();
       } else if (this.form.get('bbLr')?.invalid) {
         this.bbLrInput.nativeElement.focus();
-      } else if (this.form.get('bbDown')?.invalid) {
-        this.bbDownInput.nativeElement.focus();
       } else if (this.form.get('location')?.invalid) {
         this.locationInput.nativeElement.focus();
       }

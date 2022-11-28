@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {
   UntypedFormControl,
   UntypedFormGroup,
@@ -24,6 +24,14 @@ export class CreateCheckinDialogComponent {
   isLoading = false;
   guestApprovedGDPR = false;
 
+  @ViewChild('room') roomInput!: ElementRef;
+  @ViewChild('name') nameInput!: ElementRef;
+  @ViewChild('arrivalTime') arrivalTimeInput!: ElementRef;
+  @ViewChild('bags') bagsInput!: ElementRef;
+  @ViewChild('tagNr') tagNrInput!: ElementRef;
+  @ViewChild('bbLr') bbLrInput!: ElementRef;
+  @ViewChild('location') locationInput!: ElementRef;
+
   constructor(
     private service: LuggageService,
     private snackbar: MatSnackBar,
@@ -42,7 +50,29 @@ export class CreateCheckinDialogComponent {
     });
   }
 
-  create(): void {
+  onSubmit(): void {
+    if(!this.form.valid) {
+      if(this.form.get('room')?.invalid) {
+        this.roomInput.nativeElement.focus();
+      } else if (this.form.get('name')?.invalid) {
+        this.nameInput.nativeElement.focus();
+      } else if (this.form.get('arrivalTime')?.invalid) {
+        this.arrivalTimeInput.nativeElement.focus();
+      } else if (this.form.get('bags')?.invalid) {
+        this.bagsInput.nativeElement.focus();
+      } else if (this.form.get('tagNr')?.invalid) {
+        this.tagNrInput.nativeElement.focus();
+      } else if (this.form.get('bbLr')?.invalid) {
+        this.bbLrInput.nativeElement.focus();
+      } else if (this.form.get('location')?.invalid) {
+        this.locationInput.nativeElement.focus();
+      }
+    } else {
+      this.createCheckin();
+    }
+  }
+
+  createCheckin(): void {
     this.isLoading = true;
     this.service
       .create({
