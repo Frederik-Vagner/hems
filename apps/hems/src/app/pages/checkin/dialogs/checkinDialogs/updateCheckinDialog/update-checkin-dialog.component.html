@@ -6,6 +6,7 @@
     <mat-form-field autocomplete="off" class="input" appearance="fill">
       <mat-label class="input-label">Room</mat-label>
       <input
+        #room
         type="text"
         data-cy="update-checkin-room-input"
         formControlName="room"
@@ -33,6 +34,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Name</mat-label>
       <input
+        #name
         type="text"
         data-cy="update-checkin-name"
         formControlName="name"
@@ -47,6 +49,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Time of arrival</mat-label>
       <input
+        #arrivalTime
         matInput
         [ngxMatDatetimePicker]="pickerArrival"
         placeholder="Time of Arrival"
@@ -70,6 +73,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Location</mat-label>
       <input
+        #location
         type="text"
         data-cy="update-checkin-location"
         formControlName="location"
@@ -86,6 +90,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB in LR</mat-label>
       <input
+        #bbLr
         type="text"
         data-cy="update-checkin-name"
         formControlName="bbLr"
@@ -101,6 +106,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Nr of bags</mat-label>
       <input
+        #bags
         type="text"
         data-cy="update-checkin-room-input"
         formControlName="bags"
@@ -115,6 +121,7 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Tag nr</mat-label>
       <input
+        #tagNr
         type="text"
         data-cy="update-checkin-tag-nr"
         formControlName="tagNr"
