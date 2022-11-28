@@ -1,17 +1,13 @@
 <form (ngSubmit)="update()" [formGroup]="form" data-cy="update-checkout-dialog">
-  <div class="header">
-    <h2>Update Check Out</h2>
-  </div>
+  <h1>Update Check Out</h1>
   <hr />
 
   <div class="dialog-row">
-    <!-- Room + nr of bags-->
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">Room</mat-label>
+      <mat-label>Room</mat-label>
       <input
         type="text"
         data-cy="update-checkout-room-input"
@@ -26,10 +22,9 @@
 
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">Nr of bags</mat-label>
+      <mat-label>Nr of bags</mat-label>
       <input
         type="text"
         data-cy="update-checkout-room-input"
@@ -46,10 +41,9 @@
   <div class="dialog-row">
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">Tag nr</mat-label>
+      <mat-label>Tag nr</mat-label>
       <input
         type="text"
         data-cy="create-checkout-tag-nr"
@@ -64,10 +58,9 @@
 
     <mat-form-field
       autocomplete="off"
-      class="input full-width"
       appearance="fill"
     >
-      <mat-label class="input-label">Name</mat-label>
+      <mat-label>Name</mat-label>
       <input
         type="text"
         data-cy="update-checkout-name"
@@ -82,13 +75,11 @@
   </div>
 
   <div class="dialog-row">
-    <!-- Location + bb in lr + bb down -->
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">Location</mat-label>
+      <mat-label>Location</mat-label>
       <input
         type="text"
         data-cy="update-checkout-location"
@@ -105,10 +96,9 @@
 
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">BB in LR</mat-label>
+      <mat-label>BB in LR</mat-label>
       <input
         type="text"
         data-cy="update-checkout-bbLr"
@@ -125,10 +115,9 @@
   <div class="dialog-row">
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">BB Down</mat-label>
+      <mat-label>BB Down</mat-label>
       <input
         type="text"
         data-cy="update-checkout-bbDown"
@@ -143,8 +132,8 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label class="input-label">BB Out</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>BB Out</mat-label>
       <input
         type="text"
         data-cy="update-checkout-bbOut"
@@ -180,8 +169,8 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field autocomplete="off" class="input full-width" appearance="fill">
-    <mat-label class="input-label">Comments</mat-label>
+  <mat-form-field autocomplete="off" appearance="fill">
+    <mat-label>Comments</mat-label>
     <input
       type="text"
       data-cy="update-checkout-description"
