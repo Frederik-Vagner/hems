@@ -21,7 +21,6 @@ import { LuggageService } from '../../../services/luggage.service';
 export class CreateLongTermDialogComponent implements OnInit {
   createLongTermForm = new UntypedFormGroup({});
   guestHasApproved = false;
-  maxDatetime = new Date();
 
   constructor(
     private luggageService: LuggageService,
