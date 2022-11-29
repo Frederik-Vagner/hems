@@ -1,7 +1,6 @@
 import { IAssignment } from '@hems/interfaces';
 
 export const assignments: IAssignment[] = [
-  /*
   {
     assignmentId: 'e043d0ad-d6b1-47c3-ab84-a4984ae617b5',
     room: '905',
@@ -1102,5 +1101,4 @@ export const assignments: IAssignment[] = [
     completedAt: null,
     createdAt: new Date('8/1/2022'),
   },
-  */
 ];
