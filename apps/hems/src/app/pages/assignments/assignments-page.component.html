@@ -1,5 +1,5 @@
 <main>
-  <div class="table-actions">
+  <div class="table-actions" style="justify-content: end">
     <button mat-raised-button class="action-btn" (click)="createAssignment()">
       + Add assignment
     </button>
@@ -45,6 +45,7 @@
     <tr mat-header-row *matHeaderRowDef="assignmentColumns"></tr>
     <tr
       mat-row
+      [ngClass]="row.completedAt ? 'completed' : ''"
       *matRowDef="let row; columns: assignmentColumns"
       (click)="editAssignment(row)"
     ></tr>

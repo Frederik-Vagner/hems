@@ -21,6 +21,8 @@ import { UpdateCheckoutDialogComponent } from './pages/checkin/dialogs/checkoutD
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LongtermComponent } from './pages/longterm/longterm.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { CreateLongTermDialogComponent } from './pages/longterm/createLongTermDialog/create-long-term-dialog.component';
+import { UpdateLongTermDialogComponent } from './pages/longterm/updateLongTermDialog/update-long-term-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     CreateCheckoutDialogComponent,
     CreateAssignmentDialogComponent,
     UpdateAssignmentDialogComponent,
+    CreateLongTermDialogComponent,
+    UpdateLongTermDialogComponent,
   ],
   imports: [
     BrowserModule,

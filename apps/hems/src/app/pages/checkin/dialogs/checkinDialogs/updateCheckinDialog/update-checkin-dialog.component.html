@@ -17,8 +17,8 @@
         matInput
         placeholder="123"
       />
-      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
-        Required
+      <mat-error *ngIf="form.get('room')?.invalid && form.get('room')?.dirty">
+        Must be a number from 100-999
       </mat-error>
     </mat-form-field>
 

@@ -18,18 +18,18 @@ export interface ILuggage extends ICompletedAt {
 }
 
 export interface ICreateLuggageRequest {
-  luggageType: LuggageType;
-  roomReady?: boolean;
   room: string;
+  roomReady?: boolean;
   name: string;
-  arrivalTime?: Date;
   bags: string;
   description: string;
+  arrivalTime?: Date;
   tagNr: string;
   location: string;
   bbDown: string; 
   bbLr: string; 
-  bbOut?: string;
+  bbOut?: string; // probably shouldnt actually be part of creating the longterm
+  luggageType: LuggageType;
 }
 
 export interface IUpdateLuggageRequest {
