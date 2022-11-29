@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import {
   UntypedFormGroup,
   UntypedFormControl,
@@ -22,6 +22,14 @@ export class UpdateLongTermDialogComponent implements OnInit {
   updateLongTermForm = new UntypedFormGroup({});
   guestHasApproved = false;
   maxDatetime = new Date();
+
+  @ViewChild('room') roomInput!: ElementRef;
+  @ViewChild('name') nameInput!: ElementRef;
+  @ViewChild('bags') bagsInput!: ElementRef;
+  @ViewChild('tagNr') tagNrInput!: ElementRef;
+  @ViewChild('bbLr') bbLrInput!: ElementRef;
+  @ViewChild('location') locationInput!: ElementRef;
+  @ViewChild('comments') commentsInput!: ElementRef;
 
   constructor(
     private luggageService: LuggageService,
@@ -57,7 +65,25 @@ export class UpdateLongTermDialogComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.updateLongTermEntry();
+    if (!this.updateLongTermForm.valid) {
+      if (this.updateLongTermForm.get('room')?.invalid) {
+        this.roomInput.nativeElement.focus();
+      } else if (this.updateLongTermForm.get('name')?.invalid) {
+        this.nameInput.nativeElement.focus();
+      } else if (this.updateLongTermForm.get('bags')?.invalid) {
+        this.bagsInput.nativeElement.focus();
+      } else if (this.updateLongTermForm.get('tagNr')?.invalid) {
+        this.tagNrInput.nativeElement.focus();
+      } else if (this.updateLongTermForm.get('bbLr')?.invalid) {
+        this.bbLrInput.nativeElement.focus();
+      } else if (this.updateLongTermForm.get('location')?.invalid) {
+        this.locationInput.nativeElement.focus();
+      } else if (this.updateLongTermForm.get('comments')?.invalid) {
+        this.commentsInput.nativeElement.focus();
+      }
+    } else {
+      this.updateLongTermEntry();
+    }
   }
 
   updateLongTermEntry(): void {
