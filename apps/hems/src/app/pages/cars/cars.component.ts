@@ -3,8 +3,7 @@ import { ICar } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateCarComponent } from './modal/create/create-car-dialog.component';
-import { EditCarComponent } from './modal/edit/update-car-dialog.component';
+
 
 @Component({
   selector: 'hems-cars',
@@ -48,11 +47,11 @@ export class CarsComponent implements OnInit {
   ) {}
 
   openDialogCreate() {
-    this.dialogRef.open(CreateCarComponent);
+    //this.dialogRef.open();
   }
 
   openDialogEdit() {
-    this.dialogRef.open(EditCarComponent);
+    //this.dialogRef.open();
   }
 
   ngOnInit(): void {

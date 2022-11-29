@@ -15,7 +15,7 @@ import { CarService } from '../../../../services/car.service';
   styleUrls: ['../../../../../assets/dialog.scss'],
 })
 export class CreateCarDialogComponent {
-  form: UntypedFormGroup;
+  createCarForm: UntypedFormGroup;
   checked = true;
   isLoading = false;
   guestApprovedGDPR = false;
@@ -25,20 +25,21 @@ export class CreateCarDialogComponent {
     private snackbar: MatSnackBar,
     private dialog: MatDialog
   ) {
-    this.form = new UntypedFormGroup({
+    this.createCarForm = new UntypedFormGroup({
       room: new UntypedFormControl('', [Validators.required]),
       tagNr: new UntypedFormControl('', [Validators.required]),
       arrivalDate: new UntypedFormControl(new Date(), [Validators.required]),
       departureDate: new UntypedFormControl(new Date(), [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
       licensePlate: new UntypedFormControl('', [Validators.required]),
-      expirationDate: new UntypedFormControl(new Date(), [Validators.required]),
-      pickupTime: new UntypedFormControl(new Date(), [Validators.required]),
-      deliveryTime: new UntypedFormControl(new Date(), [Validators.required]),
-      bbDown: new UntypedFormControl('', [Validators.required]),
-      bbUp: new UntypedFormControl('', [Validators.required]),
+      expirationDate: new UntypedFormControl('', []),
+      pickupTime: new UntypedFormControl('', []),
+      deliveryTime: new UntypedFormControl('', []),
+      bbDown: new UntypedFormControl('', []),
+      bbUp: new UntypedFormControl('', []),
       location: new UntypedFormControl('', [Validators.required]),
-      parkingLot: new UntypedFormControl('', [Validators.required]),
+      parkingLot: new UntypedFormControl('', []),
+      bbOut: new UntypedFormControl('', []),
       comments: new UntypedFormControl('', []),
       charged: new UntypedFormControl('', []),
     });
@@ -48,21 +49,22 @@ export class CreateCarDialogComponent {
     this.isLoading = true;
     this.service
       .createCar({
-        room: this.form.get('room')?.value,
-        tagNr: this.form.get('tagNr')?.value,
-        arrivalDate: new Date(this.form.get('arrivalDate')?.value),
-        departureDate: new Date(this.form.get('departureDate')?.value),
-        name: this.form.get('name')?.value,
-        licensePlate: this.form.get('licensePlate')?.value,
-        expirationDate: new Date(this.form.get('expirationDate')?.value),
-        pickupTime: new Date(this.form.get('pickupTime')?.value),
-        deliveryTime: new Date(this.form.get('deliveryTime')?.value),
-        bbDown: this.form.get('bbDown')?.value,
-        bbUp: this.form.get('bbUp')?.value,
-        location: this.form.get('location')?.value,
-        parkingLot: this.form.get('parkingLot')?.value,
-        comments: this.form.get('comments')?.value,
-        charged: this.form.get('charged')?.value,
+        room: this.createCarForm.get('room')?.value,
+        tagNr: this.createCarForm.get('tagNr')?.value,
+        arrivalDate: new Date(this.createCarForm.get('arrivalDate')?.value),
+        departureDate: new Date(this.createCarForm.get('departureDate')?.value),
+        name: this.createCarForm.get('name')?.value,
+        licensePlate: this.createCarForm.get('licensePlate')?.value,
+        expirationDate: new Date(this.createCarForm.get('expirationDate')?.value),
+        pickupTime: new Date(this.createCarForm.get('pickupTime')?.value),
+        deliveryTime: new Date(this.createCarForm.get('deliveryTime')?.value),
+        bbDown: this.createCarForm.get('bbDown')?.value,
+        bbUp: this.createCarForm.get('bbUp')?.value,
+        location: this.createCarForm.get('location')?.value,
+        parkingLot: this.createCarForm.get('parkingLot')?.value,
+        bbOut: this.createCarForm.get('bbOut')?.value,
+        comments: this.createCarForm.get('comments')?.value,
+        charged: this.createCarForm.get('charged')?.value,
       })
       .subscribe({
         next: () => {

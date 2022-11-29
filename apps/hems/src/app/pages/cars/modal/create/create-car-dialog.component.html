@@ -1,20 +1,18 @@
-<form (ngSubmit)="create()" [formGroup]="form" data-cy="create.car.dialog">
-  <div class="header">
+<form (ngSubmit)="create()" [formGroup]="createCarForm">
+  <div>
     <h1>Add Car</h1>
   </div>
   <hr />
 
   <div class="dialog-row">
     <mat-form-field>
-      <mat-label class="input-label">Room</mat-label>
-      <input
-        type="text"
-        data-cy="create-car-room-input"
-        formControlName="room"
-        matInput
-        placeholder="Room"
-      />
-      <mat-error *ngIf="form.get('room')?.invalid && form.get('room')?.dirty">
+      <mat-label>Room</mat-label>
+      <input type="text" formControlName="room" matInput placeholder="Room" />
+      <mat-error
+        *ngIf="
+          createCarForm.get('room')?.invalid && createCarForm.get('room')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
@@ -23,12 +21,16 @@
       <mat-label>Tag Nr.</mat-label>
       <input
         type="text"
-        data-cy="create-car-tagNr-input"
         formControlName="tagNr"
         matInput
         placeholder="Tag Number"
       />
-      <mat-error *ngIf="form.get('tagNr')?.invalid && form.get('tagNr')?.dirty">
+      <mat-error
+        *ngIf="
+          createCarForm.get('tagNr')?.invalid &&
+          createCarForm.get('tagNr')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
@@ -39,14 +41,14 @@
       <mat-label>Arirval Date</mat-label>
       <input
         type="text"
-        data-cy="create-car-arrival-input"
         formControlName="arrivalDate"
         matInput
         placeholder="Arrival Date"
       />
       <mat-error
         *ngIf="
-          form.get('arrivalDate')?.invalid && form.get('arrivalDate')?.dirty
+          createCarForm.get('arrivalDate')?.invalid &&
+          createCarForm.get('arrivalDate')?.dirty
         "
       >
         Required
@@ -57,14 +59,14 @@
       <mat-label>Departure Date</mat-label>
       <input
         type="text"
-        data-cy="create-car-depature-input"
         formControlName="departureDate"
         matInput
         placeholder="Departure Date"
       />
       <mat-error
         *ngIf="
-          form.get('departureDate')?.invalid && form.get('departureDate')?.dirty
+          createCarForm.get('departureDate')?.invalid &&
+          createCarForm.get('departureDate')?.dirty
         "
       >
         Required
@@ -75,14 +77,12 @@
   <div class="dialog-row">
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input
-        type="text"
-        data-cy="create-car-name-input"
-        formControlName="name"
-        matInput
-        placeholder="Name"
-      />
-      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+      <input type="text" formControlName="name" matInput placeholder="Name" />
+      <mat-error
+        *ngIf="
+          createCarForm.get('name')?.invalid && createCarForm.get('name')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
@@ -91,15 +91,14 @@
       <mat-label>Exp.</mat-label>
       <input
         type="text"
-        data-cy="create-car-expirationDate-input"
         formControlName="expirationDate"
         matInput
         placeholder="Expiration Date"
       />
       <mat-error
         *ngIf="
-          form.get('expirationDate')?.invalid &&
-          form.get('expirationDate')?.dirty
+          createCarForm.get('expirationDate')?.invalid &&
+          createCarForm.get('expirationDate')?.dirty
         "
       >
         Required
@@ -112,13 +111,15 @@
       <mat-label>Pick Up Time</mat-label>
       <input
         type="text"
-        data-cy="create-car-expirationDate-input"
         formControlName="pickUpTime"
         matInput
         placeholder="Pick Up Time"
       />
       <mat-error
-        *ngIf="form.get('pickUpTime')?.invalid && form.get('pickUpTime')?.dirty"
+        *ngIf="
+          createCarForm.get('pickUpTime')?.invalid &&
+          createCarForm.get('pickUpTime')?.dirty
+        "
       >
         Required
       </mat-error>
@@ -130,14 +131,14 @@
       <mat-label>Delivery Time</mat-label>
       <input
         type="text"
-        data-cy="create-car-deliveryTime-input"
         formControlName="deliveryTime"
         matInput
         placeholder="Delivery Time"
       />
       <mat-error
         *ngIf="
-          form.get('deliveryTime')?.invalid && form.get('deliveryTime')?.dirty
+          createCarForm.get('deliveryTime')?.invalid &&
+          createCarForm.get('deliveryTime')?.dirty
         "
       >
         Required
@@ -148,13 +149,15 @@
       <mat-label>BB Down</mat-label>
       <input
         type="text"
-        data-cy="create-car-bbDown-input"
         formControlName="bbDown"
         matInput
         placeholder="BB Down"
       />
       <mat-error
-        *ngIf="form.get('bbDown')?.invalid && form.get('bbDown')?.dirty"
+        *ngIf="
+          createCarForm.get('bbDown')?.invalid &&
+          createCarForm.get('bbDown')?.dirty
+        "
       >
         Required
       </mat-error>
@@ -164,14 +167,12 @@
   <div class="dialog-row">
     <mat-form-field>
       <mat-label>BB Up</mat-label>
-      <input
-        type="text"
-        data-cy="create-car-bbUp-input"
-        formControlName="bbUp"
-        matInput
-        placeholder="BB Up"
-      />
-      <mat-error *ngIf="form.get('bbUp')?.invalid && form.get('bbUp')?.dirty">
+      <input type="text" formControlName="bbUp" matInput placeholder="BB Up" />
+      <mat-error
+        *ngIf="
+          createCarForm.get('bbUp')?.invalid && createCarForm.get('bbUp')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
@@ -180,13 +181,15 @@
       <mat-label>Location</mat-label>
       <input
         type="text"
-        data-cy="create-car-location-input"
         formControlName="location"
         matInput
         placeholder="Location"
       />
       <mat-error
-        *ngIf="form.get('location')?.invalid && form.get('location')?.dirty"
+        *ngIf="
+          createCarForm.get('location')?.invalid &&
+          createCarForm.get('location')?.dirty
+        "
       >
         Required
       </mat-error>
@@ -198,13 +201,15 @@
       <mat-label>Parking Lot</mat-label>
       <input
         type="text"
-        data-cy="create-car-parkingLot-input"
         formControlName="parkingLot"
         matInput
         placeholder="Parking Lot"
       />
       <mat-error
-        *ngIf="form.get('parkingLot')?.invalid && form.get('parkingLot')?.dirty"
+        *ngIf="
+          createCarForm.get('parkingLot')?.invalid &&
+          createCarForm.get('parkingLot')?.dirty
+        "
       >
         Required
       </mat-error>
@@ -214,13 +219,15 @@
       <mat-label>Comments</mat-label>
       <input
         type="text"
-        data-cy="create-car-comments-input"
         formControlName="comments"
         matInput
         placeholder="Comments"
       />
       <mat-error
-        *ngIf="form.get('comments')?.invalid && form.get('comments')?.dirty"
+        *ngIf="
+          createCarForm.get('comments')?.invalid &&
+          createCarForm.get('comments')?.dirty
+        "
       >
         Required
       </mat-error>
@@ -232,13 +239,15 @@
       <mat-label>Charged</mat-label>
       <input
         type="text"
-        data-cy="create-car-charged-input"
         formControlName="charged"
         matInput
         placeholder="Charged"
       />
       <mat-error
-        *ngIf="form.get('charged')?.invalid && form.get('charged')?.dirty"
+        *ngIf="
+          createCarForm.get('charged')?.invalid &&
+          createCarForm.get('charged')?.dirty
+        "
       >
         Required
       </mat-error>
@@ -252,34 +261,12 @@
       [checked]="guestApprovedGDPR"
       (change)="guestApprovedGDPR = !guestApprovedGDPR"
     />
-    <span class="checkmark" data-cy="checkbox-banner"></span>
+    <span class="checkmark"></span>
   </label>
 
   <div class="dialog-row">
-    <button
-      class="action-buttons"
-      mat-raised-button
-      data-cy="create-checkout-cancel-btn"
-      mat-dialog-close
-    >
-      Cancel
-    </button>
-    <span
-      class="action-button"
-      [matTooltip]="form.invalid ? 'Fill out all required fields first' : ''"
-    >
-      <button
-        mat-flat-button
-        style="width: 100%"
-        data-cy="create-checkout-create-btn"
-        type="submit"
-        [disabled]="form.invalid || isLoading"
-      >
-        <span *ngIf="!isLoading">Create</span>
-        <mat-icon *ngIf="isLoading"
-          ><mat-spinner diameter="21"></mat-spinner
-        ></mat-icon>
-      </button>
-    </span>
+    <button class="basic-btn" mat-raised-button mat-dialog-close>Cancel</button>
+
+    <button class="action-btn" mat-flat-button type="submit">+ Add Car</button>
   </div>
 </form>
