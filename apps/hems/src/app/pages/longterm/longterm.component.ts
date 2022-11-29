@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ILuggage } from '@hems/interfaces';
+import { ILuggage, LuggageSortOptions, SortOrder } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
 import { CreateLongTermDialogComponent } from './createLongTermDialog/create-long-term-dialog.component';
 import { UpdateLongTermDialogComponent } from './updateLongTermDialog/update-long-term-dialog.component';
@@ -17,6 +17,9 @@ export class LongtermComponent implements OnInit {
   listNames?: string[];
   chosenListName = '';
   isLoading = false;
+  sortBy: LuggageSortOptions | undefined;
+  sortOrder: SortOrder = SortOrder.ASCENDING;
+  search: string | undefined;
 
   displayedColumns = [
     'dateIn',
@@ -42,20 +45,13 @@ export class LongtermComponent implements OnInit {
     this.fetchLuggage();
   }
 
-  formatDate(date: Date): string {
-    const parsedDate = new Date(date);
-    return parsedDate.toLocaleString(undefined, {
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      hour12: false,
-      minute: '2-digit',
-    });
-  }
-
   fetchLuggage(): void {
+    console.log('running');
+    console.log(new Date(), this.sortBy, this.sortOrder, this.search);
+    
+    
     this.isLoading = true;
-    this.luggageService.getLongTerm(new Date()).subscribe({
+    this.luggageService.getLongTerm(new Date(), this.sortBy, this.sortOrder, this.search).subscribe({
       next: (luggage) => {
         this.luggage = luggage;
         console.log(luggage);
