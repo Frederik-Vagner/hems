@@ -3,6 +3,7 @@
     <h1>Add Car</h1>
   </div>
   <hr />
+
   <div class="dialog-row">
     <mat-form-field>
       <mat-label class="input-label">Room</mat-label>
@@ -19,6 +20,7 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Tag Nr.</mat-label>
       <input
         type="text"
         data-cy="create-car-tagNr-input"
@@ -34,6 +36,7 @@
 
   <div class="dialog-row">
     <mat-form-field>
+      <mat-label>Arirval Date</mat-label>
       <input
         type="text"
         data-cy="create-car-arrival-input"
@@ -51,6 +54,7 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Departure Date</mat-label>
       <input
         type="text"
         data-cy="create-car-depature-input"
@@ -70,6 +74,7 @@
 
   <div class="dialog-row">
     <mat-form-field>
+      <mat-label>Name</mat-label>
       <input
         type="text"
         data-cy="create-car-name-input"
@@ -83,6 +88,7 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Exp.</mat-label>
       <input
         type="text"
         data-cy="create-car-expirationDate-input"
@@ -103,6 +109,7 @@
 
   <div class="dialog-row">
     <mat-form-field>
+      <mat-label>Pick Up Time</mat-label>
       <input
         type="text"
         data-cy="create-car-expirationDate-input"
@@ -120,6 +127,7 @@
 
   <div class="dialog-row">
     <mat-form-field>
+      <mat-label>Delivery Time</mat-label>
       <input
         type="text"
         data-cy="create-car-deliveryTime-input"
@@ -137,6 +145,7 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>BB Down</mat-label>
       <input
         type="text"
         data-cy="create-car-bbDown-input"
@@ -154,6 +163,7 @@
 
   <div class="dialog-row">
     <mat-form-field>
+      <mat-label>BB Up</mat-label>
       <input
         type="text"
         data-cy="create-car-bbUp-input"
@@ -167,6 +177,7 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Location</mat-label>
       <input
         type="text"
         data-cy="create-car-location-input"
@@ -184,6 +195,7 @@
 
   <div class="dialog-row">
     <mat-form-field>
+      <mat-label>Parking Lot</mat-label>
       <input
         type="text"
         data-cy="create-car-parkingLot-input"
@@ -199,6 +211,7 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Comments</mat-label>
       <input
         type="text"
         data-cy="create-car-comments-input"
@@ -216,6 +229,7 @@
 
   <div class="dialog-row">
     <mat-form-field>
+      <mat-label>Charged</mat-label>
       <input
         type="text"
         data-cy="create-car-charged-input"
@@ -240,12 +254,11 @@
     />
     <span class="checkmark" data-cy="checkbox-banner"></span>
   </label>
-  
+
   <div class="dialog-row">
     <button
       class="action-buttons"
       mat-raised-button
-      color="primary"
       data-cy="create-checkout-cancel-btn"
       mat-dialog-close
     >
@@ -257,7 +270,6 @@
     >
       <button
         mat-flat-button
-        color="primary"
         style="width: 100%"
         data-cy="create-checkout-create-btn"
         type="submit"
@@ -265,7 +277,7 @@
       >
         <span *ngIf="!isLoading">Create</span>
         <mat-icon *ngIf="isLoading"
-          ><mat-spinner diameter="21" color="accent"></mat-spinner
+          ><mat-spinner diameter="21"></mat-spinner
         ></mat-icon>
       </button>
     </span>
