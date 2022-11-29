@@ -69,8 +69,8 @@ export class CheckinComponent implements OnInit {
         this.isLoadingCheckin = false;
         console.error(error);
         this.snackBar.open(
-          'Check In data have failed to load',
-          'Imma try again later',
+          'Check In data have failed to load, please reload the page.',
+          'Okay',
           {
             duration: 10000,
           }
@@ -146,20 +146,6 @@ export class CheckinComponent implements OnInit {
   openCheckoutCreateDialog(): void {
     this.dialog.open(CreateCheckoutDialogComponent, {
       width: '500px',
-    });
-  }
-
-  formatDate(date: string, timeOnly: boolean = false): string {
-    if (!date) {
-      return '';
-    }
-    const parsedDate = new Date(date);
-    return parsedDate.toLocaleString(undefined, {
-      month: timeOnly ? undefined : '2-digit',
-      day: timeOnly ? undefined : '2-digit',
-      hour: '2-digit',
-      hour12: false,
-      minute: '2-digit',
     });
   }
 }
