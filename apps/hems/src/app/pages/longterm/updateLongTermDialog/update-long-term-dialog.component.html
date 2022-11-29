@@ -2,6 +2,7 @@
   <h1>Update long term</h1>
   <hr />
 
+  <!-- Date in -->
   <div class="dialog-row">
     <!-- <mat-form-field appearance="fill">
       <mat-label>Date in</mat-label>
@@ -21,27 +22,27 @@
         Required
       </mat-error>
     </mat-form-field> -->
-
-    <mat-form-field appearance="fill">
-      <mat-label>Room</mat-label>
-      <input
-        #room
-        type="text"
-        formControlName="room"
-        matInput
-        placeholder="Room nr"
-        maxlength="10"
-      />
-      <mat-error
-        *ngIf="
-          updateLongTermForm.get('room')?.invalid &&
-          updateLongTermForm.get('room')?.dirty
-        "
-      >
-        Must be a number from 100-999
-      </mat-error>
-    </mat-form-field>
   </div>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Room</mat-label>
+    <input
+      #room
+      type="text"
+      formControlName="room"
+      matInput
+      placeholder="Room nr"
+      maxlength="10"
+    />
+    <mat-error
+      *ngIf="
+        updateLongTermForm.get('room')?.invalid &&
+        updateLongTermForm.get('room')?.dirty
+      "
+    >
+      Must be a number from 100-999
+    </mat-error>
+  </mat-form-field>
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">

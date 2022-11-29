@@ -1,6 +1,7 @@
 <form [formGroup]="createLongTermForm" (ngSubmit)="onSubmit()">
   <h1>Add long term</h1>
   <hr />
+  
   <div class="dialog-row">
     <!-- <mat-form-field appearance="fill">
       <mat-label>Date in</mat-label>
@@ -20,8 +21,6 @@
         Required
       </mat-error>
     </mat-form-field> -->
-
-    
   </div>
 
   <mat-form-field appearance="fill" class="full-width">
@@ -122,16 +121,16 @@
       <mat-label>Date needed</mat-label>
       <input
         matInput
-        [ngxMatDatetimePicker]="dateNeeded"
+        [ngxMatDatetimePicker]="dateNeededPicker"
         placeholder="Received at"
         formControlName="dateNeeded"
       />
       <mat-datepicker-toggle
         matSuffix
-        [for]="$any(dateNeeded)"
+        [for]="$any(dateNeededPicker)"
       ></mat-datepicker-toggle>
       <ngx-mat-datetime-picker
-        #dateNeeded
+        #dateNeededPicker
         [showSpinners]="true"
         [showSeconds]="false"
         [touchUi]="true"
