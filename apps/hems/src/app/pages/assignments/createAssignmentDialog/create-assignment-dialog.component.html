@@ -155,16 +155,6 @@
     </mat-form-field>
   </div>
 
-  <label class="checkbox-container">
-    The guest has given consent to the processing of personal data
-    <input
-      type="checkbox"
-      [checked]="guestHasApproved"
-      (change)="guestHasApproved = !guestHasApproved"
-    />
-    <span class="checkmark" data-cy="checkbox-banner"></span>
-  </label>
-
   <div class="dialog-row">
     <button class="secondary-btn" mat-raised-button mat-dialog-close>
       Cancel

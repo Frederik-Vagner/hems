@@ -12,14 +12,10 @@ import { AssignmentsService } from '../../../services/assignments.service';
 @Component({
   selector: 'hems-create-assignment-dialog',
   templateUrl: './create-assignment-dialog.component.html',
-  styleUrls: [
-    '../../../../assets/checkbox.scss',
-    '../../../../assets/dialog.scss',
-  ],
+  styleUrls: ['../../../../assets/dialog.scss'],
 })
 export class CreateAssignmentDialogComponent implements OnInit {
   createAssignmentForm = new UntypedFormGroup({});
-  guestHasApproved = false;
   isLoading = false;
   maxDatetime = new Date();
 
@@ -62,13 +58,6 @@ export class CreateAssignmentDialogComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (!this.guestHasApproved) {
-      this.snackBar.open('Guest needs to approve storing their data.', 'Okay', {
-        duration: 10000,
-      });
-      return;
-    }
-
     if (!this.createAssignmentForm.valid) {
       if (this.createAssignmentForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
