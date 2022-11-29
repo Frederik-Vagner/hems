@@ -9,7 +9,7 @@ import { UpdateAssignmentDialogComponent } from './updateAssignmentDialog/update
 @Component({
   selector: 'hems-assignments-page',
   templateUrl: './assignments-page.component.html',
-  styleUrls: ['./assignments-page.component.scss'],
+  styleUrls: ['./assignments-page.component.scss', '../../../assets/table.scss'],
 })
 export class AssignmentsPageComponent implements OnInit {
   assignmentList: IAssignment[] = [];

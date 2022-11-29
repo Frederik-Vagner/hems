@@ -45,6 +45,7 @@
     <tr mat-header-row *matHeaderRowDef="assignmentColumns"></tr>
     <tr
       mat-row
+      [ngClass]="row.completedAt ? 'completed' : ''"
       *matRowDef="let row; columns: assignmentColumns"
       (click)="editAssignment(row)"
     ></tr>
