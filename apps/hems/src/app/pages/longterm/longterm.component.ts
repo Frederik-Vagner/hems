@@ -19,7 +19,7 @@ export class LongtermComponent implements OnInit {
   isLoading = false;
   sortBy: LuggageSortOptions | undefined;
   sortOrder: SortOrder = SortOrder.ASCENDING;
-  search: string | undefined;
+  search = '';
 
   displayedColumns = [
     'dateIn',

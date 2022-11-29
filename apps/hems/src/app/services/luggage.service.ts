@@ -30,7 +30,7 @@ export class LuggageService {
 
   public getLongTerm(createdAt: Date, sortBy?: LuggageSortOptions, sortOrder?: SortOrder, search?: string): Observable<ILuggage[]> {
     return this.http.get<ILuggage[]>(
-      `${env.apiUrl}/luggages/longTerm?createdAt=${createdAt.toISOString()}&sortBy=${sortBy}&sortOrder=${sortOrder}` + (search && `&search=${search}`)
+      `${env.apiUrl}/luggages/longTerm?createdAt=${createdAt.toISOString()}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`
     );
   }
 
