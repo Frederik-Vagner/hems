@@ -3,8 +3,8 @@ import { ICar } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateCarComponent } from './modal/create/create.car.component';
-import { EditCarComponent } from './modal/edit/edit.car.component';
+import { CreateCarComponent } from './modal/create/create-car-dialog.component';
+import { EditCarComponent } from './modal/edit/update-car-dialog.component';
 
 @Component({
   selector: 'hems-cars',
