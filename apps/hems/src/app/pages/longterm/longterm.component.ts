@@ -65,7 +65,7 @@ export class LongtermComponent implements OnInit {
         console.error(error);
         this.snackBar.open(
           'Luggages have failed to load',
-          'Imma try again later',
+          'Okay',
           {
             duration: 10000,
           }
