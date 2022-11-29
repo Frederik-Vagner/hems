@@ -49,12 +49,10 @@ export class CarsComponent {
 
   openDialogCreate() {
     this.dialogRef.open(CreateCarComponent);
-    console.log('hello');
   }
 
   openDialogEdit() {
     this.dialogRef.open(EditCarComponent);
-    console.log('hello');
   }
 
   ngOnInit(): void {

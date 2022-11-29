@@ -1,82 +1,216 @@
-<main>
+<form (ngSubmit)="create()" [formGroup]="form" data-cy="create.car.dialog">
+  <div class="header">
   <h1>Add Car</h1>
+  </div>
   <hr />
   <div>
-    <mat-form-field class="felt">
-      <input matInput placeholder="Room" />
+    <mat-form-field>
+      <mat-label class="input-label">Room</mat-label>
+      <input
+      type="text"
+          data-cy="create-car-room-input"
+          formControlName="room"
+          matInput
+          placeholder="Room"
+      />
+      <mat-error *ngIf="form.get('room')?.invalid && form.get('room')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Tag Number" />
+    <mat-form-field>
+      <input
+      type="text"
+          data-cy="create-car-tagNr-input"
+          formControlName="tagNr"
+          matInput
+          placeholder="Tag Number"
+      />
+      <mat-error *ngIf="form.get('tagNr')?.invalid && form.get('tagNr')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input matInput placeholder="Arrival" />
+      <input
+      type="text"
+      data-cy="create-car-arrival-input"
+      formControlName="arrivalDate"
+      matInput
+      placeholder="Arrival Date"
+      />
+      <mat-error *ngIf="form.get('arrivalDate')?.invalid && form.get('arrivalDate')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Departure" />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Name" />
+    <mat-form-field>
+      <input
+      type="text"
+      data-cy="create-car-depature-input"
+      formControlName="departureDate"
+      matInput
+      placeholder="Departure Date"/>
+      <mat-error *ngIf="form.get('departureDate')?.invalid && form.get('departureDate')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input matInput placeholder="Experation Time" />
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Pick Up Time" />
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <input matInput placeholder="Bellboy Down" />
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Bellboy Up" />
+      <input
+      type="text"
+      data-cy="create-car-name-input"
+      formControlName="name"
+      matInput
+      placeholder="Name"/>
+      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input matInput placeholder="Location" />
+      <input
+      type="text"
+      data-cy="create-car-expirationDate-input"
+      formControlName="expirationDate"
+      matInput
+      placeholder="Expiration Date"/>
+      <mat-error *ngIf="form.get('expirationDate')?.invalid && form.get('expirationDate')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Parking Lot" />
+    <mat-form-field>
+      <input
+      type="text"
+      data-cy="create-car-expirationDate-input"
+      formControlName="pickUpTime"
+      matInput
+      placeholder="Pick Up Time"/>
+      <mat-error *ngIf="form.get('pickUpTime')?.invalid && form.get('pickUpTime')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input matInput placeholder="Delivery Tine" />
+      <input
+      type="text"
+      data-cy="create-car-deliveryTime-input"
+      formControlName="deliveryTime"
+      matInput
+      placeholder="Delivery Time"/>
+      <mat-error *ngIf="form.get('deliveryTime')?.invalid && form.get('deliveryTime')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Bellboy Out" />
+    <mat-form-field>
+      <input
+      type="text"
+      data-cy="create-car-bbDown-input"
+      formControlName="bbDown"
+      matInput
+      placeholder="BB Down"/>
+      <mat-error *ngIf="form.get('bbDown')?.invalid && form.get('bbDown')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Description" />
+    <mat-form-field>
+      <input
+      type="text"
+      data-cy="create-car-bbUp-input"
+      formControlName="bbUp"
+      matInput
+      placeholder="BB Up"/>
+      <mat-error *ngIf="form.get('bbUp')?.invalid && form.get('bbUp')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+      type="text"
+      data-cy="create-car-location-input"
+      formControlName="location"
+      matInput
+      placeholder="Location"/>
+      <mat-error *ngIf="form.get('location')?.invalid && form.get('location')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
-    <input type="checkbox" />
+    <mat-form-field>
+      <input
+      type="text"
+      data-cy="create-car-parkingLot-input"
+      formControlName="parkingLot"
+      matInput
+      placeholder="Parking Lot"/>
+      <mat-error *ngIf="form.get('parkingLot')?.invalid && form.get('parkingLot')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+      type="text"
+      data-cy="create-car-comments-input"
+      formControlName="comments"
+      matInput
+      placeholder="Comments"/>
+      <mat-error *ngIf="form.get('comments')?.invalid && form.get('comments')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input
+      type="text"
+      data-cy="create-car-charged-input"
+      formControlName="charged"
+      matInput
+      placeholder="Charged"/>
+      <mat-error *ngIf="form.get('charged')?.invalid && form.get('charged')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <input type="checkbox" formControlName="guestApprovedGDPR"/>
     <label
       >The guest has given consent to the processing of personal data</label
     >
   </div>
   <div>
-    <button class="action-buttons" mat-raised-button color="primary">
+    <button class="action-buttons" mat-raised-button color="primary" data-cy="create-checkout-cancel-btn"
+    mat-dialog-close>
       Cancel
     </button>
-    <button class="action-buttons" mat-raised-button color="warn">
-      + Add To Car List
+    <span
+    class="action-button"
+    [matTooltip]="form.invalid ? 'Fill out all required fields first' : ''"
+  >
+    <button
+    mat-flat-button
+    color="primary"
+    style="width: 100%"
+    data-cy="create-checkout-create-btn"
+    type="submit"
+    [disabled]="form.invalid || isLoading"
+    >
+    <span *ngIf="!isLoading">Create</span>
+        <mat-icon *ngIf="isLoading"
+          ><mat-spinner diameter="21" color="accent"></mat-spinner
+        ></mat-icon>
     </button>
+    </span>
   </div>
-</main>
+</form>
