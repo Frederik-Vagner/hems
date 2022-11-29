@@ -10,10 +10,6 @@
   background-color: var(--main-blue);
 }
 
-.sidebar mat-icon {
-  color: white;
-}
-
 .page-title {
   margin-left: 0.25em;
   display: flex;
@@ -71,21 +67,18 @@ mat-divider {
   font-size: 24px;
 }
 
-::ng-deep .collapsed .sidebar-header {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
+::ng-deep {
+  .collapsed .sidebar-header {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
 
-::ng-deep .collapsed .sidebar-items .mat-list-item-content {
-  display: flex;
-  justify-content: center;
-}
-
-.sidebar-items .item-desc {
-  margin-left: 20px;
-  color: white;
+  .collapsed .sidebar-items .mat-list-item-content {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .content {
@@ -98,12 +91,21 @@ mat-divider {
   padding: 10px;
 }
 
+.side-nav-item {
+  margin-left: 20px;
+  color: white;
+}
+
 .navbar-item {
   color: var(--main-blue);
   background-color: transparent;
 
-  :hover {
-    color: #5252fc;
+  &:first-of-type {
+    margin-right: 0.5em;
+  }
+
+  &:hover {
+    background-color: var(--main-blue-lowest-opacity);
   }
 }
 
@@ -113,4 +115,42 @@ mat-divider {
 
 .mat-elevation-z8 {
   box-shadow: none;
+}
+
+
+.sidebar mat-icon {
+  color: white;
+}
+
+.mat-list-item:hover {
+  background: rgba(0, 0, 0, 0.05)
+}
+
+.active-nav {
+  background-color: white;
+
+  span {
+    color: var(--main-blue);
+    margin-left: 0;
+  }
+
+  mat-icon {
+    color: var(--main-blue);
+    margin-right: 20px;
+  }
+
+  &:hover {
+    background-color: var(--main-blue-lowest-opacity);
+    background: var(--main-blue-lowest-opacity);
+  }
+}
+
+::ng-deep .active-nav {
+  &:hover, &:focus {
+    background: rgb(252, 252, 255) !important;
+  }
+}
+
+.mat-drawer-side {
+  border-right: none;
 }
