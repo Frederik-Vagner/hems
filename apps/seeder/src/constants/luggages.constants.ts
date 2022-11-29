@@ -3,11 +3,11 @@ import { ILuggage, LuggageType } from '@hems/interfaces';
 export const luggages: ILuggage[] = [
   {
     luggageId: '8f009c33-6fee-4abf-b176-ce9195420c46',
-    luggageType: LuggageType.CHECKIN,
+    luggageType: LuggageType.LONG_TERM,
     roomReady: false,
     room: '86ø',
     name: 'Harvey Heimes',
-    arrivalTime: new Date('8/28/2022'),
+    arrivalTime: new Date('11/28/2022'),
     bags: '7',
     tagNr: '2989',
     location: 'LR',
@@ -15,8 +15,8 @@ export const luggages: ILuggage[] = [
     bbLr: 'CD',
     bbOut: 'GB',
     description: 'Corvus brachyrhynchos',
-    createdAt: new Date(Date.parse('2022-08-28 05:27:56.076')),
-    completedAt: new Date(Date.parse('2022-08-28 05:27:56.076')),
+    createdAt: new Date(Date.parse('2022-11-28 05:27:56.076')),
+    completedAt: new Date(Date.parse('2022-11-28 05:27:56.076')),
   },
   {
     luggageId: 'e3a67552-1a6e-4a31-ac06-df626ab408f9',

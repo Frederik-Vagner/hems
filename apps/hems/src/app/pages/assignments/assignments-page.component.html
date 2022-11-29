@@ -1,0 +1,53 @@
+<main>
+  <div class="table-actions" style="justify-content: end">
+    <button mat-raised-button class="action-btn" (click)="createAssignment()">
+      + Add assignment
+    </button>
+  </div>
+  <hr />
+
+  <table mat-table [dataSource]="assignmentList">
+    <ng-container matColumnDef="room">
+      <th mat-header-cell *matHeaderCellDef>Room</th>
+      <td mat-cell *matCellDef="let item">{{ item.room ? item.room : '-' }}</td>
+    </ng-container>
+    <ng-container matColumnDef="task">
+      <th mat-header-cell *matHeaderCellDef>Task</th>
+      <td mat-cell *matCellDef="let item">{{ item.task ? item.task : '-' }}</td>
+    </ng-container>
+    <ng-container matColumnDef="comments">
+      <th mat-header-cell *matHeaderCellDef>Comments</th>
+      <td mat-cell *matCellDef="let item">{{ item.comments }}</td>
+    </ng-container>
+    <ng-container matColumnDef="receivedBy">
+      <th mat-header-cell *matHeaderCellDef>Received by</th>
+      <td mat-cell *matCellDef="let item">{{ item.receivedBy }}</td>
+    </ng-container>
+    <ng-container matColumnDef="receivedAt">
+      <th mat-header-cell *matHeaderCellDef>Received at</th>
+      <td mat-cell *matCellDef="let item">
+        {{ item.receivedAt | date: 'HH:mm' }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="performedBy">
+      <th mat-header-cell *matHeaderCellDef>Performed By</th>
+      <td mat-cell *matCellDef="let item">
+        {{ item.performedBy ? item.performedBy : '-' }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="completedAt">
+      <th mat-header-cell *matHeaderCellDef>BB in LR</th>
+      <td mat-cell *matCellDef="let item">
+        {{ item.completedAt ? (item.completedAt | date: 'HH:mm') : '-' }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="assignmentColumns"></tr>
+    <tr
+      mat-row
+      [ngClass]="row.completedAt ? 'completed' : ''"
+      *matRowDef="let row; columns: assignmentColumns"
+      (click)="editAssignment(row)"
+    ></tr>
+  </table>
+</main>

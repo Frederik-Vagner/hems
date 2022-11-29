@@ -3,21 +3,20 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
-import { CreateCheckinDialogComponent } from './dialogs/checkin/create/create-checkin-dialog.component';
-import { EditCheckinDialogComponent } from './dialogs/checkin/edit/edit-checkin-dialog.component';
-import { CreateCheckoutDialogComponent } from './dialogs/checkout/create/create-checkout-dialog.component';
-import { EditCheckoutDialogComponent } from './dialogs/checkout/edit/edit-checkout-dialog.component';
+import { CreateCheckinDialogComponent } from './dialogs/checkinDialogs/createCheckinDialog/create-checkin-dialog.component';
+import { UpdateCheckinDialogComponent } from './dialogs/checkinDialogs/updateCheckinDialog/update-checkin-dialog.component';
+import { CreateCheckoutDialogComponent } from './dialogs/checkoutDialogs/createCheckoutDialog/create-checkout-dialog.component';
+import { UpdateCheckoutDialogComponent } from './dialogs/checkoutDialogs/updateCheckoutDialog/update-checkout-dialog.component';
 
 @Component({
   selector: 'hems-checkin',
   templateUrl: './checkin.component.html',
-  styleUrls: ['./checkin.component.scss'],
+  styleUrls: ['../../../assets/table.scss'],
 })
 export class CheckinComponent implements OnInit {
   checkinLuggage: ILuggage[] = [];
   checkoutLuggage: ILuggage[] = [];
   listNames?: string[];
-  chosenListName = '';
   isLoadingCheckin = false;
   isLoadingCheckout = false;
 
@@ -31,9 +30,8 @@ export class CheckinComponent implements OnInit {
     'bbLr',
     'location',
     'completedAt',
-    'bbUp',
+    'bbOut',
     'description',
-    'actions',
   ];
 
   checkoutColumns = [
@@ -47,7 +45,6 @@ export class CheckinComponent implements OnInit {
     'completedAt',
     'bbOut',
     'description',
-    'actions',
   ];
 
   constructor(
@@ -72,8 +69,8 @@ export class CheckinComponent implements OnInit {
         this.isLoadingCheckin = false;
         console.error(error);
         this.snackBar.open(
-          'Check In data have failed to load',
-          'Imma try again later',
+          'Check In data have failed to load, please reload the page.',
+          'Okay',
           {
             duration: 10000,
           }
@@ -90,8 +87,8 @@ export class CheckinComponent implements OnInit {
         this.isLoadingCheckout = false;
         console.error(error);
         this.snackBar.open(
-          'Check Out data have failed to load',
-          'Imma try again later',
+          'Check Out data have failed to load, please reload the page.',
+          'Okay',
           {
             duration: 10000,
           }
@@ -127,7 +124,7 @@ export class CheckinComponent implements OnInit {
   }
 
   openCheckinEditDialog(luggage: ILuggage): void {
-    this.dialog.open(EditCheckinDialogComponent, {
+    this.dialog.open(UpdateCheckinDialogComponent, {
       width: '500px',
       data: luggage,
     });
@@ -140,7 +137,7 @@ export class CheckinComponent implements OnInit {
   }
 
   openCheckoutEditDialog(luggage: ILuggage): void {
-    this.dialog.open(EditCheckoutDialogComponent, {
+    this.dialog.open(UpdateCheckoutDialogComponent, {
       width: '500px',
       data: luggage,
     });
@@ -149,20 +146,6 @@ export class CheckinComponent implements OnInit {
   openCheckoutCreateDialog(): void {
     this.dialog.open(CreateCheckoutDialogComponent, {
       width: '500px',
-    });
-  }
-
-  formatDate(date: string, timeOnly: boolean = false): string {
-    if (!date) {
-      return '';
-    }
-    const parsedDate = new Date(date);
-    return parsedDate.toLocaleString(undefined, {
-      month: timeOnly ? undefined : '2-digit',
-      day: timeOnly ? undefined : '2-digit',
-      hour: '2-digit',
-      hour12: false,
-      minute: '2-digit',
     });
   }
 }
