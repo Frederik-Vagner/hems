@@ -14,7 +14,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Date in</th>
       <td mat-cell *matCellDef="let luggage">
         {{
-          luggage.createdAt ? formatDate(luggage.createdAt) : '-'
+          formatDate(luggage.createdAt)
         }}
       </td>
     </ng-container>
@@ -56,7 +56,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Date needed</th>
       <td mat-cell *matCellDef="let luggage">
         {{
-          luggage.createdAt ? formatDate(luggage.createdAt) : '-'
+          luggage.arrivalTime ? formatDate(luggage.arrivalTime) : '-'
         }}
       </td>
     </ng-container>
