@@ -1,0 +1,280 @@
+<form [formGroup]="createLongTermForm" (ngSubmit)="onSubmit()">
+  <h1>Add long term</h1>
+  <hr />
+  <div class="dialog-row">
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Date in</mat-label>
+      <input
+        #dateIn
+        type="text"
+        formControlName="dateIn"
+        matInput
+        placeholder="Date of receiving luggage"
+      />
+      <mat-error
+        *ngIf="
+          createLongTermForm.get('dateIn')?.invalid &&
+          createLongTermForm.get('dateIn')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field> -->
+
+    
+  </div>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Room</mat-label>
+    <input
+      #room
+      type="text"
+      formControlName="room"
+      matInput
+      placeholder="Room nr"
+      maxlength="10"
+    />
+    <mat-error
+      *ngIf="
+        createLongTermForm.get('room')?.invalid &&
+        createLongTermForm.get('room')?.dirty
+      "
+    >
+      Must be a number from 100-999
+    </mat-error>
+  </mat-form-field>
+
+  <div class="dialog-row">
+    <mat-form-field
+      autocomplete="off"
+      appearance="fill"
+    >
+      <mat-label class="input-label">Name</mat-label>
+      <input
+        #name
+        type="text"
+        data-cy="update-checkin-name"
+        formControlName="name"
+        matInput
+        placeholder="John Doe"
+      />
+      <mat-error
+        *ngIf="
+          createLongTermForm.get('name')?.invalid &&
+          createLongTermForm.get('name')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field
+      autocomplete="off"
+      class="input one-third"
+      appearance="fill"
+    >
+      <mat-label class="input-label">Nr of bags</mat-label>
+      <input
+        #bags
+        type="text"
+        data-cy="update-checkin-room-input"
+        formControlName="bags"
+        matInput
+        placeholder="1+3"
+      />
+      <mat-error
+        *ngIf="
+          createLongTermForm.get('bags')?.invalid &&
+          createLongTermForm.get('bags')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field
+      autocomplete="off"
+      class="input one-third"
+      appearance="fill"
+    >
+      <mat-label class="input-label">Tag nr</mat-label>
+      <input
+        #tagNr
+        type="text"
+        data-cy="update-checkin-tag-nr"
+        formControlName="tagNr"
+        matInput
+        placeholder="123"
+      />
+      <mat-error
+        *ngIf="
+          createLongTermForm.get('tagNr')?.invalid &&
+          createLongTermForm.get('tagNr')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Date needed</mat-label>
+      <input
+        matInput
+        [ngxMatDatetimePicker]="dateNeeded"
+        placeholder="Received at"
+        formControlName="dateNeeded"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(dateNeeded)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #dateNeeded
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field
+      autocomplete="off"
+      class="input one-third"
+      appearance="fill"
+    >
+      <mat-label class="input-label">BB in LR</mat-label>
+      <input
+        #bbLr
+        type="text"
+        data-cy="update-checkin-name"
+        formControlName="bbLr"
+        matInput
+        placeholder="JD"
+      />
+      <mat-error
+        *ngIf="
+          createLongTermForm.get('bbLr')?.invalid &&
+          createLongTermForm.get('bbLr')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" class="input" appearance="fill">
+      <mat-label class="input-label">Location</mat-label>
+      <input
+        #location
+        type="text"
+        data-cy="update-checkin-location"
+        formControlName="location"
+        matInput
+        placeholder="LR1"
+      />
+      <mat-error
+        *ngIf="
+          createLongTermForm.get('location')?.invalid &&
+          createLongTermForm.get('location')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- BB Out + Date Out -->
+  <!-- <div class="dialog-row">
+    <mat-form-field
+      autocomplete="off"
+      class="input one-third"
+      appearance="fill"
+    >
+      <mat-label class="input-label">BB out</mat-label>
+      <input
+        #bbOut
+        type="text"
+        data-cy="update-checkin-name"
+        formControlName="bbOut"
+        matInput
+        placeholder="JD"
+      />
+      <mat-error
+        *ngIf="
+          createLongTermForm.get('bbOut')?.invalid &&
+          createLongTermForm.get('bbOut')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+        <mat-label>Date out</mat-label>
+        <input
+          matInput
+          [ngxMatDatetimePicker]="dateOut"
+          placeholder="Received at"
+          formControlName="dateOut"
+          [max]="maxDatetime"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="$any(dateOut)"
+        ></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker
+          #dateOut
+          [showSpinners]="true"
+          [showSeconds]="false"
+          [touchUi]="true"
+        >
+        </ngx-mat-datetime-picker>
+      </mat-form-field>
+  </div> -->
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
+    <textarea
+      #comments
+      matInput
+      type="text"
+      formControlName="comments"
+      placeholder="Describe the task"
+    ></textarea>
+    <mat-error
+      *ngIf="
+        createLongTermForm.get('comments')?.invalid &&
+        createLongTermForm.get('comments')?.dirty
+      "
+    >
+      Can't be more than 1000 characters
+    </mat-error>
+  </mat-form-field>
+
+  <label class="checkbox-container">
+    The guest has given consent to the processing of personal data
+    <input
+      type="checkbox"
+      [checked]="guestHasApproved"
+      (change)="guestHasApproved = !guestHasApproved"
+    />
+    <span class="checkmark" data-cy="checkbox-banner"></span>
+  </label>
+
+  <div class="dialog-row">
+    <button
+      class="secondary-btn"
+      mat-raised-button
+      mat-dialog-close
+      type="button"
+    >
+      Cancel
+    </button>
+    <button class="action-btn" mat-raised-button type="submit">
+      + Add assignment
+    </button>
+  </div>
+</form>

@@ -38,7 +38,11 @@ export class CreateCheckinDialogComponent {
     private dialog: MatDialog
   ) {
     this.form = new UntypedFormGroup({
-      room: new UntypedFormControl('', [Validators.required]),
+      room: new UntypedFormControl('', [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.pattern('^[0-9]*$'),
+      ]),
       roomReady: new UntypedFormControl('false', [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
       arrivalTime: new UntypedFormControl(new Date(), [Validators.required]),

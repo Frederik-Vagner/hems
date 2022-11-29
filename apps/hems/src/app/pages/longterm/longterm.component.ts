@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
+import { CreateLongTermDialogComponent } from './createLongTermDialog/create-long-term-dialog.component';
+import { UpdateLongTermDialogComponent } from './updateLongTermDialog/update-long-term-dialog.component';
 
 @Component({
   selector: 'hems-longterm',
@@ -20,19 +23,19 @@ export class LongtermComponent implements OnInit {
     'room',
     'name',
     'nrOfBags',
-    'description',
     'tagNr',
     'dateNeeded',
-    'bbInLr',
+    'bbLr',
     'location',
     'bbOut',
     'dateOut',
-    'actions',
+    'description',
   ];
 
   constructor(
     private readonly luggageService: LuggageService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog,
   ) {}
 
   ngOnInit(): void {
@@ -62,7 +65,7 @@ export class LongtermComponent implements OnInit {
         console.error(error);
         this.snackBar.open(
           'Luggages have failed to load',
-          'Imma try again later',
+          'Okay',
           {
             duration: 10000,
           }
@@ -71,8 +74,16 @@ export class LongtermComponent implements OnInit {
     });
   }
 
-  editlongTermListEntry(id: string): void {
-    alert(id);
-    console.log(this.luggage);
+  editLongTermListEntry(luggage: ILuggage): void {
+    this.dialog.open(UpdateLongTermDialogComponent, {
+      width: '500px',
+      data: luggage
+    })
+  }
+
+  createLongTermEntry(): void {
+    this.dialog.open(CreateLongTermDialogComponent, {
+      width: '500px',
+    })
   }
 }
