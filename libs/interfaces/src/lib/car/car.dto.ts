@@ -1,7 +1,6 @@
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
-import { IsDateString, IsEnum, IsNotEmpty, IsOptional } from 'class-validator';
+import { IsDateString, IsNotEmpty, IsOptional } from 'class-validator';
 import { ICreateCarRequest, IUpdateCarRequest } from './car.interface';
-import { Location } from './location.enum';
 
 export class CreateCarRequest implements ICreateCarRequest {
   @ApiModelProperty({ example: '2345' })
@@ -53,10 +52,9 @@ export class CreateCarRequest implements ICreateCarRequest {
   @IsOptional()
   bbUp?: string;
 
-  @ApiModelProperty({ example: Location.FH_FRONT_HOTEL })
+  @ApiModelProperty({ example: 'Front' })
   @IsNotEmpty()
-  @IsEnum(Location)
-  location!: Location;
+  location!: string;
 
   @ApiModelProperty({ example: 'c102' })
   @IsOptional()
@@ -125,10 +123,9 @@ export class UpdateCarRequest implements IUpdateCarRequest {
   @IsOptional()
   bbUp?: string;
 
-  @ApiModelProperty({ example: Location.FH_FRONT_HOTEL })
+  @ApiModelProperty({ example: 'Front' })
   @IsOptional()
-  @IsEnum(Location)
-  location?: Location;
+  location?: string;
 
   @ApiModelProperty({ example: 'c102' })
   @IsOptional()
