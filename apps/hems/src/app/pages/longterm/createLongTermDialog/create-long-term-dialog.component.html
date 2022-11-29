@@ -21,26 +21,28 @@
       </mat-error>
     </mat-form-field> -->
 
-    <mat-form-field appearance="fill">
-      <mat-label>Room</mat-label>
-      <input
-        #room
-        type="text"
-        formControlName="room"
-        matInput
-        placeholder="Room nr"
-        maxlength="10"
-      />
-      <mat-error
-        *ngIf="
-          createLongTermForm.get('room')?.invalid &&
-          createLongTermForm.get('room')?.dirty
-        "
-      >
-        Must be a number from 100-999
-      </mat-error>
-    </mat-form-field>
+    
   </div>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Room</mat-label>
+    <input
+      #room
+      type="text"
+      formControlName="room"
+      matInput
+      placeholder="Room nr"
+      maxlength="10"
+    />
+    <mat-error
+      *ngIf="
+        createLongTermForm.get('room')?.invalid &&
+        createLongTermForm.get('room')?.dirty
+      "
+    >
+      Must be a number from 100-999
+    </mat-error>
+  </mat-form-field>
 
   <div class="dialog-row">
     <mat-form-field
@@ -185,8 +187,9 @@
     </mat-form-field>
   </div>
 
-  <div class="dialog-row">
-    <!-- <mat-form-field
+  <!-- BB Out + Date Out -->
+  <!-- <div class="dialog-row">
+    <mat-form-field
       autocomplete="off"
       class="input one-third"
       appearance="fill"
@@ -230,8 +233,8 @@
           [touchUi]="true"
         >
         </ngx-mat-datetime-picker>
-      </mat-form-field> -->
-  </div>
+      </mat-form-field>
+  </div> -->
 
   <mat-form-field appearance="fill" class="full-width">
     <mat-label>Comments</mat-label>
