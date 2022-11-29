@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
+import { CreateLongTermDialogComponent } from './createLongTermDialog/create-long-term-dialog.component';
 
 @Component({
   selector: 'hems-longterm',
@@ -31,7 +33,8 @@ export class LongtermComponent implements OnInit {
 
   constructor(
     private readonly luggageService: LuggageService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog,
   ) {}
 
   ngOnInit(): void {
@@ -72,5 +75,11 @@ export class LongtermComponent implements OnInit {
 
   editLongTermListEntry(luggage: ILuggage): void {
     console.log(luggage);
+  }
+
+  createLongTermEntry(): void {
+    this.dialog.open(CreateLongTermDialogComponent, {
+      width: '500px',
+    })
   }
 }

@@ -1,11 +1,13 @@
 <main>
-  <div class="page-actions">
-    <div class="search-options">
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Search</mat-label>
-        <input type="text" aria-label="search" matInput />
-      </mat-form-field>
-    </div>
+  <div class="table-header-row">
+    <mat-form-field appearance="fill" class="remove-error-message">
+      <mat-label>Search</mat-label>
+      <input type="text" aria-label="search" placeholder="Search ..." matInput />
+    </mat-form-field>
+
+    <button mat-raised-button class="action-btn" (click)="createLongTermEntry()">
+      + Add long term
+    </button>
   </div>
   <hr />
 
