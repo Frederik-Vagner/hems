@@ -45,7 +45,7 @@ export class UpdateCheckinDialogComponent {
   ) {
     this.luggageId = data.luggageId;
     this.form = new UntypedFormGroup({
-      room: new UntypedFormControl('', [
+      room: new UntypedFormControl(data.room, [
         Validators.required,
         Validators.maxLength(10),
         Validators.pattern('^[0-9]*$'),

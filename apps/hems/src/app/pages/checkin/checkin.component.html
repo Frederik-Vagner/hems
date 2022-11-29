@@ -1,7 +1,7 @@
 <!-- Checkin section -->
-<section id="content-container">
-  <section class="table-header">
-    <h2>Check In</h2>
+<main>
+  <div class="table-actions">
+    <h1>Check In</h1>
 
     <button
       mat-raised-button
@@ -10,14 +10,16 @@
     >
       + Add Check In
     </button>
-  </section>
+  </div>
+  <hr />
+
   <table mat-table [dataSource]="checkinLuggage" class="mat-elevation-z8">
     <ng-container matColumnDef="room">
       <th mat-header-cell *matHeaderCellDef>Room</th>
       <td mat-cell *matCellDef="let item">{{ item.room }}</td>
     </ng-container>
     <ng-container matColumnDef="roomReady">
-      <th mat-header-cell *matHeaderCellDef>Room Status</th>
+      <th mat-header-cell *matHeaderCellDef>Room<br />Status</th>
       <td mat-cell *matCellDef="let item">{{ item.roomReady }}</td>
     </ng-container>
     <ng-container matColumnDef="name">
@@ -25,13 +27,13 @@
       <td mat-cell *matCellDef="let item">{{ item.name }}</td>
     </ng-container>
     <ng-container matColumnDef="arrivalTime">
-      <th mat-header-cell *matHeaderCellDef>Time of Arrival</th>
+      <th mat-header-cell *matHeaderCellDef>Arrival<br />time</th>
       <td mat-cell *matCellDef="let item">
         {{ formatDate(item.arrivalTime, true) }}
       </td>
     </ng-container>
     <ng-container matColumnDef="bags">
-      <th mat-header-cell *matHeaderCellDef>Nr. of Bags</th>
+      <th mat-header-cell *matHeaderCellDef>Nr. of<br />Bags</th>
       <td mat-cell *matCellDef="let item">{{ item.bags }}</td>
     </ng-container>
     <ng-container matColumnDef="tagNr">
@@ -72,8 +74,8 @@
 
   <br />
 
-  <section class="table-header">
-    <h2>Check Out</h2>
+  <div class="table-actions">
+    <h1>Check Out</h1>
 
     <button
       mat-raised-button
@@ -82,7 +84,9 @@
     >
       + Add Check Out
     </button>
-  </section>
+  </div>
+  <hr />
+
   <table mat-table [dataSource]="checkoutLuggage" class="mat-elevation-z8">
     <ng-container matColumnDef="room">
       <th mat-header-cell *matHeaderCellDef>Room</th>
@@ -93,7 +97,7 @@
       <td mat-cell *matCellDef="let item">{{ item.name }}</td>
     </ng-container>
     <ng-container matColumnDef="bags">
-      <th mat-header-cell *matHeaderCellDef>Nr. of Bags</th>
+      <th mat-header-cell *matHeaderCellDef>Nr. of<br />Bags</th>
       <td mat-cell *matCellDef="let item">{{ item.bags }}</td>
     </ng-container>
     <ng-container matColumnDef="tagNr">
@@ -109,7 +113,7 @@
       <td mat-cell *matCellDef="let item">{{ item.location }}</td>
     </ng-container>
     <ng-container matColumnDef="bbLr">
-      <th mat-header-cell *matHeaderCellDef>BB in LR</th>
+      <th mat-header-cell *matHeaderCellDef>BB<br />in LR</th>
       <td mat-cell *matCellDef="let item">{{ item.bbLr }}</td>
     </ng-container>
     <ng-container matColumnDef="completedAt">
@@ -135,4 +139,4 @@
       (click)="openCheckoutEditDialog(row)"
     ></tr>
   </table>
-</section>
+</main>
