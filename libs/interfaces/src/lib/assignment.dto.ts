@@ -25,6 +25,11 @@ export class CreateAssignmentRequest implements ICreateAssignmentRequest {
   @ApiModelProperty()
   @IsOptional()
   performedBy?: string;
+
+  @ApiModelProperty()
+  @IsNotEmpty()
+  @IsDateString()
+  receivedAt!: Date;
 }
 
 export class UpdateAssignmentRequest implements IUpdateAssignmentRequest {
@@ -52,4 +57,9 @@ export class UpdateAssignmentRequest implements IUpdateAssignmentRequest {
   @IsDateString()
   @IsOptional()
   completedAt?: Date;
+
+  @ApiModelProperty()
+  @IsOptional()
+  @IsDateString()
+  receivedAt?: Date;
 }

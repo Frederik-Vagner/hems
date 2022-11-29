@@ -17,11 +17,11 @@ export class Luggage extends CompletedAt implements ILuggage {
   @Column({ nullable: true })
   roomReady?: boolean;
 
-  @ApiModelProperty({ example: 'Room 420' })
+  @ApiModelProperty({ example: '420' })
   @Column()
   room!: string;
 
-  @ApiModelProperty({ example: 'Teodor "still" Jonasson' })
+  @ApiModelProperty({ example: 'TJ' })
   @Column()
   name!: string;
 
@@ -33,11 +33,11 @@ export class Luggage extends CompletedAt implements ILuggage {
   @Column()
   bags!: string;
 
-  @ApiModelProperty({ example: 'Children, Bikes, Ski Equipment' })
+  @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
   @Column()
   description!: string;
 
-  @ApiModelProperty({ example: '891239993' })
+  @ApiModelProperty({ example: '8912' })
   @Column()
   tagNr!: string;
 
@@ -45,15 +45,15 @@ export class Luggage extends CompletedAt implements ILuggage {
   @Column()
   location!: string;
 
-  @ApiModelProperty({ example: 'Teodor Not So Jonas' })
+  @ApiModelProperty({ example: 'TJ' })
   @Column()
   bbDown!: string;
 
-  @ApiModelProperty({ example: 'Teo Jon' })
+  @ApiModelProperty({ example: 'TJ' })
   @Column()
   bbLr!: string;
 
-  @ApiModelProperty({ example: 'Mario' })
+  @ApiModelProperty({ example: 'ML' })
   @Column({ nullable: true })
   bbOut?: string;
 }

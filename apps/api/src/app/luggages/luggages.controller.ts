@@ -1,4 +1,11 @@
-import { CreateLuggageRequest, LuggageType, UpdateLuggageRequest } from '@hems/interfaces';
+import {
+  CreateLuggageRequest,
+  Location,
+  LuggageSortOptions,
+  LuggageType,
+  SortOrder,
+  UpdateLuggageRequest,
+} from '@hems/interfaces';
 import { Luggage } from '@hems/models';
 import {
   Body,
@@ -15,8 +22,11 @@ import {
   ApiCreatedResponse,
   ApiOkResponse,
   ApiOperation,
+  ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
+import { RequiredQuery } from '../decorators/required-query.decorator';
+import { toBool } from '../utils/query-params.utils';
 import { LuggagesService } from './luggages.service';
 
 @ApiTags('Luggages')
@@ -29,17 +39,53 @@ export class LuggagesController {
     summary: 'Get a list of checked in luggages for the given day.',
   })
   @ApiOkResponse({ type: [Luggage] })
+  @ApiQuery({ name: 'createdAt', required: true, example: new Date() })
+  @ApiQuery({ name: 'status', required: false, example: 'true' })
+  @ApiQuery({
+    name: 'location',
+    enum: Location,
+    required: false,
+    example: Location.FH_FRONT_HOTEL,
+  })
+  @ApiQuery({ name: 'search', required: false, example: 'text' })
+  @ApiQuery({
+    name: 'sortBy',
+    enum: LuggageSortOptions,
+    required: false,
+    example: LuggageSortOptions.ARRIVAL_TIME,
+  })
+  @ApiQuery({
+    name: 'sortOrder',
+    enum: SortOrder,
+    required: false,
+    example: SortOrder.ASCENDING,
+  })
   @HttpCode(200)
   async getLuggagesByLuggageTypeAndCreatedAt(
     @Param('luggageType')
     luggageType: LuggageType,
-    @Query('createdAt')
-    createdAt: string
+    @RequiredQuery('createdAt')
+    createdAt: string,
+    @Query('status')
+    status: string,
+    @Query('location')
+    location: Location,
+    @Query('search')
+    search: string,
+    @Query('sortBy')
+    sortBy: LuggageSortOptions,
+    @Query('sortOrder')
+    sortOrder: SortOrder
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
     return this.luggagesService.findAllByLuggageTypeAndCreatedAt(
       luggageType,
-      createdAtDate
+      createdAtDate,
+      toBool(status),
+      location,
+      search,
+      sortBy,
+      sortOrder
     );
   }
 

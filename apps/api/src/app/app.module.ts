@@ -1,16 +1,16 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScheduleModule } from '@nestjs/schedule';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
-import { CarsModule } from './cars/cars.module';
+import { AssignmentsModule } from './assignments/assignments.module';
 import { AuthModule } from './auth/auth.module';
+import { CarsModule } from './cars/cars.module';
 import { configService } from './config/config.service';
 import { LuggagesModule } from './luggages/luggages.module';
 import { LoggerMiddleware } from './middleware/logging.middleware';
-import { UsersModule } from './users/users.module';
 import { TasksModule } from './tasks/tasks.module';
-import { AssignmentsModule } from './assignments/assignments.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
