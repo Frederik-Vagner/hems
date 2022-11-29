@@ -27,7 +27,6 @@ export class LongtermComponent implements OnInit {
     'location',
     'bbOut',
     'dateOut',
-    'actions',
   ];
 
   constructor(
@@ -71,8 +70,7 @@ export class LongtermComponent implements OnInit {
     });
   }
 
-  editlongTermListEntry(id: string): void {
-    alert(id);
-    console.log(this.luggage);
+  editLongTermListEntry(luggage: ILuggage): void {
+    console.log(luggage);
   }
 }
