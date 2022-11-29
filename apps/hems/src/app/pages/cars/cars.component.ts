@@ -3,6 +3,7 @@ import { ICar } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { CreateCarDialogComponent } from './modal/create/create-car-dialog.component';
 
 
 @Component({
@@ -46,8 +47,8 @@ export class CarsComponent implements OnInit {
     private dialogRef: MatDialog
   ) {}
 
-  openDialogCreate() {
-    //this.dialogRef.open();
+  openCreateCarDialog() {
+    this.dialogRef.open(CreateCarDialogComponent, {width: "500px"});
   }
 
   openDialogEdit() {

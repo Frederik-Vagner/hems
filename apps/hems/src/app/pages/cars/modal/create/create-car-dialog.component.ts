@@ -12,7 +12,7 @@ import { CarService } from '../../../../services/car.service';
 @Component({
   selector: 'hems-create-car-dialog',
   templateUrl: './create-car-dialog.component.html',
-  styleUrls: ['../../../../../assets/dialog.scss'],
+  styleUrls: ['../../../../../assets/dialog.scss', '../../../../../assets/checkbox.scss'],
 })
 export class CreateCarDialogComponent {
   createCarForm: UntypedFormGroup;

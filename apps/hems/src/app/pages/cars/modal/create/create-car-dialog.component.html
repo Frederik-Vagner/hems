@@ -1,7 +1,5 @@
 <form (ngSubmit)="create()" [formGroup]="createCarForm">
-  <div>
-    <h1>Add Car</h1>
-  </div>
+  <h1>Add Car</h1>
   <hr />
 
   <div class="dialog-row">
@@ -10,7 +8,8 @@
       <input type="text" formControlName="room" matInput placeholder="Room" />
       <mat-error
         *ngIf="
-          createCarForm.get('room')?.invalid && createCarForm.get('room')?.dirty
+          createCarForm.get('room')?.invalid && 
+          createCarForm.get('room')?.dirty
         "
       >
         Required
@@ -88,6 +87,21 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>License Plate</mat-label>
+      <input type="text" formControlName="licensePlate" matInput placeholder="Name" />
+      <mat-error
+        *ngIf="
+          createCarForm.get('licensePlate')?.invalid && createCarForm.get('licensePlate')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+
+    <mat-form-field>
       <mat-label>Exp.</mat-label>
       <input
         type="text"
@@ -104,21 +118,19 @@
         Required
       </mat-error>
     </mat-form-field>
-  </div>
 
-  <div class="dialog-row">
     <mat-form-field>
       <mat-label>Pick Up Time</mat-label>
       <input
         type="text"
-        formControlName="pickUpTime"
+        formControlName="pickupTime"
         matInput
         placeholder="Pick Up Time"
       />
       <mat-error
         *ngIf="
-          createCarForm.get('pickUpTime')?.invalid &&
-          createCarForm.get('pickUpTime')?.dirty
+          createCarForm.get('pickupTime')?.invalid &&
+          createCarForm.get('pickupTime')?.dirty
         "
       >
         Required
@@ -127,24 +139,7 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field>
-      <mat-label>Delivery Time</mat-label>
-      <input
-        type="text"
-        formControlName="deliveryTime"
-        matInput
-        placeholder="Delivery Time"
-      />
-      <mat-error
-        *ngIf="
-          createCarForm.get('deliveryTime')?.invalid &&
-          createCarForm.get('deliveryTime')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-
+    
     <mat-form-field>
       <mat-label>BB Down</mat-label>
       <input
@@ -157,58 +152,6 @@
         *ngIf="
           createCarForm.get('bbDown')?.invalid &&
           createCarForm.get('bbDown')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field>
-      <mat-label>BB Up</mat-label>
-      <input type="text" formControlName="bbUp" matInput placeholder="BB Up" />
-      <mat-error
-        *ngIf="
-          createCarForm.get('bbUp')?.invalid && createCarForm.get('bbUp')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Location</mat-label>
-      <input
-        type="text"
-        formControlName="location"
-        matInput
-        placeholder="Location"
-      />
-      <mat-error
-        *ngIf="
-          createCarForm.get('location')?.invalid &&
-          createCarForm.get('location')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field>
-      <mat-label>Parking Lot</mat-label>
-      <input
-        type="text"
-        formControlName="parkingLot"
-        matInput
-        placeholder="Parking Lot"
-      />
-      <mat-error
-        *ngIf="
-          createCarForm.get('parkingLot')?.invalid &&
-          createCarForm.get('parkingLot')?.dirty
         "
       >
         Required
@@ -234,26 +177,6 @@
     </mat-form-field>
   </div>
 
-  <div class="dialog-row">
-    <mat-form-field>
-      <mat-label>Charged</mat-label>
-      <input
-        type="text"
-        formControlName="charged"
-        matInput
-        placeholder="Charged"
-      />
-      <mat-error
-        *ngIf="
-          createCarForm.get('charged')?.invalid &&
-          createCarForm.get('charged')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
   <label class="checkbox-container">
     The guest has given consent to the processing of personal data
     <input
@@ -265,7 +188,7 @@
   </label>
 
   <div class="dialog-row">
-    <button class="basic-btn" mat-raised-button mat-dialog-close>Cancel</button>
+    <button class="basic-btn" type="button" mat-raised-button mat-dialog-close>Cancel</button>
 
     <button class="action-btn" mat-flat-button type="submit">+ Add Car</button>
   </div>
