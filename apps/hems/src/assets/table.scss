@@ -75,14 +75,14 @@ td.mat-cell {
   }
 }
 
-::ng-deep {
-  .mat-form-field-wrapper {
-    padding-bottom: 0.15em;
-  }
-  .mat-form-field-underline {
-    bottom: 0;
-  }
-  .mat-form-field-ripple {
-    background-color: var(--main-blue);
-  }
-}
+// ::ng-deep {
+//   .mat-form-field-wrapper {
+//     padding-bottom: 0.15em;
+//   }
+//   .mat-form-field-underline {
+//     bottom: 0;
+//   }
+//   .mat-form-field-ripple {
+//     background-color: var(--main-blue);
+//   }
+// }

@@ -8,6 +8,15 @@
   box-shadow: -7px 0px 24px 8px rgba(0, 0, 0, 0.15);
   color: white;
   background-color: var(--main-blue);
+  // transition: 0.3s;
+
+  .toggle-btn {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0;
+    color: white;
+    background-color: var(--main-blue);
+  }
 }
 
 .page-title {
@@ -26,21 +35,9 @@
   }
 }
 
-.sidebar .toggle-btn {
-  position: absolute;
-  bottom: 0.5em;
-  right: 0;
-  color: white;
-  background-color: var(--main-blue);
-}
-
 mat-divider {
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 255, 255, 0.5);
-}
-
-.collapsed {
-  width: 60px;
 }
 
 .collapsible {
@@ -49,35 +46,47 @@ mat-divider {
 
 .sidebar-header {
   padding: 16px 16px 0 16px;
+
+  > h3 {
+    margin: 0;
+  }
+
+  mat-icon {
+    font-size: 40px;
+  }
+
+  .role {
+    margin-bottom: 0;
+  }
 }
 
-.sidebar-header > h3 {
-  margin: 0;
-}
-
-.sidebar-header .role {
-  margin-bottom: 0;
-}
-
-.sidebar-header mat-icon {
-  font-size: 40px;
-}
-
-.collapsed .sidebar-header mat-icon {
-  font-size: 24px;
+.sidebar.collapsed {
+  width: 60px;
 }
 
 ::ng-deep {
-  .collapsed .sidebar-header {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  .collapsed {
+    .sidebar-header {
+      margin-top: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+  
+      mat-icon {
+        font-size: 24px;
+      }
+    }
+
+    .sidebar-items .mat-list-item-content {
+      display: flex;
+      justify-content: center;
+    }
   }
 
-  .collapsed .sidebar-items .mat-list-item-content {
-    display: flex;
-    justify-content: center;
+  .active-nav {
+    &:hover, &:focus {
+      background: rgb(252, 252, 255) !important;
+    }
   }
 }
 
@@ -99,6 +108,7 @@ mat-divider {
 .navbar-item {
   color: var(--main-blue);
   background-color: transparent;
+  transition: .3s;
 
   &:first-of-type {
     margin-right: 0.5em;
@@ -128,6 +138,7 @@ mat-divider {
 
 .active-nav {
   background-color: white;
+  transition: .3s;
 
   span {
     color: var(--main-blue);
@@ -140,14 +151,15 @@ mat-divider {
   }
 
   &:hover {
-    background-color: var(--main-blue-lowest-opacity);
     background: var(--main-blue-lowest-opacity);
   }
 }
 
-::ng-deep .active-nav {
-  &:hover, &:focus {
-    background: rgb(252, 252, 255) !important;
+.collapsed {
+  .active-nav {
+    mat-icon {
+      margin: 0;
+    }
   }
 }
 
