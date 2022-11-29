@@ -1,10 +1,12 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import {
   UntypedFormGroup,
   UntypedFormControl,
   Validators,
 } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../../services/luggage.service';
 
@@ -23,12 +25,16 @@ export class UpdateLongTermDialogComponent implements OnInit {
 
   constructor(
     private luggageService: LuggageService,
-    @Inject(MAT_DIALOG_DATA) public data: ILuggage
+    @Inject(MAT_DIALOG_DATA) public data: ILuggage,
+    private snackbar: MatSnackBar,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.updateLongTermForm = new UntypedFormGroup({
-      dateIn: new UntypedFormControl(this.data.createdAt, [Validators.required]),
+      dateIn: new UntypedFormControl(this.data.createdAt, [
+        Validators.required,
+      ]),
       room: new UntypedFormControl(this.data.room, [
         Validators.required,
         Validators.maxLength(10),
@@ -36,17 +42,52 @@ export class UpdateLongTermDialogComponent implements OnInit {
       ]),
       name: new UntypedFormControl(this.data.name, [Validators.required]),
       bags: new UntypedFormControl(this.data.bags, [Validators.required]),
-      comments: new UntypedFormControl(this.data.description, [Validators.required]),
+      comments: new UntypedFormControl(this.data.description, [
+        Validators.required,
+      ]),
       tagNr: new UntypedFormControl(this.data.tagNr, [Validators.required]),
       dateNeeded: new UntypedFormControl(this.data.arrivalTime, []),
       bbLr: new UntypedFormControl(this.data.bbLr, [Validators.required]),
-      location: new UntypedFormControl(this.data.location, [Validators.required]),
+      location: new UntypedFormControl(this.data.location, [
+        Validators.required,
+      ]),
       bbOut: new UntypedFormControl(this.data.bbOut, []),
       dateOut: new UntypedFormControl(this.data.completedAt, []),
     });
   }
 
   onSubmit(): void {
-    console.log('skrt');
+    this.updateLongTermEntry();
+  }
+
+  updateLongTermEntry(): void {
+    this.luggageService
+      .update(this.data.luggageId, {
+        room: this.updateLongTermForm.get('room')?.value,
+        name: this.updateLongTermForm.get('name')?.value,
+        bags: this.updateLongTermForm.get('bags')?.value,
+        description: this.updateLongTermForm.get('comments')?.value,
+        tagNr: this.updateLongTermForm.get('tagNr')?.value,
+        arrivalTime: this.updateLongTermForm.get('dateNeeded')?.value,
+        bbLr: this.updateLongTermForm.get('bbLr')?.value,
+        location: this.updateLongTermForm.get('location')?.value,
+        bbOut: this.updateLongTermForm.get('bbOut')?.value,
+        completedAt: this.updateLongTermForm.get('dateOut')?.value,
+      })
+      .subscribe({
+        next: () => {
+          this.snackbar.open('Long term item updated!', 'Thanks', {
+            duration: 5000,
+          });
+          document.location.reload();
+          this.dialog.closeAll();
+        },
+        error: (err: HttpErrorResponse) => {
+          console.error(err);
+          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+            duration: 10000,
+          });
+        },
+      });
   }
 }
