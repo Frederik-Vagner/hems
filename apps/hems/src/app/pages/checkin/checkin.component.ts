@@ -17,7 +17,6 @@ export class CheckinComponent implements OnInit {
   checkinLuggage: ILuggage[] = [];
   checkoutLuggage: ILuggage[] = [];
   listNames?: string[];
-  chosenListName = '';
   isLoadingCheckin = false;
   isLoadingCheckout = false;
 
@@ -31,7 +30,7 @@ export class CheckinComponent implements OnInit {
     'bbLr',
     'location',
     'completedAt',
-    'bbUp',
+    'bbOut',
     'description',
   ];
 
@@ -88,8 +87,8 @@ export class CheckinComponent implements OnInit {
         this.isLoadingCheckout = false;
         console.error(error);
         this.snackBar.open(
-          'Check Out data have failed to load',
-          'Imma try again later',
+          'Check Out data have failed to load, please reload the page.',
+          'Okay',
           {
             duration: 10000,
           }
