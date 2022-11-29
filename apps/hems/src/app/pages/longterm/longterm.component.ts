@@ -9,7 +9,7 @@ import { UpdateLongTermDialogComponent } from './updateLongTermDialog/update-lon
 @Component({
   selector: 'hems-longterm',
   templateUrl: 'longterm.component.html',
-  styleUrls: ['./longterm.component.scss'],
+  styleUrls: ['../../../assets/table.scss'],
 })
 export class LongtermComponent implements OnInit {
   luggage: ILuggage[] = [];
