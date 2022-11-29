@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { LuggageService } from '../../services/luggage.service';
 import { CreateLongTermDialogComponent } from './createLongTermDialog/create-long-term-dialog.component';
+import { UpdateLongTermDialogComponent } from './updateLongTermDialog/update-long-term-dialog.component';
 
 @Component({
   selector: 'hems-longterm',
@@ -22,13 +23,13 @@ export class LongtermComponent implements OnInit {
     'room',
     'name',
     'nrOfBags',
-    'description',
     'tagNr',
     'dateNeeded',
-    'bbInLr',
+    'bbLr',
     'location',
     'bbOut',
     'dateOut',
+    'description',
   ];
 
   constructor(
@@ -74,7 +75,10 @@ export class LongtermComponent implements OnInit {
   }
 
   editLongTermListEntry(luggage: ILuggage): void {
-    console.log(luggage);
+    this.dialog.open(UpdateLongTermDialogComponent, {
+      width: '500px',
+      data: luggage
+    })
   }
 
   createLongTermEntry(): void {
