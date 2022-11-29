@@ -45,7 +45,6 @@
   <div class="dialog-row">
     <mat-form-field
       autocomplete="off"
-      class="input full-width"
       appearance="fill"
     >
       <mat-label class="input-label">Name</mat-label>
@@ -121,17 +120,17 @@
       <mat-label>Date needed</mat-label>
       <input
         matInput
-        [ngxMatDatetimePicker]="arrivalTime"
+        [ngxMatDatetimePicker]="dateNeeded"
         placeholder="Received at"
-        formControlName="arrivalTime"
+        formControlName="dateNeeded"
         [max]="maxDatetime"
       />
       <mat-datepicker-toggle
         matSuffix
-        [for]="$any(arrivalTime)"
+        [for]="$any(dateNeeded)"
       ></mat-datepicker-toggle>
       <ngx-mat-datetime-picker
-        #arrivalTime
+        #dateNeeded
         [showSpinners]="true"
         [showSeconds]="false"
         [touchUi]="true"

@@ -39,3 +39,15 @@
   }
 }
 
+.completed {
+  background-color: rgba(47, 47, 162, 0.1);
+
+  &.mat-row:hover {
+    background-color: rgba(47, 47, 162, 0.2);
+  }
+}
+
+.mat-row:hover {
+  background-color: rgba(47, 47, 162, 0.1);
+}
+
