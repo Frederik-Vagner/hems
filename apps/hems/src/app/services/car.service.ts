@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ICar } from '@hems/interfaces';
+import { CreateCarRequest, ICar, IUpdateCarRequest, UpdateCarRequest } from '@hems/interfaces';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
@@ -14,5 +14,17 @@ export class CarService {
     return this.http.get<ICar[]>(
       `${env.apiUrl}/cars?createdAt=${createdAt.toISOString()}`
     );
+  }
+
+  public createCar(params: CreateCarRequest): Observable<ICar> {
+    return this.http.post<ICar>(`${env.apiUrl}/cars`, params);
+  }
+
+  public updateCar(id: string, params: UpdateCarRequest): Observable<ICar> {
+    return this.http.post<ICar>(`${env.apiUrl}/cars/${id}`, params);
+  }
+
+  public getCarById(id: string): Observable<ICar> {
+    return this.http.get<ICar>(`${env.apiUrl}/cars/${id}`);
   }
 }

@@ -1,5 +1,4 @@
 import { ICompletedAt } from '../base.interface';
-import { Location } from './location.enum';
 
 export interface ICar extends ICompletedAt {
   carId: string;
@@ -14,7 +13,7 @@ export interface ICar extends ICompletedAt {
   deliveryTime?: Date;
   bbDown?: string;
   bbUp?: string;
-  location: Location;
+  location: string;
   parkingLot?: string;
   bbOut?: string;
   comments: string;
@@ -33,7 +32,7 @@ export interface ICreateCarRequest {
   deliveryTime?: Date;
   bbDown?: string;
   bbUp?: string;
-  location: Location;
+  location: string;
   parkingLot?: string;
   bbOut?: string;
   comments: string;
@@ -52,7 +51,7 @@ export interface IUpdateCarRequest {
   deliveryTime?: Date;
   bbDown?: string;
   bbUp?: string;
-  location?: Location;
+  location?: string;
   parkingLot?: string;
   bbOut?: string;
   comments?: string;

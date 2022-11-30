@@ -33,6 +33,8 @@ textarea {
   }
 }
 
-::ng-deep .mat-datepicker-content {
-  box-shadow: none !important;
+::ng-deep {
+  .mat-datepicker-content {
+    box-shadow: none !important;
+  }
 }

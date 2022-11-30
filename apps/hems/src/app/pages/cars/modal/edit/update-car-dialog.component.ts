@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'hems-edit.car',
-  templateUrl: './edit.car.component.html',
-  styleUrls: ['./edit.car.component.css'],
+  selector: 'hems-update-car-dialog',
+  templateUrl: './update-car-dialog.component.html',
+  styleUrls: [],
 })
 export class EditCarComponent implements OnInit {
   ngOnInit(): void {

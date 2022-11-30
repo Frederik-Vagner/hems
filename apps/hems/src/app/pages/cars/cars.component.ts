@@ -3,8 +3,8 @@ import { ICar } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateCarComponent } from './modal/create/create.car.component';
-import { EditCarComponent } from './modal/edit/edit.car.component';
+import { CreateCarDialogComponent } from './modal/create/create-car-dialog.component';
+
 
 @Component({
   selector: 'hems-cars',
@@ -31,6 +31,8 @@ export class CarsComponent implements OnInit {
     'bbOut',
     'comment',
     'charged',
+    'actions',
+   
   ];
 
   foods = [
@@ -45,12 +47,12 @@ export class CarsComponent implements OnInit {
     private dialogRef: MatDialog
   ) {}
 
-  openDialogCreate() {
-    this.dialogRef.open(CreateCarComponent);
+  openCreateCarDialog() {
+    this.dialogRef.open(CreateCarDialogComponent, {width: "500px"});
   }
 
   openDialogEdit() {
-    this.dialogRef.open(EditCarComponent);
+    //this.dialogRef.open();
   }
 
   ngOnInit(): void {
