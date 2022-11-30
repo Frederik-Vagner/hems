@@ -1,7 +1,7 @@
 import { CompletedAt } from './base.entity';
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { ICar, Location } from '@hems/interfaces';
+import { ICar } from '@hems/interfaces';
 
 @Entity('cars')
 export class Car extends CompletedAt implements ICar {
@@ -53,13 +53,9 @@ export class Car extends CompletedAt implements ICar {
   @Column({ nullable: true })
   bbUp?: string;
 
-  @ApiModelProperty({ example: Location.FH_FRONT_HOTEL })
-  @Column({
-    type: 'enum',
-    enum: Location,
-    default: Location.PARKING_LOT_A,
-  })
-  location!: Location;
+  @ApiModelProperty({ example: 'Front' })
+  @Column()
+  location!: string;
 
   @ApiModelProperty({ example: 'c102' })
   @Column({ nullable: true })

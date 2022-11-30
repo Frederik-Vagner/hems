@@ -11,8 +11,6 @@ import { AssignmentsPageComponent } from './pages/assignments/assignments-page.c
 import { CreateAssignmentDialogComponent } from './pages/assignments/createAssignmentDialog/create-assignment-dialog.component';
 import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 import { CarsComponent } from './pages/cars/cars.component';
-import { CreateCarComponent } from './pages/cars/modal/create/create.car.component';
-import { EditCarComponent } from './pages/cars/modal/edit/edit.car.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { CreateCheckinDialogComponent } from './pages/checkin/dialogs/checkinDialogs/createCheckinDialog/create-checkin-dialog.component';
 import { UpdateCheckinDialogComponent } from './pages/checkin/dialogs/checkinDialogs/updateCheckinDialog/update-checkin-dialog.component';
@@ -23,6 +21,7 @@ import { LongtermComponent } from './pages/longterm/longterm.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { CreateLongTermDialogComponent } from './pages/longterm/createLongTermDialog/create-long-term-dialog.component';
 import { UpdateLongTermDialogComponent } from './pages/longterm/updateLongTermDialog/update-long-term-dialog.component';
+import { CreateCarDialogComponent } from './pages/cars/modal/create/create-car-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,6 @@ import { UpdateLongTermDialogComponent } from './pages/longterm/updateLongTermDi
     LongtermComponent,
     CheckinComponent,
     AssignmentsPageComponent,
-    CreateCarComponent,
-    EditCarComponent,
     UpdateCheckinDialogComponent,
     CreateCheckinDialogComponent,
     UpdateCheckoutDialogComponent,
@@ -43,6 +40,7 @@ import { UpdateLongTermDialogComponent } from './pages/longterm/updateLongTermDi
     UpdateAssignmentDialogComponent,
     CreateLongTermDialogComponent,
     UpdateLongTermDialogComponent,
+    CreateCarDialogComponent,
   ],
   imports: [
     BrowserModule,

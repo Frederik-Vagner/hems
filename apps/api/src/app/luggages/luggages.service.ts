@@ -1,6 +1,5 @@
 import {
   CreateLuggageRequest,
-  Location,
   LuggageSortOptions,
   LuggageType,
   SortOrder,
@@ -23,7 +22,7 @@ export class LuggagesService {
     luggageType: LuggageType,
     createdAt: Date,
     status: boolean | undefined,
-    location: Location | undefined,
+    location: string | undefined,
     search: string | undefined,
     sortBy: LuggageSortOptions | undefined,
     sortOrder: SortOrder | undefined
