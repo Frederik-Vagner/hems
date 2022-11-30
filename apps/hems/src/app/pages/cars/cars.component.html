@@ -1,6 +1,4 @@
 <main>
-  <button (click)="openDialogCreate()">Create Car</button>
-  <button (click)="openDialogEdit()">Update Car</button>
   <div class="page-actions">
     <div class="search-options">
       <mat-form-field appearance="fill">
@@ -19,8 +17,12 @@
     </div>
 
     <div class="car-list-actions">
-      <button class="secondary-btn" mat-raised-button>Show All</button>
-      <button mat-raised-button class="action-btn">Add Car</button>
+      <button class="action-buttons" mat-raised-button color="primary">
+        Show All
+      </button>
+      <button class="action-buttons" (click)="openCreateCarDialog()" mat-raised-button color="warn">
+        Add Car
+      </button>
     </div>
   </div>
   <hr />
@@ -124,7 +126,7 @@
         <button
           mat-raised-button
           color="primary"
-          (click)="editCarListEntry(element.carId)"
+          (click)="openDialogEdit()"
         >
           Edit
         </button>

@@ -1,6 +1,5 @@
 import {
   CreateLuggageRequest,
-  Location,
   LuggageSortOptions,
   LuggageType,
   SortOrder,
@@ -43,9 +42,8 @@ export class LuggagesController {
   @ApiQuery({ name: 'status', required: false, example: 'true' })
   @ApiQuery({
     name: 'location',
-    enum: Location,
     required: false,
-    example: Location.FH_FRONT_HOTEL,
+    example: 'Front',
   })
   @ApiQuery({ name: 'search', required: false, example: 'text' })
   @ApiQuery({
@@ -69,7 +67,7 @@ export class LuggagesController {
     @Query('status')
     status: string,
     @Query('location')
-    location: Location,
+    location: string,
     @Query('search')
     search: string,
     @Query('sortBy')
