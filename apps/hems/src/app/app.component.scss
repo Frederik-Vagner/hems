@@ -8,10 +8,15 @@
   box-shadow: -7px 0px 24px 8px rgba(0, 0, 0, 0.15);
   color: white;
   background-color: var(--main-blue);
-}
+  // transition: 0.3s;
 
-.sidebar mat-icon {
-  color: white;
+  .toggle-btn {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0;
+    color: white;
+    background-color: var(--main-blue);
+  }
 }
 
 .page-title {
@@ -30,21 +35,9 @@
   }
 }
 
-.sidebar .toggle-btn {
-  position: absolute;
-  bottom: 0.5em;
-  right: 0;
-  color: white;
-  background-color: var(--main-blue);
-}
-
 mat-divider {
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 255, 255, 0.5);
-}
-
-.collapsed {
-  width: 60px;
 }
 
 .collapsible {
@@ -53,39 +46,49 @@ mat-divider {
 
 .sidebar-header {
   padding: 16px 16px 0 16px;
+
+  > h3 {
+    margin: 0;
+  }
+
+  mat-icon {
+    font-size: 40px;
+  }
+
+  .role {
+    margin-bottom: 0;
+  }
 }
 
-.sidebar-header > h3 {
-  margin: 0;
+.sidebar.collapsed {
+  width: 60px;
 }
 
-.sidebar-header .role {
-  margin-bottom: 0;
-}
+::ng-deep {
+  .collapsed {
+    .sidebar-header {
+      margin-top: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
 
-.sidebar-header mat-icon {
-  font-size: 40px;
-}
+      mat-icon {
+        font-size: 24px;
+      }
+    }
 
-.collapsed .sidebar-header mat-icon {
-  font-size: 24px;
-}
+    .sidebar-items .mat-list-item-content {
+      display: flex;
+      justify-content: center;
+    }
+  }
 
-::ng-deep .collapsed .sidebar-header {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-::ng-deep .collapsed .sidebar-items .mat-list-item-content {
-  display: flex;
-  justify-content: center;
-}
-
-.sidebar-items .item-desc {
-  margin-left: 20px;
-  color: white;
+  .active-nav {
+    &:hover,
+    &:focus {
+      background: rgb(252, 252, 255) !important;
+    }
+  }
 }
 
 .content {
@@ -98,12 +101,22 @@ mat-divider {
   padding: 10px;
 }
 
+.side-nav-item {
+  margin-left: 20px;
+  color: white;
+}
+
 .navbar-item {
   color: var(--main-blue);
   background-color: transparent;
+  transition: 0.3s;
 
-  :hover {
-    color: #5252fc;
+  &:first-of-type {
+    margin-right: 0.5em;
+  }
+
+  &:hover {
+    background-color: var(--main-blue-lowest-opacity);
   }
 }
 
@@ -113,4 +126,43 @@ mat-divider {
 
 .mat-elevation-z8 {
   box-shadow: none;
+}
+
+.sidebar mat-icon {
+  color: white;
+}
+
+.mat-list-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.active-nav {
+  background-color: white;
+  transition: 0.3s;
+
+  span {
+    color: var(--main-blue);
+    margin-left: 0;
+  }
+
+  mat-icon {
+    color: var(--main-blue);
+    margin-right: 20px;
+  }
+
+  &:hover {
+    background: var(--main-blue-lowest-opacity);
+  }
+}
+
+.collapsed {
+  .active-nav {
+    mat-icon {
+      margin: 0;
+    }
+  }
+}
+
+.mat-drawer-side {
+  border-right: none;
 }
