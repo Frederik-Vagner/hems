@@ -38,7 +38,7 @@ export class LongtermComponent implements OnInit {
   constructor(
     private readonly luggageService: LuggageService,
     private snackBar: MatSnackBar,
-    private dialog: MatDialog,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -48,38 +48,35 @@ export class LongtermComponent implements OnInit {
   fetchLuggage(): void {
     console.log('running');
     console.log(new Date(), this.sortBy, this.sortOrder, this.search);
-    
-    
+
     this.isLoading = true;
-    this.luggageService.getLongTerm(new Date(), this.sortBy, this.sortOrder, this.search).subscribe({
-      next: (luggage) => {
-        this.luggage = luggage;
-        console.log(luggage);
-      },
-      error: (error) => {
-        this.isLoading = false;
-        console.error(error);
-        this.snackBar.open(
-          'Luggages have failed to load',
-          'Okay',
-          {
+    this.luggageService
+      .getLongTerm(new Date(), this.sortBy, this.sortOrder, this.search)
+      .subscribe({
+        next: (luggage) => {
+          this.luggage = luggage;
+          console.log(luggage);
+        },
+        error: (error) => {
+          this.isLoading = false;
+          console.error(error);
+          this.snackBar.open('Luggages have failed to load', 'Okay', {
             duration: 10000,
-          }
-        );
-      },
-    });
+          });
+        },
+      });
   }
 
   editLongTermListEntry(luggage: ILuggage): void {
     this.dialog.open(UpdateLongTermDialogComponent, {
       width: '500px',
-      data: luggage
-    })
+      data: luggage,
+    });
   }
 
   createLongTermEntry(): void {
     this.dialog.open(CreateLongTermDialogComponent, {
       width: '500px',
-    })
+    });
   }
 }

@@ -71,7 +71,7 @@ mat-divider {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-  
+
       mat-icon {
         font-size: 24px;
       }
@@ -84,7 +84,8 @@ mat-divider {
   }
 
   .active-nav {
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: rgb(252, 252, 255) !important;
     }
   }
@@ -108,7 +109,7 @@ mat-divider {
 .navbar-item {
   color: var(--main-blue);
   background-color: transparent;
-  transition: .3s;
+  transition: 0.3s;
 
   &:first-of-type {
     margin-right: 0.5em;
@@ -127,18 +128,17 @@ mat-divider {
   box-shadow: none;
 }
 
-
 .sidebar mat-icon {
   color: white;
 }
 
 .mat-list-item:hover {
-  background: rgba(0, 0, 0, 0.05)
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .active-nav {
   background-color: white;
-  transition: .3s;
+  transition: 0.3s;
 
   span {
     color: var(--main-blue);
