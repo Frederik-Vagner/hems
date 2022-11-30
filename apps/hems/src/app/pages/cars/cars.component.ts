@@ -5,7 +5,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateCarDialogComponent } from './modal/create/create-car-dialog.component';
 
-
 @Component({
   selector: 'hems-cars',
   templateUrl: './cars.component.html',
@@ -34,8 +33,6 @@ export class CarsComponent implements OnInit {
     'bbOut',
     'comment',
     'charged',
-    'actions',
-   
   ];
 
   constructor(
@@ -45,10 +42,12 @@ export class CarsComponent implements OnInit {
   ) {}
 
   openCreateCarDialog() {
-    this.dialogRef.open(CreateCarDialogComponent, {width: "500px"});
+    this.dialogRef.open(CreateCarDialogComponent, { width: '500px' });
   }
 
-  openDialogEdit() {
+  openDialogEdit(carListEntry: ICar) {
+    console.log(carListEntry);
+    
     //this.dialogRef.open();
   }
 
