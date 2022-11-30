@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ICar } from '@hems/interfaces';
+import { CarSortOptions, ICar, SortOrder } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -9,10 +9,13 @@ import { CreateCarDialogComponent } from './modal/create/create-car-dialog.compo
 @Component({
   selector: 'hems-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.scss'],
+  styleUrls: ['../../../assets/table.scss'],
 })
 export class CarsComponent implements OnInit {
   carList: ICar[] = [];
+  sortBy: CarSortOptions | undefined;
+  sortOrder: SortOrder = SortOrder.ASCENDING;
+  search = '';
 
   carColumns = [
     'room',
@@ -33,12 +36,6 @@ export class CarsComponent implements OnInit {
     'charged',
     'actions',
    
-  ];
-
-  foods = [
-    { value: 'steak-0', viewValue: 'Room' },
-    { value: 'pizza-1', viewValue: 'Name' },
-    { value: 'tacos-2', viewValue: 'Pick Up Time' },
   ];
 
   constructor(
