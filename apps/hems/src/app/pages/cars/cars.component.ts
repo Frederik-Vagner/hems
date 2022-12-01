@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ICar } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateCarComponent } from './modal/create/create.car.component';
-import { EditCarComponent } from './modal/edit/edit.car.component';
+import { CreateCarDialogComponent } from './modal/create/create-car-dialog.component';
+
 
 @Component({
   selector: 'hems-cars',
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.scss'],
 })
-export class CarsComponent {
+export class CarsComponent implements OnInit {
   carList: ICar[] = [];
 
   carColumns = [
@@ -47,18 +47,16 @@ export class CarsComponent {
     private dialogRef: MatDialog
   ) {}
 
-  openDialogCreate() {
-    this.dialogRef.open(CreateCarComponent);
-    console.log('hello');
+  openCreateCarDialog() {
+    this.dialogRef.open(CreateCarDialogComponent, {width: "500px"});
   }
 
   openDialogEdit() {
-    this.dialogRef.open(EditCarComponent);
-    console.log('hello');
+    //this.dialogRef.open();
   }
 
   ngOnInit(): void {
-    this.fetchCar();
+    this.fetchCarList();
   }
 
   formatDate(element: ICar): string {
@@ -72,7 +70,7 @@ export class CarsComponent {
     });
   }
 
-  fetchCar(): void {
+  fetchCarList(): void {
     this.carService.getCar(new Date()).subscribe({
       next: (car) => {
         this.carList = car;

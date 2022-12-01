@@ -5,6 +5,16 @@
 
   /* Colors */
   --extra-light-grey: #f1f1f1;
+
+  --main-blue: #2f2fa2;
+  --main-blue-low-opacity: rgba(47, 47, 162, 0.4);
+  --main-blue-lowest-opacity: rgba(47, 47, 162, 0.1);
+  --action-gradient: linear-gradient(
+    192.45deg,
+    #f64c72 0%,
+    #f64c72 0%,
+    #fa7b34 100%
+  );
 }
 
 html,
@@ -17,4 +27,27 @@ body {
 
 * {
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+hr {
+  border-top: 2px solid var(--main-blue);
+}
+
+button {
+  font-weight: 900;
+}
+
+.action-btn {
+  color: white;
+  background: var(--action-gradient);
+}
+
+.secondary-btn {
+  color: white;
+  background: var(--main-blue);
+}
+
+.basic-btn {
+  color: var(--main-blue);
+  background-color: white;
 }

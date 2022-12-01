@@ -1,0 +1,40 @@
+h1 {
+  color: var(--main-blue);
+  margin-bottom: 0.25em;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+textarea {
+  height: 100px;
+}
+
+.dialog-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+
+  mat-form-field,
+  button,
+  span {
+    flex: 1 1 0px;
+    max-width: 48%;
+
+    &:first-of-type {
+      margin-right: 1em;
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 1.25em;
+  }
+}
+
+::ng-deep {
+  .mat-datepicker-content {
+    box-shadow: none !important;
+  }
+}

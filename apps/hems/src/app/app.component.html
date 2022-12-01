@@ -40,12 +40,13 @@
           mat-list-item
           data-cy="sidebar-dashboard-btn"
           routerLink="dashboard"
+          [ngClass]="title === 'Dashboard' ? 'active-nav' : ''"
         >
           <mat-icon aria-hidden="false" data-cy="icon">dashboard</mat-icon>
           <span
-            class="item-desc"
+            class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="item-desc"
+            data-cy="side-nav-item"
             >Dashboard</span
           >
         </button>
@@ -53,12 +54,13 @@
           mat-list-item
           data-cy="sidebar-checkin-btn"
           routerLink="/checkin"
+          [ngClass]="title === 'Check In / Out' ? 'active-nav' : ''"
         >
           <mat-icon aria-hidden="false" data-cy="icon">book</mat-icon>
           <span
-            class="item-desc"
+            class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="item-desc"
+            data-cy="side-nav-item"
             >Check in / out</span
           >
         </button>
@@ -66,51 +68,55 @@
           mat-list-item
           data-cy="sidebar-long-term-btn"
           routerLink="long-term"
+          [ngClass]="title === 'Long Term' ? 'active-nav' : ''"
         >
           <mat-icon aria-hidden="false" data-cy="icon">receipt_long</mat-icon>
           <span
-            class="item-desc"
+            class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="item-desc"
+            data-cy="side-nav-item"
             >Long Term</span
           >
         </button>
         <button
           mat-list-item
           data-cy="sidebar-car-list-btn"
+          [ngClass]="title === 'Car List' ? 'active-nav' : ''"
           routerLink="/car-list"
         >
           <mat-icon aria-hidden="false" data-cy="icon">directions_car</mat-icon>
           <span
-            class="item-desc"
+            class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="item-desc"
+            data-cy="side-nav-item"
             >Car List</span
           >
         </button>
         <button
           mat-list-item
           data-cy="sidebar-daily-tasks-btn"
+          [ngClass]="title === '/daily-task' ? 'active-nav' : ''"
           routerLink="/daily-tasks"
         >
           <mat-icon aria-hidden="false" data-cy="icon">task</mat-icon>
           <span
-            class="item-desc"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="item-desc"
+            data-cy="side-nav-item"
+            class="side-nav-item"
             >Daily Tasks</span
           >
         </button>
         <button
           mat-list-item
           data-cy="sidebar-assignments-btn"
+          [ngClass]="title === 'Assignments' ? 'active-nav' : ''"
           routerLink="/assignments"
         >
           <mat-icon aria-hidden="false" data-cy="icon">fact_check</mat-icon>
           <span
-            class="item-desc"
+            class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="item-desc"
+            data-cy="side-nav-item"
             >BB Assignments</span
           >
         </button>
@@ -131,21 +137,47 @@
   <mat-sidenav-content class="content" data-cy="content">
     <!-- Navbar -->
     <div id="navbar">
-      <h1 class="title">{{ title }}</h1>
+      <div class="page-title">
+        <div [ngSwitch]="title">
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Dashboard'"
+            >dashboard</mat-icon
+          >
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Account'"
+            >book</mat-icon
+          >
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Luggage List'"
+            >receipt_long</mat-icon
+          >
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Car List'"
+            >directions_car</mat-icon
+          >
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Check In / Out'"
+            >book</mat-icon
+          >
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Daily Tasks'"
+            >task</mat-icon
+          >
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Assignments'"
+            >fact_check</mat-icon
+          >
+        </div>
+        <h1 class="title">{{ title }}</h1>
+      </div>
+
       <div id="navbar-action-buttons-container">
         <button
           mat-flat-button
           class="navbar-item"
           routerLink="/logout"
           data-cy="navbar-account-btn"
-          *ngIf="router.url !== '/login' && router.url !== '/404'"
+          *ngIf="router.url !== '/login'"
         >
           Account
         </button>
         <button
           mat-flat-button
           class="navbar-item"
-          *ngIf="router.url !== '/login' && router.url !== '/404'"
+          *ngIf="router.url !== '/login'"
           (click)="logout()"
           data-cy="navbar-logout-btn"
         >
