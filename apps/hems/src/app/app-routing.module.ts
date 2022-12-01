@@ -24,7 +24,8 @@ const routes: Routes = [
   {
     path: 'checkin',
     component: CheckinComponent,
-  },{
+  },
+  {
     path: 'long-term',
     component: LongtermComponent,
   },
