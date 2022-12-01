@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
+import { AssignmentsComponent } from './pages/assignments/assignments.component';
 import { CarsComponent } from './pages/cars/cars.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'assignments',
-    component: AssignmentsPageComponent,
+    component: AssignmentsComponent,
   },
   { path: '404', component: PageNotFoundComponent }, // PageNotFound for all other page requests
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' }, // Redirect to dashboard page

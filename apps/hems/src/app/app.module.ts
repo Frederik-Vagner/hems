@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { materialModules } from './material.constant';
-import { AssignmentsPageComponent } from './pages/assignments/assignments-page.component';
+import { AssignmentsComponent } from './pages/assignments/assignments.component';
 import { CreateAssignmentDialogComponent } from './pages/assignments/createAssignmentDialog/create-assignment-dialog.component';
 import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 import { CarsComponent } from './pages/cars/cars.component';
@@ -32,7 +32,7 @@ import { TasksComponent } from './pages/tasks/tasks.component';
     CarsComponent,
     TasksComponent,
     CheckinComponent,
-    AssignmentsPageComponent,
+    AssignmentsComponent,
     LongtermComponent,
     CreateCarDialogComponent,
     UpdateCheckinDialogComponent,
