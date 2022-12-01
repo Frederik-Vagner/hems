@@ -7,11 +7,11 @@ import { CreateAssignmentDialogComponent } from './createAssignmentDialog/create
 import { UpdateAssignmentDialogComponent } from './updateAssignmentDialog/update-assignment-dialog.component';
 
 @Component({
-  selector: 'hems-assignments-page',
-  templateUrl: './assignments-page.component.html',
+  selector: 'hems-assignments',
+  templateUrl: './assignments.component.html',
   styleUrls: ['../../../assets/table.scss'],
 })
-export class AssignmentsPageComponent implements OnInit {
+export class AssignmentsComponent implements OnInit {
   assignmentList: IAssignment[] = [];
 
   assignmentColumns = [
