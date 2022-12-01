@@ -1,23 +1,30 @@
-<form (ngSubmit)="create()" [formGroup]="createCarForm">
+<form (ngSubmit)="onSubmit()" [formGroup]="createCarForm">
   <h1>Add Car</h1>
   <hr />
 
   <div class="dialog-row">
     <mat-form-field appearance="fill">
       <mat-label>Room</mat-label>
-      <input type="text" formControlName="room" matInput placeholder="Room" />
+      <input
+        #room
+        type="text"
+        formControlName="room"
+        matInput
+        placeholder="Room"
+      />
       <mat-error
         *ngIf="
           createCarForm.get('room')?.invalid && createCarForm.get('room')?.dirty
         "
       >
-        Required
+        Must be a number from 100-999
       </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Tag Nr.</mat-label>
       <input
+        #tagNr
         type="text"
         formControlName="tagNr"
         matInput
@@ -36,13 +43,25 @@
 
   <div class="dialog-row">
     <mat-form-field appearance="fill">
-      <mat-label>Arirval Date</mat-label>
+      <mat-label>Arrival Date</mat-label>
       <input
-        type="text"
-        formControlName="arrivalDate"
+        #arrivalDate
         matInput
+        [ngxMatDatetimePicker]="arrivalDatePicker"
         placeholder="Arrival Date"
+        formControlName="arrivalDate"
       />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(arrivalDatePicker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #arrivalDatePicker
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
           createCarForm.get('arrivalDate')?.invalid &&
@@ -56,11 +75,23 @@
     <mat-form-field appearance="fill">
       <mat-label>Departure Date</mat-label>
       <input
-        type="text"
-        formControlName="departureDate"
+        #departureDate
         matInput
+        [ngxMatDatetimePicker]="departureDatePicker"
+        formControlName="departureDate"
         placeholder="Departure Date"
       />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(departureDatePicker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #departureDatePicker
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
           createCarForm.get('departureDate')?.invalid &&
@@ -75,7 +106,13 @@
   <div class="dialog-row">
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
-      <input type="text" formControlName="name" matInput placeholder="Name" />
+      <input
+        #name
+        type="text"
+        formControlName="name"
+        matInput
+        placeholder="Name"
+      />
       <mat-error
         *ngIf="
           createCarForm.get('name')?.invalid && createCarForm.get('name')?.dirty
@@ -88,6 +125,7 @@
     <mat-form-field appearance="fill">
       <mat-label>License Plate</mat-label>
       <input
+        #licensePlate
         type="text"
         formControlName="licensePlate"
         matInput
@@ -108,6 +146,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Exp.</mat-label>
       <input
+        #expirationDate
         type="text"
         formControlName="expirationDate"
         matInput
@@ -126,6 +165,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Pick Up Time</mat-label>
       <input
+        #pickupTime
         type="text"
         formControlName="pickupTime"
         matInput
@@ -146,6 +186,7 @@
     <mat-form-field appearance="fill">
       <mat-label>BB Down</mat-label>
       <input
+        #bbDown
         type="text"
         formControlName="bbDown"
         matInput
@@ -162,17 +203,18 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Comments</mat-label>
+      <mat-label>Location</mat-label>
       <input
+        #location
         type="text"
-        formControlName="comments"
+        formControlName="location"
         matInput
-        placeholder="Comments"
+        placeholder="Front of hotel"
       />
       <mat-error
         *ngIf="
-          createCarForm.get('comments')?.invalid &&
-          createCarForm.get('comments')?.dirty
+          createCarForm.get('location')?.invalid &&
+          createCarForm.get('location')?.dirty
         "
       >
         Required
@@ -180,12 +222,31 @@
     </mat-form-field>
   </div>
 
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
+    <input
+      #comments
+      type="text"
+      formControlName="comments"
+      matInput
+      placeholder="Comments"
+    />
+    <mat-error
+      *ngIf="
+        createCarForm.get('comments')?.invalid &&
+        createCarForm.get('comments')?.dirty
+      "
+    >
+      Required
+    </mat-error>
+  </mat-form-field>
+
   <label class="checkbox-container">
     The guest has given consent to the processing of personal data
     <input
       type="checkbox"
-      [checked]="guestApprovedGDPR"
-      (change)="guestApprovedGDPR = !guestApprovedGDPR"
+      [checked]="guestHasApproved"
+      (change)="guestHasApproved = !guestHasApproved"
     />
     <span class="checkmark"></span>
   </label>

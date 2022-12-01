@@ -75,8 +75,8 @@ export class CarsComponent implements OnInit {
       error: (error) => {
         console.error(error);
         this.snackBar.open(
-          'Check Out data have failed to load',
-          'Imma try again later',
+          'Check Out data have failed to load, please try checking your connection.',
+          'Okay',
           {
             duration: 10000,
           }
