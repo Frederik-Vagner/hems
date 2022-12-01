@@ -14,6 +14,14 @@ const routes: Routes = [
     component: DashboardComponent,
   }, // AuthGuard ensures that only authorized users can view this route
   {
+    path: 'checkin',
+    component: CheckinComponent,
+  },
+  {
+    path: 'long-term',
+    component: LongtermComponent,
+  },
+  {
     path: 'car-list',
     component: CarsComponent,
   },
@@ -22,12 +30,8 @@ const routes: Routes = [
     component: TasksComponent,
   },
   {
-    path: 'checkin',
-    component: CheckinComponent,
-  },
-  {
-    path: 'long-term',
-    component: LongtermComponent,
+    path: 'assignments',
+    component: AssignmentsPageComponent,
   },
   { path: '404', component: PageNotFoundComponent }, // PageNotFound for all other page requests
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' }, // Redirect to dashboard page
