@@ -90,7 +90,28 @@ export class CreateCarDialogComponent {
   }
 
   createCarListEntry(): void {
-    this.isLoading = true;
+    const skrt = {
+      room: this.createCarForm.get('room')?.value,
+      tagNr: this.createCarForm.get('tagNr')?.value,
+      arrivalDate: new Date(this.createCarForm.get('arrivalDate')?.value),
+      departureDate: new Date(this.createCarForm.get('departureDate')?.value),
+      name: this.createCarForm.get('name')?.value,
+      licensePlate: this.createCarForm.get('licensePlate')?.value,
+      expirationDate: new Date(
+        this.createCarForm.get('expirationDate')?.value
+      ),
+      pickupTime: new Date(this.createCarForm.get('pickupTime')?.value),
+      deliveryTime: new Date(this.createCarForm.get('deliveryTime')?.value),
+      bbDown: this.createCarForm.get('bbDown')?.value,
+      bbUp: this.createCarForm.get('bbUp')?.value,
+      location: this.createCarForm.get('location')?.value,
+      parkingLot: this.createCarForm.get('parkingLot')?.value,
+      bbOut: this.createCarForm.get('bbOut')?.value,
+      comments: this.createCarForm.get('comments')?.value,
+      charged: this.createCarForm.get('charged')?.value,
+    };
+    console.log(skrt);
+    
     this.service
       .createCar({
         room: this.createCarForm.get('room')?.value,
