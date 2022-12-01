@@ -14,21 +14,9 @@ export class TasksComponent implements OnInit {
 
   isLoading = false;
 
-  morningColumns = [
-    'time', 
-    'task', 
-    'done', 
-    'initials',
-    'actions'
-  ];
+  morningColumns = ['time', 'task', 'done', 'initials', 'actions'];
 
-  eveningColumns = [
-    'time', 
-    'task', 
-    'done', 
-    'initials',
-    'actions'
-  ];
+  eveningColumns = ['time', 'task', 'done', 'initials', 'actions'];
 
   constructor(
     private readonly tasksService: TasksService,
@@ -41,9 +29,14 @@ export class TasksComponent implements OnInit {
 
   fetchTasks(): void {
     this.isLoading = true;
-    this.tasksService.get(new Date()).subscribe({      
+    this.tasksService.get(new Date()).subscribe({
       next: (tasks) => {
-        this.morningTasks = tasks.filter(task => task.listName === 'Morning');
+        this.morningTasks = tasks.tasks.filter(
+          (task) => task.listName === 'Morning'
+        );
+        this.eveningTasks = tasks.tasks.filter(
+          (task) => task.listName === 'Evening'
+        );
       },
       error: (error) => {
         this.isLoading = false;
@@ -57,22 +50,5 @@ export class TasksComponent implements OnInit {
         );
       },
     });
-    this.tasksService.get(new Date()).subscribe({      
-      next: (tasks) => {
-        this.eveningTasks = tasks.filter(task => task.listName==='Evening')
-        },
-      error: (error) => {
-        this.isLoading = false;
-        console.error(error);
-        this.snackBar.open(
-          'Tasks have failed to load',
-          'Imma try again later',
-          {
-            duration: 10000,
-          }
-        );
-      },
-    });
-
   }
 }

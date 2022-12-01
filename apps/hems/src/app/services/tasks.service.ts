@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ITask } from '@hems/interfaces';
+import { GetTasksResponse } from '@hems/interfaces';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
@@ -15,8 +15,8 @@ export class TasksService {
    *
    * @returns an observable with the tasks for the given day.
    */
-  public get(createdAt: Date): Observable<ITask[]> {
-    return this.http.get<ITask[]>(
+  public get(createdAt: Date): Observable<GetTasksResponse> {
+    return this.http.get<GetTasksResponse>(
       `${env.apiUrl}/tasks?createdAt=${createdAt.toISOString()}`
     );
   }
