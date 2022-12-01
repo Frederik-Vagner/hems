@@ -29,11 +29,7 @@ import { TasksComponent } from './pages/tasks/tasks.component';
     DashboardComponent,
     PageNotFoundComponent,
     CarsComponent,
-<<<<<<< HEAD
     TasksComponent,
-=======
-    LongtermComponent,
->>>>>>> main
     CheckinComponent,
     AssignmentsPageComponent,
     CreateCarComponent,
@@ -44,6 +40,7 @@ import { TasksComponent } from './pages/tasks/tasks.component';
     CreateCheckoutDialogComponent,
     CreateAssignmentDialogComponent,
     UpdateAssignmentDialogComponent,
+    LongtermComponent,
   ],
   imports: [
     BrowserModule,

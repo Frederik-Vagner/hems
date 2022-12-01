@@ -11,6 +11,7 @@ import { TasksService } from '../../services/tasks.service';
 export class TasksComponent implements OnInit {
   morningTasks: ITask[] = [];
   eveningTasks: ITask[] = [];
+
   isLoading = false;
 
   morningColumns = [
@@ -40,16 +41,9 @@ export class TasksComponent implements OnInit {
 
   fetchTasks(): void {
     this.isLoading = true;
-    this.tasksService.get(new Date()).subscribe({
+    this.tasksService.get(new Date()).subscribe({      
       next: (tasks) => {
-        tasks.forEach(task => {
-          if (task.listName === 'Morning') {
-            this.morningTasks.push(task)
-          } else if (task.listName === 'Evening') {
-            this.eveningTasks.push(task)
-          }
-        })
-        console.log(tasks);
+        this.morningTasks = tasks.filter(task => task.listName === 'Morning');
       },
       error: (error) => {
         this.isLoading = false;
@@ -63,5 +57,22 @@ export class TasksComponent implements OnInit {
         );
       },
     });
+    this.tasksService.get(new Date()).subscribe({      
+      next: (tasks) => {
+        this.eveningTasks = tasks.filter(task => task.listName==='Evening')
+        },
+      error: (error) => {
+        this.isLoading = false;
+        console.error(error);
+        this.snackBar.open(
+          'Tasks have failed to load',
+          'Imma try again later',
+          {
+            duration: 10000,
+          }
+        );
+      },
+    });
+
   }
 }

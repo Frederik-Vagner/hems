@@ -18,21 +18,15 @@ const routes: Routes = [
     component: CarsComponent,
   },
   {
-<<<<<<< HEAD
     path: 'daily-tasks',
     component: TasksComponent,
-=======
-    path: 'long-term',
-    component: LongtermComponent,
-  },
-  {
-    path: 'assignments',
-    component: AssignmentsPageComponent,
->>>>>>> main
   },
   {
     path: 'checkin',
     component: CheckinComponent,
+  },{
+    path: 'long-term',
+    component: LongtermComponent,
   },
   { path: '404', component: PageNotFoundComponent }, // PageNotFound for all other page requests
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' }, // Redirect to dashboard page
