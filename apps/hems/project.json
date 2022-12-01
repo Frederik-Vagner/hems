@@ -19,6 +19,7 @@
           "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
           "apps/hems/src/styles.css"
         ],
+        "allowedCommonJsDependencies": ["validator", "@nestjs/swagger"],
         "scripts": []
       },
       "configurations": {
@@ -26,8 +27,8 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
             },
             {
               "type": "anyComponentStyle",

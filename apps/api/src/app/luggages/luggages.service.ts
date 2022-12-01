@@ -1,6 +1,5 @@
 import {
   CreateLuggageRequest,
-  Location,
   LuggageSortOptions,
   LuggageType,
   SortOrder,
@@ -23,7 +22,7 @@ export class LuggagesService {
     luggageType: LuggageType,
     createdAt: Date,
     status: boolean | undefined,
-    location: Location | undefined,
+    location: string | undefined,
     search: string | undefined,
     sortBy: LuggageSortOptions | undefined,
     sortOrder: SortOrder | undefined
@@ -73,7 +72,10 @@ export class LuggagesService {
               { ...baseConditions, room: searchCondition },
               { ...baseConditions, name: searchCondition },
             ],
-      order: this.getSortingConditions(sortBy, sortOrder),
+      order: {
+        completedAt: SortOrder.DESCENDING,
+        ...this.getSortingConditions(sortBy, sortOrder),
+      },
     });
   }
 
@@ -102,6 +104,12 @@ export class LuggagesService {
         return { arrivalTime: sortOrder };
       case LuggageSortOptions.COMPLETED_AT:
         return { completedAt: sortOrder };
+      case LuggageSortOptions.CREATED_AT:
+        return { createdAt: sortOrder };
+      case LuggageSortOptions.NAME:
+        return { name: sortOrder };
+      case LuggageSortOptions.ROOM:
+        return { room: sortOrder };
       default:
         return undefined;
     }
