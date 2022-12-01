@@ -144,14 +144,26 @@
 
   <div class="dialog-row">
     <mat-form-field appearance="fill">
-      <mat-label>Exp.</mat-label>
+      <mat-label>Expiration Date</mat-label>
       <input
         #expirationDate
         type="text"
         formControlName="expirationDate"
         matInput
         placeholder="Expiration Date"
+        [ngxMatDatetimePicker]="arrivalDatePicker"
       />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(arrivalDatePicker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #arrivalDatePicker
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
           createCarForm.get('expirationDate')?.invalid &&
@@ -165,12 +177,24 @@
     <mat-form-field appearance="fill">
       <mat-label>Pick Up Time</mat-label>
       <input
-        #pickupTime
-        type="text"
-        formControlName="pickupTime"
+        #arrivalDate
         matInput
+        type="text"
+        [ngxMatDatetimePicker]="arrivalDatePicker"
+        formControlName="pickupTime"
         placeholder="Pick Up Time"
       />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(arrivalDatePicker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #arrivalDatePicker
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
           createCarForm.get('pickupTime')?.invalid &&

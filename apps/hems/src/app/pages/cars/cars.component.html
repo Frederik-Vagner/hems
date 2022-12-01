@@ -1,7 +1,19 @@
 <main>
   <div class="table-actions">
     <div>
-      <mat-form-field appearance="fill">
+      <mat-form-field class="remove-error-message" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input
+          type="text"
+          aria-label="search"
+          [(ngModel)]="search"
+          placeholder="Search ..."
+          (change)="fetchCarList()"
+          matInput
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 150px">
         <mat-label>Sort By</mat-label>
         <mat-select
           [(value)]="sortBy"
@@ -12,18 +24,6 @@
           <mat-option value="deliveryTime">Delivery time</mat-option>
           <mat-option value="pickupTime">Pick up time</mat-option>
         </mat-select>
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Search</mat-label>
-        <input
-          type="text"
-          aria-label="search"
-          [(ngModel)]="search"
-          placeholder="Search ..."
-          (change)="fetchCarList()"
-          matInput
-        />
       </mat-form-field>
     </div>
 
@@ -52,16 +52,18 @@
     </ng-container>
 
     <ng-container matColumnDef="arrivalDate">
-      <th mat-header-cell *matHeaderCellDef>arr</th>
+      <th mat-header-cell *matHeaderCellDef>Arr.</th>
       <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+        {{ element.arrivalDate ? (element.arrivalDate | date: 'MM/dd') : '-' }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="departureDate">
-      <th mat-header-cell *matHeaderCellDef>dep</th>
+      <th mat-header-cell *matHeaderCellDef>Dep.</th>
       <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+        {{
+          element.departureDate ? (element.departureDate | date: 'DD/dd') : '-'
+        }}
       </td>
     </ng-container>
 
@@ -80,14 +82,22 @@
     <ng-container matColumnDef="expirationDateTime">
       <th mat-header-cell *matHeaderCellDef>Exp.</th>
       <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+        {{
+          element.expirationDate
+            ? (element.expirationDate | date: 'MM/dd HH:mm')
+            : '-'
+        }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="pickupDateTime">
       <th mat-header-cell *matHeaderCellDef>Pick Up Time</th>
       <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+        {{
+          element.pickupTime
+            ? (element.pickupTime | date: 'MM/dd HH:mm')
+            : 'Call down'
+        }}
       </td>
     </ng-container>
 
@@ -114,7 +124,11 @@
     <ng-container matColumnDef="deliveryDateTime">
       <th mat-header-cell *matHeaderCellDef>Del.</th>
       <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+        {{
+          element.deliveryTime
+            ? (element.deliveryTime | date: 'MM/dd HH:mm')
+            : '-'
+        }}
       </td>
     </ng-container>
 
