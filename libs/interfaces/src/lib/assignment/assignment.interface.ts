@@ -4,7 +4,7 @@ export interface IAssignment extends ICompletedAt {
   assignmentId: string;
   room?: string;
   task?: string;
-  comments: string;
+  comments?: string;
   receivedBy: string;
   performedBy?: string;
   receivedAt: Date;
@@ -13,7 +13,7 @@ export interface IAssignment extends ICompletedAt {
 export interface ICreateAssignmentRequest {
   room?: string;
   task?: string;
-  comments: string;
+  comments?: string;
   receivedBy: string;
   performedBy?: string;
   receivedAt: Date;

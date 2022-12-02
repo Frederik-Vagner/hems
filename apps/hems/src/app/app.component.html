@@ -165,6 +165,27 @@
       </div>
 
       <div id="navbar-action-buttons-container">
+        <mat-form-field autocomplete="off" appearance="fill">
+          <mat-label>Display Date</mat-label>
+          <input
+            matInput
+            [ngxMatDatetimePicker]="displayDatePicker"
+            placeholder="Display Date"
+            [(ngModel)]="displayDate"
+            (dateChange)="onDisplayDateChange()"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="$any(displayDatePicker)"
+          ></mat-datepicker-toggle>
+          <ngx-mat-datetime-picker
+            #displayDatePicker
+            [showSpinners]="true"
+            [showSeconds]="false"
+            [touchUi]="true"
+          >
+          </ngx-mat-datetime-picker>
+        </mat-form-field>
         <button
           mat-flat-button
           class="navbar-item"

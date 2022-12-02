@@ -3,6 +3,8 @@ import { CarSortOptions, ICar, SortOrder } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { DisplayDateService } from '../../services/display-date.service';
+import { CreateCarDialogComponent } from './modal/create/create-car-dialog.component';
 import { CreateCarDialogComponent } from './modal/createCarEntryDialog/create-car-dialog.component';
 import { UpdateAssignmentDialogComponent } from '../assignments/updateAssignmentDialog/update-assignment-dialog.component';
 
@@ -13,6 +15,7 @@ import { UpdateAssignmentDialogComponent } from '../assignments/updateAssignment
 })
 export class CarsComponent implements OnInit {
   carList: ICar[] = [];
+  displayDate = new Date();
   sortBy: CarSortOptions | undefined;
   sortOrder: SortOrder = SortOrder.ASCENDING;
   search = '';
@@ -34,13 +37,21 @@ export class CarsComponent implements OnInit {
     'bbOut',
     'comment',
     'charged',
+    'actions',
+   
   ];
 
   constructor(
     private readonly carService: CarService,
+    private displayDateService: DisplayDateService,
     private snackBar: MatSnackBar,
     private dialogRef: MatDialog
-  ) {}
+  ) {
+    this.displayDateService.getDisplayDateSubject().subscribe((date) => {
+      this.displayDate = new Date(date);
+      this.fetchCarList();
+    });
+  }
 
   openCreateCarDialog() {
     this.dialogRef.open(CreateCarDialogComponent, { width: '500px' });
@@ -69,7 +80,7 @@ export class CarsComponent implements OnInit {
   }
 
   fetchCarList(): void {
-    this.carService.getCar(new Date()).subscribe({
+    this.carService.getCar(this.displayDate).subscribe({
       next: (car) => {
         this.carList = car;
         console.log('checkout', car);

@@ -3,16 +3,18 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IAssignment } from '@hems/interfaces';
 import { AssignmentsService } from '../../services/assignments.service';
+import { DisplayDateService } from '../../services/display-date.service';
 import { CreateAssignmentDialogComponent } from './createAssignmentDialog/create-assignment-dialog.component';
 import { UpdateAssignmentDialogComponent } from './updateAssignmentDialog/update-assignment-dialog.component';
 
 @Component({
-  selector: 'hems-assignments-page',
-  templateUrl: './assignments-page.component.html',
+  selector: 'hems-assignments',
+  templateUrl: './assignments.component.html',
   styleUrls: ['../../../assets/table.scss'],
 })
-export class AssignmentsPageComponent implements OnInit {
+export class AssignmentsComponent implements OnInit {
   assignmentList: IAssignment[] = [];
+  displayDate = new Date();
 
   assignmentColumns = [
     'room',
@@ -27,15 +29,21 @@ export class AssignmentsPageComponent implements OnInit {
   constructor(
     private assignmentsService: AssignmentsService,
     private snackBar: MatSnackBar,
-    private dialog: MatDialog
-  ) {}
+    private dialog: MatDialog,
+    private displayDateService: DisplayDateService
+  ) {
+    this.displayDateService.getDisplayDateSubject().subscribe((date) => {
+      this.displayDate = new Date(date);
+      this.fetchAssignments();
+    });
+  }
 
   ngOnInit(): void {
     this.fetchAssignments();
   }
 
   fetchAssignments(): void {
-    this.assignmentsService.getAssignments(new Date()).subscribe({
+    this.assignmentsService.getAssignments(this.displayDate).subscribe({
       next: (assignments) => {
         this.assignmentList = assignments;
       },
