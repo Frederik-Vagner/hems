@@ -29,14 +29,10 @@ export class CreateCarDialogComponent {
   @ViewChild('departureDate') departureDateInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
   @ViewChild('licensePlate') licensePlateInput!: ElementRef;
-  @ViewChild('expirationDate') expirationDateInput!: ElementRef;
-  @ViewChild('pickupTime') pickupTimeInput!: ElementRef;
-  @ViewChild('bbDown') bbDownInput!: ElementRef;
   @ViewChild('location') locationInput!: ElementRef;
-  @ViewChild('comments') commentsInput!: ElementRef;
 
   constructor(
-    private service: CarService,
+    private carService: CarService,
     private snackbar: MatSnackBar,
     private dialog: MatDialog
   ) {
@@ -112,7 +108,7 @@ export class CreateCarDialogComponent {
     };
     console.log(skrt);
     
-    this.service
+    this.carService
       .createCar({
         room: this.createCarForm.get('room')?.value,
         tagNr: this.createCarForm.get('tagNr')?.value,

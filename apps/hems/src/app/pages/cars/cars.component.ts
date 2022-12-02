@@ -3,7 +3,8 @@ import { CarSortOptions, ICar, SortOrder } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateCarDialogComponent } from './modal/create/create-car-dialog.component';
+import { CreateCarDialogComponent } from './modal/createCarEntryDialog/create-car-dialog.component';
+import { UpdateAssignmentDialogComponent } from '../assignments/updateAssignmentDialog/update-assignment-dialog.component';
 
 @Component({
   selector: 'hems-cars',
@@ -46,9 +47,10 @@ export class CarsComponent implements OnInit {
   }
 
   openDialogEdit(carListEntry: ICar) {
-    console.log(carListEntry);
-    
-    //this.dialogRef.open();
+    this.dialogRef.open(UpdateAssignmentDialogComponent, {
+      width: '500px',
+      data: carListEntry,
+    });
   }
 
   ngOnInit(): void {
