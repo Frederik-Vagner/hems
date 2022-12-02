@@ -56,6 +56,11 @@ export class CreateLuggageRequest implements ICreateLuggageRequest {
   @ApiModelProperty({ example: 'ML' })
   @IsOptional()
   bbOut?: string;
+
+  @ApiModelProperty({ example: Date.now() })
+  @IsOptional()
+  @IsDateString()
+  completedAt?: Date;
 }
 
 export class UpdateLuggageRequest implements IUpdateLuggageRequest {
