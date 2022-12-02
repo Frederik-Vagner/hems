@@ -43,7 +43,10 @@ export class AssignmentsService {
         { ...baseConditions, performedBy: searchCondition },
         { ...baseConditions, comments: searchCondition },
       ],
-      order: this.getSortingConditions(sortBy, sortOrder),
+      order: {
+        completedAt: SortOrder.DESCENDING,
+        ...this.getSortingConditions(sortBy, sortOrder),
+      },
     });
   }
 
