@@ -34,8 +34,8 @@ export class CreateLuggageRequest implements ICreateLuggageRequest {
   bags!: string;
 
   @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
-  @IsNotEmpty()
-  description!: string;
+  @IsOptional()
+  description?: string;
 
   @ApiModelProperty({ example: '8912' })
   @IsNotEmpty()
