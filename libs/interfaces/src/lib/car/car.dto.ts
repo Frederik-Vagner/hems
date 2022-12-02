@@ -53,7 +53,7 @@ export class CreateCarRequest implements ICreateCarRequest {
   bbUp?: string;
 
   @ApiModelProperty({ example: 'Front' })
-  @IsOptional()
+  @IsNotEmpty()
   location!: string;
 
   @ApiModelProperty({ example: 'c102' })
@@ -69,7 +69,7 @@ export class CreateCarRequest implements ICreateCarRequest {
   comments?: string;
 
   @ApiModelProperty({ example: true })
-  @IsOptional()
+  @IsNotEmpty()
   charged!: boolean;
 }
 
