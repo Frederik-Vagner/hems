@@ -15,8 +15,8 @@ export class CreateAssignmentRequest implements ICreateAssignmentRequest {
   task?: string;
 
   @ApiModelProperty({ example: 'New keys and package delivery' })
-  @IsNotEmpty()
-  comments!: string;
+  @IsOptional()
+  comments?: string;
 
   @ApiModelProperty({ example: 'Rec' })
   @IsNotEmpty()
