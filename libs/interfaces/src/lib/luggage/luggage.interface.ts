@@ -12,7 +12,7 @@ export interface ILuggage extends ICompletedAt {
   description?: string;
   tagNr: string;
   location: string;
-  bbDown: string; // Who took the luggage from the guest.
+  bbDown?: string; // Who took the luggage from the guest.
   bbLr: string; // Who put the luggage in the storage room.
   bbOut?: string; // Who gave the luggage to the guest.
 }
@@ -26,7 +26,7 @@ export interface ICreateLuggageRequest {
   arrivalTime?: Date;
   tagNr: string;
   location: string;
-  bbDown: string; 
+  bbDown?: string; 
   bbLr: string; 
   bbOut?: string; // probably shouldnt actually be part of creating the longterm -> Teodor, this is why it is marked as an optional field... no want, no provide 
   luggageType: LuggageType;

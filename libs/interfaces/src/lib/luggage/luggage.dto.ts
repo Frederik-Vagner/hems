@@ -46,8 +46,8 @@ export class CreateLuggageRequest implements ICreateLuggageRequest {
   location!: string;
 
   @ApiModelProperty({ example: 'TJ' })
-  @IsNotEmpty()
-  bbDown!: string;
+  @IsOptional()
+  bbDown?: string;
 
   @ApiModelProperty({ example: 'TJ' })
   @IsNotEmpty()
