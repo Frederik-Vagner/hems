@@ -66,7 +66,7 @@ export class CreateCarRequest implements ICreateCarRequest {
 
   @ApiModelProperty({ example: 'luxurious car' })
   @IsOptional()
-  comments!: string;
+  comments?: string;
 
   @ApiModelProperty({ example: true })
   @IsOptional()
