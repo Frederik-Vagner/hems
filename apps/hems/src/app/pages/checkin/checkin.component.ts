@@ -63,7 +63,7 @@ export class CheckinComponent implements OnInit {
     this.luggageService.getCheckin(new Date()).subscribe({
       next: (luggage) => {
         this.checkinLuggage = luggage;
-        this.reorderCheckinData();
+        console.log(this.checkinLuggage)
       },
       error: (error) => {
         this.isLoadingCheckin = false;
@@ -81,7 +81,6 @@ export class CheckinComponent implements OnInit {
     this.luggageService.getCheckout(new Date()).subscribe({
       next: (luggage) => {
         this.checkoutLuggage = luggage;
-        this.reorderCheckoutData();
       },
       error: (error) => {
         this.isLoadingCheckout = false;
@@ -95,32 +94,6 @@ export class CheckinComponent implements OnInit {
         );
       },
     });
-  }
-
-  /**
-   * Makes it so completed tasks are at the bottom of the list
-   */
-  reorderCheckinData(): void {
-    const uncompletedItems = this.checkinLuggage.filter(
-      (item) => !item.completedAt
-    );
-    const completedItems = this.checkinLuggage.filter(
-      (item) => item.completedAt
-    );
-    this.checkinLuggage = uncompletedItems.concat(completedItems);
-  }
-
-  /**
-   * Makes it so completed tasks are at the bottom of the list
-   */
-  reorderCheckoutData(): void {
-    const uncompletedItems = this.checkoutLuggage.filter(
-      (item) => !item.completedAt
-    );
-    const completedItems = this.checkoutLuggage.filter(
-      (item) => item.completedAt
-    );
-    this.checkoutLuggage = uncompletedItems.concat(completedItems);
   }
 
   openCheckinEditDialog(luggage: ILuggage): void {
