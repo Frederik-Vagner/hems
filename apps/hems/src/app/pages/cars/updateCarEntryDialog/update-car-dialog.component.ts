@@ -75,13 +75,6 @@ export class UpdateCarDialogComponent {
   }
 
   onSubmit() {
-    if (!this.guestHasApproved) {
-      this.snackbar.open('Guest needs to approve storing their data.', 'Okay', {
-        duration: 10000,
-      });
-      return;
-    }
-
     if (!this.updateCarForm.valid) {
       if (this.updateCarForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
@@ -122,6 +115,8 @@ export class UpdateCarDialogComponent {
       comments: this.updateCarForm.get('comments')?.value,
       charged: this.updateCarForm.get('charged')?.value,
     };
+    console.log(skrt);
+    
 
     this.carService
       .updateCar(this.data.carId, {
