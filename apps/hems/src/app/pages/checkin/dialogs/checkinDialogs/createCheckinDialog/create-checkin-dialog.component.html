@@ -47,7 +47,7 @@
         data-cy="update-checkin-name"
         formControlName="name"
         matInput
-        placeholder="John Doe"
+        placeholder="Name"
       />
       <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
         Required
@@ -60,7 +60,7 @@
         #arrivalTime
         matInput
         [ngxMatDatetimePicker]="pickerArrival"
-        placeholder="Time of Arrival"
+        placeholder="DD/MM HH:mm"
         formControlName="arrivalTime"
       />
       <mat-datepicker-toggle
@@ -130,7 +130,7 @@
         data-cy="update-checkin-name"
         formControlName="bbLr"
         matInput
-        placeholder="JD"
+        placeholder="Initials"
       />
       <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
         Required

@@ -10,7 +10,7 @@
         type="text"
         formControlName="room"
         matInput
-        placeholder="Room"
+        placeholder="123"
       />
       <mat-error
         *ngIf="
@@ -28,7 +28,7 @@
         type="text"
         formControlName="tagNr"
         matInput
-        placeholder="Tag Number"
+        placeholder="123"
       />
       <mat-error
         *ngIf="
@@ -48,7 +48,7 @@
         #arrivalDate
         matInput
         [ngxMatDatetimePicker]="arrivalDatePicker"
-        placeholder="Arrival Date"
+        placeholder="DD/MM HH:mm"
         formControlName="arrivalDate"
       />
       <mat-datepicker-toggle
@@ -79,7 +79,7 @@
         matInput
         [ngxMatDatetimePicker]="departureDatePicker"
         formControlName="departureDate"
-        placeholder="Departure Date"
+        placeholder="DD/MM HH:mm"
       />
       <mat-datepicker-toggle
         matSuffix
@@ -151,7 +151,7 @@
         formControlName="expirationDate"
         [ngxMatDatetimePicker]="expirationDatePicker"
         matInput
-        placeholder="Expiration Date"
+        placeholder="DD/MM HH:mm"
       />
       <mat-datepicker-toggle
         matSuffix
@@ -182,7 +182,7 @@
         type="text"
         [ngxMatDatetimePicker]="pickupTimePicker"
         formControlName="pickupTime"
-        placeholder="Pick Up Time"
+        placeholder="DD/MM HH:mm"
       />
       <mat-datepicker-toggle
         matSuffix
@@ -227,6 +227,27 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
+      <mat-label>BB Up</mat-label>
+      <input
+        #bbUp
+        type="text"
+        formControlName="bbUp"
+        matInput
+        placeholder="BB Up"
+      />
+      <mat-error
+        *ngIf="
+          updateCarForm.get('bbUp')?.invalid &&
+          updateCarForm.get('bbUp')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field appearance="fill">
       <mat-label>Location</mat-label>
       <input
         #location
@@ -239,6 +260,56 @@
         *ngIf="
           updateCarForm.get('location')?.invalid &&
           updateCarForm.get('location')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>parkingLot</mat-label>
+      <input
+        type="text"
+        formControlName="parkingLot"
+        matInput
+        placeholder="Front of hotel"
+      />
+      <mat-error
+        *ngIf="
+          updateCarForm.get('parkingLot')?.invalid &&
+          updateCarForm.get('parkingLot')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Delivery time</mat-label>
+      <input
+        matInput
+        type="text"
+        [ngxMatDatetimePicker]="deliveryTimePicker"
+        formControlName="deliveryTime"
+        placeholder="DD/MM HH:mm"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(deliveryTimePicker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #deliveryTimePicker
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+      <mat-error
+        *ngIf="
+          updateCarForm.get('deliveryTime')?.invalid &&
+          updateCarForm.get('deliveryTime')?.dirty
         "
       >
         Required
