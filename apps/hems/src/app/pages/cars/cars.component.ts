@@ -10,7 +10,7 @@ import { UpdateAssignmentDialogComponent } from '../assignments/updateAssignment
 @Component({
   selector: 'hems-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['../../../assets/table.scss'],
+  styleUrls: ['../../../assets/styles/table.scss'],
 })
 export class CarsComponent implements OnInit {
   carList: ICar[] = [];

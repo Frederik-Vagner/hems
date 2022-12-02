@@ -14,8 +14,8 @@ import { LuggageService } from '../../../services/luggage.service';
   selector: 'hems-create-long-term-dialog',
   templateUrl: './create-long-term-dialog.component.html',
   styleUrls: [
-    '../../../../assets/checkbox.scss',
-    '../../../../assets/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
 export class CreateLongTermDialogComponent implements OnInit {

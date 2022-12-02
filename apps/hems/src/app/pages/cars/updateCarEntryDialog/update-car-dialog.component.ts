@@ -18,7 +18,7 @@ import { CarService } from 'apps/hems/src/app/services/car.service';
 @Component({
   selector: 'hems-update-car-dialog',
   templateUrl: './update-car-dialog.component.html',
-  styleUrls: ['../../../../assets/dialog.scss'],
+  styleUrls: ['../../../../assets/styles/dialog.scss'],
 })
 export class UpdateCarDialogComponent {
   updateCarForm: UntypedFormGroup;

@@ -12,7 +12,7 @@ import { AssignmentsService } from '../../../services/assignments.service';
 @Component({
   selector: 'hems-create-assignment-dialog',
   templateUrl: './create-assignment-dialog.component.html',
-  styleUrls: ['../../../../assets/dialog.scss'],
+  styleUrls: ['../../../../assets/styles/dialog.scss'],
 })
 export class CreateAssignmentDialogComponent implements OnInit {
   createAssignmentForm = new UntypedFormGroup({});

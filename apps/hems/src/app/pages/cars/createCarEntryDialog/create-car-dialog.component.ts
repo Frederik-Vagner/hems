@@ -13,8 +13,8 @@ import { CarService } from '../../../services/car.service';
   selector: 'hems-create-car-dialog',
   templateUrl: './create-car-dialog.component.html',
   styleUrls: [
-    '../../../../assets/dialog.scss',
-    '../../../../assets/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
   ],
 })
 export class CreateCarDialogComponent {

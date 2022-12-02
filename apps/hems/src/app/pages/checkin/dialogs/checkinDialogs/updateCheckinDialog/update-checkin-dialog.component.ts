@@ -18,8 +18,8 @@ import { LuggageService } from '../../../../../services/luggage.service';
   selector: 'hems-update-checkin-dialog',
   templateUrl: './update-checkin-dialog.component.html',
   styleUrls: [
-    '../../../../../../assets/checkbox.scss',
-    '../../../../../../assets/dialog.scss',
+    '../../../../../../assets/styles/checkbox.scss',
+    '../../../../../../assets/styles/dialog.scss',
   ],
 })
 export class UpdateCheckinDialogComponent {
