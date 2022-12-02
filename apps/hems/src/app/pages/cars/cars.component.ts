@@ -65,17 +65,6 @@ export class CarsComponent implements OnInit {
     this.fetchCarList();
   }
 
-  formatDate(element: ICar): string {
-    const parsedDate = new Date(element.arrivalDate);
-    return parsedDate.toLocaleString(undefined, {
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      hour12: false,
-      minute: '2-digit',
-    });
-  }
-
   fetchCarList(): void {
     this.carService.getCar(this.displayDate).subscribe({
       next: (car) => {
@@ -93,10 +82,5 @@ export class CarsComponent implements OnInit {
         );
       },
     });
-  }
-
-  editCarListEntry(id: string): void {
-    alert(id);
-    console.log(this.carList);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import {
   UntypedFormGroup,
@@ -93,9 +93,7 @@ export class CreateCarDialogComponent {
       departureDate: new Date(this.createCarForm.get('departureDate')?.value),
       name: this.createCarForm.get('name')?.value,
       licensePlate: this.createCarForm.get('licensePlate')?.value,
-      expirationDate: new Date(
-        this.createCarForm.get('expirationDate')?.value
-      ),
+      expirationDate: new Date(this.createCarForm.get('expirationDate')?.value),
       pickupTime: new Date(this.createCarForm.get('pickupTime')?.value),
       deliveryTime: new Date(this.createCarForm.get('deliveryTime')?.value),
       bbDown: this.createCarForm.get('bbDown')?.value,
@@ -107,7 +105,7 @@ export class CreateCarDialogComponent {
       charged: this.createCarForm.get('charged')?.value,
     };
     console.log(skrt);
-    
+
     this.carService
       .createCar({
         room: this.createCarForm.get('room')?.value,

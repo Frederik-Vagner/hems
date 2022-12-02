@@ -3,7 +3,6 @@ import {
   Component,
   ElementRef,
   Inject,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import {
@@ -52,10 +51,16 @@ export class UpdateCarDialogComponent {
         Validators.pattern('^[0-9]*$'),
       ]),
       tagNr: new UntypedFormControl(data.tagNr, [Validators.required]),
-      arrivalDate: new UntypedFormControl(data.arrivalDate, [Validators.required]),
-      departureDate: new UntypedFormControl(data.departureDate, [Validators.required]),
+      arrivalDate: new UntypedFormControl(data.arrivalDate, [
+        Validators.required,
+      ]),
+      departureDate: new UntypedFormControl(data.departureDate, [
+        Validators.required,
+      ]),
       name: new UntypedFormControl(data.name, [Validators.required]),
-      licensePlate: new UntypedFormControl(data.licensePlate, [Validators.required]),
+      licensePlate: new UntypedFormControl(data.licensePlate, [
+        Validators.required,
+      ]),
       expirationDate: new UntypedFormControl(data.expirationDate, []),
       pickupTime: new UntypedFormControl(data.pickupTime, []),
       deliveryTime: new UntypedFormControl(data.deliveryTime, []),
