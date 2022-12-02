@@ -7,14 +7,14 @@ import {
 } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CarService } from '../../../../services/car.service';
+import { CarService } from '../../../services/car.service';
 
 @Component({
   selector: 'hems-create-car-dialog',
   templateUrl: './create-car-dialog.component.html',
   styleUrls: [
-    '../../../../../assets/dialog.scss',
-    '../../../../../assets/checkbox.scss',
+    '../../../../assets/dialog.scss',
+    '../../../../assets/checkbox.scss',
   ],
 })
 export class CreateCarDialogComponent {

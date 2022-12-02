@@ -22,8 +22,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { CreateLongTermDialogComponent } from './pages/longterm/createLongTermDialog/create-long-term-dialog.component';
 import { UpdateLongTermDialogComponent } from './pages/longterm/updateLongTermDialog/update-long-term-dialog.component';
-import { UpdateCarDialogComponent } from './pages/cars/modal/updateCarEntryDialog/update-car-dialog.component';
-import { CreateCarDialogComponent } from './pages/cars/modal/createCarEntryDialog/create-car-dialog.component';
+import { UpdateCarDialogComponent } from './pages/cars/updateCarEntryDialog/update-car-dialog.component';
+import { CreateCarDialogComponent } from './pages/cars/createCarEntryDialog/create-car-dialog.component';
 
 @NgModule({
   declarations: [
