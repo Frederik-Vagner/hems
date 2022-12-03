@@ -56,4 +56,8 @@ export class Luggage extends CompletedAt implements ILuggage {
   @ApiModelProperty({ example: 'ML' })
   @Column({ nullable: true })
   bbOut?: string;
+
+  @ApiModelProperty({ example: Date.now() })
+  @Column({ nullable: true })
+  dateNeeded?: Date;
 }
