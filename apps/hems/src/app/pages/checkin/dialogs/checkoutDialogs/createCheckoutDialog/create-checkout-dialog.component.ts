@@ -45,7 +45,7 @@ export class CreateCheckoutDialogComponent {
       bbLr: new UntypedFormControl('', [Validators.required]),
       bbDown: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
-      description: new UntypedFormControl('', []),
+      comments: new UntypedFormControl('', []),
     });
   }
 
@@ -91,9 +91,9 @@ export class CreateCheckoutDialogComponent {
         bbLr: this.form.get('bbLr')?.value,
         bbDown: this.form.get('bbDown')?.value,
         location: this.form.get('location')?.value,
-        description:
-          this.form.get('description')?.value.toString().length > 1
-            ? this.form.get('description')?.value
+        comments:
+          this.form.get('comments')?.value.toString().length > 1
+            ? this.form.get('comments')?.value
             : '-',
         luggageType: LuggageType.CHECKOUT,
       })

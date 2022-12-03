@@ -91,7 +91,7 @@ export class CreateLongTermDialogComponent implements OnInit {
         roomReady: false,
         name: this.createLongTermForm.get('name')?.value,
         bags: this.createLongTermForm.get('bags')?.value,
-        description: this.createLongTermForm.get('comments')?.value,
+        comments: this.createLongTermForm.get('comments')?.value,
         tagNr: this.createLongTermForm.get('tagNr')?.value,
         arrivalTime: this.createLongTermForm.get('dateNeeded')?.value,
         bbLr: this.createLongTermForm.get('bbLr')?.value,

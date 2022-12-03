@@ -159,13 +159,13 @@
     <mat-label class="input-label">Comments</mat-label>
     <textarea
       type="text"
-      data-cy="update-checkin-description"
-      formControlName="description"
+      data-cy="update-checkin-comments"
+      formControlName="comments"
       matInput
       placeholder="Comments"
     ></textarea>
     <mat-error
-      *ngIf="form.get('description')?.invalid && form.get('description')?.dirty"
+      *ngIf="form.get('comments')?.invalid && form.get('comments')?.dirty"
     >
       Can't be more than 1000 characters
     </mat-error>

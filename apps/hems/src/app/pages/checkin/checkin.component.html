@@ -58,9 +58,9 @@
       <th mat-header-cell *matHeaderCellDef>BB Up</th>
       <td mat-cell *matCellDef="let item">{{ item.bbOut ?? '-' }}</td>
     </ng-container>
-    <ng-container matColumnDef="description">
+    <ng-container matColumnDef="comments">
       <th mat-header-cell *matHeaderCellDef>Comments</th>
-      <td mat-cell *matCellDef="let item">{{ item.description ?? '-' }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.comments ?? '-' }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="checkinColumns"></tr>
@@ -126,9 +126,9 @@
       <th mat-header-cell *matHeaderCellDef>BB Out</th>
       <td mat-cell *matCellDef="let item">{{ item.bbOut ?? '-' }}</td>
     </ng-container>
-    <ng-container matColumnDef="description">
+    <ng-container matColumnDef="comments">
       <th mat-header-cell *matHeaderCellDef>Comments</th>
-      <td mat-cell *matCellDef="let item">{{ item.description ?? '-' }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.comments ?? '-' }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="checkoutColumns"></tr>

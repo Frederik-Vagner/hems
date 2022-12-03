@@ -63,7 +63,7 @@ export class UpdateCheckinDialogComponent {
       bbUp: new UntypedFormControl(data.bbOut, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
       completedAt: new UntypedFormControl(data.completedAt, []),
-      description: new UntypedFormControl(data.description, []),
+      comments: new UntypedFormControl(data.comments, []),
     });
   }
 
@@ -103,9 +103,9 @@ export class UpdateCheckinDialogComponent {
         bbOut: this.form.get('bbUp')?.value,
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
-        description:
-          this.form.get('description')?.value.toString().length > 1
-            ? this.form.get('description')?.value
+        comments:
+          this.form.get('comments')?.value.toString().length > 1
+            ? this.form.get('comments')?.value
             : '-',
       })
       .subscribe({

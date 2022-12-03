@@ -34,7 +34,7 @@ export class CarsComponent implements OnInit {
     'parkingLot',
     'deliveryDateTime',
     'bbOut',
-    'comment',
+    'comments',
     'charged',
   ];
 
