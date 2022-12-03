@@ -41,6 +41,7 @@ class ConfigService {
       username: this.getValue('POSTGRES_USER', false) || 'root',
       password: this.getValue('POSTGRES_PASSWORD', false) || 'root',
       database: this.getValue('POSTGRES_DATABASE', false) || 'hems',
+      dropSchema: true,
 
       entities: [User, Luggage, Car, Task, Assignment],
     };

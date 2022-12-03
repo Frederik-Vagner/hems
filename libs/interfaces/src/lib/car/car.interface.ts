@@ -16,7 +16,7 @@ export interface ICar extends ICompletedAt {
   location: string;
   parkingLot?: string;
   bbOut?: string;
-  comments: string;
+  comments?: string;
   charged: boolean;
 }
 
@@ -35,7 +35,7 @@ export interface ICreateCarRequest {
   location: string;
   parkingLot?: string;
   bbOut?: string;
-  comments: string;
+  comments?: string;
   charged: boolean;
 }
 

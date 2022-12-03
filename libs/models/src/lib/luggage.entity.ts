@@ -34,8 +34,8 @@ export class Luggage extends CompletedAt implements ILuggage {
   bags!: string;
 
   @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
-  @Column()
-  description!: string;
+  @Column({ nullable: true })
+  description?: string;
 
   @ApiModelProperty({ example: '8912' })
   @Column()
@@ -46,8 +46,8 @@ export class Luggage extends CompletedAt implements ILuggage {
   location!: string;
 
   @ApiModelProperty({ example: 'TJ' })
-  @Column()
-  bbDown!: string;
+  @Column({ nullable: true })
+  bbDown?: string;
 
   @ApiModelProperty({ example: 'TJ' })
   @Column()

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ITask } from '@hems/interfaces';
+import { DisplayDateService } from '../../services/display-date.service';
 import { TasksService } from '../../services/tasks.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { TasksService } from '../../services/tasks.service';
 export class TasksComponent implements OnInit {
   morningTasks: ITask[] = [];
   eveningTasks: ITask[] = [];
+  displayDate = new Date();
 
   isLoading = false;
 
@@ -20,8 +22,14 @@ export class TasksComponent implements OnInit {
 
   constructor(
     private readonly tasksService: TasksService,
-    private snackBar: MatSnackBar
-  ) {}
+    private snackBar: MatSnackBar,
+    private displayDateService: DisplayDateService
+  ) {
+    this.displayDateService.getDisplayDateSubject().subscribe((date) => {
+      this.displayDate = new Date(date);
+      this.fetchTasks();
+    });
+  }
 
   ngOnInit(): void {
     this.fetchTasks();
@@ -29,7 +37,7 @@ export class TasksComponent implements OnInit {
 
   fetchTasks(): void {
     this.isLoading = true;
-    this.tasksService.get(new Date()).subscribe({
+    this.tasksService.get(this.displayDate).subscribe({
       next: (tasks) => {
         this.morningTasks = tasks.tasks.filter(
           (task) => task.listName === 'Morning'

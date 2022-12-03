@@ -18,8 +18,8 @@ export class Assignment extends CompletedAt implements IAssignment {
   task?: string;
 
   @ApiModelProperty({ example: 'New keys and package delivery' })
-  @Column()
-  comments!: string;
+  @Column({ nullable: true })
+  comments?: string;
 
   @ApiModelProperty({ example: 'Rec' })
   @Column()

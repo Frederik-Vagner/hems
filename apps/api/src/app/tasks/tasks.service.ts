@@ -42,7 +42,10 @@ export class TasksService {
         { ...baseConditions, task: searchCondition },
         { ...baseConditions, initials: searchCondition },
       ],
-      order: this.getSortingConditions(sortBy, sortOrder),
+      order: {
+        completedAt: SortOrder.DESCENDING,
+        ...this.getSortingConditions(sortBy, sortOrder),
+      },
     });
     const listNames = (
       await this.taskRepo
