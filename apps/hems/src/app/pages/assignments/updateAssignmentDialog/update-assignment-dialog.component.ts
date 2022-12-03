@@ -20,8 +20,8 @@ import { AssignmentsService } from '../../../services/assignments.service';
   selector: 'hems-update-assignment-dialog',
   templateUrl: './update-assignment-dialog.component.html',
   styleUrls: [
-    '../../../../assets/checkbox.scss',
-    '../../../../assets/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
 export class UpdateAssignmentDialogComponent implements OnInit {
