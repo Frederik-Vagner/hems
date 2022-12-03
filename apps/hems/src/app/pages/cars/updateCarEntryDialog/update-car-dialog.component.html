@@ -4,7 +4,7 @@
 
   <div class="dialog-row">
     <mat-form-field appearance="fill">
-      <mat-label>Room</mat-label>
+      <mat-label>Room nr.</mat-label>
       <input
         #room
         type="text"
@@ -22,7 +22,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Tag Nr.</mat-label>
+      <mat-label>Tag nr.</mat-label>
       <input
         #tagNr
         type="text"
@@ -43,7 +43,7 @@
 
   <div class="dialog-row">
     <mat-form-field appearance="fill">
-      <mat-label>Arrival Date</mat-label>
+      <mat-label>Arrival date</mat-label>
       <input
         #arrivalDate
         matInput
@@ -73,7 +73,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Departure Date</mat-label>
+      <mat-label>Departure date</mat-label>
       <input
         #departureDate
         matInput
@@ -123,7 +123,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>License Plate</mat-label>
+      <mat-label>License plate</mat-label>
       <input
         #licensePlate
         type="text"
@@ -144,7 +144,7 @@
 
   <div class="dialog-row">
     <mat-form-field appearance="fill">
-      <mat-label>Expiration Date</mat-label>
+      <mat-label>Expiration date</mat-label>
       <input
         #expirationDate
         type="text"
@@ -175,7 +175,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Pick Up Time</mat-label>
+      <mat-label>Pick up time</mat-label>
       <input
         #pickupTime
         matInput
@@ -208,7 +208,7 @@
 
   <div class="dialog-row">
     <mat-form-field appearance="fill">
-      <mat-label>BB Down</mat-label>
+      <mat-label>BB down</mat-label>
       <input
         #bbDown
         type="text"
@@ -227,7 +227,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>BB Up</mat-label>
+      <mat-label>BB up</mat-label>
       <input
         #bbUp
         type="text"
@@ -237,8 +237,7 @@
       />
       <mat-error
         *ngIf="
-          updateCarForm.get('bbUp')?.invalid &&
-          updateCarForm.get('bbUp')?.dirty
+          updateCarForm.get('bbUp')?.invalid && updateCarForm.get('bbUp')?.dirty
         "
       >
         Required
@@ -267,7 +266,7 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>parkingLot</mat-label>
+      <mat-label>Parking lot</mat-label>
       <input
         type="text"
         formControlName="parkingLot"

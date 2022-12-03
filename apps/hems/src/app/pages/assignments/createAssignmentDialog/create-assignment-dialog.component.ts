@@ -76,8 +76,8 @@ export class CreateAssignmentDialogComponent implements OnInit {
   }
 
   createAssignment(): void {
-    console.log( this.createAssignmentForm.get('completedAt')?.value);
-    
+    console.log(this.createAssignmentForm.get('completedAt')?.value);
+
     this.isLoading = true;
     this.assignmentService
       .createAssignment({
@@ -87,7 +87,10 @@ export class CreateAssignmentDialogComponent implements OnInit {
         receivedBy: this.createAssignmentForm.get('receivedBy')?.value,
         performedBy: this.createAssignmentForm.get('performedBy')?.value,
         receivedAt: this.createAssignmentForm.get('receivedAt')?.value,
-        completedAt: this.createAssignmentForm.get('completedAt')?.value.length >= 1 ? this.createAssignmentForm.get('completedAt')?.value : undefined,
+        completedAt:
+          this.createAssignmentForm.get('completedAt')?.value.length >= 1
+            ? this.createAssignmentForm.get('completedAt')?.value
+            : undefined,
       })
       .subscribe(
         () => {
