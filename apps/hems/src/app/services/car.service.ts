@@ -21,7 +21,7 @@ export class CarService {
   }
 
   public updateCar(id: string, params: UpdateCarRequest): Observable<ICar> {
-    return this.http.post<ICar>(`${env.apiUrl}/cars/${id}`, params);
+    return this.http.patch<ICar>(`${env.apiUrl}/cars/${id}`, params);
   }
 
   public getCarById(id: string): Observable<ICar> {
