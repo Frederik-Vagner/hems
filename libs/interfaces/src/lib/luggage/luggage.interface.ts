@@ -9,7 +9,7 @@ export interface ILuggage extends ICompletedAt {
   name: string;
   arrivalTime?: Date;
   bags: string;
-  description?: string;
+  comments?: string;
   tagNr: string;
   location: string;
   bbDown?: string; // Who took the luggage from the guest.
@@ -24,7 +24,7 @@ export interface ICreateLuggageRequest {
   roomReady?: boolean;
   name: string;
   bags: string;
-  description?: string;
+  comments?: string;
   arrivalTime?: Date;
   tagNr: string;
   location: string;
@@ -42,7 +42,7 @@ export interface IUpdateLuggageRequest {
   name?: string;
   arrivalTime?: Date;
   bags?: string;
-  description?: string;
+  comments?: string;
   tagNr?: string;
   location?: string;
   bbDown?: string;

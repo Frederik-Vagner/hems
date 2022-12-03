@@ -35,7 +35,7 @@ export class CreateLuggageRequest implements ICreateLuggageRequest {
 
   @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
   @IsOptional()
-  description?: string;
+  comments?: string;
 
   @ApiModelProperty({ example: '8912' })
   @IsNotEmpty()
@@ -97,7 +97,7 @@ export class UpdateLuggageRequest implements IUpdateLuggageRequest {
 
   @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
   @IsOptional()
-  description?: string;
+  comments?: string;
 
   @ApiModelProperty({ example: '8912' })
   @IsOptional()
