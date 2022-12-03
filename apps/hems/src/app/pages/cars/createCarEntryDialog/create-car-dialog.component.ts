@@ -102,7 +102,7 @@ export class CreateCarDialogComponent {
       parkingLot: this.createCarForm.get('parkingLot')?.value,
       bbOut: this.createCarForm.get('bbOut')?.value,
       comments: this.createCarForm.get('comments')?.value,
-      charged: this.createCarForm.get('charged')?.value,
+      charged: false,
     };
     console.log(skrt);
 
@@ -125,7 +125,7 @@ export class CreateCarDialogComponent {
         parkingLot: this.createCarForm.get('parkingLot')?.value,
         bbOut: this.createCarForm.get('bbOut')?.value,
         comments: this.createCarForm.get('comments')?.value,
-        charged: this.createCarForm.get('charged')?.value,
+        charged: false,
       })
       .subscribe({
         next: () => {

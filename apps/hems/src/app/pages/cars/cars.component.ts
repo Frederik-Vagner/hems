@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DisplayDateService } from '../../services/display-date.service';
 import { CreateCarDialogComponent } from './createCarEntryDialog/create-car-dialog.component';
-import { UpdateAssignmentDialogComponent } from '../assignments/updateAssignmentDialog/update-assignment-dialog.component';
+import { UpdateCarDialogComponent } from './updateCarEntryDialog/update-car-dialog.component';
 
 @Component({
   selector: 'hems-cars',
@@ -55,7 +55,7 @@ export class CarsComponent implements OnInit {
   }
 
   openDialogEdit(carListEntry: ICar) {
-    this.dialogRef.open(UpdateAssignmentDialogComponent, {
+    this.dialogRef.open(UpdateCarDialogComponent, {
       width: '500px',
       data: carListEntry,
     });
