@@ -13,7 +13,7 @@ import {
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ICar } from '@hems/interfaces';
-import { CarService } from 'apps/hems/src/app/services/car.service';
+import { CarService } from '../../../services/car.service';
 
 @Component({
   selector: 'hems-update-car-dialog',
