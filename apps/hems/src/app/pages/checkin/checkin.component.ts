@@ -24,7 +24,7 @@ export class CheckinComponent implements OnInit {
 
   checkinColumns = [
     'room',
-    'roomReady',
+    // 'roomReady',
     'name',
     'arrivalTime',
     'bags',

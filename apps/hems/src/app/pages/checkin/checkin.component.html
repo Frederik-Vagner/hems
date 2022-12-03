@@ -15,25 +15,25 @@
 
   <table mat-table [dataSource]="checkinLuggage" class="mat-elevation-z8">
     <ng-container matColumnDef="room">
-      <th mat-header-cell *matHeaderCellDef>Room</th>
+      <th mat-header-cell *matHeaderCellDef>Room nr.</th>
       <td mat-cell *matCellDef="let item">{{ item.room }}</td>
     </ng-container>
-    <ng-container matColumnDef="roomReady">
+    <!-- <ng-container matColumnDef="roomReady">
       <th mat-header-cell *matHeaderCellDef>Room<br />Status</th>
       <td mat-cell *matCellDef="let item">{{ item.roomReady }}</td>
-    </ng-container>
+    </ng-container> -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
       <td mat-cell *matCellDef="let item">{{ item.name }}</td>
     </ng-container>
     <ng-container matColumnDef="arrivalTime">
-      <th mat-header-cell *matHeaderCellDef>Arrival<br />time</th>
+      <th mat-header-cell *matHeaderCellDef>Time of<br />arrival</th>
       <td mat-cell *matCellDef="let item">
         {{ item.arrivalTime ? (item.arrivalTime | date: 'HH:mm') : '-' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="bags">
-      <th mat-header-cell *matHeaderCellDef>Nr. of<br />Bags</th>
+      <th mat-header-cell *matHeaderCellDef>Nr. of<br />bags</th>
       <td mat-cell *matCellDef="let item">{{ item.bags }}</td>
     </ng-container>
     <ng-container matColumnDef="tagNr">
@@ -49,13 +49,16 @@
       <td mat-cell *matCellDef="let item">{{ item.location }}</td>
     </ng-container>
     <ng-container matColumnDef="completedAt">
-      <th mat-header-cell *matHeaderCellDef>In Room</th>
+      <th mat-header-cell *matHeaderCellDef>
+        Time in<br />
+        room
+      </th>
       <td mat-cell *matCellDef="let item">
         {{ item.completedAt ? (item.completedAt | date: 'HH:mm') : '-' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="bbOut">
-      <th mat-header-cell *matHeaderCellDef>BB Up</th>
+      <th mat-header-cell *matHeaderCellDef>BB up</th>
       <td mat-cell *matCellDef="let item">{{ item.bbOut ?? '-' }}</td>
     </ng-container>
     <ng-container matColumnDef="comments">
@@ -82,14 +85,14 @@
       class="action-btn"
       (click)="openCheckoutCreateDialog()"
     >
-      + Add Check Out
+      Add Check Out
     </button>
   </div>
   <hr />
 
   <table mat-table [dataSource]="checkoutLuggage" class="mat-elevation-z8">
     <ng-container matColumnDef="room">
-      <th mat-header-cell *matHeaderCellDef>Room</th>
+      <th mat-header-cell *matHeaderCellDef>Room nr.</th>
       <td mat-cell *matCellDef="let item">{{ item.room }}</td>
     </ng-container>
     <ng-container matColumnDef="name">
@@ -97,7 +100,7 @@
       <td mat-cell *matCellDef="let item">{{ item.name }}</td>
     </ng-container>
     <ng-container matColumnDef="bags">
-      <th mat-header-cell *matHeaderCellDef>Nr. of<br />Bags</th>
+      <th mat-header-cell *matHeaderCellDef>Nr. of<br />bags</th>
       <td mat-cell *matCellDef="let item">{{ item.bags }}</td>
     </ng-container>
     <ng-container matColumnDef="tagNr">
@@ -105,7 +108,7 @@
       <td mat-cell *matCellDef="let item">{{ item.tagNr }}</td>
     </ng-container>
     <ng-container matColumnDef="bbDown">
-      <th mat-header-cell *matHeaderCellDef>BB Down</th>
+      <th mat-header-cell *matHeaderCellDef>BB down</th>
       <td mat-cell *matCellDef="let item">{{ item.bbDown }}</td>
     </ng-container>
     <ng-container matColumnDef="location">
@@ -117,13 +120,13 @@
       <td mat-cell *matCellDef="let item">{{ item.bbLr }}</td>
     </ng-container>
     <ng-container matColumnDef="completedAt">
-      <th mat-header-cell *matHeaderCellDef>Out</th>
+      <th mat-header-cell *matHeaderCellDef>Time out</th>
       <td mat-cell *matCellDef="let item">
         {{ item.completedAt ? (item.completedAt | date: 'HH:mm') : '-' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="bbOut">
-      <th mat-header-cell *matHeaderCellDef>BB Out</th>
+      <th mat-header-cell *matHeaderCellDef>BB out</th>
       <td mat-cell *matCellDef="let item">{{ item.bbOut ?? '-' }}</td>
     </ng-container>
     <ng-container matColumnDef="comments">
