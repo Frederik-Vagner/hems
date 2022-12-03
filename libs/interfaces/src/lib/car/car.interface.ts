@@ -37,6 +37,7 @@ export interface ICreateCarRequest {
   bbOut?: string;
   comments?: string;
   charged: boolean;
+  completedAt?: Date;
 }
 
 export interface IUpdateCarRequest {
