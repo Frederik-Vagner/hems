@@ -15,7 +15,6 @@ export class TasksComponent implements OnInit {
   morningTasks: ITask[] = [];
   eveningTasks: ITask[] = [];
   displayDate = new Date();
-  private dialog: MatDialog;
 
   isLoading = false;
 
@@ -26,7 +25,8 @@ export class TasksComponent implements OnInit {
   constructor(
     private readonly tasksService: TasksService,
     private snackBar: MatSnackBar,
-    private displayDateService: DisplayDateService
+    private displayDateService: DisplayDateService,
+    private dialog: MatDialog
   ) {
     this.displayDateService.getDisplayDateSubject().subscribe((date) => {
       this.displayDate = new Date(date);
@@ -35,7 +35,7 @@ export class TasksComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchTasks();
+    this.fetchTasks(); 
   }
 
   fetchTasks(): void {
@@ -48,6 +48,8 @@ export class TasksComponent implements OnInit {
         this.eveningTasks = tasks.tasks.filter(
           (task) => task.listName === 'Evening'
         );
+        console.log(this.morningTasks);
+        
       },
       error: (error) => {
         this.isLoading = false;
@@ -66,6 +68,8 @@ export class TasksComponent implements OnInit {
   onSubmit(): void {
     return;
   }
+
+  
 
   openEditTaskDialog(task: ITask): void {
     this.dialog.open(EditTaskDialogComponent, {

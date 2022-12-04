@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import {
   MatDialog,
   MatDialogRef,
@@ -11,7 +11,7 @@ import { ITask } from '@hems/interfaces';
 import { TasksService } from '../../../services/tasks.service';
 
 @Component({
-  selector: 'hems-update-checkin-dialog',
+  selector: 'hems-edit-task-dialog',
   templateUrl: './editTaskDialog.component.html',
   styleUrls: [
     '../../../../assets/checkbox.scss',
@@ -23,9 +23,10 @@ export class EditTaskDialogComponent {
   checked = true;
   isLoading = false;
   taskId: string;
+  isTaskComplete = false;
 
-  @ViewChild('initials') arrivalTimeInput!: ElementRef;
-  @ViewChild('completed') bagsInput!: ElementRef;
+  @ViewChild('initials') initialsInput!: ElementRef;
+  @ViewChild('completed') completedInput!: ElementRef;
 
   constructor(
     public dialogRef: MatDialogRef<EditTaskDialogComponent>,
@@ -36,17 +37,17 @@ export class EditTaskDialogComponent {
   ) {
     this.taskId = data.taskId;
     this.form = new UntypedFormGroup({
-      initials: new UntypedFormControl(data.initials),
-      completed: new UntypedFormControl(data.completedAt),
+      initials: new UntypedFormControl(data.initials, [Validators.required]),
+      completed: new UntypedFormControl(data.completedAt, [Validators.required]),
     });
   }
 
   onSubmit(): void {
     if (!this.form.valid) {
       if (this.form.get('initials') === null) {
-        this.arrivalTimeInput.nativeElement.focus();
+        this.initialsInput.nativeElement.focus();
       } else if (this.form.get('completedAt') === null) {
-        this.bagsInput.nativeElement.focus();
+        this.completedInput.nativeElement.focus();
       }
     } else {
       this.updateTask();
@@ -58,8 +59,8 @@ export class EditTaskDialogComponent {
     this.service
       .update(this.taskId, {
         initials: this.form.get('initials')?.value,
-        completedAt: new Date(this.form.get('completedAt')?.value),
-        
+        completedAt: new Date(this.form.get('completedAt')?.value
+        ),
       })
       .subscribe({
         next: () => {

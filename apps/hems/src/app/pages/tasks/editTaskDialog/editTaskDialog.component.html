@@ -20,8 +20,13 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-checkbox>Completed? </mat-checkbox>
+      <input
+      type="checkbox"
+      [checked]="isTaskComplete"
+      (change)="isTaskComplete = !isTaskComplete"
+  />
     </mat-form-field>
+
   </div>
 
   <div class="dialog-row">
