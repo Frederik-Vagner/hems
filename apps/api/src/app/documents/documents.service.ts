@@ -29,12 +29,17 @@ export class DocumentsService {
     const searchCondition = search ? Like(`%${search}%`) : undefined;
 
     return this.documentRepo.find({
-      where: [
-        { ...baseConditions, comments: searchCondition },
-        { ...baseConditions, title: searchCondition },
-      ],
+      where: { ...baseConditions, title: searchCondition }, // This particular query does not support multiple where clauses
       order: this.getSortingConditions(sortBy, sortOrder),
     });
+  }
+
+  async findById(documentId: string) {
+    const document = await this.documentRepo.findOneByOrFail({ documentId });
+
+    document.lastViewedAt = new Date();
+
+    return await this.documentRepo.save(document);
   }
 
   async createDocument(documentData: CreateDocumentRequest) {

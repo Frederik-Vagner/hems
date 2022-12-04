@@ -69,6 +69,18 @@ export class DocumentsController {
     );
   }
 
+  @Get(':documentId')
+  @ApiOperation({
+    summary: 'Get a document entry by id.',
+  })
+  @ApiOkResponse({ type: Document })
+  @HttpCode(200)
+  async getDocumentById(
+    @Param('documentId', ParseUUIDPipe) documentId: string
+  ) {
+    return this.documentsService.findById(documentId);
+  }
+
   @Post()
   @ApiOperation({
     summary: 'Create a document entry.',
