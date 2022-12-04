@@ -9,7 +9,7 @@ import { UpdateCheckoutDialogComponent } from './updateCheckoutDialog/update-che
 
 @Component({
   selector: 'hems-checkin',
-  templateUrl: './checkin.component.html',
+  templateUrl: './checkout.component.html',
   styleUrls: ['../../../assets/styles/table.scss'],
 })
 export class CheckoutComponent implements OnInit {

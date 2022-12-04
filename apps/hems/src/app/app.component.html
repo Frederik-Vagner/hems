@@ -123,7 +123,7 @@
         <button
           mat-list-item
           data-cy="sidebar-assignments-btn"
-          [ngClass]="title === 'Assignments' ? 'active-nav' : ''"
+          [ngClass]="title === 'Bell Boy Assignment Sheet' ? 'active-nav' : ''"
           routerLink="/assignments"
         >
           <mat-icon aria-hidden="false" data-cy="icon">fact_check</mat-icon>
@@ -174,7 +174,12 @@
           <mat-icon aria-hidden="false" *ngSwitchCase="'Daily Tasks'"
             >task</mat-icon
           >
-          <mat-icon aria-hidden="false" *ngSwitchCase="'Assignments'"
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Long Term'"
+            >receipt_long</mat-icon
+          >
+          <mat-icon
+            aria-hidden="false"
+            *ngSwitchCase="'Bell Boy Assignment Sheet'"
             >fact_check</mat-icon
           >
         </div>

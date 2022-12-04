@@ -47,7 +47,7 @@ export class AppComponent {
             this.title = 'Daily Tasks';
             break;
           case '/assignments':
-            this.title = 'Assignments';
+            this.title = 'Bell Boy Assignment Sheet';
             break;
           case '/long-term':
             this.title = 'Long Term';
