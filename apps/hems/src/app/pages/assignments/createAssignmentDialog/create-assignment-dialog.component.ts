@@ -76,8 +76,6 @@ export class CreateAssignmentDialogComponent implements OnInit {
   }
 
   createAssignment(): void {
-    console.log(this.createAssignmentForm.get('completedAt')?.value);
-
     this.isLoading = true;
     this.assignmentService
       .createAssignment({
