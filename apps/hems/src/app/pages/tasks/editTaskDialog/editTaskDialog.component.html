@@ -1,7 +1,4 @@
-<form
-  (ngSubmit)="onSubmit()"
-  [formGroup]="form"
->
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
   <h1>Complete Task</h1>
   <hr />
   <div class="dialog-row">
@@ -14,35 +11,41 @@
         matInput
         placeholder="DS"
       />
-      <mat-error *ngIf="form.get('initials')?.invalid && form.get('initials')?.dirty">
+      <mat-error
+        *ngIf="form.get('initials')?.invalid && form.get('initials')?.dirty"
+      >
         Required
       </mat-error>
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Completed At</mat-label>
       <input
-      type="checkbox"
-      [checked]="isTaskComplete"
-      (change)="isTaskComplete = !isTaskComplete"
-  />
+        matInput
+        [ngxMatDatetimePicker]="dateOut"
+        placeholder="Received at"
+        formControlName="completedAt"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(dateOut)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #dateOut
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
     </mat-form-field>
-
   </div>
 
   <div class="dialog-row">
-    <button
-      mat-raised-button
-      class="secondary-btn"
-      mat-dialog-close
-    >
+    <button mat-raised-button class="secondary-btn" mat-dialog-close>
       Cancel
     </button>
 
-    <button
-      mat-raised-button
-      class="action-btn"
-      type="submit"
-    >
+    <button mat-raised-button class="action-btn" type="submit">
       Complete Task
     </button>
   </div>

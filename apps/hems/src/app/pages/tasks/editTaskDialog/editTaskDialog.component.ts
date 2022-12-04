@@ -26,7 +26,7 @@ export class EditTaskDialogComponent {
   isTaskComplete = false;
 
   @ViewChild('initials') initialsInput!: ElementRef;
-  @ViewChild('completed') completedInput!: ElementRef;
+  @ViewChild('completedAt') completedInput!: ElementRef;
 
   constructor(
     public dialogRef: MatDialogRef<EditTaskDialogComponent>,
@@ -38,7 +38,7 @@ export class EditTaskDialogComponent {
     this.taskId = data.taskId;
     this.form = new UntypedFormGroup({
       initials: new UntypedFormControl(data.initials, [Validators.required]),
-      completed: new UntypedFormControl(data.completedAt, [Validators.required]),
+      completedAt: new UntypedFormControl(data.completedAt, [Validators.required]),
     });
   }
 
