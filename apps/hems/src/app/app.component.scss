@@ -187,3 +187,9 @@ mat-divider {
     margin-right: 1em;
   }
 }
+
+::ng-deep {
+  .mat-datepicker-content {
+    box-shadow: none !important;
+  }
+}
