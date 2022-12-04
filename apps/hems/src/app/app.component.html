@@ -80,20 +80,6 @@
         </button>
         <button
           mat-list-item
-          data-cy="sidebar-long-term-btn"
-          routerLink="long-term"
-          [ngClass]="title === 'Long Term' ? 'active-nav' : ''"
-        >
-          <mat-icon aria-hidden="false" data-cy="icon">receipt_long</mat-icon>
-          <span
-            class="side-nav-item"
-            [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="side-nav-item"
-            >Long Term</span
-          >
-        </button>
-        <button
-          mat-list-item
           data-cy="sidebar-car-list-btn"
           [ngClass]="title === 'Car List' ? 'active-nav' : ''"
           routerLink="/car-list"
@@ -104,6 +90,20 @@
             [ngClass]="{ collapsible: sidebarCollapsed }"
             data-cy="side-nav-item"
             >Car List</span
+          >
+        </button>
+        <button
+          mat-list-item
+          data-cy="sidebar-long-term-btn"
+          routerLink="long-term"
+          [ngClass]="title === 'Long Term' ? 'active-nav' : ''"
+        >
+          <mat-icon aria-hidden="false" data-cy="icon">receipt_long</mat-icon>
+          <span
+            class="side-nav-item"
+            [ngClass]="{ collapsible: sidebarCollapsed }"
+            data-cy="side-nav-item"
+            >Long Term</span
           >
         </button>
         <button

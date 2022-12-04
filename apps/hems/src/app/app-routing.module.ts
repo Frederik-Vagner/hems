@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-  }, // AuthGuard ensures that only authorized users can view this route
+  },
   {
     path: 'checkin',
     component: CheckinComponent,
@@ -38,9 +38,8 @@ const routes: Routes = [
     path: 'assignments',
     component: AssignmentsComponent,
   },
-  { path: '404', component: PageNotFoundComponent }, // PageNotFound for all other page requests
+  { path: '**', component: PageNotFoundComponent }, // PageNotFound for all other page requests
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' }, // Redirect to dashboard page
-  { path: '**', redirectTo: '404' }, // PageNotFound for all other page requests
 ];
 
 @NgModule({
