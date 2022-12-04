@@ -10,8 +10,13 @@ export class FilesService {
 
   constructor(private readonly httpService: HttpService) {}
 
+  /**
+   * Makes a request to Linode and creates a signed url allowing access to the given file.
+   * @param fileName the name of the file.
+   * @returns a url, or throws an error.
+   */
   async getSignedLink(
-    docName: string
+    fileName: string
   ): Promise<{ url: string; exists: boolean }> {
     const clusterId = configService.getValue('LINODE_STORAGE_CLUSTER_ID', true);
     const bucketId = configService.getValue('LINODE_STORAGE_BUCKET_ID', true);
@@ -22,7 +27,7 @@ export class FilesService {
         .post(
           `https://api.linode.com/v4/object-storage/buckets/${clusterId}/${bucketId}/object-url`,
           {
-            name: docName,
+            name: fileName,
             expires_in: 600,
             method: 'GET',
           },
@@ -38,6 +43,9 @@ export class FilesService {
           })
         )
     );
+    if (!data.exists) {
+      throw new Error(`The file doesn't exist`);
+    }
     return data;
   }
 }
