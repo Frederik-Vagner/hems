@@ -14,11 +14,11 @@ export class Document extends Base implements IDocument {
   title!: string;
 
   @ApiModelProperty({ example: 'This is such interesting data.' })
-  @Column()
+  @Column({ nullable: true })
   comments?: string;
 
   @ApiModelProperty({ example: new Date() })
-  @Column()
+  @Column({ nullable: true })
   lastViewedAt?: Date;
 
   @ApiModelProperty({ example: true, default: false })
