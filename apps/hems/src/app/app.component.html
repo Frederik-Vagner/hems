@@ -70,7 +70,7 @@
           routerLink="/checkout"
           [ngClass]="title === 'Check Out' ? 'active-nav' : ''"
         >
-          <mat-icon aria-hidden="false" data-cy="icon">book</mat-icon>
+          <mat-icon aria-hidden="false" data-cy="icon">bookmark</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
@@ -166,7 +166,7 @@
             >directions_car</mat-icon
           >
           <mat-icon aria-hidden="false" *ngSwitchCase="'Check Out'"
-            >book</mat-icon
+            >bookmark</mat-icon
           >
           <mat-icon aria-hidden="false" *ngSwitchCase="'Check In'"
             >book</mat-icon
@@ -181,6 +181,11 @@
             aria-hidden="false"
             *ngSwitchCase="'Bell Boy Assignment Sheet'"
             >fact_check</mat-icon
+          >
+          <mat-icon
+            aria-hidden="false"
+            *ngSwitchDefault
+            >report</mat-icon
           >
         </div>
         <h1 class="title">{{ title }}</h1>
