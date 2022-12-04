@@ -53,7 +53,7 @@ export class UpdateCheckoutDialogComponent {
       bbDown: new UntypedFormControl(data.bbDown, [Validators.required]),
       bbOut: new UntypedFormControl(data.bbOut, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
-      completedAt: new UntypedFormControl(data.completedAt, []),
+      completedAt: new UntypedFormControl(new Date(), []),
       comments: new UntypedFormControl(data.comments, []),
     });
   }

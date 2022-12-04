@@ -45,7 +45,7 @@ export class CreateLongTermDialogComponent implements OnInit {
       ]),
       name: new UntypedFormControl('', [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
-      comments: new UntypedFormControl('', [Validators.required]),
+      comments: new UntypedFormControl('', []),
       tagNr: new UntypedFormControl('', [Validators.required]),
       dateNeeded: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
