@@ -38,7 +38,10 @@ export class AppComponent {
             this.title = 'Car List';
             break;
           case '/checkin':
-            this.title = 'Check In / Out';
+            this.title = 'Check In';
+            break;
+          case '/checkout':
+            this.title = 'Check Out';
             break;
           case '/daily-tasks':
             this.title = 'Daily Tasks';

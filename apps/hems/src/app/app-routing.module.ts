@@ -18,6 +18,10 @@ const routes: Routes = [
     component: CheckinComponent,
   },
   {
+    path: 'checkOut',
+    component: CheckinComponent,
+  },
+  {
     path: 'long-term',
     component: LongtermComponent,
   },
