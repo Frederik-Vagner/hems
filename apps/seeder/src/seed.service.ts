@@ -152,7 +152,7 @@ export class SeedService {
   async seedAssignments() {
     try {
       const response = await Promise.all(this.assignmentService.create());
-      this.logger.debug(`✅ Assignments created: ${response.length} 💼`);
+      this.logger.debug(`✅ Assignments created: ${response.length} 👩‍🏫`);
       return response;
     } catch (error) {
       this.logger.warn(`❌ Assignments failed to seed 🌱`);
