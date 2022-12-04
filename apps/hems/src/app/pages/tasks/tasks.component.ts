@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ITask } from '@hems/interfaces';
 import { DisplayDateService } from '../../services/display-date.service';
 import { TasksService } from '../../services/tasks.service';
+import { EditTaskDialogComponent } from './editTaskDialog/editTaskDialog.component';
 
 @Component({
   selector: 'hems-tasks',
@@ -13,6 +15,7 @@ export class TasksComponent implements OnInit {
   morningTasks: ITask[] = [];
   eveningTasks: ITask[] = [];
   displayDate = new Date();
+  private dialog: MatDialog;
 
   isLoading = false;
 
@@ -59,4 +62,17 @@ export class TasksComponent implements OnInit {
       },
     });
   }
+
+  onSubmit(): void {
+    return;
+  }
+
+  openEditTaskDialog(task: ITask): void {
+    this.dialog.open(EditTaskDialogComponent, {
+      width: '500px',
+      data: task
+    });
+  }
+
+
 }

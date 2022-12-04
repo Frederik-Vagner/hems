@@ -1,0 +1,44 @@
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="form"
+>
+  <h1>Complete Task</h1>
+  <hr />
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Initials</mat-label>
+      <input
+        #initials
+        type="text"
+        formControlName="initials"
+        matInput
+        placeholder="DS"
+      />
+      <mat-error *ngIf="form.get('initials')?.invalid && form.get('initials')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-checkbox>Completed? </mat-checkbox>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <button
+      mat-raised-button
+      class="secondary-btn"
+      mat-dialog-close
+    >
+      Cancel
+    </button>
+
+    <button
+      mat-raised-button
+      class="action-btn"
+      type="submit"
+    >
+      Complete Task
+    </button>
+  </div>
+</form>
