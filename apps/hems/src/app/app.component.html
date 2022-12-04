@@ -54,14 +54,28 @@
           mat-list-item
           data-cy="sidebar-checkin-btn"
           routerLink="/checkin"
-          [ngClass]="title === 'Check In / Out' ? 'active-nav' : ''"
+          [ngClass]="title === 'Check In' ? 'active-nav' : ''"
         >
           <mat-icon aria-hidden="false" data-cy="icon">book</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
             data-cy="side-nav-item"
-            >Check in / out</span
+            >Check in</span
+          >
+        </button>
+        <button
+          mat-list-item
+          data-cy="sidebar-checkin-btn"
+          routerLink="/checkout"
+          [ngClass]="title === 'Check Out' ? 'active-nav' : ''"
+        >
+          <mat-icon aria-hidden="false" data-cy="icon">book</mat-icon>
+          <span
+            class="side-nav-item"
+            [ngClass]="{ collapsible: sidebarCollapsed }"
+            data-cy="side-nav-item"
+            >Check out</span
           >
         </button>
         <button
