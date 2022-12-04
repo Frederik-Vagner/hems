@@ -10,7 +10,7 @@ import { DisplayDateService } from './services/display-date.service';
 })
 export class AppComponent {
   title = 'HEMS';
-  sidebarCollapsed = false;
+  sidebarCollapsed = true;
   displayDate = new Date();
 
   constructor(
