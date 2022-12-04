@@ -6,6 +6,7 @@ import { configService } from './config.service';
 import { SeedService } from './seed.service';
 import { AssignmentSeederService } from './services/assignments.service';
 import { CarsSeederService } from './services/cars.service';
+import { DocumentsSeederService } from './services/documents.service';
 import { LuggagesSeederService } from './services/luggages.service';
 import { TasksSeederService } from './services/tasks.service';
 import { UsersSeederService } from './services/users.service';
@@ -27,6 +28,7 @@ export class SeedModule {
         CarsSeederService,
         TasksSeederService,
         AssignmentSeederService,
+        DocumentsSeederService,
         TaskGenerator,
       ],
       exports: [SeedService],

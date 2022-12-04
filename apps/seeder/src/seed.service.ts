@@ -2,6 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { Connection, DataSource } from 'typeorm';
 import { AssignmentSeederService } from './services/assignments.service';
 import { CarsSeederService } from './services/cars.service';
+import { DocumentsSeederService } from './services/documents.service';
 import { LuggagesSeederService } from './services/luggages.service';
 import { TasksSeederService } from './services/tasks.service';
 import { UsersSeederService } from './services/users.service';
@@ -16,6 +17,7 @@ export class SeedService {
     private readonly carsService: CarsSeederService,
     private readonly tasksService: TasksSeederService,
     private readonly assignmentService: AssignmentSeederService,
+    private readonly documentService: DocumentsSeederService,
     private dataSource: DataSource
   ) {}
 
@@ -32,6 +34,7 @@ export class SeedService {
     await this.seedCars();
     await this.seedTasks();
     await this.seedAssignments();
+    await this.seedDocuments();
   }
 
   // ====================================
@@ -108,7 +111,7 @@ export class SeedService {
       this.logger.debug(`✅ Users created: ${response.length} 🧔`);
       return response;
     } catch (error) {
-      this.logger.warn(`❌ Users failed to seed`);
+      this.logger.warn(`❌ Users failed to seed 🌱`);
       this.logger.error(error);
     }
   }
@@ -119,7 +122,7 @@ export class SeedService {
       this.logger.debug(`✅ Luggages created: ${response.length} 💼`);
       return response;
     } catch (error) {
-      this.logger.warn(`❌ Luggages failed to seed`);
+      this.logger.warn(`❌ Luggages failed to seed 🌱`);
       this.logger.error(error);
     }
   }
@@ -130,7 +133,7 @@ export class SeedService {
       this.logger.debug(`✅ Cars created: ${response.length} 🚕`);
       return response;
     } catch (error) {
-      this.logger.warn(`❌ Cars failed to seed`);
+      this.logger.warn(`❌ Cars failed to seed 🌱`);
       this.logger.error(error);
     }
   }
@@ -141,7 +144,7 @@ export class SeedService {
       this.logger.debug(`✅ Tasks created: ${response.length} 📄`);
       return response;
     } catch (error) {
-      this.logger.warn(`❌ Tasks failed to seed`);
+      this.logger.warn(`❌ Tasks failed to seed 🌱`);
       this.logger.error(error);
     }
   }
@@ -152,7 +155,18 @@ export class SeedService {
       this.logger.debug(`✅ Assignments created: ${response.length} 💼`);
       return response;
     } catch (error) {
-      this.logger.warn(`❌ Assignments failed to seed`);
+      this.logger.warn(`❌ Assignments failed to seed 🌱`);
+      this.logger.error(error);
+    }
+  }
+
+  async seedDocuments() {
+    try {
+      const response = await Promise.all(this.documentService.create());
+      this.logger.debug(`✅ Documents created: ${response.length} 🗿`);
+      return response;
+    } catch (error) {
+      this.logger.warn(`❌ Documents failed to seed 🌱`);
       this.logger.error(error);
     }
   }
