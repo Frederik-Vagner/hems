@@ -25,7 +25,7 @@
     }
 
     &:checked ~ .checkmark {
-      background-color: var(--main-blue);
+      background-color: var(--main-blue) !important;
 
       &:after {
         display: block;
@@ -56,5 +56,13 @@
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+}
+
+.completed {
+  .car-checkbox {
+    input ~ .checkmark {
+      background-color: #ccc;
+    }
   }
 }
