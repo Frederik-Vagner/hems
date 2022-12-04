@@ -4,7 +4,7 @@ import { DynamicModule, Logger, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { configService } from './config.service';
 import { SeedService } from './seed.service';
-import { AssignmentSeederService } from './services/assignments.service';
+import { AssignmentsSeederService } from './services/assignments.service';
 import { CarsSeederService } from './services/cars.service';
 import { DocumentsSeederService } from './services/documents.service';
 import { LuggagesSeederService } from './services/luggages.service';
@@ -34,7 +34,7 @@ export class SeedModule {
         LuggagesSeederService,
         CarsSeederService,
         TasksSeederService,
-        AssignmentSeederService,
+        AssignmentsSeederService,
         DocumentsSeederService,
         TaskGenerator,
       ],
