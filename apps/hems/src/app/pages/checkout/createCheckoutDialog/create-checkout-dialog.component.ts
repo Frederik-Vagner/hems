@@ -8,7 +8,7 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LuggageType } from '@hems/interfaces';
-import { LuggageService } from '../../../../../services/luggage.service';
+import { LuggageService } from '../../../services/luggage.service';
 
 @Component({
   selector: 'hems-create-checkout-dialog',

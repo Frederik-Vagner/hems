@@ -74,4 +74,72 @@
       (click)="openCheckinEditDialog(row)"
     ></tr>
   </table>
+
+  <br />
+
+  <div class="table-actions">
+    <h1>Check Out</h1>
+
+    <button
+      mat-raised-button
+      class="action-btn"
+      (click)="openCheckoutCreateDialog()"
+    >
+      Add Check Out
+    </button>
+  </div>
+  <hr />
+
+  <table mat-table [dataSource]="checkoutLuggage" class="mat-elevation-z8">
+    <ng-container matColumnDef="room">
+      <th mat-header-cell *matHeaderCellDef>Room nr.</th>
+      <td mat-cell *matCellDef="let item">{{ item.room }}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let item">{{ item.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="bags">
+      <th mat-header-cell *matHeaderCellDef>Nr. of<br />bags</th>
+      <td mat-cell *matCellDef="let item">{{ item.bags }}</td>
+    </ng-container>
+    <ng-container matColumnDef="tagNr">
+      <th mat-header-cell *matHeaderCellDef>Tag nr.</th>
+      <td mat-cell *matCellDef="let item">{{ item.tagNr }}</td>
+    </ng-container>
+    <ng-container matColumnDef="bbDown">
+      <th mat-header-cell *matHeaderCellDef>BB down</th>
+      <td mat-cell *matCellDef="let item">{{ item.bbDown }}</td>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef>Location</th>
+      <td mat-cell *matCellDef="let item">{{ item.location }}</td>
+    </ng-container>
+    <ng-container matColumnDef="bbLr">
+      <th mat-header-cell *matHeaderCellDef>BB<br />in LR</th>
+      <td mat-cell *matCellDef="let item">{{ item.bbLr }}</td>
+    </ng-container>
+    <ng-container matColumnDef="completedAt">
+      <th mat-header-cell *matHeaderCellDef>Time out</th>
+      <td mat-cell *matCellDef="let item">
+        {{ item.completedAt ? (item.completedAt | date: 'HH:mm') : '-' }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="bbOut">
+      <th mat-header-cell *matHeaderCellDef>BB out</th>
+      <td mat-cell *matCellDef="let item">{{ item.bbOut ?? '-' }}</td>
+    </ng-container>
+    <ng-container matColumnDef="comments">
+      <th mat-header-cell *matHeaderCellDef>Comments</th>
+      <td mat-cell *matCellDef="let item">{{ item.comments ?? '-' }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="checkoutColumns"></tr>
+    <tr
+      mat-row
+      [ngClass]="row.completedAt ? 'completed' : ''"
+      *matRowDef="let row; columns: checkoutColumns"
+      (click)="openCheckoutEditDialog(row)"
+    ></tr>
+  </table>
 </main>

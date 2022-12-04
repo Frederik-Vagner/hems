@@ -4,8 +4,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { DisplayDateService } from '../../services/display-date.service';
 import { LuggageService } from '../../services/luggage.service';
-import { CreateCheckinDialogComponent } from './createCheckinDialog/create-checkin-dialog.component';
-import { UpdateCheckinDialogComponent } from './updateCheckinDialog/update-checkin-dialog.component';
+import { CreateCheckinDialogComponent } from './dialogs/checkinDialogs/createCheckinDialog/create-checkin-dialog.component';
+import { UpdateCheckinDialogComponent } from './dialogs/checkinDialogs/updateCheckinDialog/update-checkin-dialog.component';
+import { CreateCheckoutDialogComponent } from './createCheckoutDialog/create-checkout-dialog.component';
+import { UpdateCheckoutDialogComponent } from './dialogs/checkoutDialogs/updateCheckoutDialog/update-checkout-dialog.component';
 
 @Component({
   selector: 'hems-checkin',
@@ -29,6 +31,19 @@ export class CheckinComponent implements OnInit {
     'tagNr',
     'bbLr',
     'location',
+    'completedAt',
+    'bbOut',
+    'comments',
+  ];
+
+  checkoutColumns = [
+    'room',
+    'name',
+    'bags',
+    'tagNr',
+    'bbDown',
+    'location',
+    'bbLr',
     'completedAt',
     'bbOut',
     'comments',
@@ -70,6 +85,23 @@ export class CheckinComponent implements OnInit {
         );
       },
     });
+
+    this.luggageService.getCheckout(this.displayDate).subscribe({
+      next: (luggage) => {
+        this.checkoutLuggage = luggage;
+      },
+      error: (error) => {
+        this.isLoadingCheckout = false;
+        console.error(error);
+        this.snackBar.open(
+          'Check Out data have failed to load, please reload the page.',
+          'Okay',
+          {
+            duration: 10000,
+          }
+        );
+      },
+    });
   }
 
   openCheckinEditDialog(luggage: ILuggage): void {
@@ -81,6 +113,19 @@ export class CheckinComponent implements OnInit {
 
   openCheckinCreateDialog(): void {
     this.dialog.open(CreateCheckinDialogComponent, {
+      width: '500px',
+    });
+  }
+
+  openCheckoutEditDialog(luggage: ILuggage): void {
+    this.dialog.open(UpdateCheckoutDialogComponent, {
+      width: '500px',
+      data: luggage,
+    });
+  }
+
+  openCheckoutCreateDialog(): void {
+    this.dialog.open(CreateCheckoutDialogComponent, {
       width: '500px',
     });
   }
