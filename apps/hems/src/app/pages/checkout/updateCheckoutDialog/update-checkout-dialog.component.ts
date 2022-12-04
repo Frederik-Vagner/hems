@@ -1,56 +1,60 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
 import {
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LuggageType } from '@hems/interfaces';
-import { LuggageService } from '../../../../../services/luggage.service';
+import { ILuggage } from '@hems/interfaces';
+import { LuggageService } from '../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-create-checkin-dialog',
-  templateUrl: './create-checkin-dialog.component.html',
+  selector: 'hems-update-checkout-dialog',
+  templateUrl: './update-checkout-dialog.component.html',
   styleUrls: [
-    '../../../../../../assets/styles/checkbox.scss',
-    '../../../../../../assets/styles/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
-export class CreateCheckinDialogComponent {
+export class UpdateCheckoutDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
-  guestApprovedGDPR = false;
+  luggageId: string;
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
-  @ViewChild('arrivalTime') arrivalTimeInput!: ElementRef;
   @ViewChild('bags') bagsInput!: ElementRef;
   @ViewChild('tagNr') tagNrInput!: ElementRef;
   @ViewChild('bbLr') bbLrInput!: ElementRef;
+  @ViewChild('bbDown') bbDownInput!: ElementRef;
   @ViewChild('location') locationInput!: ElementRef;
 
   constructor(
+    public dialogRef: MatDialogRef<UpdateCheckoutDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
     private snackbar: MatSnackBar,
     private dialog: MatDialog
   ) {
+    this.luggageId = data.luggageId;
     this.form = new UntypedFormGroup({
-      room: new UntypedFormControl('', [
-        Validators.required,
-        Validators.maxLength(10),
-        Validators.pattern('^[0-9]*$'),
-      ]),
-      roomReady: new UntypedFormControl('false', [Validators.required]),
-      name: new UntypedFormControl('', [Validators.required]),
-      arrivalTime: new UntypedFormControl(new Date(), [Validators.required]),
-      bags: new UntypedFormControl('', [Validators.required]),
-      tagNr: new UntypedFormControl('', [Validators.required]),
-      bbLr: new UntypedFormControl('', [Validators.required]),
-      location: new UntypedFormControl('', [Validators.required]),
-      comments: new UntypedFormControl('', [Validators.maxLength(1000)]),
+      room: new UntypedFormControl(data.room, [Validators.required]),
+      name: new UntypedFormControl(data.name, [Validators.required]),
+      bags: new UntypedFormControl(data.bags, [Validators.required]),
+      tagNr: new UntypedFormControl(data.tagNr, [Validators.required]),
+      bbLr: new UntypedFormControl(data.bbLr, [Validators.required]),
+      bbDown: new UntypedFormControl(data.bbDown, [Validators.required]),
+      bbOut: new UntypedFormControl(data.bbOut, []),
+      location: new UntypedFormControl(data.location, [Validators.required]),
+      completedAt: new UntypedFormControl(data.completedAt, []),
+      comments: new UntypedFormControl(data.comments, []),
     });
   }
 
@@ -60,51 +64,43 @@ export class CreateCheckinDialogComponent {
         this.roomInput.nativeElement.focus();
       } else if (this.form.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
-      } else if (this.form.get('arrivalTime')?.invalid) {
-        this.arrivalTimeInput.nativeElement.focus();
       } else if (this.form.get('bags')?.invalid) {
         this.bagsInput.nativeElement.focus();
       } else if (this.form.get('tagNr')?.invalid) {
         this.tagNrInput.nativeElement.focus();
-      } else if (this.form.get('bbLr')?.invalid) {
-        this.bbLrInput.nativeElement.focus();
+      } else if (this.form.get('bbDown')?.invalid) {
+        this.bbDownInput.nativeElement.focus();
       } else if (this.form.get('location')?.invalid) {
         this.locationInput.nativeElement.focus();
+      } else if (this.form.get('bbLr')?.invalid) {
+        this.bbLrInput.nativeElement.focus();
       }
     } else {
-      this.createCheckin();
+      this.updateCheckout();
     }
   }
 
-  createCheckin(): void {
-    if (!this.guestApprovedGDPR) {
-      this.snackbar.open('Guest needs to approve storing their data.', 'Okay', {
-        duration: 10000,
-      });
-      return;
-    }
-
+  updateCheckout(): void {
     this.isLoading = true;
     this.service
-      .create({
+      .update(this.luggageId, {
         room: this.form.get('room')?.value,
-        roomReady: this.form.get('roomReady')?.value,
         name: this.form.get('name')?.value,
-        arrivalTime: new Date(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
+        bbDown: this.form.get('bbDown')?.value,
+        bbOut: this.form.get('bbOut')?.value,
         location: this.form.get('location')?.value,
+        completedAt: this.form.get('completedAt')?.value,
         comments:
           this.form.get('comments')?.value.toString().length > 1
             ? this.form.get('comments')?.value
             : '-',
-        luggageType: LuggageType.CHECKIN,
-        bbDown: ' ',
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Check In luggage item created!', 'Thanks', {
+          this.snackbar.open('Luggage item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -113,7 +109,7 @@ export class CreateCheckinDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create, please try again.', 'Okay', {
+          this.snackbar.open('Failed to update, please try again.', 'Okay', {
             duration: 10000,
           });
           this.isLoading = false;

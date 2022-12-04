@@ -14,10 +14,8 @@ import { UpdateCheckinDialogComponent } from './updateCheckinDialog/update-check
 })
 export class CheckinComponent implements OnInit {
   checkinLuggage: ILuggage[] = [];
-  checkoutLuggage: ILuggage[] = [];
   listNames?: string[];
   isLoadingCheckin = false;
-  isLoadingCheckout = false;
   displayDate = new Date();
 
   checkinColumns = [
@@ -52,7 +50,6 @@ export class CheckinComponent implements OnInit {
 
   fetchLuggage(): void {
     this.isLoadingCheckin = true;
-    this.isLoadingCheckout = true;
     this.luggageService.getCheckin(this.displayDate).subscribe({
       next: (luggage) => {
         this.checkinLuggage = luggage;

@@ -22,6 +22,9 @@ import { UpdateCarDialogComponent } from './pages/cars/updateCarEntryDialog/upda
 import { CreateCarDialogComponent } from './pages/cars/createCarEntryDialog/create-car-dialog.component';
 import { UpdateCheckinDialogComponent } from './pages/checkin/updateCheckinDialog/update-checkin-dialog.component';
 import { CreateCheckinDialogComponent } from './pages/checkin/createCheckinDialog/create-checkin-dialog.component';
+import { CheckoutComponent } from './pages/checkout/checkin.component';
+import { CreateCheckoutDialogComponent } from './pages/checkout/createCheckoutDialog/create-checkout-dialog.component';
+import { UpdateCheckoutDialogComponent } from './pages/checkout/updateCheckoutDialog/update-checkout-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +34,15 @@ import { CreateCheckinDialogComponent } from './pages/checkin/createCheckinDialo
     CarsComponent,
     TasksComponent,
     CheckinComponent,
+    CheckoutComponent,
     AssignmentsComponent,
     LongtermComponent,
     UpdateCheckinDialogComponent,
     CreateCheckinDialogComponent,
     CreateAssignmentDialogComponent,
     UpdateAssignmentDialogComponent,
+    CreateCheckoutDialogComponent,
+    UpdateCheckoutDialogComponent,
     CreateLongTermDialogComponent,
     UpdateLongTermDialogComponent,
     CreateCarDialogComponent,

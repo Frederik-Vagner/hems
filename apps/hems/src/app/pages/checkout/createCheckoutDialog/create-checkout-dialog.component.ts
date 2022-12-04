@@ -14,8 +14,8 @@ import { LuggageService } from '../../../services/luggage.service';
   selector: 'hems-create-checkout-dialog',
   templateUrl: './create-checkout-dialog.component.html',
   styleUrls: [
-    '../../../../../../assets/styles/checkbox.scss',
-    '../../../../../../assets/styles/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
 export class CreateCheckoutDialogComponent {
