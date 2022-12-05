@@ -1,4 +1,4 @@
-import { User, Luggage, Car, Task, Assignment } from '@hems/models';
+import { Assignment, Car, Luggage, Task, User } from '@hems/models';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -7,7 +7,7 @@ require('dotenv').config();
 class ConfigService {
   constructor(private env: { [k: string]: string | undefined }) {}
 
-  private getValue(key: string, throwOnMissing: boolean): string {
+  public getValue(key: string, throwOnMissing: boolean): string {
     const value = this.env[key];
     if (!value && throwOnMissing) {
       throw new Error(`config error - missing env.${key}`);
