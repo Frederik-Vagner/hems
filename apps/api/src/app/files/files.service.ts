@@ -113,7 +113,7 @@ export class FilesService {
 
   /**
    * Deletes a file from the Linode S3 bucket. Doesn't matter if the file exists or not.
-   * @param filename the name that the file should be uploaded under.
+   * @param filename the name of the file to be deleted.
    * @returns true if successfully deleted. Doesn't matter if the file exists or not.
    * @throws InvalidAccessKeyIdError | DeleteFailedError
    */
