@@ -12,7 +12,7 @@ export class FilesService {
   constructor(private readonly httpService: HttpService) {}
 
   /**
-   * Makes a request to Linode and creates a signed url allowing access to the given file.
+   * Makes a request to Linode and creates a signed url allowing file access for a limited amount of time.
    * @param fileName the name of the file.
    * @param expiresIn how long the link should be valid for. In seconds. Between 360 and 86400 seconds.
    * @returns a url, or throws an error if the file doesn't exist.
