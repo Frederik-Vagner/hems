@@ -26,7 +26,7 @@ import { UsersModule } from './users/users.module';
     CarsModule,
     TasksModule,
     AssignmentsModule,
-    DocumentsModule
+    DocumentsModule,
     FilesModule,
   ],
   controllers: [AppController],
