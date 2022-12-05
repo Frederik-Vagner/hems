@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { GetTasksResponse } from '@hems/interfaces';
+import { GetTasksResponse, IUpdateTask, ITask } from '@hems/interfaces';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
@@ -19,5 +19,13 @@ export class TasksService {
     return this.http.get<GetTasksResponse>(
       `${env.apiUrl}/tasks?createdAt=${createdAt.toISOString()}`
     );
+  }
+
+  public getbyId(id: string): Observable<ITask> {
+    return this.http.get<ITask>(`${env.apiUrl}/tasks${id}`);
+  }
+
+  public update(id: string, params: IUpdateTask): Observable<ITask> {
+    return this.http.patch<ITask>(`${env.apiUrl}/tasks/${id}`, params);
   }
 }
