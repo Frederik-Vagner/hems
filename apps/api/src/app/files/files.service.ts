@@ -1,4 +1,8 @@
-import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import {
+  DeleteObjectCommand,
+  PutObjectCommand,
+  S3Client,
+} from '@aws-sdk/client-s3';
 import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { AxiosError } from 'axios';
@@ -103,6 +107,51 @@ export class FilesService {
         throw new Error('InvalidAccessKeyIdError');
       } else {
         throw new Error('UploadFailedError');
+      }
+    }
+  }
+
+  /**
+   * Deletes a file from the Linode S3 bucket. Doesn't matter if the file exists or not.
+   * @param filename the name that the file should be uploaded under.
+   * @returns true if successfully deleted. Doesn't matter if the file exists or not.
+   * @throws InvalidAccessKeyIdError | DeleteFailedError
+   */
+  async deleteFile(filename: string): Promise<boolean> {
+    const clusterId = configService.getValue('LINODE_STORAGE_CLUSTER_ID', true);
+    const bucketId = configService.getValue('LINODE_STORAGE_BUCKET_ID', true);
+    const accessKey = configService.getValue('LINODE_STORAGE_ACCESS_KEY', true);
+    const secretKey = configService.getValue('LINODE_STORAGE_SECRET_KEY', true);
+
+    try {
+      const s3 = new S3Client({
+        region: clusterId,
+        credentials: {
+          accessKeyId: accessKey,
+          secretAccessKey: secretKey,
+        },
+        endpoint: `https://${clusterId}.linodeobjects.com`,
+      });
+      const result = await s3.send(
+        new DeleteObjectCommand({
+          Bucket: bucketId,
+          Key: filename,
+        })
+      );
+      console.log(result);
+      this.logger.verbose(
+        `File deleted from linode storage. Filename: ${filename}`
+      );
+      return true;
+    } catch (error) {
+      this.logger.error(
+        'Failed to delete a file from Linode Object storage',
+        error
+      );
+      if (error.name === 'InvalidAccessKeyId') {
+        throw new Error('InvalidAccessKeyIdError');
+      } else {
+        throw new Error('DeleteFailedError');
       }
     }
   }
