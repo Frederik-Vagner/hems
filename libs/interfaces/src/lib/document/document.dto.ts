@@ -1,5 +1,5 @@
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
-import { IsDateString, IsNotEmpty, IsOptional, IsUrl } from 'class-validator';
+import { IsDateString, IsNotEmpty, IsOptional } from 'class-validator';
 import { ICreateDocumentRequest } from './document.interface';
 import { IUpdateAssignmentRequest } from '../assignment/assignment.interface';
 
@@ -20,11 +20,6 @@ export class CreateDocumentRequest implements ICreateDocumentRequest {
   @ApiModelProperty({ example: true, default: false })
   @IsNotEmpty() // TODO: clarify if the annotation is needed seeing as we have a default value set
   showOnDashboard!: boolean;
-
-  @ApiModelProperty({ example: 'https://link-to-document' })
-  @IsNotEmpty()
-  @IsUrl()
-  documentUrl!: string;
 }
 
 export class UpdateDocumentRequest implements IUpdateAssignmentRequest {
@@ -44,9 +39,4 @@ export class UpdateDocumentRequest implements IUpdateAssignmentRequest {
   @ApiModelProperty({ example: true, default: false })
   @IsOptional() // TODO: clarify if the annotation is needed seeing as we have a default value set
   showOnDashboard?: boolean;
-
-  @ApiModelProperty({ example: 'https://link-to-document' })
-  @IsOptional()
-  @IsUrl()
-  documentUrl?: string;
 }

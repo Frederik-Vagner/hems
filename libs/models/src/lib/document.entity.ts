@@ -25,7 +25,7 @@ export class Document extends Base implements IDocument {
   @Column() // TODO: clarify if the annotation is needed seeing as we have a default value set
   showOnDashboard!: boolean;
 
-  @ApiModelProperty({ example: 'https://link-to-document' })
+  @ApiModelProperty({ example: 'declarationOfIndepenence.pdf' })
   @Column()
-  documentUrl!: string;
+  documentName!: string;
 }
