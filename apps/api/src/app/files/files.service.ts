@@ -52,6 +52,14 @@ export class FilesService {
     return data;
   }
 
+  /**
+   * Uploads a file to the Linode S3 bucket. Updates the file if it already exists.
+   * @param dataBuffer `Express.Multer.File` file.buffer.
+   * @param fileName the name that the file should be uploaded under.
+   * @example async uploadFile(@UploadedFile() file: Express.Multer.File) { const { url } = await this.filesService.uploadFile(file.buffer, file.originalname); }}
+   * @returns signed URL link that allows access to the file for 10 minutes.
+   * @throws InvalidAccessKeyIdError | UploadFailedError
+   */
   async uploadFile(
     dataBuffer: Buffer,
     fileName: string
