@@ -1,3 +1,4 @@
+import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { AxiosError } from 'axios';
@@ -47,5 +48,32 @@ export class FilesService {
       throw new Error(`The file doesn't exist`);
     }
     return data;
+  }
+
+  async uploadFile(dataBuffer: Buffer, fileName: string) {
+    const clusterId = configService.getValue('LINODE_STORAGE_CLUSTER_ID', true);
+    const bucketId = configService.getValue('LINODE_STORAGE_BUCKET_ID', true);
+    const accessKey = configService.getValue('LINODE_STORAGE_ACCESS_KEY', true);
+    const secretKey = configService.getValue('LINODE_STORAGE_SECRET_KEY', true);
+
+    const s3 = new S3Client({
+      region: clusterId,
+      credentials: {
+        accessKeyId: accessKey,
+        secretAccessKey: secretKey,
+      },
+      endpoint: `https://${clusterId}.linodeobjects.com`,
+    });
+
+    const uploadResult = await s3.send(
+      new PutObjectCommand({
+        Bucket: bucketId,
+        Body: dataBuffer,
+        Key: fileName,
+      })
+    );
+    console.log('result', uploadResult);
+
+    return uploadResult;
   }
 }
