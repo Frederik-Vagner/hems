@@ -10,11 +10,15 @@ import {
   Controller,
   Get,
   HttpCode,
+  HttpStatus,
   Param,
+  ParseFilePipeBuilder,
   ParseUUIDPipe,
   Patch,
   Post,
   Query,
+  UploadedFile,
+  UseInterceptors,
 } from '@nestjs/common';
 import {
   ApiCreatedResponse,
@@ -23,8 +27,13 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { toBool } from '../utils/query-params.utils';
 import { DocumentsService } from './documents.service';
+import 'multer';
+
+const FILE_MAX_SIZE = 50000000;
+const FILE_TYPES = /(pdf|docx)\b/;
 
 @ApiTags('Documents')
 @Controller('documents')
@@ -87,8 +96,20 @@ export class DocumentsController {
   })
   @ApiCreatedResponse({ type: Document })
   @HttpCode(201)
-  async createDocument(@Body() documentData: CreateDocumentRequest) {
-    return this.documentsService.createDocument(documentData);
+  @UseInterceptors(FileInterceptor('document'))
+  async createDocument(
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({ fileType: FILE_TYPES })
+        .addMaxSizeValidator({ maxSize: FILE_MAX_SIZE })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        })
+    )
+    document: Express.Multer.File,
+    @Body() documentData: CreateDocumentRequest
+  ) {
+    return this.documentsService.createDocument(documentData, document);
   }
 
   @Patch(':documentId')
@@ -99,8 +120,31 @@ export class DocumentsController {
   @HttpCode(200)
   async updateDocument(
     @Param('documentId', ParseUUIDPipe) documentId: string,
-    @Body() documendData: UpdateDocumentRequest
+
+    @Body() documentData: UpdateDocumentRequest
   ) {
-    return this.documentsService.updateDocument(documentId, documendData);
+    return this.documentsService.updateDocument(documentId, documentData);
+  }
+
+  @Patch('/file/:documentId')
+  @ApiOperation({
+    summary: 'Upload a new file for the document entry.',
+  })
+  @ApiCreatedResponse({ type: Document })
+  @HttpCode(200)
+  @UseInterceptors(FileInterceptor('document'))
+  async updateDocumentFile(
+    @Param('documentId', ParseUUIDPipe) documentId: string,
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({ fileType: FILE_TYPES })
+        .addMaxSizeValidator({ maxSize: FILE_MAX_SIZE })
+        .build({
+          errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+        })
+    )
+    document: Express.Multer.File
+  ) {
+    return this.documentsService.updateDocumentFile(documentId, document);
   }
 }

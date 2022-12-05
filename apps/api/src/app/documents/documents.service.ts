@@ -8,12 +8,15 @@ import {
   SortOrder,
   UpdateDocumentRequest,
 } from '@hems/interfaces';
+import 'multer';
+import { FilesService } from '../files/files.service';
 
 @Injectable()
 export class DocumentsService {
   constructor(
     @InjectRepository(Document)
-    private readonly documentRepo: Repository<Document>
+    private readonly documentRepo: Repository<Document>,
+    private readonly fileService: FilesService
   ) {}
 
   async findAll(
@@ -42,11 +45,15 @@ export class DocumentsService {
     return await this.documentRepo.save(document);
   }
 
-  async createDocument(documentData: CreateDocumentRequest) {
-    // TODO: Make sure there is only one file submitted
-    // TODO: Make sure file is a PDF or DOCX
-    // TODO: Make sure file is not bigger than 50MB
-    return await this.documentRepo.save(documentData);
+  async createDocument(
+    documentData: CreateDocumentRequest,
+    document: Express.Multer.File
+  ) {
+    await this.fileService.uploadFile(document.buffer, document.originalname);
+    return await this.documentRepo.save({
+      ...documentData,
+      documentName: document.originalname,
+    });
   }
 
   async updateDocument(
@@ -55,15 +62,26 @@ export class DocumentsService {
   ) {
     const document = await this.documentRepo.findOneByOrFail({ documentId });
 
-    // TODO: Make sure there is only one file submitted
-    // TODO: Make sure file is a PDF or DOCX
-    // TODO: Make sure file is not bigger than 50MB
-
     for (const key in documentData) {
       if (Object.prototype.hasOwnProperty.call(documentData, key)) {
         document[key] = documentData[key];
       }
     }
+
+    return await this.documentRepo.save(document);
+  }
+
+  async updateDocumentFile(
+    documentId: string,
+    documentFile: Express.Multer.File
+  ) {
+    const document = await this.documentRepo.findOneByOrFail({ documentId });
+
+    await this.fileService.uploadFile(
+      documentFile.buffer,
+      documentFile.originalname
+    );
+    document.documentName = documentFile.originalname;
 
     return await this.documentRepo.save(document);
   }
