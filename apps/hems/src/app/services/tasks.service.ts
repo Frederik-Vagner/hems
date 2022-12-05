@@ -25,10 +25,7 @@ export class TasksService {
     return this.http.get<ITask>(`${env.apiUrl}/tasks${id}`);
   }
 
-  public update(
-    id: string,
-    params: IUpdateTask
-  ): Observable<ITask> {
+  public update(id: string, params: IUpdateTask): Observable<ITask> {
     return this.http.patch<ITask>(`${env.apiUrl}/tasks/${id}`, params);
   }
 }

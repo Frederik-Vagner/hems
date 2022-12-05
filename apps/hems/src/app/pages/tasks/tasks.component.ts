@@ -35,7 +35,7 @@ export class TasksComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchTasks(); 
+    this.fetchTasks();
   }
 
   fetchTasks(): void {
@@ -49,7 +49,6 @@ export class TasksComponent implements OnInit {
           (task) => task.listName === 'Evening'
         );
         console.log(this.morningTasks);
-        
       },
       error: (error) => {
         this.isLoading = false;
@@ -69,14 +68,10 @@ export class TasksComponent implements OnInit {
     return;
   }
 
-  
-
   openEditTaskDialog(task: ITask): void {
     this.dialog.open(EditTaskDialogComponent, {
       width: '500px',
-      data: task
+      data: task,
     });
   }
-
-
 }

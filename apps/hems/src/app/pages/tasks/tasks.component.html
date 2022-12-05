@@ -30,9 +30,25 @@
     </ng-container>
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef>Actions</th>
-      <td mat-cell *matCellDef="let task" >
-        <button mat-raised-button color="primary" type="submit" *ngIf="task.initials !== '' && task.completedAt !== null" (click)="openEditTaskDialog(task)">Edit</button>
-        <button mat-raised-button color="primary" type="submit" *ngIf="task.initials === '' || task.completedAt === null" (click)="openEditTaskDialog(task)">Complete</button>
+      <td mat-cell *matCellDef="let task">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          *ngIf="task.initials !== '' && task.completedAt !== null"
+          (click)="openEditTaskDialog(task)"
+        >
+          Edit
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          *ngIf="task.initials === '' || task.completedAt === null"
+          (click)="openEditTaskDialog(task)"
+        >
+          Complete
+        </button>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="morningColumns"></tr>
