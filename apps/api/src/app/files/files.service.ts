@@ -62,7 +62,7 @@ export class FilesService {
    */
   async uploadFile(
     dataBuffer: Buffer,
-    fileName: string
+    filename: string
   ): Promise<{ url: string }> {
     const clusterId = configService.getValue('LINODE_STORAGE_CLUSTER_ID', true);
     const bucketId = configService.getValue('LINODE_STORAGE_BUCKET_ID', true);
@@ -83,15 +83,22 @@ export class FilesService {
         new PutObjectCommand({
           Bucket: bucketId,
           Body: dataBuffer,
-          Key: fileName,
+          Key: filename,
         })
       );
       if (uploadResult.$metadata.httpStatusCode != 200) {
         throw new Error('UploadFailedError');
       } else {
-        return this.getSignedLink(fileName, 600);
+        this.logger.verbose(
+          `New file uploaded to linode storage. Filename: ${filename}`
+        );
+        return this.getSignedLink(filename, 600);
       }
     } catch (error) {
+      this.logger.error(
+        'Failed to upload a file to Linode Object storage',
+        error
+      );
       if (error.name === 'InvalidAccessKeyId') {
         throw new Error('InvalidAccessKeyIdError');
       } else {
