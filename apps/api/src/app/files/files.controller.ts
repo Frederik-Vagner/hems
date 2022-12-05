@@ -19,19 +19,17 @@ export class FilesController {
 
   @Get('/docs/:docName')
   async getSignedUrl(@Param('docName') docName: string) {
-    const result = await this.filesService.getSignedLink(docName);
+    const result = await this.filesService.getSignedLink(docName, 600);
     return { url: result.url };
   }
 
   @Post('/docs')
   @UseInterceptors(FileInterceptor('file'))
   async uploadFile(@UploadedFile() file: Express.Multer.File) {
-    console.log('file', file);
-
-    const uploadedFile = await this.filesService.uploadFile(
+    const { url } = await this.filesService.uploadFile(
       file.buffer,
       file.originalname
     );
-    console.log('File has been uploaded,', uploadedFile);
+    return { url };
   }
 }
