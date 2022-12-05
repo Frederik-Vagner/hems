@@ -12,17 +12,17 @@ import {
 } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
-import { LuggageService } from '../../../../../services/luggage.service';
+import { LuggageService } from '../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-update-checkin-dialog',
-  templateUrl: './update-checkin-dialog.component.html',
+  selector: 'hems-update-checkout-dialog',
+  templateUrl: './update-checkout-dialog.component.html',
   styleUrls: [
-    '../../../../../../assets/styles/checkbox.scss',
-    '../../../../../../assets/styles/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
-export class UpdateCheckinDialogComponent {
+export class UpdateCheckoutDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
@@ -30,14 +30,14 @@ export class UpdateCheckinDialogComponent {
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
-  @ViewChild('arrivalTime') arrivalTimeInput!: ElementRef;
   @ViewChild('bags') bagsInput!: ElementRef;
   @ViewChild('tagNr') tagNrInput!: ElementRef;
   @ViewChild('bbLr') bbLrInput!: ElementRef;
+  @ViewChild('bbDown') bbDownInput!: ElementRef;
   @ViewChild('location') locationInput!: ElementRef;
 
   constructor(
-    public dialogRef: MatDialogRef<UpdateCheckinDialogComponent>,
+    public dialogRef: MatDialogRef<UpdateCheckoutDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
     private snackbar: MatSnackBar,
@@ -45,25 +45,16 @@ export class UpdateCheckinDialogComponent {
   ) {
     this.luggageId = data.luggageId;
     this.form = new UntypedFormGroup({
-      room: new UntypedFormControl(data.room, [
-        Validators.required,
-        Validators.maxLength(10),
-        Validators.pattern('^[0-9]*$'),
-      ]),
-      roomReady: new UntypedFormControl(data.roomReady?.toString(), [
-        Validators.required,
-      ]),
+      room: new UntypedFormControl(data.room, [Validators.required]),
       name: new UntypedFormControl(data.name, [Validators.required]),
-      arrivalTime: new UntypedFormControl(data.arrivalTime, [
-        Validators.required,
-      ]),
       bags: new UntypedFormControl(data.bags, [Validators.required]),
       tagNr: new UntypedFormControl(data.tagNr, [Validators.required]),
       bbLr: new UntypedFormControl(data.bbLr, [Validators.required]),
-      bbUp: new UntypedFormControl(data.bbOut, []),
+      bbDown: new UntypedFormControl(data.bbDown, [Validators.required]),
+      bbOut: new UntypedFormControl(data.bbOut, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
-      completedAt: new UntypedFormControl(data.completedAt, []),
-      description: new UntypedFormControl(data.description, []),
+      completedAt: new UntypedFormControl(new Date(), []),
+      comments: new UntypedFormControl(data.comments, []),
     });
   }
 
@@ -73,39 +64,38 @@ export class UpdateCheckinDialogComponent {
         this.roomInput.nativeElement.focus();
       } else if (this.form.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
-      } else if (this.form.get('arrivalTime')?.invalid) {
-        this.arrivalTimeInput.nativeElement.focus();
       } else if (this.form.get('bags')?.invalid) {
         this.bagsInput.nativeElement.focus();
       } else if (this.form.get('tagNr')?.invalid) {
         this.tagNrInput.nativeElement.focus();
-      } else if (this.form.get('bbLr')?.invalid) {
-        this.bbLrInput.nativeElement.focus();
+      } else if (this.form.get('bbDown')?.invalid) {
+        this.bbDownInput.nativeElement.focus();
       } else if (this.form.get('location')?.invalid) {
         this.locationInput.nativeElement.focus();
+      } else if (this.form.get('bbLr')?.invalid) {
+        this.bbLrInput.nativeElement.focus();
       }
     } else {
-      this.updateCheckin();
+      this.updateCheckout();
     }
   }
 
-  updateCheckin(): void {
+  updateCheckout(): void {
     this.isLoading = true;
     this.service
       .update(this.luggageId, {
         room: this.form.get('room')?.value,
-        roomReady: this.form.get('roomReady')?.value,
         name: this.form.get('name')?.value,
-        arrivalTime: new Date(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
-        bbOut: this.form.get('bbUp')?.value,
+        bbDown: this.form.get('bbDown')?.value,
+        bbOut: this.form.get('bbOut')?.value,
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
-        description:
-          this.form.get('description')?.value.toString().length > 1
-            ? this.form.get('description')?.value
+        comments:
+          this.form.get('comments')?.value.toString().length > 1
+            ? this.form.get('comments')?.value
             : '-',
       })
       .subscribe({

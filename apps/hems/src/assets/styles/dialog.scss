@@ -8,10 +8,6 @@ h1 {
   margin-bottom: 0.5em;
 }
 
-textarea {
-  height: 100px;
-}
-
 .dialog-row {
   display: flex;
   justify-content: space-between;
@@ -30,11 +26,5 @@ textarea {
 
   &:first-of-type {
     margin-top: 1.25em;
-  }
-}
-
-::ng-deep {
-  .mat-datepicker-content {
-    box-shadow: none !important;
   }
 }
