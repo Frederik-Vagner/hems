@@ -12,10 +12,6 @@ import { CreateAssignmentDialogComponent } from './pages/assignments/createAssig
 import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 import { CarsComponent } from './pages/cars/cars.component';
 import { CheckinComponent } from './pages/checkin/checkin.component';
-import { CreateCheckinDialogComponent } from './pages/checkin/dialogs/checkinDialogs/createCheckinDialog/create-checkin-dialog.component';
-import { UpdateCheckinDialogComponent } from './pages/checkin/dialogs/checkinDialogs/updateCheckinDialog/update-checkin-dialog.component';
-import { CreateCheckoutDialogComponent } from './pages/checkin/dialogs/checkoutDialogs/createCheckoutDialog/create-checkout-dialog.component';
-import { UpdateCheckoutDialogComponent } from './pages/checkin/dialogs/checkoutDialogs/updateCheckoutDialog/update-checkout-dialog.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LongtermComponent } from './pages/longterm/longterm.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
@@ -24,6 +20,12 @@ import { CreateLongTermDialogComponent } from './pages/longterm/createLongTermDi
 import { UpdateLongTermDialogComponent } from './pages/longterm/updateLongTermDialog/update-long-term-dialog.component';
 import { UpdateCarDialogComponent } from './pages/cars/updateCarEntryDialog/update-car-dialog.component';
 import { CreateCarDialogComponent } from './pages/cars/createCarEntryDialog/create-car-dialog.component';
+import { UpdateCheckinDialogComponent } from './pages/checkin/updateCheckinDialog/update-checkin-dialog.component';
+import { CreateCheckinDialogComponent } from './pages/checkin/createCheckinDialog/create-checkin-dialog.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { CreateCheckoutDialogComponent } from './pages/checkout/createCheckoutDialog/create-checkout-dialog.component';
+import { UpdateCheckoutDialogComponent } from './pages/checkout/updateCheckoutDialog/update-checkout-dialog.component';
+import { EditTaskDialogComponent } from './pages/tasks/editTaskDialog/editTaskDialog.component';
 
 @NgModule({
   declarations: [
@@ -33,19 +35,21 @@ import { CreateCarDialogComponent } from './pages/cars/createCarEntryDialog/crea
     CarsComponent,
     TasksComponent,
     CheckinComponent,
+    CheckoutComponent,
     AssignmentsComponent,
     LongtermComponent,
     UpdateCheckinDialogComponent,
     CreateCheckinDialogComponent,
-    UpdateCheckoutDialogComponent,
-    CreateCheckoutDialogComponent,
     CreateAssignmentDialogComponent,
     UpdateAssignmentDialogComponent,
+    CreateCheckoutDialogComponent,
+    UpdateCheckoutDialogComponent,
     CreateLongTermDialogComponent,
     UpdateLongTermDialogComponent,
     CreateCarDialogComponent,
     UpdateCarDialogComponent,
     CarsComponent,
+    EditTaskDialogComponent,
   ],
   imports: [
     BrowserModule,

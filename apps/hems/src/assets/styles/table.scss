@@ -41,7 +41,7 @@ th.mat-header-cell {
   font-weight: 900;
   vertical-align: bottom;
   padding-bottom: 5px;
-  padding-right: 10px;
+  text-align: center;
 
   &:first-of-type {
     padding-left: 10px;
@@ -83,14 +83,14 @@ td.mat-cell {
   }
 }
 
-// ::ng-deep {
-//   .mat-form-field-wrapper {
-//     padding-bottom: 0.15em;
-//   }
-//   .mat-form-field-underline {
-//     bottom: 0;
-//   }
-//   .mat-form-field-ripple {
-//     background-color: var(--main-blue);
-//   }
-// }
+.remove-error-message {
+  ::ng-deep.mat-form-field-wrapper {
+    padding-bottom: 0.15em;
+  }
+  ::ng-deep.mat-form-field-underline {
+    bottom: 0;
+  }
+  ::ng-deep.mat-form-field-ripple {
+    background-color: var(--main-blue);
+  }
+}

@@ -1,10 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import {
-  Component,
-  ElementRef,
-  Inject,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
 import {
   UntypedFormControl,
   UntypedFormGroup,
@@ -116,7 +111,6 @@ export class UpdateCarDialogComponent {
       charged: this.updateCarForm.get('charged')?.value,
     };
     console.log(skrt);
-    
 
     this.carService
       .updateCar(this.data.carId, {

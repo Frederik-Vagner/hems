@@ -34,7 +34,7 @@ export class LongtermComponent implements OnInit {
     'location',
     'bbOut',
     'dateOut',
-    'description',
+    'comments',
   ];
 
   constructor(

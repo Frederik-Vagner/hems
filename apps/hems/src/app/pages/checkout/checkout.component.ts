@@ -4,29 +4,29 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ILuggage } from '@hems/interfaces';
 import { DisplayDateService } from '../../services/display-date.service';
 import { LuggageService } from '../../services/luggage.service';
-import { CreateCheckinDialogComponent } from './createCheckinDialog/create-checkin-dialog.component';
-import { UpdateCheckinDialogComponent } from './updateCheckinDialog/update-checkin-dialog.component';
+import { CreateCheckoutDialogComponent } from './createCheckoutDialog/create-checkout-dialog.component';
+import { UpdateCheckoutDialogComponent } from './updateCheckoutDialog/update-checkout-dialog.component';
 
 @Component({
   selector: 'hems-checkin',
-  templateUrl: './checkin.component.html',
+  templateUrl: './checkout.component.html',
   styleUrls: ['../../../assets/styles/table.scss'],
 })
-export class CheckinComponent implements OnInit {
+export class CheckoutComponent implements OnInit {
   checkinLuggage: ILuggage[] = [];
+  checkoutLuggage: ILuggage[] = [];
   listNames?: string[];
-  isLoadingCheckin = false;
+  isLoadingCheckout = false;
   displayDate = new Date();
 
-  checkinColumns = [
+  checkoutColumns = [
     'room',
-    // 'roomReady',
     'name',
-    'arrivalTime',
     'bags',
     'tagNr',
-    'bbLr',
+    'bbDown',
     'location',
+    'bbLr',
     'completedAt',
     'bbOut',
     'comments',
@@ -49,17 +49,17 @@ export class CheckinComponent implements OnInit {
   }
 
   fetchLuggage(): void {
-    this.isLoadingCheckin = true;
-    this.luggageService.getCheckin(this.displayDate).subscribe({
+    this.isLoadingCheckout = true;
+
+    this.luggageService.getCheckout(this.displayDate).subscribe({
       next: (luggage) => {
-        this.checkinLuggage = luggage;
-        console.log(this.checkinLuggage);
+        this.checkoutLuggage = luggage;
       },
       error: (error) => {
-        this.isLoadingCheckin = false;
+        this.isLoadingCheckout = false;
         console.error(error);
         this.snackBar.open(
-          'Check In data have failed to load, please reload the page.',
+          'Check Out data have failed to load, please reload the page.',
           'Okay',
           {
             duration: 10000,
@@ -69,15 +69,15 @@ export class CheckinComponent implements OnInit {
     });
   }
 
-  openCheckinEditDialog(luggage: ILuggage): void {
-    this.dialog.open(UpdateCheckinDialogComponent, {
+  openCheckoutEditDialog(luggage: ILuggage): void {
+    this.dialog.open(UpdateCheckoutDialogComponent, {
       width: '500px',
       data: luggage,
     });
   }
 
-  openCheckinCreateDialog(): void {
-    this.dialog.open(CreateCheckinDialogComponent, {
+  openCheckoutCreateDialog(): void {
+    this.dialog.open(CreateCheckoutDialogComponent, {
       width: '500px',
     });
   }

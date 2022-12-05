@@ -1,14 +1,14 @@
 <form
   (ngSubmit)="onSubmit()"
   [formGroup]="form"
-  data-cy="create-checkin-dialog"
+  data-cy="update-checkin-dialog"
 >
-  <h1>Create Check In</h1>
+  <h1>Update Check In</h1>
   <hr />
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label class="input-label">Room</mat-label>
+      <mat-label class="input-label">Room nr.</mat-label>
       <input
         #room
         type="text"
@@ -23,31 +23,27 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Room Status</mat-label>
+      <mat-label>Room status</mat-label>
       <mat-select
         formControlName="roomReady"
         data-cy="update-checkin-room-status"
       >
-        <mat-option value="false">Not Ready</mat-option>
+        <mat-option value="false">Not ready</mat-option>
         <mat-option value="true">Ready</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      class="input full-width"
-      appearance="fill"
-    >
-      <mat-label class="input-label">Name</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Name</mat-label>
       <input
         #name
         type="text"
         data-cy="update-checkin-name"
         formControlName="name"
         matInput
-        placeholder="Name"
+        placeholder="John Doe"
       />
       <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
         Required
@@ -55,7 +51,7 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Time of Arrival</mat-label>
+      <mat-label>Time of arrival</mat-label>
       <input
         #arrivalTime
         matInput
@@ -78,12 +74,8 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      class="input one-third"
-      appearance="fill"
-    >
-      <mat-label class="input-label">Nr of bags</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Nr of bags</mat-label>
       <input
         #bags
         type="text"
@@ -97,12 +89,8 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      autocomplete="off"
-      class="input one-third"
-      appearance="fill"
-    >
-      <mat-label class="input-label">Tag nr</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Tag nr.</mat-label>
       <input
         #tagNr
         type="text"
@@ -118,27 +106,23 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      class="input one-third"
-      appearance="fill"
-    >
-      <mat-label class="input-label">BB in LR</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>BB in LR</mat-label>
       <input
         #bbLr
         type="text"
         data-cy="update-checkin-name"
         formControlName="bbLr"
         matInput
-        placeholder="Initials"
+        placeholder="JD"
       />
       <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
         Required
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label class="input-label">Location</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Location</mat-label>
       <input
         #location
         type="text"
@@ -155,49 +139,70 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field autocomplete="off" class="full-width" appearance="fill">
-    <mat-label class="input-label">Comments</mat-label>
-    <textarea
-      type="text"
-      data-cy="update-checkin-description"
-      formControlName="description"
-      matInput
-      placeholder="Comments"
-    ></textarea>
-    <mat-error
-      *ngIf="form.get('description')?.invalid && form.get('description')?.dirty"
-    >
-      Can't be more than 1000 characters
-    </mat-error>
-  </mat-form-field>
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>In room time</mat-label>
+      <input
+        matInput
+        [ngxMatDatetimePicker]="pickerCompletedAt"
+        placeholder="dd/MM HH:mm"
+        formControlName="completedAt"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(pickerCompletedAt)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #pickerCompletedAt
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
 
-  <label class="checkbox-container">
-    The guest has given consent to the processing of personal data
+    <mat-form-field autocomplete="off" class="input" appearance="fill">
+      <mat-label>BB up</mat-label>
+      <input
+        type="text"
+        data-cy="update-checkin-name"
+        formControlName="bbUp"
+        matInput
+        placeholder="JD"
+      />
+      <mat-error *ngIf="form.get('bbUp')?.invalid && form.get('bbUp')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
     <input
-      type="checkbox"
-      [checked]="guestApprovedGDPR"
-      (change)="guestApprovedGDPR = !guestApprovedGDPR"
+      type="text"
+      data-cy="update-checkin-comments"
+      formControlName="comments"
+      matInput
+      placeholder="Comments on the check-in"
     />
-    <span class="checkmark" data-cy="checkbox-banner"></span>
-  </label>
+  </mat-form-field>
 
   <div class="dialog-row">
     <button
-      mat-raised-button
+      data-cy="update-checkin-cancel-btn"
       class="secondary-btn"
-      data-cy="create-checkin-cancel-btn"
+      mat-raised-button
       mat-dialog-close
     >
       Cancel
     </button>
-
     <button
       mat-raised-button
-      class="action-btn"
-      data-cy="create-checkin-create-btn"
+      data-cy="update-checkin-create-btn"
       type="submit"
+      class="action-btn"
     >
-      + Add checkin
+      Update
     </button>
   </div>
 </form>

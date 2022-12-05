@@ -1,32 +1,28 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ILuggage } from '@hems/interfaces';
-import { LuggageService } from '../../../../../services/luggage.service';
+import { LuggageType } from '@hems/interfaces';
+import { LuggageService } from '../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-update-checkout-dialog',
-  templateUrl: './update-checkout-dialog.component.html',
+  selector: 'hems-create-checkout-dialog',
+  templateUrl: './create-checkout-dialog.component.html',
   styleUrls: [
-    '../../../../../../assets/styles/checkbox.scss',
-    '../../../../../../assets/styles/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
-export class UpdateCheckoutDialogComponent {
+export class CreateCheckoutDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
-  luggageId: string;
+  guestApprovedGDPR = false;
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
@@ -37,24 +33,19 @@ export class UpdateCheckoutDialogComponent {
   @ViewChild('location') locationInput!: ElementRef;
 
   constructor(
-    public dialogRef: MatDialogRef<UpdateCheckoutDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
     private snackbar: MatSnackBar,
     private dialog: MatDialog
   ) {
-    this.luggageId = data.luggageId;
     this.form = new UntypedFormGroup({
-      room: new UntypedFormControl(data.room, [Validators.required]),
-      name: new UntypedFormControl(data.name, [Validators.required]),
-      bags: new UntypedFormControl(data.bags, [Validators.required]),
-      tagNr: new UntypedFormControl(data.tagNr, [Validators.required]),
-      bbLr: new UntypedFormControl(data.bbLr, [Validators.required]),
-      bbDown: new UntypedFormControl(data.bbDown, [Validators.required]),
-      bbOut: new UntypedFormControl(data.bbOut, []),
-      location: new UntypedFormControl(data.location, [Validators.required]),
-      completedAt: new UntypedFormControl(data.completedAt, []),
-      description: new UntypedFormControl(data.description, []),
+      room: new UntypedFormControl('', [Validators.required]),
+      name: new UntypedFormControl('', [Validators.required]),
+      bags: new UntypedFormControl('', [Validators.required]),
+      tagNr: new UntypedFormControl('', [Validators.required]),
+      bbLr: new UntypedFormControl('', [Validators.required]),
+      bbDown: new UntypedFormControl('', [Validators.required]),
+      location: new UntypedFormControl('', [Validators.required]),
+      comments: new UntypedFormControl('', []),
     });
   }
 
@@ -76,31 +67,39 @@ export class UpdateCheckoutDialogComponent {
         this.bbLrInput.nativeElement.focus();
       }
     } else {
-      this.updateCheckout();
+      this.createCheckout();
     }
   }
 
-  updateCheckout(): void {
+  createCheckout(): void {
+    if (!this.guestApprovedGDPR) {
+      this.snackbar.open('Guest needs to approve storing their data.', 'Okay', {
+        duration: 10000,
+      });
+      return;
+    }
+
     this.isLoading = true;
     this.service
-      .update(this.luggageId, {
+      .create({
         room: this.form.get('room')?.value,
+        roomReady: this.form.get('roomReady')?.value,
         name: this.form.get('name')?.value,
+        arrivalTime: new Date(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
         bbDown: this.form.get('bbDown')?.value,
-        bbOut: this.form.get('bbOut')?.value,
         location: this.form.get('location')?.value,
-        completedAt: this.form.get('completedAt')?.value,
-        description:
-          this.form.get('description')?.value.toString().length > 1
-            ? this.form.get('description')?.value
+        comments:
+          this.form.get('comments')?.value.toString().length > 1
+            ? this.form.get('comments')?.value
             : '-',
+        luggageType: LuggageType.CHECKOUT,
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Luggage item updated!', 'Thanks', {
+          this.snackbar.open('Check In luggage item created!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -109,7 +108,7 @@ export class UpdateCheckoutDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackbar.open('Failed to create, please try again.', 'Okay', {
             duration: 10000,
           });
           this.isLoading = false;

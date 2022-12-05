@@ -8,14 +8,14 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LuggageType } from '@hems/interfaces';
-import { LuggageService } from '../../../../../services/luggage.service';
+import { LuggageService } from '../../../services/luggage.service';
 
 @Component({
   selector: 'hems-create-checkin-dialog',
   templateUrl: './create-checkin-dialog.component.html',
   styleUrls: [
-    '../../../../../../assets/styles/checkbox.scss',
-    '../../../../../../assets/styles/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
 export class CreateCheckinDialogComponent {
@@ -50,7 +50,7 @@ export class CreateCheckinDialogComponent {
       tagNr: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
-      description: new UntypedFormControl('', [Validators.maxLength(1000)]),
+      comments: new UntypedFormControl('', [Validators.maxLength(1000)]),
     });
   }
 
@@ -95,9 +95,9 @@ export class CreateCheckinDialogComponent {
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
         location: this.form.get('location')?.value,
-        description:
-          this.form.get('description')?.value.toString().length > 1
-            ? this.form.get('description')?.value
+        comments:
+          this.form.get('comments')?.value.toString().length > 1
+            ? this.form.get('comments')?.value
             : '-',
         luggageType: LuggageType.CHECKIN,
         bbDown: ' ',

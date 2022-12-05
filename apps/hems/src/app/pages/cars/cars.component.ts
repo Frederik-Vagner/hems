@@ -6,11 +6,15 @@ import { MatDialog } from '@angular/material/dialog';
 import { DisplayDateService } from '../../services/display-date.service';
 import { CreateCarDialogComponent } from './createCarEntryDialog/create-car-dialog.component';
 import { UpdateCarDialogComponent } from './updateCarEntryDialog/update-car-dialog.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'hems-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['../../../assets/styles/table.scss'],
+  styleUrls: [
+    '../../../assets/styles/table.scss',
+    '../../../assets/styles/checkbox.scss',
+  ],
 })
 export class CarsComponent implements OnInit {
   carList: ICar[] = [];
@@ -34,7 +38,7 @@ export class CarsComponent implements OnInit {
     'parkingLot',
     'deliveryDateTime',
     'bbOut',
-    'comment',
+    'comments',
     'charged',
   ];
 
@@ -42,12 +46,31 @@ export class CarsComponent implements OnInit {
     private readonly carService: CarService,
     private displayDateService: DisplayDateService,
     private snackBar: MatSnackBar,
-    private dialogRef: MatDialog
+    private dialogRef: MatDialog,
+    private snackbar: MatSnackBar
   ) {
     this.displayDateService.getDisplayDateSubject().subscribe((date) => {
       this.displayDate = new Date(date);
       this.fetchCarList();
     });
+  }
+
+  updateCharge(carId: string, charged: boolean): void {
+    this.carService
+      .updateCar(carId, {
+        charged: !charged,
+      })
+      .subscribe({
+        next: () => {
+          this.snackbar.open('Car updated!', 'Thanks', { duration: 5000 });
+        },
+        error: (err: HttpErrorResponse) => {
+          console.error(err);
+          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+            duration: 15000,
+          });
+        },
+      });
   }
 
   openCreateCarDialog() {

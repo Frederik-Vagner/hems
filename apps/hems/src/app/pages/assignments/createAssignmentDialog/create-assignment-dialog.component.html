@@ -2,7 +2,7 @@
   <h1>Add assignment</h1>
   <hr />
   <div class="dialog-row">
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" autocomplete="off">
       <mat-label>Room</mat-label>
       <input
         #room
@@ -22,7 +22,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" autocomplete="off">
       <mat-label>Task</mat-label>
       <input
         #task
@@ -42,8 +42,8 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Description</mat-label>
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
     <textarea
       #comments
       matInput
@@ -62,7 +62,7 @@
   </mat-form-field>
 
   <div class="dialog-row">
-    <mat-form-field appearance="fill">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Received by</mat-label>
       <input
         #receivedBy
@@ -81,7 +81,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Performed by</mat-label>
       <input
         #performedBy
@@ -125,7 +125,7 @@
       </ngx-mat-datetime-picker>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Time performed</mat-label>
       <input
         matInput
@@ -165,7 +165,7 @@
       Cancel
     </button>
     <button class="action-btn" mat-raised-button type="submit">
-      + Add assignment
+      Add assignment
     </button>
   </div>
 </form>

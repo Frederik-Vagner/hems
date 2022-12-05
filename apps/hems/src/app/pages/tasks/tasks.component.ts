@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ITask } from '@hems/interfaces';
 import { DisplayDateService } from '../../services/display-date.service';
 import { TasksService } from '../../services/tasks.service';
+import { EditTaskDialogComponent } from './editTaskDialog/editTaskDialog.component';
 
 @Component({
   selector: 'hems-tasks',
@@ -23,7 +25,8 @@ export class TasksComponent implements OnInit {
   constructor(
     private readonly tasksService: TasksService,
     private snackBar: MatSnackBar,
-    private displayDateService: DisplayDateService
+    private displayDateService: DisplayDateService,
+    private dialog: MatDialog
   ) {
     this.displayDateService.getDisplayDateSubject().subscribe((date) => {
       this.displayDate = new Date(date);
@@ -45,6 +48,7 @@ export class TasksComponent implements OnInit {
         this.eveningTasks = tasks.tasks.filter(
           (task) => task.listName === 'Evening'
         );
+        console.log(this.morningTasks);
       },
       error: (error) => {
         this.isLoading = false;
@@ -57,6 +61,13 @@ export class TasksComponent implements OnInit {
           }
         );
       },
+    });
+  }
+
+  openEditTaskDialog(task: ITask): void {
+    this.dialog.open(EditTaskDialogComponent, {
+      width: '500px',
+      data: task,
     });
   }
 }
