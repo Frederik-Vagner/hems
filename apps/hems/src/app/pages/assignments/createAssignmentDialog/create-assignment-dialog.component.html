@@ -9,7 +9,7 @@
         type="text"
         formControlName="room"
         matInput
-        placeholder="Room nr"
+        placeholder="123"
         maxlength="10"
       />
       <mat-error
@@ -108,7 +108,7 @@
       <input
         matInput
         [ngxMatDatetimePicker]="receivedAt"
-        placeholder="Received at"
+        placeholder="dd/MM HH:mm"
         formControlName="receivedAt"
         [max]="maxDatetime"
       />
@@ -130,7 +130,7 @@
       <input
         matInput
         [ngxMatDatetimePicker]="completedAt"
-        placeholder="Received at"
+        placeholder="dd/MM HH:mm"
         formControlName="completedAt"
       />
       <mat-datepicker-toggle

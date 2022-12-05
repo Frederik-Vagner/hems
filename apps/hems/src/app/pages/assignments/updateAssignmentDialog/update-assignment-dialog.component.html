@@ -9,7 +9,7 @@
         type="text"
         formControlName="room"
         matInput
-        placeholder="Room nr"
+        placeholder="123"
         maxlength="10"
       />
       <mat-error
@@ -108,7 +108,7 @@
       <input
         matInput
         [ngxMatDatetimePicker]="receivedAt"
-        placeholder="Received at"
+        placeholder="dd/MM HH:mm"
         formControlName="receivedAt"
         [max]="maxDatetime"
       />
@@ -130,7 +130,7 @@
       <input
         matInput
         [ngxMatDatetimePicker]="completedAt"
-        placeholder="Received at"
+        placeholder="dd/MM HH:mm"
         formControlName="completedAt"
         [max]="maxDatetime"
       />
@@ -157,11 +157,11 @@
   </div>
 
   <div class="dialog-row">
-    <button class="basic-btn" mat-raised-button mat-dialog-close type="button">
+    <button class="secondary-btn" mat-raised-button mat-dialog-close type="button">
       Cancel
     </button>
-    <button class="secondary-btn" mat-raised-button type="submit">
-      Update assignment
+    <button class="action-btn" mat-raised-button type="submit">
+      Update
     </button>
   </div>
 </form>

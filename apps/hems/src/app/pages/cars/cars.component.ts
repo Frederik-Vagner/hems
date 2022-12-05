@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { ICar } from '@hems/interfaces';
+import { CarSortOptions, ICar, SortOrder } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DisplayDateService } from '../../services/display-date.service';
-import { CreateCarDialogComponent } from './modal/create/create-car-dialog.component';
+import { CreateCarDialogComponent } from './createCarEntryDialog/create-car-dialog.component';
+import { UpdateCarDialogComponent } from './updateCarEntryDialog/update-car-dialog.component';
 
 @Component({
   selector: 'hems-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.scss'],
+  styleUrls: ['../../../assets/styles/table.scss'],
 })
 export class CarsComponent implements OnInit {
   carList: ICar[] = [];
   displayDate = new Date();
+  sortBy: CarSortOptions | undefined;
+  sortOrder: SortOrder = SortOrder.ASCENDING;
+  search = '';
 
   carColumns = [
     'room',
@@ -32,13 +36,6 @@ export class CarsComponent implements OnInit {
     'bbOut',
     'comment',
     'charged',
-    'actions',
-  ];
-
-  foods = [
-    { value: 'steak-0', viewValue: 'Room' },
-    { value: 'pizza-1', viewValue: 'Name' },
-    { value: 'tacos-2', viewValue: 'Pick Up Time' },
   ];
 
   constructor(
@@ -57,23 +54,15 @@ export class CarsComponent implements OnInit {
     this.dialogRef.open(CreateCarDialogComponent, { width: '500px' });
   }
 
-  openDialogEdit() {
-    //this.dialogRef.open();
+  openDialogEdit(carListEntry: ICar) {
+    this.dialogRef.open(UpdateCarDialogComponent, {
+      width: '500px',
+      data: carListEntry,
+    });
   }
 
   ngOnInit(): void {
     this.fetchCarList();
-  }
-
-  formatDate(element: ICar): string {
-    const parsedDate = new Date(element.arrivalDate);
-    return parsedDate.toLocaleString(undefined, {
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      hour12: false,
-      minute: '2-digit',
-    });
   }
 
   fetchCarList(): void {
@@ -85,18 +74,13 @@ export class CarsComponent implements OnInit {
       error: (error) => {
         console.error(error);
         this.snackBar.open(
-          'Check Out data have failed to load',
-          'Imma try again later',
+          'Check Out data have failed to load, please try checking your connection.',
+          'Okay',
           {
             duration: 10000,
           }
         );
       },
     });
-  }
-
-  editCarListEntry(id: string): void {
-    alert(id);
-    console.log(this.carList);
   }
 }

@@ -12,7 +12,7 @@ import { UpdateCheckoutDialogComponent } from './dialogs/checkoutDialogs/updateC
 @Component({
   selector: 'hems-checkin',
   templateUrl: './checkin.component.html',
-  styleUrls: ['../../../assets/table.scss'],
+  styleUrls: ['../../../assets/styles/table.scss'],
 })
 export class CheckinComponent implements OnInit {
   checkinLuggage: ILuggage[] = [];
