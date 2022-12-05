@@ -12,8 +12,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('9/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -33,8 +32,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('9/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -53,8 +51,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('2/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -68,8 +65,7 @@ export const documents: IDocument[] = [
     comments: 'Donec semper sapien a libero.',
     lastViewedAt: null,
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('5/4/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -88,8 +84,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('7/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -108,8 +103,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('1/31/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -128,8 +122,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('6/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -149,8 +142,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('2/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -169,8 +161,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('7/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -189,8 +180,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('8/18/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -204,8 +194,7 @@ export const documents: IDocument[] = [
     comments: null,
     lastViewedAt: null,
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('5/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -224,8 +213,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('2/3/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -245,8 +233,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('8/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -265,8 +252,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('9/17/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -281,8 +267,7 @@ export const documents: IDocument[] = [
       'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.',
     lastViewedAt: null,
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('12/31/2021').setHours(
         Math.random() * (23 - 2) + 2,
@@ -301,8 +286,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('6/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -321,8 +305,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('11/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -337,8 +320,7 @@ export const documents: IDocument[] = [
       'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.',
     lastViewedAt: null,
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('10/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -357,8 +339,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('6/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -377,8 +358,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentUrl:
-      'https://docs.google.com/document/d/1rpUgd97wTYVqalF9FSAMUDCh_9ilYGxZ9ml-5iC0dkk/edit?usp=sharing',
+    documentName: 'document.pdf',
     createdAt: new Date(
       new Date('8/7/2022').setHours(
         Math.random() * (23 - 2) + 2,
