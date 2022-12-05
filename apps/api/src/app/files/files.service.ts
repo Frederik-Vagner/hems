@@ -15,7 +15,7 @@ export class FilesService {
    * Makes a request to Linode and creates a signed url allowing access to the given file.
    * @param fileName the name of the file.
    * @param expiresIn how long the link should be valid for. In seconds. Between 360 and 86400 seconds.
-   * @returns a url, or throws an error.
+   * @returns a url, or throws an error if the file doesn't exist.
    */
   async getSignedLink(
     fileName: string,
