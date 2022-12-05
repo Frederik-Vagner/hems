@@ -6,7 +6,7 @@ export interface IDocument extends IBase {
   comments?: string;
   lastViewedAt?: Date;
   showOnDashboard: boolean;
-  documentUrl: string;
+  documentName: string;
 }
 
 export interface ICreateDocumentRequest {
@@ -14,7 +14,6 @@ export interface ICreateDocumentRequest {
   comments?: string;
   lastViewedAt?: Date;
   showOnDashboard: boolean;
-  documentUrl: string;
 }
 
 export interface IUpdateDocumentRequest {
@@ -22,5 +21,4 @@ export interface IUpdateDocumentRequest {
   comments?: string;
   lastViewedAt?: Date;
   showOnDashboard?: boolean;
-  documentUrl?: string;
 }
