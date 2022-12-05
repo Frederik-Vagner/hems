@@ -1,6 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import {
+  UntypedFormControl,
+  UntypedFormGroup,
+  Validators,
+} from '@angular/forms';
 import {
   MatDialog,
   MatDialogRef,
@@ -14,8 +18,8 @@ import { TasksService } from '../../../services/tasks.service';
   selector: 'hems-edit-task-dialog',
   templateUrl: './editTaskDialog.component.html',
   styleUrls: [
-    '../../../../assets/checkbox.scss',
-    '../../../../assets/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
 export class EditTaskDialogComponent {
@@ -38,7 +42,9 @@ export class EditTaskDialogComponent {
     this.taskId = data.taskId;
     this.form = new UntypedFormGroup({
       initials: new UntypedFormControl(data.initials, [Validators.required]),
-      completedAt: new UntypedFormControl(data.completedAt, [Validators.required]),
+      completedAt: new UntypedFormControl(data.completedAt, [
+        Validators.required,
+      ]),
     });
   }
 
@@ -59,8 +65,7 @@ export class EditTaskDialogComponent {
     this.service
       .update(this.taskId, {
         initials: this.form.get('initials')?.value,
-        completedAt: new Date(this.form.get('completedAt')?.value
-        ),
+        completedAt: new Date(this.form.get('completedAt')?.value),
       })
       .subscribe({
         next: () => {
