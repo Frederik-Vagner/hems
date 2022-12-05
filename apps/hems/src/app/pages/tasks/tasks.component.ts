@@ -64,10 +64,6 @@ export class TasksComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
-    return;
-  }
-
   openEditTaskDialog(task: ITask): void {
     this.dialog.open(EditTaskDialogComponent, {
       width: '500px',
