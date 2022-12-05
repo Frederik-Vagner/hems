@@ -166,3 +166,30 @@ mat-divider {
 .mat-drawer-side {
   border-right: none;
 }
+
+.remove-error-message {
+  ::ng-deep.mat-form-field-wrapper {
+    padding-bottom: 0.15em;
+  }
+  ::ng-deep.mat-form-field-underline {
+    bottom: 0;
+  }
+  ::ng-deep.mat-form-field-ripple {
+    background-color: var(--main-blue);
+  }
+}
+
+.top-nav-actions {
+  display: flex;
+  align-items: center;
+
+  mat-form-field:first-of-type {
+    margin-right: 1em;
+  }
+}
+
+::ng-deep {
+  .mat-datepicker-content {
+    box-shadow: none !important;
+  }
+}

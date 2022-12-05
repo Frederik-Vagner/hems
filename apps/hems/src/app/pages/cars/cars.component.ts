@@ -1,19 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { ICar } from '@hems/interfaces';
+import { CarSortOptions, ICar, SortOrder } from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DisplayDateService } from '../../services/display-date.service';
-import { CreateCarDialogComponent } from './modal/create/create-car-dialog.component';
+import { CreateCarDialogComponent } from './createCarEntryDialog/create-car-dialog.component';
+import { UpdateCarDialogComponent } from './updateCarEntryDialog/update-car-dialog.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'hems-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.scss'],
+  styleUrls: [
+    '../../../assets/styles/table.scss',
+    '../../../assets/styles/checkbox.scss',
+  ],
 })
 export class CarsComponent implements OnInit {
   carList: ICar[] = [];
   displayDate = new Date();
+  sortBy: CarSortOptions | undefined;
+  sortOrder: SortOrder = SortOrder.ASCENDING;
+  search = '';
 
   carColumns = [
     'room',
@@ -30,22 +38,16 @@ export class CarsComponent implements OnInit {
     'parkingLot',
     'deliveryDateTime',
     'bbOut',
-    'comment',
+    'comments',
     'charged',
-    'actions',
-  ];
-
-  foods = [
-    { value: 'steak-0', viewValue: 'Room' },
-    { value: 'pizza-1', viewValue: 'Name' },
-    { value: 'tacos-2', viewValue: 'Pick Up Time' },
   ];
 
   constructor(
     private readonly carService: CarService,
     private displayDateService: DisplayDateService,
     private snackBar: MatSnackBar,
-    private dialogRef: MatDialog
+    private dialogRef: MatDialog,
+    private snackbar: MatSnackBar
   ) {
     this.displayDateService.getDisplayDateSubject().subscribe((date) => {
       this.displayDate = new Date(date);
@@ -53,27 +55,37 @@ export class CarsComponent implements OnInit {
     });
   }
 
+  updateCharge(carId: string, charged: boolean): void {
+    this.carService
+      .updateCar(carId, {
+        charged: !charged,
+      })
+      .subscribe({
+        next: () => {
+          this.snackbar.open('Car updated!', 'Thanks', { duration: 5000 });
+        },
+        error: (err: HttpErrorResponse) => {
+          console.error(err);
+          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+            duration: 15000,
+          });
+        },
+      });
+  }
+
   openCreateCarDialog() {
     this.dialogRef.open(CreateCarDialogComponent, { width: '500px' });
   }
 
-  openDialogEdit() {
-    //this.dialogRef.open();
+  openDialogEdit(carListEntry: ICar) {
+    this.dialogRef.open(UpdateCarDialogComponent, {
+      width: '500px',
+      data: carListEntry,
+    });
   }
 
   ngOnInit(): void {
     this.fetchCarList();
-  }
-
-  formatDate(element: ICar): string {
-    const parsedDate = new Date(element.arrivalDate);
-    return parsedDate.toLocaleString(undefined, {
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      hour12: false,
-      minute: '2-digit',
-    });
   }
 
   fetchCarList(): void {
@@ -85,18 +97,13 @@ export class CarsComponent implements OnInit {
       error: (error) => {
         console.error(error);
         this.snackBar.open(
-          'Check Out data have failed to load',
-          'Imma try again later',
+          'Check Out data have failed to load, please try checking your connection.',
+          'Okay',
           {
             duration: 10000,
           }
         );
       },
     });
-  }
-
-  editCarListEntry(id: string): void {
-    alert(id);
-    console.log(this.carList);
   }
 }

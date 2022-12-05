@@ -1,14 +1,14 @@
 <main>
   <div class="table-actions" style="justify-content: end">
     <button mat-raised-button class="action-btn" (click)="createAssignment()">
-      + Add assignment
+      Add assignment
     </button>
   </div>
   <hr />
 
   <table mat-table [dataSource]="assignmentList">
     <ng-container matColumnDef="room">
-      <th mat-header-cell *matHeaderCellDef>Room</th>
+      <th mat-header-cell *matHeaderCellDef>Room nr.</th>
       <td mat-cell *matCellDef="let item">{{ item.room ? item.room : '-' }}</td>
     </ng-container>
     <ng-container matColumnDef="task">
@@ -26,19 +26,19 @@
     <ng-container matColumnDef="receivedAt">
       <th mat-header-cell *matHeaderCellDef>Received at</th>
       <td mat-cell *matCellDef="let item">
-        {{ item.receivedAt | date: 'HH:mm' }}
+        {{ item.receivedAt | date: 'dd/MM HH:mm' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="performedBy">
-      <th mat-header-cell *matHeaderCellDef>Performed By</th>
+      <th mat-header-cell *matHeaderCellDef>Performed by</th>
       <td mat-cell *matCellDef="let item">
         {{ item.performedBy ? item.performedBy : '-' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="completedAt">
-      <th mat-header-cell *matHeaderCellDef>BB in LR</th>
+      <th mat-header-cell *matHeaderCellDef>Performed at</th>
       <td mat-cell *matCellDef="let item">
-        {{ item.completedAt ? (item.completedAt | date: 'HH:mm') : '-' }}
+        {{ item.completedAt ? (item.completedAt | date: 'dd/MM HH:mm') : '-' }}
       </td>
     </ng-container>
 

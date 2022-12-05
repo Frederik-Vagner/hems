@@ -1,26 +1,43 @@
 <main>
-  <div class="page-actions">
-    <div class="search-options">
-      <mat-form-field appearance="fill">
-        <mat-label>Search By</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{ food.viewValue }}
-          </mat-option>
-        </mat-select>
+  <div class="table-actions">
+    <div>
+      <mat-form-field autocomplete="off" class="remove-error-message" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input
+          type="text"
+          aria-label="search"
+          [(ngModel)]="search"
+          placeholder="Search ..."
+          (change)="fetchCarList()"
+          matInput
+        />
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Search</mat-label>
-        <input type="text" aria-label="search" matInput />
+      <mat-form-field
+        appearance="fill"
+        style="width: 150px"
+        class="remove-error-message"
+      >
+        <mat-label>Sort By</mat-label>
+        <mat-select
+          [(value)]="sortBy"
+          (selectionChange)="fetchCarList()"
+          data-cy="update-checkin-room-status"
+        >
+          <mat-option value="expirationDate">Expiration Date</mat-option>
+          <mat-option value="deliveryTime">Delivery time</mat-option>
+          <mat-option value="pickupTime">Pick up time</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
 
-    <div class="car-list-actions">
-      <button class="action-buttons" mat-raised-button color="primary">
-        Show All
-      </button>
-      <button class="action-buttons" (click)="openCreateCarDialog()" mat-raised-button color="warn">
+    <div class="table-buttons">
+      <button class="secondary-btn" mat-raised-button>Show All</button>
+      <button
+        class="action-btn"
+        (click)="openCreateCarDialog()"
+        mat-raised-button
+      >
         Add Car
       </button>
     </div>
@@ -29,111 +46,143 @@
 
   <table mat-table [dataSource]="carList" class="mat-elevation-z8" matSort>
     <ng-container matColumnDef="room">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Room</th>
-      <td mat-cell *matCellDef="let element">{{ element.room }}</td>
+      <th mat-header-cell *matHeaderCellDef>Room nr.</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.room }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="tagNr">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tag Nr.</th>
-      <td mat-cell *matCellDef="let element">{{ element.tagNr }}</td>
+      <th mat-header-cell *matHeaderCellDef>Tag nr.</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.tagNr }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="arrivalDate">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>arr</th>
-      <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+      <th mat-header-cell *matHeaderCellDef>Arr.</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.arrivalDate ? (element.arrivalDate | date: 'MM/dd') : '-' }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="departureDate">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>dep</th>
-      <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+      <th mat-header-cell *matHeaderCellDef>Dep.</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{
+          element.departureDate ? (element.departureDate | date: 'dd/dd') : '-'
+        }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.name }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="licensePlate">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Licens Plate</th>
-      <td mat-cell *matCellDef="let element">
+      <th mat-header-cell *matHeaderCellDef>License plate</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
         {{ element.licensePlate }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="expirationDateTime">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Exp.</th>
-      <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+      <th mat-header-cell *matHeaderCellDef>Park<br />exp.</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{
+          element.expirationDate
+            ? (element.expirationDate | date: 'MM/dd HH:mm')
+            : '-'
+        }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="pickupDateTime">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Pick Up Time</th>
-      <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+      <th mat-header-cell *matHeaderCellDef>Pick<br />up time</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{
+          element.pickupTime
+            ? (element.pickupTime | date: 'MM/dd HH:mm')
+            : 'Call down'
+        }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="bbDown">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>BB Down</th>
-      <td mat-cell *matCellDef="let element">{{ element.bbDown }}</td>
+      <th mat-header-cell *matHeaderCellDef>BB down</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.bbDown }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="bbUp">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>BB Up</th>
-      <td mat-cell *matCellDef="let element">{{ element.bbUp }}</td>
+      <th mat-header-cell *matHeaderCellDef>BB up</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.bbUp }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="location">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Location</th>
-      <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+      <th mat-header-cell *matHeaderCellDef>Location</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.location }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="parkingLot">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Park.</th>
-      <td mat-cell *matCellDef="let element">{{ element.parkingLot }}</td>
+      <th mat-header-cell *matHeaderCellDef>Lot</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.parkingLot }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="deliveryDateTime">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Del.</th>
-      <td mat-cell *matCellDef="let element">
-        {{ formatDate(element) }}
+      <th mat-header-cell *matHeaderCellDef>Delivery<br />time</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{
+          element.deliveryTime
+            ? (element.deliveryTime | date: 'MM/dd HH:mm')
+            : '-'
+        }}
       </td>
     </ng-container>
 
     <ng-container matColumnDef="bbOut">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>BB Out</th>
-      <td mat-cell *matCellDef="let element">{{ element.bbOut }}</td>
+      <th mat-header-cell *matHeaderCellDef>BB out</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.bbOut }}
+      </td>
     </ng-container>
 
-    <ng-container matColumnDef="comment">
-      <th mat-header-cell *matHeaderCellDef>Comment</th>
-      <td mat-cell *matCellDef="let element">{{ element.comments }}</td>
+    <ng-container matColumnDef="comments">
+      <th mat-header-cell *matHeaderCellDef>Comments</th>
+      <td mat-cell *matCellDef="let element" (click)="openDialogEdit(element)">
+        {{ element.comments }}
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="charged">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Charged</th>
-      <td mat-cell *matCellDef="let element">{{ element.charged }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <th mat-header-cell *matHeaderCellDef>Charged</th>
       <td mat-cell *matCellDef="let element">
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="openDialogEdit()"
-        >
-          Edit
-        </button>
+        <label class="checkbox-container car-checkbox">
+          <input
+            type="checkbox"
+            [checked]="element.charged"
+            (change)="updateCharge(element.carId, element.charged)"
+          />
+          <span class="checkmark" data-cy="checkbox-banner"></span>
+        </label>
       </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="carColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: carColumns"></tr>
+    <tr
+      mat-row
+      [ngClass]="row.completedAt ? 'completed' : ''"
+      *matRowDef="let row; columns: carColumns"
+    ></tr>
   </table>
 </main>

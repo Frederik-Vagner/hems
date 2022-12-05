@@ -2,8 +2,8 @@ import { ICompletedAt } from '../base.interface';
 
 export interface ICar extends ICompletedAt {
   carId: string;
-  tagNr: string;
   room: string;
+  tagNr: string;
   arrivalDate: Date;
   departureDate: Date;
   name: string;

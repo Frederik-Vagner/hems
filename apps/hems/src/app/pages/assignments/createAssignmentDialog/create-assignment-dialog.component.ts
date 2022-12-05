@@ -12,7 +12,7 @@ import { AssignmentsService } from '../../../services/assignments.service';
 @Component({
   selector: 'hems-create-assignment-dialog',
   templateUrl: './create-assignment-dialog.component.html',
-  styleUrls: ['../../../../assets/dialog.scss'],
+  styleUrls: ['../../../../assets/styles/dialog.scss'],
 })
 export class CreateAssignmentDialogComponent implements OnInit {
   createAssignmentForm = new UntypedFormGroup({});
@@ -85,7 +85,10 @@ export class CreateAssignmentDialogComponent implements OnInit {
         receivedBy: this.createAssignmentForm.get('receivedBy')?.value,
         performedBy: this.createAssignmentForm.get('performedBy')?.value,
         receivedAt: this.createAssignmentForm.get('receivedAt')?.value,
-        completedAt: this.createAssignmentForm.get('completedAt')?.value,
+        completedAt:
+          this.createAssignmentForm.get('completedAt')?.value.length >= 1
+            ? this.createAssignmentForm.get('completedAt')?.value
+            : undefined,
       })
       .subscribe(
         () => {

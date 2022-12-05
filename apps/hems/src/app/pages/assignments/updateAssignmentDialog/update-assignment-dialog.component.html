@@ -2,14 +2,14 @@
   <h1>Update assignment</h1>
   <hr />
   <div class="dialog-row">
-    <mat-form-field appearance="fill">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Room</mat-label>
       <input
         #room
         type="text"
         formControlName="room"
         matInput
-        placeholder="Room nr"
+        placeholder="123"
         maxlength="10"
       />
       <mat-error
@@ -22,7 +22,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Task</mat-label>
       <input
         #task
@@ -42,8 +42,8 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Description</mat-label>
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
     <textarea
       #comments
       matInput
@@ -62,7 +62,7 @@
   </mat-form-field>
 
   <div class="dialog-row">
-    <mat-form-field appearance="fill">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Received by</mat-label>
       <input
         #receivedBy
@@ -81,7 +81,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Performed by</mat-label>
       <input
         #performedBy
@@ -108,7 +108,7 @@
       <input
         matInput
         [ngxMatDatetimePicker]="receivedAt"
-        placeholder="Received at"
+        placeholder="dd/MM HH:mm"
         formControlName="receivedAt"
         [max]="maxDatetime"
       />
@@ -125,12 +125,12 @@
       </ngx-mat-datetime-picker>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Time performed</mat-label>
       <input
         matInput
         [ngxMatDatetimePicker]="completedAt"
-        placeholder="Received at"
+        placeholder="dd/MM HH:mm"
         formControlName="completedAt"
         [max]="maxDatetime"
       />
@@ -157,11 +157,14 @@
   </div>
 
   <div class="dialog-row">
-    <button class="basic-btn" mat-raised-button mat-dialog-close type="button">
+    <button
+      class="secondary-btn"
+      mat-raised-button
+      mat-dialog-close
+      type="button"
+    >
       Cancel
     </button>
-    <button class="secondary-btn" mat-raised-button type="submit">
-      Update assignment
-    </button>
+    <button class="action-btn" mat-raised-button type="submit">Update</button>
   </div>
 </form>

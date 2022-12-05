@@ -35,7 +35,7 @@ export class CreateLuggageRequest implements ICreateLuggageRequest {
 
   @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
   @IsOptional()
-  description?: string;
+  comments?: string;
 
   @ApiModelProperty({ example: '8912' })
   @IsNotEmpty()
@@ -56,6 +56,11 @@ export class CreateLuggageRequest implements ICreateLuggageRequest {
   @ApiModelProperty({ example: 'ML' })
   @IsOptional()
   bbOut?: string;
+
+  @ApiModelProperty({ example: Date.now() })
+  @IsOptional()
+  @IsDateString()
+  dateNeeded?: Date;
 
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()
@@ -92,7 +97,7 @@ export class UpdateLuggageRequest implements IUpdateLuggageRequest {
 
   @ApiModelProperty({ example: 'Bikes, Ski Equipment' })
   @IsOptional()
-  description?: string;
+  comments?: string;
 
   @ApiModelProperty({ example: '8912' })
   @IsOptional()
@@ -113,6 +118,11 @@ export class UpdateLuggageRequest implements IUpdateLuggageRequest {
   @ApiModelProperty({ example: 'ML' })
   @IsOptional()
   bbOut?: string;
+
+  @ApiModelProperty({ example: Date.now() })
+  @IsOptional()
+  @IsDateString()
+  dateNeeded?: Date;
 
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()

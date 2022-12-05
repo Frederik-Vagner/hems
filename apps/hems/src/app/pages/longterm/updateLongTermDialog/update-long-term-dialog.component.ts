@@ -1,5 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import {
   UntypedFormGroup,
   UntypedFormControl,
@@ -14,8 +20,8 @@ import { LuggageService } from '../../../services/luggage.service';
   selector: 'hems-update-long-term-dialog',
   templateUrl: './update-long-term-dialog.component.html',
   styleUrls: [
-    '../../../../assets/checkbox.scss',
-    '../../../../assets/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
 export class UpdateLongTermDialogComponent implements OnInit {
@@ -50,7 +56,7 @@ export class UpdateLongTermDialogComponent implements OnInit {
       ]),
       name: new UntypedFormControl(this.data.name, [Validators.required]),
       bags: new UntypedFormControl(this.data.bags, [Validators.required]),
-      comments: new UntypedFormControl(this.data.description, [
+      comments: new UntypedFormControl(this.data.comments, [
         Validators.required,
       ]),
       tagNr: new UntypedFormControl(this.data.tagNr, [Validators.required]),
@@ -92,7 +98,7 @@ export class UpdateLongTermDialogComponent implements OnInit {
         room: this.updateLongTermForm.get('room')?.value,
         name: this.updateLongTermForm.get('name')?.value,
         bags: this.updateLongTermForm.get('bags')?.value,
-        description: this.updateLongTermForm.get('comments')?.value,
+        comments: this.updateLongTermForm.get('comments')?.value,
         tagNr: this.updateLongTermForm.get('tagNr')?.value,
         arrivalTime: this.updateLongTermForm.get('dateNeeded')?.value,
         bbLr: this.updateLongTermForm.get('bbLr')?.value,

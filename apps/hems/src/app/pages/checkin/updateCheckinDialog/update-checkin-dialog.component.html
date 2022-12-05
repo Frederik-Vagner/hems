@@ -8,7 +8,7 @@
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label class="input-label">Room</mat-label>
+      <mat-label class="input-label">Room nr.</mat-label>
       <input
         #room
         type="text"
@@ -23,12 +23,12 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Room Status</mat-label>
+      <mat-label>Room status</mat-label>
       <mat-select
         formControlName="roomReady"
         data-cy="update-checkin-room-status"
       >
-        <mat-option value="false">Not Ready</mat-option>
+        <mat-option value="false">Not ready</mat-option>
         <mat-option value="true">Ready</mat-option>
       </mat-select>
     </mat-form-field>
@@ -56,7 +56,7 @@
         #arrivalTime
         matInput
         [ngxMatDatetimePicker]="pickerArrival"
-        placeholder="Time of Arrival"
+        placeholder="dd/MM HH:mm"
         formControlName="arrivalTime"
       />
       <mat-datepicker-toggle
@@ -90,7 +90,7 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Tag nr</mat-label>
+      <mat-label>Tag nr.</mat-label>
       <input
         #tagNr
         type="text"
@@ -145,7 +145,7 @@
       <input
         matInput
         [ngxMatDatetimePicker]="pickerCompletedAt"
-        placeholder="In room Time"
+        placeholder="dd/MM HH:mm"
         formControlName="completedAt"
       />
       <mat-datepicker-toggle
@@ -162,7 +162,7 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label>BB Up</mat-label>
+      <mat-label>BB up</mat-label>
       <input
         type="text"
         data-cy="update-checkin-name"
@@ -180,8 +180,8 @@
     <mat-label>Comments</mat-label>
     <input
       type="text"
-      data-cy="update-checkin-description"
-      formControlName="description"
+      data-cy="update-checkin-comments"
+      formControlName="comments"
       matInput
       placeholder="Comments on the check-in"
     />
@@ -190,7 +190,7 @@
   <div class="dialog-row">
     <button
       data-cy="update-checkin-cancel-btn"
-      class="basic-btn"
+      class="secondary-btn"
       mat-raised-button
       mat-dialog-close
     >
