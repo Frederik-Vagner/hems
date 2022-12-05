@@ -1,48 +1,21 @@
 <form
   (ngSubmit)="onSubmit()"
   [formGroup]="form"
+  data-cy="update-checkout-dialog"
 >
-  <h1>Update Check In</h1>
+  <h1>Update Check Out</h1>
   <hr />
 
   <div class="dialog-row">
-    <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label class="input-label">Room</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Room nr.</mat-label>
       <input
         #room
         type="text"
-        data-cy="update-checkin-room-input"
+        data-cy="update-checkout-room-input"
         formControlName="room"
         matInput
         placeholder="123"
-      />
-      <mat-error *ngIf="form.get('room')?.invalid && form.get('room')?.dirty">
-        Must be a number from 100-999
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Room Status</mat-label>
-      <mat-select
-        formControlName="roomReady"
-        data-cy="update-checkin-room-status"
-      >
-        <mat-option value="false">Not Ready</mat-option>
-        <mat-option value="true">Ready</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Name</mat-label>
-      <input
-        #name
-        type="text"
-        data-cy="update-checkin-name"
-        formControlName="name"
-        matInput
-        placeholder="John Doe"
       />
       <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
         Required
@@ -50,25 +23,18 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Time of arrival</mat-label>
+      <mat-label>Name</mat-label>
       <input
-        #arrivalTime
+        #name
+        type="text"
+        data-cy="update-checkout-name"
+        formControlName="name"
         matInput
-        [ngxMatDatetimePicker]="pickerArrival"
-        placeholder="Time of Arrival"
-        formControlName="arrivalTime"
+        placeholder="John Doe"
       />
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="$any(pickerArrival)"
-      ></mat-datepicker-toggle>
-      <ngx-mat-datetime-picker
-        #pickerArrival
-        [showSpinners]="true"
-        [showSeconds]="false"
-        [touchUi]="true"
-      >
-      </ngx-mat-datetime-picker>
+      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+        Required
+      </mat-error>
     </mat-form-field>
   </div>
 
@@ -78,7 +44,7 @@
       <input
         #bags
         type="text"
-        data-cy="update-checkin-room-input"
+        data-cy="update-checkout-room-input"
         formControlName="bags"
         matInput
         placeholder="1+3"
@@ -89,11 +55,11 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Tag nr</mat-label>
+      <mat-label>Tag nr.</mat-label>
       <input
         #tagNr
         type="text"
-        data-cy="update-checkin-tag-nr"
+        data-cy="create-checkout-tag-nr"
         formControlName="tagNr"
         matInput
         placeholder="123"
@@ -106,16 +72,18 @@
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>BB in LR</mat-label>
+      <mat-label>BB down</mat-label>
       <input
-        #bbLr
+        #bbDown
         type="text"
-        data-cy="update-checkin-name"
-        formControlName="bbLr"
+        data-cy="update-checkout-bbDown"
+        formControlName="bbDown"
         matInput
         placeholder="JD"
       />
-      <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
+      <mat-error
+        *ngIf="form.get('bbDown')?.invalid && form.get('bbDown')?.dirty"
+      >
         Required
       </mat-error>
     </mat-form-field>
@@ -125,7 +93,7 @@
       <input
         #location
         type="text"
-        data-cy="update-checkin-location"
+        data-cy="update-checkout-location"
         formControlName="location"
         matInput
         placeholder="LR1"
@@ -140,11 +108,26 @@
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>In room time</mat-label>
+      <mat-label>BB in LR</mat-label>
+      <input
+        #bbLr
+        type="text"
+        data-cy="update-checkout-bbLr"
+        formControlName="bbLr"
+        matInput
+        placeholder="JD"
+      />
+      <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Out time</mat-label>
       <input
         matInput
         [ngxMatDatetimePicker]="pickerCompletedAt"
-        placeholder="In room Time"
+        placeholder="dd/MM HH:mm"
         formControlName="completedAt"
       />
       <mat-datepicker-toggle
@@ -159,17 +142,19 @@
       >
       </ngx-mat-datetime-picker>
     </mat-form-field>
+  </div>
 
-    <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label>BB Up</mat-label>
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>BB out</mat-label>
       <input
         type="text"
-        data-cy="update-checkin-name"
-        formControlName="bbUp"
+        data-cy="update-checkout-bbOut"
+        formControlName="bbOut"
         matInput
         placeholder="JD"
       />
-      <mat-error *ngIf="form.get('bbUp')?.invalid && form.get('bbUp')?.dirty">
+      <mat-error *ngIf="form.get('bbOut')?.invalid && form.get('bbOut')?.dirty">
         Required
       </mat-error>
     </mat-form-field>
@@ -177,29 +162,29 @@
 
   <mat-form-field autocomplete="off" appearance="fill" class="full-width">
     <mat-label>Comments</mat-label>
-    <input
+    <textarea
       type="text"
-      data-cy="update-checkin-description"
-      formControlName="description"
+      data-cy="update-checkin-comments"
+      formControlName="comments"
       matInput
-      placeholder="Comments on the check-in"
-    />
+      placeholder="Comments"
+    ></textarea>
   </mat-form-field>
 
   <div class="dialog-row">
     <button
-      data-cy="update-checkin-cancel-btn"
-      class="basic-btn"
       mat-raised-button
+      class="secodary-btn"
+      data-cy="update-checkout-cancel-btn"
       mat-dialog-close
     >
       Cancel
     </button>
     <button
       mat-raised-button
-      data-cy="update-checkin-create-btn"
+      class="secondary-btn"
+      data-cy="update-checkout-create-btn"
       type="submit"
-      class="action-btn"
     >
       Update
     </button>

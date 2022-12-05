@@ -8,17 +8,17 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LuggageType } from '@hems/interfaces';
-import { LuggageService } from '../../../../../services/luggage.service';
+import { LuggageService } from '../../../services/luggage.service';
 
 @Component({
-  selector: 'hems-create-checkin-dialog',
-  templateUrl: './create-checkin-dialog.component.html',
+  selector: 'hems-create-checkout-dialog',
+  templateUrl: './create-checkout-dialog.component.html',
   styleUrls: [
-    '../../../../../../assets/checkbox.scss',
-    '../../../../../../assets/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
-export class CreateCheckinDialogComponent {
+export class CreateCheckoutDialogComponent {
   form: UntypedFormGroup;
   checked = true;
   isLoading = false;
@@ -26,10 +26,10 @@ export class CreateCheckinDialogComponent {
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
-  @ViewChild('arrivalTime') arrivalTimeInput!: ElementRef;
   @ViewChild('bags') bagsInput!: ElementRef;
   @ViewChild('tagNr') tagNrInput!: ElementRef;
   @ViewChild('bbLr') bbLrInput!: ElementRef;
+  @ViewChild('bbDown') bbDownInput!: ElementRef;
   @ViewChild('location') locationInput!: ElementRef;
 
   constructor(
@@ -38,19 +38,14 @@ export class CreateCheckinDialogComponent {
     private dialog: MatDialog
   ) {
     this.form = new UntypedFormGroup({
-      room: new UntypedFormControl('', [
-        Validators.required,
-        Validators.maxLength(10),
-        Validators.pattern('^[0-9]*$'),
-      ]),
-      roomReady: new UntypedFormControl('false', [Validators.required]),
+      room: new UntypedFormControl('', [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
-      arrivalTime: new UntypedFormControl(new Date(), [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
       tagNr: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
+      bbDown: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
-      description: new UntypedFormControl('', [Validators.maxLength(1000)]),
+      comments: new UntypedFormControl('', []),
     });
   }
 
@@ -60,23 +55,23 @@ export class CreateCheckinDialogComponent {
         this.roomInput.nativeElement.focus();
       } else if (this.form.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
-      } else if (this.form.get('arrivalTime')?.invalid) {
-        this.arrivalTimeInput.nativeElement.focus();
       } else if (this.form.get('bags')?.invalid) {
         this.bagsInput.nativeElement.focus();
       } else if (this.form.get('tagNr')?.invalid) {
         this.tagNrInput.nativeElement.focus();
-      } else if (this.form.get('bbLr')?.invalid) {
-        this.bbLrInput.nativeElement.focus();
+      } else if (this.form.get('bbDown')?.invalid) {
+        this.bbDownInput.nativeElement.focus();
       } else if (this.form.get('location')?.invalid) {
         this.locationInput.nativeElement.focus();
+      } else if (this.form.get('bbLr')?.invalid) {
+        this.bbLrInput.nativeElement.focus();
       }
     } else {
-      this.createCheckin();
+      this.createCheckout();
     }
   }
 
-  createCheckin(): void {
+  createCheckout(): void {
     if (!this.guestApprovedGDPR) {
       this.snackbar.open('Guest needs to approve storing their data.', 'Okay', {
         duration: 10000,
@@ -94,13 +89,13 @@ export class CreateCheckinDialogComponent {
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value,
+        bbDown: this.form.get('bbDown')?.value,
         location: this.form.get('location')?.value,
-        description:
-          this.form.get('description')?.value.toString().length > 1
-            ? this.form.get('description')?.value
+        comments:
+          this.form.get('comments')?.value.toString().length > 1
+            ? this.form.get('comments')?.value
             : '-',
-        luggageType: LuggageType.CHECKIN,
-        bbDown: ' ',
+        luggageType: LuggageType.CHECKOUT,
       })
       .subscribe({
         next: () => {

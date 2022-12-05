@@ -24,7 +24,7 @@
     </mat-form-field> -->
   </div>
 
-  <mat-form-field appearance="fill" class="full-width">
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
     <mat-label>Room</mat-label>
     <input
       #room
@@ -120,7 +120,7 @@
       <input
         matInput
         [ngxMatDatetimePicker]="dateNeeded"
-        placeholder="Received at"
+        placeholder="dd/MM HH:mm"
         formControlName="dateNeeded"
       />
       <mat-datepicker-toggle
@@ -213,7 +213,7 @@
       <input
         matInput
         [ngxMatDatetimePicker]="dateOut"
-        placeholder="Received at"
+        placeholder="dd/MM HH:mm"
         formControlName="dateOut"
         [max]="maxDatetime"
       />

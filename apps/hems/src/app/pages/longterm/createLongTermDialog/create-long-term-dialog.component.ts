@@ -14,8 +14,8 @@ import { LuggageService } from '../../../services/luggage.service';
   selector: 'hems-create-long-term-dialog',
   templateUrl: './create-long-term-dialog.component.html',
   styleUrls: [
-    '../../../../assets/checkbox.scss',
-    '../../../../assets/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+    '../../../../assets/styles/dialog.scss',
   ],
 })
 export class CreateLongTermDialogComponent implements OnInit {
@@ -45,7 +45,7 @@ export class CreateLongTermDialogComponent implements OnInit {
       ]),
       name: new UntypedFormControl('', [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
-      comments: new UntypedFormControl('', [Validators.required]),
+      comments: new UntypedFormControl('', []),
       tagNr: new UntypedFormControl('', [Validators.required]),
       dateNeeded: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
@@ -91,7 +91,7 @@ export class CreateLongTermDialogComponent implements OnInit {
         roomReady: false,
         name: this.createLongTermForm.get('name')?.value,
         bags: this.createLongTermForm.get('bags')?.value,
-        description: this.createLongTermForm.get('comments')?.value,
+        comments: this.createLongTermForm.get('comments')?.value,
         tagNr: this.createLongTermForm.get('tagNr')?.value,
         arrivalTime: this.createLongTermForm.get('dateNeeded')?.value,
         bbLr: this.createLongTermForm.get('bbLr')?.value,

@@ -54,28 +54,28 @@
           mat-list-item
           data-cy="sidebar-checkin-btn"
           routerLink="/checkin"
-          [ngClass]="title === 'Check In / Out' ? 'active-nav' : ''"
+          [ngClass]="title === 'Check In' ? 'active-nav' : ''"
         >
           <mat-icon aria-hidden="false" data-cy="icon">book</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
             data-cy="side-nav-item"
-            >Check in / out</span
+            >Check in</span
           >
         </button>
         <button
           mat-list-item
-          data-cy="sidebar-long-term-btn"
-          routerLink="long-term"
-          [ngClass]="title === 'Long Term' ? 'active-nav' : ''"
+          data-cy="sidebar-checkin-btn"
+          routerLink="/checkout"
+          [ngClass]="title === 'Check Out' ? 'active-nav' : ''"
         >
-          <mat-icon aria-hidden="false" data-cy="icon">receipt_long</mat-icon>
+          <mat-icon aria-hidden="false" data-cy="icon">bookmark</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
             data-cy="side-nav-item"
-            >Long Term</span
+            >Check out</span
           >
         </button>
         <button
@@ -94,8 +94,22 @@
         </button>
         <button
           mat-list-item
+          data-cy="sidebar-long-term-btn"
+          routerLink="long-term"
+          [ngClass]="title === 'Long Term' ? 'active-nav' : ''"
+        >
+          <mat-icon aria-hidden="false" data-cy="icon">receipt_long</mat-icon>
+          <span
+            class="side-nav-item"
+            [ngClass]="{ collapsible: sidebarCollapsed }"
+            data-cy="side-nav-item"
+            >Long Term</span
+          >
+        </button>
+        <button
+          mat-list-item
           data-cy="sidebar-daily-tasks-btn"
-          [ngClass]="title === '/daily-task' ? 'active-nav' : ''"
+          [ngClass]="title === 'Daily Tasks' ? 'active-nav' : ''"
           routerLink="/daily-tasks"
         >
           <mat-icon aria-hidden="false" data-cy="icon">task</mat-icon>
@@ -109,7 +123,7 @@
         <button
           mat-list-item
           data-cy="sidebar-assignments-btn"
-          [ngClass]="title === 'Assignments' ? 'active-nav' : ''"
+          [ngClass]="title === 'Bell Boy Assignment Sheet' ? 'active-nav' : ''"
           routerLink="/assignments"
         >
           <mat-icon aria-hidden="false" data-cy="icon">fact_check</mat-icon>
@@ -151,21 +165,34 @@
           <mat-icon aria-hidden="false" *ngSwitchCase="'Car List'"
             >directions_car</mat-icon
           >
-          <mat-icon aria-hidden="false" *ngSwitchCase="'Check In / Out'"
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Check Out'"
+            >bookmark</mat-icon
+          >
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Check In'"
             >book</mat-icon
           >
           <mat-icon aria-hidden="false" *ngSwitchCase="'Daily Tasks'"
             >task</mat-icon
           >
-          <mat-icon aria-hidden="false" *ngSwitchCase="'Assignments'"
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Long Term'"
+            >receipt_long</mat-icon
+          >
+          <mat-icon
+            aria-hidden="false"
+            *ngSwitchCase="'Bell Boy Assignment Sheet'"
             >fact_check</mat-icon
+          >
+          <mat-icon
+            aria-hidden="false"
+            *ngSwitchDefault
+            >report</mat-icon
           >
         </div>
         <h1 class="title">{{ title }}</h1>
       </div>
 
-      <div id="navbar-action-buttons-container">
-        <mat-form-field autocomplete="off" appearance="fill">
+      <div class="top-nav-actions">
+        <mat-form-field autocomplete="off" appearance="fill" class="remove-error-message">
           <mat-label>Display Date</mat-label>
           <input
             matInput
