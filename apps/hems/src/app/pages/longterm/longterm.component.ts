@@ -54,9 +54,6 @@ export class LongtermComponent implements OnInit {
   }
 
   fetchLuggage(): void {
-    console.log('running');
-    console.log(this.displayDate, this.sortBy, this.sortOrder, this.search);
-
     this.isLoading = true;
     this.luggageService
       .getLongTerm(this.displayDate, this.sortBy, this.sortOrder, this.search)

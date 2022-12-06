@@ -1,6 +1,39 @@
 <!-- Checkin section -->
 <main>
-  <div class="table-actions" style="justify-content: end">
+  <div class="table-actions">
+    <div>
+      <mat-form-field appearance="fill" class="remove-error-message">
+        <mat-label>Search</mat-label>
+        <input
+          type="text"
+          aria-label="search"
+          [(ngModel)]="search"
+          placeholder="Search ..."
+          (change)="fetchLuggage()"
+          matInput
+        />
+      </mat-form-field>
+      <mat-form-field
+        autocomplete="off"
+        appearance="fill"
+        style="width: 150px"
+        class="remove-error-message"
+      >
+        <mat-label>Sort by</mat-label>
+        <mat-select
+          [(value)]="sortBy"
+          (selectionChange)="fetchLuggage()"
+          data-cy="update-checkin-room-status"
+        >
+          <mat-option value="arrivalTime">Date needed</mat-option>
+          <mat-option value="completedAt">Completed at</mat-option>
+          <mat-option value="createdAt">Date in</mat-option>
+          <mat-option value="room">Room</mat-option>
+          <mat-option value="name">Name</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
     <button
       mat-raised-button
       class="action-btn"
