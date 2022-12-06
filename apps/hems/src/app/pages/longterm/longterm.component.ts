@@ -24,7 +24,7 @@ export class LongtermComponent implements OnInit {
   listNames?: string[];
   chosenListName = '';
   isLoading = false;
-  sortBy: LuggageSortOptions | undefined;
+  sortBy: LuggageSortOptions = LuggageSortOptions.CREATED_AT;
   sortOrder: SortOrder = SortOrder.ASCENDING;
   search = '';
   displayDate = new Date();

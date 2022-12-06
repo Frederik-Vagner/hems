@@ -25,7 +25,7 @@ import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table
 export class CarsComponent implements OnInit {
   carList: ICar[] = [];
   displayDate = new Date();
-  sortBy: CarSortOptions | undefined;
+  sortBy: CarSortOptions = CarSortOptions.CREATED_AT;
   sortOrder: SortOrder = SortOrder.ASCENDING;
   search = '';
 
