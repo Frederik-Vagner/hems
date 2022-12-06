@@ -1,9 +1,10 @@
 import {
   CreateDocumentRequest,
+  DeleteDocumentResponse,
   DocumentSortOptions,
+  GetDocumentByIdResponse,
   SortOrder,
   UpdateDocumentRequest,
-  DeleteDocumentResponse
 } from '@hems/interfaces';
 import { Document } from '@hems/models';
 import {
@@ -22,6 +23,7 @@ import {
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
 import {
   ApiCreatedResponse,
   ApiOkResponse,
@@ -29,10 +31,9 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
-import { FileInterceptor } from '@nestjs/platform-express';
+import 'multer';
 import { toBool } from '../utils/query-params.utils';
 import { DocumentsService } from './documents.service';
-import 'multer';
 
 const FILE_MAX_SIZE = 50000000;
 const FILE_TYPES = /(pdf|docx)\b/;
@@ -84,12 +85,16 @@ export class DocumentsController {
   @ApiOperation({
     summary: 'Get a document entry by id.',
   })
-  @ApiOkResponse({ type: Document })
+  @ApiOkResponse({ type: GetDocumentByIdResponse })
   @HttpCode(200)
   async getDocumentById(
     @Param('documentId', ParseUUIDPipe) documentId: string
   ) {
-    return this.documentsService.findById(documentId);
+    const document = await this.documentsService.findById(documentId);
+    const signedUrl = await this.documentsService.getFileLink(
+      document.documentName
+    );
+    return { ...document, downloadUrl: signedUrl.url };
   }
 
   @Post()
@@ -150,8 +155,8 @@ export class DocumentsController {
   }
 
   @Delete(':documentId')
-  @ApiOperation({summary: 'Delete a document entry.'})
-  @ApiOkResponse({type: DeleteDocumentResponse})
+  @ApiOperation({ summary: 'Delete a document entry.' })
+  @ApiOkResponse({ type: DeleteDocumentResponse })
   @HttpCode(200)
   async deleteDocument(@Param('documentId', ParseUUIDPipe) documentId: string) {
     return this.documentsService.deleteDocument(documentId);

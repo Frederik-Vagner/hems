@@ -132,13 +132,12 @@ export class FilesService {
         },
         endpoint: `https://${clusterId}.linodeobjects.com`,
       });
-      const result = await s3.send(
+      await s3.send(
         new DeleteObjectCommand({
           Bucket: bucketId,
           Key: filename,
         })
       );
-      console.log(result);
       this.logger.verbose(
         `File deleted from linode storage. Filename: ${filename}`
       );
