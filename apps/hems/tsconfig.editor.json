@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "../../libs/interfaces/src/lib/table-names.enum.ts", "../../libs/interfaces/src/lib/table-names.enum.ts"],
   "compilerOptions": {
     "types": ["jest", "node"],
     "suppressImplicitAnyIndexErrors": true,

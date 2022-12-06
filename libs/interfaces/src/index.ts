@@ -27,3 +27,4 @@ export * from './lib/car/car-sort-options.enum';
 export * from './lib/task/task-sort-options.enum';
 export * from './lib/assignment/assignment-sort-options.enum';
 export * from './lib/document/document-sort-options.enum';
+export * from './lib/table-names.enum';
