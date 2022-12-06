@@ -43,8 +43,9 @@ th.mat-header-cell {
   padding-bottom: 5px;
   text-align: center;
 
-  &:first-of-type {
-    padding-left: 10px;
+  &:first-of-type, &:last-of-type {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
