@@ -41,7 +41,11 @@
   </div>
 
   <div class="dialog-row">
-    <button mat-raised-button class="secondary-btn" mat-dialog-close>
+    <button mat-raised-button class="basic-btn" type="button" (click)="reset()" *ngIf="this.data.completedAt || this.data.initials">
+      reset
+    </button>
+
+    <button mat-raised-button class="secondary-btn" type="button" mat-dialog-close style="margin-right: 1em;">
       Cancel
     </button>
 

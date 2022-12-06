@@ -42,7 +42,7 @@ export class EditTaskDialogComponent {
     this.taskId = data.taskId;
     this.form = new UntypedFormGroup({
       initials: new UntypedFormControl(data.initials, [Validators.required]),
-      completedAt: new UntypedFormControl(data.completedAt, [
+      completedAt: new UntypedFormControl(data.completedAt ?? new Date(), [
         Validators.required,
       ]),
     });
@@ -79,6 +79,31 @@ export class EditTaskDialogComponent {
         error: (err: HttpErrorResponse) => {
           console.error(err);
           this.snackbar.open('Failed to update, please try again.', 'Okay', {
+            duration: 10000,
+          });
+          this.isLoading = false;
+        },
+      });
+  }
+
+  reset() {
+    this.service
+      .update(this.taskId, {
+        initials: '',
+        completedAt: null,
+      })
+      .subscribe({
+        next: () => {
+          this.snackbar.open('Task item has been reset!', 'Thanks', {
+            duration: 5000,
+          });
+          document.location.reload();
+          this.dialog.closeAll();
+          this.isLoading = false;
+        },
+        error: (err: HttpErrorResponse) => {
+          console.error(err);
+          this.snackbar.open('Failed to reset task, please try again.', 'Okay', {
             duration: 10000,
           });
           this.isLoading = false;
