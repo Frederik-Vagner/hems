@@ -86,6 +86,15 @@ export class DocumentsService {
     return await this.documentRepo.save(document);
   }
 
+  async deleteDocument(documentId: string) {
+    const document = await this.documentRepo.findOneByOrFail({ documentId });
+
+    await this.fileService.deleteFile(document.documentName);
+    await this.documentRepo.delete(document);
+
+    return { message: 'Deleted.' };
+  }
+
   private getSortingConditions(
     sortBy: DocumentSortOptions | undefined,
     sortOrder: SortOrder | undefined

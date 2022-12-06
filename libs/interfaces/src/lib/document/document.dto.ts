@@ -18,7 +18,7 @@ export class CreateDocumentRequest implements ICreateDocumentRequest {
   lastViewedAt?: Date;
 
   @ApiModelProperty({ example: true, default: false })
-  @IsNotEmpty() // TODO: clarify if the annotation is needed seeing as we have a default value set
+  @IsNotEmpty()
   showOnDashboard!: boolean;
 }
 
@@ -37,6 +37,6 @@ export class UpdateDocumentRequest implements IUpdateAssignmentRequest {
   lastViewedAt?: Date;
 
   @ApiModelProperty({ example: true, default: false })
-  @IsOptional() // TODO: clarify if the annotation is needed seeing as we have a default value set
+  @IsOptional()
   showOnDashboard?: boolean;
 }

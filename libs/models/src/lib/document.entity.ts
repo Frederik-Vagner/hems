@@ -22,7 +22,7 @@ export class Document extends Base implements IDocument {
   lastViewedAt?: Date;
 
   @ApiModelProperty({ example: true, default: false })
-  @Column() // TODO: clarify if the annotation is needed seeing as we have a default value set
+  @Column()
   showOnDashboard!: boolean;
 
   @ApiModelProperty({ example: 'declarationOfIndepenence.pdf' })

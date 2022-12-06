@@ -8,6 +8,7 @@ import { Document } from '@hems/models';
 import {
   Body,
   Controller,
+  Delete,
   Get,
   HttpCode,
   HttpStatus,
@@ -120,7 +121,6 @@ export class DocumentsController {
   @HttpCode(200)
   async updateDocument(
     @Param('documentId', ParseUUIDPipe) documentId: string,
-
     @Body() documentData: UpdateDocumentRequest
   ) {
     return this.documentsService.updateDocument(documentId, documentData);
@@ -147,4 +147,13 @@ export class DocumentsController {
   ) {
     return this.documentsService.updateDocumentFile(documentId, document);
   }
+
+  @Delete(':documentId')
+  @ApiOperation({summary: 'Delete a document entry.'})
+  // TODO: @ApiOkResponse({type: {message: "Deleted."}}) // Calli, when you review this, let me know how to make this work
+  @HttpCode(200)
+  async deleteDocument(@Param('documentId', ParseUUIDPipe) documentId: string) {
+    return this.documentsService.deleteDocument(documentId);
+  }
+
 }
