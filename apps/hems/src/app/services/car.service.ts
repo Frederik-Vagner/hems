@@ -1,6 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CreateCarRequest, ICar, IUpdateCarRequest, UpdateCarRequest } from '@hems/interfaces';
+import {
+  CarSortOptions,
+  CreateCarRequest,
+  ICar,
+  IUpdateCarRequest,
+  SortOrder,
+  UpdateCarRequest,
+} from '@hems/interfaces';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
@@ -10,9 +17,14 @@ import { environment as env } from '../../environments/environment';
 export class CarService {
   constructor(private http: HttpClient) {}
 
-  public getCar(createdAt: Date): Observable<ICar[]> {
+  public getCar(
+    createdAt: Date,
+    sortBy?: CarSortOptions,
+    sortOrder?: SortOrder,
+    search?: string
+  ): Observable<ICar[]> {
     return this.http.get<ICar[]>(
-      `${env.apiUrl}/cars?createdAt=${createdAt.toISOString()}`
+      `${env.apiUrl}/cars?createdAt=${createdAt.toISOString()}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`
     );
   }
 

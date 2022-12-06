@@ -102,7 +102,7 @@ export class CarsComponent implements OnInit {
   }
 
   fetchCarList(): void {
-    this.carService.getCar(this.displayDate).subscribe({
+    this.carService.getCar(this.displayDate, this.sortBy, this.sortOrder, this.search).subscribe({
       next: (car) => {
         this.carList = car;
         console.log('checkout', car);
