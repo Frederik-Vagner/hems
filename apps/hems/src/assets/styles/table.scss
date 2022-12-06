@@ -1,8 +1,11 @@
 table {
   width: 100%;
   box-shadow: none;
+}
 
-  max-height: 70%;
+.table-height {
+  height: 75vh;
+  overflow: auto;
 }
 
 .table-actions {
