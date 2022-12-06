@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CarSortOptions, ICar, SortOrder } from '@hems/interfaces';
+import {
+  CarSortOptions,
+  ICar,
+  SortOrder,
+  TableInfoOptions,
+} from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -7,6 +12,7 @@ import { DisplayDateService } from '../../services/display-date.service';
 import { CreateCarDialogComponent } from './createCarEntryDialog/create-car-dialog.component';
 import { UpdateCarDialogComponent } from './updateCarEntryDialog/update-car-dialog.component';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 
 @Component({
   selector: 'hems-cars',
@@ -46,7 +52,7 @@ export class CarsComponent implements OnInit {
     private readonly carService: CarService,
     private displayDateService: DisplayDateService,
     private snackBar: MatSnackBar,
-    private dialogRef: MatDialog,
+    private dialog: MatDialog,
     private snackbar: MatSnackBar
   ) {
     this.displayDateService.getDisplayDateSubject().subscribe((date) => {
@@ -74,15 +80,18 @@ export class CarsComponent implements OnInit {
   }
 
   openTableInfo(): void {
-    console.log('skrt');
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.CARS,
+      width: '500px',
+    });
   }
 
   openCreateCarDialog() {
-    this.dialogRef.open(CreateCarDialogComponent, { width: '500px' });
+    this.dialog.open(CreateCarDialogComponent, { width: '500px' });
   }
 
   openDialogEdit(carListEntry: ICar) {
-    this.dialogRef.open(UpdateCarDialogComponent, {
+    this.dialog.open(UpdateCarDialogComponent, {
       width: '500px',
       data: carListEntry,
     });
