@@ -32,6 +32,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { toBool } from '../utils/query-params.utils';
 import { DocumentsService } from './documents.service';
 import 'multer';
+import { DeleteDocumentResponse } from '../../../../../libs/interfaces/src/lib/document/document.dto';
 
 const FILE_MAX_SIZE = 50000000;
 const FILE_TYPES = /(pdf|docx)\b/;
@@ -150,7 +151,7 @@ export class DocumentsController {
 
   @Delete(':documentId')
   @ApiOperation({summary: 'Delete a document entry.'})
-  // TODO: @ApiOkResponse({type: {message: "Deleted."}}) // Calli, when you review this, let me know how to make this work
+  @ApiOkResponse({type: DeleteDocumentResponse})
   @HttpCode(200)
   async deleteDocument(@Param('documentId', ParseUUIDPipe) documentId: string) {
     return this.documentsService.deleteDocument(documentId);

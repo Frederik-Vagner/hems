@@ -40,3 +40,7 @@ export class UpdateDocumentRequest implements IUpdateAssignmentRequest {
   @IsOptional()
   showOnDashboard?: boolean;
 }
+
+export class DeleteDocumentResponse {
+  message = 'Deleted.';
+}
