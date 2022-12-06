@@ -50,13 +50,9 @@ export class TasksComponent implements OnInit {
       error: (error) => {
         this.isLoading = false;
         console.error(error);
-        this.snackBar.open(
-          'Tasks have failed to load',
-          'Okay',
-          {
-            duration: 10000,
-          }
-        );
+        this.snackBar.open('Tasks have failed to load', 'Okay', {
+          duration: 10000,
+        });
       },
     });
   }

@@ -5,7 +5,7 @@ export * from './lib/car/car.dto';
 export * from './lib/assignment/assignment.dto';
 export * from './lib/task/task.dto';
 export * from './lib/document/document.dto';
-export * from './lib/base.dto'
+export * from './lib/base.dto';
 
 // Interfaces
 export * from './lib/auth.interface';
@@ -27,3 +27,4 @@ export * from './lib/car/car-sort-options.enum';
 export * from './lib/task/task-sort-options.enum';
 export * from './lib/assignment/assignment-sort-options.enum';
 export * from './lib/document/document-sort-options.enum';
+export * from './lib/table-names.enum';

@@ -3,6 +3,11 @@ table {
   box-shadow: none;
 }
 
+.table-height {
+  height: 75vh;
+  overflow: auto;
+}
+
 .table-actions {
   display: flex;
   flex-grow: 1;
@@ -43,7 +48,8 @@ th.mat-header-cell {
   padding-bottom: 5px;
   text-align: center;
 
-  &:first-of-type, &:last-of-type {
+  &:first-of-type,
+  &:last-of-type {
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -60,7 +66,7 @@ td.mat-cell {
 .mat-row {
   &:hover {
     background-color: var(--main-blue-lowest-opacity);
-    
+
     .car-checkbox {
       input ~ .checkmark {
         background-color: #ccc;

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CarSortOptions, ICar, SortOrder } from '@hems/interfaces';
+import {
+  CarSortOptions,
+  ICar,
+  SortOrder,
+  TableInfoOptions,
+} from '@hems/interfaces';
 import { CarService } from '../../services/car.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -7,6 +12,7 @@ import { DisplayDateService } from '../../services/display-date.service';
 import { CreateCarDialogComponent } from './createCarEntryDialog/create-car-dialog.component';
 import { UpdateCarDialogComponent } from './updateCarEntryDialog/update-car-dialog.component';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 
 @Component({
   selector: 'hems-cars',
@@ -19,7 +25,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class CarsComponent implements OnInit {
   carList: ICar[] = [];
   displayDate = new Date();
-  sortBy: CarSortOptions | undefined;
+  sortBy: CarSortOptions = CarSortOptions.CREATED_AT;
   sortOrder: SortOrder = SortOrder.ASCENDING;
   search = '';
 
@@ -46,7 +52,7 @@ export class CarsComponent implements OnInit {
     private readonly carService: CarService,
     private displayDateService: DisplayDateService,
     private snackBar: MatSnackBar,
-    private dialogRef: MatDialog,
+    private dialog: MatDialog,
     private snackbar: MatSnackBar
   ) {
     this.displayDateService.getDisplayDateSubject().subscribe((date) => {
@@ -73,12 +79,19 @@ export class CarsComponent implements OnInit {
       });
   }
 
+  openTableInfo(): void {
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.CARS,
+      width: '500px',
+    });
+  }
+
   openCreateCarDialog() {
-    this.dialogRef.open(CreateCarDialogComponent, { width: '500px' });
+    this.dialog.open(CreateCarDialogComponent, { width: '500px' });
   }
 
   openDialogEdit(carListEntry: ICar) {
-    this.dialogRef.open(UpdateCarDialogComponent, {
+    this.dialog.open(UpdateCarDialogComponent, {
       width: '500px',
       data: carListEntry,
     });
@@ -89,21 +102,23 @@ export class CarsComponent implements OnInit {
   }
 
   fetchCarList(): void {
-    this.carService.getCar(this.displayDate).subscribe({
-      next: (car) => {
-        this.carList = car;
-        console.log('checkout', car);
-      },
-      error: (error) => {
-        console.error(error);
-        this.snackBar.open(
-          'Check Out data have failed to load, please try checking your connection.',
-          'Okay',
-          {
-            duration: 10000,
-          }
-        );
-      },
-    });
+    this.carService
+      .getCar(this.displayDate, this.sortBy, this.sortOrder, this.search)
+      .subscribe({
+        next: (car) => {
+          this.carList = car;
+          console.log('checkout', car);
+        },
+        error: (error) => {
+          console.error(error);
+          this.snackBar.open(
+            'Check Out data have failed to load, please try checking your connection.',
+            'Okay',
+            {
+              duration: 10000,
+            }
+          );
+        },
+      });
   }
 }

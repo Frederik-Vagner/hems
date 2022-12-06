@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ILuggage, LuggageSortOptions, SortOrder } from '@hems/interfaces';
+import {
+  ILuggage,
+  LuggageSortOptions,
+  SortOrder,
+  TableInfoOptions,
+} from '@hems/interfaces';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { DisplayDateService } from '../../services/display-date.service';
 import { LuggageService } from '../../services/luggage.service';
 import { CreateLongTermDialogComponent } from './createLongTermDialog/create-long-term-dialog.component';
@@ -18,7 +24,7 @@ export class LongtermComponent implements OnInit {
   listNames?: string[];
   chosenListName = '';
   isLoading = false;
-  sortBy: LuggageSortOptions | undefined;
+  sortBy: LuggageSortOptions = LuggageSortOptions.CREATED_AT;
   sortOrder: SortOrder = SortOrder.ASCENDING;
   search = '';
   displayDate = new Date();
@@ -60,7 +66,6 @@ export class LongtermComponent implements OnInit {
       .subscribe({
         next: (luggage) => {
           this.luggage = luggage;
-          console.log(luggage);
         },
         error: (error) => {
           this.isLoading = false;
@@ -70,6 +75,13 @@ export class LongtermComponent implements OnInit {
           });
         },
       });
+  }
+
+  openTableInfo(): void {
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.LONG_TERM,
+      width: '500px',
+    });
   }
 
   editLongTermListEntry(luggage: ILuggage): void {

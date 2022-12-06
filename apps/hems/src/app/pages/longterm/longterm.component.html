@@ -12,7 +12,12 @@
           matInput
         />
       </mat-form-field>
-      <mat-form-field autocomplete="off" appearance="fill" style="width: 150px" class="remove-error-message">
+      <mat-form-field
+        autocomplete="off"
+        appearance="fill"
+        style="width: 150px"
+        class="remove-error-message"
+      >
         <mat-label>Sort by</mat-label>
         <mat-select
           [(value)]="sortBy"
@@ -21,109 +26,119 @@
         >
           <mat-option value="arrivalTime">Date needed</mat-option>
           <mat-option value="completedAt">Completed at</mat-option>
-          <mat-option value="createdAt">Date in</mat-option>
+          <mat-option value="createdAt">Created at</mat-option>
           <mat-option value="room">Room</mat-option>
           <mat-option value="name">Name</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
 
-    <button
-      mat-raised-button
-      class="action-btn"
-      (click)="createLongTermEntry()"
-    >
-      Add long term
-    </button>
+    <div class="table-buttons">
+      <button mat-raised-button class="basic-btn" (click)="openTableInfo()">
+        Table info
+      </button>
+      <button class="secondary-btn" mat-raised-button style="margin-right: 1em">
+        Show All
+      </button>
+      <button
+        mat-raised-button
+        class="action-btn"
+        (click)="createLongTermEntry()"
+      >
+        Add long term
+      </button>
+    </div>
   </div>
   <hr />
 
-  <table mat-table [dataSource]="luggage" class="mat-elevation-z8" matSort>
-    <ng-container matColumnDef="dateIn">
-      <th mat-header-cell *matHeaderCellDef>Date in</th>
-      <td mat-cell *matCellDef="let luggage">
-        {{ luggage.createdAt | date: 'dd/MM HH:mm' }}
-      </td>
-    </ng-container>
+  <div class="table-height">
+    <table mat-table [dataSource]="luggage">
+      <ng-container matColumnDef="dateIn">
+        <th mat-header-cell *matHeaderCellDef>Date in</th>
+        <td mat-cell *matCellDef="let luggage">
+          {{ luggage.createdAt | date: 'dd/MM HH:mm' }}
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="room">
-      <th mat-header-cell *matHeaderCellDef>Room nr</th>
-      <td mat-cell *matCellDef="let luggage">{{ luggage.room }}</td>
-    </ng-container>
+      <ng-container matColumnDef="room">
+        <th mat-header-cell *matHeaderCellDef>Room nr</th>
+        <td mat-cell *matCellDef="let luggage">{{ luggage.room }}</td>
+      </ng-container>
 
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let luggage">
-        {{ luggage.name }}
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let luggage">
+          {{ luggage.name }}
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="nrOfBags">
-      <th mat-header-cell *matHeaderCellDef>Nr. <br />of bags</th>
-      <td mat-cell *matCellDef="let luggage">
-        {{ luggage.bags }}
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="nrOfBags">
+        <th mat-header-cell *matHeaderCellDef>Nr. <br />of bags</th>
+        <td mat-cell *matCellDef="let luggage">
+          {{ luggage.bags }}
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="comments">
-      <th mat-header-cell *matHeaderCellDef>Comments</th>
-      <td mat-cell *matCellDef="let luggage">
-        {{ luggage.comments ?? '-' }}
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="comments">
+        <th mat-header-cell *matHeaderCellDef>Comments</th>
+        <td mat-cell *matCellDef="let luggage">
+          {{ luggage.comments ?? '-' }}
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="tagNr">
-      <th mat-header-cell *matHeaderCellDef>Tag nr.</th>
-      <td mat-cell *matCellDef="let luggage">{{ luggage.tagNr }}</td>
-    </ng-container>
+      <ng-container matColumnDef="tagNr">
+        <th mat-header-cell *matHeaderCellDef>Tag nr.</th>
+        <td mat-cell *matCellDef="let luggage">{{ luggage.tagNr }}</td>
+      </ng-container>
 
-    <ng-container matColumnDef="dateNeeded">
-      <th mat-header-cell *matHeaderCellDef>Date needed</th>
-      <td mat-cell *matCellDef="let luggage">
-        {{
-          luggage.arrivalTime
-            ? (luggage.arrivalTime | date: 'dd/MM HH:mm')
-            : '-'
-        }}
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="dateNeeded">
+        <th mat-header-cell *matHeaderCellDef>Date needed</th>
+        <td mat-cell *matCellDef="let luggage">
+          {{
+            luggage.arrivalTime
+              ? (luggage.arrivalTime | date: 'dd/MM HH:mm')
+              : '-'
+          }}
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="bbLr">
-      <th mat-header-cell *matHeaderCellDef>BB <br />in LR</th>
-      <td mat-cell *matCellDef="let luggage">
-        {{ luggage.bbLr }}
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="bbLr">
+        <th mat-header-cell *matHeaderCellDef>BB <br />in LR</th>
+        <td mat-cell *matCellDef="let luggage">
+          {{ luggage.bbLr }}
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="location">
-      <th mat-header-cell *matHeaderCellDef>Location</th>
-      <td mat-cell *matCellDef="let luggage">
-        {{ luggage.location }}
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef>Location</th>
+        <td mat-cell *matCellDef="let luggage">
+          {{ luggage.location }}
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="bbOut">
-      <th mat-header-cell *matHeaderCellDef>BB out</th>
-      <td mat-cell *matCellDef="let luggage">{{ luggage.bbOut ?? '-' }}</td>
-    </ng-container>
+      <ng-container matColumnDef="bbOut">
+        <th mat-header-cell *matHeaderCellDef>BB out</th>
+        <td mat-cell *matCellDef="let luggage">{{ luggage.bbOut ?? '-' }}</td>
+      </ng-container>
 
-    <ng-container matColumnDef="dateOut">
-      <th mat-header-cell *matHeaderCellDef>Date out</th>
-      <td mat-cell *matCellDef="let luggage">
-        {{
-          luggage.completedAt
-            ? (luggage.completedAt | date: 'dd/MM HH:mm')
-            : '-'
-        }}
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="dateOut">
+        <th mat-header-cell *matHeaderCellDef>Date out</th>
+        <td mat-cell *matCellDef="let luggage">
+          {{
+            luggage.completedAt
+              ? (luggage.completedAt | date: 'dd/MM HH:mm')
+              : '-'
+          }}
+        </td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr
-      mat-row
-      *matRowDef="let row; columns: displayedColumns"
-      (click)="editLongTermListEntry(row)"
-      [ngClass]="row.completedAt ? 'completed' : ''"
-    ></tr>
-  </table>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        (click)="editLongTermListEntry(row)"
+        [ngClass]="row.completedAt ? 'completed' : ''"
+      ></tr>
+    </table>
+  </div>
 </main>

@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ILuggage, LuggageSortOptions, SortOrder } from '@hems/interfaces';
+import {
+  ILuggage,
+  LuggageSortOptions,
+  SortOrder,
+  TableInfoOptions,
+} from '@hems/interfaces';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { DisplayDateService } from '../../services/display-date.service';
 import { LuggageService } from '../../services/luggage.service';
 import { CreateCheckoutDialogComponent } from './createCheckoutDialog/create-checkout-dialog.component';
@@ -71,6 +77,13 @@ export class CheckoutComponent implements OnInit {
           );
         },
       });
+  }
+
+  openTableInfo(): void {
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.CHECK_OUT,
+      width: '500px',
+    });
   }
 
   openCheckoutEditDialog(luggage: ILuggage): void {
