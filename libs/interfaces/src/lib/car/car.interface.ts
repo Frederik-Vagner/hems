@@ -8,9 +8,9 @@ export interface ICar extends ICompletedAt {
   departureDate: Date;
   name: string;
   licensePlate: string;
-  expirationDate?: Date;
-  pickupTime?: Date;
-  deliveryTime?: Date;
+  expirationDate?: Date | null;
+  pickupTime?: Date | null;
+  deliveryTime?: Date | null;
   bbDown?: string;
   bbUp?: string;
   location: string;
@@ -27,9 +27,9 @@ export interface ICreateCarRequest {
   departureDate: Date;
   name: string;
   licensePlate: string;
-  expirationDate?: Date;
-  pickupTime?: Date;
-  deliveryTime?: Date;
+  expirationDate?: Date | null;
+  pickupTime?: Date | null;
+  deliveryTime?: Date | null;
   bbDown?: string;
   bbUp?: string;
   location: string;
@@ -37,18 +37,19 @@ export interface ICreateCarRequest {
   bbOut?: string;
   comments?: string;
   charged: boolean;
+  completedAt?: Date | null;
 }
 
 export interface IUpdateCarRequest {
   tagNr?: string;
   room?: string;
-  arrivalDate?: Date;
-  departureDate?: Date;
+  arrivalDate?: Date | null;
+  departureDate?: Date | null;
   name?: string;
   licensePlate?: string;
-  expirationDate?: Date;
-  pickupTime?: Date;
-  deliveryTime?: Date;
+  expirationDate?: Date | null;
+  pickupTime?: Date | null;
+  deliveryTime?: Date | null;
   bbDown?: string;
   bbUp?: string;
   location?: string;
@@ -56,5 +57,5 @@ export interface IUpdateCarRequest {
   bbOut?: string;
   comments?: string;
   charged?: boolean;
-  completedAt?: Date;
+  completedAt?: Date | null;
 }

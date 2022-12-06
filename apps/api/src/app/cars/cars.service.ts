@@ -79,6 +79,8 @@ export class CarsService {
         return { expirationDate: sortOrder };
       case CarSortOptions.PICKUP_TIME:
         return { pickupTime: sortOrder };
+      case CarSortOptions.CREATED_AT:
+        return { createdAt: sortOrder };
       default:
         return undefined;
     }

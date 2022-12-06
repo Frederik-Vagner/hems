@@ -83,7 +83,7 @@ export class CreateCheckoutDialogComponent {
     this.service
       .create({
         room: this.form.get('room')?.value,
-        roomReady: this.form.get('roomReady')?.value,
+        // roomReady: this.form.get('roomReady')?.value,
         name: this.form.get('name')?.value,
         arrivalTime: new Date(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
@@ -91,10 +91,7 @@ export class CreateCheckoutDialogComponent {
         bbLr: this.form.get('bbLr')?.value,
         bbDown: this.form.get('bbDown')?.value,
         location: this.form.get('location')?.value,
-        comments:
-          this.form.get('comments')?.value.toString().length > 1
-            ? this.form.get('comments')?.value
-            : '-',
+        comments: this.form.get('comments')?.value,
         luggageType: LuggageType.CHECKOUT,
       })
       .subscribe({

@@ -8,6 +8,7 @@ import { AssignmentsModule } from './assignments/assignments.module';
 import { AuthModule } from './auth/auth.module';
 import { CarsModule } from './cars/cars.module';
 import { configService } from './config/config.service';
+import { DocumentsModule } from './documents/documents.module';
 import { FilesModule } from './files/files.module';
 import { LuggagesModule } from './luggages/luggages.module';
 import { LoggerMiddleware } from './middleware/logging.middleware';
@@ -25,6 +26,7 @@ import { UsersModule } from './users/users.module';
     CarsModule,
     TasksModule,
     AssignmentsModule,
+    DocumentsModule,
     FilesModule,
   ],
   controllers: [AppController],

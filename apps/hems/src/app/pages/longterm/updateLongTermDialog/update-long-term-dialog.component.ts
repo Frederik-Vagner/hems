@@ -27,7 +27,7 @@ import { LuggageService } from '../../../services/luggage.service';
 export class UpdateLongTermDialogComponent implements OnInit {
   updateLongTermForm = new UntypedFormGroup({});
   guestHasApproved = false;
-  maxDatetime = new Date();
+  maxDatetime = new Date(new Date().getTime() + 50000);
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;

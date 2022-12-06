@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ILuggage } from '@hems/interfaces';
+import {
+  ILuggage,
+  LuggageSortOptions,
+  SortOrder,
+  TableInfoOptions,
+} from '@hems/interfaces';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { DisplayDateService } from '../../services/display-date.service';
 import { LuggageService } from '../../services/luggage.service';
 import { CreateCheckinDialogComponent } from './createCheckinDialog/create-checkin-dialog.component';
@@ -15,8 +21,11 @@ import { UpdateCheckinDialogComponent } from './updateCheckinDialog/update-check
 export class CheckinComponent implements OnInit {
   checkinLuggage: ILuggage[] = [];
   listNames?: string[];
-  isLoadingCheckin = false;
+  isLoading = false;
   displayDate = new Date();
+  sortBy: LuggageSortOptions = LuggageSortOptions.CREATED_AT;
+  sortOrder: SortOrder = SortOrder.ASCENDING;
+  search = '';
 
   checkinColumns = [
     'room',
@@ -49,23 +58,31 @@ export class CheckinComponent implements OnInit {
   }
 
   fetchLuggage(): void {
-    this.isLoadingCheckin = true;
-    this.luggageService.getCheckin(this.displayDate).subscribe({
-      next: (luggage) => {
-        this.checkinLuggage = luggage;
-        console.log(this.checkinLuggage);
-      },
-      error: (error) => {
-        this.isLoadingCheckin = false;
-        console.error(error);
-        this.snackBar.open(
-          'Check In data have failed to load, please reload the page.',
-          'Okay',
-          {
-            duration: 10000,
-          }
-        );
-      },
+    this.isLoading = true;
+    this.luggageService
+      .getCheckin(this.displayDate, this.sortBy, this.sortOrder, this.search)
+      .subscribe({
+        next: (luggage) => {
+          this.checkinLuggage = luggage;
+        },
+        error: (error) => {
+          this.isLoading = false;
+          console.error(error);
+          this.snackBar.open(
+            'Check In data have failed to load, please reload the page.',
+            'Okay',
+            {
+              duration: 10000,
+            }
+          );
+        },
+      });
+  }
+
+  openTableInfo(): void {
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.CHECK_IN,
+      width: '500px',
     });
   }
 

@@ -17,7 +17,7 @@ import { AssignmentsService } from '../../../services/assignments.service';
 export class CreateAssignmentDialogComponent implements OnInit {
   createAssignmentForm = new UntypedFormGroup({});
   isLoading = false;
-  maxDatetime = new Date();
+  maxDatetime = new Date(new Date().getTime() + 50000);
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('task') taskInput!: ElementRef;
