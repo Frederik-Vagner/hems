@@ -17,7 +17,7 @@ export interface ICreateAssignmentRequest {
   receivedBy: string;
   performedBy?: string;
   receivedAt: Date;
-  completedAt?: Date;
+  completedAt?: Date | null;
 }
 
 export interface IUpdateAssignmentRequest {
@@ -27,5 +27,5 @@ export interface IUpdateAssignmentRequest {
   receivedBy?: string;
   performedBy?: string;
   receivedAt?: Date;
-  completedAt?: Date;
+  completedAt?: Date | null;
 }
