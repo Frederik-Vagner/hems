@@ -60,6 +60,12 @@ td.mat-cell {
 .mat-row {
   &:hover {
     background-color: var(--main-blue-lowest-opacity);
+    
+    .car-checkbox {
+      input ~ .checkmark {
+        background-color: #ccc;
+      }
+    }
   }
 
   > .mat-cell {
