@@ -20,7 +20,7 @@ export interface IUpdateTask {
   task?: string;
   initials?: string;
   listName?: string;
-  completedAt?: Date;
+  completedAt?: Date | null;
 }
 
 export interface IGetTasks {
