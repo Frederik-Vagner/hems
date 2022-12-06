@@ -17,7 +17,7 @@ export class CheckoutComponent implements OnInit {
   listNames?: string[];
   isLoading = false;
   displayDate = new Date();
-  sortBy: LuggageSortOptions | undefined;
+  sortBy: LuggageSortOptions = LuggageSortOptions.CREATED_AT;
   sortOrder: SortOrder = SortOrder.ASCENDING;
   search = '';
 
