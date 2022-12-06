@@ -49,7 +49,7 @@
   </div>
   <hr />
 
-  <table mat-table [dataSource]="checkinLuggage" class="mat-elevation-z8">
+  <table mat-table [dataSource]="checkinLuggage">
     <ng-container matColumnDef="room">
       <th mat-header-cell *matHeaderCellDef>Room nr.</th>
       <td mat-cell *matCellDef="let item">{{ item.room }}</td>
