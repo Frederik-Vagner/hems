@@ -102,21 +102,23 @@ export class CarsComponent implements OnInit {
   }
 
   fetchCarList(): void {
-    this.carService.getCar(this.displayDate, this.sortBy, this.sortOrder, this.search).subscribe({
-      next: (car) => {
-        this.carList = car;
-        console.log('checkout', car);
-      },
-      error: (error) => {
-        console.error(error);
-        this.snackBar.open(
-          'Check Out data have failed to load, please try checking your connection.',
-          'Okay',
-          {
-            duration: 10000,
-          }
-        );
-      },
-    });
+    this.carService
+      .getCar(this.displayDate, this.sortBy, this.sortOrder, this.search)
+      .subscribe({
+        next: (car) => {
+          this.carList = car;
+          console.log('checkout', car);
+        },
+        error: (error) => {
+          console.error(error);
+          this.snackBar.open(
+            'Check Out data have failed to load, please try checking your connection.',
+            'Okay',
+            {
+              duration: 10000,
+            }
+          );
+        },
+      });
   }
 }

@@ -3,24 +3,7 @@
   <hr />
 
   <div class="dialog-row">
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Date in</mat-label>
-      <input
-        #dateIn
-        type="text"
-        formControlName="dateIn"
-        matInput
-        placeholder="Date of receiving luggage"
-      />
-      <mat-error
-        *ngIf="
-          createLongTermForm.get('dateIn')?.invalid &&
-          createLongTermForm.get('dateIn')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field> -->
+    
   </div>
 
   <mat-form-field appearance="fill" class="full-width">
@@ -181,55 +164,6 @@
       </mat-error>
     </mat-form-field>
   </div>
-
-  <!-- BB Out + Date Out -->
-  <!-- <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      class="input one-third"
-      appearance="fill"
-    >
-      <mat-label class="input-label">BB out</mat-label>
-      <input
-        #bbOut
-        type="text"
-        data-cy="update-checkin-name"
-        formControlName="bbOut"
-        matInput
-        placeholder="JD"
-      />
-      <mat-error
-        *ngIf="
-          createLongTermForm.get('bbOut')?.invalid &&
-          createLongTermForm.get('bbOut')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field autocomplete="off" appearance="fill">
-        <mat-label>Date out</mat-label>
-        <input
-          matInput
-          [ngxMatDatetimePicker]="dateOut"
-          placeholder="dd/MM HH:mm"
-          formControlName="dateOut"
-          [max]="maxDatetime"
-        />
-        <mat-datepicker-toggle
-          matSuffix
-          [for]="$any(dateOut)"
-        ></mat-datepicker-toggle>
-        <ngx-mat-datetime-picker
-          #dateOut
-          [showSpinners]="true"
-          [showSeconds]="false"
-          [touchUi]="true"
-        >
-        </ngx-mat-datetime-picker>
-      </mat-form-field>
-  </div> -->
 
   <mat-form-field appearance="fill" class="full-width">
     <mat-label>Comments</mat-label>
