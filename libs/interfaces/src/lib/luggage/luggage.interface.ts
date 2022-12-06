@@ -21,7 +21,7 @@ export interface ILuggage extends ICompletedAt {
 export interface ICreateLuggageRequest {
   luggageType: LuggageType;
   room: string;
-  roomReady?: boolean;
+  // roomReady?: boolean;
   name: string;
   bags: string;
   comments?: string;
@@ -30,9 +30,7 @@ export interface ICreateLuggageRequest {
   location: string;
   bbDown?: string;
   bbLr: string;
-  bbOut?: string; // probably shouldnt actually be part of creating the longterm -> Teodor, this is why it is marked as an optional field... no want, no provide
   dateNeeded?: Date;
-  completedAt?: Date;
 }
 
 export interface IUpdateLuggageRequest {

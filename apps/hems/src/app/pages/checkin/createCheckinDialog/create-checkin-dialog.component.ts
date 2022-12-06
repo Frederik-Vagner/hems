@@ -43,7 +43,7 @@ export class CreateCheckinDialogComponent {
         Validators.maxLength(10),
         Validators.pattern('^[0-9]*$'),
       ]),
-      roomReady: new UntypedFormControl('false', [Validators.required]),
+      // roomReady: new UntypedFormControl('false', [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
       arrivalTime: new UntypedFormControl(new Date(), [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
@@ -88,7 +88,7 @@ export class CreateCheckinDialogComponent {
     this.service
       .create({
         room: this.form.get('room')?.value,
-        roomReady: this.form.get('roomReady')?.value,
+        // roomReady: this.form.get('roomReady')?.value,
         name: this.form.get('name')?.value,
         arrivalTime: new Date(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
