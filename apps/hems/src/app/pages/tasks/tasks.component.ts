@@ -18,9 +18,7 @@ export class TasksComponent implements OnInit {
 
   isLoading = false;
 
-  morningColumns = ['time', 'task', 'done', 'initials', 'actions'];
-
-  eveningColumns = ['time', 'task', 'done', 'initials', 'actions'];
+  headerRow = ['time', 'task', 'done', 'initials', 'actions'];
 
   constructor(
     private readonly tasksService: TasksService,
@@ -48,14 +46,13 @@ export class TasksComponent implements OnInit {
         this.eveningTasks = tasks.tasks.filter(
           (task) => task.listName === 'Evening'
         );
-        console.log(this.morningTasks);
       },
       error: (error) => {
         this.isLoading = false;
         console.error(error);
         this.snackBar.open(
           'Tasks have failed to load',
-          'Imma try again later',
+          'Okay',
           {
             duration: 10000,
           }
