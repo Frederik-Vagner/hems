@@ -3,6 +3,7 @@ import {
   DocumentSortOptions,
   SortOrder,
   UpdateDocumentRequest,
+  DeleteDocumentResponse
 } from '@hems/interfaces';
 import { Document } from '@hems/models';
 import {
@@ -32,7 +33,6 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { toBool } from '../utils/query-params.utils';
 import { DocumentsService } from './documents.service';
 import 'multer';
-import { DeleteDocumentResponse } from '../../../../../libs/interfaces/src/lib/document/document.dto';
 
 const FILE_MAX_SIZE = 50000000;
 const FILE_TYPES = /(pdf|docx)\b/;
