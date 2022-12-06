@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Document } from '@hems/models';
 import { Like, Repository } from 'typeorm';
@@ -49,7 +49,15 @@ export class DocumentsService {
     documentData: CreateDocumentRequest,
     document: Express.Multer.File
   ) {
-    await this.fileService.uploadFile(document.buffer, document.originalname);
+    try {
+      await this.fileService.uploadFile(document.buffer, document.originalname);
+    } catch (error) {
+      throw new HttpException(
+        'Failed to upload the document. Please try again later.',
+        HttpStatus.INTERNAL_SERVER_ERROR
+      );
+    }
+
     return await this.documentRepo.save({
       ...documentData,
       documentName: document.originalname,
@@ -77,10 +85,17 @@ export class DocumentsService {
   ) {
     const document = await this.documentRepo.findOneByOrFail({ documentId });
 
-    await this.fileService.uploadFile(
-      documentFile.buffer,
-      documentFile.originalname
-    );
+    try {
+      await this.fileService.uploadFile(
+        documentFile.buffer,
+        documentFile.originalname
+      );
+    } catch (error) {
+      throw new HttpException(
+        'Failed to upload the document. Please try again later.',
+        HttpStatus.INTERNAL_SERVER_ERROR
+      );
+    }
     document.documentName = documentFile.originalname;
 
     return await this.documentRepo.save(document);
@@ -89,9 +104,16 @@ export class DocumentsService {
   async deleteDocument(documentId: string) {
     const document = await this.documentRepo.findOneByOrFail({ documentId });
 
-    await this.fileService.deleteFile(document.documentName);
-    await this.documentRepo.delete(document);
+    try {
+      await this.fileService.deleteFile(document.documentName);
+    } catch (error) {
+      throw new HttpException(
+        'Failed to delete the document. Please try again later.',
+        HttpStatus.INTERNAL_SERVER_ERROR
+      );
+    }
 
+    await this.documentRepo.remove(document);
     return { message: 'Deleted.' };
   }
 
