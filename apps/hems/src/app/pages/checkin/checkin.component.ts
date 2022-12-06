@@ -53,7 +53,6 @@ export class CheckinComponent implements OnInit {
     this.luggageService.getCheckin(this.displayDate).subscribe({
       next: (luggage) => {
         this.checkinLuggage = luggage;
-        console.log(this.checkinLuggage);
       },
       error: (error) => {
         this.isLoadingCheckin = false;
