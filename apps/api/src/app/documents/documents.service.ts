@@ -1,14 +1,14 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Document } from '@hems/models';
-import { Like, Repository } from 'typeorm';
 import {
   CreateDocumentRequest,
   DocumentSortOptions,
   SortOrder,
   UpdateDocumentRequest,
 } from '@hems/interfaces';
+import { Document } from '@hems/models';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import 'multer';
+import { Like, Repository } from 'typeorm';
 import { FilesService } from '../files/files.service';
 
 @Injectable()
@@ -43,6 +43,17 @@ export class DocumentsService {
     document.lastViewedAt = new Date();
 
     return await this.documentRepo.save(document);
+  }
+
+  async getFileLink(filename: string) {
+    try {
+      return this.fileService.getSignedLink(filename, 600);
+    } catch (error) {
+      throw new HttpException(
+        'Failed to get the document link. Please try again later.',
+        HttpStatus.INTERNAL_SERVER_ERROR
+      );
+    }
   }
 
   async createDocument(

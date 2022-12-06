@@ -3,11 +3,13 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 import { AppModule } from './app/app.module';
+import { EntityNotFoundExceptionFilter } from './app/utils/entity-not-found-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
   const port = process.env.PORT || 3333;
 
+  app.useGlobalFilters(new EntityNotFoundExceptionFilter());
   // Request body validation
   app.useGlobalPipes(
     new ValidationPipe({
