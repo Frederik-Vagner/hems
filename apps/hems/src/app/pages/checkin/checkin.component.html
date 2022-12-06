@@ -13,7 +13,12 @@
           matInput
         />
       </mat-form-field>
-      <mat-form-field autocomplete="off" appearance="fill" style="width: 150px" class="remove-error-message">
+      <mat-form-field
+        autocomplete="off"
+        appearance="fill"
+        style="width: 150px"
+        class="remove-error-message"
+      >
         <mat-label>Sort by</mat-label>
         <mat-select
           [(value)]="sortBy"
@@ -28,14 +33,19 @@
         </mat-select>
       </mat-form-field>
     </div>
-    
-    <button
-      mat-raised-button
-      class="action-btn"
-      (click)="openCheckinCreateDialog()"
-    >
-      Add Check In
-    </button>
+
+    <div class="table-buttons">
+      <button mat-raised-button class="basic-btn" (click)="openTableInfo()">
+        Table info
+      </button>
+      <button
+        mat-raised-button
+        class="action-btn"
+        (click)="openCheckinCreateDialog()"
+      >
+        Add Check In
+      </button>
+    </div>
   </div>
   <hr />
 

@@ -60,7 +60,6 @@ export class LongtermComponent implements OnInit {
       .subscribe({
         next: (luggage) => {
           this.luggage = luggage;
-          console.log(luggage);
         },
         error: (error) => {
           this.isLoading = false;
@@ -70,6 +69,10 @@ export class LongtermComponent implements OnInit {
           });
         },
       });
+  }
+
+  openTableInfo(): void {
+    console.log('skrt');
   }
 
   editLongTermListEntry(luggage: ILuggage): void {

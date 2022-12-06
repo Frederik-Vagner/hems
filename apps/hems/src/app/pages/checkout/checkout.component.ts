@@ -73,6 +73,10 @@ export class CheckoutComponent implements OnInit {
       });
   }
 
+  openTableInfo(): void {
+    console.log('skrt');
+  }
+
   openCheckoutEditDialog(luggage: ILuggage): void {
     this.dialog.open(UpdateCheckoutDialogComponent, {
       width: '500px',

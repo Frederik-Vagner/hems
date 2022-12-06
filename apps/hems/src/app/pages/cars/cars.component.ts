@@ -73,6 +73,10 @@ export class CarsComponent implements OnInit {
       });
   }
 
+  openTableInfo(): void {
+    console.log('skrt');
+  }
+
   openCreateCarDialog() {
     this.dialogRef.open(CreateCarDialogComponent, { width: '500px' });
   }

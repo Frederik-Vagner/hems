@@ -73,6 +73,10 @@ export class CheckinComponent implements OnInit {
       });
   }
 
+  openTableInfo(): void {
+    console.log('skrt');
+  }
+
   openCheckinEditDialog(luggage: ILuggage): void {
     this.dialog.open(UpdateCheckinDialogComponent, {
       width: '500px',
