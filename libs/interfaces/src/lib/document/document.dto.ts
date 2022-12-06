@@ -42,5 +42,6 @@ export class UpdateDocumentRequest implements IUpdateAssignmentRequest {
 }
 
 export class DeleteDocumentResponse {
+  @ApiModelProperty({ example: 'Deleted.' })
   message = 'Deleted.';
 }

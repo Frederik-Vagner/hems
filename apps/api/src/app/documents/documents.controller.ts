@@ -156,5 +156,4 @@ export class DocumentsController {
   async deleteDocument(@Param('documentId', ParseUUIDPipe) documentId: string) {
     return this.documentsService.deleteDocument(documentId);
   }
-
 }
