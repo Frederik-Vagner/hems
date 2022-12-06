@@ -6,7 +6,7 @@ import { Repository } from 'typeorm';
 import { assignments } from '../constants/assignments.constants';
 
 @Injectable()
-export class AssignmentSeederService {
+export class AssignmentsSeederService {
   constructor(
     @InjectRepository(Assignment)
     private readonly repo: Repository<Assignment>

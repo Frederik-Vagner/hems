@@ -71,6 +71,11 @@ export class CreateCarRequest implements ICreateCarRequest {
   @ApiModelProperty({ example: true })
   @IsNotEmpty()
   charged!: boolean;
+
+  @ApiModelProperty({ example: Date.now() })
+  @IsOptional()
+  @IsDateString()
+  completedAt?: Date;
 }
 
 export class UpdateCarRequest implements IUpdateCarRequest {
