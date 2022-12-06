@@ -38,8 +38,8 @@ const routes: Routes = [
     path: 'assignments',
     component: AssignmentsComponent,
   },
-  { path: '**', component: PageNotFoundComponent }, // PageNotFound for all other page requests
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' }, // Redirect to dashboard page
+  { path: '**', component: PageNotFoundComponent }, // PageNotFound for all other page requests
 ];
 
 @NgModule({

@@ -16,15 +16,29 @@ import { environment as env } from '../../environments/environment';
 export class LuggageService {
   constructor(private http: HttpClient) {}
 
-  public getCheckin(createdAt: Date): Observable<ILuggage[]> {
+  public getCheckin(
+    createdAt: Date,
+    sortBy?: LuggageSortOptions,
+    sortOrder?: SortOrder,
+    search?: string
+  ): Observable<ILuggage[]> {
     return this.http.get<ILuggage[]>(
-      `${env.apiUrl}/luggages/checkin?createdAt=${createdAt.toISOString()}`
+      `${
+        env.apiUrl
+      }/luggages/checkin?createdAt=${createdAt.toISOString()}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`
     );
   }
 
-  public getCheckout(createdAt: Date): Observable<ILuggage[]> {
+  public getCheckout(
+    createdAt: Date,
+    sortBy?: LuggageSortOptions,
+    sortOrder?: SortOrder,
+    search?: string
+  ): Observable<ILuggage[]> {
     return this.http.get<ILuggage[]>(
-      `${env.apiUrl}/luggages/checkout?createdAt=${createdAt.toISOString()}`
+      `${
+        env.apiUrl
+      }/luggages/checkout?createdAt=${createdAt.toISOString()}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`
     );
   }
 

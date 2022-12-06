@@ -1,15 +1,13 @@
 <!-- Morning section -->
-<section id="content-container">
-  <section class="table-header">
-    <h2>Morning</h2>
+<main>
+  <div class="table-actions">
+    <h1>Morning</h1>
+  </div>
+  <hr />
 
-    <button class="action-button">Add check in</button>
-  </section>
   <table mat-table [dataSource]="morningTasks" class="mat-elevation-z8">
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
     <ng-container matColumnDef="time">
-      <th mat-header-cell *matHeaderCellDef>Time</th>
+      <th mat-header-cell *matHeaderCellDef style="width: 110px">Time</th>
       <td mat-cell *matCellDef="let task">{{ task.time }}</td>
     </ng-container>
     <ng-container matColumnDef="task">
@@ -19,53 +17,52 @@
     <ng-container matColumnDef="done">
       <th mat-header-cell *matHeaderCellDef>Done</th>
       <td mat-cell *matCellDef="let task">
-        {{ task.completedAt ? task.completedAt : '' }}
+        {{ task.completedAt ? (task.completedAt | date: 'HH:mm') : '-' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="initials">
       <th mat-header-cell *matHeaderCellDef>Initials</th>
       <td mat-cell *matCellDef="let task">
-        {{ task.initials ? task.initials : '' }}
+        {{ task.initials ? task.initials : '-' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <th mat-header-cell *matHeaderCellDef style="width: 110px">Actions</th>
       <td mat-cell *matCellDef="let task">
         <button
           mat-raised-button
-          color="primary"
-          *ngIf="task.initials !== '' && task.completedAt !== null"
-          (click)="openEditTaskDialog(task)"
-        >
-          Edit
-        </button>
-        <button
-          mat-raised-button
-          color="primary"
-          *ngIf="task.initials === '' || task.completedAt === null"
+          class="secondary-btn"
+          *ngIf="task.completedAt === null"
           (click)="openEditTaskDialog(task)"
         >
           Complete
         </button>
+        <button
+          mat-raised-button
+          class="basic-btn"
+          *ngIf="task.completedAt !== null"
+          (click)="openEditTaskDialog(task)"
+        >
+          Edit
+        </button>
       </td>
     </ng-container>
-    <tr mat-header-row *matHeaderRowDef="morningColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: morningColumns"></tr>
+
+    <tr mat-header-row *matHeaderRowDef="headerRow"></tr>
+    <tr mat-row *matRowDef="let row; columns: headerRow"></tr>
   </table>
 
   <br />
-  <br />
 
   <!-- Evening Section -->
-  <section class="table-header">
-    <h2>Evening</h2>
-  </section>
-  <table mat-table [dataSource]="eveningTasks" class="mat-elevation-z8">
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+  <div class="table-actions">
+    <h1>Evening</h1>
+  </div>
+  <hr />
 
+  <table mat-table [dataSource]="eveningTasks" class="mat-elevation-z8">
     <ng-container matColumnDef="time">
-      <th mat-header-cell *matHeaderCellDef>Time</th>
+      <th mat-header-cell *matHeaderCellDef style="width: 110px">Time</th>
       <td mat-cell *matCellDef="let item">{{ item.time }}</td>
     </ng-container>
     <ng-container matColumnDef="task">
@@ -75,35 +72,38 @@
     <ng-container matColumnDef="done">
       <th mat-header-cell *matHeaderCellDef>Done</th>
       <td mat-cell *matCellDef="let item">
-        {{ item.completedAt ? item.completedAt : '' }}
+        {{ item.completedAt ? (item.completedAt | date: 'HH:mm') : '-' }}
       </td>
     </ng-container>
     <ng-container matColumnDef="initials">
       <th mat-header-cell *matHeaderCellDef>Initials</th>
-      <td mat-cell *matCellDef="let item">{{ item.initials }}</td>
+      <td mat-cell *matCellDef="let item">
+        {{ item.initials ? item.initials : '-' }}
+      </td>
     </ng-container>
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <th mat-header-cell *matHeaderCellDef style="width: 110px">Actions</th>
       <td mat-cell *matCellDef="let task">
         <button
           mat-raised-button
-          color="primary"
-          *ngIf="task.initials !== '' && task.completedAt !== null"
-          (click)="openEditTaskDialog(task)"
-        >
-          Edit
-        </button>
-        <button
-          mat-raised-button
-          color="primary"
-          *ngIf="task.initials === '' || task.completedAt === null"
+          class="secondary-btn"
+          *ngIf="task.completedAt === null"
           (click)="openEditTaskDialog(task)"
         >
           Complete
         </button>
+        <button
+          mat-raised-button
+          class="basic-btn"
+          *ngIf="task.completedAt !== null"
+          (click)="openEditTaskDialog(task)"
+        >
+          Edit
+        </button>
       </td>
     </ng-container>
-    <tr mat-header-row *matHeaderRowDef="eveningColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: eveningColumns"></tr>
+
+    <tr mat-header-row *matHeaderRowDef="headerRow"></tr>
+    <tr mat-row *matRowDef="let row; columns: headerRow"></tr>
   </table>
-</section>
+</main>

@@ -88,7 +88,7 @@ export class CreateLongTermDialogComponent implements OnInit {
     this.luggageService
       .create({
         room: this.createLongTermForm.get('room')?.value,
-        roomReady: false,
+        // roomReady: false,
         name: this.createLongTermForm.get('name')?.value,
         bags: this.createLongTermForm.get('bags')?.value,
         comments: this.createLongTermForm.get('comments')?.value,
@@ -96,8 +96,6 @@ export class CreateLongTermDialogComponent implements OnInit {
         arrivalTime: this.createLongTermForm.get('dateNeeded')?.value,
         bbLr: this.createLongTermForm.get('bbLr')?.value,
         location: this.createLongTermForm.get('location')?.value,
-        bbOut: '-',
-        bbDown: '-',
         luggageType: LuggageType.LONG_TERM,
       })
       .subscribe({
