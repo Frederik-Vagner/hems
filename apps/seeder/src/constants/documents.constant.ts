@@ -12,7 +12,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document1.pdf',
     createdAt: new Date(
       new Date('9/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -32,7 +32,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document2.pdf',
     createdAt: new Date(
       new Date('9/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -51,7 +51,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document3.pdf',
     createdAt: new Date(
       new Date('2/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -65,7 +65,7 @@ export const documents: IDocument[] = [
     comments: 'Donec semper sapien a libero.',
     lastViewedAt: null,
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document4.pdf',
     createdAt: new Date(
       new Date('5/4/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -84,7 +84,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document5.pdf',
     createdAt: new Date(
       new Date('7/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -103,7 +103,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document6.pdf',
     createdAt: new Date(
       new Date('1/31/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -122,7 +122,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document7.pdf',
     createdAt: new Date(
       new Date('6/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -142,7 +142,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document8.pdf',
     createdAt: new Date(
       new Date('2/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -161,7 +161,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document9.pdf',
     createdAt: new Date(
       new Date('7/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -180,7 +180,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document10.pdf',
     createdAt: new Date(
       new Date('8/18/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -194,7 +194,7 @@ export const documents: IDocument[] = [
     comments: null,
     lastViewedAt: null,
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document11.pdf',
     createdAt: new Date(
       new Date('5/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -213,7 +213,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document12.pdf',
     createdAt: new Date(
       new Date('2/3/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -233,7 +233,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document13.pdf',
     createdAt: new Date(
       new Date('8/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -252,7 +252,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document14.pdf',
     createdAt: new Date(
       new Date('9/17/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -267,7 +267,7 @@ export const documents: IDocument[] = [
       'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.',
     lastViewedAt: null,
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document15.pdf',
     createdAt: new Date(
       new Date('12/31/2021').setHours(
         Math.random() * (23 - 2) + 2,
@@ -286,7 +286,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document16.pdf',
     createdAt: new Date(
       new Date('6/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -305,7 +305,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: true,
-    documentName: 'document.pdf',
+    documentName: 'document17.pdf',
     createdAt: new Date(
       new Date('11/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -320,7 +320,7 @@ export const documents: IDocument[] = [
       'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.',
     lastViewedAt: null,
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document18.pdf',
     createdAt: new Date(
       new Date('10/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -339,7 +339,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document19.pdf',
     createdAt: new Date(
       new Date('6/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -358,7 +358,7 @@ export const documents: IDocument[] = [
       )
     ),
     showOnDashboard: false,
-    documentName: 'document.pdf',
+    documentName: 'document20.pdf',
     createdAt: new Date(
       new Date('8/7/2022').setHours(
         Math.random() * (23 - 2) + 2,
