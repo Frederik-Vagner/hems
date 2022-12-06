@@ -24,7 +24,9 @@ export class CarService {
     search?: string
   ): Observable<ICar[]> {
     return this.http.get<ICar[]>(
-      `${env.apiUrl}/cars?createdAt=${createdAt.toISOString()}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`
+      `${
+        env.apiUrl
+      }/cars?createdAt=${createdAt.toISOString()}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`
     );
   }
 
