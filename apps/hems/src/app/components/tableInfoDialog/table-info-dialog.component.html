@@ -1,5 +1,48 @@
 <div [ngSwitch]="tableName">
-  <div *ngSwitchCase="'checkin'">checkin</div>
+  <div *ngSwitchCase="'checkin'" class="table-style">
+    <strong>Room nr:</strong>
+    <p>The guest's room number.</p>
+
+    <strong>Name:</strong>
+    <p>The guest's last name.</p>
+
+    <strong>Time of arrival:</strong>
+    <p>The time of the guest's arrival.</p>
+
+    <strong>Nr of bags:</strong>
+    <p>
+      The number of bags the guest has. If the luggages sizes vary then write
+      the number of main suitcases, add a “+” sign followed by the number of
+      other items.
+    </p>
+
+    <strong>Tag nr:</strong>
+    <p>The tag number found at the bottom of the luggage tag.</p>
+
+    <strong>BB in LR:</strong>
+    <p>
+      (Bellboy in Luggage room) The initials of the bell boy who placed the
+      luggage in the luggage room.
+    </p>
+
+    <strong>Location:</strong>
+    <p>
+      The location where the luggage has been stored. Can be LR, LR1, S1, Room
+      or other. If others please do a further explanation in the comments.
+    </p>
+
+    <strong>Time in room:</strong>
+    <p>The time when the luggage was placed in the guest's room.</p>
+
+    <strong>BB up:</strong>
+    <p>
+      (Bellboy up) The initials of the bell boy who delivered the luggage to the
+      guest's room.
+    </p>
+
+    <strong>Comments:</strong>
+    <p>If something needs further explanation.</p>
+  </div>
   <div *ngSwitchCase="'checkout'">checkout</div>
   <div *ngSwitchCase="'longTerm'">longterm</div>
   <div *ngSwitchCase="'cars'">cars</div>
