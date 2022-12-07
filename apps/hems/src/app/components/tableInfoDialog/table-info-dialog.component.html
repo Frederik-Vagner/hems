@@ -154,7 +154,7 @@
     <p>The license plate of the guest's car.</p>
 
     <strong>Park exp:</strong>
-    <p>The expiration time of the registration made in SimplyTure.</p>
+    <p>The expiration time of the registration made in <a href="https://simplyture.com/" target="_blank">SimplyTure.com</a></p>
 
     <strong>Pick up time:</strong>
     <p>The time and date of when the guest would like their car ready by.</p>
@@ -188,8 +188,45 @@
   </div>
 
   <div *ngSwitchCase="'tasks'" class="dialog-container">
+    <strong>Time:</strong>
+    <p>The time of when the task should be done.</p>
 
+    <strong>Task:</strong>
+    <p>An explanation of what the task is.</p>
+
+    <strong>Done:</strong>
+    <p>A time of when the task was done.</p>
+
+    <strong>Initials:</strong>
+    <p>The initials of the bell boy who did the task.</p>
   </div>
 
-  <div *ngSwitchCase="'assignments'" class="dialog-container"></div>
+  <div *ngSwitchCase="'assignments'" class="dialog-container">
+    <strong>Room nr:</strong>
+    <p>The guest's room number.</p>
+
+    <strong>Task:</strong>
+    <p>
+      An abbreviation of the task. Can either be RA = room assignment, RM = room
+      move or other. If other do a further explanation in the comment field.
+    </p>
+
+    <strong>Comments:</strong>
+    <p>A further explanation of the assignment.</p>
+
+    <strong>Received by:</strong>
+    <p>
+      The one who gave the bellboy the assignment. Can either be reception or
+      guest or other. If other do a further explanation in the comments.
+    </p>
+
+    <strong>Received at:</strong>
+    <p>The time of when the assignment was given.</p>
+
+    <strong>Preformed by:</strong>
+    <p>The initials of the bell boy who did the assignment.</p>
+
+    <strong>Preformed at:</strong>
+    <p>The time of when the assignment was done.</p>
+  </div>
 </div>
