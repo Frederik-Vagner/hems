@@ -101,9 +101,9 @@ export class UpdateLongTermDialogComponent implements OnInit {
         comments: this.updateLongTermForm.get('comments')?.value,
         tagNr: this.updateLongTermForm.get('tagNr')?.value,
         arrivalTime: this.updateLongTermForm.get('dateNeeded')?.value,
-        bbLr: this.updateLongTermForm.get('bbLr')?.value,
+        bbLr: this.updateLongTermForm.get('bbLr')?.value.toUpperCase(),
         location: this.updateLongTermForm.get('location')?.value,
-        bbOut: this.updateLongTermForm.get('bbOut')?.value,
+        bbOut: this.updateLongTermForm.get('bbOut')?.value.toUpperCase(),
         completedAt: this.updateLongTermForm.get('dateOut')?.value,
       })
       .subscribe({

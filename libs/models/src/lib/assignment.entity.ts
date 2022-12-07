@@ -21,11 +21,11 @@ export class Assignment extends CompletedAt implements IAssignment {
   @Column({ nullable: true })
   comments?: string;
 
-  @ApiModelProperty({ example: 'Rec' })
+  @ApiModelProperty({ example: 'REC' })
   @Column()
   receivedBy!: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @Column({ nullable: true })
   performedBy?: string;
 

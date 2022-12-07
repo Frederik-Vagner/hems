@@ -46,25 +46,6 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
-    <mat-label>Comments</mat-label>
-    <textarea
-      #comments
-      matInput
-      type="text"
-      formControlName="comments"
-      placeholder="Describe the task"
-    ></textarea>
-    <mat-error
-      *ngIf="
-        createAssignmentForm.get('comments')?.invalid &&
-        createAssignmentForm.get('comments')?.dirty
-      "
-    >
-      Can't be more than 1000 characters
-    </mat-error>
-  </mat-form-field>
-
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Received by</mat-label>
@@ -158,6 +139,25 @@
       </mat-error>
     </mat-form-field>
   </div>
+
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
+    <textarea
+      #comments
+      matInput
+      type="text"
+      formControlName="comments"
+      placeholder="Describe the task"
+    ></textarea>
+    <mat-error
+      *ngIf="
+        createAssignmentForm.get('comments')?.invalid &&
+        createAssignmentForm.get('comments')?.dirty
+      "
+    >
+      Can't be more than 1000 characters
+    </mat-error>
+  </mat-form-field>
 
   <div class="dialog-row">
     <button

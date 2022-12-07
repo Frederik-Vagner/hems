@@ -44,11 +44,11 @@ export class CreateCarRequest implements ICreateCarRequest {
   @IsDateString()
   deliveryTime?: Date;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @IsOptional()
   bbDown?: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @IsOptional()
   bbUp?: string;
 
@@ -60,7 +60,7 @@ export class CreateCarRequest implements ICreateCarRequest {
   @IsOptional()
   parkingLot?: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @IsOptional()
   bbOut?: string;
 
@@ -120,11 +120,11 @@ export class UpdateCarRequest implements IUpdateCarRequest {
   @IsDateString()
   deliveryTime?: Date;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @IsOptional()
   bbDown?: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @IsOptional()
   bbUp?: string;
 
@@ -136,7 +136,7 @@ export class UpdateCarRequest implements IUpdateCarRequest {
   @IsOptional()
   parkingLot?: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @IsOptional()
   bbOut?: string;
 

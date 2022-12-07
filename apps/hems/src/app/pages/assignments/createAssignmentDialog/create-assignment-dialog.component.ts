@@ -40,20 +40,20 @@ export class CreateAssignmentDialogComponent implements OnInit {
         Validators.pattern('^[0-9]*$'),
       ]),
       task: new UntypedFormControl('', Validators.maxLength(20)),
-      comments: new UntypedFormControl('', [
-        Validators.maxLength(1000),
-        Validators.required,
-      ]),
       receivedBy: new UntypedFormControl('', [
         Validators.maxLength(20),
         Validators.required,
       ]),
       performedBy: new UntypedFormControl('', [Validators.maxLength(20)]),
-      receivedAt: new UntypedFormControl('', [
+      receivedAt: new UntypedFormControl(new Date(), [
         Validators.required,
         Validators.maxLength(20),
       ]),
       completedAt: new UntypedFormControl(''),
+      comments: new UntypedFormControl('', [
+        Validators.maxLength(1000),
+        Validators.required,
+      ]),
     });
   }
 
@@ -82,13 +82,14 @@ export class CreateAssignmentDialogComponent implements OnInit {
         room: this.createAssignmentForm.get('room')?.value,
         task: this.createAssignmentForm.get('task')?.value,
         comments: this.createAssignmentForm.get('comments')?.value,
-        receivedBy: this.createAssignmentForm.get('receivedBy')?.value,
-        performedBy: this.createAssignmentForm.get('performedBy')?.value,
+        receivedBy: this.createAssignmentForm
+          .get('receivedBy')
+          ?.value.toUpperCase(),
+        performedBy: this.createAssignmentForm
+          .get('performedBy')
+          ?.value.toUpperCase(),
         receivedAt: this.createAssignmentForm.get('receivedAt')?.value,
-        completedAt:
-          this.createAssignmentForm.get('completedAt')?.value.length >= 1
-            ? this.createAssignmentForm.get('completedAt')?.value
-            : undefined,
+        completedAt: this.createAssignmentForm.get('completedAt')?.value,
       })
       .subscribe({
         next: () => {
@@ -105,7 +106,7 @@ export class CreateAssignmentDialogComponent implements OnInit {
             { duration: 10000 }
           );
           this.isLoading = false;
-        }
-  });
+        },
+      });
   }
 }
