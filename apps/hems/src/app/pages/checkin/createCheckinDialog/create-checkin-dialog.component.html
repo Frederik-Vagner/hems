@@ -1,8 +1,4 @@
-<form
-  (ngSubmit)="onSubmit()"
-  [formGroup]="form"
-  class="dialog-container"
->
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="dialog-container">
   <h1>Create check in</h1>
   <hr />
 
@@ -34,10 +30,7 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Name</mat-label>
       <input
         #name
@@ -75,10 +68,7 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Nr of bags</mat-label>
       <input
         #bags
@@ -92,10 +82,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Tag nr</mat-label>
       <input
         #tagNr
@@ -111,10 +98,7 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB in LR</mat-label>
       <input
         #bbLr
@@ -171,19 +155,11 @@
   </label>
 
   <div class="dialog-row">
-    <button
-      mat-raised-button
-      class="secondary-btn"
-      mat-dialog-close
-    >
+    <button mat-raised-button class="secondary-btn" mat-dialog-close>
       Cancel
     </button>
 
-    <button
-      mat-raised-button
-      class="action-btn"
-      type="submit"
-    >
+    <button mat-raised-button class="action-btn" type="submit">
       Add check in
     </button>
   </div>

@@ -1,4 +1,4 @@
-<div [ngSwitch]="tableName">
+<div [ngSwitch]="tableName" class="dialog-container">
   <div *ngSwitchCase="'checkin'">
     <strong>Room nr:</strong>
     <p>The guest's room number.</p>
@@ -44,7 +44,7 @@
     <p>If something needs further explanation.</p>
   </div>
 
-  <div *ngSwitchCase="'checkout'">
+  <div *ngSwitchCase="'checkout'" class="dialog-container">
     <strong>Room nr:</strong>
     <p>The guest's room number.</p>
 
@@ -92,7 +92,7 @@
     <p>If something needs further explanation.</p>
   </div>
 
-  <div *ngSwitchCase="'longTerm'">
+  <div *ngSwitchCase="'longTerm'" class="dialog-container">
     <strong>Date in:</strong>
     <p>The date of when the long term was given to the bell boy.</p>
 
@@ -133,8 +133,8 @@
     <strong>Comments:</strong>
     <p>If something needs further explanation.</p>
   </div>
-  
-  <div *ngSwitchCase="'cars'">
+
+  <div *ngSwitchCase="'cars'" class="dialog-container">
     <strong>Room nr:</strong>
     <p>The guest's room number.</p>
 
@@ -186,4 +186,10 @@
     <strong>Comments:</strong>
     <p>If something needs further explanation.</p>
   </div>
+
+  <div *ngSwitchCase="'tasks'" class="dialog-container">
+
+  </div>
+
+  <div *ngSwitchCase="'assignments'" class="dialog-container"></div>
 </div>
