@@ -30,7 +30,6 @@ export class EditTaskDialogComponent {
   isTaskComplete = false;
 
   @ViewChild('initials') initialsInput!: ElementRef;
-  @ViewChild('completedAt') completedInput!: ElementRef;
 
   constructor(
     public dialogRef: MatDialogRef<EditTaskDialogComponent>,
@@ -49,12 +48,8 @@ export class EditTaskDialogComponent {
   }
 
   onSubmit(): void {
-    if (!this.form.valid) {
-      if (this.form.get('initials') === null) {
-        this.initialsInput.nativeElement.focus();
-      } else if (this.form.get('completedAt') === null) {
-        this.completedInput.nativeElement.focus();
-      }
+    if (this.form.get('initials')?.value.invalid) {
+      this.initialsInput.nativeElement.focus();
     } else {
       this.updateTask();
     }
@@ -64,7 +59,7 @@ export class EditTaskDialogComponent {
     this.isLoading = true;
     this.service
       .update(this.taskId, {
-        initials: this.form.get('initials')?.value,
+        initials: this.form.get('initials')?.value.toUpperCase(),
         completedAt: new Date(this.form.get('completedAt')?.value),
       })
       .subscribe({
@@ -103,9 +98,13 @@ export class EditTaskDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to reset task, please try again.', 'Okay', {
-            duration: 10000,
-          });
+          this.snackbar.open(
+            'Failed to reset task, please try again.',
+            'Okay',
+            {
+              duration: 10000,
+            }
+          );
           this.isLoading = false;
         },
       });

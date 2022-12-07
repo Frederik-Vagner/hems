@@ -18,11 +18,11 @@ export class CreateAssignmentRequest implements ICreateAssignmentRequest {
   @IsOptional()
   comments?: string;
 
-  @ApiModelProperty({ example: 'Rec' })
+  @ApiModelProperty({ example: 'RE' })
   @IsNotEmpty()
   receivedBy!: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @IsOptional()
   performedBy?: string;
 
