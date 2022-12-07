@@ -7,7 +7,7 @@
     <p>The guest's last name.</p>
 
     <strong>Time of arrival:</strong>
-    <p>The time of the guest's arrival.</p>
+    <p>The guest's time of the arrival.</p>
 
     <strong>Nr of bags:</strong>
     <p>
@@ -21,7 +21,7 @@
 
     <strong>BB in LR:</strong>
     <p>
-      (Bellboy in Luggage room) The initials of the bell boy who placed the
+      (Bell boy in Luggage room) The initials of the bell boy who placed the
       luggage in the luggage room.
     </p>
 
@@ -36,8 +36,8 @@
 
     <strong>BB up:</strong>
     <p>
-      (Bellboy up) The initials of the bell boy who delivered the luggage to the
-      guest's room.
+      (Bell boy up) The initials of the bell boy who delivered the luggage to
+      the guest's room.
     </p>
 
     <strong>Comments:</strong>
@@ -80,9 +80,7 @@
     </p>
 
     <strong>Time out:</strong>
-    <p>
-      The time of when the luggage was handed back to the guest at departure.
-    </p>
+    <p>When the luggage was handed back to the guest at departure.</p>
 
     <strong>BB out:</strong>
     <p>
@@ -96,7 +94,7 @@
 
   <div *ngSwitchCase="'longTerm'" class="dialog-container">
     <strong>Date in:</strong>
-    <p>The date of when the luggage was handed into the hotel.</p>
+    <p>When the luggage was handed into the hotel.</p>
 
     <strong>Room nr:</strong>
     <p>The guest's room number.</p>
@@ -115,7 +113,7 @@
     <p>The tag number found at the bottom of the luggage tag.</p>
 
     <strong>Date needed:</strong>
-    <p>The guests expected date to pick up the luggage.</p>
+    <p>The guests expected pick up date.</p>
 
     <strong>BB in LR:</strong>
     <p>
@@ -133,7 +131,7 @@
     <p>(Bell boy out) The initials of the bell boy who gave it to the guest.</p>
 
     <strong>Date out:</strong>
-    <p>the date of when the long term was given to the guest.</p>
+    <p>When the luggage was handed over to the guest.</p>
 
     <strong>Comments:</strong>
     <p>If something needs further explanation.</p>
@@ -147,10 +145,10 @@
     <p>The tag number found at the top of the car note.</p>
 
     <strong>Arr:</strong>
-    <p>(Arrival) The date of the guest's arrival.</p>
+    <p>(Arrival) The guest's arrival date.</p>
 
     <strong>Dep:</strong>
-    <p>(Departure) The date of the guest's departure.</p>
+    <p>(Departure) The guest's departure date.</p>
 
     <strong>Name:</strong>
     <p>The guest's last name.</p>
@@ -166,12 +164,12 @@
     </p>
 
     <strong>Pick up time:</strong>
-    <p>The time and date of when the guest would like their car ready by.</p>
+    <p>The date and time of when the car needs to be ready for the guest.</p>
 
     <strong>BB down:</strong>
     <p>
-      (Bell boy up) The initials of the bell boy who drove it from the hotel to
-      the parking garage.
+      (Bell boy up) The initials of the bell boy who drove the car from the
+      hotel to the parking garage.
     </p>
 
     <strong>BB up:</strong>
@@ -181,13 +179,13 @@
     </p>
 
     <strong>Location:</strong>
-    <p>The location of the car when parked.</p>
+    <p>The cars parking location.</p>
 
     <strong>Lot:</strong>
-    <p>(Parking lot) The location of the car at the parking garage.</p>
+    <p>(Parking lot) The parking lot of the car.</p>
 
     <strong>Delivery time:</strong>
-    <p>The time when the car was given to the guest.</p>
+    <p>When the car was handed over to the guest.</p>
 
     <strong>BB out:</strong>
     <p>
@@ -201,16 +199,16 @@
 
   <div *ngSwitchCase="'tasks'" class="dialog-container">
     <strong>Time:</strong>
-    <p>The time of when the task should be done.</p>
+    <p>The tasks expected time of completion.</p>
 
     <strong>Task:</strong>
     <p>An explanation of what the task is.</p>
 
     <strong>Done:</strong>
-    <p>A time of when the task was done.</p>
+    <p>When the task was completed.</p>
 
     <strong>Initials:</strong>
-    <p>The initials of the bell boy who did the task.</p>
+    <p>The initials of the person who completed the task.</p>
   </div>
 
   <div *ngSwitchCase="'assignments'" class="dialog-container">
@@ -228,17 +226,17 @@
 
     <strong>Received by:</strong>
     <p>
-      The one who gave the bellboy the assignment. Can either be reception or
+      The one who gave the bell boy the assignment. Can be reception,
       guest or other. If other do a further explanation in the comments.
     </p>
 
     <strong>Received at:</strong>
-    <p>The time of when the assignment was given.</p>
+    <p>When the assignment was received.</p>
 
     <strong>Preformed by:</strong>
     <p>The initials of the bell boy who did the assignment.</p>
 
     <strong>Preformed at:</strong>
-    <p>The time of when the assignment was done.</p>
+    <p>When the assignment was completed.</p>
   </div>
 </div>
