@@ -90,14 +90,14 @@ export class CreateAssignmentDialogComponent implements OnInit {
             ? this.createAssignmentForm.get('completedAt')?.value
             : undefined,
       })
-      .subscribe(
-        () => {
+      .subscribe({
+        next: () => {
           this.snackBar.open('Assignment added!', 'Thanks', { duration: 5000 });
           document.location.reload();
           this.dialog.closeAll();
           this.isLoading = false;
         },
-        (err: HttpErrorResponse) => {
+        error: (err: HttpErrorResponse) => {
           console.error(err);
           this.snackBar.open(
             'Failed to add assignment, please try again.',
@@ -106,6 +106,6 @@ export class CreateAssignmentDialogComponent implements OnInit {
           );
           this.isLoading = false;
         }
-      );
+  });
   }
 }

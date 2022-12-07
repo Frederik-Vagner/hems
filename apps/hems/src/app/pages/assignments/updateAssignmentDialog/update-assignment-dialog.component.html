@@ -1,6 +1,11 @@
-<form [formGroup]="updateAssignmentForm" (ngSubmit)="onSubmit()">
+<form
+  [formGroup]="updateAssignmentForm"
+  (ngSubmit)="onSubmit()"
+  class="dialog-container"
+>
   <h1>Update assignment</h1>
   <hr />
+  
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Room</mat-label>

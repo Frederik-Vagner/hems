@@ -1,6 +1,11 @@
-<form [formGroup]="createAssignmentForm" (ngSubmit)="onSubmit()">
+<form
+  [formGroup]="createAssignmentForm"
+  (ngSubmit)="onSubmit()"
+  class="dialog-container"
+>
   <h1>Add assignment</h1>
   <hr />
+
   <div class="dialog-row">
     <mat-form-field appearance="fill" autocomplete="off">
       <mat-label>Room</mat-label>
@@ -10,7 +15,6 @@
         formControlName="room"
         matInput
         placeholder="123"
-        maxlength="10"
       />
       <mat-error
         *ngIf="

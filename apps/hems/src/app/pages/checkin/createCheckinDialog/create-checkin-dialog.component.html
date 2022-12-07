@@ -1,18 +1,13 @@
-<form
-  (ngSubmit)="onSubmit()"
-  [formGroup]="form"
-  data-cy="create-checkin-dialog"
->
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="dialog-container">
   <h1>Create check in</h1>
   <hr />
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label class="input-label">Room nr.</mat-label>
+      <mat-label>Room nr.</mat-label>
       <input
         #room
         type="text"
-        data-cy="update-checkin-room-input"
         formControlName="room"
         matInput
         placeholder="123"
@@ -26,7 +21,6 @@
       <mat-label>Room status</mat-label>
       <mat-select
         formControlName="roomReady"
-        data-cy="update-checkin-room-status"
       >
         <mat-option value="false">Not ready</mat-option>
         <mat-option value="true">Ready</mat-option>
@@ -35,16 +29,11 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      class="input full-width"
-      appearance="fill"
-    >
-      <mat-label class="input-label">Name</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Name</mat-label>
       <input
         #name
         type="text"
-        data-cy="update-checkin-name"
         formControlName="name"
         matInput
         placeholder="Name"
@@ -78,16 +67,11 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      class="input one-third"
-      appearance="fill"
-    >
-      <mat-label class="input-label">Nr of bags</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Nr of bags</mat-label>
       <input
         #bags
         type="text"
-        data-cy="update-checkin-room-input"
         formControlName="bags"
         matInput
         placeholder="1+3"
@@ -97,16 +81,11 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field
-      autocomplete="off"
-      class="input one-third"
-      appearance="fill"
-    >
-      <mat-label class="input-label">Tag nr</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Tag nr</mat-label>
       <input
         #tagNr
         type="text"
-        data-cy="update-checkin-tag-nr"
         formControlName="tagNr"
         matInput
         placeholder="123"
@@ -118,16 +97,11 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      class="input one-third"
-      appearance="fill"
-    >
-      <mat-label class="input-label">BB in LR</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>BB in LR</mat-label>
       <input
         #bbLr
         type="text"
-        data-cy="update-checkin-name"
         formControlName="bbLr"
         matInput
         placeholder="Initials"
@@ -138,11 +112,10 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label class="input-label">Location</mat-label>
+      <mat-label>Location</mat-label>
       <input
         #location
         type="text"
-        data-cy="update-checkin-location"
         formControlName="location"
         matInput
         placeholder="LR1"
@@ -156,10 +129,9 @@
   </div>
 
   <mat-form-field autocomplete="off" class="full-width" appearance="fill">
-    <mat-label class="input-label">Comments</mat-label>
+    <mat-label>Comments</mat-label>
     <textarea
       type="text"
-      data-cy="update-checkin-comments"
       formControlName="comments"
       matInput
       placeholder="Comments"
@@ -178,25 +150,15 @@
       [checked]="guestApprovedGDPR"
       (change)="guestApprovedGDPR = !guestApprovedGDPR"
     />
-    <span class="checkmark" data-cy="checkbox-banner"></span>
+    <span class="checkmark"></span>
   </label>
 
   <div class="dialog-row">
-    <button
-      mat-raised-button
-      class="secondary-btn"
-      data-cy="create-checkin-cancel-btn"
-      mat-dialog-close
-    >
+    <button mat-raised-button class="secondary-btn" mat-dialog-close>
       Cancel
     </button>
 
-    <button
-      mat-raised-button
-      class="action-btn"
-      data-cy="create-checkin-create-btn"
-      type="submit"
-    >
+    <button mat-raised-button class="action-btn" type="submit">
       Add check in
     </button>
   </div>

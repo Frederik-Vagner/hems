@@ -22,7 +22,6 @@
         <mat-select
           [(value)]="sortBy"
           (selectionChange)="fetchLuggage()"
-          data-cy="update-checkin-room-status"
         >
           <mat-option value="arrivalTime">Date needed</mat-option>
           <mat-option value="completedAt">Completed at</mat-option>
@@ -37,7 +36,7 @@
       <button mat-raised-button class="basic-btn" (click)="openTableInfo()">
         Table info
       </button>
-      <button class="secondary-btn" mat-raised-button style="margin-right: 1em">
+      <button class="secondary-btn" mat-raised-button>
         Show All
       </button>
       <button

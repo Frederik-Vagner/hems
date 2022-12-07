@@ -3,12 +3,27 @@ h1 {
   margin-bottom: 0.25em;
 }
 
+.dialog-container {
+  max-height: 80vh;
+  overflow: auto;
+}
+
 .full-width {
   width: 100%;
   margin-bottom: 0.5em;
 }
 
 .dialog-row {
+  &.actions-section {
+    button {
+      margin-right: 1em;
+      
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5em;
@@ -27,4 +42,24 @@ h1 {
   &:first-of-type {
     margin-top: 1.25em;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-blue-low-opacity); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-blue) 
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IAssignment } from '@hems/interfaces';
+import { IAssignment, TableInfoOptions } from '@hems/interfaces';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { AssignmentsService } from '../../services/assignments.service';
 import { DisplayDateService } from '../../services/display-date.service';
 import { CreateAssignmentDialogComponent } from './createAssignmentDialog/create-assignment-dialog.component';
@@ -57,6 +58,13 @@ export class AssignmentsComponent implements OnInit {
           }
         );
       },
+    });
+  }
+
+  openTableInfo(): void {
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.ASSIGNMENTS,
+      width: '500px',
     });
   }
 

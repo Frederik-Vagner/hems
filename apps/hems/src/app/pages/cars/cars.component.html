@@ -26,7 +26,6 @@
         <mat-select
           [(value)]="sortBy"
           (selectionChange)="fetchCarList()"
-          data-cy="update-checkin-room-status"
         >
           <mat-option value="createdAt">Created at</mat-option>
           <mat-option value="expirationDate">Expiration date</mat-option>
@@ -40,7 +39,7 @@
       <button mat-raised-button class="basic-btn" (click)="openTableInfo()">
         Table info
       </button>
-      <button class="secondary-btn" mat-raised-button style="margin-right: 1em">
+      <button class="secondary-btn" mat-raised-button>
         Show All
       </button>
       <button
@@ -248,7 +247,7 @@
               [checked]="element.charged"
               (change)="updateCharge(element.carId, element.charged)"
             />
-            <span class="checkmark" data-cy="checkbox-banner"></span>
+            <span class="checkmark"></span>
           </label>
         </td>
       </ng-container>

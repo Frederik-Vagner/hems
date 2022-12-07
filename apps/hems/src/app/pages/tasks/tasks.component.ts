@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ITask } from '@hems/interfaces';
+import { ITask, TableInfoOptions } from '@hems/interfaces';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { DisplayDateService } from '../../services/display-date.service';
 import { TasksService } from '../../services/tasks.service';
 import { EditTaskDialogComponent } from './editTaskDialog/editTaskDialog.component';
@@ -54,6 +55,13 @@ export class TasksComponent implements OnInit {
           duration: 10000,
         });
       },
+    });
+  }
+
+  openTableInfo(): void {
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.TASKS,
+      width: '500px',
     });
   }
 

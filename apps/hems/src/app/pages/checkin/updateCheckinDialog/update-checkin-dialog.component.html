@@ -1,8 +1,4 @@
-<form
-  (ngSubmit)="onSubmit()"
-  [formGroup]="form"
-  data-cy="update-checkin-dialog"
->
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="dialog-container">
   <h1>Update Check In</h1>
   <hr />
 
@@ -12,7 +8,6 @@
       <input
         #room
         type="text"
-        data-cy="update-checkin-room-input"
         formControlName="room"
         matInput
         placeholder="123"
@@ -26,7 +21,6 @@
       <mat-label>Room status</mat-label>
       <mat-select
         formControlName="roomReady"
-        data-cy="update-checkin-room-status"
       >
         <mat-option value="false">Not ready</mat-option>
         <mat-option value="true">Ready</mat-option>
@@ -40,7 +34,6 @@
       <input
         #name
         type="text"
-        data-cy="update-checkin-name"
         formControlName="name"
         matInput
         placeholder="John Doe"
@@ -79,7 +72,6 @@
       <input
         #bags
         type="text"
-        data-cy="update-checkin-room-input"
         formControlName="bags"
         matInput
         placeholder="1+3"
@@ -94,7 +86,6 @@
       <input
         #tagNr
         type="text"
-        data-cy="update-checkin-tag-nr"
         formControlName="tagNr"
         matInput
         placeholder="123"
@@ -111,7 +102,6 @@
       <input
         #bbLr
         type="text"
-        data-cy="update-checkin-name"
         formControlName="bbLr"
         matInput
         placeholder="JD"
@@ -126,7 +116,6 @@
       <input
         #location
         type="text"
-        data-cy="update-checkin-location"
         formControlName="location"
         matInput
         placeholder="LR1"
@@ -165,7 +154,6 @@
       <mat-label>BB up</mat-label>
       <input
         type="text"
-        data-cy="update-checkin-name"
         formControlName="bbUp"
         matInput
         placeholder="JD"
@@ -180,7 +168,6 @@
     <mat-label>Comments</mat-label>
     <input
       type="text"
-      data-cy="update-checkin-comments"
       formControlName="comments"
       matInput
       placeholder="Comments on the check-in"
@@ -189,7 +176,6 @@
 
   <div class="dialog-row">
     <button
-      data-cy="update-checkin-cancel-btn"
       class="secondary-btn"
       mat-raised-button
       mat-dialog-close
@@ -198,7 +184,6 @@
     </button>
     <button
       mat-raised-button
-      data-cy="update-checkin-create-btn"
       type="submit"
       class="action-btn"
     >
