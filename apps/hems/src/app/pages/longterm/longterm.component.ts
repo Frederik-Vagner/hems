@@ -10,6 +10,7 @@ import {
 import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { DisplayDateService } from '../../services/display-date.service';
 import { LuggageService } from '../../services/luggage.service';
+import { orderByCompletedStatus } from '../../utils/order.util';
 import { CreateLongTermDialogComponent } from './createLongTermDialog/create-long-term-dialog.component';
 import { UpdateLongTermDialogComponent } from './updateLongTermDialog/update-long-term-dialog.component';
 
@@ -65,7 +66,7 @@ export class LongtermComponent implements OnInit {
       .getLongTerm(this.displayDate, this.sortBy, this.sortOrder, this.search)
       .subscribe({
         next: (luggage) => {
-          this.luggage = luggage;
+          this.luggage = orderByCompletedStatus(luggage);
         },
         error: (error) => {
           this.isLoading = false;

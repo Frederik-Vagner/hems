@@ -13,6 +13,7 @@ import { CreateCarDialogComponent } from './createCarEntryDialog/create-car-dial
 import { UpdateCarDialogComponent } from './updateCarEntryDialog/update-car-dialog.component';
 import { HttpErrorResponse } from '@angular/common/http';
 import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
+import { orderByCompletedStatus } from '../../utils/order.util';
 
 @Component({
   selector: 'hems-cars',
@@ -106,7 +107,7 @@ export class CarsComponent implements OnInit {
       .getCar(this.displayDate, this.sortBy, this.sortOrder, this.search)
       .subscribe({
         next: (car) => {
-          this.carList = car;
+          this.carList = orderByCompletedStatus(car);
           console.log('checkout', car);
         },
         error: (error) => {
