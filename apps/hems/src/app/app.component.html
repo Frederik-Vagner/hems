@@ -134,6 +134,20 @@
             >BB Assignments</span
           >
         </button>
+        <button
+        mat-list-item
+        data-cy="sidebar-bikes-btn"
+        [ngClass]="title === 'Bike Sheet' ? 'active-nav' : ''"
+        routerLink="/bikes"
+      >
+        <mat-icon aria-hidden="false" data-cy="icon">directions_bike</mat-icon>
+        <span
+          class="side-nav-item"
+          [ngClass]="{ collapsible: sidebarCollapsed }"
+          data-cy="side-nav-item"
+          >Bike sheet</span
+        >
+      </button>
       </mat-action-list>
     </div>
     <button
@@ -180,6 +194,11 @@
           <mat-icon
             aria-hidden="false"
             *ngSwitchCase="'Bell Boy Assignment Sheet'"
+            >fact_check</mat-icon
+          >
+          <mat-icon
+            aria-hidden="false"
+            *ngSwitchCase="'Bike Sheet'"
             >fact_check</mat-icon
           >
           <mat-icon

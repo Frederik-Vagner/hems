@@ -11,6 +11,7 @@ import { AssignmentsComponent } from './pages/assignments/assignments.component'
 import { CreateAssignmentDialogComponent } from './pages/assignments/createAssignmentDialog/create-assignment-dialog.component';
 import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 import { CarsComponent } from './pages/cars/cars.component';
+import { BikesComponent } from './pages/bikes/bikes.componenet';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LongtermComponent } from './pages/longterm/longterm.component';
@@ -38,6 +39,7 @@ import { TableInfoDialogComponent } from './components/tableInfoDialog/table-inf
     CheckinComponent,
     CheckoutComponent,
     AssignmentsComponent,
+    BikesComponent,
     LongtermComponent,
     UpdateCheckinDialogComponent,
     CreateCheckinDialogComponent,

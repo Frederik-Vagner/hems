@@ -1,4 +1,4 @@
-import { User, Luggage, Car, Task, Assignment, Document } from '@hems/models';
+import { User, Luggage, Car, Task, Assignment, Document, Bike } from '@hems/models';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

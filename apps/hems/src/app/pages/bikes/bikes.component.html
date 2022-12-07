@@ -1,0 +1,158 @@
+<main>
+    <div class="table-actions">
+      <div>
+        <mat-form-field
+          autocomplete="off"
+          class="remove-error-message"
+          appearance="fill"
+        >
+          <mat-label>Search</mat-label>
+          <input
+            type="text"
+            aria-label="search"
+            
+            placeholder="Search ..."
+            
+            matInput
+          />
+        </mat-form-field>
+  
+        <mat-form-field
+          appearance="fill"
+          style="width: 150px"
+          class="remove-error-message"
+        >
+          <mat-label>Sort By</mat-label>
+          <mat-select
+            
+            
+            data-cy="update-checkin-room-status"
+          >
+            <mat-option value="createdAt">Created at</mat-option>
+            <mat-option value="expirationDate">Expiration date</mat-option>
+            <mat-option value="deliveryTime">Delivery time</mat-option>
+            <mat-option value="pickupTime">Pick up time</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="table-buttons">
+        <button mat-raised-button class="basic-btn">
+          Table info
+        </button>
+        <button class="secondary-btn" mat-raised-button style="margin-right: 1em">
+          Show All
+        </button>
+        <button
+          class="action-btn"
+          
+          mat-raised-button
+        >
+          Add Bike
+        </button>
+      </div>
+    </div>
+    <hr />
+  
+    <div class="table-height">
+      <table mat-table>
+        <ng-container matColumnDef="numberOfBikes">
+          <th mat-header-cell *matHeaderCellDef>Nr. of
+            bikes</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+          >
+            {{ element.room }}
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="pickUpTime">
+          <th mat-header-cell *matHeaderCellDef>Pick up time</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+          >
+            {{ element.tagNr }}
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+          >
+            {{
+              element.arrivalDate ? (element.arrivalDate | date: 'dd/MM') : '-'
+            }}
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="room">
+          <th mat-header-cell *matHeaderCellDef>Room</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+          >
+            {{
+              element.departureDate
+                ? (element.departureDate | date: 'dd/MM')
+                : '-'
+            }}
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="reservedBy">
+          <th mat-header-cell *matHeaderCellDef>Reserved by</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+          >
+            {{ element.name }}
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="bikeForm">
+          <th mat-header-cell *matHeaderCellDef>Bike form ?</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+          >
+            {{ element.licensePlate }}
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="returned">
+          <th mat-header-cell *matHeaderCellDef>Returned ?</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+          >
+            {{
+              element.expirationDate
+                ? (element.expirationDate | date: 'dd/MM HH:mm')
+                : '-'
+            }}
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="comments">
+          <th mat-header-cell *matHeaderCellDef>Comments</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+          >
+            {{ element.comments }}
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="bikeColumns"></tr>
+        <tr
+          mat-row
+          [ngClass]="row.completedAt ? 'completed' : ''"
+          *matRowDef="let row; columns: bikeColumns"
+        ></tr>
+      </table>
+    </div>
+  </main>
