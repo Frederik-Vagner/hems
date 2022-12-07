@@ -4,6 +4,8 @@ strong {
 p {
     margin: 5px 10px 10px 15px;
 }
-::ng-deep .mat-dialog-container {
-    padding-right: 5px;
+
+
+.dialog-container.table-info {
+    width: 466px;
 }
