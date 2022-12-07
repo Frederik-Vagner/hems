@@ -1,5 +1,5 @@
 <div [ngSwitch]="tableName">
-  <div *ngSwitchCase="'checkin'" class="table-style">
+  <div *ngSwitchCase="'checkin'">
     <strong>Room nr:</strong>
     <p>The guest's room number.</p>
 
@@ -43,7 +43,54 @@
     <strong>Comments:</strong>
     <p>If something needs further explanation.</p>
   </div>
-  <div *ngSwitchCase="'checkout'">checkout</div>
+
+  <div *ngSwitchCase="'checkout'">
+    <strong>Room nr:</strong>
+    <p>The guest's room number.</p>
+
+    <strong>Name:</strong>
+    <p>The guest's last name.</p>
+
+    <strong>Nr of bags:</strong>
+    <p>
+      The number of bags the guest has. If the luggages sizes vary then write
+      the number of main suitcases, add a “+” sign followed by the number of
+      other items.
+    </p>
+
+    <strong>Tag nr:</strong>
+    <p>The tag number found at the bottom of the luggage tag.</p>
+
+    <strong>BB in LR:</strong>
+    <p>
+      (Bell boy in Luggage room) The initials of the bell boy who placed the
+      luggage in the luggage room.
+    </p>
+
+    <strong>BB down:</strong>
+    <p>
+      (Bell boy down) The initials of the bell boy, who brought the luggage down
+      from the guest's room.
+    </p>
+
+    <strong>Location:</strong>
+    <p>
+      The location where the luggage has been stored. Can be LR, LR1, S1, Room
+      or other. If others please do a further explanation in the comments.
+    </p>
+
+    <strong>Time out:</strong>
+    <p>The time of when the luggage was given to the guest for departure.</p>
+
+    <strong>BB out:</strong>
+    <p>
+      (Bell boy out) The initials of the bell boy who gave the luggage to the
+      guest for departure.
+    </p>
+
+    <strong>Comments:</strong>
+    <p>If something needs further explanation.</p>
+  </div>
   <div *ngSwitchCase="'longTerm'">longterm</div>
   <div *ngSwitchCase="'cars'">cars</div>
 </div>
