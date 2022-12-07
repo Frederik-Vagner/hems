@@ -21,7 +21,6 @@
       <mat-label>Room status</mat-label>
       <mat-select
         formControlName="roomReady"
-        data-cy="update-checkin-room-status"
       >
         <mat-option value="false">Not ready</mat-option>
         <mat-option value="true">Ready</mat-option>
@@ -151,7 +150,7 @@
       [checked]="guestApprovedGDPR"
       (change)="guestApprovedGDPR = !guestApprovedGDPR"
     />
-    <span class="checkmark" data-cy="checkbox-banner"></span>
+    <span class="checkmark"></span>
   </label>
 
   <div class="dialog-row">
