@@ -92,26 +92,6 @@ export class UpdateCarDialogComponent {
   }
 
   updateCarListEntry(): void {
-    const skrt = {
-      room: this.updateCarForm.get('room')?.value,
-      tagNr: this.updateCarForm.get('tagNr')?.value,
-      arrivalDate: new Date(this.updateCarForm.get('arrivalDate')?.value),
-      departureDate: new Date(this.updateCarForm.get('departureDate')?.value),
-      name: this.updateCarForm.get('name')?.value,
-      licensePlate: this.updateCarForm.get('licensePlate')?.value,
-      expirationDate: new Date(this.updateCarForm.get('expirationDate')?.value),
-      pickupTime: new Date(this.updateCarForm.get('pickupTime')?.value),
-      deliveryTime: new Date(this.updateCarForm.get('deliveryTime')?.value),
-      bbDown: this.updateCarForm.get('bbDown')?.value,
-      bbUp: this.updateCarForm.get('bbUp')?.value,
-      location: this.updateCarForm.get('location')?.value,
-      parkingLot: this.updateCarForm.get('parkingLot')?.value,
-      bbOut: this.updateCarForm.get('bbOut')?.value,
-      comments: this.updateCarForm.get('comments')?.value,
-      charged: this.updateCarForm.get('charged')?.value,
-    };
-    console.log(skrt);
-
     this.carService
       .updateCar(this.data.carId, {
         room: this.updateCarForm.get('room')?.value,
@@ -125,11 +105,11 @@ export class UpdateCarDialogComponent {
         ),
         pickupTime: new Date(this.updateCarForm.get('pickupTime')?.value),
         deliveryTime: new Date(this.updateCarForm.get('deliveryTime')?.value),
-        bbDown: this.updateCarForm.get('bbDown')?.value,
-        bbUp: this.updateCarForm.get('bbUp')?.value,
+        bbDown: this.updateCarForm.get('bbDown')?.value.toUpperCase(),
+        bbUp: this.updateCarForm.get('bbUp')?.value.toUpperCase(),
         location: this.updateCarForm.get('location')?.value,
         parkingLot: this.updateCarForm.get('parkingLot')?.value,
-        bbOut: this.updateCarForm.get('bbOut')?.value,
+        bbOut: this.updateCarForm.get('bbOut')?.value.toUpperCase(),
         comments: this.updateCarForm.get('comments')?.value,
         charged: this.updateCarForm.get('charged')?.value,
       })
