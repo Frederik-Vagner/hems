@@ -2,5 +2,8 @@ strong {
     font: 400 18px Roboto, "Helvetica Neue", sans-serif;
 }
 p {
-    margin: 5px 0px 10px 15px;
+    margin: 5px 10px 10px 15px;
+}
+::ng-deep .mat-dialog-container {
+    padding-right: 5px;
 }
