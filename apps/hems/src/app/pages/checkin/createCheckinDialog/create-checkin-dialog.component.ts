@@ -93,14 +93,10 @@ export class CreateCheckinDialogComponent {
         arrivalTime: new Date(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
-        bbLr: this.form.get('bbLr')?.value,
+        bbLr: this.form.get('bbLr')?.value.toUpperCase(),
         location: this.form.get('location')?.value,
-        comments:
-          this.form.get('comments')?.value.toString().length > 1
-            ? this.form.get('comments')?.value
-            : '-',
+        comments: this.form.get('comments')?.value,
         luggageType: LuggageType.CHECKIN,
-        bbDown: ' ',
       })
       .subscribe({
         next: () => {

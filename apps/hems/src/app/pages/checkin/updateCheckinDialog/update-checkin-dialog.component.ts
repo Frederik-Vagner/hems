@@ -94,19 +94,16 @@ export class UpdateCheckinDialogComponent {
     this.service
       .update(this.luggageId, {
         room: this.form.get('room')?.value,
-        roomReady: this.form.get('roomReady')?.value,
+        // roomReady: this.form.get('roomReady')?.value,
         name: this.form.get('name')?.value,
         arrivalTime: new Date(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
-        bbLr: this.form.get('bbLr')?.value,
-        bbOut: this.form.get('bbUp')?.value,
+        bbLr: this.form.get('bbLr')?.value.toUpperCase(),
+        bbOut: this.form.get('bbUp')?.value.toUpperCase(),
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
-        comments:
-          this.form.get('comments')?.value.toString().length > 1
-            ? this.form.get('comments')?.value
-            : '-',
+        comments: this.form.get('comments')?.value,
       })
       .subscribe({
         next: () => {
