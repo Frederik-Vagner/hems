@@ -4,16 +4,16 @@
     <div class="daily-weather-content">
       <div class="current-temp">{{ currentTemp }}°</div>
       <div class="current-info">
-        <div class="current-weather">
-          <div class="icon"></div>
+        <div class="info">
+          <img [src]="currentWeatherIconUrl" class="extra-small">
           {{ currentWeather }}
         </div>
-        <div class="current-wind">
-          <div class="icon"></div>
+        <div class="info">
+          <img src="/assets/icons/wind-black-icon.svg" style="padding-left: 3px;">
           {{ currentWind }} m/s
         </div>
-        <div class="current-rain">
-          <div class="icon"></div>
+        <div class="info">
+          <img src="/assets/icons/thermostat-black-icon.svg"style="padding-left: 3px;">
           {{ currentMax }}° / {{ currentMin }}°
         </div>
       </div>

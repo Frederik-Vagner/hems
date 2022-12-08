@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherWidgetComponent implements OnInit {
   weatherData: any;
-  forecastData: any;
+//   forecastData: any;
 
   city = 'Copenhagen';
 
@@ -15,11 +15,12 @@ export class WeatherWidgetComponent implements OnInit {
   currentMax = '';
   currentMin = '';
   currentWeather = 'sun';
+  currentWeatherIconUrl = '';
   currentWind = '13';
 
   ngOnInit() {
     this.getWeatherData();
-    this.getForecastData();
+    // this.getForecastData();
   }
 
   getWeatherData(): void {
@@ -33,14 +34,14 @@ export class WeatherWidgetComponent implements OnInit {
       .then(() => console.log(this.weatherData, this.weatherData.main));
   }
 
-  getForecastData(): void {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?lat=55.6759&lon=12.5655&appid=ec87279630ccc1c41b862571e615ab5b')
-    .then((response) => response.json())
-      .then((data) => {
-        this.forecastData = data;
-      })
-      .then(() => console.log(this.forecastData));
-  }
+//   getForecastData(): void {
+//     fetch('https://api.openweathermap.org/data/2.5/forecast?lat=55.6759&lon=12.5655&appid=ec87279630ccc1c41b862571e615ab5b')
+//     .then((response) => response.json())
+//       .then((data) => {
+//         this.forecastData = data;
+//       })
+//       .then(() => console.log(this.forecastData));
+//   }
 
   setWeatherData(data: any) {
     this.weatherData = data;
@@ -54,5 +55,6 @@ export class WeatherWidgetComponent implements OnInit {
     this.currentWind = parseFloat(this.weatherData.wind.speed).toFixed(0)
 
     this.currentWeather = this.weatherData.weather[0].description
+    this.currentWeatherIconUrl = `http://openweathermap.org/img/wn/${this.weatherData.weather[0].icon}@2x.png`
   }
 }
