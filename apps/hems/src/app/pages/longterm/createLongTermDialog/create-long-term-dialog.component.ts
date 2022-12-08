@@ -42,7 +42,7 @@ export class CreateLongTermDialogComponent implements OnInit {
         Validators.maxLength(10),
         Validators.pattern('^[0-9]*$'),
       ]),
-      dateIn: new UntypedFormControl('', [Validators.required]),
+      dateIn: new UntypedFormControl(new Date(), [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
       comments: new UntypedFormControl('', []),
