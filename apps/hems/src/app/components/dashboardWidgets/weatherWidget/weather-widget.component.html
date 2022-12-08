@@ -1,37 +1,43 @@
-<section class="weather-widget">
+<section class="weather-widget" *ngIf="!isLoading">
   <div class="daily-display-container">
     <div class="city">{{ city }}</div>
     <div class="daily-weather-content">
-      <div class="current-temp">{{ currentTemp }}°</div>
+      <div class="current-temp">{{ getNumber(weatherData.main.temp) }}°</div>
       <div class="current-info">
         <div class="info">
-          <img [src]="currentWeatherIconUrl" class="extra-small" />
-          {{ currentWeather }}
+          <img
+            [src]="getImgUrl(weatherData.weather[0].icon)"
+            class="extra-small"
+          />
+          {{ weatherData.weather[0].description }}
         </div>
         <div class="info">
           <img
-            src="/assets/icons/wind-black-icon.svg"
+            src="/assets/icons/wind-white-icon.svg"
             style="padding-left: 3px"
           />
-          {{ currentWind }} m/s
+          {{ getNumber(weatherData.wind.speed) }} m/s
         </div>
         <div class="info">
           <img
-            src="/assets/icons/thermostat-black-icon.svg"
+            src="/assets/icons/thermostat-white-icon.svg"
             style="padding-left: 3px"
           />
-          {{ currentMax }}° / {{ currentMin }}°
+          {{ getNumber(weatherData.main.temp_max) }}° /
+          {{ getNumber(weatherData.main.temp_min) }}°
         </div>
       </div>
     </div>
   </div>
   <div class="weekly-display-container">
-    <div class="week-day-display" *ngFor="let dateWeather of weatherForecast">
-      <div class="date">{{ getDate(dateWeather.dt_txt) }}</div>
-      <div class="date-weather"></div>
-      <div class="date-temp">
-        <div class="date-temp-high"></div>
-        <div class="date-temp-low"></div>
+    <div *ngFor="let dateWeather of weatherForecast" class="week-day-display">
+      <div class="week-day-container">
+        <div class="date">{{ getDate(dateWeather.dt_txt) }}</div>
+        <img
+          [src]="getImgUrl(dateWeather.weather[0].icon)"
+          class="extra-small"
+        />
+        <div class="date-temp">{{ getNumber(dateWeather.main.temp_max) }}°</div>
       </div>
     </div>
   </div>

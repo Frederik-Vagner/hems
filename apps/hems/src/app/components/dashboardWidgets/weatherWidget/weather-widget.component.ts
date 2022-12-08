@@ -1,38 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'hems-weather-widget',
   templateUrl: './weather-widget.component.html',
   styleUrls: ['./weather-widget.component.scss'],
 })
-export class WeatherWidgetComponent implements OnInit {
+export class WeatherWidgetComponent implements OnInit, OnDestroy {
   weatherData: any;
   weatherForecast: any;
+  isLoading = true;
+  interval: any;
 
   city = 'Copenhagen';
-
-  currentTemp = '';
-  currentMax = '';
-  currentMin = '';
-  currentWeather = '';
-  currentWeatherIconUrl = '';
-  currentWind = '';
 
   ngOnInit() {
     this.fetchWeatherData();
     this.fetchForecastData();
-    setInterval(() => this.fetchWeatherData(), 60000);
+    // Refetch data every 60 sec
+    this.interval = setInterval(() => this.fetchWeatherData(), 60000);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.interval);
   }
 
   fetchWeatherData(): void {
+    this.isLoading = true;
     fetch(
       'https://api.openweathermap.org/data/2.5/weather?q=copenhagen&appid=ec87279630ccc1c41b862571e615ab5b&units=metric'
     )
       .then((response) => response.json())
       .then((data) => {
         this.weatherData = data;
-      })
-      .then(() => this.setWeatherData());
+        this.isLoading = false;
+      });
   }
 
   fetchForecastData(): void {
@@ -50,13 +53,13 @@ export class WeatherWidgetComponent implements OnInit {
       });
   }
 
-  setWeatherData() {
-    this.currentTemp = parseFloat(this.weatherData.main.temp).toFixed(0);
-    this.currentMax = parseFloat(this.weatherData.main.temp_max).toFixed(0);
-    this.currentMin = parseFloat(this.weatherData.main.temp_min).toFixed(0);
-    this.currentWind = parseFloat(this.weatherData.wind.speed).toFixed(0);
-    this.currentWeather = this.weatherData.weather[0].description;
-    this.currentWeatherIconUrl = `http://openweathermap.org/img/wn/${this.weatherData.weather[0].icon}@2x.png`;
+  getImgUrl(iconName: string): string {
+    return `http://openweathermap.org/img/wn/${iconName}@2x.png`;
+  }
+
+  getNumber(temp: string): string {
+    console.log(temp);
+    return parseFloat(temp).toFixed(0);
   }
 
   getDate(date: string) {

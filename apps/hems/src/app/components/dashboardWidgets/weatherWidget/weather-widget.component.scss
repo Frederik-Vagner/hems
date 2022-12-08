@@ -1,8 +1,9 @@
 section.weather-widget {
   width: 250px;
   height: 250px;
-  background-color: var(--main-blue-lowest-opacity);
+  background-color: var(--main-blue-low-opacity);
   border-radius: 5px;
+  color: white;
 }
 
 .daily-display-container {
@@ -53,17 +54,30 @@ section.weather-widget {
 }
 
 .weekly-display-container {
-  border-top: 1px solid var(--main-blue);
+  border-top: 1px solid white;
   display: flex;
   height: 104px;
+  align-items: center;
 
   .week-day-display {
     flex-grow: 1;
     flex-basis: 0;
-    border-right: 1px solid var(--main-blue);
+    border-right: 1px solid white;
 
     &:last-of-type {
       border-right: none;
+    }
+
+    .week-day-container {
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      img {
+        height: 25px;
+        width: 25px;
+      }
     }
   }
 }
