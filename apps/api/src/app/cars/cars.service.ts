@@ -45,10 +45,7 @@ export class CarsService {
         },
         { ...baseConditions, room: searchCondition },
       ],
-      order: {
-        completedAt: SortOrder.DESCENDING,
-        ...this.getSortingConditions(sortBy, sortOrder),
-      },
+      order: this.getSortingConditions(sortBy, sortOrder),
     });
   }
 
