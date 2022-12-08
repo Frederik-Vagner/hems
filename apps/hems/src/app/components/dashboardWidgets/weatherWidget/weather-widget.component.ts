@@ -19,12 +19,12 @@ export class WeatherWidgetComponent implements OnInit {
   currentWind = '';
 
   ngOnInit() {
-    this.getWeatherData();
-    this.getForecastData();
-    setInterval(() => this.getWeatherData(), 60000);
+    this.fetchWeatherData();
+    this.fetchForecastData();
+    setInterval(() => this.fetchWeatherData(), 60000);
   }
 
-  getWeatherData(): void {
+  fetchWeatherData(): void {
     fetch(
       'https://api.openweathermap.org/data/2.5/weather?q=copenhagen&appid=ec87279630ccc1c41b862571e615ab5b&units=metric'
     )
@@ -35,7 +35,7 @@ export class WeatherWidgetComponent implements OnInit {
       .then(() => this.setWeatherData());
   }
 
-  getForecastData(): void {
+  fetchForecastData(): void {
     fetch(
       'https://api.openweathermap.org/data/2.5/forecast?lat=55.6759&lon=12.5655&appid=ec87279630ccc1c41b862571e615ab5b&units=metric'
     )
