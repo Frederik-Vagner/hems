@@ -15,8 +15,8 @@ export class DocumentsService {
    *
    * @returns an observable with the tasks for the given day.
    */
-  public getDocuments(): Observable<GetTasksResponse> {
-    return this.http.get<GetTasksResponse>(
+  public getDocuments(): Observable<IDocument[]> {
+    return this.http.get<IDocument[]>(
       `${env.apiUrl}/documents`
     );
   }

@@ -33,7 +33,7 @@ export class CreateCheckinDialogComponent {
 
   constructor(
     private service: LuggageService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {
     this.form = new UntypedFormGroup({
@@ -96,7 +96,7 @@ export class CreateCheckinDialogComponent {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Check In luggage item created!', 'Thanks', {
+          this.snackBar.open('Check In luggage item created!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -105,7 +105,7 @@ export class CreateCheckinDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create, please try again.', 'Okay', {
+          this.snackBar.open('Failed to create, please try again.', 'Okay', {
             duration: 10000,
           });
           this.isLoading = false;

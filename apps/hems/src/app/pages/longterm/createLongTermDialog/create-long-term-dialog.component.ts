@@ -31,7 +31,7 @@ export class CreateLongTermDialogComponent implements OnInit {
 
   constructor(
     private luggageService: LuggageService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {}
 
@@ -92,7 +92,7 @@ export class CreateLongTermDialogComponent implements OnInit {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Long term item created!', 'Thanks', {
+          this.snackBar.open('Long term item created!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -100,7 +100,7 @@ export class CreateLongTermDialogComponent implements OnInit {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create, please try again.', 'Okay', {
+          this.snackBar.open('Failed to create, please try again.', 'Okay', {
             duration: 10000,
           });
         },

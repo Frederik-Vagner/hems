@@ -40,7 +40,7 @@ export class UpdateCheckoutDialogComponent {
     public dialogRef: MatDialogRef<UpdateCheckoutDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {
     this.luggageId = data.luggageId;
@@ -97,7 +97,7 @@ export class UpdateCheckoutDialogComponent {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Luggage item updated!', 'Thanks', {
+          this.snackBar.open('Luggage item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -106,7 +106,7 @@ export class UpdateCheckoutDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackBar.open('Failed to update, please try again.', 'Okay', {
             duration: 10000,
           });
           this.isLoading = false;

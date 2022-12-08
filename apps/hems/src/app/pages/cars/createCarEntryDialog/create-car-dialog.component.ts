@@ -32,7 +32,7 @@ export class CreateCarDialogComponent {
 
   constructor(
     private carService: CarService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {
     this.createCarForm = new UntypedFormGroup({
@@ -101,14 +101,14 @@ export class CreateCarDialogComponent {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Car added!', 'Thanks', { duration: 5000 });
+          this.snackBar.open('Car added!', 'Thanks', { duration: 5000 });
           document.location.reload();
           this.dialog.closeAll();
           this.isLoading = false;
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create, please try again.', 'Okay', {
+          this.snackBar.open('Failed to create, please try again.', 'Okay', {
             duration: 15000,
           });
           this.isLoading = false;
