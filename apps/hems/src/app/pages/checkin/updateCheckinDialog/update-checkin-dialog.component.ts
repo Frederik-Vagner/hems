@@ -50,9 +50,9 @@ export class UpdateCheckinDialogComponent {
         Validators.maxLength(10),
         Validators.pattern('^[0-9]*$'),
       ]),
-      roomReady: new UntypedFormControl(data.roomReady?.toString(), [
-        Validators.required,
-      ]),
+      // roomReady: new UntypedFormControl(data.roomReady?.toString(), [
+      //   Validators.required,
+      // ]),
       name: new UntypedFormControl(data.name, [Validators.required]),
       arrivalTime: new UntypedFormControl(data.arrivalTime, [
         Validators.required,
