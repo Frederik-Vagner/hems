@@ -5,47 +5,29 @@
       <div class="current-temp">{{ currentTemp }}°</div>
       <div class="current-info">
         <div class="info">
-          <img [src]="currentWeatherIconUrl" class="extra-small">
+          <img [src]="currentWeatherIconUrl" class="extra-small" />
           {{ currentWeather }}
         </div>
         <div class="info">
-          <img src="/assets/icons/wind-black-icon.svg" style="padding-left: 3px;">
+          <img
+            src="/assets/icons/wind-black-icon.svg"
+            style="padding-left: 3px"
+          />
           {{ currentWind }} m/s
         </div>
         <div class="info">
-          <img src="/assets/icons/thermostat-black-icon.svg"style="padding-left: 3px;">
+          <img
+            src="/assets/icons/thermostat-black-icon.svg"
+            style="padding-left: 3px"
+          />
           {{ currentMax }}° / {{ currentMin }}°
         </div>
       </div>
     </div>
   </div>
   <div class="weekly-display-container">
-    <div class="week-day-display">
-      <div class="date"></div>
-      <div class="date-weather"></div>
-      <div class="date-temp">
-        <div class="date-temp-high"></div>
-        <div class="date-temp-low"></div>
-      </div>
-    </div>
-    <div class="week-day-display">
-      <div class="date"></div>
-      <div class="date-weather"></div>
-      <div class="date-temp">
-        <div class="date-temp-high"></div>
-        <div class="date-temp-low"></div>
-      </div>
-    </div>
-    <div class="week-day-display">
-      <div class="date"></div>
-      <div class="date-weather"></div>
-      <div class="date-temp">
-        <div class="date-temp-high"></div>
-        <div class="date-temp-low"></div>
-      </div>
-    </div>
-    <div class="week-day-display">
-      <div class="date"></div>
+    <div class="week-day-display" *ngFor="let dateWeather of weatherForecast">
+      <div class="date">{{ getDate(dateWeather.dt_txt) }}</div>
       <div class="date-weather"></div>
       <div class="date-temp">
         <div class="date-temp-high"></div>
