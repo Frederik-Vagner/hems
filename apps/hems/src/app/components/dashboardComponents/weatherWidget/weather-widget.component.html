@@ -1,1 +1,56 @@
-<div>weather app yay</div>
+<section class="weather-widget">
+  <div class="daily-display-container">
+    <div class="city">{{ city }}</div>
+    <div class="daily-weather-content">
+      <div class="current-temp">{{ currentTemp }}°</div>
+      <div class="current-info">
+        <div class="current-weather">
+          <div class="icon"></div>
+          {{ currentWeather }}
+        </div>
+        <div class="current-wind">
+          <div class="icon"></div>
+          {{ currentWind }} m/s
+        </div>
+        <div class="current-rain">
+          <div class="icon"></div>
+          {{ currentMax }}° / {{ currentMin }}°
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="weekly-display-container">
+    <div class="week-day-display">
+      <div class="date"></div>
+      <div class="date-weather"></div>
+      <div class="date-temp">
+        <div class="date-temp-high"></div>
+        <div class="date-temp-low"></div>
+      </div>
+    </div>
+    <div class="week-day-display">
+      <div class="date"></div>
+      <div class="date-weather"></div>
+      <div class="date-temp">
+        <div class="date-temp-high"></div>
+        <div class="date-temp-low"></div>
+      </div>
+    </div>
+    <div class="week-day-display">
+      <div class="date"></div>
+      <div class="date-weather"></div>
+      <div class="date-temp">
+        <div class="date-temp-high"></div>
+        <div class="date-temp-low"></div>
+      </div>
+    </div>
+    <div class="week-day-display">
+      <div class="date"></div>
+      <div class="date-weather"></div>
+      <div class="date-temp">
+        <div class="date-temp-high"></div>
+        <div class="date-temp-low"></div>
+      </div>
+    </div>
+  </div>
+</section>

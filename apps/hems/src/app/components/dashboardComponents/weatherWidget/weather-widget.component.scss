@@ -1,0 +1,42 @@
+section.weather-widget {
+    width: 250px;
+    height: 250px;
+    background-color: var(--main-blue-lowest-opacity);
+    border-radius: 5px;
+}
+
+.daily-display-container {
+    padding: 10px;
+
+    .daily-weather-content {
+        display: flex;
+        background-color: var(--main-blue-lower-opacity);
+
+        .current-temp, .current-info {
+            flex-basis: 0;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .current-info {
+            height: 100px;
+            flex-direction: column;
+        }
+
+        .current-temp {
+            font-size: 40px;
+        }
+    }
+}
+
+.weekly-display-container {
+    padding: 10px;
+}
+
+.city {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
