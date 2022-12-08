@@ -49,8 +49,6 @@ export class CreateLongTermDialogComponent implements OnInit {
       dateNeeded: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
-      // bbOut: new UntypedFormControl('', [Validators.required]),
-      // dateOut: new UntypedFormControl('', []),
     });
   }
 
