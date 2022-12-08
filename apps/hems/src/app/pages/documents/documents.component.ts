@@ -8,4 +8,5 @@ import { IDocument } from '@hems/interfaces';
 })
 export class DocumentsComponent {
   documentList: IDocument[] = [];
+
 }
