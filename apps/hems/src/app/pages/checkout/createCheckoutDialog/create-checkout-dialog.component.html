@@ -1,16 +1,13 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="form" class="dialog-container">
-  <div class="header">
-    <h2>Create Check Out Luggage</h2>
-  </div>
+  <h1>Create Check Out Luggage</h1>
   <hr />
 
   <div class="dialog-row">
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">Room nr.</mat-label>
+      <mat-label>Room nr.</mat-label>
       <input
         #room
         type="text"
@@ -19,12 +16,12 @@
         placeholder="123"
       />
       <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
-        Required
+        Must be a number from 100-999
       </mat-error>
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label class="input-label">Name</mat-label>
+      <mat-label>Name</mat-label>
       <input
         #name
         type="text"
@@ -41,10 +38,9 @@
   <div class="dialog-row">
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">Nr of bags</mat-label>
+      <mat-label>Nr of bags</mat-label>
       <input
         #bags
         type="text"
@@ -59,10 +55,9 @@
 
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">Tag nr.</mat-label>
+      <mat-label>Tag nr.</mat-label>
       <input
         #tagNr
         type="text"
@@ -79,10 +74,9 @@
   <div class="dialog-row">
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">BB down</mat-label>
+      <mat-label>BB down</mat-label>
       <input
         #bbDown
         type="text"
@@ -99,10 +93,9 @@
 
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">Location</mat-label>
+      <mat-label>Location</mat-label>
       <input
         #location
         type="text"
@@ -121,10 +114,9 @@
   <div class="dialog-row">
     <mat-form-field
       autocomplete="off"
-      class="input one-third"
       appearance="fill"
     >
-      <mat-label class="input-label">BB in LR</mat-label>
+      <mat-label>BB in LR</mat-label>
       <input
         #bbLr
         type="text"
@@ -139,7 +131,7 @@
   </div>
 
   <mat-form-field autocomplete="off" class="full-width" appearance="fill">
-    <mat-label class="input-label">Comments</mat-label>
+    <mat-label>Comments</mat-label>
     <textarea
       type="text"
       formControlName="comments"
@@ -159,18 +151,10 @@
   </label>
 
   <div class="dialog-row">
-    <button
-      mat-raised-button
-      class="secondary-btn"
-      mat-dialog-close
-    >
+    <button mat-raised-button class="secondary-btn" mat-dialog-close>
       Cancel
     </button>
-    <button
-      mat-raised-button
-      class="action-btn"
-      type="submit"
-    >
+    <button mat-raised-button class="action-btn" type="submit">
       Add check out
     </button>
   </div>
