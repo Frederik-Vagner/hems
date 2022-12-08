@@ -11,12 +11,12 @@ export class WeatherWidgetComponent implements OnInit {
 
   city = 'Copenhagen';
 
-  currentTemp = '2';
+  currentTemp = '';
   currentMax = '';
   currentMin = '';
-  currentWeather = 'sun';
+  currentWeather = '';
   currentWeatherIconUrl = '';
-  currentWind = '13';
+  currentWind = '';
 
   ngOnInit() {
     this.getWeatherData();
@@ -30,9 +30,9 @@ export class WeatherWidgetComponent implements OnInit {
     )
       .then((response) => response.json())
       .then((data) => {
-        this.setWeatherData(data);
+        this.weatherData = data;
       })
-      .then(() => console.log(this.weatherData, this.weatherData.main));
+      .then(() => this.setWeatherData());
   }
 
   getForecastData(): void {
@@ -41,27 +41,25 @@ export class WeatherWidgetComponent implements OnInit {
     )
       .then((response) => response.json())
       .then((data) => {
-        this.weatherForecast = [data.list[8],data.list[16],data.list[24],data.list[32]]
-        console.log(this.weatherForecast)
+        this.weatherForecast = [
+          data.list[8],
+          data.list[16],
+          data.list[24],
+          data.list[32],
+        ];
       });
   }
 
-  setWeatherData(data: any) {
-    this.weatherData = data;
-    const sunsetTime = new Date(this.weatherData.sys.sunset * 1000);
-    this.weatherData.sunset_time = sunsetTime.toLocaleTimeString();
-
+  setWeatherData() {
     this.currentTemp = parseFloat(this.weatherData.main.temp).toFixed(0);
     this.currentMax = parseFloat(this.weatherData.main.temp_max).toFixed(0);
     this.currentMin = parseFloat(this.weatherData.main.temp_min).toFixed(0);
-
     this.currentWind = parseFloat(this.weatherData.wind.speed).toFixed(0);
-
     this.currentWeather = this.weatherData.weather[0].description;
     this.currentWeatherIconUrl = `http://openweathermap.org/img/wn/${this.weatherData.weather[0].icon}@2x.png`;
   }
 
   getDate(date: string) {
-    return new Date(date).toDateString().slice(0,3);
+    return new Date(date).toDateString().slice(0, 3);
   }
 }
