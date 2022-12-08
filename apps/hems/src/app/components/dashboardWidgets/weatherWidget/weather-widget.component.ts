@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
 
 @Component({
   selector: 'hems-weather-widget',
@@ -51,11 +50,6 @@ export class WeatherWidgetComponent implements OnInit, OnDestroy {
           );
         });
       });
-  }
-
-  getTime(date: string, time: number) {
-    console.log(date);
-    return new Date(date).getHours() === time;
   }
 
   getImgUrl(iconName: string): string {
