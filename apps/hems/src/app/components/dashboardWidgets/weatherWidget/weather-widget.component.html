@@ -38,7 +38,9 @@
             [src]="getImgUrl(dateWeather.weather[0].icon)"
             class="extra-small"
           />
-          <div class="date-temp">{{ getNumber(dateWeather.main.temp_max) }}°</div>
+          <div class="date-temp">
+            {{ getNumber(dateWeather.main.temp_max) }}°
+          </div>
         </div>
       </div>
     </div>

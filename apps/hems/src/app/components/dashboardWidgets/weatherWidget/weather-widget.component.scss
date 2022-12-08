@@ -100,6 +100,7 @@ section.weather-widget {
   justify-content: center;
 }
 
-::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
   stroke: white;
 }
