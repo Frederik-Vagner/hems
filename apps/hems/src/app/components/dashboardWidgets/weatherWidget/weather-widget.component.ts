@@ -44,13 +44,15 @@ export class WeatherWidgetComponent implements OnInit, OnDestroy {
     )
       .then((response) => response.json())
       .then((data) => {
-        this.weatherForecast = [
-          data.list[8],
-          data.list[16],
-          data.list[24],
-          data.list[32],
-        ];
+        this.weatherForecast = data.list.filter((info: any) => {
+          return new Date(info.dt_txt).getHours() === 15;
+        });
       });
+  }
+
+  getTime(date: string, time: number) {
+    console.log(date);
+    return new Date(date).getHours() === time;
   }
 
   getImgUrl(iconName: string): string {
