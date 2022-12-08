@@ -42,13 +42,14 @@ export class CreateLongTermDialogComponent implements OnInit {
         Validators.maxLength(10),
         Validators.pattern('^[0-9]*$'),
       ]),
+      dateIn: new UntypedFormControl('', [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
       comments: new UntypedFormControl('', []),
       tagNr: new UntypedFormControl('', [Validators.required]),
-      dateNeeded: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
+      dateNeeded: new UntypedFormControl('', []),
     });
   }
 
@@ -80,10 +81,11 @@ export class CreateLongTermDialogComponent implements OnInit {
         room: this.createLongTermForm.get('room')?.value,
         // roomReady: false,
         name: this.createLongTermForm.get('name')?.value,
+        arrivalTime: this.createLongTermForm.get('dateIn')?.value,
         bags: this.createLongTermForm.get('bags')?.value,
         comments: this.createLongTermForm.get('comments')?.value,
         tagNr: this.createLongTermForm.get('tagNr')?.value,
-        arrivalTime: this.createLongTermForm.get('dateNeeded')?.value,
+        dateNeeded: this.createLongTermForm.get('dateNeeded')?.value,
         bbLr: this.createLongTermForm.get('bbLr')?.value.toUpperCase(),
         location: this.createLongTermForm.get('location')?.value,
         luggageType: LuggageType.LONG_TERM,
