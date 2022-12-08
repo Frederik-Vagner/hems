@@ -17,32 +17,6 @@
       </mat-error>
     </mat-form-field>
 
-    <!-- <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Room status</mat-label>
-      <mat-select
-        formControlName="roomReady"
-      >
-        <mat-option value="false">Not ready</mat-option>
-        <mat-option value="true">Ready</mat-option>
-      </mat-select>
-    </mat-form-field> -->
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Name</mat-label>
-      <input
-        #name
-        type="text"
-        formControlName="name"
-        matInput
-        placeholder="Name"
-      />
-      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
-        Required
-      </mat-error>
-    </mat-form-field>
-
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Time of arrival</mat-label>
       <input
@@ -64,7 +38,31 @@
       >
       </ngx-mat-datetime-picker>
     </mat-form-field>
+
+    <!-- <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Room status</mat-label>
+      <mat-select
+        formControlName="roomReady"
+      >
+        <mat-option value="false">Not ready</mat-option>
+        <mat-option value="true">Ready</mat-option>
+      </mat-select>
+    </mat-form-field> -->
   </div>
+
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Name</mat-label>
+    <input
+      #name
+      type="text"
+      formControlName="name"
+      matInput
+      placeholder="Name"
+    />
+    <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+      Required
+    </mat-error>
+  </mat-form-field>
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
@@ -128,6 +126,37 @@
     </mat-form-field>
   </div>
 
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" class="input" appearance="fill">
+      <mat-label>BB Out</mat-label>
+      <input type="text" formControlName="bbOut" matInput placeholder="JD" />
+      <mat-error *ngIf="form.get('bbOut')?.invalid && form.get('bbOut')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>In room time</mat-label>
+      <input
+        matInput
+        [ngxMatDatetimePicker]="pickerCompletedAt"
+        placeholder="dd/MM HH:mm"
+        formControlName="completedAt"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(pickerCompletedAt)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #pickerCompletedAt
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+  </div>
+
   <mat-form-field autocomplete="off" class="full-width" appearance="fill">
     <mat-label>Comments</mat-label>
     <textarea
@@ -142,16 +171,6 @@
       Can't be more than 1000 characters
     </mat-error>
   </mat-form-field>
-
-  <label class="checkbox-container">
-    The guest has given consent to the processing of personal data
-    <input
-      type="checkbox"
-      [checked]="guestApprovedGDPR"
-      (change)="guestApprovedGDPR = !guestApprovedGDPR"
-    />
-    <span class="checkmark"></span>
-  </label>
 
   <div class="dialog-row">
     <button mat-raised-button class="secondary-btn" mat-dialog-close>

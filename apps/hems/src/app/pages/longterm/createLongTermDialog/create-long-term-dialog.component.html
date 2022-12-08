@@ -6,27 +6,48 @@
   <h1>Add long term</h1>
   <hr />
 
-  <div class="dialog-row"></div>
+  <div class="dialog-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Room</mat-label>
+      <input
+        #room
+        type="text"
+        formControlName="room"
+        matInput
+        placeholder="Room nr"
+        maxlength="10"
+      />
+      <mat-error
+        *ngIf="
+          createLongTermForm.get('room')?.invalid &&
+          createLongTermForm.get('room')?.dirty
+        "
+      >
+        Must be a number from 100-999
+      </mat-error>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Room</mat-label>
-    <input
-      #room
-      type="text"
-      formControlName="room"
-      matInput
-      placeholder="Room nr"
-      maxlength="10"
-    />
-    <mat-error
-      *ngIf="
-        createLongTermForm.get('room')?.invalid &&
-        createLongTermForm.get('room')?.dirty
-      "
-    >
-      Must be a number from 100-999
-    </mat-error>
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Date in</mat-label>
+      <input
+        matInput
+        [ngxMatDatetimePicker]="arrivalTimePicker"
+        placeholder="dd/MM HH:mm"
+        formControlName="arrivalTime"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(arrivalTimePicker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #arrivalTimePicker
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+  </div>
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
@@ -171,25 +192,7 @@
       formControlName="comments"
       placeholder="Describe the task"
     ></textarea>
-    <mat-error
-      *ngIf="
-        createLongTermForm.get('comments')?.invalid &&
-        createLongTermForm.get('comments')?.dirty
-      "
-    >
-      Can't be more than 1000 characters
-    </mat-error>
   </mat-form-field>
-
-  <label class="checkbox-container">
-    The guest has given consent to the processing of personal data
-    <input
-      type="checkbox"
-      [checked]="guestHasApproved"
-      (change)="guestHasApproved = !guestHasApproved"
-    />
-    <span class="checkmark"></span>
-  </label>
 
   <div class="dialog-row">
     <button

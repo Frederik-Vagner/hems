@@ -50,9 +50,9 @@ export class UpdateCheckinDialogComponent {
         Validators.maxLength(10),
         Validators.pattern('^[0-9]*$'),
       ]),
-      roomReady: new UntypedFormControl(data.roomReady?.toString(), [
-        Validators.required,
-      ]),
+      // roomReady: new UntypedFormControl(data.roomReady?.toString(), [
+      //   Validators.required,
+      // ]),
       name: new UntypedFormControl(data.name, [Validators.required]),
       arrivalTime: new UntypedFormControl(data.arrivalTime, [
         Validators.required,
@@ -60,7 +60,7 @@ export class UpdateCheckinDialogComponent {
       bags: new UntypedFormControl(data.bags, [Validators.required]),
       tagNr: new UntypedFormControl(data.tagNr, [Validators.required]),
       bbLr: new UntypedFormControl(data.bbLr, [Validators.required]),
-      bbUp: new UntypedFormControl(data.bbOut, []),
+      bbOut: new UntypedFormControl(data.bbOut, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
       completedAt: new UntypedFormControl(new Date(), []),
       comments: new UntypedFormControl(data.comments, []),
@@ -100,7 +100,7 @@ export class UpdateCheckinDialogComponent {
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value.toUpperCase(),
-        bbOut: this.form.get('bbUp')?.value.toUpperCase(),
+        bbOut: this.form.get('bbOut')?.value.toUpperCase(),
         location: this.form.get('location')?.value,
         completedAt: this.form.get('completedAt')?.value,
         comments: this.form.get('comments')?.value,

@@ -56,9 +56,7 @@ export class UpdateLongTermDialogComponent implements OnInit {
       ]),
       name: new UntypedFormControl(this.data.name, [Validators.required]),
       bags: new UntypedFormControl(this.data.bags, [Validators.required]),
-      comments: new UntypedFormControl(this.data.comments, [
-        Validators.required,
-      ]),
+      comments: new UntypedFormControl(this.data.comments, []),
       tagNr: new UntypedFormControl(this.data.tagNr, [Validators.required]),
       dateNeeded: new UntypedFormControl(this.data.arrivalTime, []),
       bbLr: new UntypedFormControl(this.data.bbLr, [Validators.required]),
