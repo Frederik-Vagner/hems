@@ -128,6 +128,42 @@
     </mat-form-field>
   </div>
 
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" class="input" appearance="fill">
+      <mat-label>BB Out</mat-label>
+      <input
+        type="text"
+        formControlName="bbOut"
+        matInput
+        placeholder="JD"
+      />
+      <mat-error *ngIf="form.get('bbOut')?.invalid && form.get('bbOut')?.dirty">
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>In room time</mat-label>
+      <input
+        matInput
+        [ngxMatDatetimePicker]="pickerCompletedAt"
+        placeholder="dd/MM HH:mm"
+        formControlName="completedAt"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(pickerCompletedAt)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #pickerCompletedAt
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+  </div>
+
   <mat-form-field autocomplete="off" class="full-width" appearance="fill">
     <mat-label>Comments</mat-label>
     <textarea

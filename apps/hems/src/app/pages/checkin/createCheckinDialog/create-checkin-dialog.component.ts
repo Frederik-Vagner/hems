@@ -50,7 +50,9 @@ export class CreateCheckinDialogComponent {
       tagNr: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
-      comments: new UntypedFormControl('', [Validators.maxLength(1000)]),
+      bbOut: new UntypedFormControl('', []),
+      completedAt: new UntypedFormControl('', []),
+      comments: new UntypedFormControl('', []),
     });
   }
 
@@ -94,7 +96,9 @@ export class CreateCheckinDialogComponent {
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value.toUpperCase(),
-        location: this.form.get('location')?.value,
+        location: this.form.get('location')?.value.toUpperCase(),
+        bbOut: this.form.get('bbOut')?.value.toUpperCase(),
+        completedAt: this.form.get('completedAt')?.value,
         comments: this.form.get('comments')?.value,
         luggageType: LuggageType.CHECKIN,
       })
