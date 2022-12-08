@@ -20,7 +20,6 @@ import { LuggageService } from '../../../services/luggage.service';
 })
 export class CreateLongTermDialogComponent implements OnInit {
   createLongTermForm = new UntypedFormGroup({});
-  guestHasApproved = false;
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
@@ -56,13 +55,6 @@ export class CreateLongTermDialogComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (!this.guestHasApproved) {
-      this.snackbar.open('Guest needs to approve storing their data.', 'Okay', {
-        duration: 10000,
-      });
-      return;
-    }
-
     if (!this.createLongTermForm.valid) {
       if (this.createLongTermForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();

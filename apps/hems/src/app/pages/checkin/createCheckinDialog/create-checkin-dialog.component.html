@@ -172,16 +172,6 @@
     </mat-error>
   </mat-form-field>
 
-  <label class="checkbox-container">
-    The guest has given consent to the processing of personal data
-    <input
-      type="checkbox"
-      [checked]="guestApprovedGDPR"
-      (change)="guestApprovedGDPR = !guestApprovedGDPR"
-    />
-    <span class="checkmark"></span>
-  </label>
-
   <div class="dialog-row">
     <button mat-raised-button class="secondary-btn" mat-dialog-close>
       Cancel
