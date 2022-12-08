@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { IDocument } from '@hems/interfaces';
 
 @Component({
-  selector: 'hems-documents-widget',
-  templateUrl: './documents-widget.component.html',
+  selector: 'hems-document-widget',
+  templateUrl: './document-widget.component.html',
   styleUrls: [],
 })
-export class DocumentsWidgetComponent {
+export class DocumentWidgetComponent {
   @Input()
   document!: IDocument;
 }

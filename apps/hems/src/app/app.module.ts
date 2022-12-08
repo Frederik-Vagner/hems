@@ -28,7 +28,7 @@ import { UpdateCheckoutDialogComponent } from './pages/checkout/updateCheckoutDi
 import { EditTaskDialogComponent } from './pages/tasks/editTaskDialog/editTaskDialog.component';
 import { TableInfoDialogComponent } from './components/tableInfoDialog/table-info-dialog.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
-import { DocumentsWidgetComponent } from './components/documentWidget/documents-widget.component';
+import { DocumentWidgetComponent } from './components/documentWidget/document-widget.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,7 @@ import { DocumentsWidgetComponent } from './components/documentWidget/documents-
     EditTaskDialogComponent,
     TableInfoDialogComponent,
     DocumentsComponent,
-    DocumentsWidgetComponent,
+    DocumentWidgetComponent,
   ],
   imports: [
     BrowserModule,
