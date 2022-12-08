@@ -58,7 +58,7 @@ export class EditTaskDialogComponent {
   updateTask(): void {
     this.isLoading = true;
     this.service
-      .update(this.taskId, {
+      .updateTask(this.taskId, {
         initials: this.form.get('initials')?.value.toUpperCase(),
         completedAt: new Date(this.form.get('completedAt')?.value),
       })
@@ -83,7 +83,7 @@ export class EditTaskDialogComponent {
 
   reset() {
     this.service
-      .update(this.taskId, {
+      .updateTask(this.taskId, {
         initials: '',
         completedAt: null,
       })
