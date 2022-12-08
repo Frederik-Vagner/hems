@@ -38,12 +38,18 @@ export class CreateCheckoutDialogComponent {
     private dialog: MatDialog
   ) {
     this.form = new UntypedFormGroup({
-      room: new UntypedFormControl('', [Validators.required]),
+      room: new UntypedFormControl('', [
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.pattern('^[0-9]*$'),
+      ]),
       name: new UntypedFormControl('', [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
       tagNr: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
       bbDown: new UntypedFormControl('', [Validators.required]),
+      bbOut: new UntypedFormControl('', []),
+      completedAt: new UntypedFormControl('', []),
       location: new UntypedFormControl('', [Validators.required]),
       comments: new UntypedFormControl('', []),
     });
@@ -90,7 +96,9 @@ export class CreateCheckoutDialogComponent {
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value.toUpperCase(),
         bbDown: this.form.get('bbDown')?.value.toUpperCase(),
-        location: this.form.get('location')?.value,
+        bbOut: this.form.get('bbOut')?.value.toUpperCase(),
+        completedAt: this.form.get('completedAt')?.value,
+        location: this.form.get('location')?.value.toUpperCase(),
         comments: this.form.get('comments')?.value,
         luggageType: LuggageType.CHECKOUT,
       })
