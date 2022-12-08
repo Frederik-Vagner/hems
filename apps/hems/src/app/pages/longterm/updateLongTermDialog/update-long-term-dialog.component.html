@@ -238,14 +238,6 @@
       formControlName="comments"
       placeholder="Describe the task"
     ></textarea>
-    <mat-error
-      *ngIf="
-        updateLongTermForm.get('comments')?.invalid &&
-        updateLongTermForm.get('comments')?.dirty
-      "
-    >
-      Can't be more than 1000 characters
-    </mat-error>
   </mat-form-field>
 
   <div class="dialog-row">

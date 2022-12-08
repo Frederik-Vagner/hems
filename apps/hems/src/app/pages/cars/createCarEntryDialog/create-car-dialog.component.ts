@@ -21,7 +21,6 @@ export class CreateCarDialogComponent {
   createCarForm: UntypedFormGroup;
   checked = true;
   isLoading = false;
-  guestHasApproved = false;
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('tagNr') tagNrInput!: ElementRef;
@@ -57,13 +56,6 @@ export class CreateCarDialogComponent {
   }
 
   onSubmit() {
-    if (!this.guestHasApproved) {
-      this.snackbar.open('Guest needs to approve storing their data.', 'Okay', {
-        duration: 10000,
-      });
-      return;
-    }
-
     if (!this.createCarForm.valid) {
       if (this.createCarForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();

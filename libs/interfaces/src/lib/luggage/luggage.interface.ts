@@ -30,7 +30,9 @@ export interface ICreateLuggageRequest {
   location: string;
   bbDown?: string;
   bbLr: string;
+  bbOut?: string;
   dateNeeded?: Date;
+  completedAt?: Date;
 }
 
 export interface IUpdateLuggageRequest {

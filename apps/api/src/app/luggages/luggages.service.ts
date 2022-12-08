@@ -99,6 +99,8 @@ export class LuggagesService {
     switch (sortBy) {
       case LuggageSortOptions.ARRIVAL_TIME:
         return { arrivalTime: sortOrder };
+      case LuggageSortOptions.DATE_NEEDED:
+        return { dateNeeded: sortOrder };
       case LuggageSortOptions.COMPLETED_AT:
         return { completedAt: sortOrder };
       case LuggageSortOptions.CREATED_AT:
