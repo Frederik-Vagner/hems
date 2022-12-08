@@ -58,7 +58,6 @@ export class WeatherWidgetComponent implements OnInit, OnDestroy {
   }
 
   getNumber(temp: string): string {
-    console.log(temp);
     return parseFloat(temp).toFixed(0);
   }
 
