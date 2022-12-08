@@ -45,7 +45,10 @@ export class WeatherWidgetComponent implements OnInit, OnDestroy {
       .then((response) => response.json())
       .then((data) => {
         this.weatherForecast = data.list.filter((info: any) => {
-          return new Date(info.dt_txt).getHours() === 15;
+          return (
+            new Date(info.dt_txt).getHours() === 15 &&
+            new Date(info.dt_txt).getDate() != new Date().getDate()
+          );
         });
       });
   }
