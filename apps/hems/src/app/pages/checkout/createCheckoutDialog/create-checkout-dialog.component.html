@@ -3,10 +3,7 @@
   <hr />
 
   <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Room nr.</mat-label>
       <input
         #room
@@ -21,25 +18,6 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Name</mat-label>
-      <input
-        #name
-        type="text"
-        formControlName="name"
-        matInput
-        placeholder="John Doe"
-      />
-      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
       <mat-label>Nr of bags</mat-label>
       <input
         #bags
@@ -52,11 +30,24 @@
         Required
       </mat-error>
     </mat-form-field>
+  </div>
 
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Name</mat-label>
+    <input
+      #name
+      type="text"
+      formControlName="name"
+      matInput
+      placeholder="John Doe"
+    />
+    <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+      Required
+    </mat-error>
+  </mat-form-field>
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Tag nr.</mat-label>
       <input
         #tagNr
@@ -69,13 +60,8 @@
         Required
       </mat-error>
     </mat-form-field>
-  </div>
 
-  <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB down</mat-label>
       <input
         #bbDown
@@ -90,11 +76,10 @@
         Required
       </mat-error>
     </mat-form-field>
+  </div>
 
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Location</mat-label>
       <input
         #location
@@ -109,13 +94,8 @@
         Required
       </mat-error>
     </mat-form-field>
-  </div>
 
-  <div class="dialog-row">
-    <mat-form-field
-      autocomplete="off"
-      appearance="fill"
-    >
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB in LR</mat-label>
       <input
         #bbLr

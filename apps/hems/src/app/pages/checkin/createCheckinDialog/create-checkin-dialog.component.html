@@ -17,32 +17,6 @@
       </mat-error>
     </mat-form-field>
 
-    <!-- <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Room status</mat-label>
-      <mat-select
-        formControlName="roomReady"
-      >
-        <mat-option value="false">Not ready</mat-option>
-        <mat-option value="true">Ready</mat-option>
-      </mat-select>
-    </mat-form-field> -->
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Name</mat-label>
-      <input
-        #name
-        type="text"
-        formControlName="name"
-        matInput
-        placeholder="Name"
-      />
-      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
-        Required
-      </mat-error>
-    </mat-form-field>
-
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Time of arrival</mat-label>
       <input
@@ -64,7 +38,31 @@
       >
       </ngx-mat-datetime-picker>
     </mat-form-field>
+
+    <!-- <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Room status</mat-label>
+      <mat-select
+        formControlName="roomReady"
+      >
+        <mat-option value="false">Not ready</mat-option>
+        <mat-option value="true">Ready</mat-option>
+      </mat-select>
+    </mat-form-field> -->
   </div>
+
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Name</mat-label>
+    <input
+      #name
+      type="text"
+      formControlName="name"
+      matInput
+      placeholder="Name"
+    />
+    <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+      Required
+    </mat-error>
+  </mat-form-field>
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
