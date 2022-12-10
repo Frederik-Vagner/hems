@@ -22,7 +22,7 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Pcik up time</mat-label>
+      <mat-label>Pick up time</mat-label>
       <input
         #pickUpTime
         matInput
@@ -52,8 +52,7 @@
     </mat-form-field>
   </div>
 
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
       <mat-label>Name</mat-label>
       <input
         #name
@@ -72,6 +71,7 @@
       </mat-error>
     </mat-form-field>
 
+  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Room</mat-label>
       <input
@@ -89,28 +89,28 @@
         Must be a number from 100-999
       </mat-error>
     </mat-form-field>
-  </div>
 
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
+    <mat-form-field autocomplete="off" appearance="fill" class="full-width">
       <mat-label>Reserved by</mat-label>
       <input
-        #reservedBy
         type="text"
-        formControlreservedBy="reservedBy"
+        formControlName="reservedBy"
         matInput
-        placeholder="reservedBy"
+        placeholder="Guest"
       />
       <mat-error
         *ngIf="
-          createBikeForm.get('reservedBy')?.invalid && createBikeForm.get('reservedBy')?.dirty
+          createBikeForm.get('reservedBy')?.invalid &&
+          createBikeForm.get('reservedBy')?.dirty
         "
       >
         Required
       </mat-error>
     </mat-form-field>
+  </div>
 
-    <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Bike form</mat-label>
       <input
         #bikeForm
@@ -128,9 +128,7 @@
         Required
       </mat-error>
     </mat-form-field>
-  </div>
 
-  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>returned</mat-label>
       <input
@@ -161,8 +159,9 @@
         Required
       </mat-error>
     </mat-form-field>
+  </div>
 
-    <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
       <mat-label>Comments</mat-label>
       <input
         #comments
@@ -180,17 +179,6 @@
         Required
       </mat-error>
     </mat-form-field>
-  </div>
-
-  <label class="checkbox-container">
-    The guest has given consent to the processing of personal data
-    <input
-      type="checkbox"
-      [checked]="guestHasApproved"
-      (change)="guestHasApproved = !guestHasApproved"
-    />
-    <span class="checkmark"></span>
-  </label>
 
   <div class="dialog-row">
     <button

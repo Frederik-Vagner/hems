@@ -21,7 +21,6 @@ export class CreateBikeDialogComponent {
   createBikeForm: UntypedFormGroup;
   checked = true;
   isLoading = false;
-  guestHasApproved = false;
 
   @ViewChild('numberOfBikes') numberOfBikesInput!: ElementRef;
   @ViewChild('pickUpTime') pickUpTimeInput!: ElementRef;
@@ -94,11 +93,12 @@ export class CreateBikeDialogComponent {
     };
     console.log(skrt);
 
+  createBikeListEntry(): void {
     this.bikeService
       .createBike({
         room: this.createBikeForm.get('room')?.value,
         numberOfBikes: this.createBikeForm.get('numberOfBikes')?.value,
-        pickUpTime: new Date(this.createBikeForm.get('pickUpTime')?.value),
+        pickUpTime: this.createBikeForm.get('pickUpTime')?.value,
         name: this.createBikeForm.get('name')?.value,
         reservedBy: this.createBikeForm.get('reservedBy')?.value,
         bikeForm: this.createBikeForm.get('bikeForm')?.value,
