@@ -1,20 +1,20 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="updateCarForm">
-  <h1>Update Car</h1>
+<form (ngSubmit)="onSubmit()" [formGroup]="updateBikeForm">
+  <h1>Update Bike</h1>
   <hr />
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Room nr.</mat-label>
+      <mat-label>Number of bikes</mat-label>
       <input
-        #room
+        #numberOfBikes
         type="text"
-        formControlName="room"
+        formControlName="numberOfBikes"
         matInput
         placeholder="123"
       />
       <mat-error
         *ngIf="
-          updateCarForm.get('room')?.invalid && updateCarForm.get('room')?.dirty
+          updateBikeForm.get('numberOfBikes')?.invalid && updateBikeForm.get('numberOfBikes')?.dirty
         "
       >
         Must be a number from 100-999
@@ -22,41 +22,20 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Tag nr.</mat-label>
+      <mat-label>Pcik up time</mat-label>
       <input
-        #tagNr
-        type="text"
-        formControlName="tagNr"
+        #pickUpTime
         matInput
-        placeholder="123"
-      />
-      <mat-error
-        *ngIf="
-          updateCarForm.get('tagNr')?.invalid &&
-          updateCarForm.get('tagNr')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Arrival date</mat-label>
-      <input
-        #arrivalDate
-        matInput
-        [ngxMatDatetimePicker]="arrivalDatePicker"
-        placeholder="dd/MM HH:mm"
-        formControlName="arrivalDate"
+        [ngxMatDatetimePicker]="pickUpTimePicker"
+        placeholder="HH:mm"
+        formControlName="pickUpTime"
       />
       <mat-datepicker-toggle
         matSuffix
-        [for]="$any(arrivalDatePicker)"
+        [for]="$any(pickUpTimePicker)"
       ></mat-datepicker-toggle>
       <ngx-mat-datetime-picker
-        #arrivalDatePicker
+        #pickUpTimePicker
         [showSpinners]="true"
         [showSeconds]="false"
         [touchUi]="true"
@@ -64,38 +43,8 @@
       </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
-          updateCarForm.get('arrivalDate')?.invalid &&
-          updateCarForm.get('arrivalDate')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Departure date</mat-label>
-      <input
-        #departureDate
-        matInput
-        [ngxMatDatetimePicker]="departureDatePicker"
-        formControlName="departureDate"
-        placeholder="dd/MM HH:mm"
-      />
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="$any(departureDatePicker)"
-      ></mat-datepicker-toggle>
-      <ngx-mat-datetime-picker
-        #departureDatePicker
-        [showSpinners]="true"
-        [showSeconds]="false"
-        [touchUi]="true"
-      >
-      </ngx-mat-datetime-picker>
-      <mat-error
-        *ngIf="
-          updateCarForm.get('departureDate')?.invalid &&
-          updateCarForm.get('departureDate')?.dirty
+          updateBikeForm.get('pickUpTime')?.invalid &&
+          updateBikeForm.get('pickUpTime')?.dirty
         "
       >
         Required
@@ -111,11 +60,12 @@
         type="text"
         formControlName="name"
         matInput
-        placeholder="Name"
+        placeholder="Madsen"
       />
       <mat-error
         *ngIf="
-          updateCarForm.get('name')?.invalid && updateCarForm.get('name')?.dirty
+          updateBikeForm.get('name')?.invalid &&
+          updateBikeForm.get('name')?.dirty
         "
       >
         Required
@@ -123,18 +73,56 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>License plate</mat-label>
+      <mat-label>Room</mat-label>
       <input
-        #licensePlate
+        #room
         type="text"
-        formControlName="licensePlate"
+        formControlName="room"
         matInput
-        placeholder="Name"
+        placeholder="123"
       />
       <mat-error
         *ngIf="
-          updateCarForm.get('licensePlate')?.invalid &&
-          updateCarForm.get('licensePlate')?.dirty
+          updateBikeForm.get('room')?.invalid && updateBikeForm.get('room')?.dirty
+        "
+      >
+        Must be a number from 100-999
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Reserved by</mat-label>
+      <input
+        #reservedBy
+        type="text"
+        formControlreservedBy="reservedBy"
+        matInput
+        placeholder="reservedBy"
+      />
+      <mat-error
+        *ngIf="
+          updateBikeForm.get('reservedBy')?.invalid && updateBikeForm.get('reservedBy')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+      <mat-label>Bike form</mat-label>
+      <input
+        #bikeForm
+        type="text"
+        formControlName="bikeForm"
+        matInput
+        placeholder="bikeForm"
+      />
+      <mat-error
+        *ngIf="
+          updateBikeForm.get('bikeForm')?.invalid &&
+          updateBikeForm.get('bikeForm')?.dirty
         "
       >
         Required
@@ -144,21 +132,21 @@
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Expiration date</mat-label>
+      <mat-label>returned</mat-label>
       <input
-        #expirationDate
-        type="text"
-        formControlName="expirationDate"
-        [ngxMatDatetimePicker]="expirationDatePicker"
+        #returned
         matInput
-        placeholder="dd/MM HH:mm"
+        type="text"
+        [ngxMatDatetimePicker]="returnedPicker"
+        formControlName="returned"
+        placeholder="HH:mm"
       />
       <mat-datepicker-toggle
         matSuffix
-        [for]="$any(expirationDatePicker)"
+        [for]="$any(returnedPicker)"
       ></mat-datepicker-toggle>
       <ngx-mat-datetime-picker
-        #expirationDatePicker
+        #returnedPicker
         [showSpinners]="true"
         [showSeconds]="false"
         [touchUi]="true"
@@ -166,174 +154,33 @@
       </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
-          updateCarForm.get('expirationDate')?.invalid &&
-          updateCarForm.get('expirationDate')?.dirty
+          updateBikeForm.get('returned')?.invalid &&
+          updateBikeForm.get('returned')?.dirty
         "
       >
         Required
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Pick up time</mat-label>
+    <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+      <mat-label>Comments</mat-label>
       <input
-        #pickupTime
-        matInput
+        #comments
         type="text"
-        [ngxMatDatetimePicker]="pickupTimePicker"
-        formControlName="pickupTime"
-        placeholder="dd/MM HH:mm"
+        formControlName="comments"
+        matInput
+        placeholder="Comments"
       />
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="$any(pickupTimePicker)"
-      ></mat-datepicker-toggle>
-      <ngx-mat-datetime-picker
-        #pickupTimePicker
-        [showSpinners]="true"
-        [showSeconds]="false"
-        [touchUi]="true"
-      >
-      </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
-          updateCarForm.get('pickupTime')?.invalid &&
-          updateCarForm.get('pickupTime')?.dirty
+          updateBikeForm.get('comments')?.invalid &&
+          updateBikeForm.get('comments')?.dirty
         "
       >
         Required
       </mat-error>
     </mat-form-field>
   </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>BB down</mat-label>
-      <input
-        #bbDown
-        type="text"
-        formControlName="bbDown"
-        matInput
-        placeholder="BB Down"
-      />
-      <mat-error
-        *ngIf="
-          updateCarForm.get('bbDown')?.invalid &&
-          updateCarForm.get('bbDown')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>BB up</mat-label>
-      <input
-        #bbUp
-        type="text"
-        formControlName="bbUp"
-        matInput
-        placeholder="BB Up"
-      />
-      <mat-error
-        *ngIf="
-          updateCarForm.get('bbUp')?.invalid && updateCarForm.get('bbUp')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Location</mat-label>
-      <input
-        #location
-        type="text"
-        formControlName="location"
-        matInput
-        placeholder="Front of hotel"
-      />
-      <mat-error
-        *ngIf="
-          updateCarForm.get('location')?.invalid &&
-          updateCarForm.get('location')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Parking lot</mat-label>
-      <input
-        type="text"
-        formControlName="parkingLot"
-        matInput
-        placeholder="Front of hotel"
-      />
-      <mat-error
-        *ngIf="
-          updateCarForm.get('parkingLot')?.invalid &&
-          updateCarForm.get('parkingLot')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Delivery time</mat-label>
-      <input
-        matInput
-        type="text"
-        [ngxMatDatetimePicker]="deliveryTimePicker"
-        formControlName="deliveryTime"
-        placeholder="dd/MM HH:mm"
-      />
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="$any(deliveryTimePicker)"
-      ></mat-datepicker-toggle>
-      <ngx-mat-datetime-picker
-        #deliveryTimePicker
-        [showSpinners]="true"
-        [showSeconds]="false"
-        [touchUi]="true"
-      >
-      </ngx-mat-datetime-picker>
-      <mat-error
-        *ngIf="
-          updateCarForm.get('deliveryTime')?.invalid &&
-          updateCarForm.get('deliveryTime')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
-    <mat-label>Comments</mat-label>
-    <input
-      #comments
-      type="text"
-      formControlName="comments"
-      matInput
-      placeholder="Comments"
-    />
-    <mat-error
-      *ngIf="
-        updateCarForm.get('comments')?.invalid &&
-        updateCarForm.get('comments')?.dirty
-      "
-    >
-      Required
-    </mat-error>
-  </mat-form-field>
 
   <div class="dialog-row">
     <button
@@ -345,6 +192,6 @@
       Cancel
     </button>
 
-    <button class="action-btn" mat-flat-button type="submit">Update</button>
+    <button class="action-btn" mat-flat-button type="submit">+ Update Bike</button>
   </div>
 </form>
