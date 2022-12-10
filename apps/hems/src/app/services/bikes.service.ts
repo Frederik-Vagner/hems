@@ -17,7 +17,7 @@ import { environment as env } from '../../environments/environment';
 export class BikeService {
   constructor(private http: HttpClient) {}
 
-  public getCar(
+  public getBike(
     createdAt: Date,
     sortBy?: BikeSortOptions,
     sortOrder?: SortOrder,
