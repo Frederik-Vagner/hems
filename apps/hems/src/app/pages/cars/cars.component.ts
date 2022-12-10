@@ -11,7 +11,7 @@ import {
 import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { CarService } from '../../services/car.service';
 import { DisplayDateService } from '../../services/display-date.service';
-import { orderByCompletedStatus } from '../../utils/order.util';
+import { filterByCompletedAtAndOrderResults } from '../../utils/order.util';
 import { CreateCarDialogComponent } from './createCarEntryDialog/create-car-dialog.component';
 import { UpdateCarDialogComponent } from './updateCarEntryDialog/update-car-dialog.component';
 
@@ -110,7 +110,11 @@ export class CarsComponent implements OnInit {
       .subscribe({
         next: (cars) => {
           this.originalCarList = cars;
-          this.filteredCarList = this.filterAndOrderResults(cars);
+          this.filteredCarList = filterByCompletedAtAndOrderResults(
+            this.originalCarList,
+            this.showAll,
+            this.displayDate
+          );
         },
         error: (error) => {
           console.error(error);
@@ -125,31 +129,12 @@ export class CarsComponent implements OnInit {
       });
   }
 
-  filterAndOrderResults(cars: ICar[]): ICar[] {
-    let carList = orderByCompletedStatus(cars);
-    const currentDateStart = new Date();
-    currentDateStart.setHours(0);
-    currentDateStart.setMinutes(0);
-    currentDateStart.setSeconds(0);
-    const currentDateEnd = new Date();
-    currentDateEnd.setHours(23);
-    currentDateEnd.setMinutes(59);
-    currentDateEnd.setSeconds(59);
-
-    if (!this.showAll) {
-      carList = carList.filter((car) => {
-        const carDate = new Date(car.completedAt as unknown as string);
-        return (
-          !car.completedAt ||
-          (carDate > currentDateStart && carDate < currentDateEnd)
-        );
-      });
-    }
-    return carList;
-  }
-
   toggleShowAll(): void {
     this.showAll = !this.showAll;
-    this.filteredCarList = this.filterAndOrderResults(this.originalCarList);
+    this.filteredCarList = filterByCompletedAtAndOrderResults(
+      this.originalCarList,
+      this.showAll,
+      this.displayDate
+    );
   }
 }
