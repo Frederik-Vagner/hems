@@ -2,33 +2,33 @@ export const listNames = ['Morning', 'Evening', 'SomeOther'];
 
 export const morningTasks = [
   {
-    time: 'kl 7:00',
+    time: 'kl 07:00',
     task: 'Sign-in your radio. Take out bench, ashtray, (refresh sand if needed) & bikes.',
   },
   {
-    time: 'kl 7:00',
+    time: 'kl 07:00',
     task: 'Plan car pick-up and check which cars need to have their parking extended. Make sure the plates are correctly introduced into the system.',
   },
   {
-    time: 'kl 7:00',
+    time: 'kl 07:00',
     task: 'Check that you have received the arrival and departure lists, the morning report from the night team, and the Transportation Sheet from the Concierge Organizer. Read it all carefully and prepare yourself for the day. Always share relevant info with others.',
   },
   {
-    time: 'kl 7:00',
+    time: 'kl 07:00',
     task: 'Set up (upper) lobby & Gallery, Light the candles (change batteries), light the fireplace (fall/winter months), change newspapers, stack up on city maps, purple HDA booklets and magazines. Puff the pillows, correct the chairs and wipe down the tables.',
   },
   {
-    time: 'kl 7:15',
+    time: 'kl 07:15',
     task: `Clean in front of the hotel (cigarette butts, bottles, and other trash).
     Check from the corner at Strøget and all the way tot he back entrance in NY Østergade - please check the plants as well. If necessary, take the lead blower or the outdoor vacuum. In case of vomit or animal feces, remove with shovel, big broom (rinse afterwards) and hot water, finally spray any unwanted weeds. Make sure Queen's Gate is clean and tidy (especially the ashtrays). If alone on the AM-shift, wait until the next Bell Man comes in, so that you can do it thoroughly. & empty the ashtrays outside Baltazar, the Queens Gate, on the side of the Main Entrance, by the Staff Entrance.
     `,
   },
   {
-    time: 'kl 7:30',
+    time: 'kl 07:30',
     task: `Pick up 2-4 bikes (depends on how busy we are) from the back yard. Place them nicely in front of the hotel Park the bicycles in order and put the keys in the safe & double check that the e-bikes are fully charged.`,
   },
   {
-    time: 'kl 7:30',
+    time: 'kl 07:30',
     task: `Set up the hospitality Lounge: turn on the TV (always on the news channel) and place todays newspapers (one of each).`,
   },
   {

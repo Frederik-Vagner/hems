@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { GetTasksResponse, IUpdateTask, ITask } from '@hems/interfaces';
+import { GetTasksResponse, ITask, IUpdateTask } from '@hems/interfaces';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
@@ -17,7 +17,9 @@ export class TasksService {
    */
   public get(createdAt: Date): Observable<GetTasksResponse> {
     return this.http.get<GetTasksResponse>(
-      `${env.apiUrl}/tasks?createdAt=${createdAt.toISOString()}`
+      `${
+        env.apiUrl
+      }/tasks?createdAt=${createdAt.toISOString()}&sortBy=time&sortOrder=ASC`
     );
   }
 
