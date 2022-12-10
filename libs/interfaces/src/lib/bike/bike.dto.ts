@@ -29,7 +29,7 @@ export class CreateBikeRequest implements ICreateBikeRequest {
 
   @ApiModelProperty({ example: true })
   @IsNotEmpty()
-  returned!: boolean;
+  returned!: Date;
 
   @ApiModelProperty({ example: 'luxurious car' })
   @IsOptional()
@@ -43,32 +43,32 @@ export class CreateBikeRequest implements ICreateBikeRequest {
 
 export class UpdateBikeRequest implements IUpdateBikeRequest {
     @ApiModelProperty({ example: '1' })
-    @IsNotEmpty()
-    numberOfBikes!: string;
+    @IsOptional()
+    numberOfBikes?: string;
   
     @ApiModelProperty({ example: Date.now() })
-    @IsNotEmpty()
-    pickUpTime!: Date;
+    @IsOptional()
+    pickUpTime?: Date;
   
     @ApiModelProperty({ example: '1' })
-    @IsNotEmpty()
-    name!: string;
+    @IsOptional()
+    name?: string;
   
     @ApiModelProperty({ example: '1' })
-    @IsNotEmpty()
-    room!: string;
+    @IsOptional()
+    room?: string;
   
     @ApiModelProperty({ example: 'Guest' })
-    @IsNotEmpty()
-    reservedBy!: string;
+    @IsOptional()
+    reservedBy?: string;
   
     @ApiModelProperty({ example: true })
-    @IsNotEmpty()
-    bikeForm!: boolean;
+    @IsOptional()
+    bikeForm?: boolean;
   
     @ApiModelProperty({ example: true })
-    @IsNotEmpty()
-    returned!: boolean;
+    @IsOptional()
+    returned?: Date;
 
     @ApiModelProperty({ example: 'luxurious car' })
     @IsOptional()

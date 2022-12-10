@@ -35,7 +35,7 @@ export class Bike extends CompletedAt implements IBike {
 
   @ApiModelProperty({ example: true })
   @Column()
-  returned!: boolean;
+  returned!: Date;
 
   @ApiModelProperty({ example: 'Mate-bike' })
   @Column({ nullable: true })
