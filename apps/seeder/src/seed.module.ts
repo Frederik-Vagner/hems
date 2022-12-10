@@ -1,4 +1,12 @@
-import { Assignment, Car, Document, Luggage, Task, User, Bike } from '@hems/models';
+import {
+  Assignment,
+  Car,
+  Document,
+  Luggage,
+  Task,
+  User,
+  Bike,
+} from '@hems/models';
 import { TaskGenerator } from '@hems/task-generator';
 import { DynamicModule, Logger, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';

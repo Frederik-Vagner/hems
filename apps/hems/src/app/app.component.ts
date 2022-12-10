@@ -49,7 +49,7 @@ export class AppComponent {
           case '/assignments':
             this.title = 'Bell Boy Assignment Sheet';
             break;
-            case '/bikes':
+          case '/bikes':
             this.title = 'Bike Sheet';
             break;
           case '/long-term':

@@ -1,8 +1,8 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {
-  UntypedFormGroup,
   UntypedFormControl,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -52,13 +52,6 @@ export class CreateBikeDialogComponent {
   }
 
   onSubmit() {
-    if (!this.guestHasApproved) {
-      this.snackbar.open('Guest needs to approve storing their data.', 'Okay', {
-        duration: 10000,
-      });
-      return;
-    }
-
     if (!this.createBikeForm.valid) {
       if (this.createBikeForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
@@ -81,19 +74,6 @@ export class CreateBikeDialogComponent {
   }
 
   createBikeListEntry(): void {
-    const skrt = {
-      room: this.createBikeForm.get('room')?.value,
-      numberOfBikes: this.createBikeForm.get('numberOfBikes')?.value,
-      pickUpTime: new Date(this.createBikeForm.get('pickUpTime')?.value),
-      name: this.createBikeForm.get('name')?.value,
-      reservedBy: this.createBikeForm.get('reservedBy')?.value,
-      bikeForm: this.createBikeForm.get('bikeForm')?.value,
-      returned: this.createBikeForm.get('returned')?.value,
-      comments: this.createBikeForm.get('comments')?.value,
-    };
-    console.log(skrt);
-
-  createBikeListEntry(): void {
     this.bikeService
       .createBike({
         room: this.createBikeForm.get('room')?.value,
@@ -104,7 +84,6 @@ export class CreateBikeDialogComponent {
         bikeForm: this.createBikeForm.get('bikeForm')?.value,
         returned: this.createBikeForm.get('returned')?.value,
         comments: this.createBikeForm.get('comments')?.value,
-        
       })
       .subscribe({
         next: () => {

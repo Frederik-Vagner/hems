@@ -14,7 +14,8 @@
       />
       <mat-error
         *ngIf="
-          createBikeForm.get('numberOfBikes')?.invalid && createBikeForm.get('numberOfBikes')?.dirty
+          createBikeForm.get('numberOfBikes')?.invalid &&
+          createBikeForm.get('numberOfBikes')?.dirty
         "
       >
         Must be a number from 100-999
@@ -53,23 +54,22 @@
   </div>
 
   <mat-form-field autocomplete="off" appearance="fill" class="full-width">
-      <mat-label>Name</mat-label>
-      <input
-        #name
-        type="text"
-        formControlName="name"
-        matInput
-        placeholder="Madsen"
-      />
-      <mat-error
-        *ngIf="
-          createBikeForm.get('name')?.invalid &&
-          createBikeForm.get('name')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
+    <mat-label>Name</mat-label>
+    <input
+      #name
+      type="text"
+      formControlName="name"
+      matInput
+      placeholder="Madsen"
+    />
+    <mat-error
+      *ngIf="
+        createBikeForm.get('name')?.invalid && createBikeForm.get('name')?.dirty
+      "
+    >
+      Required
+    </mat-error>
+  </mat-form-field>
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
@@ -83,7 +83,8 @@
       />
       <mat-error
         *ngIf="
-          createBikeForm.get('room')?.invalid && createBikeForm.get('room')?.dirty
+          createBikeForm.get('room')?.invalid &&
+          createBikeForm.get('room')?.dirty
         "
       >
         Must be a number from 100-999
@@ -162,23 +163,23 @@
   </div>
 
   <mat-form-field autocomplete="off" appearance="fill" class="full-width">
-      <mat-label>Comments</mat-label>
-      <input
-        #comments
-        type="text"
-        formControlName="comments"
-        matInput
-        placeholder="Comments"
-      />
-      <mat-error
-        *ngIf="
-          createBikeForm.get('comments')?.invalid &&
-          createBikeForm.get('comments')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
+    <mat-label>Comments</mat-label>
+    <input
+      #comments
+      type="text"
+      formControlName="comments"
+      matInput
+      placeholder="Comments"
+    />
+    <mat-error
+      *ngIf="
+        createBikeForm.get('comments')?.invalid &&
+        createBikeForm.get('comments')?.dirty
+      "
+    >
+      Required
+    </mat-error>
+  </mat-form-field>
 
   <div class="dialog-row">
     <button

@@ -14,7 +14,8 @@
       />
       <mat-error
         *ngIf="
-          updateBikeForm.get('numberOfBikes')?.invalid && updateBikeForm.get('numberOfBikes')?.dirty
+          updateBikeForm.get('numberOfBikes')?.invalid &&
+          updateBikeForm.get('numberOfBikes')?.dirty
         "
       >
         Must be a number from 100-999
@@ -83,7 +84,8 @@
       />
       <mat-error
         *ngIf="
-          updateBikeForm.get('room')?.invalid && updateBikeForm.get('room')?.dirty
+          updateBikeForm.get('room')?.invalid &&
+          updateBikeForm.get('room')?.dirty
         "
       >
         Must be a number from 100-999
@@ -103,7 +105,8 @@
       />
       <mat-error
         *ngIf="
-          updateBikeForm.get('reservedBy')?.invalid && updateBikeForm.get('reservedBy')?.dirty
+          updateBikeForm.get('reservedBy')?.invalid &&
+          updateBikeForm.get('reservedBy')?.dirty
         "
       >
         Required
@@ -192,6 +195,8 @@
       Cancel
     </button>
 
-    <button class="action-btn" mat-flat-button type="submit">+ Update Bike</button>
+    <button class="action-btn" mat-flat-button type="submit">
+      + Update Bike
+    </button>
   </div>
 </form>
