@@ -92,7 +92,6 @@ export class UpdateCarDialogComponent {
   }
 
   updateCarListEntry(): void {
-    // TODO - add completedAt to the update request
     this.carService
       .updateCar(this.data.carId, {
         room: this.updateCarForm.get('room')?.value,
@@ -113,6 +112,7 @@ export class UpdateCarDialogComponent {
         bbOut: this.updateCarForm.get('bbOut')?.value.toUpperCase(),
         comments: this.updateCarForm.get('comments')?.value,
         charged: this.updateCarForm.get('charged')?.value,
+        completedAt: this.updateCarForm.get('deliveryTime')?.value,
       })
       .subscribe({
         next: () => {
