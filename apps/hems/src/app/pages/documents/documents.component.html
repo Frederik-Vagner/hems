@@ -10,9 +10,16 @@
   </div>
   <hr />
 
-  <section class="documents-container">
-    <div *ngFor="let document of documentList">
-      <hems-document-widget [document]="document"> </hems-document-widget>
-    </div>
+  <section class="documents-container" style="padding: 2em 2em 0 2em">
+    <mat-grid-list cols="12" gutterSize="2em">
+      <mat-grid-tile
+        [colspan]="4"
+        [rowspan]="2"
+        style="background-color: aqua"
+        *ngFor="let document of documentList"
+      >
+        <hems-widget-item [title]="document.title"></hems-widget-item>
+      </mat-grid-tile>
+    </mat-grid-list>
   </section>
 </main>

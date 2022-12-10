@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { GetTasksResponse, IDocument, IUpdateDocumentRequest } from '@hems/interfaces';
+import { IDocument, IUpdateDocumentRequest } from '@hems/interfaces';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
@@ -11,9 +11,9 @@ export class DocumentsService {
   constructor(private http: HttpClient) {}
 
   /**
-   * Fetch all tasks
+   * Fetch all Documents
    *
-   * @returns an observable with the tasks for the given day.
+   * @returns an observable with the documents.
    */
   public getDocuments(): Observable<IDocument[]> {
     return this.http.get<IDocument[]>(

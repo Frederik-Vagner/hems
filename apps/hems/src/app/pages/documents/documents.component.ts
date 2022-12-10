@@ -23,9 +23,8 @@ export class DocumentsComponent implements OnInit {
   fetchDocuments(): void {
     this.documentService.getDocuments().subscribe({
       next: (documents) => {
-        this.documentList = documents; 
-        console.log('documents fetched', documents);
-               
+        this.documentList = documents;
+        console.log('Fetched Documents: ', documents);
       },
       error: (error) => {
         console.error(error);
@@ -37,6 +36,6 @@ export class DocumentsComponent implements OnInit {
   }
 
   openCreateDocumentDialog(): void {
-    console.log('skrt');
+    return;
   }
 }

@@ -29,6 +29,7 @@ import { EditTaskDialogComponent } from './pages/tasks/editTaskDialog/editTaskDi
 import { TableInfoDialogComponent } from './components/tableInfoDialog/table-info-dialog.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { DocumentWidgetComponent } from './components/documentWidget/document-widget.component';
+import { WidgetItemComponent } from './components/widgetItem/widget-item.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { DocumentWidgetComponent } from './components/documentWidget/document-wi
     TableInfoDialogComponent,
     DocumentsComponent,
     DocumentWidgetComponent,
+    WidgetItemComponent,
   ],
   imports: [
     BrowserModule,
