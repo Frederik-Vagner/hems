@@ -10,6 +10,7 @@ import {
 import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { DisplayDateService } from '../../services/display-date.service';
 import { LuggageService } from '../../services/luggage.service';
+import { orderByCompletedStatus } from '../../utils/order.util';
 import { CreateCheckinDialogComponent } from './createCheckinDialog/create-checkin-dialog.component';
 import { UpdateCheckinDialogComponent } from './updateCheckinDialog/update-checkin-dialog.component';
 
@@ -63,7 +64,7 @@ export class CheckinComponent implements OnInit {
       .getCheckin(this.displayDate, this.sortBy, this.sortOrder, this.search)
       .subscribe({
         next: (luggage) => {
-          this.checkinLuggage = luggage;
+          this.checkinLuggage = orderByCompletedStatus(luggage);
         },
         error: (error) => {
           this.isLoading = false;

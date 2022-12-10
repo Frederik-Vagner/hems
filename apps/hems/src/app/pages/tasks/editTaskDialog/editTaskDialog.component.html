@@ -22,16 +22,16 @@
       <mat-label>Completed At</mat-label>
       <input
         matInput
-        [ngxMatDatetimePicker]="dateOut"
+        [ngxMatDatetimePicker]="completedAt"
         placeholder="Received at"
         formControlName="completedAt"
       />
       <mat-datepicker-toggle
         matSuffix
-        [for]="$any(dateOut)"
+        [for]="$any(completedAt)"
       ></mat-datepicker-toggle>
       <ngx-mat-datetime-picker
-        #dateOut
+        #completedAt
         [showSpinners]="true"
         [showSeconds]="false"
         [touchUi]="true"
@@ -40,12 +40,23 @@
     </mat-form-field>
   </div>
 
-  <div class="dialog-row">
-    <button mat-raised-button class="basic-btn" type="button" (click)="reset()" *ngIf="this.data.completedAt || this.data.initials">
+  <div class="dialog-row actions-section">
+    <button
+      mat-raised-button
+      class="basic-btn"
+      type="button"
+      (click)="reset()"
+      *ngIf="this.data.completedAt || this.data.initials"
+    >
       reset
     </button>
 
-    <button mat-raised-button class="secondary-btn" type="button" mat-dialog-close style="margin-right: 1em;">
+    <button
+      mat-raised-button
+      class="secondary-btn"
+      type="button"
+      mat-dialog-close
+    >
       Cancel
     </button>
 

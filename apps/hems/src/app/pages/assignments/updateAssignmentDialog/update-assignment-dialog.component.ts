@@ -95,27 +95,31 @@ export class UpdateAssignmentDialogComponent implements OnInit {
         room: this.updateAssignmentForm.get('room')?.value,
         task: this.updateAssignmentForm.get('task')?.value,
         comments: this.updateAssignmentForm.get('comments')?.value,
-        receivedBy: this.updateAssignmentForm.get('receivedBy')?.value,
-        performedBy: this.updateAssignmentForm.get('performedBy')?.value,
+        receivedBy: this.updateAssignmentForm
+          .get('receivedBy')
+          ?.value.toUpperCase(),
+        performedBy: this.updateAssignmentForm
+          .get('performedBy')
+          ?.value.toUpperCase(),
         receivedAt: this.updateAssignmentForm.get('receivedAt')?.value,
         completedAt: this.updateAssignmentForm.get('completedAt')?.value,
       })
-      .subscribe(
-        () => {
+      .subscribe({
+        next: () => {
           this.snackBar.open('Assignment updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
           this.dialog.closeAll();
         },
-        (err: HttpErrorResponse) => {
+        error: (err: HttpErrorResponse) => {
           console.error(err);
           this.snackBar.open(
             'Failed to update assignment, please try again.',
             'Okay',
             { duration: 10000 }
           );
-        }
-      );
+        },
+      });
   }
 }

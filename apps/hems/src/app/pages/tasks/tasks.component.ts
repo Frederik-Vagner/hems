@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ITask } from '@hems/interfaces';
+import { ITask, TableInfoOptions } from '@hems/interfaces';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { DisplayDateService } from '../../services/display-date.service';
 import { TasksService } from '../../services/tasks.service';
+import { orderByCompletedStatus } from '../../utils/order.util';
 import { EditTaskDialogComponent } from './editTaskDialog/editTaskDialog.component';
 
 @Component({
@@ -40,11 +42,11 @@ export class TasksComponent implements OnInit {
     this.isLoading = true;
     this.tasksService.get(this.displayDate).subscribe({
       next: (tasks) => {
-        this.morningTasks = tasks.tasks.filter(
-          (task) => task.listName === 'Morning'
+        this.morningTasks = orderByCompletedStatus(
+          tasks.tasks.filter((task) => task.listName === 'Morning')
         );
-        this.eveningTasks = tasks.tasks.filter(
-          (task) => task.listName === 'Evening'
+        this.eveningTasks = orderByCompletedStatus(
+          tasks.tasks.filter((task) => task.listName === 'Evening')
         );
       },
       error: (error) => {
@@ -54,6 +56,13 @@ export class TasksComponent implements OnInit {
           duration: 10000,
         });
       },
+    });
+  }
+
+  openTableInfo(): void {
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.TASKS,
+      width: '500px',
     });
   }
 

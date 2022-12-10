@@ -45,11 +45,11 @@ export class Car extends CompletedAt implements ICar {
   @Column({ nullable: true })
   deliveryTime?: Date;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @Column({ nullable: true })
   bbDown?: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @Column({ nullable: true })
   bbUp?: string;
 
@@ -61,7 +61,7 @@ export class Car extends CompletedAt implements ICar {
   @Column({ nullable: true })
   parkingLot?: string;
 
-  @ApiModelProperty({ example: 'fv' })
+  @ApiModelProperty({ example: 'FV' })
   @Column({ nullable: true })
   bbOut?: string;
 

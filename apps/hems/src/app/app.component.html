@@ -1,5 +1,5 @@
 <!-- Only content unaffected by the sidenav should be placed outside of mat-sidenav-container -->
-<mat-sidenav-container autosize class="body-container" data-cy="body-container">
+<mat-sidenav-container autosize class="body-container">
   <!-- Sidebar -->
   <mat-sidenav
     *ngIf="router.url !== '/login'"
@@ -8,129 +8,110 @@
     opened
     class="sidebar"
     [ngClass]="{ collapsed: sidebarCollapsed }"
-    data-cy="sidebar"
   >
     <div
       class="sidebar-header"
-      data-cy="sidebar-header"
       *ngIf="!sidebarCollapsed"
     >
       <h3
         class="username"
         [ngClass]="{ collapsible: sidebarCollapsed }"
-        data-cy="sidebar-username"
       >
         Frederik Vagner
       </h3>
       <h5
         class="username"
         [ngClass]="{ collapsible: sidebarCollapsed }"
-        data-cy="sidebar-username"
       >
         frederik.vagner@hems.com
       </h5>
     </div>
     <mat-divider
       [ngClass]="{ collapsible: sidebarCollapsed }"
-      data-cy="sidebar-divider"
     ></mat-divider>
-    <div class="sidebar-items" data-cy="sidebar-items">
+    <div class="sidebar-items">
       <mat-action-list>
         <button
           mat-list-item
-          data-cy="sidebar-dashboard-btn"
           routerLink="dashboard"
           [ngClass]="title === 'Dashboard' ? 'active-nav' : ''"
         >
-          <mat-icon aria-hidden="false" data-cy="icon">dashboard</mat-icon>
+          <mat-icon aria-hidden="false">dashboard</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="side-nav-item"
             >Dashboard</span
           >
         </button>
         <button
           mat-list-item
-          data-cy="sidebar-checkin-btn"
           routerLink="/checkin"
           [ngClass]="title === 'Check In' ? 'active-nav' : ''"
         >
-          <mat-icon aria-hidden="false" data-cy="icon">book</mat-icon>
+          <mat-icon aria-hidden="false">book</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="side-nav-item"
             >Check in</span
           >
         </button>
         <button
           mat-list-item
-          data-cy="sidebar-checkin-btn"
           routerLink="/checkout"
           [ngClass]="title === 'Check Out' ? 'active-nav' : ''"
         >
-          <mat-icon aria-hidden="false" data-cy="icon">bookmark</mat-icon>
+          <mat-icon aria-hidden="false">bookmark</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="side-nav-item"
             >Check out</span
           >
         </button>
         <button
           mat-list-item
-          data-cy="sidebar-car-list-btn"
           [ngClass]="title === 'Car List' ? 'active-nav' : ''"
           routerLink="/car-list"
         >
-          <mat-icon aria-hidden="false" data-cy="icon">directions_car</mat-icon>
+          <mat-icon aria-hidden="false">directions_car</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="side-nav-item"
             >Car List</span
           >
         </button>
         <button
           mat-list-item
-          data-cy="sidebar-long-term-btn"
           routerLink="long-term"
           [ngClass]="title === 'Long Term' ? 'active-nav' : ''"
         >
-          <mat-icon aria-hidden="false" data-cy="icon">receipt_long</mat-icon>
+          <mat-icon aria-hidden="false">receipt_long</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="side-nav-item"
             >Long Term</span
           >
         </button>
         <button
           mat-list-item
-          data-cy="sidebar-daily-tasks-btn"
           [ngClass]="title === 'Daily Tasks' ? 'active-nav' : ''"
           routerLink="/daily-tasks"
         >
-          <mat-icon aria-hidden="false" data-cy="icon">task</mat-icon>
+          <mat-icon aria-hidden="false">task</mat-icon>
           <span
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="side-nav-item"
             class="side-nav-item"
             >Daily Tasks</span
           >
         </button>
         <button
           mat-list-item
-          data-cy="sidebar-assignments-btn"
           [ngClass]="title === 'Bell Boy Assignment Sheet' ? 'active-nav' : ''"
           routerLink="/assignments"
         >
-          <mat-icon aria-hidden="false" data-cy="icon">fact_check</mat-icon>
+          <mat-icon aria-hidden="false">fact_check</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
-            data-cy="side-nav-item"
             >BB Assignments</span
           >
         </button>
@@ -154,7 +135,6 @@
       mat-flat-button
       (click)="toggleCollapsed()"
       class="toggle-btn"
-      data-cy="sidebar-collapse-btn"
     >
       {{ sidebarCollapsed ? '>' : '<' }}
     </button>
@@ -162,7 +142,7 @@
   <!-- Navbar -->
 
   <!-- Content -->
-  <mat-sidenav-content class="content" data-cy="content">
+  <mat-sidenav-content class="content">
     <!-- Navbar -->
     <div id="navbar">
       <div class="page-title">
@@ -236,7 +216,6 @@
           mat-flat-button
           class="navbar-item"
           routerLink="/logout"
-          data-cy="navbar-account-btn"
           *ngIf="router.url !== '/login'"
         >
           Account
@@ -246,7 +225,6 @@
           class="navbar-item"
           *ngIf="router.url !== '/login'"
           (click)="logout()"
-          data-cy="navbar-logout-btn"
         >
           Log Out
         </button>

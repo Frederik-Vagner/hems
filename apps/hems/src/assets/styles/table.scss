@@ -30,8 +30,10 @@ table {
 
   .table-buttons {
     button {
-      &:first-of-type {
-        margin-right: 1em;
+      margin-right: 1em;
+      
+      &:last-of-type {
+        margin-right: 0;
       }
     }
   }

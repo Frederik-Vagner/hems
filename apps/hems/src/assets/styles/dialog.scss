@@ -3,12 +3,27 @@ h1 {
   margin-bottom: 0.25em;
 }
 
+.dialog-container {
+  max-height: 80vh;
+  overflow: auto;
+}
+
 .full-width {
   width: 100%;
   margin-bottom: 0.5em;
 }
 
 .dialog-row {
+  &.actions-section {
+    button {
+      margin-right: 1em;
+      
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5em;

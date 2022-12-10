@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IAssignment } from '@hems/interfaces';
+import { IAssignment, TableInfoOptions } from '@hems/interfaces';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { AssignmentsService } from '../../services/assignments.service';
 import { DisplayDateService } from '../../services/display-date.service';
+import { orderByCompletedStatus } from '../../utils/order.util';
 import { CreateAssignmentDialogComponent } from './createAssignmentDialog/create-assignment-dialog.component';
 import { UpdateAssignmentDialogComponent } from './updateAssignmentDialog/update-assignment-dialog.component';
 
@@ -45,7 +47,7 @@ export class AssignmentsComponent implements OnInit {
   fetchAssignments(): void {
     this.assignmentsService.getAssignments(this.displayDate).subscribe({
       next: (assignments) => {
-        this.assignmentList = assignments;
+        this.assignmentList = orderByCompletedStatus(assignments);
       },
       error: (error) => {
         console.error(error);
@@ -57,6 +59,13 @@ export class AssignmentsComponent implements OnInit {
           }
         );
       },
+    });
+  }
+
+  openTableInfo(): void {
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.ASSIGNMENTS,
+      width: '500px',
     });
   }
 

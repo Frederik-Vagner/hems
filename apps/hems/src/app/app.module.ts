@@ -28,6 +28,7 @@ import { CreateCheckoutDialogComponent } from './pages/checkout/createCheckoutDi
 import { UpdateCheckoutDialogComponent } from './pages/checkout/updateCheckoutDialog/update-checkout-dialog.component';
 import { EditTaskDialogComponent } from './pages/tasks/editTaskDialog/editTaskDialog.component';
 import { TableInfoDialogComponent } from './components/tableInfoDialog/table-info-dialog.component';
+import { WeatherWidgetComponent } from './components/dashboardWidgets/weatherWidget/weather-widget.component';
 import { CreateBikeDialogComponent } from './pages/bikes/createBikeEntryDialog/create-bike-dialog.component';
 import { UpdateBikeDialogComponent } from './pages/bikes/updateBikeEntryDialog/update-bike-dialog.component';
 
@@ -56,6 +57,7 @@ import { UpdateBikeDialogComponent } from './pages/bikes/updateBikeEntryDialog/u
     CarsComponent,
     EditTaskDialogComponent,
     TableInfoDialogComponent,
+    WeatherWidgetComponent,
     CreateBikeDialogComponent,
     UpdateBikeDialogComponent,
   ],

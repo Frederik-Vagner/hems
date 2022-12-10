@@ -1,4 +1,8 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="createCarForm">
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="createCarForm"
+  class="dialog-container"
+>
   <h1>Add Car</h1>
   <hr />
 
@@ -264,16 +268,6 @@
       Required
     </mat-error>
   </mat-form-field>
-
-  <label class="checkbox-container">
-    The guest has given consent to the processing of personal data
-    <input
-      type="checkbox"
-      [checked]="guestHasApproved"
-      (change)="guestHasApproved = !guestHasApproved"
-    />
-    <span class="checkmark"></span>
-  </label>
 
   <div class="dialog-row">
     <button

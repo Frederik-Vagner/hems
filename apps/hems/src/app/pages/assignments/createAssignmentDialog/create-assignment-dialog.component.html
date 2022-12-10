@@ -1,6 +1,11 @@
-<form [formGroup]="createAssignmentForm" (ngSubmit)="onSubmit()">
+<form
+  [formGroup]="createAssignmentForm"
+  (ngSubmit)="onSubmit()"
+  class="dialog-container"
+>
   <h1>Add assignment</h1>
   <hr />
+
   <div class="dialog-row">
     <mat-form-field appearance="fill" autocomplete="off">
       <mat-label>Room</mat-label>
@@ -10,7 +15,6 @@
         formControlName="room"
         matInput
         placeholder="123"
-        maxlength="10"
       />
       <mat-error
         *ngIf="
@@ -41,25 +45,6 @@
       </mat-error>
     </mat-form-field>
   </div>
-
-  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
-    <mat-label>Comments</mat-label>
-    <textarea
-      #comments
-      matInput
-      type="text"
-      formControlName="comments"
-      placeholder="Describe the task"
-    ></textarea>
-    <mat-error
-      *ngIf="
-        createAssignmentForm.get('comments')?.invalid &&
-        createAssignmentForm.get('comments')?.dirty
-      "
-    >
-      Can't be more than 1000 characters
-    </mat-error>
-  </mat-form-field>
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
@@ -154,6 +139,25 @@
       </mat-error>
     </mat-form-field>
   </div>
+
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
+    <textarea
+      #comments
+      matInput
+      type="text"
+      formControlName="comments"
+      placeholder="Describe the task"
+    ></textarea>
+    <mat-error
+      *ngIf="
+        createAssignmentForm.get('comments')?.invalid &&
+        createAssignmentForm.get('comments')?.dirty
+      "
+    >
+      Can't be more than 1000 characters
+    </mat-error>
+  </mat-form-field>
 
   <div class="dialog-row">
     <button

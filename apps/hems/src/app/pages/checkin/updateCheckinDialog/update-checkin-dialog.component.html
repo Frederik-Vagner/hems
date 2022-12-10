@@ -1,8 +1,4 @@
-<form
-  (ngSubmit)="onSubmit()"
-  [formGroup]="form"
-  data-cy="update-checkin-dialog"
->
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="dialog-container">
   <h1>Update Check In</h1>
   <hr />
 
@@ -12,7 +8,6 @@
       <input
         #room
         type="text"
-        data-cy="update-checkin-room-input"
         formControlName="room"
         matInput
         placeholder="123"
@@ -22,16 +17,15 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field autocomplete="off" appearance="fill">
+    <!-- <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Room status</mat-label>
       <mat-select
         formControlName="roomReady"
-        data-cy="update-checkin-room-status"
       >
         <mat-option value="false">Not ready</mat-option>
         <mat-option value="true">Ready</mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
   </div>
 
   <div class="dialog-row">
@@ -40,7 +34,6 @@
       <input
         #name
         type="text"
-        data-cy="update-checkin-name"
         formControlName="name"
         matInput
         placeholder="John Doe"
@@ -79,7 +72,6 @@
       <input
         #bags
         type="text"
-        data-cy="update-checkin-room-input"
         formControlName="bags"
         matInput
         placeholder="1+3"
@@ -94,7 +86,6 @@
       <input
         #tagNr
         type="text"
-        data-cy="update-checkin-tag-nr"
         formControlName="tagNr"
         matInput
         placeholder="123"
@@ -111,7 +102,6 @@
       <input
         #bbLr
         type="text"
-        data-cy="update-checkin-name"
         formControlName="bbLr"
         matInput
         placeholder="JD"
@@ -126,7 +116,6 @@
       <input
         #location
         type="text"
-        data-cy="update-checkin-location"
         formControlName="location"
         matInput
         placeholder="LR1"
@@ -162,15 +151,9 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" class="input" appearance="fill">
-      <mat-label>BB up</mat-label>
-      <input
-        type="text"
-        data-cy="update-checkin-name"
-        formControlName="bbUp"
-        matInput
-        placeholder="JD"
-      />
-      <mat-error *ngIf="form.get('bbUp')?.invalid && form.get('bbUp')?.dirty">
+      <mat-label>BB Out</mat-label>
+      <input type="text" formControlName="bbOut" matInput placeholder="JD" />
+      <mat-error *ngIf="form.get('bbOut')?.invalid && form.get('bbOut')?.dirty">
         Required
       </mat-error>
     </mat-form-field>
@@ -180,7 +163,6 @@
     <mat-label>Comments</mat-label>
     <input
       type="text"
-      data-cy="update-checkin-comments"
       formControlName="comments"
       matInput
       placeholder="Comments on the check-in"
@@ -188,21 +170,9 @@
   </mat-form-field>
 
   <div class="dialog-row">
-    <button
-      data-cy="update-checkin-cancel-btn"
-      class="secondary-btn"
-      mat-raised-button
-      mat-dialog-close
-    >
+    <button class="secondary-btn" mat-raised-button mat-dialog-close>
       Cancel
     </button>
-    <button
-      mat-raised-button
-      data-cy="update-checkin-create-btn"
-      type="submit"
-      class="action-btn"
-    >
-      Update
-    </button>
+    <button mat-raised-button type="submit" class="action-btn">Update</button>
   </div>
 </form>

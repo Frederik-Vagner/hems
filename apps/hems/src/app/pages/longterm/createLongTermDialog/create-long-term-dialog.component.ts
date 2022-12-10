@@ -20,7 +20,6 @@ import { LuggageService } from '../../../services/luggage.service';
 })
 export class CreateLongTermDialogComponent implements OnInit {
   createLongTermForm = new UntypedFormGroup({});
-  guestHasApproved = false;
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
@@ -43,26 +42,18 @@ export class CreateLongTermDialogComponent implements OnInit {
         Validators.maxLength(10),
         Validators.pattern('^[0-9]*$'),
       ]),
+      dateIn: new UntypedFormControl(new Date(), [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
       bags: new UntypedFormControl('', [Validators.required]),
       comments: new UntypedFormControl('', []),
       tagNr: new UntypedFormControl('', [Validators.required]),
-      dateNeeded: new UntypedFormControl('', [Validators.required]),
       bbLr: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
-      // bbOut: new UntypedFormControl('', [Validators.required]),
-      // dateOut: new UntypedFormControl('', []),
+      dateNeeded: new UntypedFormControl('', []),
     });
   }
 
   onSubmit(): void {
-    if (!this.guestHasApproved) {
-      this.snackbar.open('Guest needs to approve storing their data.', 'Okay', {
-        duration: 10000,
-      });
-      return;
-    }
-
     if (!this.createLongTermForm.valid) {
       if (this.createLongTermForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
@@ -90,11 +81,12 @@ export class CreateLongTermDialogComponent implements OnInit {
         room: this.createLongTermForm.get('room')?.value,
         // roomReady: false,
         name: this.createLongTermForm.get('name')?.value,
+        arrivalTime: this.createLongTermForm.get('dateIn')?.value,
         bags: this.createLongTermForm.get('bags')?.value,
         comments: this.createLongTermForm.get('comments')?.value,
         tagNr: this.createLongTermForm.get('tagNr')?.value,
-        arrivalTime: this.createLongTermForm.get('dateNeeded')?.value,
-        bbLr: this.createLongTermForm.get('bbLr')?.value,
+        dateNeeded: this.createLongTermForm.get('dateNeeded')?.value,
+        bbLr: this.createLongTermForm.get('bbLr')?.value.toUpperCase(),
         location: this.createLongTermForm.get('location')?.value,
         luggageType: LuggageType.LONG_TERM,
       })
