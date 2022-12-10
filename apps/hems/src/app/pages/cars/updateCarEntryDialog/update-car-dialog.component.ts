@@ -112,6 +112,7 @@ export class UpdateCarDialogComponent {
         bbOut: this.updateCarForm.get('bbOut')?.value.toUpperCase(),
         comments: this.updateCarForm.get('comments')?.value,
         charged: this.updateCarForm.get('charged')?.value,
+        completedAt: this.updateCarForm.get('deliveryTime')?.value,
       })
       .subscribe({
         next: () => {
