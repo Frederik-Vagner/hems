@@ -41,7 +41,7 @@ class ConfigService {
       password: this.getValue('POSTGRES_PASSWORD', false) || 'root',
       database: this.getValue('POSTGRES_DATABASE', false) || 'hems',
 
-      entities: [User, Luggage, Car, Task, Assignment, Document],
+      entities: [User, Luggage, Car, Task, Assignment, Document, Bike],
     };
   }
 }

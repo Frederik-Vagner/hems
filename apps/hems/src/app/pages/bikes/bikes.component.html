@@ -24,9 +24,6 @@
         >
           <mat-label>Sort By</mat-label>
           <mat-select
-            
-            
-            data-cy="update-checkin-room-status"
           >
             <mat-option value="createdAt">Created at</mat-option>
             <mat-option value="expirationDate">Expiration date</mat-option>
@@ -45,7 +42,7 @@
         </button>
         <button
           class="action-btn"
-          
+          (click)="openCreateBikeDialog()"
           mat-raised-button
         >
           Add Bike
@@ -55,7 +52,7 @@
     <hr />
   
     <div class="table-height">
-      <table mat-table>
+      <table mat-table [dataSource]="bikeList">
         <ng-container matColumnDef="numberOfBikes">
           <th mat-header-cell *matHeaderCellDef>Nr. of
             bikes</th>
@@ -63,7 +60,7 @@
             mat-cell
             *matCellDef="let element"
           >
-            {{ element.room }}
+            {{ element.numberOfBikes }}
           </td>
         </ng-container>
   
@@ -73,7 +70,7 @@
             mat-cell
             *matCellDef="let element"
           >
-            {{ element.tagNr }}
+            {{ element.pickUpTime ? element.pickUpTime : '' }}
           </td>
         </ng-container>
   
@@ -84,7 +81,7 @@
             *matCellDef="let element"
           >
             {{
-              element.arrivalDate ? (element.arrivalDate | date: 'dd/MM') : '-'
+              element.name
             }}
           </td>
         </ng-container>
@@ -96,9 +93,7 @@
             *matCellDef="let element"
           >
             {{
-              element.departureDate
-                ? (element.departureDate | date: 'dd/MM')
-                : '-'
+              element.room
             }}
           </td>
         </ng-container>
@@ -109,17 +104,17 @@
             mat-cell
             *matCellDef="let element"
           >
-            {{ element.name }}
+            {{ element.reservedBy }}
           </td>
         </ng-container>
   
         <ng-container matColumnDef="bikeForm">
-          <th mat-header-cell *matHeaderCellDef>Bike form ?</th>
+          <th mat-header-cell *matHeaderCellDef>Bike form</th>
           <td
             mat-cell
             *matCellDef="let element"
           >
-            {{ element.licensePlate }}
+            {{ element.bikeForm }}
           </td>
         </ng-container>
   
@@ -130,9 +125,8 @@
             *matCellDef="let element"
           >
             {{
-              element.expirationDate
-                ? (element.expirationDate | date: 'dd/MM HH:mm')
-                : '-'
+              element.returned
+                ? element.returned : ''
             }}
           </td>
         </ng-container>

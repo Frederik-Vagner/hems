@@ -3,14 +3,12 @@ import {
     BikeSortOptions,
     IBike,
     SortOrder,
-    TableInfoOptions,
   } from '@hems/interfaces';
   import { BikeService } from '../../services/bikes.service';
   import { MatSnackBar } from '@angular/material/snack-bar';
   import { MatDialog } from '@angular/material/dialog';
   import { DisplayDateService } from '../../services/display-date.service';
   import { HttpErrorResponse } from '@angular/common/http';
-  import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { CreateBikeDialogComponent } from './createBikeEntryDialog/create-bike-dialog.component';
 import { UpdateBikeDialogComponent } from './updateBikeEntryDialog/update-bike-dialog.component';
 
@@ -92,14 +90,14 @@ import { UpdateBikeDialogComponent } from './updateBikeEntryDialog/update-bike-d
       this.bikeService
         .getBike(this.displayDate, this.sortBy, this.sortOrder, this.search)
         .subscribe({
-          next: (bike) => {
-            this.bikeList = bike;
-            console.log('checkout', bike);
+          next: (bikes) => {
+            this.bikeList = bikes;
+            console.log('checkout', bikes);
           },
           error: (error) => {
             console.error(error);
             this.snackBar.open(
-              'Check Out data have failed to load, please try checking your connection.',
+              'Bike data has failed to load, please try checking your connection.',
               'Okay',
               {
                 duration: 10000,

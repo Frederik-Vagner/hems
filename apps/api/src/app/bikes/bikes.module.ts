@@ -10,4 +10,4 @@ import { BikesController} from './bikes.controller';
     controllers: [BikesController],
     exports: [BikesService],
 })
-export class CarsModule{}
+export class BikeModule{}
