@@ -29,7 +29,7 @@ export class BikesComponent implements OnInit {
     'name',
     'room',
     'reservedBy',
-    'bikeForm',
+    'bikeFormCompleted',
     'returned',
     'comments',
   ];

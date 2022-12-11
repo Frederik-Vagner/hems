@@ -26,7 +26,7 @@ export class CreateBikeRequest implements ICreateBikeRequest {
 
   @ApiModelProperty({ example: true })
   @IsNotEmpty()
-  bikeForm!: boolean;
+  bikeFormCompleted!: boolean;
 
   @ApiModelProperty({ example: true })
   @IsOptional()

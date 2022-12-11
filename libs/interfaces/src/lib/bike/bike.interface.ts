@@ -7,7 +7,7 @@ export interface IBike extends ICompletedAt {
   name: string;
   room: string;
   reservedBy: string;
-  bikeForm: boolean;
+  bikeFormCompleted: boolean;
   returned?: Date | null;
   comments?: string;
 }
@@ -18,7 +18,7 @@ export interface ICreateBikeRequest {
   name: string;
   room: string;
   reservedBy: string;
-  bikeForm: boolean;
+  bikeFormCompleted: boolean;
   returned?: Date | null;
   comments?: string;
   completedAt?: Date | null;
@@ -30,7 +30,7 @@ export interface IUpdateBikeRequest {
   name?: string;
   room?: string;
   reservedBy?: string;
-  bikeForm?: boolean;
+  bikeFormCompleted?: boolean;
   returned?: Date | null;
   comments?: string;
   completedAt?: Date | null;

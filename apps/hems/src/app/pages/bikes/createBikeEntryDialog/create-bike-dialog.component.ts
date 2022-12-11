@@ -19,7 +19,6 @@ import { BikeService } from '../../../services/bikes.service';
 })
 export class CreateBikeDialogComponent {
   createBikeForm: UntypedFormGroup;
-  checked = true;
   isLoading = false;
   bikeFormCompleted = false;
 
@@ -28,8 +27,6 @@ export class CreateBikeDialogComponent {
   @ViewChild('name') nameInput!: ElementRef;
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('reservedBy') reservedByInput!: ElementRef;
-  @ViewChild('bikeform') bikeformInput!: ElementRef;
-  @ViewChild('returned') returnedInput!: ElementRef;
 
   constructor(
     private bikeService: BikeService,
@@ -63,8 +60,6 @@ export class CreateBikeDialogComponent {
         this.nameInput.nativeElement.focus();
       } else if (this.createBikeForm.get('reservedBy')?.invalid) {
         this.reservedByInput.nativeElement.focus();
-      } else if (this.createBikeForm.get('returned')?.invalid) {
-        this.returnedInput.nativeElement.focus();
       }
     } else {
       this.createBikeListEntry();
@@ -79,7 +74,7 @@ export class CreateBikeDialogComponent {
         pickUpTime: this.createBikeForm.get('pickUpTime')?.value,
         name: this.createBikeForm.get('name')?.value,
         reservedBy: this.createBikeForm.get('reservedBy')?.value,
-        bikeForm: this.bikeFormCompleted,
+        bikeFormCompleted: this.bikeFormCompleted,
         returned: this.createBikeForm.get('returned')?.value,
         comments: this.createBikeForm.get('comments')?.value,
       })
@@ -92,7 +87,7 @@ export class CreateBikeDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create, please try again.', 'Okay', {
+          this.snackbar.open('Failed to create bike, please try again.', 'Okay', {
             duration: 15000,
           });
           this.isLoading = false;
