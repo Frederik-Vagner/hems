@@ -1,51 +1,37 @@
-<section class="weather-widget">
-  <div *ngIf="!isLoading">
-    <div class="daily-display-container">
-      <div class="city">{{ city }}</div>
-      <div class="daily-weather-content">
-        <div class="current-temp">{{ getNumber(weatherData.main.temp) }}°</div>
-        <div class="current-info">
-          <div class="info">
-            <img
-              [src]="getImgUrl(weatherData.weather[0].icon)"
-              class="extra-small"
-            />
-            {{ weatherData.weather[0].description }}
-          </div>
-          <div class="info">
-            <img
-              src="/assets/icons/wind-white-icon.svg"
-              style="padding-left: 3px"
-            />
-            {{ getNumber(weatherData.wind.speed) }} m/s
-          </div>
-          <div class="info">
-            <img
-              src="/assets/icons/thermostat-white-icon.svg"
-              style="padding-left: 3px"
-            />
-            {{ getNumber(weatherData.main.temp_max) }}° /
-            {{ getNumber(weatherData.main.temp_min) }}°
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="weekly-display-container">
-      <div *ngFor="let dateWeather of weatherForecast" class="week-day-display">
-        <div class="week-day-container">
-          <div class="date">{{ getDate(dateWeather.dt_txt) }}</div>
-          <img
-            [src]="getImgUrl(dateWeather.weather[0].icon)"
-            class="extra-small"
-          />
-          <div class="date-temp">
-            {{ getNumber(dateWeather.main.temp_max) }}°
-          </div>
-        </div>
-      </div>
+<div
+  id="clickBlock"
+  class="stuff"
+  [ngStyle]="{ height: componentHeight + 'px' }"
+>
+  <br />
+</div>
+<div id="weatherContainer">
+  <div class="remove"><br /></div>
+  <div class="weather-container">
+    <div
+      class="tomorrow"
+      data-location-id="030618"
+      data-language="EN"
+      data-unit-system="METRIC"
+      data-skin="light"
+      data-widget-type="upcoming"
+      style="padding-bottom: 22px; position: relative"
+    >
+      <a
+        href="https://www.tomorrow.io/weather-api/"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+        #hrefLink
+        id="hrefLink"
+      >
+        <img
+          alt="Powered by the Tomorrow.io Weather API"
+          src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+          width="250"
+          height="18"
+        />
+      </a>
     </div>
   </div>
-  <div class="spinner-full-size" *ngIf="isLoading">
-    <mat-icon><mat-spinner diameter="21" color="white"></mat-spinner></mat-icon>
-  </div>
-</section>
+  <div class="remove bottom"><br /></div>
+</div>
