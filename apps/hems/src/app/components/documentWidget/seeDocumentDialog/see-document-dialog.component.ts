@@ -37,7 +37,6 @@ export class SeeDocumentDialogComponent implements OnInit {
         this.document = document;
         console.log('Fetched Document: ', document);
         this.fetchDocumentFile(this.document.downloadUrl);
-        this.isLoading = false;
       },
       error: (error) => {
         console.error(error);
@@ -46,11 +45,6 @@ export class SeeDocumentDialogComponent implements OnInit {
         });
       },
     });
-  }
-
-  onClose() {
-    document.location.reload();
-    this.dialog.closeAll();
   }
 
   fetchDocumentFile(url: string): void {
@@ -62,6 +56,7 @@ export class SeeDocumentDialogComponent implements OnInit {
         this.documentFileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
           URL.createObjectURL(documentBlob)
         );
+        this.isLoading = false;
       },
       error: (error) => {
         console.error(error);
