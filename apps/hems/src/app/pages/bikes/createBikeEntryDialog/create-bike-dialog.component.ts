@@ -21,6 +21,7 @@ export class CreateBikeDialogComponent {
   createBikeForm: UntypedFormGroup;
   checked = true;
   isLoading = false;
+  bikeFormCompleted = false;
 
   @ViewChild('numberOfBikes') numberOfBikesInput!: ElementRef;
   @ViewChild('pickUpTime') pickUpTimeInput!: ElementRef;
@@ -45,8 +46,7 @@ export class CreateBikeDialogComponent {
       pickUpTime: new UntypedFormControl(new Date(), [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
       reservedBy: new UntypedFormControl('', [Validators.required]),
-      bikeForm: new UntypedFormControl('', []),
-      returned: new UntypedFormControl('', []),
+      returned: new UntypedFormControl(null, []),
       comments: new UntypedFormControl('', []),
     });
   }
@@ -63,8 +63,6 @@ export class CreateBikeDialogComponent {
         this.nameInput.nativeElement.focus();
       } else if (this.createBikeForm.get('reservedBy')?.invalid) {
         this.reservedByInput.nativeElement.focus();
-      } else if (this.createBikeForm.get('bikeForm')?.invalid) {
-        this.bikeformInput.nativeElement.focus();
       } else if (this.createBikeForm.get('returned')?.invalid) {
         this.returnedInput.nativeElement.focus();
       }
@@ -81,7 +79,7 @@ export class CreateBikeDialogComponent {
         pickUpTime: this.createBikeForm.get('pickUpTime')?.value,
         name: this.createBikeForm.get('name')?.value,
         reservedBy: this.createBikeForm.get('reservedBy')?.value,
-        bikeForm: this.createBikeForm.get('bikeForm')?.value,
+        bikeForm: this.bikeFormCompleted,
         returned: this.createBikeForm.get('returned')?.value,
         comments: this.createBikeForm.get('comments')?.value,
       })

@@ -7,10 +7,10 @@
       <mat-label>Number of bikes</mat-label>
       <input
         #numberOfBikes
-        type="text"
+        type="number"
         formControlName="numberOfBikes"
         matInput
-        placeholder="123"
+        placeholder="1"
       />
       <mat-error
         *ngIf="
@@ -18,7 +18,7 @@
           createBikeForm.get('numberOfBikes')?.dirty
         "
       >
-        Must be a number from 100-999
+        Must be a number from 1-99
       </mat-error>
     </mat-form-field>
 
@@ -53,25 +53,26 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
-    <mat-label>Name</mat-label>
-    <input
-      #name
-      type="text"
-      formControlName="name"
-      matInput
-      placeholder="Madsen"
-    />
-    <mat-error
-      *ngIf="
-        createBikeForm.get('name')?.invalid && createBikeForm.get('name')?.dirty
-      "
-    >
-      Required
-    </mat-error>
-  </mat-form-field>
-
   <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+      <mat-label>Name</mat-label>
+      <input
+        #name
+        type="text"
+        formControlName="name"
+        matInput
+        placeholder="Madsen"
+      />
+      <mat-error
+        *ngIf="
+          createBikeForm.get('name')?.invalid &&
+          createBikeForm.get('name')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Room</mat-label>
       <input
@@ -90,8 +91,10 @@
         Must be a number from 100-999
       </mat-error>
     </mat-form-field>
+  </div>
 
-    <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Reserved by</mat-label>
       <input
         type="text"
@@ -108,30 +111,9 @@
         Required
       </mat-error>
     </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Bike form</mat-label>
-      <input
-        #bikeForm
-        type="text"
-        formControlName="bikeForm"
-        matInput
-        placeholder="bikeForm"
-      />
-      <mat-error
-        *ngIf="
-          createBikeForm.get('bikeForm')?.invalid &&
-          createBikeForm.get('bikeForm')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>returned</mat-label>
+      <mat-label>Returned</mat-label>
       <input
         #returned
         matInput
@@ -181,6 +163,16 @@
     </mat-error>
   </mat-form-field>
 
+  <label class="checkbox-container">
+    The guest has filled out the bike form
+    <input
+      type="checkbox"
+      [checked]="bikeFormCompleted"
+      (change)="bikeFormCompleted = !bikeFormCompleted"
+    />
+    <span class="checkmark"></span>
+  </label>
+
   <div class="dialog-row">
     <button
       class="secondary-btn"
@@ -191,6 +183,6 @@
       Cancel
     </button>
 
-    <button class="action-btn" mat-flat-button type="submit">+ Add Bike</button>
+    <button class="action-btn" mat-flat-button type="submit">Add Bike</button>
   </div>
 </form>
