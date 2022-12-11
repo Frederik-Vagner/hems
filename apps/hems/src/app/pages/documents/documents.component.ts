@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IDocument } from '@hems/interfaces';
+import { DocumentSortOptions, IDocument, SortOrder } from '@hems/interfaces';
 import { DocumentsService } from '../../services/documents.service';
 
 @Component({
   selector: 'hems-documents',
   templateUrl: './documents.component.html',
-  styleUrls: [],
+  styleUrls: ['./documents.component.scss'],
 })
 export class DocumentsComponent implements OnInit {
   documentList: IDocument[] = [];
+  sortBy: DocumentSortOptions = DocumentSortOptions.LAST_VIEWED_AT;
+  sortOrder: SortOrder = SortOrder.ASCENDING;
+  search = '';
 
   constructor(
     private documentService: DocumentsService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -21,18 +26,20 @@ export class DocumentsComponent implements OnInit {
   }
 
   fetchDocuments(): void {
-    this.documentService.getDocuments().subscribe({
-      next: (documents) => {
-        this.documentList = documents;
-        console.log('Fetched Documents: ', documents);
-      },
-      error: (error) => {
-        console.error(error);
-        this.snackBar.open('Documents have failed to load', 'Okay', {
-          duration: 10000,
-        });
-      },
-    });
+    this.documentService
+      .getDocuments(this.sortBy, this.sortOrder, this.search)
+      .subscribe({
+        next: (documents) => {
+          this.documentList = documents;
+          console.log('Fetched Documents: ', documents);
+        },
+        error: (error) => {
+          console.error(error);
+          this.snackBar.open('Documents have failed to load', 'Okay', {
+            duration: 10000,
+          });
+        },
+      });
   }
 
   openCreateDocumentDialog(): void {

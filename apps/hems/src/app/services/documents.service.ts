@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IDocument, IUpdateDocumentRequest } from '@hems/interfaces';
+import {
+  DocumentSortOptions,
+  IDocument,
+  IUpdateDocumentRequest,
+  SortOrder,
+} from '@hems/interfaces';
 import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
@@ -15,9 +20,13 @@ export class DocumentsService {
    *
    * @returns an observable with the documents.
    */
-  public getDocuments(): Observable<IDocument[]> {
+  public getDocuments(
+    sortBy?: DocumentSortOptions,
+    sortOrder?: SortOrder,
+    search?: string
+  ): Observable<IDocument[]> {
     return this.http.get<IDocument[]>(
-      `${env.apiUrl}/documents`
+      `${env.apiUrl}/documents?sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`
     );
   }
 
@@ -29,7 +38,10 @@ export class DocumentsService {
     return this.http.get<IDocument>(`${env.apiUrl}/documents${id}`);
   }
 
-  public updateDocument(id: string, params: IUpdateDocumentRequest): Observable<IDocument> {
+  public updateDocument(
+    id: string,
+    params: IUpdateDocumentRequest
+  ): Observable<IDocument> {
     return this.http.patch<IDocument>(`${env.apiUrl}/documents/${id}`, params);
   }
 }
