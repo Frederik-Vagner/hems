@@ -13,10 +13,9 @@ export class DocumentWidgetComponent {
 
   constructor(private dialog: MatDialog) {}
 
-  openSeeDocumentDialog(document: IDocument): void {
+  openSeeDocumentDialog(documentId: string): void {
     this.dialog.open(SeeDocumentDialogComponent, {
-      width: '500px',
-      data: document,
+      data: documentId,
     });
   }
 }

@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
   DocumentSortOptions,
   IDocument,
+  IGetDocumentByIdResponse,
   IUpdateDocumentRequest,
   SortOrder,
 } from '@hems/interfaces';
@@ -34,8 +35,19 @@ export class DocumentsService {
     return this.http.post<IDocument>(`${env.apiUrl}/documents`, params);
   }
 
-  public getDocumentById(id: string): Observable<IDocument> {
-    return this.http.get<IDocument>(`${env.apiUrl}/documents${id}`);
+  public getDocumentById(id: string): Observable<IGetDocumentByIdResponse> {
+    return this.http.get<IGetDocumentByIdResponse>(
+      `${env.apiUrl}/documents/${id}`
+    );
+  }
+
+  public getDocumentFile(url: string): Observable<Blob> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Accept', 'application/pdf');
+    return this.http.get(url, {
+      headers: headers,
+      responseType: 'blob',
+    });
   }
 
   public updateDocument(

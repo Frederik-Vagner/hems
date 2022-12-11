@@ -1,0 +1,24 @@
+.dialog-section {
+  width: 75vw;
+  min-height: 85vh;
+  height: max-content;
+
+  .title-container {
+    font-weight: 900;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  iframe {
+    width: 75vw;
+    height: 85vh;
+  }
+
+  .spinner-full-size {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
