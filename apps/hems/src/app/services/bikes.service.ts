@@ -4,7 +4,6 @@ import {
   BikeSortOptions,
   CreateBikeRequest,
   IBike,
-  IUpdateBikeRequest,
   SortOrder,
   UpdateBikeRequest,
 } from '@hems/interfaces';
@@ -23,6 +22,7 @@ export class BikeService {
     sortOrder?: SortOrder,
     search?: string
   ): Observable<IBike[]> {
+    console.log('skrrrt');
     return this.http.get<IBike[]>(
       `${
         env.apiUrl
