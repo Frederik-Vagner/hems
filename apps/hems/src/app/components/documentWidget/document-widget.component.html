@@ -1,1 +1,27 @@
-<h1>{{document.title}}</h1>
+<section class="document-widget-container">
+  <div class="text-container">
+    <div class="title-container">
+      <h2>{{ document.title }}</h2>
+      <hr />
+    </div>
+    <div class="content-container">
+      <p>
+        <!-- TODO: remove extra comments before review -->
+        {{ document.comments }}{{ document.comments }}{{ document.comments
+        }}{{ document.comments }}{{ document.comments }}{{ document.comments
+        }}{{ document.comments }}{{ document.comments }}
+      </p>
+    </div>
+  </div>
+
+  <div class="action-bar-container">
+    <button mat-raised-button class="secondary-btn">Update</button>
+    <button
+      mat-raised-button
+      class="secondary-btn"
+      (click)="openSeeDocumentDialog(document)"
+    >
+      See document >
+    </button>
+  </div>
+</section>
