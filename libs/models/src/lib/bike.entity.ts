@@ -10,32 +10,28 @@ export class Bike extends CompletedAt implements IBike {
   bikeId!: string;
 
   @ApiModelProperty({ example: '1' })
-  @Column()
-  numberOfBikes!: string;
+  @Column({ nullable: true })
+  nrOfBikes?: string;
 
   @ApiModelProperty({ example: new Date() })
   @Column({ nullable: true })
-  pickUpTime?: Date;
+  pickupTime?: Date;
 
   @ApiModelProperty({ example: 'Madsen' })
-  @Column()
-  name!: string;
+  @Column({ nullable: true })
+  name?: string;
 
   @ApiModelProperty({ example: '211' })
-  @Column()
-  room!: string;
+  @Column({ nullable: true })
+  room?: string;
 
-  @ApiModelProperty({ example: '?' })
-  @Column()
-  reservedBy!: string;
+  @ApiModelProperty({ example: 'Teodor' })
+  @Column({ nullable: true })
+  reservedBy?: string;
 
   @ApiModelProperty({ example: true })
-  @Column()
-  bikeFormCompleted!: boolean;
-
-  @ApiModelProperty({ example: new Date() })
   @Column({ nullable: true })
-  returned?: Date;
+  bikeFormCompleted?: boolean;
 
   @ApiModelProperty({ example: 'Mate-bike' })
   @Column({ nullable: true })

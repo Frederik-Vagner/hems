@@ -1,39 +1,34 @@
 import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-property.decorator';
-import { IsDateString, IsNotEmpty, IsOptional } from 'class-validator';
+import { IsDateString, IsOptional } from 'class-validator';
 import { ICreateBikeRequest, IUpdateBikeRequest } from './bike.interface';
 
 export class CreateBikeRequest implements ICreateBikeRequest {
   @ApiModelProperty({ example: '1' })
-  @IsNotEmpty()
-  numberOfBikes!: string;
+  @IsOptional()
+  nrOfBikes?: string;
 
   @ApiModelProperty({ example: Date.now() })
-  @IsNotEmpty()
+  @IsOptional()
   @IsDateString()
-  pickUpTime!: Date;
+  pickupTime?: Date | null;
 
-  @ApiModelProperty({ example: '1' })
-  @IsNotEmpty()
-  name!: string;
+  @ApiModelProperty({ example: 'Teodor' })
+  @IsOptional()
+  name?: string;
 
-  @ApiModelProperty({ example: '1' })
-  @IsNotEmpty()
-  room!: string;
+  @ApiModelProperty({ example: '132' })
+  @IsOptional()
+  room?: string;
 
   @ApiModelProperty({ example: 'Guest' })
-  @IsNotEmpty()
-  reservedBy!: string;
-
-  @ApiModelProperty({ example: true })
-  @IsNotEmpty()
-  bikeFormCompleted!: boolean;
+  @IsOptional()
+  reservedBy?: string;
 
   @ApiModelProperty({ example: true })
   @IsOptional()
-  @IsDateString()
-  returned?: Date | null;
+  bikeFormCompleted?: boolean;
 
-  @ApiModelProperty({ example: 'luxurious car' })
+  @ApiModelProperty({ example: 'glossy bike' })
   @IsOptional()
   comments?: string;
 
@@ -46,18 +41,18 @@ export class CreateBikeRequest implements ICreateBikeRequest {
 export class UpdateBikeRequest implements IUpdateBikeRequest {
   @ApiModelProperty({ example: '1' })
   @IsOptional()
-  numberOfBikes?: string;
+  nrOfBikes?: string;
 
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()
   @IsDateString()
-  pickUpTime?: Date | null;
+  pickupTime?: Date | null;
 
-  @ApiModelProperty({ example: '1' })
+  @ApiModelProperty({ example: 'Teodor' })
   @IsOptional()
   name?: string;
 
-  @ApiModelProperty({ example: '1' })
+  @ApiModelProperty({ example: '132' })
   @IsOptional()
   room?: string;
 
@@ -69,12 +64,7 @@ export class UpdateBikeRequest implements IUpdateBikeRequest {
   @IsOptional()
   bikeFormCompleted?: boolean;
 
-  @ApiModelProperty({ example: Date.now() })
-  @IsOptional()
-  @IsDateString()
-  returned?: Date | null;
-
-  @ApiModelProperty({ example: 'luxurious car' })
+  @ApiModelProperty({ example: 'glossy bike' })
   @IsOptional()
   comments?: string;
 

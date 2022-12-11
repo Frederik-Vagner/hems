@@ -1,6 +1,9 @@
 export enum BikeSortOptions {
-  CREATED_AT = 'createdAt',
-  EXPIRATION_DATE = 'expirationDate',
-  DELIVERY_TIME = 'deliveryTime',
   PICKUP_TIME = 'pickupTime',
+  NAME = 'name',
+  ROOM = 'room',
+  RESERVED_BY = 'reservedBy',
+  BIKE_FORM_COMPLETED = 'bikeFormCompleted',
+  COMPLETED_AT = 'completedAt',
+  CREATED_AT = 'createdAt',
 }

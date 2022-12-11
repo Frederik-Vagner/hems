@@ -34,7 +34,7 @@ export class BikesController {
 
   @Get()
   @ApiOperation({
-    summary: 'Get a list of bikes from the given day and before.',
+    summary: 'Get a list of bikes from the given day.',
   })
   @ApiOkResponse({ type: [Bike] })
   @ApiQuery({ name: 'createdAt', required: true, example: new Date() })
@@ -44,7 +44,7 @@ export class BikesController {
     name: 'sortBy',
     enum: BikeSortOptions,
     required: false,
-    example: BikeSortOptions.DELIVERY_TIME,
+    example: BikeSortOptions.NAME,
   })
   @ApiQuery({
     name: 'sortOrder',
@@ -53,7 +53,7 @@ export class BikesController {
     example: SortOrder.ASCENDING,
   })
   @HttpCode(200)
-  async getBikesBeforeCreatedAt(
+  async getBikesByCreatedAt(
     @RequiredQuery('createdAt')
     createdAt: string,
     @Query('status')
@@ -66,7 +66,7 @@ export class BikesController {
     sortOrder: SortOrder
   ) {
     const createdAtDate = new Date(Date.parse(createdAt));
-    return this.bikesService.findAllBeforeCreatedAt(
+    return this.bikesService.findAllByCreatedAt(
       createdAtDate,
       toBool(status),
       search,
