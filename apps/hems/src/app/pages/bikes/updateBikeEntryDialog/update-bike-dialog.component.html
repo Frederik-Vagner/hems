@@ -46,16 +46,16 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Number of bikes</mat-label>
       <input
-        #numberOfBikes
+        #nrOfBikes
         type="number"
-        formControlName="numberOfBikes"
+        formControlName="nrOfBikes"
         matInput
         placeholder="123"
       />
       <mat-error
         *ngIf="
-          updateBikeForm.get('numberOfBikes')?.invalid &&
-          updateBikeForm.get('numberOfBikes')?.dirty
+          updateBikeForm.get('nrOfBikes')?.invalid &&
+          updateBikeForm.get('nrOfBikes')?.dirty
         "
       >
         Must be a number from 1-99
@@ -65,18 +65,18 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Pick up time</mat-label>
       <input
-        #pickUpTime
+        #pickupTime
         matInput
-        [ngxMatDatetimePicker]="pickUpTimePicker"
+        [ngxMatDatetimePicker]="pickupTimePicker"
         placeholder="HH:mm"
-        formControlName="pickUpTime"
+        formControlName="pickupTime"
       />
       <mat-datepicker-toggle
         matSuffix
-        [for]="$any(pickUpTimePicker)"
+        [for]="$any(pickupTimePicker)"
       ></mat-datepicker-toggle>
       <ngx-mat-datetime-picker
-        #pickUpTimePicker
+        #pickupTimePicker
         [showSpinners]="true"
         [showSeconds]="false"
         [touchUi]="true"
@@ -84,8 +84,8 @@
       </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
-          updateBikeForm.get('pickUpTime')?.invalid &&
-          updateBikeForm.get('pickUpTime')?.dirty
+          updateBikeForm.get('pickupTime')?.invalid &&
+          updateBikeForm.get('pickupTime')?.dirty
         "
       >
         Required
@@ -107,37 +107,6 @@
         *ngIf="
           updateBikeForm.get('reservedBy')?.invalid &&
           updateBikeForm.get('reservedBy')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Returned</mat-label>
-      <input
-        #returned
-        matInput
-        type="text"
-        [ngxMatDatetimePicker]="returnedPicker"
-        formControlName="returned"
-        placeholder="HH:mm"
-      />
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="$any(returnedPicker)"
-      ></mat-datepicker-toggle>
-      <ngx-mat-datetime-picker
-        #returnedPicker
-        [showSpinners]="true"
-        [showSeconds]="false"
-        [touchUi]="true"
-      >
-      </ngx-mat-datetime-picker>
-      <mat-error
-        *ngIf="
-          updateBikeForm.get('returned')?.invalid &&
-          updateBikeForm.get('returned')?.dirty
         "
       >
         Required

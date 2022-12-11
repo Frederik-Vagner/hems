@@ -24,13 +24,12 @@ export class BikesComponent implements OnInit {
   search = '';
 
   bikeColumns = [
-    'numberOfBikes',
+    'nrOfBikes',
     'pickUpTime',
     'name',
     'room',
     'reservedBy',
     'bikeFormCompleted',
-    'returned',
     'comments',
   ];
 

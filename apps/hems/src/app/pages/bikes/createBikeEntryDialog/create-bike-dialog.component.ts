@@ -22,8 +22,8 @@ export class CreateBikeDialogComponent {
   isLoading = false;
   bikeFormCompleted = false;
 
-  @ViewChild('numberOfBikes') numberOfBikesInput!: ElementRef;
-  @ViewChild('pickUpTime') pickUpTimeInput!: ElementRef;
+  @ViewChild('nrOfBikes') nrOfBikesInput!: ElementRef;
+  @ViewChild('pickupTime') pickupTimeInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('reservedBy') reservedByInput!: ElementRef;
@@ -39,11 +39,10 @@ export class CreateBikeDialogComponent {
         Validators.maxLength(50),
         Validators.pattern('^[0-9]*$'),
       ]),
-      numberOfBikes: new UntypedFormControl('', [Validators.required]),
-      pickUpTime: new UntypedFormControl(new Date(), [Validators.required]),
+      nrOfBikes: new UntypedFormControl('', [Validators.required]),
+      pickupTime: new UntypedFormControl(new Date(), [Validators.required]),
       name: new UntypedFormControl('', [Validators.required]),
       reservedBy: new UntypedFormControl('', [Validators.required]),
-      returned: new UntypedFormControl(null, []),
       comments: new UntypedFormControl('', []),
     });
   }
@@ -54,10 +53,10 @@ export class CreateBikeDialogComponent {
         this.roomInput.nativeElement.focus();
       } else if (this.createBikeForm.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
-      } else if (this.createBikeForm.get('numberOfBikes')?.invalid) {
-        this.numberOfBikesInput.nativeElement.focus();
-      } else if (this.createBikeForm.get('pickUpTime')?.invalid) {
-        this.pickUpTimeInput.nativeElement.focus();
+      } else if (this.createBikeForm.get('nrOfBikes')?.invalid) {
+        this.nrOfBikesInput.nativeElement.focus();
+      } else if (this.createBikeForm.get('pickupTime')?.invalid) {
+        this.pickupTimeInput.nativeElement.focus();
       } else if (this.createBikeForm.get('reservedBy')?.invalid) {
         this.reservedByInput.nativeElement.focus();
       }
@@ -70,12 +69,11 @@ export class CreateBikeDialogComponent {
     this.bikeService
       .createBike({
         room: this.createBikeForm.get('room')?.value,
-        numberOfBikes: this.createBikeForm.get('numberOfBikes')?.value,
-        pickUpTime: this.createBikeForm.get('pickUpTime')?.value,
+        nrOfBikes: this.createBikeForm.get('nrOfBikes')?.value,
+        pickupTime: this.createBikeForm.get('pickupTime')?.value,
         name: this.createBikeForm.get('name')?.value,
         reservedBy: this.createBikeForm.get('reservedBy')?.value,
         bikeFormCompleted: this.bikeFormCompleted,
-        returned: this.createBikeForm.get('returned')?.value,
         comments: this.createBikeForm.get('comments')?.value,
       })
       .subscribe({
