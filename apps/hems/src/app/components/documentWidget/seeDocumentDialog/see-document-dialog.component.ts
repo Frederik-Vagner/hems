@@ -22,6 +22,7 @@ export class SeeDocumentDialogComponent implements OnInit {
     private documentService: DocumentsService,
     private snackBar: MatSnackBar,
     private sanitizer: DomSanitizer,
+    private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public documentId: string
   ) {}
 
@@ -45,6 +46,11 @@ export class SeeDocumentDialogComponent implements OnInit {
         });
       },
     });
+  }
+
+  onClose() {
+    document.location.reload();
+    this.dialog.closeAll();
   }
 
   fetchDocumentFile(url: string): void {

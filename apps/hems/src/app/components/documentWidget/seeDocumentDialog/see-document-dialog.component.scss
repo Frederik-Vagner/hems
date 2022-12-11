@@ -4,6 +4,8 @@
   height: max-content;
 
   .title-container {
+    display: flex;
+    justify-content: space-between;
     font-weight: 900;
     white-space: nowrap;
     text-overflow: ellipsis;

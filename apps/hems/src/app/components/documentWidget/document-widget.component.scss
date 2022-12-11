@@ -4,14 +4,19 @@
   align-items: flex-start;
   justify-content: space-between;
   row-gap: 3px;
-  background-color: var(--main-blue-lower-opacity);
+  // background-color: var(--main-blue-lower-opacity);
+  border: 1px solid rgba(0, 0, 0, .4);
   border-radius: 5px;
   padding: 1em;
   height: calc(100% - 2em);
   width: calc(100% - 2em);
 
+  h2 {
+    margin: 0;   
+  }
+
   .text-container {
-    color: var(--main-blue);
+    // color: var(--main-blue);
     width: 100%;
     overflow: hidden;
 
@@ -20,6 +25,10 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       width: 100%;
+
+      hr {
+        border-top: 1px solid rgba(0, 0, 0, .4);
+      }
     }
 
     .content-container {
@@ -39,5 +48,9 @@
     justify-content: flex-end;
     column-gap: 10px;
     width: 100%;
+
+    mat-icon {
+      padding-left: 8px;
+    }
   }
 }
