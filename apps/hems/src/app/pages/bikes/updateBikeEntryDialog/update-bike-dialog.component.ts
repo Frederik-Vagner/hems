@@ -13,20 +13,22 @@ import { BikeService } from '../../../services/bikes.service';
 @Component({
   selector: 'hems-update-bike-dialog',
   templateUrl: './update-bike-dialog.component.html',
-  styleUrls: ['../../../../assets/styles/dialog.scss'],
+  styleUrls: [
+    '../../../../assets/styles/dialog.scss',
+    '../../../../assets/styles/checkbox.scss',
+  ],
 })
 export class UpdateBikeDialogComponent {
   updateBikeForm: UntypedFormGroup;
   checked = true;
   isLoading = false;
-  guestHasApproved = false;
+  bikeFormCompleted = false;
 
   @ViewChild('numberOfBikes') numberOfBikesInput!: ElementRef;
   @ViewChild('pickUpTime') pickUpTimeInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('reservedBy') reservedByInput!: ElementRef;
-  @ViewChild('bikeform') bikeformInput!: ElementRef;
   @ViewChild('returned') returnedInput!: ElementRef;
 
   constructor(
@@ -41,13 +43,18 @@ export class UpdateBikeDialogComponent {
         Validators.maxLength(50),
         Validators.pattern('^[0-9]*$'),
       ]),
-      numberOfBikes: new UntypedFormControl('', [Validators.required]),
-      pickUpTime: new UntypedFormControl(new Date(), [Validators.required]),
-      name: new UntypedFormControl('', [Validators.required]),
-      reservedBy: new UntypedFormControl('', [Validators.required]),
-      bikeForm: new UntypedFormControl('', []),
-      returned: new UntypedFormControl('', []),
-      comments: new UntypedFormControl('', []),
+      numberOfBikes: new UntypedFormControl(data.numberOfBikes, [
+        Validators.required,
+      ]),
+      pickUpTime: new UntypedFormControl(data.pickUpTime, [
+        Validators.required,
+      ]),
+      name: new UntypedFormControl(data.name, [Validators.required]),
+      reservedBy: new UntypedFormControl(data.reservedBy, [
+        Validators.required,
+      ]),
+      returned: new UntypedFormControl(data.returned, []),
+      comments: new UntypedFormControl(data.comments, []),
     });
   }
 
@@ -63,10 +70,6 @@ export class UpdateBikeDialogComponent {
         this.nameInput.nativeElement.focus();
       } else if (this.updateBikeForm.get('reservedBy')?.invalid) {
         this.reservedByInput.nativeElement.focus();
-      } else if (this.updateBikeForm.get('bikeForm')?.invalid) {
-        this.bikeformInput.nativeElement.focus();
-      } else if (this.updateBikeForm.get('returned')?.invalid) {
-        this.returnedInput.nativeElement.focus();
       }
     } else {
       this.updateBikeListEntry();
@@ -74,18 +77,6 @@ export class UpdateBikeDialogComponent {
   }
 
   updateBikeListEntry(): void {
-    const skrt = {
-      room: this.updateBikeForm.get('room')?.value,
-      numberOfBikes: this.updateBikeForm.get('numberOfBikes')?.value,
-      pickUpTime: new Date(this.updateBikeForm.get('pickUpTime')?.value),
-      name: this.updateBikeForm.get('name')?.value,
-      reservedBy: this.updateBikeForm.get('reservedBy')?.value,
-      bikeForm: this.updateBikeForm.get('bikeForm')?.value,
-      returned: this.updateBikeForm.get('returned')?.value,
-      comments: this.updateBikeForm.get('comments')?.value,
-    };
-    console.log(skrt);
-
     this.bikeService
       .updateBike(this.data.bikeId, {
         room: this.updateBikeForm.get('room')?.value,
@@ -93,7 +84,7 @@ export class UpdateBikeDialogComponent {
         pickUpTime: new Date(this.updateBikeForm.get('pickUpTime')?.value),
         name: this.updateBikeForm.get('name')?.value,
         reservedBy: this.updateBikeForm.get('reservedBy')?.value,
-        bikeForm: this.updateBikeForm.get('bikeForm')?.value,
+        bikeFormCompleted: this.bikeFormCompleted,
         returned: this.updateBikeForm.get('returned')?.value,
         comments: this.updateBikeForm.get('comments')?.value,
       })

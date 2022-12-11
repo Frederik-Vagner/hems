@@ -4,6 +4,46 @@
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Room nr.</mat-label>
+      <input
+        #room
+        type="number"
+        formControlName="room"
+        matInput
+        placeholder="123"
+      />
+      <mat-error
+        *ngIf="
+          createBikeForm.get('room')?.invalid &&
+          createBikeForm.get('room')?.dirty
+        "
+      >
+        Must be a number from 100-999
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+      <mat-label>Name</mat-label>
+      <input
+        #name
+        type="text"
+        formControlName="name"
+        matInput
+        placeholder="Madsen"
+      />
+      <mat-error
+        *ngIf="
+          createBikeForm.get('name')?.invalid &&
+          createBikeForm.get('name')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Number of bikes</mat-label>
       <input
         #numberOfBikes
@@ -54,49 +94,10 @@
   </div>
 
   <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill" class="full-width">
-      <mat-label>Name</mat-label>
-      <input
-        #name
-        type="text"
-        formControlName="name"
-        matInput
-        placeholder="Madsen"
-      />
-      <mat-error
-        *ngIf="
-          createBikeForm.get('name')?.invalid &&
-          createBikeForm.get('name')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Room</mat-label>
-      <input
-        #room
-        type="text"
-        formControlName="room"
-        matInput
-        placeholder="123"
-      />
-      <mat-error
-        *ngIf="
-          createBikeForm.get('room')?.invalid &&
-          createBikeForm.get('room')?.dirty
-        "
-      >
-        Must be a number from 100-999
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Reserved by</mat-label>
       <input
+        #reservedBy
         type="text"
         formControlName="reservedBy"
         matInput

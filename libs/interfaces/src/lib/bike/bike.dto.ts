@@ -67,7 +67,7 @@ export class UpdateBikeRequest implements IUpdateBikeRequest {
 
   @ApiModelProperty({ example: true })
   @IsOptional()
-  bikeForm?: boolean;
+  bikeFormCompleted?: boolean;
 
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()

@@ -47,10 +47,10 @@ export class BikesComponent implements OnInit {
     });
   }
 
-  updateBikeForm(bikeId: string, bikeForm: boolean): void {
+  updateBikeFormCompleted(bikeId: string, bikeFormCompleted: boolean): void {
     this.bikeService
       .updateBike(bikeId, {
-        bikeForm: !bikeForm,
+        bikeFormCompleted: !bikeFormCompleted,
       })
       .subscribe({
         next: () => {

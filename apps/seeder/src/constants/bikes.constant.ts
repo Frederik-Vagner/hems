@@ -13,7 +13,7 @@ export const bikes: IBike[] = [
     name: 'James',
     room: '211',
     reservedBy: 'Guest',
-    bikeForm: true,
+    bikeFormCompleted: true,
     returned: new Date(
       new Date('10/12/2022').setHours(
         Math.random() * (23 - 2) + 2,

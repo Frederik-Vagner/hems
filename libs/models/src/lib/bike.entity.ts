@@ -31,7 +31,7 @@ export class Bike extends CompletedAt implements IBike {
 
   @ApiModelProperty({ example: true })
   @Column()
-  bikeForm!: boolean;
+  bikeFormCompleted!: boolean;
 
   @ApiModelProperty({ example: new Date() })
   @Column({ nullable: true })

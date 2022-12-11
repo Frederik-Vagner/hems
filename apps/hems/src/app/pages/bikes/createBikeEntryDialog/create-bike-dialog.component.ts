@@ -52,12 +52,12 @@ export class CreateBikeDialogComponent {
     if (!this.createBikeForm.valid) {
       if (this.createBikeForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
+      } else if (this.createBikeForm.get('name')?.invalid) {
+        this.nameInput.nativeElement.focus();
       } else if (this.createBikeForm.get('numberOfBikes')?.invalid) {
         this.numberOfBikesInput.nativeElement.focus();
       } else if (this.createBikeForm.get('pickUpTime')?.invalid) {
         this.pickUpTimeInput.nativeElement.focus();
-      } else if (this.createBikeForm.get('name')?.invalid) {
-        this.nameInput.nativeElement.focus();
       } else if (this.createBikeForm.get('reservedBy')?.invalid) {
         this.reservedByInput.nativeElement.focus();
       }
