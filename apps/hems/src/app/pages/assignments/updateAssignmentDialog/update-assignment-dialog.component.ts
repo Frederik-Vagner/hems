@@ -97,10 +97,10 @@ export class UpdateAssignmentDialogComponent implements OnInit {
         comments: this.updateAssignmentForm.get('comments')?.value,
         receivedBy: this.updateAssignmentForm.get('receivedBy')?.value
           ? this.updateAssignmentForm.get('receivedBy')?.value.toUpperCase()
-          : '-',
+          : '',
         performedBy: this.updateAssignmentForm.get('performedBy')?.value
           ? this.updateAssignmentForm.get('performedBy')?.value.toUpperCase()
-          : '-',
+          : '',
         receivedAt: this.updateAssignmentForm.get('receivedAt')?.value,
         completedAt: this.updateAssignmentForm.get('completedAt')?.value,
       })

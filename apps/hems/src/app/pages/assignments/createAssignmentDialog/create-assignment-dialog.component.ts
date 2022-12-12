@@ -84,10 +84,10 @@ export class CreateAssignmentDialogComponent implements OnInit {
         comments: this.createAssignmentForm.get('comments')?.value,
         receivedBy: this.createAssignmentForm.get('receivedBy')?.value
           ? this.createAssignmentForm.get('receivedBy')?.value.toUpperCase()
-          : '-',
+          : '',
         performedBy: this.createAssignmentForm.get('performedBy')?.value
           ? this.createAssignmentForm.get('performedBy')?.value.toUpperCase()
-          : '-',
+          : '',
         receivedAt: this.createAssignmentForm.get('receivedAt')?.value,
         completedAt: this.createAssignmentForm.get('completedAt')?.value,
       })
