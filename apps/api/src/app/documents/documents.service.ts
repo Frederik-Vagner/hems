@@ -33,7 +33,7 @@ export class DocumentsService {
 
     return this.documentRepo.find({
       where: { ...baseConditions, title: searchCondition }, // This particular query does not support multiple where clauses
-      order: this.getSortingConditions(sortBy, sortOrder),
+      order: { ...this.getSortingConditions(sortBy, sortOrder) },
     });
   }
 
@@ -134,13 +134,33 @@ export class DocumentsService {
   ) {
     switch (sortBy) {
       case DocumentSortOptions.CREATED_AT:
-        return { createdAt: sortOrder };
+        return {
+          createdAt: {
+            nulls: 'LAST' as 'LAST' | 'first' | 'last' | 'FIRST',
+            sortOrder,
+          },
+        };
       case DocumentSortOptions.LAST_VIEWED_AT:
-        return { lastViewedAt: sortOrder };
+        return {
+          lastViewedAt: {
+            nulls: 'LAST' as 'LAST' | 'first' | 'last' | 'FIRST',
+            direction: SortOrder.DESCENDING,
+          },
+        };
       case DocumentSortOptions.SHOW_ON_DASHBOARD:
-        return { showOnDashboard: sortOrder };
+        return {
+          showOnDashboard: {
+            nulls: 'LAST' as 'LAST' | 'first' | 'last' | 'FIRST',
+            sortOrder,
+          },
+        };
       case DocumentSortOptions.TITLE:
-        return { title: sortOrder };
+        return {
+          title: {
+            nulls: 'LAST' as 'LAST' | 'first' | 'last' | 'FIRST',
+            sortOrder,
+          },
+        };
       default:
         return undefined;
     }

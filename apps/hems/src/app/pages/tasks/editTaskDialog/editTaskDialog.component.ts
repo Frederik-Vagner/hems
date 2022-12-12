@@ -35,7 +35,7 @@ export class EditTaskDialogComponent {
     public dialogRef: MatDialogRef<EditTaskDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ITask,
     private service: TasksService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {
     this.taskId = data.taskId;
@@ -58,13 +58,13 @@ export class EditTaskDialogComponent {
   updateTask(): void {
     this.isLoading = true;
     this.service
-      .update(this.taskId, {
+      .updateTask(this.taskId, {
         initials: this.form.get('initials')?.value.toUpperCase(),
         completedAt: new Date(this.form.get('completedAt')?.value),
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Task item updated!', 'Thanks', {
+          this.snackBar.open('Task item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -73,7 +73,7 @@ export class EditTaskDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackBar.open('Failed to update, please try again.', 'Okay', {
             duration: 10000,
           });
           this.isLoading = false;
@@ -83,13 +83,13 @@ export class EditTaskDialogComponent {
 
   reset() {
     this.service
-      .update(this.taskId, {
+      .updateTask(this.taskId, {
         initials: '',
         completedAt: null,
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Task item has been reset!', 'Thanks', {
+          this.snackBar.open('Task item has been reset!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -98,7 +98,7 @@ export class EditTaskDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open(
+          this.snackBar.open(
             'Failed to reset task, please try again.',
             'Okay',
             {

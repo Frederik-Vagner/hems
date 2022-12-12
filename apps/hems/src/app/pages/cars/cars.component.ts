@@ -40,7 +40,7 @@ export class CarsComponent implements OnInit {
     'name',
     'licensePlate',
     'expirationDateTime',
-    'pickupDateTime',
+    'pickUpDateTime',
     'bbDown',
     'bbUp',
     'location',
@@ -56,7 +56,6 @@ export class CarsComponent implements OnInit {
     private displayDateService: DisplayDateService,
     private snackBar: MatSnackBar,
     private dialog: MatDialog,
-    private snackbar: MatSnackBar
   ) {
     this.displayDateService.getDisplayDateSubject().subscribe((date) => {
       this.displayDate = new Date(date);
@@ -71,11 +70,11 @@ export class CarsComponent implements OnInit {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Car updated!', 'Thanks', { duration: 5000 });
+          this.snackBar.open('Car updated!', 'Thanks', { duration: 5000 });
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackBar.open('Failed to update, please try again.', 'Okay', {
             duration: 15000,
           });
         },

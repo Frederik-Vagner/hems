@@ -40,7 +40,7 @@ export class TasksComponent implements OnInit {
 
   fetchTasks(): void {
     this.isLoading = true;
-    this.tasksService.get(this.displayDate).subscribe({
+    this.tasksService.getTasks(this.displayDate).subscribe({
       next: (tasks) => {
         this.morningTasks = orderByCompletedStatus(
           tasks.tasks.filter((task) => task.listName === 'Morning')

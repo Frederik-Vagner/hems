@@ -35,7 +35,7 @@ export class UpdateCarDialogComponent {
 
   constructor(
     private carService: CarService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: ICar
   ) {
@@ -116,14 +116,14 @@ export class UpdateCarDialogComponent {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Car updated!', 'Thanks', { duration: 5000 });
+          this.snackBar.open('Car updated!', 'Thanks', { duration: 5000 });
           document.location.reload();
           this.dialog.closeAll();
           this.isLoading = false;
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackBar.open('Failed to update, please try again.', 'Okay', {
             duration: 15000,
           });
           this.isLoading = false;

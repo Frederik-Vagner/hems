@@ -40,7 +40,7 @@ export class UpdateLongTermDialogComponent implements OnInit {
   constructor(
     private luggageService: LuggageService,
     @Inject(MAT_DIALOG_DATA) public data: ILuggage,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {}
 
@@ -106,7 +106,7 @@ export class UpdateLongTermDialogComponent implements OnInit {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Long term item updated!', 'Thanks', {
+          this.snackBar.open('Long term item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -114,7 +114,7 @@ export class UpdateLongTermDialogComponent implements OnInit {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackBar.open('Failed to update, please try again.', 'Okay', {
             duration: 10000,
           });
         },

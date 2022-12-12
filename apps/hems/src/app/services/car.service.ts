@@ -4,7 +4,6 @@ import {
   CarSortOptions,
   CreateCarRequest,
   ICar,
-  IUpdateCarRequest,
   SortOrder,
   UpdateCarRequest,
 } from '@hems/interfaces';

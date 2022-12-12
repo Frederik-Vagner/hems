@@ -15,7 +15,7 @@ export class TasksService {
    *
    * @returns an observable with the tasks for the given day.
    */
-  public get(createdAt: Date): Observable<GetTasksResponse> {
+  public getTasks(createdAt: Date): Observable<GetTasksResponse> {
     return this.http.get<GetTasksResponse>(
       `${
         env.apiUrl
@@ -23,11 +23,11 @@ export class TasksService {
     );
   }
 
-  public getbyId(id: string): Observable<ITask> {
+  public getTaskById(id: string): Observable<ITask> {
     return this.http.get<ITask>(`${env.apiUrl}/tasks${id}`);
   }
 
-  public update(id: string, params: IUpdateTask): Observable<ITask> {
+  public updateTask(id: string, params: IUpdateTask): Observable<ITask> {
     return this.http.patch<ITask>(`${env.apiUrl}/tasks/${id}`, params);
   }
 }
