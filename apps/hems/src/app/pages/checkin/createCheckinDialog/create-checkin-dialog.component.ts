@@ -25,7 +25,6 @@ export class CreateCheckinDialogComponent {
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
-  @ViewChild('arrivalTime') arrivalTimeInput!: ElementRef;
   @ViewChild('bags') bagsInput!: ElementRef;
   @ViewChild('tagNr') tagNrInput!: ElementRef;
   @ViewChild('bbLr') bbLrInput!: ElementRef;
@@ -50,7 +49,7 @@ export class CreateCheckinDialogComponent {
       bbLr: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
       bbOut: new UntypedFormControl('', []),
-      completedAt: new UntypedFormControl('', []),
+      completedAt: new UntypedFormControl(null, []),
       comments: new UntypedFormControl('', []),
     });
   }
@@ -61,8 +60,6 @@ export class CreateCheckinDialogComponent {
         this.roomInput.nativeElement.focus();
       } else if (this.form.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
-      } else if (this.form.get('arrivalTime')?.invalid) {
-        this.arrivalTimeInput.nativeElement.focus();
       } else if (this.form.get('bags')?.invalid) {
         this.bagsInput.nativeElement.focus();
       } else if (this.form.get('tagNr')?.invalid) {
