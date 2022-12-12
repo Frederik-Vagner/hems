@@ -1,17 +1,8 @@
 import { Task } from '@hems/models';
-import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import {
-  eveningShiftTasks,
-  eveningShiftTimes,
-  generalTasks,
-  generalTimes,
-  listNames,
-  morningShiftTasks,
-  morningShiftTimes,
-  sampleInitials,
-} from './task.data';
+import { eveningTasks, morningTasks, sampleInitials } from './tasks.constant';
 
 @Injectable()
 export class TaskGenerator {
@@ -20,80 +11,58 @@ export class TaskGenerator {
     private readonly tasksRepo: Repository<Task>
   ) {}
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private getRandom(array: any[]) {
     return array[Math.floor(Math.random() * array.length)];
   }
 
-  private getShiftTasks(
-    listName: string,
-    shiftTimes: string[],
-    tasks: string[],
-    date: Date
-  ) {
-    const shiftTasks: Task[] = [];
-    for (const time of shiftTimes) {
-      shiftTasks.push(
+  getDailyTasks(date = new Date(Date.now()), completed: boolean): Task[] {
+    const dailyTasks: Task[] = [];
+
+    for (const task of morningTasks) {
+      const randomTime = new Date(date);
+      randomTime.setMinutes(Math.floor(Math.random() * 60));
+      dailyTasks.push(
         this.tasksRepo.create({
-          time,
-          task: this.getRandom(tasks),
-          initials: this.getRandom(sampleInitials),
-          listName,
+          task: task.task,
+          time: task.time,
           createdAt: date,
-          completedAt: this.getRandom([null, date]),
+          listName: 'Morning',
+          completedAt: completed ? randomTime : undefined,
+          initials: completed ? this.getRandom(sampleInitials) : '',
         })
       );
     }
-
-    return shiftTasks;
-  }
-
-  getDailyTasks(date = new Date(Date.now())) {
-    const dailyTasks: Task[] = [];
-
-    for (const listName of listNames) {
-      switch (listName) {
-        case 'Morning':
-          dailyTasks.push(
-            ...this.getShiftTasks(
-              listName,
-              morningShiftTimes,
-              morningShiftTasks,
-              date
-            )
-          );
-          break;
-        case 'Evening':
-          dailyTasks.push(
-            ...this.getShiftTasks(
-              listName,
-              eveningShiftTimes,
-              eveningShiftTasks,
-              date
-            )
-          );
-          break;
-        default:
-          dailyTasks.push(
-            ...this.getShiftTasks(listName, generalTimes, generalTasks, date)
-          );
-      }
+    for (const task of eveningTasks) {
+      const randomTime = new Date(date);
+      randomTime.setMinutes(Math.floor(Math.random() * 60));
+      dailyTasks.push(
+        this.tasksRepo.create({
+          task: task.task,
+          time: task.time,
+          createdAt: date,
+          listName: 'Evening',
+          completedAt: completed ? randomTime : undefined,
+          initials: completed ? this.getRandom(sampleInitials) : '',
+        })
+      );
     }
 
     return dailyTasks;
   }
 
-  getTasksForPeriod(from: Date, to: Date) {
+  getTasksForPeriod(from: Date, to: Date): Task[] {
     const periodTasks: Task[] = [];
 
     for (const day = from; day <= to; day.setDate(day.getDate() + 1)) {
-      periodTasks.push(...this.getDailyTasks(new Date(day)));
+      periodTasks.push(...this.getDailyTasks(new Date(day), true));
     }
 
     return periodTasks;
   }
 
   generateDailyTasks(date = new Date(Date.now())) {
-    this.getDailyTasks(date).forEach((task) => {
+    this.getDailyTasks(date, false).forEach((task) => {
       this.tasksRepo.save(task);
     });
   }
