@@ -11,6 +11,7 @@ import { AssignmentsComponent } from './pages/assignments/assignments.component'
 import { CreateAssignmentDialogComponent } from './pages/assignments/createAssignmentDialog/create-assignment-dialog.component';
 import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 import { CarsComponent } from './pages/cars/cars.component';
+import { BikesComponent } from './pages/bikes/bikes.componenet';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LongtermComponent } from './pages/longterm/longterm.component';
@@ -27,6 +28,9 @@ import { CreateCheckoutDialogComponent } from './pages/checkout/createCheckoutDi
 import { UpdateCheckoutDialogComponent } from './pages/checkout/updateCheckoutDialog/update-checkout-dialog.component';
 import { EditTaskDialogComponent } from './pages/tasks/editTaskDialog/editTaskDialog.component';
 import { TableInfoDialogComponent } from './components/tableInfoDialog/table-info-dialog.component';
+import { WeatherWidgetComponent } from './components/dashboardWidgets/weatherWidget/weather-widget.component';
+import { CreateBikeDialogComponent } from './pages/bikes/createBikeEntryDialog/create-bike-dialog.component';
+import { UpdateBikeDialogComponent } from './pages/bikes/updateBikeEntryDialog/update-bike-dialog.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { DocumentWidgetComponent } from './components/documentWidget/document-widget.component';
 import { SeeDocumentDialogComponent } from './components/documentWidget/seeDocumentDialog/see-document-dialog.component';
@@ -42,6 +46,7 @@ import { CreateDocumentDialogComponent } from './pages/documents/createDocumentD
     CheckinComponent,
     CheckoutComponent,
     AssignmentsComponent,
+    BikesComponent,
     LongtermComponent,
     UpdateCheckinDialogComponent,
     CreateCheckinDialogComponent,
@@ -56,6 +61,9 @@ import { CreateDocumentDialogComponent } from './pages/documents/createDocumentD
     CarsComponent,
     EditTaskDialogComponent,
     TableInfoDialogComponent,
+    WeatherWidgetComponent,
+    CreateBikeDialogComponent,
+    UpdateBikeDialogComponent,
     DocumentsComponent,
     DocumentWidgetComponent,
     SeeDocumentDialogComponent,

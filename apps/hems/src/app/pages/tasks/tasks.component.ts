@@ -11,7 +11,7 @@ import { EditTaskDialogComponent } from './editTaskDialog/editTaskDialog.compone
 @Component({
   selector: 'hems-tasks',
   templateUrl: './tasks.component.html',
-  styleUrls: ['../../../assets/styles/table.scss'],
+  styleUrls: ['./tasks.component.css', '../../../assets/styles/table.scss'],
 })
 export class TasksComponent implements OnInit {
   morningTasks: ITask[] = [];

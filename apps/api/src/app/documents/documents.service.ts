@@ -47,7 +47,7 @@ export class DocumentsService {
 
   async getFileLink(filename: string) {
     try {
-      return this.fileService.getSignedLink(filename, 600);
+      return await this.fileService.getSignedLink(filename, 600);
     } catch (error) {
       throw new HttpException(
         'Failed to get the document link. Please try again later.',

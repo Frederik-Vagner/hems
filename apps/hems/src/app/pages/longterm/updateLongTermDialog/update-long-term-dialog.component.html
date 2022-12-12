@@ -8,34 +8,16 @@
 
   <!-- Date in -->
   <div class="dialog-row">
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Date in</mat-label>
-      <input
-        #dateIn
-        type="text"
-        formControlName="dateIn"
-        matInput
-        placeholder="Date of receiving luggage"
-      />
-      <mat-error
-        *ngIf="
-          updateLongTermForm.get('dateIn')?.invalid &&
-          updateLongTermForm.get('dateIn')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field> -->
   </div>
 
   <mat-form-field autocomplete="off" appearance="fill" class="full-width">
-    <mat-label>Room</mat-label>
+    <mat-label>Room nr.</mat-label>
     <input
       #room
-      type="text"
+      type="number"
       formControlName="room"
       matInput
-      placeholder="Room nr"
+      placeholder="123"
       maxlength="10"
     />
     <mat-error

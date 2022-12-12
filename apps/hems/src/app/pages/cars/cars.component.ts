@@ -1,19 +1,19 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {
   CarSortOptions,
   ICar,
   SortOrder,
   TableInfoOptions,
 } from '@hems/interfaces';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 import { CarService } from '../../services/car.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
 import { DisplayDateService } from '../../services/display-date.service';
+import { filterByCompletedAtAndOrderResults } from '../../utils/order.util';
 import { CreateCarDialogComponent } from './createCarEntryDialog/create-car-dialog.component';
 import { UpdateCarDialogComponent } from './updateCarEntryDialog/update-car-dialog.component';
-import { HttpErrorResponse } from '@angular/common/http';
-import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
-import { orderByCompletedStatus } from '../../utils/order.util';
 
 @Component({
   selector: 'hems-cars',
@@ -24,11 +24,13 @@ import { orderByCompletedStatus } from '../../utils/order.util';
   ],
 })
 export class CarsComponent implements OnInit {
-  carList: ICar[] = [];
+  filteredCarList: ICar[] = [];
+  originalCarList: ICar[] = [];
   displayDate = new Date();
   sortBy: CarSortOptions = CarSortOptions.CREATED_AT;
   sortOrder: SortOrder = SortOrder.ASCENDING;
   search = '';
+  showAll = false;
 
   carColumns = [
     'room',
@@ -105,9 +107,13 @@ export class CarsComponent implements OnInit {
     this.carService
       .getCar(this.displayDate, this.sortBy, this.sortOrder, this.search)
       .subscribe({
-        next: (car) => {
-          this.carList = orderByCompletedStatus(car);
-          console.log('checkout', car);
+        next: (cars) => {
+          this.originalCarList = cars;
+          this.filteredCarList = filterByCompletedAtAndOrderResults(
+            this.originalCarList,
+            this.showAll,
+            this.displayDate
+          );
         },
         error: (error) => {
           console.error(error);
@@ -120,5 +126,14 @@ export class CarsComponent implements OnInit {
           );
         },
       });
+  }
+
+  toggleShowAll(): void {
+    this.showAll = !this.showAll;
+    this.filteredCarList = filterByCompletedAtAndOrderResults(
+      this.originalCarList,
+      this.showAll,
+      this.displayDate
+    );
   }
 }

@@ -106,6 +106,22 @@
         </button>
         <button
           mat-list-item
+          data-cy="sidebar-bikes-btn"
+          [ngClass]="title === 'Bike Sheet' ? 'active-nav' : ''"
+          routerLink="/bikes"
+        >
+          <mat-icon aria-hidden="false" data-cy="icon"
+            >directions_bike</mat-icon
+          >
+          <span
+            class="side-nav-item"
+            [ngClass]="{ collapsible: sidebarCollapsed }"
+            data-cy="side-nav-item"
+            >Bike sheet</span
+          >
+        </button>
+        <button
+          mat-list-item
           [ngClass]="title === 'Documents' ? 'active-nav' : ''"
           routerLink="/documents"
         >
@@ -162,6 +178,9 @@
             *ngSwitchCase="'Bell Boy Assignment Sheet'"
             >assignment_turned_in</mat-icon
           >
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Bike Sheet'"
+            >fact_check</mat-icon
+          >
           <mat-icon aria-hidden="false" *ngSwitchDefault>report</mat-icon>
         </div>
         <h1 class="title">{{ title }}</h1>
@@ -177,7 +196,7 @@
           <input
             matInput
             [ngxMatDatetimePicker]="displayDatePicker"
-            placeholder="Display Date"
+            placeholder="dd/MM"
             [(ngModel)]="displayDate"
             (dateChange)="onDisplayDateChange()"
           />

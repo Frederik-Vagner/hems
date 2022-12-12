@@ -11,7 +11,7 @@
       <mat-label>Room nr.</mat-label>
       <input
         #room
-        type="text"
+        type="number"
         formControlName="room"
         matInput
         placeholder="123"
@@ -29,7 +29,7 @@
       <mat-label>Tag nr.</mat-label>
       <input
         #tagNr
-        type="text"
+        type="number"
         formControlName="tagNr"
         matInput
         placeholder="123"
@@ -115,7 +115,7 @@
         type="text"
         formControlName="name"
         matInput
-        placeholder="Name"
+        placeholder="Johnson"
       />
       <mat-error
         *ngIf="
@@ -133,7 +133,7 @@
         type="text"
         formControlName="licensePlate"
         matInput
-        placeholder="Name"
+        placeholder="AB12345"
       />
       <mat-error
         *ngIf="
@@ -181,19 +181,18 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Pick up time</mat-label>
       <input
-        #pickupTime
         matInput
         type="text"
-        [ngxMatDatetimePicker]="pickupTimePicker"
-        formControlName="pickupTime"
+        [ngxMatDatetimePicker]="pickUpTimePicker"
+        formControlName="pickUpTime"
         placeholder="dd/MM HH:mm"
       />
       <mat-datepicker-toggle
         matSuffix
-        [for]="$any(pickupTimePicker)"
+        [for]="$any(pickUpTimePicker)"
       ></mat-datepicker-toggle>
       <ngx-mat-datetime-picker
-        #pickupTimePicker
+        #pickUpTimePicker
         [showSpinners]="true"
         [showSeconds]="false"
         [touchUi]="true"
@@ -201,8 +200,8 @@
       </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
-          updateCarForm.get('pickupTime')?.invalid &&
-          updateCarForm.get('pickupTime')?.dirty
+          updateCarForm.get('pickUpTime')?.invalid &&
+          updateCarForm.get('pickUpTime')?.dirty
         "
       >
         Required
@@ -218,7 +217,7 @@
         type="text"
         formControlName="bbDown"
         matInput
-        placeholder="BB Down"
+        placeholder="FV"
       />
       <mat-error
         *ngIf="
@@ -237,7 +236,7 @@
         type="text"
         formControlName="bbUp"
         matInput
-        placeholder="BB Up"
+        placeholder="FV"
       />
       <mat-error
         *ngIf="

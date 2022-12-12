@@ -8,10 +8,10 @@
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Room</mat-label>
+      <mat-label>Room nr.</mat-label>
       <input
         #room
-        type="text"
+        type="number"
         formControlName="room"
         matInput
         placeholder="123"
@@ -26,10 +26,10 @@
     </mat-form-field>
 
     <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Tag Nr.</mat-label>
+      <mat-label>Tag nr.</mat-label>
       <input
         #tagNr
-        type="text"
+        type="number"
         formControlName="tagNr"
         matInput
         placeholder="123"
@@ -181,19 +181,18 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Pick Up Time</mat-label>
       <input
-        #pickupTime
         matInput
         type="text"
-        [ngxMatDatetimePicker]="pickupTimePicker"
-        formControlName="pickupTime"
+        [ngxMatDatetimePicker]="pickUpTimePicker"
+        formControlName="pickUpTime"
         placeholder="dd/MM HH:mm"
       />
       <mat-datepicker-toggle
         matSuffix
-        [for]="$any(pickupTimePicker)"
+        [for]="$any(pickUpTimePicker)"
       ></mat-datepicker-toggle>
       <ngx-mat-datetime-picker
-        #pickupTimePicker
+        #pickUpTimePicker
         [showSpinners]="true"
         [showSeconds]="false"
         [touchUi]="true"
@@ -201,8 +200,8 @@
       </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
-          createCarForm.get('pickupTime')?.invalid &&
-          createCarForm.get('pickupTime')?.dirty
+          createCarForm.get('pickUpTime')?.invalid &&
+          createCarForm.get('pickUpTime')?.dirty
         "
       >
         Required

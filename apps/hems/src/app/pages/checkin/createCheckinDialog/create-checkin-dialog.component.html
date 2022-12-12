@@ -7,7 +7,7 @@
       <mat-label>Room nr.</mat-label>
       <input
         #room
-        type="text"
+        type="number"
         formControlName="room"
         matInput
         placeholder="123"
@@ -57,7 +57,7 @@
       type="text"
       formControlName="name"
       matInput
-      placeholder="Name"
+      placeholder="Johnson"
     />
     <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
       Required
@@ -83,7 +83,7 @@
       <mat-label>Tag nr</mat-label>
       <input
         #tagNr
-        type="text"
+        type="number"
         formControlName="tagNr"
         matInput
         placeholder="123"
@@ -102,7 +102,7 @@
         type="text"
         formControlName="bbLr"
         matInput
-        placeholder="Initials"
+        placeholder="FV"
       />
       <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
         Required
