@@ -43,7 +43,7 @@ export class CreateBikeDialogComponent {
       name: new UntypedFormControl('', [Validators.required]),
       reservedBy: new UntypedFormControl('', [Validators.required]),
       comments: new UntypedFormControl('', []),
-      completedAt: new UntypedFormControl('', []),
+      completedAt: new UntypedFormControl(null, []),
     });
   }
 
