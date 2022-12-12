@@ -61,7 +61,7 @@ export class UpdateCheckinDialogComponent {
       bbLr: new UntypedFormControl(data.bbLr, [Validators.required]),
       bbOut: new UntypedFormControl(data.bbOut, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
-      completedAt: new UntypedFormControl(new Date(), []),
+      completedAt: new UntypedFormControl(data.completedAt, []),
       comments: new UntypedFormControl(data.comments, []),
     });
   }
