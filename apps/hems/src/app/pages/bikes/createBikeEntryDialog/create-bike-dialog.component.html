@@ -44,6 +44,25 @@
 
   <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Reserved by</mat-label>
+      <input
+        #reservedBy
+        type="text"
+        formControlName="reservedBy"
+        matInput
+        placeholder="Guest"
+      />
+      <mat-error
+        *ngIf="
+          createBikeForm.get('reservedBy')?.invalid &&
+          createBikeForm.get('reservedBy')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Number of bikes</mat-label>
       <input
         #nrOfBikes
@@ -61,7 +80,9 @@
         Must be a number from 1-99
       </mat-error>
     </mat-form-field>
+  </div>
 
+  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Pick up time</mat-label>
       <input
@@ -86,27 +107,6 @@
         *ngIf="
           createBikeForm.get('pickUpTime')?.invalid &&
           createBikeForm.get('pickUpTime')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Reserved by</mat-label>
-      <input
-        #reservedBy
-        type="text"
-        formControlName="reservedBy"
-        matInput
-        placeholder="Guest"
-      />
-      <mat-error
-        *ngIf="
-          createBikeForm.get('reservedBy')?.invalid &&
-          createBikeForm.get('reservedBy')?.dirty
         "
       >
         Required

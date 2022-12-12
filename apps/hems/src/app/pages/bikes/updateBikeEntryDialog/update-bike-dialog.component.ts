@@ -74,6 +74,19 @@ export class UpdateBikeDialogComponent {
   }
 
   updateBikeListEntry(): void {
+    const skrt = {
+      room: this.updateBikeForm.get('room')?.value,
+      nrOfBikes: this.updateBikeForm.get('nrOfBikes')?.value,
+      pickUpTime: new Date(this.updateBikeForm.get('pickUpTime')?.value),
+      name: this.updateBikeForm.get('name')?.value,
+      reservedBy: this.updateBikeForm.get('reservedBy')?.value,
+      bikeFormCompleted: this.bikeFormCompleted,
+      comments: this.updateBikeForm.get('comments')?.value,
+      completedAt: this.updateBikeForm.get('completedAt')?.value,
+    }
+    console.log(skrt);
+    
+
     this.bikeService
       .updateBike(this.data.bikeId, {
         room: this.updateBikeForm.get('room')?.value,
