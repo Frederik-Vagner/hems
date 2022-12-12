@@ -1,106 +1,26 @@
-section.weather-widget {
-  width: 250px;
-  height: 250px;
-  background-color: var(--main-blue-low-opacity);
-  border-radius: 5px;
-  color: white;
-}
-
-.daily-display-container {
-  .city {
-    font-size: 18px;
-    font-weight: 900;
-  }
-  padding: 10px;
-}
-
-.daily-weather-content {
-  display: flex;
-
-  .current-temp,
-  .current-info {
-    flex-basis: 0;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
-
-  .current-info {
-    height: 100px;
-    flex-direction: column;
-
-    .info {
-      display: flex;
-      width: 100%;
-      padding-top: 5px;
-
-      &:first-of-type {
-        padding-top: 0;
-      }
-
-      img {
-        &.extra-small {
-          height: 25px;
-          width: 25px;
-          padding-right: 8px;
-        }
-        height: 20px;
-        width: 20px;
-        padding-right: 10px;
-      }
-    }
-  }
-
-  .current-temp {
-    font-size: 40px;
+.weather-container {
+  .tomorrow {
+    z-index: 0 !important;
   }
 }
 
-.weekly-display-container {
-  border-top: 1px solid white;
-  display: flex;
-  height: 104px;
-  align-items: center;
-
-  .week-day-display {
-    flex-grow: 1;
-    flex-basis: 0;
-    border-right: 1px solid white;
-
-    &:last-of-type {
-      border-right: none;
-    }
-
-    .week-day-container {
-      padding: 5px;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-
-      img {
-        height: 25px;
-        width: 25px;
-      }
-    }
-  }
-}
-
-.city {
+.remove {
+  background-color: white;
+  position: absolute;
   width: 100%;
-  text-align: center;
-  padding-bottom: 5px;
+  z-index: 1;
+  height: 22px;
+
+  &.bottom {
+    position: relative;
+    height: 26px;
+    bottom: 26px;
+    background-color: white;
+  }
 }
 
-.spinner-full-size {
+#clickBlock, .stuff {
   width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-::ng-deep .mat-progress-spinner circle,
-.mat-spinner circle {
-  stroke: white;
+  position: absolute;
+  z-index: 10;
 }

@@ -8,10 +8,10 @@
 
   <div class="dialog-row">
     <mat-form-field appearance="fill" autocomplete="off">
-      <mat-label>Room</mat-label>
+      <mat-label>Room nr.</mat-label>
       <input
         #room
-        type="text"
+        type="number"
         formControlName="room"
         matInput
         placeholder="123"
@@ -33,7 +33,7 @@
         type="text"
         formControlName="task"
         matInput
-        placeholder="Type of task"
+        placeholder="RA"
       />
       <mat-error
         *ngIf="
@@ -54,7 +54,7 @@
         type="text"
         formControlName="receivedBy"
         matInput
-        placeholder="Received by"
+        placeholder="TJ"
       />
       <mat-error
         *ngIf="
@@ -73,7 +73,7 @@
         type="text"
         formControlName="performedBy"
         matInput
-        placeholder="Performed by"
+        placeholder="FV"
         maxlength="100"
       />
       <mat-error
