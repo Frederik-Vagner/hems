@@ -64,18 +64,6 @@ export class CreateBikeDialogComponent {
   }
 
   createBikeListEntry(): void {
-    const skrt = {
-      room: this.createBikeForm.get('room')?.value,
-      nrOfBikes: this.createBikeForm.get('nrOfBikes')?.value,
-      pickUpTime: new Date(this.createBikeForm.get('pickUpTime')?.value),
-      name: this.createBikeForm.get('name')?.value,
-      reservedBy: this.createBikeForm.get('reservedBy')?.value,
-      bikeFormCompleted: this.bikeFormCompleted,
-      comments: this.createBikeForm.get('comments')?.value,
-      completedAt: this.createBikeForm.get('completedAt')?.value,
-    }
-    console.log(skrt);
-
     this.bikeService
       .createBike({
         room: this.createBikeForm.get('room')?.value,
