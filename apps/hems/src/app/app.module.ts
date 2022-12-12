@@ -30,6 +30,7 @@ import { TableInfoDialogComponent } from './components/tableInfoDialog/table-inf
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { DocumentWidgetComponent } from './components/documentWidget/document-widget.component';
 import { SeeDocumentDialogComponent } from './components/documentWidget/dialogs/seeDocumentDialog/see-document-dialog.component';
+import { CreateDocumentDialogComponent } from './pages/documents/createDocumentDialog/create-document-dialog.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { SeeDocumentDialogComponent } from './components/documentWidget/dialogs/
     DocumentsComponent,
     DocumentWidgetComponent,
     SeeDocumentDialogComponent,
+    CreateDocumentDialogComponent,
   ],
   imports: [
     BrowserModule,

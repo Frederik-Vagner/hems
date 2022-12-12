@@ -1,0 +1,64 @@
+<form
+  [formGroup]="createDocumentForm"
+  (ngSubmit)="onSubmit()"
+  class="dialog-container"
+>
+  <h1>Add document</h1>
+  <hr />
+
+  <div class="dialog-row">
+  </div>
+
+  <mat-form-field appearance="fill" autocomplete="off" class="full-width">
+    <mat-label>Title</mat-label>
+    <input
+      #title
+      type="text"
+      formControlName="title"
+      matInput
+      placeholder="Document title"
+    />
+    <mat-error
+      *ngIf="
+        createDocumentForm.get('title')?.invalid &&
+        createDocumentForm.get('title')?.dirty
+      "
+    >
+      Required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
+    <textarea
+      #comments
+      style="height: 100px"
+      matInput
+      type="text"
+      formControlName="comments"
+      placeholder="Describe the task"
+    ></textarea>
+    <mat-error
+      *ngIf="
+        createDocumentForm.get('comments')?.invalid &&
+        createDocumentForm.get('comments')?.dirty
+      "
+    >
+      Can't be more than 1000 characters
+    </mat-error>
+  </mat-form-field>
+
+  <div class="dialog-row">
+    <button
+      class="secondary-btn"
+      mat-raised-button
+      mat-dialog-close
+      type="button"
+    >
+      Cancel
+    </button>
+    <button class="action-btn" mat-raised-button type="submit">
+      Add document
+    </button>
+  </div>
+</form>

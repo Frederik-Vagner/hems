@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DocumentSortOptions, IDocument, SortOrder } from '@hems/interfaces';
 import { DocumentsService } from '../../services/documents.service';
+import { CreateDocumentDialogComponent } from './createDocumentDialog/create-document-dialog.component';
 
 @Component({
   selector: 'hems-documents',
@@ -43,6 +44,8 @@ export class DocumentsComponent implements OnInit {
   }
 
   openCreateDocumentDialog(): void {
-    return;
+    this.dialog.open(CreateDocumentDialogComponent, {
+      width: '500px',
+    })
   }
 }
