@@ -101,7 +101,7 @@
         type="text"
         formControlName="reservedBy"
         matInput
-        placeholder="reservedBy"
+        placeholder="Guest"
       />
       <mat-error
         *ngIf="
@@ -111,6 +111,28 @@
       >
         Required
       </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Returned</mat-label>
+      <input
+        #pickUpTime
+        matInput
+        [ngxMatDatetimePicker]="completedAtPicker"
+        placeholder="HH:mm"
+        formControlName="completedAt"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(completedAtPicker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #completedAtPicker
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
     </mat-form-field>
   </div>
 
@@ -123,14 +145,6 @@
       matInput
       placeholder="Comments"
     />
-    <mat-error
-      *ngIf="
-        updateBikeForm.get('comments')?.invalid &&
-        updateBikeForm.get('comments')?.dirty
-      "
-    >
-      Required
-    </mat-error>
   </mat-form-field>
 
   <label class="checkbox-container">

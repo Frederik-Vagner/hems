@@ -51,6 +51,7 @@ export class UpdateBikeDialogComponent {
         Validators.required,
       ]),
       comments: new UntypedFormControl(data.comments, []),
+      completedAt: new UntypedFormControl(data.completedAt, []),
     });
   }
 
@@ -82,6 +83,7 @@ export class UpdateBikeDialogComponent {
         reservedBy: this.updateBikeForm.get('reservedBy')?.value,
         bikeFormCompleted: this.bikeFormCompleted,
         comments: this.updateBikeForm.get('comments')?.value,
+        completedAt: this.updateBikeForm.get('completedAt')?.value,
       })
       .subscribe({
         next: () => {
