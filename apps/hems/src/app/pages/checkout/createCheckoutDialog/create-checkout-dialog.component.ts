@@ -90,17 +90,17 @@ export class CreateCheckoutDialogComponent {
         tagNr: this.createCheckoutForm.get('tagNr')?.value,
         bbLr: this.createCheckoutForm.get('bbLr')?.value
           ? this.createCheckoutForm.get('bbLr')?.value.toUpperCase()
-          : '-',
+          : '',
         bbDown: this.createCheckoutForm.get('bbDown')?.value
           ? this.createCheckoutForm.get('bbDown')?.value.toUpperCase()
-          : '-',
+          : '',
         bbOut: this.createCheckoutForm.get('bbOut')?.value
           ? this.createCheckoutForm.get('bbOut')?.value.toUpperCase()
-          : '-',
+          : '',
         completedAt: this.createCheckoutForm.get('completedAt')?.value,
         location: this.createCheckoutForm.get('location')?.value
           ? this.createCheckoutForm.get('location')?.value.toUpperCase()
-          : '-',
+          : '',
         comments: this.createCheckoutForm.get('comments')?.value,
         luggageType: LuggageType.CHECKOUT,
       })

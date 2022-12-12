@@ -98,13 +98,13 @@ export class UpdateCheckinDialogComponent {
         tagNr: this.form.get('tagNr')?.value,
         bbLr: this.form.get('bbLr')?.value
           ? this.form.get('bbLr')?.value.toUpperCase()
-          : '-',
+          : '',
         bbOut: this.form.get('bbOut')?.value
           ? this.form.get('bbOut')?.value.toUpperCase()
-          : '-',
+          : '',
         location: this.form.get('location')?.value
           ? this.form.get('location')?.value.toUpperCase()
-          : '-',
+          : '',
         completedAt: this.form.get('completedAt')?.value,
         comments: this.form.get('comments')?.value,
       })

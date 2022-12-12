@@ -86,13 +86,13 @@ export class CreateCheckinDialogComponent {
         tagNr: this.createCheckinForm.get('tagNr')?.value,
         bbLr: this.createCheckinForm.get('bbLr')?.value
           ? this.createCheckinForm.get('bbLr')?.value.toUpperCase()
-          : '-',
+          : '',
         location: this.createCheckinForm.get('location')?.value
           ? this.createCheckinForm.get('location')?.value.toUpperCase()
-          : '-',
+          : '',
         bbOut: this.createCheckinForm.get('bbOut')?.value
           ? this.createCheckinForm.get('bbOut')?.value.toUpperCase()
-          : '-',
+          : '',
         completedAt: this.createCheckinForm.get('completedAt')?.value,
         comments: this.createCheckinForm.get('comments')?.value,
         luggageType: LuggageType.CHECKIN,

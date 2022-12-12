@@ -89,16 +89,16 @@ export class UpdateCheckoutDialogComponent {
         tagNr: this.updateCheckoutForm.get('tagNr')?.value,
         bbLr: this.updateCheckoutForm.get('bbLr')?.value
           ? this.updateCheckoutForm.get('bbLr')?.value.toUpperCase()
-          : '-',
+          : '',
         bbDown: this.updateCheckoutForm.get('bbDown')?.value
           ? this.updateCheckoutForm.get('bbDown')?.value.toUpperCase()
-          : '-',
+          : '',
         bbOut: this.updateCheckoutForm.get('bbOut')?.value
           ? this.updateCheckoutForm.get('bbOut')?.value.toUpperCase()
-          : '-',
+          : '',
         location: this.updateCheckoutForm.get('location')?.value
           ? this.updateCheckoutForm.get('location')?.value.toUpperCase()
-          : '-',
+          : '',
         completedAt: this.updateCheckoutForm.get('completedAt')?.value,
         comments: this.updateCheckoutForm.get('comments')?.value,
       })
