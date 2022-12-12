@@ -107,25 +107,25 @@
     </mat-form-field>
   </div>
 
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Name</mat-label>
-      <input
-        #name
-        type="text"
-        formControlName="name"
-        matInput
-        placeholder="Johnson"
-      />
-      <mat-error
-        *ngIf="
-          updateCarForm.get('name')?.invalid && updateCarForm.get('name')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Name</mat-label>
+    <input
+      #name
+      type="text"
+      formControlName="name"
+      matInput
+      placeholder="Johnson"
+    />
+    <mat-error
+      *ngIf="
+        updateCarForm.get('name')?.invalid && updateCarForm.get('name')?.dirty
+      "
+    >
+      Required
+    </mat-error>
+  </mat-form-field>
 
+  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>License plate</mat-label>
       <input
@@ -144,9 +144,7 @@
         Required
       </mat-error>
     </mat-form-field>
-  </div>
 
-  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Expiration date</mat-label>
       <input
@@ -177,7 +175,9 @@
         Required
       </mat-error>
     </mat-form-field>
+  </div>
 
+  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Pick up time</mat-label>
       <input
@@ -202,6 +202,36 @@
         *ngIf="
           updateCarForm.get('pickUpTime')?.invalid &&
           updateCarForm.get('pickUpTime')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Delivery time</mat-label>
+      <input
+        matInput
+        type="text"
+        [ngxMatDatetimePicker]="deliveryTimePicker"
+        formControlName="deliveryTime"
+        placeholder="dd/MM HH:mm"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(deliveryTimePicker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #deliveryTimePicker
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+      <mat-error
+        *ngIf="
+          updateCarForm.get('deliveryTime')?.invalid &&
+          updateCarForm.get('deliveryTime')?.dirty
         "
       >
         Required
@@ -280,38 +310,6 @@
         *ngIf="
           updateCarForm.get('parkingLot')?.invalid &&
           updateCarForm.get('parkingLot')?.dirty
-        "
-      >
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Delivery time</mat-label>
-      <input
-        matInput
-        type="text"
-        [ngxMatDatetimePicker]="deliveryTimePicker"
-        formControlName="deliveryTime"
-        placeholder="dd/MM HH:mm"
-      />
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="$any(deliveryTimePicker)"
-      ></mat-datepicker-toggle>
-      <ngx-mat-datetime-picker
-        #deliveryTimePicker
-        [showSpinners]="true"
-        [showSeconds]="false"
-        [touchUi]="true"
-      >
-      </ngx-mat-datetime-picker>
-      <mat-error
-        *ngIf="
-          updateCarForm.get('deliveryTime')?.invalid &&
-          updateCarForm.get('deliveryTime')?.dirty
         "
       >
         Required
