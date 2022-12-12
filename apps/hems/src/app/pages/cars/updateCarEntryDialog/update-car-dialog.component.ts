@@ -99,7 +99,9 @@ export class UpdateCarDialogComponent {
         arrivalDate: new Date(this.updateCarForm.get('arrivalDate')?.value),
         departureDate: new Date(this.updateCarForm.get('departureDate')?.value),
         name: this.updateCarForm.get('name')?.value,
-        licensePlate: this.updateCarForm.get('licensePlate')?.value,
+        licensePlate: this.updateCarForm.get('licensePlate')?.value
+          ? this.updateCarForm.get('licensePlate')?.value.toUpperCase()
+          : '-',
         expirationDate: new Date(
           this.updateCarForm.get('expirationDate')?.value
         ),
@@ -107,10 +109,10 @@ export class UpdateCarDialogComponent {
         deliveryTime: new Date(this.updateCarForm.get('deliveryTime')?.value),
         bbDown: this.updateCarForm.get('bbDown')?.value
           ? this.updateCarForm.get('bbDown')?.value.toUpperCase()
-          : '',
+          : '-',
         bbUp: this.updateCarForm.get('bbUp')?.value
           ? this.updateCarForm.get('bbUp')?.value.toUpperCase()
-          : '',
+          : '-',
         location: this.updateCarForm.get('location')?.value,
         parkingLot: this.updateCarForm.get('parkingLot')?.value,
         bbOut: this.updateCarForm.get('bbOut')?.value

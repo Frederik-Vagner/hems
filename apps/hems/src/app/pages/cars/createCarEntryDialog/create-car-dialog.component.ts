@@ -85,7 +85,9 @@ export class CreateCarDialogComponent {
         arrivalDate: new Date(this.createCarForm.get('arrivalDate')?.value),
         departureDate: new Date(this.createCarForm.get('departureDate')?.value),
         name: this.createCarForm.get('name')?.value,
-        licensePlate: this.createCarForm.get('licensePlate')?.value,
+        licensePlate: this.createCarForm.get('licensePlate')?.value
+          ? this.createCarForm.get('licensePlate')?.value.toUpperCase()
+          : '-',
         expirationDate: new Date(
           this.createCarForm.get('expirationDate')?.value
         ),
@@ -97,7 +99,9 @@ export class CreateCarDialogComponent {
         bbUp: this.createCarForm.get('bbUp')?.value
           ? this.createCarForm.get('bbUp')?.value.toUpperCase()
           : '-',
-        location: this.createCarForm.get('location')?.value,
+        location: this.createCarForm.get('location')?.value
+          ? this.createCarForm.get('location')?.value.toUpperCase()
+          : '-',
         parkingLot: this.createCarForm.get('parkingLot')?.value,
         bbOut: this.createCarForm.get('bbOut')?.value
           ? this.createCarForm.get('bbOut')?.value.toUpperCase()
