@@ -31,6 +31,7 @@ export class BikesComponent implements OnInit {
     'reservedBy',
     'bikeFormCompleted',
     'comments',
+    'completedAt',
   ];
 
   constructor(
@@ -44,6 +45,31 @@ export class BikesComponent implements OnInit {
       this.displayDate = new Date(date);
       this.fetchBikeList();
     });
+  }
+
+  ngOnInit(): void {
+    this.fetchBikeList();
+  }
+
+  fetchBikeList(): void {
+    this.bikeService
+      .getBike(this.displayDate, this.sortBy, this.sortOrder, this.search)
+      .subscribe({
+        next: (bikes) => {
+          this.bikeList = bikes;
+          console.log('bikes', bikes);
+        },
+        error: (error) => {
+          console.error(error);
+          this.snackBar.open(
+            'Bike data has failed to load, please try checking your connection.',
+            'Okay',
+            {
+              duration: 10000,
+            }
+          );
+        },
+      });
   }
 
   updateBikeFormCompleted(bikeId: string, bikeFormCompleted: boolean): void {
@@ -73,30 +99,5 @@ export class BikesComponent implements OnInit {
       width: '500px',
       data: bikeListEntry,
     });
-  }
-
-  ngOnInit(): void {
-    this.fetchBikeList();
-  }
-
-  fetchBikeList(): void {
-    this.bikeService
-      .getBike(this.displayDate, this.sortBy, this.sortOrder, this.search)
-      .subscribe({
-        next: (bikes) => {
-          this.bikeList = bikes;
-          console.log('checkout', bikes);
-        },
-        error: (error) => {
-          console.error(error);
-          this.snackBar.open(
-            'Bike data has failed to load, please try checking your connection.',
-            'Okay',
-            {
-              duration: 10000,
-            }
-          );
-        },
-      });
   }
 }

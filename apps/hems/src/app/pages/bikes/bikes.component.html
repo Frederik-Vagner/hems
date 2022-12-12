@@ -62,7 +62,7 @@
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="pickupTime">
+      <ng-container matColumnDef="pickUpTime">
         <th mat-header-cell *matHeaderCellDef>Pick up time</th>
         <td
           mat-cell
@@ -70,8 +70,8 @@
           (click)="openDialogEdit(element)"
         >
           {{
-            element.pickupTime
-              ? (element.pickupTime | date: 'dd/MM HH:mm')
+            element.pickUpTime
+              ? (element.pickUpTime | date: 'dd/MM HH:mm')
               : '-'
           }}
         </td>
@@ -107,6 +107,17 @@
           (click)="openDialogEdit(element)"
         >
           {{ element.reservedBy }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="completedAt">
+        <th mat-header-cell *matHeaderCellDef>Returned</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          (click)="openDialogEdit(element)"
+        >
+          {{ element.completedAt }}
         </td>
       </ng-container>
 
