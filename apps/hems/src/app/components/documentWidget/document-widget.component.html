@@ -7,9 +7,7 @@
     <div class="content-container">
       <p>
         <!-- TODO: remove extra comments before review -->
-        {{ document.comments }}{{ document.comments }}{{ document.comments
-        }}{{ document.comments }}{{ document.comments }}{{ document.comments
-        }}{{ document.comments }}{{ document.comments }}
+        {{ document.comments }}
       </p>
     </div>
   </div>
@@ -21,7 +19,7 @@
       class="action-btn"
       (click)="openSeeDocumentDialog(document.documentId)"
     >
-      View <mat-icon>remove_red_eye</mat-icon>
+      View <mat-icon aria-hidden="false">remove_red_eye</mat-icon>
     </button>
   </div>
 </section>
