@@ -9,10 +9,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'hems-create-document-dialog',
   templateUrl: './create-document-dialog.component.html',
-  styleUrls: ['../../../../assets/styles/dialog.scss'],
+  styleUrls: [
+    '../../../../assets/styles/dialog.scss',
+    './create-document-dialog.component.scss',
+    '../../../../assets/styles/checkbox.scss',
+  ],
 })
 export class CreateDocumentDialogComponent implements OnInit {
   createDocumentForm = new UntypedFormGroup({});
+  showOnDashboard = false;
   isLoading = false;
 
   @ViewChild('title') titleInput!: ElementRef;
@@ -36,7 +41,7 @@ export class CreateDocumentDialogComponent implements OnInit {
         this.titleInput.nativeElement.focus();
       } else if (this.createDocumentForm.get('comments')?.invalid) {
         this.commentsInput.nativeElement.focus();
-      } 
+      }
     } else {
       this.createDocument();
     }

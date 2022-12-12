@@ -36,7 +36,7 @@
       matInput
       type="text"
       formControlName="comments"
-      placeholder="Describe the task"
+      placeholder="Describe the document"
     ></textarea>
     <mat-error
       *ngIf="
@@ -47,6 +47,24 @@
       Can't be more than 1000 characters
     </mat-error>
   </mat-form-field>
+
+  <button class="secondary-btn full-width" mat-raised-button type="button">
+    Upload file
+  </button>
+
+  <button class="document-btn full-width" mat-raised-button type="button">
+    No file uploaded
+  </button>
+
+  <label class="checkbox-container">
+    Show on dashboard
+    <input
+      type="checkbox"
+      [checked]="showOnDashboard"
+      (change)="showOnDashboard = !showOnDashboard"
+    />
+    <span class="checkmark"></span>
+  </label>
 
   <div class="dialog-row">
     <button
