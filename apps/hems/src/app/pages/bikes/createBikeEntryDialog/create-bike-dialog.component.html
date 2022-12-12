@@ -93,7 +93,59 @@
     </mat-form-field>
   </div>
 
-   
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Reserved by</mat-label>
+      <input
+        #reservedBy
+        type="text"
+        formControlName="reservedBy"
+        matInput
+        placeholder="Guest"
+      />
+      <mat-error
+        *ngIf="
+          createBikeForm.get('reservedBy')?.invalid &&
+          createBikeForm.get('reservedBy')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>Returned</mat-label>
+      <input
+        #pickUpTime
+        matInput
+        [ngxMatDatetimePicker]="completedAtPicker"
+        placeholder="HH:mm"
+        formControlName="completedAt"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="$any(completedAtPicker)"
+      ></mat-datepicker-toggle>
+      <ngx-mat-datetime-picker
+        #completedAtPicker
+        [showSpinners]="true"
+        [showSeconds]="false"
+        [touchUi]="true"
+      >
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Comments</mat-label>
+    <input
+      #comments
+      type="text"
+      formControlName="comments"
+      matInput
+      placeholder="Comments"
+    />
+  </mat-form-field>
 
   <label class="checkbox-container">
     The guest has filled out the bike form
