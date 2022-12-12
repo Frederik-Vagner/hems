@@ -29,7 +29,7 @@ export class CreateBikeDialogComponent {
 
   constructor(
     private bikeService: BikeService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {
     this.createBikeForm = new UntypedFormGroup({
@@ -75,16 +75,20 @@ export class CreateBikeDialogComponent {
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Bike added!', 'Thanks', { duration: 5000 });
+          this.snackBar.open('Bike added!', 'Thanks', { duration: 5000 });
           document.location.reload();
           this.dialog.closeAll();
           this.isLoading = false;
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create bike, please try again.', 'Okay', {
-            duration: 15000,
-          });
+          this.snackBar.open(
+            'Failed to create bike, please try again.',
+            'Okay',
+            {
+              duration: 15000,
+            }
+          );
           this.isLoading = false;
         },
       });
