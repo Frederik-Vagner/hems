@@ -7,6 +7,7 @@ import { DisplayDateService } from '../../services/display-date.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { CreateBikeDialogComponent } from './createBikeEntryDialog/create-bike-dialog.component';
 import { UpdateBikeDialogComponent } from './updateBikeEntryDialog/update-bike-dialog.component';
+import { filterByCompletedAtAndOrderResults } from '../../utils/order.util';
 
 @Component({
   selector: 'hems-bikes',
@@ -17,7 +18,8 @@ import { UpdateBikeDialogComponent } from './updateBikeEntryDialog/update-bike-d
   ],
 })
 export class BikesComponent implements OnInit {
-  bikeList: IBike[] = [];
+  originalBikeList: IBike[] = [];
+  filteredBikeList: IBike[] = [];
   displayDate = new Date();
   sortBy: BikeSortOptions = BikeSortOptions.CREATED_AT;
   sortOrder: SortOrder = SortOrder.ASCENDING;
@@ -56,7 +58,12 @@ export class BikesComponent implements OnInit {
       .getBike(this.displayDate, this.sortBy, this.sortOrder, this.search)
       .subscribe({
         next: (bikes) => {
-          this.bikeList = bikes;
+          this.originalBikeList = bikes;
+          this.filteredBikeList = filterByCompletedAtAndOrderResults(
+            this.originalBikeList,
+            false,
+            this.displayDate
+          );
           console.log('bikes', bikes);
         },
         error: (error) => {

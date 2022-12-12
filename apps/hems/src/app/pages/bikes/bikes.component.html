@@ -35,9 +35,6 @@
 
     <div class="table-buttons">
       <button mat-raised-button class="basic-btn">Table info</button>
-      <button class="secondary-btn" mat-raised-button style="margin-right: 1em">
-        Show All
-      </button>
       <button
         class="action-btn"
         (click)="openCreateBikeDialog()"
@@ -50,7 +47,7 @@
   <hr />
 
   <div class="table-height">
-    <table mat-table [dataSource]="bikeList">
+    <table mat-table [dataSource]="filteredBikeList">
       <ng-container matColumnDef="room">
         <th mat-header-cell *matHeaderCellDef>Room</th>
         <td
