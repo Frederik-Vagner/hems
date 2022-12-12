@@ -8,6 +8,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LongtermComponent } from './pages/longterm/longterm.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
+import { BikesComponent } from './pages/bikes/bikes.componenet';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'assignments',
     component: AssignmentsComponent,
+  },
+  {
+    path: 'bikes',
+    component: BikesComponent,
   },
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' }, // Redirect to dashboard page
   { path: '**', component: PageNotFoundComponent }, // PageNotFound for all other page requests

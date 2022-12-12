@@ -9,7 +9,7 @@ export interface ICar extends ICompletedAt {
   name: string;
   licensePlate: string;
   expirationDate?: Date | null;
-  pickupTime?: Date | null;
+  pickUpTime?: Date | null;
   deliveryTime?: Date | null;
   bbDown?: string;
   bbUp?: string;
@@ -28,7 +28,7 @@ export interface ICreateCarRequest {
   name: string;
   licensePlate: string;
   expirationDate?: Date | null;
-  pickupTime?: Date | null;
+  pickUpTime?: Date | null;
   deliveryTime?: Date | null;
   bbDown?: string;
   bbUp?: string;
@@ -48,7 +48,7 @@ export interface IUpdateCarRequest {
   name?: string;
   licensePlate?: string;
   expirationDate?: Date | null;
-  pickupTime?: Date | null;
+  pickUpTime?: Date | null;
   deliveryTime?: Date | null;
   bbDown?: string;
   bbUp?: string;

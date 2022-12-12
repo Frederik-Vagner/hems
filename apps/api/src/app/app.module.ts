@@ -14,6 +14,7 @@ import { LuggagesModule } from './luggages/luggages.module';
 import { LoggerMiddleware } from './middleware/logging.middleware';
 import { TasksModule } from './tasks/tasks.module';
 import { UsersModule } from './users/users.module';
+import { BikeModule } from './bikes/bikes.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { UsersModule } from './users/users.module';
     AssignmentsModule,
     DocumentsModule,
     FilesModule,
+    BikeModule,
   ],
   controllers: [AppController],
   providers: [],

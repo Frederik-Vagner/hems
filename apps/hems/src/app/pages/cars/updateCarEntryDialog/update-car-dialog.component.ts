@@ -28,7 +28,7 @@ export class UpdateCarDialogComponent {
   @ViewChild('name') nameInput!: ElementRef;
   @ViewChild('licensePlate') licensePlateInput!: ElementRef;
   @ViewChild('expirationDate') expirationDateInput!: ElementRef;
-  @ViewChild('pickupTime') pickupTimeInput!: ElementRef;
+  @ViewChild('pickUpTime') pickUpTimeInput!: ElementRef;
   @ViewChild('bbDown') bbDownInput!: ElementRef;
   @ViewChild('location') locationInput!: ElementRef;
   @ViewChild('comments') commentsInput!: ElementRef;
@@ -57,7 +57,7 @@ export class UpdateCarDialogComponent {
         Validators.required,
       ]),
       expirationDate: new UntypedFormControl(data.expirationDate, []),
-      pickupTime: new UntypedFormControl(data.pickupTime, []),
+      pickUpTime: new UntypedFormControl(data.pickUpTime, []),
       deliveryTime: new UntypedFormControl(data.deliveryTime, []),
       bbDown: new UntypedFormControl(data.bbDown, []),
       bbUp: new UntypedFormControl(data.bbUp, []),
@@ -103,7 +103,7 @@ export class UpdateCarDialogComponent {
         expirationDate: new Date(
           this.updateCarForm.get('expirationDate')?.value
         ),
-        pickupTime: new Date(this.updateCarForm.get('pickupTime')?.value),
+        pickUpTime: new Date(this.updateCarForm.get('pickUpTime')?.value),
         deliveryTime: new Date(this.updateCarForm.get('deliveryTime')?.value),
         bbDown: this.updateCarForm.get('bbDown')?.value.toUpperCase(),
         bbUp: this.updateCarForm.get('bbUp')?.value.toUpperCase(),

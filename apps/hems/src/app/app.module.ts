@@ -11,6 +11,7 @@ import { AssignmentsComponent } from './pages/assignments/assignments.component'
 import { CreateAssignmentDialogComponent } from './pages/assignments/createAssignmentDialog/create-assignment-dialog.component';
 import { UpdateAssignmentDialogComponent } from './pages/assignments/updateAssignmentDialog/update-assignment-dialog.component';
 import { CarsComponent } from './pages/cars/cars.component';
+import { BikesComponent } from './pages/bikes/bikes.componenet';
 import { CheckinComponent } from './pages/checkin/checkin.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LongtermComponent } from './pages/longterm/longterm.component';
@@ -28,6 +29,8 @@ import { UpdateCheckoutDialogComponent } from './pages/checkout/updateCheckoutDi
 import { EditTaskDialogComponent } from './pages/tasks/editTaskDialog/editTaskDialog.component';
 import { TableInfoDialogComponent } from './components/tableInfoDialog/table-info-dialog.component';
 import { WeatherWidgetComponent } from './components/dashboardWidgets/weatherWidget/weather-widget.component';
+import { CreateBikeDialogComponent } from './pages/bikes/createBikeEntryDialog/create-bike-dialog.component';
+import { UpdateBikeDialogComponent } from './pages/bikes/updateBikeEntryDialog/update-bike-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { WeatherWidgetComponent } from './components/dashboardWidgets/weatherWid
     CheckinComponent,
     CheckoutComponent,
     AssignmentsComponent,
+    BikesComponent,
     LongtermComponent,
     UpdateCheckinDialogComponent,
     CreateCheckinDialogComponent,
@@ -54,6 +58,8 @@ import { WeatherWidgetComponent } from './components/dashboardWidgets/weatherWid
     EditTaskDialogComponent,
     TableInfoDialogComponent,
     WeatherWidgetComponent,
+    CreateBikeDialogComponent,
+    UpdateBikeDialogComponent,
   ],
   imports: [
     BrowserModule,

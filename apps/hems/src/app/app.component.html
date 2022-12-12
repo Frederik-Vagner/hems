@@ -9,26 +9,15 @@
     class="sidebar"
     [ngClass]="{ collapsed: sidebarCollapsed }"
   >
-    <div
-      class="sidebar-header"
-      *ngIf="!sidebarCollapsed"
-    >
-      <h3
-        class="username"
-        [ngClass]="{ collapsible: sidebarCollapsed }"
-      >
+    <div class="sidebar-header" *ngIf="!sidebarCollapsed">
+      <h3 class="username" [ngClass]="{ collapsible: sidebarCollapsed }">
         Frederik Vagner
       </h3>
-      <h5
-        class="username"
-        [ngClass]="{ collapsible: sidebarCollapsed }"
-      >
+      <h5 class="username" [ngClass]="{ collapsible: sidebarCollapsed }">
         frederik.vagner@hems.com
       </h5>
     </div>
-    <mat-divider
-      [ngClass]="{ collapsible: sidebarCollapsed }"
-    ></mat-divider>
+    <mat-divider [ngClass]="{ collapsible: sidebarCollapsed }"></mat-divider>
     <div class="sidebar-items">
       <mat-action-list>
         <button
@@ -115,13 +104,25 @@
             >BB Assignments</span
           >
         </button>
+        <button
+          mat-list-item
+          data-cy="sidebar-bikes-btn"
+          [ngClass]="title === 'Bike Sheet' ? 'active-nav' : ''"
+          routerLink="/bikes"
+        >
+          <mat-icon aria-hidden="false" data-cy="icon"
+            >directions_bike</mat-icon
+          >
+          <span
+            class="side-nav-item"
+            [ngClass]="{ collapsible: sidebarCollapsed }"
+            data-cy="side-nav-item"
+            >Bike sheet</span
+          >
+        </button>
       </mat-action-list>
     </div>
-    <button
-      mat-flat-button
-      (click)="toggleCollapsed()"
-      class="toggle-btn"
-    >
+    <button mat-flat-button (click)="toggleCollapsed()" class="toggle-btn">
       {{ sidebarCollapsed ? '>' : '<' }}
     </button>
   </mat-sidenav>
@@ -162,17 +163,20 @@
             *ngSwitchCase="'Bell Boy Assignment Sheet'"
             >fact_check</mat-icon
           >
-          <mat-icon
-            aria-hidden="false"
-            *ngSwitchDefault
-            >report</mat-icon
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Bike Sheet'"
+            >fact_check</mat-icon
           >
+          <mat-icon aria-hidden="false" *ngSwitchDefault>report</mat-icon>
         </div>
         <h1 class="title">{{ title }}</h1>
       </div>
 
       <div class="top-nav-actions">
-        <mat-form-field autocomplete="off" appearance="fill" class="remove-error-message">
+        <mat-form-field
+          autocomplete="off"
+          appearance="fill"
+          class="remove-error-message"
+        >
           <mat-label>Display Date</mat-label>
           <input
             matInput

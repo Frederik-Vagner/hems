@@ -20,7 +20,7 @@ export const cars: ICar[] = [
     name: 'Görel',
     licensePlate: 'iu0395',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -76,7 +76,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -117,7 +117,7 @@ export const cars: ICar[] = [
     name: 'Lóng',
     licensePlate: 'jy7467',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -163,7 +163,7 @@ export const cars: ICar[] = [
     name: 'Crééz',
     licensePlate: 'al5254',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -215,7 +215,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -261,7 +261,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -317,7 +317,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -363,7 +363,7 @@ export const cars: ICar[] = [
     name: 'Méghane',
     licensePlate: 'sx0702',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -414,7 +414,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -460,7 +460,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/24/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -506,7 +506,7 @@ export const cars: ICar[] = [
     name: 'Maëline',
     licensePlate: 'cm5899',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/14/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -552,7 +552,7 @@ export const cars: ICar[] = [
     name: 'Danièle',
     licensePlate: 'vv9779',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -603,7 +603,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -649,7 +649,7 @@ export const cars: ICar[] = [
     name: 'Nuó',
     licensePlate: 'ol0094',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -700,7 +700,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -746,7 +746,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -792,7 +792,7 @@ export const cars: ICar[] = [
     name: 'Faîtes',
     licensePlate: 'gn9937',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -838,7 +838,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -889,7 +889,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -946,7 +946,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -992,7 +992,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1043,7 +1043,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1094,7 +1094,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1145,7 +1145,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1197,7 +1197,7 @@ export const cars: ICar[] = [
     name: 'Mélissandre',
     licensePlate: 'al9016',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1243,7 +1243,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1299,7 +1299,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1350,7 +1350,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1391,7 +1391,7 @@ export const cars: ICar[] = [
     name: 'Géraldine',
     licensePlate: 'uw1381',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1442,7 +1442,7 @@ export const cars: ICar[] = [
     name: 'Stéphanie',
     licensePlate: 'gd0088',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/26/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1493,7 +1493,7 @@ export const cars: ICar[] = [
     name: 'Cléopatre',
     licensePlate: 'qe8556',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1544,7 +1544,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1595,7 +1595,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -1641,7 +1641,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1697,7 +1697,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1748,7 +1748,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1799,7 +1799,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1851,7 +1851,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1902,7 +1902,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/6/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1953,7 +1953,7 @@ export const cars: ICar[] = [
     name: 'Tán',
     licensePlate: 'he3924',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -1999,7 +1999,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2050,7 +2050,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2101,7 +2101,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2147,7 +2147,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2198,7 +2198,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2249,7 +2249,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2300,7 +2300,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/31/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2346,7 +2346,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -2387,7 +2387,7 @@ export const cars: ICar[] = [
     name: 'Camélia',
     licensePlate: 'xn8961',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2443,7 +2443,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2494,7 +2494,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2550,7 +2550,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'fz',
     bbUp: 'fa',
@@ -2591,7 +2591,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2642,7 +2642,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2693,7 +2693,7 @@ export const cars: ICar[] = [
     name: 'Ráo',
     licensePlate: 'am4104',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2750,7 +2750,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2796,7 +2796,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2847,7 +2847,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'pv',
     bbUp: 'bs',
@@ -2883,7 +2883,7 @@ export const cars: ICar[] = [
     name: 'Bérénice',
     licensePlate: 'vs1688',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2934,7 +2934,7 @@ export const cars: ICar[] = [
     name: 'Clémentine',
     licensePlate: 'gf4589',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -2990,7 +2990,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -3041,7 +3041,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3088,7 +3088,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3139,7 +3139,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3190,7 +3190,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'xp',
     bbUp: 'zl',
@@ -3231,7 +3231,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3282,7 +3282,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3333,7 +3333,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3389,7 +3389,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3445,7 +3445,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'dn',
     bbUp: null,
@@ -3491,7 +3491,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3542,7 +3542,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3593,7 +3593,7 @@ export const cars: ICar[] = [
     name: 'Lén',
     licensePlate: 'ne5815',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3634,7 +3634,7 @@ export const cars: ICar[] = [
     name: 'Vénus',
     licensePlate: 'ie4712',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3690,7 +3690,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3741,7 +3741,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3788,7 +3788,7 @@ export const cars: ICar[] = [
     name: 'Adèle',
     licensePlate: 'po3202',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3839,7 +3839,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3890,7 +3890,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3941,7 +3941,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -3992,7 +3992,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4034,7 +4034,7 @@ export const cars: ICar[] = [
     name: 'Josée',
     licensePlate: 'xe3400',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4086,7 +4086,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4137,7 +4137,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4184,7 +4184,7 @@ export const cars: ICar[] = [
     name: 'Gérald',
     licensePlate: 'js9311',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4230,7 +4230,7 @@ export const cars: ICar[] = [
     name: 'Nuó',
     licensePlate: 'hm9503',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/12/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4281,7 +4281,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4327,7 +4327,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4378,7 +4378,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -4424,7 +4424,7 @@ export const cars: ICar[] = [
     name: 'Béatrice',
     licensePlate: 'za2304',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4480,7 +4480,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4526,7 +4526,7 @@ export const cars: ICar[] = [
     name: 'Börje',
     licensePlate: 'wu0546',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4572,7 +4572,7 @@ export const cars: ICar[] = [
     name: 'Céline',
     licensePlate: 'zi7557',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/8/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4624,7 +4624,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4680,7 +4680,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/17/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -4731,7 +4731,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4783,7 +4783,7 @@ export const cars: ICar[] = [
     name: 'Jú',
     licensePlate: 'bx6693',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4829,7 +4829,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4880,7 +4880,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4931,7 +4931,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -4977,7 +4977,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5028,7 +5028,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/30/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5079,7 +5079,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5135,7 +5135,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5181,7 +5181,7 @@ export const cars: ICar[] = [
     name: 'Renée',
     licensePlate: 'jv6062',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5222,7 +5222,7 @@ export const cars: ICar[] = [
     name: 'Hélèna',
     licensePlate: 'ir2792',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5273,7 +5273,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5324,7 +5324,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5375,7 +5375,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5426,7 +5426,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5477,7 +5477,7 @@ export const cars: ICar[] = [
     name: 'Kallisté',
     licensePlate: 'br9752',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5528,7 +5528,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5574,7 +5574,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5630,7 +5630,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5686,7 +5686,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5742,7 +5742,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5799,7 +5799,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5850,7 +5850,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5897,7 +5897,7 @@ export const cars: ICar[] = [
     name: 'Maïlis',
     licensePlate: 'bw6320',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5948,7 +5948,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -5999,7 +5999,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -6045,7 +6045,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6101,7 +6101,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6152,7 +6152,7 @@ export const cars: ICar[] = [
     name: 'Marie-noël',
     licensePlate: 'jb3889',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6203,7 +6203,7 @@ export const cars: ICar[] = [
     name: 'Estée',
     licensePlate: 'll8547',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6249,7 +6249,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6300,7 +6300,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6352,7 +6352,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6403,7 +6403,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6459,7 +6459,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6505,7 +6505,7 @@ export const cars: ICar[] = [
     name: 'Loïs',
     licensePlate: 'ek1134',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/18/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -6551,7 +6551,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6597,7 +6597,7 @@ export const cars: ICar[] = [
     name: 'Naéva',
     licensePlate: 'sq0065',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6643,7 +6643,7 @@ export const cars: ICar[] = [
     name: 'Marie-noël',
     licensePlate: 'ls3327',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/30/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6694,7 +6694,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -6745,7 +6745,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6802,7 +6802,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/26/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6853,7 +6853,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6899,7 +6899,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -6955,7 +6955,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/1/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7006,7 +7006,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7062,7 +7062,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -7113,7 +7113,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7169,7 +7169,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'ru',
     bbUp: 'eq',
@@ -7215,7 +7215,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7261,7 +7261,7 @@ export const cars: ICar[] = [
     name: 'Vénus',
     licensePlate: 'hd4981',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7312,7 +7312,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7368,7 +7368,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7414,7 +7414,7 @@ export const cars: ICar[] = [
     name: 'Méryl',
     licensePlate: 'tz9097',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7465,7 +7465,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -7511,7 +7511,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7557,7 +7557,7 @@ export const cars: ICar[] = [
     name: 'Séverine',
     licensePlate: 'jf3580',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -7603,7 +7603,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7659,7 +7659,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -7705,7 +7705,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7756,7 +7756,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7807,7 +7807,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7858,7 +7858,7 @@ export const cars: ICar[] = [
     name: 'Estève',
     licensePlate: 'lf2708',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7909,7 +7909,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -7965,7 +7965,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/4/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8016,7 +8016,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8067,7 +8067,7 @@ export const cars: ICar[] = [
     name: 'Athéna',
     licensePlate: 'bt8343',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8119,7 +8119,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8165,7 +8165,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8216,7 +8216,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/17/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8267,7 +8267,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8313,7 +8313,7 @@ export const cars: ICar[] = [
     name: 'Mélodie',
     licensePlate: 'hb8636',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8364,7 +8364,7 @@ export const cars: ICar[] = [
     name: 'Salomé',
     licensePlate: 'ij5051',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8420,7 +8420,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/14/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8471,7 +8471,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8518,7 +8518,7 @@ export const cars: ICar[] = [
     name: 'Garçon',
     licensePlate: 'xl9597',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -8564,7 +8564,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -8610,7 +8610,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8656,7 +8656,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8707,7 +8707,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8758,7 +8758,7 @@ export const cars: ICar[] = [
     name: 'Sòng',
     licensePlate: 'ys8305',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8814,7 +8814,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -8860,7 +8860,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8917,7 +8917,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/18/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -8969,7 +8969,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9015,7 +9015,7 @@ export const cars: ICar[] = [
     name: 'Océane',
     licensePlate: 'of1556',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9061,7 +9061,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9112,7 +9112,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9163,7 +9163,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/4/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9214,7 +9214,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9255,7 +9255,7 @@ export const cars: ICar[] = [
     name: 'Annotés',
     licensePlate: 'zt4122',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9306,7 +9306,7 @@ export const cars: ICar[] = [
     name: 'Maïwenn',
     licensePlate: 'al5098',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'ac',
     bbUp: null,
@@ -9352,7 +9352,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/12/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9403,7 +9403,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9459,7 +9459,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -9510,7 +9510,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9562,7 +9562,7 @@ export const cars: ICar[] = [
     name: 'Maëline',
     licensePlate: 'kz0705',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9609,7 +9609,7 @@ export const cars: ICar[] = [
     name: 'Mà',
     licensePlate: 'fq0926',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9650,7 +9650,7 @@ export const cars: ICar[] = [
     name: 'Léane',
     licensePlate: 'ni8626',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9706,7 +9706,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9748,7 +9748,7 @@ export const cars: ICar[] = [
     name: 'Tán',
     licensePlate: 'nb5553',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -9794,7 +9794,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -9841,7 +9841,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -9887,7 +9887,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9938,7 +9938,7 @@ export const cars: ICar[] = [
     name: 'Daphnée',
     licensePlate: 'lw3236',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -9989,7 +9989,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -10036,7 +10036,7 @@ export const cars: ICar[] = [
     name: 'Vénus',
     licensePlate: 'ii7287',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10082,7 +10082,7 @@ export const cars: ICar[] = [
     name: 'André',
     licensePlate: 'au4464',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10139,7 +10139,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10191,7 +10191,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10247,7 +10247,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10298,7 +10298,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10349,7 +10349,7 @@ export const cars: ICar[] = [
     name: 'Hélène',
     licensePlate: 'ja1455',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -10400,7 +10400,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10456,7 +10456,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10502,7 +10502,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'bk',
     bbUp: 'uq',
@@ -10543,7 +10543,7 @@ export const cars: ICar[] = [
     name: 'Maïly',
     licensePlate: 'eq4173',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10594,7 +10594,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10640,7 +10640,7 @@ export const cars: ICar[] = [
     name: 'Anaël',
     licensePlate: 'id5961',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10691,7 +10691,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/7/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10742,7 +10742,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10793,7 +10793,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'vc',
     bbUp: 'xi',
@@ -10829,7 +10829,7 @@ export const cars: ICar[] = [
     name: 'Salomé',
     licensePlate: 'ps8628',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10875,7 +10875,7 @@ export const cars: ICar[] = [
     name: 'Mélia',
     licensePlate: 'jk3563',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -10917,7 +10917,7 @@ export const cars: ICar[] = [
     name: 'Rébecca',
     licensePlate: 'ym9301',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -10968,7 +10968,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/26/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11024,7 +11024,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11075,7 +11075,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11126,7 +11126,7 @@ export const cars: ICar[] = [
     name: 'Marie-françoise',
     licensePlate: 'rd2834',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/17/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11177,7 +11177,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/24/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11228,7 +11228,7 @@ export const cars: ICar[] = [
     name: 'Åslög',
     licensePlate: 'fr7940',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11280,7 +11280,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/8/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11332,7 +11332,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/24/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11383,7 +11383,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11439,7 +11439,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11490,7 +11490,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11541,7 +11541,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11597,7 +11597,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11643,7 +11643,7 @@ export const cars: ICar[] = [
     name: 'Estève',
     licensePlate: 'sw2264',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11694,7 +11694,7 @@ export const cars: ICar[] = [
     name: 'Mà',
     licensePlate: 'om6011',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11750,7 +11750,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11807,7 +11807,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -11853,7 +11853,7 @@ export const cars: ICar[] = [
     name: 'Pål',
     licensePlate: 'bx7852',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11909,7 +11909,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -11960,7 +11960,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -12006,7 +12006,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12052,7 +12052,7 @@ export const cars: ICar[] = [
     name: 'Maëlann',
     licensePlate: 'mv8694',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12108,7 +12108,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -12154,7 +12154,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12195,7 +12195,7 @@ export const cars: ICar[] = [
     name: 'Adélaïde',
     licensePlate: 'wg5152',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12246,7 +12246,7 @@ export const cars: ICar[] = [
     name: 'Östen',
     licensePlate: 'xi2723',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12298,7 +12298,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'tq',
     bbUp: 'ya',
@@ -12335,7 +12335,7 @@ export const cars: ICar[] = [
     name: 'Mylène',
     licensePlate: 'mx9721',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/4/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12376,7 +12376,7 @@ export const cars: ICar[] = [
     name: 'Daphnée',
     licensePlate: 'vy1655',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12427,7 +12427,7 @@ export const cars: ICar[] = [
     name: 'Edmée',
     licensePlate: 'mb5766',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12478,7 +12478,7 @@ export const cars: ICar[] = [
     name: 'Vénus',
     licensePlate: 'vo1093',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12534,7 +12534,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/3/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12585,7 +12585,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12636,7 +12636,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -12687,7 +12687,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12738,7 +12738,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12789,7 +12789,7 @@ export const cars: ICar[] = [
     name: 'Laurélie',
     licensePlate: 'tt4180',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12841,7 +12841,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12892,7 +12892,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12943,7 +12943,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -12989,7 +12989,7 @@ export const cars: ICar[] = [
     name: 'Aimée',
     licensePlate: 'hx4846',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/8/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13045,7 +13045,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/7/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13092,7 +13092,7 @@ export const cars: ICar[] = [
     name: 'Mélissandre',
     licensePlate: 'fp1055',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13148,7 +13148,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13204,7 +13204,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13255,7 +13255,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -13306,7 +13306,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13362,7 +13362,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'rj',
     bbUp: null,
@@ -13408,7 +13408,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -13459,7 +13459,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13511,7 +13511,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -13552,7 +13552,7 @@ export const cars: ICar[] = [
     name: 'Ruì',
     licensePlate: 'rm8380',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/30/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13603,7 +13603,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13654,7 +13654,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13710,7 +13710,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -13751,7 +13751,7 @@ export const cars: ICar[] = [
     name: 'Tú',
     licensePlate: 'rd5437',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13808,7 +13808,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13864,7 +13864,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13921,7 +13921,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -13967,7 +13967,7 @@ export const cars: ICar[] = [
     name: 'Pål',
     licensePlate: 'lo1705',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14023,7 +14023,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/15/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14079,7 +14079,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14135,7 +14135,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'cs',
     bbUp: null,
@@ -14176,7 +14176,7 @@ export const cars: ICar[] = [
     name: 'Maëly',
     licensePlate: 'ud0652',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14228,7 +14228,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14275,7 +14275,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/6/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14326,7 +14326,7 @@ export const cars: ICar[] = [
     name: 'Publicité',
     licensePlate: 'yu0547',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14377,7 +14377,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14428,7 +14428,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14484,7 +14484,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14535,7 +14535,7 @@ export const cars: ICar[] = [
     name: 'Aurélie',
     licensePlate: 'jq4096',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14586,7 +14586,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14632,7 +14632,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14688,7 +14688,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14744,7 +14744,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14796,7 +14796,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14852,7 +14852,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14898,7 +14898,7 @@ export const cars: ICar[] = [
     name: 'Annotée',
     licensePlate: 'eh2048',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -14950,7 +14950,7 @@ export const cars: ICar[] = [
     name: 'Méryl',
     licensePlate: 'yo8965',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15001,7 +15001,7 @@ export const cars: ICar[] = [
     name: 'Anaël',
     licensePlate: 'iy5613',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15052,7 +15052,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15108,7 +15108,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15154,7 +15154,7 @@ export const cars: ICar[] = [
     name: 'Léone',
     licensePlate: 'eq5139',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15205,7 +15205,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/31/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15261,7 +15261,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/1/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15317,7 +15317,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15373,7 +15373,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15424,7 +15424,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/6/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -15475,7 +15475,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15521,7 +15521,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15577,7 +15577,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15623,7 +15623,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15675,7 +15675,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15721,7 +15721,7 @@ export const cars: ICar[] = [
     name: 'Fèi',
     licensePlate: 'xq9083',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15777,7 +15777,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15823,7 +15823,7 @@ export const cars: ICar[] = [
     name: 'Lorène',
     licensePlate: 'zb4743',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15874,7 +15874,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15920,7 +15920,7 @@ export const cars: ICar[] = [
     name: 'Estée',
     licensePlate: 'cz6113',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -15971,7 +15971,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -16018,7 +16018,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16069,7 +16069,7 @@ export const cars: ICar[] = [
     name: 'Célia',
     licensePlate: 'ey5447',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16115,7 +16115,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16166,7 +16166,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16222,7 +16222,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16273,7 +16273,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'is',
     bbUp: null,
@@ -16319,7 +16319,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16375,7 +16375,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16431,7 +16431,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16478,7 +16478,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16524,7 +16524,7 @@ export const cars: ICar[] = [
     name: 'Nuó',
     licensePlate: 'do1854',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16575,7 +16575,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16621,7 +16621,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16673,7 +16673,7 @@ export const cars: ICar[] = [
     name: 'Estève',
     licensePlate: 'ut0075',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16720,7 +16720,7 @@ export const cars: ICar[] = [
     name: 'Estève',
     licensePlate: 'ud2122',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16771,7 +16771,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16827,7 +16827,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16878,7 +16878,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -16924,7 +16924,7 @@ export const cars: ICar[] = [
     name: 'Séréna',
     licensePlate: 'hr5984',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'bn',
     bbUp: 'xr',
@@ -16970,7 +16970,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17017,7 +17017,7 @@ export const cars: ICar[] = [
     name: 'Léonore',
     licensePlate: 'xm6002',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17063,7 +17063,7 @@ export const cars: ICar[] = [
     name: 'Léonie',
     licensePlate: 'be2609',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17114,7 +17114,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17165,7 +17165,7 @@ export const cars: ICar[] = [
     name: 'Publicité',
     licensePlate: 'fn7980',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/18/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17212,7 +17212,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17264,7 +17264,7 @@ export const cars: ICar[] = [
     name: 'Mélys',
     licensePlate: 'bz6593',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -17315,7 +17315,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/1/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17371,7 +17371,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17427,7 +17427,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17483,7 +17483,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17539,7 +17539,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17591,7 +17591,7 @@ export const cars: ICar[] = [
     name: 'Maëlyss',
     licensePlate: 'hu4108',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17642,7 +17642,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17699,7 +17699,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17755,7 +17755,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17801,7 +17801,7 @@ export const cars: ICar[] = [
     name: 'Zhì',
     licensePlate: 'wc5230',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17852,7 +17852,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -17893,7 +17893,7 @@ export const cars: ICar[] = [
     name: 'Tán',
     licensePlate: 'dd6214',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -17949,7 +17949,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18000,7 +18000,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18051,7 +18051,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18103,7 +18103,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18149,7 +18149,7 @@ export const cars: ICar[] = [
     name: 'Björn',
     licensePlate: 'aw6318',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/4/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18200,7 +18200,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18246,7 +18246,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18302,7 +18302,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18353,7 +18353,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18399,7 +18399,7 @@ export const cars: ICar[] = [
     name: 'Lèi',
     licensePlate: 'sz2317',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -18445,7 +18445,7 @@ export const cars: ICar[] = [
     name: 'Béatrice',
     licensePlate: 'am1815',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18497,7 +18497,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18548,7 +18548,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18599,7 +18599,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('11/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -18650,7 +18650,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18696,7 +18696,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18742,7 +18742,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18793,7 +18793,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18840,7 +18840,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18891,7 +18891,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -18947,7 +18947,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/31/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19003,7 +19003,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19049,7 +19049,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -19090,7 +19090,7 @@ export const cars: ICar[] = [
     name: 'Célestine',
     licensePlate: 'rk8501',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/15/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19137,7 +19137,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19193,7 +19193,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19249,7 +19249,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19301,7 +19301,7 @@ export const cars: ICar[] = [
     name: 'Naéva',
     licensePlate: 'zz0929',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/30/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19352,7 +19352,7 @@ export const cars: ICar[] = [
     name: 'Alizée',
     licensePlate: 'ep3848',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/6/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19403,7 +19403,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19459,7 +19459,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19516,7 +19516,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19567,7 +19567,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19608,7 +19608,7 @@ export const cars: ICar[] = [
     name: 'Nuó',
     licensePlate: 'aj4096',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/12/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19664,7 +19664,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19715,7 +19715,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19771,7 +19771,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19827,7 +19827,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19883,7 +19883,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19934,7 +19934,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -19985,7 +19985,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/15/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20031,7 +20031,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20077,7 +20077,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/6/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20128,7 +20128,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20184,7 +20184,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20240,7 +20240,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20291,7 +20291,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/24/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20347,7 +20347,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20403,7 +20403,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20449,7 +20449,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20500,7 +20500,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/30/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20546,7 +20546,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/1/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20603,7 +20603,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -20650,7 +20650,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20697,7 +20697,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'rb',
     bbUp: null,
@@ -20743,7 +20743,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20789,7 +20789,7 @@ export const cars: ICar[] = [
     name: 'Léandre',
     licensePlate: 'pd5088',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20835,7 +20835,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20886,7 +20886,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20937,7 +20937,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -20988,7 +20988,7 @@ export const cars: ICar[] = [
     name: 'Océane',
     licensePlate: 'wi2157',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21034,7 +21034,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: null,
     bbUp: 'ex',
@@ -21080,7 +21080,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21136,7 +21136,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21187,7 +21187,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -21233,7 +21233,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21284,7 +21284,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21330,7 +21330,7 @@ export const cars: ICar[] = [
     name: 'Sòng',
     licensePlate: 'tb4687',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21376,7 +21376,7 @@ export const cars: ICar[] = [
     name: 'Eloïse',
     licensePlate: 'mx4041',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/14/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21428,7 +21428,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21479,7 +21479,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21535,7 +21535,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -21587,7 +21587,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'ec',
     bbUp: 'sd',
@@ -21628,7 +21628,7 @@ export const cars: ICar[] = [
     name: 'Esbjörn',
     licensePlate: 'le5414',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21684,7 +21684,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21735,7 +21735,7 @@ export const cars: ICar[] = [
     name: 'Maïwenn',
     licensePlate: 'do0138',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21791,7 +21791,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21832,7 +21832,7 @@ export const cars: ICar[] = [
     name: 'Märta',
     licensePlate: 'jn5656',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21888,7 +21888,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -21939,7 +21939,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'eu',
     bbUp: 'am',
@@ -21980,7 +21980,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22026,7 +22026,7 @@ export const cars: ICar[] = [
     name: 'Yú',
     licensePlate: 'ij2198',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/14/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22078,7 +22078,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/7/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22129,7 +22129,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22181,7 +22181,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -22227,7 +22227,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22283,7 +22283,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22339,7 +22339,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22396,7 +22396,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22447,7 +22447,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22493,7 +22493,7 @@ export const cars: ICar[] = [
     name: 'Märta',
     licensePlate: 'no4207',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22539,7 +22539,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22585,7 +22585,7 @@ export const cars: ICar[] = [
     name: 'Hélèna',
     licensePlate: 'aw8657',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('11/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -22636,7 +22636,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22682,7 +22682,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22738,7 +22738,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22789,7 +22789,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22841,7 +22841,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22892,7 +22892,7 @@ export const cars: ICar[] = [
     name: 'Lén',
     licensePlate: 'xa6234',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -22949,7 +22949,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -23000,7 +23000,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23056,7 +23056,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23112,7 +23112,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23163,7 +23163,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23209,7 +23209,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23265,7 +23265,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23316,7 +23316,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23367,7 +23367,7 @@ export const cars: ICar[] = [
     name: 'Chloé',
     licensePlate: 'gs9684',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23418,7 +23418,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -23464,7 +23464,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23515,7 +23515,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/12/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -23561,7 +23561,7 @@ export const cars: ICar[] = [
     name: 'Åsa',
     licensePlate: 'xd8646',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23617,7 +23617,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23668,7 +23668,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -23714,7 +23714,7 @@ export const cars: ICar[] = [
     name: 'Régine',
     licensePlate: 'ek8030',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/2/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23765,7 +23765,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23821,7 +23821,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23877,7 +23877,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23933,7 +23933,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -23984,7 +23984,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24040,7 +24040,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/1/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24097,7 +24097,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/3/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24153,7 +24153,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/17/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24199,7 +24199,7 @@ export const cars: ICar[] = [
     name: 'Maëline',
     licensePlate: 'oh0337',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24255,7 +24255,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24306,7 +24306,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24352,7 +24352,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24403,7 +24403,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24444,7 +24444,7 @@ export const cars: ICar[] = [
     name: 'Bérangère',
     licensePlate: 'xd6013',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/1/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24496,7 +24496,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/12/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24552,7 +24552,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/14/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24593,7 +24593,7 @@ export const cars: ICar[] = [
     name: 'Lóng',
     licensePlate: 'bd1053',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24644,7 +24644,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24696,7 +24696,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24742,7 +24742,7 @@ export const cars: ICar[] = [
     name: 'Edmée',
     licensePlate: 'ja3948',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24793,7 +24793,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24839,7 +24839,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24891,7 +24891,7 @@ export const cars: ICar[] = [
     name: 'Laïla',
     licensePlate: 'un6928',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -24937,7 +24937,7 @@ export const cars: ICar[] = [
     name: 'Méthode',
     licensePlate: 'me3328',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -24988,7 +24988,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25039,7 +25039,7 @@ export const cars: ICar[] = [
     name: 'Lóng',
     licensePlate: 'vw8824',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25090,7 +25090,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25146,7 +25146,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25202,7 +25202,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -25253,7 +25253,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25304,7 +25304,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25360,7 +25360,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25411,7 +25411,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25463,7 +25463,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25519,7 +25519,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25565,7 +25565,7 @@ export const cars: ICar[] = [
     name: 'Irène',
     licensePlate: 'zm7670',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25621,7 +25621,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25672,7 +25672,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25728,7 +25728,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25780,7 +25780,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25837,7 +25837,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25883,7 +25883,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25939,7 +25939,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -25990,7 +25990,7 @@ export const cars: ICar[] = [
     name: 'Mårten',
     licensePlate: 'vv5567',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26041,7 +26041,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/1/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26097,7 +26097,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26148,7 +26148,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26204,7 +26204,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -26250,7 +26250,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26301,7 +26301,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26347,7 +26347,7 @@ export const cars: ICar[] = [
     name: 'Cléopatre',
     licensePlate: 'pl1506',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26399,7 +26399,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26450,7 +26450,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26496,7 +26496,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'bg',
     bbUp: 'wi',
@@ -26532,7 +26532,7 @@ export const cars: ICar[] = [
     name: 'Adélie',
     licensePlate: 'ib4266',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26583,7 +26583,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26635,7 +26635,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26681,7 +26681,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26727,7 +26727,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26778,7 +26778,7 @@ export const cars: ICar[] = [
     name: 'Michèle',
     licensePlate: 'gz0642',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -26824,7 +26824,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26880,7 +26880,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/30/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26936,7 +26936,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -26992,7 +26992,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27043,7 +27043,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27090,7 +27090,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27141,7 +27141,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27187,7 +27187,7 @@ export const cars: ICar[] = [
     name: 'Thérèsa',
     licensePlate: 'ee6673',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27238,7 +27238,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'kv',
     bbUp: 'wm',
@@ -27279,7 +27279,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27325,7 +27325,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27381,7 +27381,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27432,7 +27432,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27478,7 +27478,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27529,7 +27529,7 @@ export const cars: ICar[] = [
     name: 'Ruì',
     licensePlate: 'yk9646',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27575,7 +27575,7 @@ export const cars: ICar[] = [
     name: 'Régine',
     licensePlate: 'am3515',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27627,7 +27627,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27679,7 +27679,7 @@ export const cars: ICar[] = [
     name: 'Vénus',
     licensePlate: 'ti3118',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/18/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27725,7 +27725,7 @@ export const cars: ICar[] = [
     name: 'Bérangère',
     licensePlate: 'qp7413',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27776,7 +27776,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27827,7 +27827,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27879,7 +27879,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -27925,7 +27925,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -27971,7 +27971,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28027,7 +28027,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/30/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28083,7 +28083,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28129,7 +28129,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28180,7 +28180,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28226,7 +28226,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28277,7 +28277,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28328,7 +28328,7 @@ export const cars: ICar[] = [
     name: 'Personnalisée',
     licensePlate: 'ut6252',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'gz',
     bbUp: null,
@@ -28369,7 +28369,7 @@ export const cars: ICar[] = [
     name: 'Séréna',
     licensePlate: 'wj6142',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28425,7 +28425,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28481,7 +28481,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28528,7 +28528,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28584,7 +28584,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -28635,7 +28635,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28691,7 +28691,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/12/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28742,7 +28742,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28798,7 +28798,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'ze',
     bbUp: 'rb',
@@ -28839,7 +28839,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28890,7 +28890,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28941,7 +28941,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -28992,7 +28992,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29048,7 +29048,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29104,7 +29104,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29160,7 +29160,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/8/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29216,7 +29216,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29262,7 +29262,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29313,7 +29313,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29364,7 +29364,7 @@ export const cars: ICar[] = [
     name: 'Göran',
     licensePlate: 'vq6599',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -29410,7 +29410,7 @@ export const cars: ICar[] = [
     name: 'Clémence',
     licensePlate: 'km9058',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29456,7 +29456,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29507,7 +29507,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29563,7 +29563,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29619,7 +29619,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29665,7 +29665,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29711,7 +29711,7 @@ export const cars: ICar[] = [
     name: 'Audréanne',
     licensePlate: 'zp6813',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29758,7 +29758,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29814,7 +29814,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29870,7 +29870,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29916,7 +29916,7 @@ export const cars: ICar[] = [
     name: 'Bérénice',
     licensePlate: 'az7462',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -29967,7 +29967,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/14/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30018,7 +30018,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/26/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30069,7 +30069,7 @@ export const cars: ICar[] = [
     name: 'Léone',
     licensePlate: 'tm9017',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30115,7 +30115,7 @@ export const cars: ICar[] = [
     name: 'Yénora',
     licensePlate: 'ol1248',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30166,7 +30166,7 @@ export const cars: ICar[] = [
     name: 'Vénus',
     licensePlate: 'dp2627',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30212,7 +30212,7 @@ export const cars: ICar[] = [
     name: 'Maëline',
     licensePlate: 'ft9955',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30268,7 +30268,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30314,7 +30314,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30370,7 +30370,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -30421,7 +30421,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30467,7 +30467,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -30513,7 +30513,7 @@ export const cars: ICar[] = [
     name: 'Märta',
     licensePlate: 'dv6937',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30564,7 +30564,7 @@ export const cars: ICar[] = [
     name: 'Gaétane',
     licensePlate: 'vq2945',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30616,7 +30616,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'da',
     bbUp: 'wb',
@@ -30662,7 +30662,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/4/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30708,7 +30708,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/26/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30764,7 +30764,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -30811,7 +30811,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30868,7 +30868,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/31/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30920,7 +30920,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -30971,7 +30971,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31017,7 +31017,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31063,7 +31063,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31109,7 +31109,7 @@ export const cars: ICar[] = [
     name: 'Andréa',
     licensePlate: 'us3532',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -31155,7 +31155,7 @@ export const cars: ICar[] = [
     name: 'Léonore',
     licensePlate: 'tl5614',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31206,7 +31206,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31258,7 +31258,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31315,7 +31315,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31356,7 +31356,7 @@ export const cars: ICar[] = [
     name: 'Lyséa',
     licensePlate: 'al2594',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31412,7 +31412,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -31463,7 +31463,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31515,7 +31515,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31571,7 +31571,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31617,7 +31617,7 @@ export const cars: ICar[] = [
     name: 'Maïté',
     licensePlate: 'ac0002',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/14/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31668,7 +31668,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31715,7 +31715,7 @@ export const cars: ICar[] = [
     name: 'Ophélie',
     licensePlate: 'fm3020',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31766,7 +31766,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31812,7 +31812,7 @@ export const cars: ICar[] = [
     name: 'Håkan',
     licensePlate: 'jc6663',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31863,7 +31863,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31919,7 +31919,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -31965,7 +31965,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32011,7 +32011,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32067,7 +32067,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32113,7 +32113,7 @@ export const cars: ICar[] = [
     name: 'Médiamass',
     licensePlate: 'if7722',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32160,7 +32160,7 @@ export const cars: ICar[] = [
     name: 'Yáo',
     licensePlate: 'fe2039',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32212,7 +32212,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32263,7 +32263,7 @@ export const cars: ICar[] = [
     name: 'Andrée',
     licensePlate: 'nn5597',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32304,7 +32304,7 @@ export const cars: ICar[] = [
     name: 'Frédérique',
     licensePlate: 'yy8019',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: null,
     bbUp: null,
@@ -32345,7 +32345,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32396,7 +32396,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/26/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32447,7 +32447,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32493,7 +32493,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -32545,7 +32545,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32601,7 +32601,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32647,7 +32647,7 @@ export const cars: ICar[] = [
     name: 'Åke',
     licensePlate: 'vm5942',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'qg',
     bbUp: 'jy',
@@ -32693,7 +32693,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/14/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32739,7 +32739,7 @@ export const cars: ICar[] = [
     name: 'Néhémie',
     licensePlate: 'bw3029',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/30/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32785,7 +32785,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/3/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32842,7 +32842,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'db',
     bbUp: null,
@@ -32883,7 +32883,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -32934,7 +32934,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('11/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -32975,7 +32975,7 @@ export const cars: ICar[] = [
     name: 'Océane',
     licensePlate: 'nz5729',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33026,7 +33026,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33077,7 +33077,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33133,7 +33133,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33179,7 +33179,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33235,7 +33235,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33292,7 +33292,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33343,7 +33343,7 @@ export const cars: ICar[] = [
     name: 'Rébecca',
     licensePlate: 'qz1752',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33399,7 +33399,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33455,7 +33455,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33506,7 +33506,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33552,7 +33552,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33608,7 +33608,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33654,7 +33654,7 @@ export const cars: ICar[] = [
     name: 'Faîtes',
     licensePlate: 'sy5778',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33705,7 +33705,7 @@ export const cars: ICar[] = [
     name: 'Yú',
     licensePlate: 'at0520',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33751,7 +33751,7 @@ export const cars: ICar[] = [
     name: 'Bérengère',
     licensePlate: 'mb1949',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33792,7 +33792,7 @@ export const cars: ICar[] = [
     name: 'Céline',
     licensePlate: 'to5876',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33843,7 +33843,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33894,7 +33894,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33945,7 +33945,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -33996,7 +33996,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34047,7 +34047,7 @@ export const cars: ICar[] = [
     name: 'Anaé',
     licensePlate: 'wi7146',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34098,7 +34098,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -34149,7 +34149,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34200,7 +34200,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/30/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34246,7 +34246,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34302,7 +34302,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34358,7 +34358,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34414,7 +34414,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34470,7 +34470,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34522,7 +34522,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34573,7 +34573,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34624,7 +34624,7 @@ export const cars: ICar[] = [
     name: 'Méghane',
     licensePlate: 'gl0951',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34675,7 +34675,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34731,7 +34731,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/15/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34778,7 +34778,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34834,7 +34834,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34875,7 +34875,7 @@ export const cars: ICar[] = [
     name: 'Maïté',
     licensePlate: 'jg5131',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34926,7 +34926,7 @@ export const cars: ICar[] = [
     name: 'Kallisté',
     licensePlate: 'vx6423',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -34977,7 +34977,7 @@ export const cars: ICar[] = [
     name: 'Mélys',
     licensePlate: 'hn7253',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35033,7 +35033,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/9/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35084,7 +35084,7 @@ export const cars: ICar[] = [
     name: 'Táng',
     licensePlate: 'lt0616',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35140,7 +35140,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/2/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35191,7 +35191,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35247,7 +35247,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35298,7 +35298,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'zv',
     bbUp: 'rg',
@@ -35339,7 +35339,7 @@ export const cars: ICar[] = [
     name: 'Salomé',
     licensePlate: 'xd2321',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35385,7 +35385,7 @@ export const cars: ICar[] = [
     name: 'Annotés',
     licensePlate: 'di7129',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'na',
     bbUp: 'jw',
@@ -35426,7 +35426,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/12/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35482,7 +35482,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35533,7 +35533,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35584,7 +35584,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35635,7 +35635,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35686,7 +35686,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35737,7 +35737,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/15/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35784,7 +35784,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35835,7 +35835,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/17/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35891,7 +35891,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35942,7 +35942,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -35998,7 +35998,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -36049,7 +36049,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36106,7 +36106,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36157,7 +36157,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36214,7 +36214,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36270,7 +36270,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36326,7 +36326,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -36372,7 +36372,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36423,7 +36423,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36479,7 +36479,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36535,7 +36535,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -36586,7 +36586,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36627,7 +36627,7 @@ export const cars: ICar[] = [
     name: 'Eléonore',
     licensePlate: 'yl7121',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36674,7 +36674,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36725,7 +36725,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36771,7 +36771,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36827,7 +36827,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/2/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36878,7 +36878,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/26/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36934,7 +36934,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -36991,7 +36991,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37047,7 +37047,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('11/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -37088,7 +37088,7 @@ export const cars: ICar[] = [
     name: 'Cléopatre',
     licensePlate: 'iq8142',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37140,7 +37140,7 @@ export const cars: ICar[] = [
     name: 'Océane',
     licensePlate: 'qf1370',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/31/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37196,7 +37196,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37242,7 +37242,7 @@ export const cars: ICar[] = [
     name: 'Salomé',
     licensePlate: 'vz3323',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37293,7 +37293,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37339,7 +37339,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37395,7 +37395,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37446,7 +37446,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37502,7 +37502,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37553,7 +37553,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37609,7 +37609,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37655,7 +37655,7 @@ export const cars: ICar[] = [
     name: 'Lorène',
     licensePlate: 'oe3119',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37711,7 +37711,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/8/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37767,7 +37767,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37818,7 +37818,7 @@ export const cars: ICar[] = [
     name: 'Fèi',
     licensePlate: 'gl1820',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/3/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37864,7 +37864,7 @@ export const cars: ICar[] = [
     name: 'Örjan',
     licensePlate: 'ti1222',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/4/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37920,7 +37920,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -37976,7 +37976,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38027,7 +38027,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38074,7 +38074,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38125,7 +38125,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'tb',
     bbUp: 'nf',
@@ -38167,7 +38167,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38213,7 +38213,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38264,7 +38264,7 @@ export const cars: ICar[] = [
     name: 'Maëly',
     licensePlate: 'gg3059',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38310,7 +38310,7 @@ export const cars: ICar[] = [
     name: 'Andréanne',
     licensePlate: 'ph8634',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38356,7 +38356,7 @@ export const cars: ICar[] = [
     name: 'Geneviève',
     licensePlate: 'ti0093',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38407,7 +38407,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38464,7 +38464,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38515,7 +38515,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38571,7 +38571,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38628,7 +38628,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38679,7 +38679,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38725,7 +38725,7 @@ export const cars: ICar[] = [
     name: 'Mahélie',
     licensePlate: 'ju7959',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38771,7 +38771,7 @@ export const cars: ICar[] = [
     name: 'Laurène',
     licensePlate: 'zu5544',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38817,7 +38817,7 @@ export const cars: ICar[] = [
     name: 'Bécassine',
     licensePlate: 'uz7357',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/24/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -38858,7 +38858,7 @@ export const cars: ICar[] = [
     name: 'Esbjörn',
     licensePlate: 'ff2311',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -38909,7 +38909,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -38955,7 +38955,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39001,7 +39001,7 @@ export const cars: ICar[] = [
     name: 'Yénora',
     licensePlate: 'bb5367',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39052,7 +39052,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39104,7 +39104,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -39150,7 +39150,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'ii',
     bbUp: 'cr',
@@ -39192,7 +39192,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/26/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39243,7 +39243,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39299,7 +39299,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39350,7 +39350,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: null,
     bbUp: null,
@@ -39396,7 +39396,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -39442,7 +39442,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39493,7 +39493,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39539,7 +39539,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('11/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -39586,7 +39586,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/22/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39637,7 +39637,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39693,7 +39693,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39744,7 +39744,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39800,7 +39800,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39856,7 +39856,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -39912,7 +39912,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -39958,7 +39958,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40014,7 +40014,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40070,7 +40070,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40126,7 +40126,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40172,7 +40172,7 @@ export const cars: ICar[] = [
     name: 'Märta',
     licensePlate: 'aj2924',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40228,7 +40228,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40269,7 +40269,7 @@ export const cars: ICar[] = [
     name: 'Kuí',
     licensePlate: 'rg3801',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40315,7 +40315,7 @@ export const cars: ICar[] = [
     name: 'Björn',
     licensePlate: 'nn0847',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40361,7 +40361,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -40407,7 +40407,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40458,7 +40458,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40514,7 +40514,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/31/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40565,7 +40565,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40616,7 +40616,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40667,7 +40667,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40713,7 +40713,7 @@ export const cars: ICar[] = [
     name: 'Wá',
     licensePlate: 'uu1628',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40769,7 +40769,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40821,7 +40821,7 @@ export const cars: ICar[] = [
     name: 'Danièle',
     licensePlate: 'jz8346',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40872,7 +40872,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'py',
     bbUp: 'rs',
@@ -40918,7 +40918,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -40964,7 +40964,7 @@ export const cars: ICar[] = [
     name: 'Danièle',
     licensePlate: 'ua0181',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/5/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41016,7 +41016,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41073,7 +41073,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41114,7 +41114,7 @@ export const cars: ICar[] = [
     name: 'Thérèsa',
     licensePlate: 'kf3739',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41160,7 +41160,7 @@ export const cars: ICar[] = [
     name: 'Gaétane',
     licensePlate: 'ps5454',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41217,7 +41217,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41268,7 +41268,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41324,7 +41324,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41370,7 +41370,7 @@ export const cars: ICar[] = [
     name: 'Géraldine',
     licensePlate: 'ps1442',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41421,7 +41421,7 @@ export const cars: ICar[] = [
     name: 'Lèi',
     licensePlate: 'kl7551',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/26/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41477,7 +41477,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41523,7 +41523,7 @@ export const cars: ICar[] = [
     name: 'Anaëlle',
     licensePlate: 'to0477',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41574,7 +41574,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41620,7 +41620,7 @@ export const cars: ICar[] = [
     name: 'Publicité',
     licensePlate: 'xb0905',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41676,7 +41676,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41727,7 +41727,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41773,7 +41773,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41824,7 +41824,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41870,7 +41870,7 @@ export const cars: ICar[] = [
     name: 'Noëlla',
     licensePlate: 'pa2892',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -41916,7 +41916,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -41967,7 +41967,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/2/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42018,7 +42018,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42069,7 +42069,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'ex',
     bbUp: 'as',
@@ -42110,7 +42110,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42156,7 +42156,7 @@ export const cars: ICar[] = [
     name: 'Marylène',
     licensePlate: 'nj4072',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/6/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42207,7 +42207,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42253,7 +42253,7 @@ export const cars: ICar[] = [
     name: 'Pò',
     licensePlate: 'xd1147',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42309,7 +42309,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'sd',
     bbUp: 'xh',
@@ -42351,7 +42351,7 @@ export const cars: ICar[] = [
     name: 'Mélys',
     licensePlate: 'om6189',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -42397,7 +42397,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42448,7 +42448,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42504,7 +42504,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42555,7 +42555,7 @@ export const cars: ICar[] = [
     name: 'Ruò',
     licensePlate: 'dp3385',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42606,7 +42606,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42657,7 +42657,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42698,7 +42698,7 @@ export const cars: ICar[] = [
     name: 'Torbjörn',
     licensePlate: 'gd5952',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42749,7 +42749,7 @@ export const cars: ICar[] = [
     name: 'Athéna',
     licensePlate: 'cf4170',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/24/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42800,7 +42800,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42851,7 +42851,7 @@ export const cars: ICar[] = [
     name: 'Bénédicte',
     licensePlate: 'hc9258',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42907,7 +42907,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -42954,7 +42954,7 @@ export const cars: ICar[] = [
     name: 'Bérangère',
     licensePlate: 'bu8363',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43000,7 +43000,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -43046,7 +43046,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43092,7 +43092,7 @@ export const cars: ICar[] = [
     name: 'Athéna',
     licensePlate: 'dg4428',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43139,7 +43139,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/1/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43190,7 +43190,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43236,7 +43236,7 @@ export const cars: ICar[] = [
     name: 'Eléa',
     licensePlate: 'ws9650',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43292,7 +43292,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43343,7 +43343,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43389,7 +43389,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43445,7 +43445,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43501,7 +43501,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43552,7 +43552,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/29/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43603,7 +43603,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43659,7 +43659,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/24/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43705,7 +43705,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/17/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43761,7 +43761,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/11/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43807,7 +43807,7 @@ export const cars: ICar[] = [
     name: 'Eloïse',
     licensePlate: 'qv2952',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -43853,7 +43853,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -43899,7 +43899,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -43950,7 +43950,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44001,7 +44001,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44047,7 +44047,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/15/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44098,7 +44098,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44149,7 +44149,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/30/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44200,7 +44200,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/25/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44246,7 +44246,7 @@ export const cars: ICar[] = [
     name: 'Audréanne',
     licensePlate: 'ye9368',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/15/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44302,7 +44302,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44358,7 +44358,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44415,7 +44415,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44471,7 +44471,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44517,7 +44517,7 @@ export const cars: ICar[] = [
     name: 'Andréanne',
     licensePlate: 'wi9141',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44568,7 +44568,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44624,7 +44624,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44680,7 +44680,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44731,7 +44731,7 @@ export const cars: ICar[] = [
     name: 'Lóng',
     licensePlate: 'lx2860',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/7/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44782,7 +44782,7 @@ export const cars: ICar[] = [
     name: 'Cinéma',
     licensePlate: 'ht9896',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44833,7 +44833,7 @@ export const cars: ICar[] = [
     name: 'Vénus',
     licensePlate: 'mv1616',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44885,7 +44885,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44941,7 +44941,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -44997,7 +44997,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45054,7 +45054,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45110,7 +45110,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45161,7 +45161,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45212,7 +45212,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('11/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -45263,7 +45263,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/15/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45319,7 +45319,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/29/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45365,7 +45365,7 @@ export const cars: ICar[] = [
     name: 'Méryl',
     licensePlate: 'le2986',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45411,7 +45411,7 @@ export const cars: ICar[] = [
     name: 'Ophélie',
     licensePlate: 'ea9262',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45467,7 +45467,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45518,7 +45518,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/6/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45569,7 +45569,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45625,7 +45625,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/27/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45681,7 +45681,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/1/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45728,7 +45728,7 @@ export const cars: ICar[] = [
     name: 'Gaëlle',
     licensePlate: 'rj8765',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/17/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45779,7 +45779,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45835,7 +45835,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45886,7 +45886,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45938,7 +45938,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -45994,7 +45994,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46045,7 +46045,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46101,7 +46101,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/13/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46153,7 +46153,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46199,7 +46199,7 @@ export const cars: ICar[] = [
     name: 'Yóu',
     licensePlate: 'tz3584',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46255,7 +46255,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46306,7 +46306,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/20/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46352,7 +46352,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('12/7/2022').setHours(
         Math.random() * (23 - 2) + 2,
@@ -46398,7 +46398,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/26/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46449,7 +46449,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46500,7 +46500,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: null,
     bbUp: 'mv',
@@ -46541,7 +46541,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46587,7 +46587,7 @@ export const cars: ICar[] = [
     name: 'Yú',
     licensePlate: 'je0393',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/17/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46643,7 +46643,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46689,7 +46689,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46746,7 +46746,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/19/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46803,7 +46803,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/22/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46859,7 +46859,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46910,7 +46910,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -46956,7 +46956,7 @@ export const cars: ICar[] = [
     name: 'Néhémie',
     licensePlate: 'cy4410',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47012,7 +47012,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47063,7 +47063,7 @@ export const cars: ICar[] = [
     name: 'Simplifiés',
     licensePlate: 'mn4273',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'xh',
     bbUp: 'rv',
@@ -47110,7 +47110,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/23/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -47156,7 +47156,7 @@ export const cars: ICar[] = [
     name: 'Eloïse',
     licensePlate: 'cj3672',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/31/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47207,7 +47207,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/10/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47263,7 +47263,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47314,7 +47314,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47361,7 +47361,7 @@ export const cars: ICar[] = [
     name: 'Naëlle',
     licensePlate: 'hy0670',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47412,7 +47412,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47458,7 +47458,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/3/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47504,7 +47504,7 @@ export const cars: ICar[] = [
     name: 'Félicie',
     licensePlate: 'jt5410',
     expirationDate: null,
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -47555,7 +47555,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47602,7 +47602,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47658,7 +47658,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/1/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47704,7 +47704,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47755,7 +47755,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47806,7 +47806,7 @@ export const cars: ICar[] = [
     name: 'Méline',
     licensePlate: 'lu5624',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/7/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47862,7 +47862,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: null,
     bbUp: 'iy',
@@ -47903,7 +47903,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/6/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -47959,7 +47959,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/20/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48015,7 +48015,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'mc',
     bbUp: null,
@@ -48061,7 +48061,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48112,7 +48112,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48168,7 +48168,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48219,7 +48219,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/9/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48270,7 +48270,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/16/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48326,7 +48326,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48372,7 +48372,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: null,
     bbDown: 'mh',
     bbUp: null,
@@ -48413,7 +48413,7 @@ export const cars: ICar[] = [
     name: 'Börje',
     licensePlate: 'wl3087',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48469,7 +48469,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/18/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48525,7 +48525,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48576,7 +48576,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48622,7 +48622,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/15/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48673,7 +48673,7 @@ export const cars: ICar[] = [
     name: 'Mélia',
     licensePlate: 'op8127',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/15/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48719,7 +48719,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/8/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48776,7 +48776,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48827,7 +48827,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48883,7 +48883,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/27/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48940,7 +48940,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -48991,7 +48991,7 @@ export const cars: ICar[] = [
     name: 'Angèle',
     licensePlate: 'ky3453',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/16/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49047,7 +49047,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/14/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49098,7 +49098,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/21/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49144,7 +49144,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49195,7 +49195,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/19/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49251,7 +49251,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/10/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -49302,7 +49302,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/24/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49358,7 +49358,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49409,7 +49409,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/12/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49455,7 +49455,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/2/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49506,7 +49506,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/28/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49552,7 +49552,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49598,7 +49598,7 @@ export const cars: ICar[] = [
     name: 'Yú',
     licensePlate: 'gg7861',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/5/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49649,7 +49649,7 @@ export const cars: ICar[] = [
     name: 'Táng',
     licensePlate: 'fr4183',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49700,7 +49700,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/4/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49741,7 +49741,7 @@ export const cars: ICar[] = [
     name: 'Kallisté',
     licensePlate: 'zy1951',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/21/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49793,7 +49793,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/2/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49839,7 +49839,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('3/14/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49895,7 +49895,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('1/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -49941,7 +49941,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/24/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -49987,7 +49987,7 @@ export const cars: ICar[] = [
     name: 'Maëlyss',
     licensePlate: 'dg6390',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/28/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -50033,7 +50033,7 @@ export const cars: ICar[] = [
     name: 'Céline',
     licensePlate: 'yt9439',
     expirationDate: null,
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('12/11/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -50089,7 +50089,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/13/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -50145,7 +50145,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: null,
+    pickUpTime: null,
     deliveryTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
@@ -50196,7 +50196,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -50247,7 +50247,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('11/23/2022').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -50303,7 +50303,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/3/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -50359,7 +50359,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/25/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -50410,7 +50410,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('1/4/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1
@@ -50456,7 +50456,7 @@ export const cars: ICar[] = [
         Math.random() * (59 - 1) + 1
       )
     ),
-    pickupTime: new Date(
+    pickUpTime: new Date(
       new Date('2/24/2023').setHours(
         Math.random() * (23 - 2) + 2,
         Math.random() * (59 - 1) + 1

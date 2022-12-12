@@ -1,4 +1,12 @@
-import { Assignment, Car, Document, Luggage, Task, User } from '@hems/models';
+import {
+  Assignment,
+  Bike,
+  Car,
+  Document,
+  Luggage,
+  Task,
+  User,
+} from '@hems/models';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -43,7 +51,7 @@ class ConfigService {
       database: this.getValue('POSTGRES_DATABASE', false) || 'hems',
       dropSchema: true,
 
-      entities: [User, Luggage, Car, Task, Assignment, Document],
+      entities: [User, Luggage, Car, Task, Assignment, Document, Bike],
     };
   }
 }

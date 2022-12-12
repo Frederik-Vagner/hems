@@ -37,7 +37,7 @@ export class CreateCarRequest implements ICreateCarRequest {
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()
   @IsDateString()
-  pickupTime?: Date;
+  pickUpTime?: Date;
 
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()
@@ -113,7 +113,7 @@ export class UpdateCarRequest implements IUpdateCarRequest {
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()
   @IsDateString()
-  pickupTime?: Date;
+  pickUpTime?: Date;
 
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()

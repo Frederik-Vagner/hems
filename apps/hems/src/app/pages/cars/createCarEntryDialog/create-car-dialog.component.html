@@ -181,19 +181,18 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Pick Up Time</mat-label>
       <input
-        #pickupTime
         matInput
         type="text"
-        [ngxMatDatetimePicker]="pickupTimePicker"
-        formControlName="pickupTime"
+        [ngxMatDatetimePicker]="pickUpTimePicker"
+        formControlName="pickUpTime"
         placeholder="dd/MM HH:mm"
       />
       <mat-datepicker-toggle
         matSuffix
-        [for]="$any(pickupTimePicker)"
+        [for]="$any(pickUpTimePicker)"
       ></mat-datepicker-toggle>
       <ngx-mat-datetime-picker
-        #pickupTimePicker
+        #pickUpTimePicker
         [showSpinners]="true"
         [showSeconds]="false"
         [touchUi]="true"
@@ -201,8 +200,8 @@
       </ngx-mat-datetime-picker>
       <mat-error
         *ngIf="
-          createCarForm.get('pickupTime')?.invalid &&
-          createCarForm.get('pickupTime')?.dirty
+          createCarForm.get('pickUpTime')?.invalid &&
+          createCarForm.get('pickUpTime')?.dirty
         "
       >
         Required
