@@ -39,7 +39,7 @@ export class Car extends CompletedAt implements ICar {
 
   @ApiModelProperty({ example: Date.now() })
   @Column({ nullable: true })
-  pickupTime?: Date;
+  pickUpTime?: Date;
 
   @ApiModelProperty({ example: Date.now() })
   @Column({ nullable: true })

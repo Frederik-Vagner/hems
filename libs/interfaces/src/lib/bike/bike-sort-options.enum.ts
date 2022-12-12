@@ -1,5 +1,5 @@
 export enum BikeSortOptions {
-  PICKUP_TIME = 'pickupTime',
+  PICKUP_TIME = 'pickUpTime',
   NAME = 'name',
   ROOM = 'room',
   RESERVED_BY = 'reservedBy',

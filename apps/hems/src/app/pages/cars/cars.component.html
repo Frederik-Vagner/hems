@@ -27,7 +27,7 @@
           <mat-option value="createdAt">Created at</mat-option>
           <mat-option value="expirationDate">Expiration date</mat-option>
           <mat-option value="deliveryTime">Delivery time</mat-option>
-          <mat-option value="pickupTime">Pick up time</mat-option>
+          <mat-option value="pickUpTime">Pick up time</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -139,7 +139,7 @@
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="pickupDateTime">
+      <ng-container matColumnDef="pickUpDateTime">
         <th mat-header-cell *matHeaderCellDef>Pick<br />up time</th>
         <td
           mat-cell
@@ -147,8 +147,8 @@
           (click)="openDialogEdit(element)"
         >
           {{
-            element.pickupTime
-              ? (element.pickupTime | date: 'dd/MM HH:mm')
+            element.pickUpTime
+              ? (element.pickUpTime | date: 'dd/MM HH:mm')
               : 'Call down'
           }}
         </td>

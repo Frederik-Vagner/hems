@@ -85,6 +85,7 @@ export class CreateBikeDialogComponent {
         reservedBy: this.createBikeForm.get('reservedBy')?.value,
         bikeFormCompleted: this.bikeFormCompleted,
         comments: this.createBikeForm.get('comments')?.value,
+        completedAt: this.createBikeForm.get('completedAt')?.value,
       })
       .subscribe({
         next: () => {

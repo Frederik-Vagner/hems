@@ -70,7 +70,7 @@ export class BikesService {
       case BikeSortOptions.COMPLETED_AT:
         return { completedAt: sortOrder };
       case BikeSortOptions.PICKUP_TIME:
-        return { pickupTime: sortOrder };
+        return { pickUpTime: sortOrder };
       case BikeSortOptions.CREATED_AT:
         return { createdAt: sortOrder };
       case BikeSortOptions.NAME:

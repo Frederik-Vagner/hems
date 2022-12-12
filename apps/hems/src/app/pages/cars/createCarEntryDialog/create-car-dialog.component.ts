@@ -47,7 +47,7 @@ export class CreateCarDialogComponent {
       name: new UntypedFormControl('', [Validators.required]),
       licensePlate: new UntypedFormControl('', [Validators.required]),
       expirationDate: new UntypedFormControl('', []),
-      pickupTime: new UntypedFormControl('', []),
+      pickUpTime: new UntypedFormControl('', []),
       deliveryTime: new UntypedFormControl('', []),
       bbDown: new UntypedFormControl('', []),
       location: new UntypedFormControl('', [Validators.required]),
@@ -89,7 +89,7 @@ export class CreateCarDialogComponent {
         expirationDate: new Date(
           this.createCarForm.get('expirationDate')?.value
         ),
-        pickupTime: new Date(this.createCarForm.get('pickupTime')?.value),
+        pickUpTime: new Date(this.createCarForm.get('pickUpTime')?.value),
         deliveryTime: new Date(this.createCarForm.get('deliveryTime')?.value),
         bbDown: this.createCarForm.get('bbDown')?.value.toUpperCase(),
         bbUp: this.createCarForm.get('bbUp')?.value.toUpperCase(),

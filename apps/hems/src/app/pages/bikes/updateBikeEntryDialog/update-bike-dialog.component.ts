@@ -22,7 +22,7 @@ export class UpdateBikeDialogComponent {
   updateBikeForm: UntypedFormGroup;
   checked = true;
   isLoading = false;
-  bikeFormCompleted = false;
+  bikeFormCompleted: boolean;
 
   @ViewChild('nrOfBikes') nrOfBikesInput!: ElementRef;
   @ViewChild('pickUpTime') pickUpTimeInput!: ElementRef;
@@ -53,6 +53,7 @@ export class UpdateBikeDialogComponent {
       comments: new UntypedFormControl(data.comments, []),
       completedAt: new UntypedFormControl(data.completedAt, []),
     });
+    this.bikeFormCompleted = data.bikeFormCompleted ?? false;
   }
 
   onSubmit() {
