@@ -3,7 +3,7 @@ import { ICompletedAt } from '../base.interface';
 export interface IBike extends ICompletedAt {
   bikeId: string;
   nrOfBikes?: string;
-  pickupTime?: Date | null;
+  pickUpTime?: Date | null;
   name?: string;
   room?: string;
   reservedBy?: string;
@@ -13,7 +13,7 @@ export interface IBike extends ICompletedAt {
 
 export interface ICreateBikeRequest {
   nrOfBikes?: string;
-  pickupTime?: Date | null;
+  pickUpTime?: Date | null;
   name?: string;
   room?: string;
   reservedBy?: string;
@@ -24,7 +24,7 @@ export interface ICreateBikeRequest {
 
 export interface IUpdateBikeRequest {
   nrOfBikes?: string;
-  pickupTime?: Date | null;
+  pickUpTime?: Date | null;
   name?: string;
   room?: string;
   reservedBy?: string;

@@ -10,7 +10,7 @@ export class CreateBikeRequest implements ICreateBikeRequest {
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()
   @IsDateString()
-  pickupTime?: Date | null;
+  pickUpTime?: Date | null;
 
   @ApiModelProperty({ example: 'Teodor' })
   @IsOptional()
@@ -46,7 +46,7 @@ export class UpdateBikeRequest implements IUpdateBikeRequest {
   @ApiModelProperty({ example: Date.now() })
   @IsOptional()
   @IsDateString()
-  pickupTime?: Date | null;
+  pickUpTime?: Date | null;
 
   @ApiModelProperty({ example: 'Teodor' })
   @IsOptional()

@@ -25,7 +25,7 @@ export class UpdateBikeDialogComponent {
   bikeFormCompleted = false;
 
   @ViewChild('nrOfBikes') nrOfBikesInput!: ElementRef;
-  @ViewChild('pickupTime') pickupTimeInput!: ElementRef;
+  @ViewChild('pickUpTime') pickUpTimeInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('reservedBy') reservedByInput!: ElementRef;
@@ -43,7 +43,7 @@ export class UpdateBikeDialogComponent {
         Validators.pattern('^[0-9]*$'),
       ]),
       nrOfBikes: new UntypedFormControl(data.nrOfBikes, [Validators.required]),
-      pickupTime: new UntypedFormControl(data.pickupTime, [
+      pickUpTime: new UntypedFormControl(data.pickUpTime, [
         Validators.required,
       ]),
       name: new UntypedFormControl(data.name, [Validators.required]),
@@ -60,8 +60,8 @@ export class UpdateBikeDialogComponent {
         this.roomInput.nativeElement.focus();
       } else if (this.updateBikeForm.get('nrOfBikes')?.invalid) {
         this.nrOfBikesInput.nativeElement.focus();
-      } else if (this.updateBikeForm.get('pickupTime')?.invalid) {
-        this.pickupTimeInput.nativeElement.focus();
+      } else if (this.updateBikeForm.get('pickUpTime')?.invalid) {
+        this.pickUpTimeInput.nativeElement.focus();
       } else if (this.updateBikeForm.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
       } else if (this.updateBikeForm.get('reservedBy')?.invalid) {
@@ -77,7 +77,7 @@ export class UpdateBikeDialogComponent {
       .updateBike(this.data.bikeId, {
         room: this.updateBikeForm.get('room')?.value,
         nrOfBikes: this.updateBikeForm.get('nrOfBikes')?.value,
-        pickupTime: new Date(this.updateBikeForm.get('pickupTime')?.value),
+        pickUpTime: new Date(this.updateBikeForm.get('pickUpTime')?.value),
         name: this.updateBikeForm.get('name')?.value,
         reservedBy: this.updateBikeForm.get('reservedBy')?.value,
         bikeFormCompleted: this.bikeFormCompleted,
