@@ -30,8 +30,8 @@ export class BikesComponent implements OnInit {
     'room',
     'reservedBy',
     'bikeFormCompleted',
-    'comments',
     'completedAt',
+    'comments',
   ];
 
   constructor(
