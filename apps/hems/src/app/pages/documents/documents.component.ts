@@ -8,7 +8,7 @@ import { CreateDocumentDialogComponent } from './createDocumentDialog/create-doc
 @Component({
   selector: 'hems-documents',
   templateUrl: './documents.component.html',
-  styleUrls: ['./documents.component.scss'],
+  styleUrls: ['./documents.component.scss','../../../assets/styles/table.scss' ],
 })
 export class DocumentsComponent implements OnInit {
   documentList: IDocument[] = [];
