@@ -3,13 +3,13 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { IGetDocumentByIdResponse } from '@hems/interfaces';
-import { DocumentsService } from '../../../../services/documents.service';
+import { DocumentsService } from '../../../services/documents.service';
 
 @Component({
   selector: 'hems-see-document-dialog',
   templateUrl: './see-document-dialog.component.html',
   styleUrls: [
-    '../../../../../assets/styles/dialog.scss',
+    '../../../../assets/styles/dialog.scss',
     './see-document-dialog.component.scss',
   ],
 })
