@@ -21,10 +21,10 @@
         class="remove-error-message"
       >
         <mat-label>Sort By</mat-label>
-        <mat-select>
+        <mat-select [(value)]="sortBy" (selectionChange)="fetchBikeList()">
           <mat-option value="createdAt">Created at</mat-option>
           <mat-option value="completedAt">Completed at</mat-option>
-          <mat-option value="bikeFormCompleted">Bike form completed</mat-option>
+          <mat-option value="bikeFormCompleted">Missing bike form</mat-option>
           <mat-option value="pickUpTime">Pick up time</mat-option>
           <mat-option value="name">Name</mat-option>
           <mat-option value="room">Room</mat-option>
