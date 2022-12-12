@@ -91,11 +91,17 @@ export class CreateCarDialogComponent {
         ),
         pickUpTime: new Date(this.createCarForm.get('pickUpTime')?.value),
         deliveryTime: new Date(this.createCarForm.get('deliveryTime')?.value),
-        bbDown: this.createCarForm.get('bbDown')?.value.toUpperCase(),
-        bbUp: this.createCarForm.get('bbUp')?.value.toUpperCase(),
+        bbDown: this.createCarForm.get('bbDown')?.value
+          ? this.createCarForm.get('bbDown')?.value.toUpperCase()
+          : '-',
+        bbUp: this.createCarForm.get('bbUp')?.value
+          ? this.createCarForm.get('bbUp')?.value.toUpperCase()
+          : '-',
         location: this.createCarForm.get('location')?.value,
         parkingLot: this.createCarForm.get('parkingLot')?.value,
-        bbOut: this.createCarForm.get('bbOut')?.value.toUpperCase(),
+        bbOut: this.createCarForm.get('bbOut')?.value
+          ? this.createCarForm.get('bbOut')?.value.toUpperCase()
+          : '-',
         comments: this.createCarForm.get('comments')?.value,
         charged: false,
       })

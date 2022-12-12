@@ -194,7 +194,7 @@
           *matCellDef="let element"
           (click)="openDialogEdit(element)"
         >
-          {{ element.parkingLot }}
+          {{ element.parkingLot ? element.parkingLot : '-' }}
         </td>
       </ng-container>
 
