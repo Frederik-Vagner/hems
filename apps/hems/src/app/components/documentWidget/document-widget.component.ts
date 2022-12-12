@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { IDocument } from '@hems/interfaces';
-import { SeeDocumentDialogComponent } from './seeDocumentDialog/see-document-dialog.component';
+import { SeeDocumentDialogComponent } from './dialogs/seeDocumentDialog/see-document-dialog.component';
 
 @Component({
   selector: 'hems-document-widget',

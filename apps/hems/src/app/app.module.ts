@@ -29,7 +29,7 @@ import { EditTaskDialogComponent } from './pages/tasks/editTaskDialog/editTaskDi
 import { TableInfoDialogComponent } from './components/tableInfoDialog/table-info-dialog.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { DocumentWidgetComponent } from './components/documentWidget/document-widget.component';
-import { SeeDocumentDialogComponent } from './components/documentWidget/seeDocumentDialog/see-document-dialog.component';
+import { SeeDocumentDialogComponent } from './components/documentWidget/dialogs/seeDocumentDialog/see-document-dialog.component';
 
 @NgModule({
   declarations: [
