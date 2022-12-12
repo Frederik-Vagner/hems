@@ -12,6 +12,8 @@
           aria-label="search"
           placeholder="Search ..."
           matInput
+          [(ngModel)]="search"
+          (change)="fetchBikeList()"
         />
       </mat-form-field>
 
