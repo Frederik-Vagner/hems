@@ -51,6 +51,39 @@
 
   <div class="table-height">
     <table mat-table [dataSource]="bikeList">
+      <ng-container matColumnDef="room">
+        <th mat-header-cell *matHeaderCellDef>Room</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          (click)="openDialogEdit(element)"
+        >
+          {{ element.room }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          (click)="openDialogEdit(element)"
+        >
+          {{ element.name }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="reservedBy">
+        <th mat-header-cell *matHeaderCellDef>Reserved by</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          (click)="openDialogEdit(element)"
+        >
+          {{ element.reservedBy }}
+        </td>
+      </ng-container>
+
       <ng-container matColumnDef="nrOfBikes">
         <th mat-header-cell *matHeaderCellDef>Nr. of bikes</th>
         <td
@@ -77,36 +110,14 @@
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
+      <ng-container matColumnDef="completedAt">
+        <th mat-header-cell *matHeaderCellDef>Returned</th>
         <td
           mat-cell
           *matCellDef="let element"
           (click)="openDialogEdit(element)"
         >
-          {{ element.name }}
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="room">
-        <th mat-header-cell *matHeaderCellDef>Room</th>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          (click)="openDialogEdit(element)"
-        >
-          {{ element.room }}
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="reservedBy">
-        <th mat-header-cell *matHeaderCellDef>Reserved by</th>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          (click)="openDialogEdit(element)"
-        >
-          {{ element.reservedBy }}
+          {{ element.completedAt }}
         </td>
       </ng-container>
 
@@ -117,7 +128,20 @@
           *matCellDef="let element"
           (click)="openDialogEdit(element)"
         >
-          {{ element.completedAt }}
+          {{
+            element.completedAt ? (element.completedAt | date: 'dd/MM HH:mm') : '-'
+          }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="comments">
+        <th mat-header-cell *matHeaderCellDef>Comments</th>
+        <td
+          mat-cell
+          *matCellDef="let element"
+          (click)="openDialogEdit(element)"
+        >
+          {{ element.comments ? element.comments : '-' }}
         </td>
       </ng-container>
 
@@ -137,30 +161,6 @@
             />
             <span class="checkmark" style="top: 0; margin-left: 20px"></span>
           </label>
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="comments">
-        <th mat-header-cell *matHeaderCellDef>Comments</th>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          (click)="openDialogEdit(element)"
-        >
-          {{ element.comments ? element.comments : '-' }}
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="completedAt">
-        <th mat-header-cell *matHeaderCellDef>Returned</th>
-        <td
-          mat-cell
-          *matCellDef="let element"
-          (click)="openDialogEdit(element)"
-        >
-          {{
-            element.completedAt ? (element.completedAt | date: 'dd/MM HH:mm') : '-'
-          }}
         </td>
       </ng-container>
 

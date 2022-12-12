@@ -24,14 +24,14 @@ export class BikesComponent implements OnInit {
   search = '';
 
   bikeColumns = [
+    'room',
+    'name',
+    'reservedBy',
     'nrOfBikes',
     'pickUpTime',
-    'name',
-    'room',
-    'reservedBy',
-    'bikeFormCompleted',
     'completedAt',
     'comments',
+    'bikeFormCompleted',
   ];
 
   constructor(
