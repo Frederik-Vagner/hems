@@ -40,7 +40,7 @@ export class CarsComponent implements OnInit {
     'name',
     'licensePlate',
     'expirationDateTime',
-    'pickupDateTime',
+    'pickUpDateTime',
     'bbDown',
     'bbUp',
     'location',
