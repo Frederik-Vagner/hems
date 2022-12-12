@@ -48,7 +48,7 @@ export class CreateCheckoutDialogComponent {
       bbLr: new UntypedFormControl('', [Validators.required]),
       bbDown: new UntypedFormControl('', [Validators.required]),
       bbOut: new UntypedFormControl('', []),
-      completedAt: new UntypedFormControl('', []),
+      completedAt: new UntypedFormControl(null, []),
       location: new UntypedFormControl('', [Validators.required]),
       comments: new UntypedFormControl('', []),
     });
@@ -83,7 +83,9 @@ export class CreateCheckoutDialogComponent {
         room: this.createCheckoutForm.get('room')?.value,
         // roomReady: this.createCheckoutForm.get('roomReady')?.value,
         name: this.createCheckoutForm.get('name')?.value,
-        arrivalTime: new Date(this.createCheckoutForm.get('arrivalTime')?.value),
+        arrivalTime: new Date(
+          this.createCheckoutForm.get('arrivalTime')?.value
+        ),
         bags: this.createCheckoutForm.get('bags')?.value,
         tagNr: this.createCheckoutForm.get('tagNr')?.value,
         bbLr: this.createCheckoutForm.get('bbLr')?.value.toUpperCase(),
@@ -96,7 +98,7 @@ export class CreateCheckoutDialogComponent {
       })
       .subscribe({
         next: () => {
-          this.snackBar.open('Check In luggage item created!', 'Thanks', {
+          this.snackBar.open('Check out luggage item created!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
