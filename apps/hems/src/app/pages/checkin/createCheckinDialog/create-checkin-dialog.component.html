@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="form" class="dialog-container">
+<form (ngSubmit)="onSubmit()" [formGroup]="createCheckinForm" class="dialog-container">
   <h1>Create check in</h1>
   <hr />
 
@@ -12,7 +12,7 @@
         matInput
         placeholder="123"
       />
-      <mat-error *ngIf="form.get('room')?.invalid && form.get('room')?.dirty">
+      <mat-error *ngIf="createCheckinForm.get('room')?.invalid && createCheckinForm.get('room')?.dirty">
         Must be a number from 100-999
       </mat-error>
     </mat-form-field>
@@ -20,7 +20,6 @@
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Time of arrival</mat-label>
       <input
-        #arrivalTime
         matInput
         [ngxMatDatetimePicker]="pickerArrival"
         placeholder="dd/MM HH:mm"
@@ -59,7 +58,7 @@
       matInput
       placeholder="Johnson"
     />
-    <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+    <mat-error *ngIf="createCheckinForm.get('name')?.invalid && createCheckinForm.get('name')?.dirty">
       Required
     </mat-error>
   </mat-form-field>
@@ -74,7 +73,7 @@
         matInput
         placeholder="1+3"
       />
-      <mat-error *ngIf="form.get('bags')?.invalid && form.get('bags')?.dirty">
+      <mat-error *ngIf="createCheckinForm.get('bags')?.invalid && createCheckinForm.get('bags')?.dirty">
         Required
       </mat-error>
     </mat-form-field>
@@ -88,7 +87,7 @@
         matInput
         placeholder="123"
       />
-      <mat-error *ngIf="form.get('tagNr')?.invalid && form.get('tagNr')?.dirty">
+      <mat-error *ngIf="createCheckinForm.get('tagNr')?.invalid && createCheckinForm.get('tagNr')?.dirty">
         Required
       </mat-error>
     </mat-form-field>
@@ -104,7 +103,7 @@
         matInput
         placeholder="FV"
       />
-      <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
+      <mat-error *ngIf="createCheckinForm.get('bbLr')?.invalid && createCheckinForm.get('bbLr')?.dirty">
         Required
       </mat-error>
     </mat-form-field>
@@ -119,7 +118,7 @@
         placeholder="LR1"
       />
       <mat-error
-        *ngIf="form.get('location')?.invalid && form.get('location')?.dirty"
+        *ngIf="createCheckinForm.get('location')?.invalid && createCheckinForm.get('location')?.dirty"
       >
         Required
       </mat-error>
@@ -130,7 +129,7 @@
     <mat-form-field autocomplete="off" class="input" appearance="fill">
       <mat-label>BB Out</mat-label>
       <input type="text" formControlName="bbOut" matInput placeholder="JD" />
-      <mat-error *ngIf="form.get('bbOut')?.invalid && form.get('bbOut')?.dirty">
+      <mat-error *ngIf="createCheckinForm.get('bbOut')?.invalid && createCheckinForm.get('bbOut')?.dirty">
         Required
       </mat-error>
     </mat-form-field>
@@ -166,7 +165,7 @@
       placeholder="Comments"
     ></textarea>
     <mat-error
-      *ngIf="form.get('comments')?.invalid && form.get('comments')?.dirty"
+      *ngIf="createCheckinForm.get('comments')?.invalid && createCheckinForm.get('comments')?.dirty"
     >
       Can't be more than 1000 characters
     </mat-error>

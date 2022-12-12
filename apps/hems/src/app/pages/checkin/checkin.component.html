@@ -95,11 +95,11 @@
       </ng-container>
       <ng-container matColumnDef="bbOut">
         <th mat-header-cell *matHeaderCellDef>BB up</th>
-        <td mat-cell *matCellDef="let item">{{ item.bbOut ?? '-' }}</td>
+        <td mat-cell *matCellDef="let item">{{ item.bbOut ? item.bbOut : '-' }}</td>
       </ng-container>
       <ng-container matColumnDef="comments">
         <th mat-header-cell *matHeaderCellDef>Comments</th>
-        <td mat-cell *matCellDef="let item">{{ item.comments ?? '-' }}</td>
+        <td mat-cell *matCellDef="let item">{{ item.comments ? item.comments : '-' }}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="checkinColumns"></tr>

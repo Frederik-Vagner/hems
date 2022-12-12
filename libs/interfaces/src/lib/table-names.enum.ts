@@ -5,4 +5,5 @@ export enum TableInfoOptions {
   LONG_TERM = 'longTerm',
   ASSIGNMENTS = 'assignments',
   TASKS = 'tasks',
+  BIKES = 'bikes',
 }
