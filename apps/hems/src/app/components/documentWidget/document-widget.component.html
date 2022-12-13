@@ -1,0 +1,25 @@
+<section class="document-widget-container">
+  <div class="text-container">
+    <div class="title-container">
+      <h2>{{ document.title }}</h2>
+      <hr />
+    </div>
+    <div class="content-container">
+      <p>
+        <!-- TODO: remove extra comments before review -->
+        {{ document.comments }}
+      </p>
+    </div>
+  </div>
+
+  <div class="action-bar-container">
+    <button mat-raised-button class="secondary-btn">Edit</button>
+    <button
+      mat-raised-button
+      class="action-btn"
+      (click)="openSeeDocumentDialog(document.documentId)"
+    >
+      View <mat-icon aria-hidden="false">remove_red_eye</mat-icon>
+    </button>
+  </div>
+</section>

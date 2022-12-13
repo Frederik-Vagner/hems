@@ -35,7 +35,7 @@ export class UpdateCarDialogComponent {
 
   constructor(
     private carService: CarService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: ICar
   ) {
@@ -99,31 +99,39 @@ export class UpdateCarDialogComponent {
         arrivalDate: new Date(this.updateCarForm.get('arrivalDate')?.value),
         departureDate: new Date(this.updateCarForm.get('departureDate')?.value),
         name: this.updateCarForm.get('name')?.value,
-        licensePlate: this.updateCarForm.get('licensePlate')?.value,
+        licensePlate: this.updateCarForm.get('licensePlate')?.value
+          ? this.updateCarForm.get('licensePlate')?.value.toUpperCase()
+          : '',
         expirationDate: new Date(
           this.updateCarForm.get('expirationDate')?.value
         ),
         pickUpTime: new Date(this.updateCarForm.get('pickUpTime')?.value),
         deliveryTime: new Date(this.updateCarForm.get('deliveryTime')?.value),
-        bbDown: this.updateCarForm.get('bbDown')?.value.toUpperCase(),
-        bbUp: this.updateCarForm.get('bbUp')?.value.toUpperCase(),
+        bbDown: this.updateCarForm.get('bbDown')?.value
+          ? this.updateCarForm.get('bbDown')?.value.toUpperCase()
+          : '',
+        bbUp: this.updateCarForm.get('bbUp')?.value
+          ? this.updateCarForm.get('bbUp')?.value.toUpperCase()
+          : '',
         location: this.updateCarForm.get('location')?.value,
         parkingLot: this.updateCarForm.get('parkingLot')?.value,
-        bbOut: this.updateCarForm.get('bbOut')?.value.toUpperCase(),
+        bbOut: this.updateCarForm.get('bbOut')?.value
+          ? this.updateCarForm.get('bbOut')?.value.toUpperCase()
+          : '',
         comments: this.updateCarForm.get('comments')?.value,
         charged: this.updateCarForm.get('charged')?.value,
         completedAt: this.updateCarForm.get('deliveryTime')?.value,
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Car updated!', 'Thanks', { duration: 5000 });
+          this.snackBar.open('Car updated!', 'Thanks', { duration: 5000 });
           document.location.reload();
           this.dialog.closeAll();
           this.isLoading = false;
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackBar.open('Failed to update, please try again.', 'Okay', {
             duration: 15000,
           });
           this.isLoading = false;

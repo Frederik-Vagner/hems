@@ -37,7 +37,7 @@
           routerLink="/checkin"
           [ngClass]="title === 'Check In' ? 'active-nav' : ''"
         >
-          <mat-icon aria-hidden="false">book</mat-icon>
+          <mat-icon aria-hidden="false">assignment_returned</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
@@ -49,7 +49,7 @@
           routerLink="/checkout"
           [ngClass]="title === 'Check Out' ? 'active-nav' : ''"
         >
-          <mat-icon aria-hidden="false">bookmark</mat-icon>
+          <mat-icon aria-hidden="false">assignment_return</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
@@ -85,7 +85,7 @@
           [ngClass]="title === 'Daily Tasks' ? 'active-nav' : ''"
           routerLink="/daily-tasks"
         >
-          <mat-icon aria-hidden="false">task</mat-icon>
+          <mat-icon aria-hidden="false">event</mat-icon>
           <span
             [ngClass]="{ collapsible: sidebarCollapsed }"
             class="side-nav-item"
@@ -97,7 +97,7 @@
           [ngClass]="title === 'Bell Boy Assignment Sheet' ? 'active-nav' : ''"
           routerLink="/assignments"
         >
-          <mat-icon aria-hidden="false">fact_check</mat-icon>
+          <mat-icon aria-hidden="false">assignment_turned_in</mat-icon>
           <span
             class="side-nav-item"
             [ngClass]="{ collapsible: sidebarCollapsed }"
@@ -118,6 +118,18 @@
             [ngClass]="{ collapsible: sidebarCollapsed }"
             data-cy="side-nav-item"
             >Bike sheet</span
+          >
+        </button>
+        <button
+          mat-list-item
+          [ngClass]="title === 'Documents' ? 'active-nav' : ''"
+          routerLink="/documents"
+        >
+          <mat-icon aria-hidden="false">library_books</mat-icon>
+          <span
+            class="side-nav-item"
+            [ngClass]="{ collapsible: sidebarCollapsed }"
+            >Documents</span
           >
         </button>
       </mat-action-list>
@@ -147,21 +159,24 @@
             >directions_car</mat-icon
           >
           <mat-icon aria-hidden="false" *ngSwitchCase="'Check Out'"
-            >bookmark</mat-icon
+            >assignment_return</mat-icon
           >
           <mat-icon aria-hidden="false" *ngSwitchCase="'Check In'"
-            >book</mat-icon
+            >assignment_returned</mat-icon
           >
           <mat-icon aria-hidden="false" *ngSwitchCase="'Daily Tasks'"
-            >task</mat-icon
+            >event</mat-icon
           >
           <mat-icon aria-hidden="false" *ngSwitchCase="'Long Term'"
             >receipt_long</mat-icon
           >
+          <mat-icon aria-hidden="false" *ngSwitchCase="'Documents'"
+            >library_books</mat-icon
+          >
           <mat-icon
             aria-hidden="false"
             *ngSwitchCase="'Bell Boy Assignment Sheet'"
-            >fact_check</mat-icon
+            >assignment_turned_in</mat-icon
           >
           <mat-icon aria-hidden="false" *ngSwitchCase="'Bike Sheet'"
             >fact_check</mat-icon

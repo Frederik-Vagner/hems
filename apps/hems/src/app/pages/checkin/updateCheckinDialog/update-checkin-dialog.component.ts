@@ -30,7 +30,6 @@ export class UpdateCheckinDialogComponent {
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
-  @ViewChild('arrivalTime') arrivalTimeInput!: ElementRef;
   @ViewChild('bags') bagsInput!: ElementRef;
   @ViewChild('tagNr') tagNrInput!: ElementRef;
   @ViewChild('bbLr') bbLrInput!: ElementRef;
@@ -40,7 +39,7 @@ export class UpdateCheckinDialogComponent {
     public dialogRef: MatDialogRef<UpdateCheckinDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {
     this.luggageId = data.luggageId;
@@ -62,7 +61,7 @@ export class UpdateCheckinDialogComponent {
       bbLr: new UntypedFormControl(data.bbLr, [Validators.required]),
       bbOut: new UntypedFormControl(data.bbOut, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
-      completedAt: new UntypedFormControl(new Date(), []),
+      completedAt: new UntypedFormControl(data.completedAt, []),
       comments: new UntypedFormControl(data.comments, []),
     });
   }
@@ -73,8 +72,6 @@ export class UpdateCheckinDialogComponent {
         this.roomInput.nativeElement.focus();
       } else if (this.form.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
-      } else if (this.form.get('arrivalTime')?.invalid) {
-        this.arrivalTimeInput.nativeElement.focus();
       } else if (this.form.get('bags')?.invalid) {
         this.bagsInput.nativeElement.focus();
       } else if (this.form.get('tagNr')?.invalid) {
@@ -99,15 +96,21 @@ export class UpdateCheckinDialogComponent {
         arrivalTime: new Date(this.form.get('arrivalTime')?.value),
         bags: this.form.get('bags')?.value,
         tagNr: this.form.get('tagNr')?.value,
-        bbLr: this.form.get('bbLr')?.value.toUpperCase(),
-        bbOut: this.form.get('bbOut')?.value.toUpperCase(),
-        location: this.form.get('location')?.value,
+        bbLr: this.form.get('bbLr')?.value
+          ? this.form.get('bbLr')?.value.toUpperCase()
+          : '',
+        bbOut: this.form.get('bbOut')?.value
+          ? this.form.get('bbOut')?.value.toUpperCase()
+          : '',
+        location: this.form.get('location')?.value
+          ? this.form.get('location')?.value.toUpperCase()
+          : '',
         completedAt: this.form.get('completedAt')?.value,
         comments: this.form.get('comments')?.value,
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Luggage item updated!', 'Thanks', {
+          this.snackBar.open('Luggage item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -116,7 +119,7 @@ export class UpdateCheckinDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackBar.open('Failed to update, please try again.', 'Okay', {
             duration: 10000,
           });
           this.isLoading = false;

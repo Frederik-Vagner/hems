@@ -2,7 +2,11 @@ import { ApiModelProperty } from '@nestjs/swagger/dist/decorators/api-model-prop
 import { IsDateString, IsNotEmpty, IsOptional } from 'class-validator';
 import { IUpdateAssignmentRequest } from '../assignment/assignment.interface';
 import { CompletedAtResponse } from '../base.dto';
-import { ICreateDocumentRequest, IDocument } from './document.interface';
+import {
+  ICreateDocumentRequest,
+  IDocument,
+  IGetDocumentByIdResponse,
+} from './document.interface';
 
 export class GetDocumentResponse
   extends CompletedAtResponse
@@ -70,7 +74,10 @@ export class DeleteDocumentResponse {
   message = 'Deleted.';
 }
 
-export class GetDocumentByIdResponse extends GetDocumentResponse {
+export class GetDocumentByIdResponse
+  extends GetDocumentResponse
+  implements IGetDocumentByIdResponse
+{
   @ApiModelProperty({
     example:
       'https://eu-central-1.linodeobjects.com:443/hems-documents/21234.pdf?Signature=XEiYEET1C4T3I25s0I5K1IOH%2Co%3X&Expires=1670271241&AWSAccessKeyId=123456789EAEA',

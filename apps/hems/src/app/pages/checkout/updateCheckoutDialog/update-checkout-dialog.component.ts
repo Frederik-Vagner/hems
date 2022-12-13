@@ -23,8 +23,7 @@ import { LuggageService } from '../../../services/luggage.service';
   ],
 })
 export class UpdateCheckoutDialogComponent {
-  form: UntypedFormGroup;
-  checked = true;
+  updateCheckoutForm: UntypedFormGroup;
   isLoading = false;
   luggageId: string;
 
@@ -40,11 +39,11 @@ export class UpdateCheckoutDialogComponent {
     public dialogRef: MatDialogRef<UpdateCheckoutDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ILuggage,
     private service: LuggageService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {
     this.luggageId = data.luggageId;
-    this.form = new UntypedFormGroup({
+    this.updateCheckoutForm = new UntypedFormGroup({
       room: new UntypedFormControl(data.room, [Validators.required]),
       name: new UntypedFormControl(data.name, [Validators.required]),
       bags: new UntypedFormControl(data.bags, [Validators.required]),
@@ -53,26 +52,26 @@ export class UpdateCheckoutDialogComponent {
       bbDown: new UntypedFormControl(data.bbDown, [Validators.required]),
       bbOut: new UntypedFormControl(data.bbOut, []),
       location: new UntypedFormControl(data.location, [Validators.required]),
-      completedAt: new UntypedFormControl(new Date(), []),
+      completedAt: new UntypedFormControl(data.completedAt, []),
       comments: new UntypedFormControl(data.comments, []),
     });
   }
 
   onSubmit(): void {
-    if (!this.form.valid) {
-      if (this.form.get('room')?.invalid) {
+    if (!this.updateCheckoutForm.valid) {
+      if (this.updateCheckoutForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
-      } else if (this.form.get('name')?.invalid) {
+      } else if (this.updateCheckoutForm.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
-      } else if (this.form.get('bags')?.invalid) {
+      } else if (this.updateCheckoutForm.get('bags')?.invalid) {
         this.bagsInput.nativeElement.focus();
-      } else if (this.form.get('tagNr')?.invalid) {
+      } else if (this.updateCheckoutForm.get('tagNr')?.invalid) {
         this.tagNrInput.nativeElement.focus();
-      } else if (this.form.get('bbDown')?.invalid) {
+      } else if (this.updateCheckoutForm.get('bbDown')?.invalid) {
         this.bbDownInput.nativeElement.focus();
-      } else if (this.form.get('location')?.invalid) {
+      } else if (this.updateCheckoutForm.get('location')?.invalid) {
         this.locationInput.nativeElement.focus();
-      } else if (this.form.get('bbLr')?.invalid) {
+      } else if (this.updateCheckoutForm.get('bbLr')?.invalid) {
         this.bbLrInput.nativeElement.focus();
       }
     } else {
@@ -84,20 +83,28 @@ export class UpdateCheckoutDialogComponent {
     this.isLoading = true;
     this.service
       .update(this.luggageId, {
-        room: this.form.get('room')?.value,
-        name: this.form.get('name')?.value,
-        bags: this.form.get('bags')?.value,
-        tagNr: this.form.get('tagNr')?.value,
-        bbLr: this.form.get('bbLr')?.value.toUpperCase(),
-        bbDown: this.form.get('bbDown')?.value.toUpperCase(),
-        bbOut: this.form.get('bbOut')?.value.toUpperCase(),
-        location: this.form.get('location')?.value,
-        completedAt: this.form.get('completedAt')?.value,
-        comments: this.form.get('comments')?.value,
+        room: this.updateCheckoutForm.get('room')?.value,
+        name: this.updateCheckoutForm.get('name')?.value,
+        bags: this.updateCheckoutForm.get('bags')?.value,
+        tagNr: this.updateCheckoutForm.get('tagNr')?.value,
+        bbLr: this.updateCheckoutForm.get('bbLr')?.value
+          ? this.updateCheckoutForm.get('bbLr')?.value.toUpperCase()
+          : '',
+        bbDown: this.updateCheckoutForm.get('bbDown')?.value
+          ? this.updateCheckoutForm.get('bbDown')?.value.toUpperCase()
+          : '',
+        bbOut: this.updateCheckoutForm.get('bbOut')?.value
+          ? this.updateCheckoutForm.get('bbOut')?.value.toUpperCase()
+          : '',
+        location: this.updateCheckoutForm.get('location')?.value
+          ? this.updateCheckoutForm.get('location')?.value.toUpperCase()
+          : '',
+        completedAt: this.updateCheckoutForm.get('completedAt')?.value,
+        comments: this.updateCheckoutForm.get('comments')?.value,
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Luggage item updated!', 'Thanks', {
+          this.snackBar.open('Luggage item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -106,7 +113,7 @@ export class UpdateCheckoutDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackBar.open('Failed to update, please try again.', 'Okay', {
             duration: 10000,
           });
           this.isLoading = false;

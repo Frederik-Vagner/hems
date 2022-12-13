@@ -9,6 +9,10 @@ export interface IDocument extends IBase {
   documentName: string;
 }
 
+export interface IGetDocumentByIdResponse extends IDocument {
+  downloadUrl: string;
+}
+
 export interface ICreateDocumentRequest {
   title: string;
   comments?: string;

@@ -31,6 +31,10 @@ import { TableInfoDialogComponent } from './components/tableInfoDialog/table-inf
 import { WeatherWidgetComponent } from './components/dashboardWidgets/weatherWidget/weather-widget.component';
 import { CreateBikeDialogComponent } from './pages/bikes/createBikeEntryDialog/create-bike-dialog.component';
 import { UpdateBikeDialogComponent } from './pages/bikes/updateBikeEntryDialog/update-bike-dialog.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
+import { DocumentWidgetComponent } from './components/documentWidget/document-widget.component';
+import { SeeDocumentDialogComponent } from './components/documentWidget/seeDocumentDialog/see-document-dialog.component';
+import { CreateDocumentDialogComponent } from './pages/documents/createDocumentDialog/create-document-dialog.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +64,10 @@ import { UpdateBikeDialogComponent } from './pages/bikes/updateBikeEntryDialog/u
     WeatherWidgetComponent,
     CreateBikeDialogComponent,
     UpdateBikeDialogComponent,
+    DocumentsComponent,
+    DocumentWidgetComponent,
+    SeeDocumentDialogComponent,
+    CreateDocumentDialogComponent,
   ],
   imports: [
     BrowserModule,

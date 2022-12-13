@@ -1,0 +1,51 @@
+<main>
+  <div class="actions">
+    <div>
+      <mat-form-field appearance="fill" class="remove-error-message">
+        <mat-label>Search</mat-label>
+        <input
+          type="text"
+          aria-label="search"
+          [(ngModel)]="search"
+          placeholder="Search ..."
+          (change)="fetchDocuments()"
+          matInput
+        />
+      </mat-form-field>
+      <mat-form-field
+        autocomplete="off"
+        appearance="fill"
+        style="width: 150px"
+        class="remove-error-message"
+      >
+        <mat-label>Sort by</mat-label>
+        <mat-select [(value)]="sortBy" (selectionChange)="fetchDocuments()">
+          <mat-option value="title">Title</mat-option>
+          <mat-option value="lastViewedAt">Latest viewed</mat-option>
+          <mat-option value="createdAt">Created at</mat-option>
+          <mat-option value="name">Name</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <button
+      mat-raised-button
+      class="action-btn"
+      (click)="openCreateDocumentDialog()"
+    >
+      Add document
+    </button>
+  </div>
+  <hr />
+
+  <section class="documents-container">
+    <div class="documents-grid">
+      <div *ngFor="let document of documentList" class="documents-grid-item">
+        <hems-document-widget
+          class="document-widget-wrapper"
+          [document]="document"
+        ></hems-document-widget>
+      </div>
+    </div>
+  </section>
+</main>

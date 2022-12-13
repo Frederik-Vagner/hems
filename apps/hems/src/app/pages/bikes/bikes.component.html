@@ -29,14 +29,14 @@
           <mat-option value="bikeFormCompleted">Missing bike form</mat-option>
           <mat-option value="pickUpTime">Pick up time</mat-option>
           <mat-option value="name">Name</mat-option>
-          <mat-option value="room">Room</mat-option>
+          <mat-option value="room">Room nr.</mat-option>
           <mat-option value="reservedBy">Reserved by</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
 
     <div class="table-buttons">
-      <button mat-raised-button class="basic-btn">Table info</button>
+      <button mat-raised-button class="basic-btn" (click)="openTableInfo()">Table info</button>
       <button
         class="action-btn"
         (click)="openCreateBikeDialog()"
@@ -51,7 +51,7 @@
   <div class="table-height">
     <table mat-table [dataSource]="filteredBikeList">
       <ng-container matColumnDef="room">
-        <th mat-header-cell *matHeaderCellDef>Room</th>
+        <th mat-header-cell *matHeaderCellDef>Room nr.</th>
         <td
           mat-cell
           *matCellDef="let element"
@@ -151,7 +151,7 @@
           Bike form <br />completed
         </th>
         <td mat-cell *matCellDef="let element">
-          <label class="checkbox-container">
+          <label class="checkbox-container car-checkbox">
             <input
               type="checkbox"
               [checked]="element.bikeFormCompleted"

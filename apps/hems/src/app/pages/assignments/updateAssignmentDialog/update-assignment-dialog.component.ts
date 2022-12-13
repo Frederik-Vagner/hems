@@ -95,12 +95,12 @@ export class UpdateAssignmentDialogComponent implements OnInit {
         room: this.updateAssignmentForm.get('room')?.value,
         task: this.updateAssignmentForm.get('task')?.value,
         comments: this.updateAssignmentForm.get('comments')?.value,
-        receivedBy: this.updateAssignmentForm
-          .get('receivedBy')
-          ?.value.toUpperCase(),
-        performedBy: this.updateAssignmentForm
-          .get('performedBy')
-          ?.value.toUpperCase(),
+        receivedBy: this.updateAssignmentForm.get('receivedBy')?.value
+          ? this.updateAssignmentForm.get('receivedBy')?.value.toUpperCase()
+          : '',
+        performedBy: this.updateAssignmentForm.get('performedBy')?.value
+          ? this.updateAssignmentForm.get('performedBy')?.value.toUpperCase()
+          : '',
         receivedAt: this.updateAssignmentForm.get('receivedAt')?.value,
         completedAt: this.updateAssignmentForm.get('completedAt')?.value,
       })

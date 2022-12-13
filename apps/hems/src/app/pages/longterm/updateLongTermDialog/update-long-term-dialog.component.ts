@@ -40,7 +40,7 @@ export class UpdateLongTermDialogComponent implements OnInit {
   constructor(
     private luggageService: LuggageService,
     @Inject(MAT_DIALOG_DATA) public data: ILuggage,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {}
 
@@ -99,14 +99,20 @@ export class UpdateLongTermDialogComponent implements OnInit {
         comments: this.updateLongTermForm.get('comments')?.value,
         tagNr: this.updateLongTermForm.get('tagNr')?.value,
         arrivalTime: this.updateLongTermForm.get('dateNeeded')?.value,
-        bbLr: this.updateLongTermForm.get('bbLr')?.value.toUpperCase(),
-        location: this.updateLongTermForm.get('location')?.value,
-        bbOut: this.updateLongTermForm.get('bbOut')?.value.toUpperCase(),
+        bbLr: this.updateLongTermForm.get('bbLr')?.value
+          ? this.updateLongTermForm.get('bbLr')?.value.toUpperCase()
+          : '',
+        location: this.updateLongTermForm.get('location')?.value
+          ? this.updateLongTermForm.get('location')?.value.toUpperCase()
+          : '',
+        bbOut: this.updateLongTermForm.get('bbOut')?.value
+          ? this.updateLongTermForm.get('bbOut')?.value.toUpperCase()
+          : '',
         completedAt: this.updateLongTermForm.get('dateOut')?.value,
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Long term item updated!', 'Thanks', {
+          this.snackBar.open('Long term item updated!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -114,7 +120,7 @@ export class UpdateLongTermDialogComponent implements OnInit {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to update, please try again.', 'Okay', {
+          this.snackBar.open('Failed to update, please try again.', 'Okay', {
             duration: 10000,
           });
         },

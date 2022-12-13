@@ -1,4 +1,8 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="form" class="dialog-container">
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="createCheckoutForm"
+  class="dialog-container"
+>
   <h1>Create Check Out Luggage</h1>
   <hr />
 
@@ -12,7 +16,12 @@
         matInput
         placeholder="123"
       />
-      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+      <mat-error
+        *ngIf="
+          createCheckoutForm.get('name')?.invalid &&
+          createCheckoutForm.get('name')?.dirty
+        "
+      >
         Must be a number from 100-999
       </mat-error>
     </mat-form-field>
@@ -26,7 +35,12 @@
         matInput
         placeholder="1+3"
       />
-      <mat-error *ngIf="form.get('bags')?.invalid && form.get('bags')?.dirty">
+      <mat-error
+        *ngIf="
+          createCheckoutForm.get('bags')?.invalid &&
+          createCheckoutForm.get('bags')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
@@ -41,7 +55,12 @@
       matInput
       placeholder="John Doe"
     />
-    <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+    <mat-error
+      *ngIf="
+        createCheckoutForm.get('name')?.invalid &&
+        createCheckoutForm.get('name')?.dirty
+      "
+    >
       Required
     </mat-error>
   </mat-form-field>
@@ -56,7 +75,12 @@
         matInput
         placeholder="123"
       />
-      <mat-error *ngIf="form.get('tagNr')?.invalid && form.get('tagNr')?.dirty">
+      <mat-error
+        *ngIf="
+          createCheckoutForm.get('tagNr')?.invalid &&
+          createCheckoutForm.get('tagNr')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
@@ -71,7 +95,10 @@
         placeholder="JD"
       />
       <mat-error
-        *ngIf="form.get('bbDown')?.invalid && form.get('bbDown')?.dirty"
+        *ngIf="
+          createCheckoutForm.get('bbDown')?.invalid &&
+          createCheckoutForm.get('bbDown')?.dirty
+        "
       >
         Required
       </mat-error>
@@ -89,7 +116,10 @@
         placeholder="LR1"
       />
       <mat-error
-        *ngIf="form.get('location')?.invalid && form.get('location')?.dirty"
+        *ngIf="
+          createCheckoutForm.get('location')?.invalid &&
+          createCheckoutForm.get('location')?.dirty
+        "
       >
         Required
       </mat-error>
@@ -104,7 +134,12 @@
         matInput
         placeholder="JD"
       />
-      <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
+      <mat-error
+        *ngIf="
+          createCheckoutForm.get('bbLr')?.invalid &&
+          createCheckoutForm.get('bbLr')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
@@ -114,7 +149,12 @@
     <mat-form-field autocomplete="off" class="input" appearance="fill">
       <mat-label>BB Out</mat-label>
       <input type="text" formControlName="bbOut" matInput placeholder="JD" />
-      <mat-error *ngIf="form.get('bbOut')?.invalid && form.get('bbOut')?.dirty">
+      <mat-error
+        *ngIf="
+          createCheckoutForm.get('bbOut')?.invalid &&
+          createCheckoutForm.get('bbOut')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>

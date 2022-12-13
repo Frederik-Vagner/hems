@@ -1,4 +1,8 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="form" class="dialog-container">
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="updateCheckoutForm"
+  class="dialog-container"
+>
   <h1>Update Check Out</h1>
   <hr />
 
@@ -12,27 +16,16 @@
         matInput
         placeholder="123"
       />
-      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
+      <mat-error
+        *ngIf="
+          updateCheckoutForm.get('name')?.invalid &&
+          updateCheckoutForm.get('name')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>Name</mat-label>
-      <input
-        #name
-        type="text"
-        formControlName="name"
-        matInput
-        placeholder="John Doe"
-      />
-      <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.dirty">
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
-  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Nr of bags</mat-label>
       <input
@@ -42,11 +35,37 @@
         matInput
         placeholder="1+3"
       />
-      <mat-error *ngIf="form.get('bags')?.invalid && form.get('bags')?.dirty">
+      <mat-error
+        *ngIf="
+          updateCheckoutForm.get('bags')?.invalid &&
+          updateCheckoutForm.get('bags')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
+  </div>
 
+  <mat-form-field autocomplete="off" appearance="fill" class="full-width">
+    <mat-label>Name</mat-label>
+    <input
+      #name
+      type="text"
+      formControlName="name"
+      matInput
+      placeholder="John Doe"
+    />
+    <mat-error
+      *ngIf="
+        updateCheckoutForm.get('name')?.invalid &&
+        updateCheckoutForm.get('name')?.dirty
+      "
+    >
+      Required
+    </mat-error>
+  </mat-form-field>
+
+  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Tag nr.</mat-label>
       <input
@@ -56,13 +75,16 @@
         matInput
         placeholder="123"
       />
-      <mat-error *ngIf="form.get('tagNr')?.invalid && form.get('tagNr')?.dirty">
+      <mat-error
+        *ngIf="
+          updateCheckoutForm.get('tagNr')?.invalid &&
+          updateCheckoutForm.get('tagNr')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
-  </div>
 
-  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB down</mat-label>
       <input
@@ -73,12 +95,17 @@
         placeholder="JD"
       />
       <mat-error
-        *ngIf="form.get('bbDown')?.invalid && form.get('bbDown')?.dirty"
+        *ngIf="
+          updateCheckoutForm.get('bbDown')?.invalid &&
+          updateCheckoutForm.get('bbDown')?.dirty
+        "
       >
         Required
       </mat-error>
     </mat-form-field>
+  </div>
 
+  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>Location</mat-label>
       <input
@@ -89,14 +116,15 @@
         placeholder="LR1"
       />
       <mat-error
-        *ngIf="form.get('location')?.invalid && form.get('location')?.dirty"
+        *ngIf="
+          updateCheckoutForm.get('location')?.invalid &&
+          updateCheckoutForm.get('location')?.dirty
+        "
       >
         Required
       </mat-error>
     </mat-form-field>
-  </div>
 
-  <div class="dialog-row">
     <mat-form-field autocomplete="off" appearance="fill">
       <mat-label>BB in LR</mat-label>
       <input
@@ -106,7 +134,27 @@
         matInput
         placeholder="JD"
       />
-      <mat-error *ngIf="form.get('bbLr')?.invalid && form.get('bbLr')?.dirty">
+      <mat-error
+        *ngIf="
+          updateCheckoutForm.get('bbLr')?.invalid &&
+          updateCheckoutForm.get('bbLr')?.dirty
+        "
+      >
+        Required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-row">
+    <mat-form-field autocomplete="off" appearance="fill">
+      <mat-label>BB out</mat-label>
+      <input type="text" formControlName="bbOut" matInput placeholder="JD" />
+      <mat-error
+        *ngIf="
+          updateCheckoutForm.get('bbOut')?.invalid &&
+          updateCheckoutForm.get('bbOut')?.dirty
+        "
+      >
         Required
       </mat-error>
     </mat-form-field>
@@ -133,21 +181,6 @@
     </mat-form-field>
   </div>
 
-  <div class="dialog-row">
-    <mat-form-field autocomplete="off" appearance="fill">
-      <mat-label>BB out</mat-label>
-      <input
-        type="text"
-        formControlName="bbOut"
-        matInput
-        placeholder="JD"
-      />
-      <mat-error *ngIf="form.get('bbOut')?.invalid && form.get('bbOut')?.dirty">
-        Required
-      </mat-error>
-    </mat-form-field>
-  </div>
-
   <mat-form-field autocomplete="off" appearance="fill" class="full-width">
     <mat-label>Comments</mat-label>
     <textarea
@@ -159,18 +192,10 @@
   </mat-form-field>
 
   <div class="dialog-row">
-    <button
-      mat-raised-button
-      class="secodary-btn"
-      mat-dialog-close
-    >
+    <button mat-raised-button class="secodary-btn" mat-dialog-close>
       Cancel
     </button>
-    <button
-      mat-raised-button
-      class="secondary-btn"
-      type="submit"
-    >
+    <button mat-raised-button class="secondary-btn" type="submit">
       Update
     </button>
   </div>

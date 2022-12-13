@@ -31,7 +31,7 @@ export class CreateLongTermDialogComponent implements OnInit {
 
   constructor(
     private luggageService: LuggageService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {}
 
@@ -86,13 +86,17 @@ export class CreateLongTermDialogComponent implements OnInit {
         comments: this.createLongTermForm.get('comments')?.value,
         tagNr: this.createLongTermForm.get('tagNr')?.value,
         dateNeeded: this.createLongTermForm.get('dateNeeded')?.value,
-        bbLr: this.createLongTermForm.get('bbLr')?.value.toUpperCase(),
-        location: this.createLongTermForm.get('location')?.value,
+        bbLr: this.createLongTermForm.get('bbLr')?.value
+          ? this.createLongTermForm.get('bbLr')?.value.toUpperCase()
+          : '',
+        location: this.createLongTermForm.get('location')?.value
+          ? this.createLongTermForm.get('location')?.value.toUpperCase()
+          : '',
         luggageType: LuggageType.LONG_TERM,
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Long term item created!', 'Thanks', {
+          this.snackBar.open('Long term item created!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -100,7 +104,7 @@ export class CreateLongTermDialogComponent implements OnInit {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create, please try again.', 'Okay', {
+          this.snackBar.open('Failed to create, please try again.', 'Okay', {
             duration: 10000,
           });
         },

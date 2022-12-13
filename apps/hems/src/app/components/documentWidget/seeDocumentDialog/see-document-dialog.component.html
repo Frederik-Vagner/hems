@@ -1,0 +1,24 @@
+<section class="dialog-section">
+  <div class="dialog-content" *ngIf="!isLoading">
+    <div>
+      <div class="title-container">
+        <h2>{{ document?.title }}</h2>
+        <button
+          class="secondary-btn"
+          mat-raised-button
+          mat-dialog-close
+          type="button"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="document-container">
+      <iframe [title]="document?.title" [src]="documentFileUrl"></iframe>
+    </div>
+  </div>
+  <div class="spinner-full-size" *ngIf="isLoading">
+    <mat-icon><mat-spinner diameter="21" color="white"></mat-spinner></mat-icon>
+  </div>
+</section>

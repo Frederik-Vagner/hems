@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BikeSortOptions, IBike, SortOrder } from '@hems/interfaces';
+import { BikeSortOptions, IBike, SortOrder, TableInfoOptions } from '@hems/interfaces';
 import { BikeService } from '../../services/bikes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -8,6 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { CreateBikeDialogComponent } from './createBikeEntryDialog/create-bike-dialog.component';
 import { UpdateBikeDialogComponent } from './updateBikeEntryDialog/update-bike-dialog.component';
 import { filterByCompletedAtAndOrderResults } from '../../utils/order.util';
+import { TableInfoDialogComponent } from '../../components/tableInfoDialog/table-info-dialog.component';
 
 @Component({
   selector: 'hems-bikes',
@@ -95,6 +96,13 @@ export class BikesComponent implements OnInit {
           });
         },
       });
+  }
+
+  openTableInfo(): void {
+    this.dialog.open(TableInfoDialogComponent, {
+      data: TableInfoOptions.BIKES,
+      width: '500px',
+    });
   }
 
   openCreateBikeDialog() {

@@ -19,13 +19,12 @@ import { LuggageService } from '../../../services/luggage.service';
   ],
 })
 export class CreateCheckinDialogComponent {
-  form: UntypedFormGroup;
+  createCheckinForm: UntypedFormGroup;
   checked = true;
   isLoading = false;
 
   @ViewChild('room') roomInput!: ElementRef;
   @ViewChild('name') nameInput!: ElementRef;
-  @ViewChild('arrivalTime') arrivalTimeInput!: ElementRef;
   @ViewChild('bags') bagsInput!: ElementRef;
   @ViewChild('tagNr') tagNrInput!: ElementRef;
   @ViewChild('bbLr') bbLrInput!: ElementRef;
@@ -33,10 +32,10 @@ export class CreateCheckinDialogComponent {
 
   constructor(
     private service: LuggageService,
-    private snackbar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {
-    this.form = new UntypedFormGroup({
+    this.createCheckinForm = new UntypedFormGroup({
       room: new UntypedFormControl('', [
         Validators.required,
         Validators.maxLength(10),
@@ -50,26 +49,24 @@ export class CreateCheckinDialogComponent {
       bbLr: new UntypedFormControl('', [Validators.required]),
       location: new UntypedFormControl('', [Validators.required]),
       bbOut: new UntypedFormControl('', []),
-      completedAt: new UntypedFormControl('', []),
+      completedAt: new UntypedFormControl(null, []),
       comments: new UntypedFormControl('', []),
     });
   }
 
   onSubmit(): void {
-    if (!this.form.valid) {
-      if (this.form.get('room')?.invalid) {
+    if (!this.createCheckinForm.valid) {
+      if (this.createCheckinForm.get('room')?.invalid) {
         this.roomInput.nativeElement.focus();
-      } else if (this.form.get('name')?.invalid) {
+      } else if (this.createCheckinForm.get('name')?.invalid) {
         this.nameInput.nativeElement.focus();
-      } else if (this.form.get('arrivalTime')?.invalid) {
-        this.arrivalTimeInput.nativeElement.focus();
-      } else if (this.form.get('bags')?.invalid) {
+      } else if (this.createCheckinForm.get('bags')?.invalid) {
         this.bagsInput.nativeElement.focus();
-      } else if (this.form.get('tagNr')?.invalid) {
+      } else if (this.createCheckinForm.get('tagNr')?.invalid) {
         this.tagNrInput.nativeElement.focus();
-      } else if (this.form.get('bbLr')?.invalid) {
+      } else if (this.createCheckinForm.get('bbLr')?.invalid) {
         this.bbLrInput.nativeElement.focus();
-      } else if (this.form.get('location')?.invalid) {
+      } else if (this.createCheckinForm.get('location')?.invalid) {
         this.locationInput.nativeElement.focus();
       }
     } else {
@@ -81,22 +78,28 @@ export class CreateCheckinDialogComponent {
     this.isLoading = true;
     this.service
       .create({
-        room: this.form.get('room')?.value,
-        // roomReady: this.form.get('roomReady')?.value,
-        name: this.form.get('name')?.value,
-        arrivalTime: new Date(this.form.get('arrivalTime')?.value),
-        bags: this.form.get('bags')?.value,
-        tagNr: this.form.get('tagNr')?.value,
-        bbLr: this.form.get('bbLr')?.value.toUpperCase(),
-        location: this.form.get('location')?.value.toUpperCase(),
-        bbOut: this.form.get('bbOut')?.value.toUpperCase(),
-        completedAt: this.form.get('completedAt')?.value,
-        comments: this.form.get('comments')?.value,
+        room: this.createCheckinForm.get('room')?.value,
+        // roomReady: this.createCheckinForm.get('roomReady')?.value,
+        name: this.createCheckinForm.get('name')?.value,
+        arrivalTime: new Date(this.createCheckinForm.get('arrivalTime')?.value),
+        bags: this.createCheckinForm.get('bags')?.value,
+        tagNr: this.createCheckinForm.get('tagNr')?.value,
+        bbLr: this.createCheckinForm.get('bbLr')?.value
+          ? this.createCheckinForm.get('bbLr')?.value.toUpperCase()
+          : '',
+        location: this.createCheckinForm.get('location')?.value
+          ? this.createCheckinForm.get('location')?.value.toUpperCase()
+          : '',
+        bbOut: this.createCheckinForm.get('bbOut')?.value
+          ? this.createCheckinForm.get('bbOut')?.value.toUpperCase()
+          : '',
+        completedAt: this.createCheckinForm.get('completedAt')?.value,
+        comments: this.createCheckinForm.get('comments')?.value,
         luggageType: LuggageType.CHECKIN,
       })
       .subscribe({
         next: () => {
-          this.snackbar.open('Check In luggage item created!', 'Thanks', {
+          this.snackBar.open('Check In luggage item created!', 'Thanks', {
             duration: 5000,
           });
           document.location.reload();
@@ -105,7 +108,7 @@ export class CreateCheckinDialogComponent {
         },
         error: (err: HttpErrorResponse) => {
           console.error(err);
-          this.snackbar.open('Failed to create, please try again.', 'Okay', {
+          this.snackBar.open('Failed to create, please try again.', 'Okay', {
             duration: 10000,
           });
           this.isLoading = false;
